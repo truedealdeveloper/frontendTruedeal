@@ -252,6 +252,13 @@ export default function ChardhamYatra() {
                 </div>
             </section>
 
+            {/* Add after the Hero section */}
+            <section className="py-8 bg-white">
+                <div className="container mx-auto px-4">
+                    <PackageCTA />
+                </div>
+            </section>
+
             {/* Early Bird Offer Section */}
             <section className="relative bg-gradient-to-r from-[#017ae3] to-[#00f6ff] overflow-hidden">
                 {/* Animated background elements */}
