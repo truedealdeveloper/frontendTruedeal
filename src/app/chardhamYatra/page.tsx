@@ -1006,7 +1006,6 @@ export default function ChardhamYatra() {
                             </div>
                         ))}
                     </div>
-                    <PackageCTA />
                 </div>
             </section>
 
@@ -1086,7 +1085,6 @@ export default function ChardhamYatra() {
                             </div>
                         ))}
                     </div>
-                    <PackageCTA />
                 </div>
             </section>
 
@@ -1215,7 +1213,6 @@ export default function ChardhamYatra() {
                             </ul>
                         </div>
                     </div>
-                    <PackageCTA />
                 </div>
             </section>
 
