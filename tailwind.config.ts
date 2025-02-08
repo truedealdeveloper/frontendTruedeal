@@ -63,7 +63,9 @@ const config: Config = {
     			]
     		},
     		animation: {
-    			'background-position-spin': 'background-position-spin 3000ms infinite alternate'
+    			'background-position-spin': 'background-position-spin 3000ms infinite alternate',
+    			'accordion-down': 'accordion-down 0.2s ease-out',
+    			'accordion-up': 'accordion-up 0.2s ease-out'
     		},
     		keyframes: {
     			'background-position-spin': {
@@ -72,6 +74,22 @@ const config: Config = {
     				},
     				'100%': {
     					backgroundPosition: 'bottom center'
+    				}
+    			},
+    			'accordion-down': {
+    				from: {
+    					height: '0'
+    				},
+    				to: {
+    					height: 'var(--radix-accordion-content-height)'
+    				}
+    			},
+    			'accordion-up': {
+    				from: {
+    					height: 'var(--radix-accordion-content-height)'
+    				},
+    				to: {
+    					height: '0'
     				}
     			}
     		}
