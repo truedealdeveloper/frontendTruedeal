@@ -9,7 +9,7 @@ import { chardhamData, ChardhamPackage } from './data';
 import { IoIosArrowBack, IoIosArrowForward, IoMdClose } from "react-icons/io";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BookingFormModal } from '@/app/components/BookingFormModal';
-import ReviewsGlimpse from '../components/homepage/ReviewsGlimpse';
+
 import { usePathname } from 'next/navigation';
 
 const PackageCTA = () => (
