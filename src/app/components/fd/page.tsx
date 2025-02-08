@@ -32,11 +32,11 @@ export default function FixedDepartures() {
             
             {/* With Flights Cards - Horizontal scroll on mobile */}
             <div className="overflow-x-auto -mx-4 px-4 mb-8">
-                <div className="flex md:flex md:justify-center xl:grid xl:grid-cols-2 gap-6 min-w-min md:min-w-0 max-w-4xl mx-auto">
+                <div className="flex gap-6 min-w-min justify-center">
                     {Object.values(fixedDeparturesData).map((departure: FixedDeparture) => (
                         <div 
                             key={departure.id}
-                            className="relative group h-[450px] w-[300px] md:w-[350px] xl:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0"
+                            className="relative group h-[450px] w-[300px] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0"
                         >
                             {/* Background Image */}
                             <Image 
