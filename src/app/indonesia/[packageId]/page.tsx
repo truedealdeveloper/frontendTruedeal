@@ -10,7 +10,7 @@ import { BookingFormModal } from '@/app/components/BookingFormModal';
 import { indonesiaPackages } from '@/data/indonesiaPackages';
 import Shimmer from '@/components/ui/shimmer';
 import ChardhamYatra from '@/app/chardhamYatra/page';   
-import FixedDepartures from '@/app/components/fd/page';
+import FixedDepartures from '@/app/fixedDeparture/page';
 import Destinations from '@/app/components/homepage/Destinations';  
 import Trending from '@/app/components/homepage/Trending';
 import BannerCarousel from '@/app/components/valentine/page';

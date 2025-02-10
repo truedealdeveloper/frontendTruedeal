@@ -6,7 +6,7 @@ import { Calendar, Users, Clock } from 'lucide-react';
 import { groupToursList } from '@/data/groupTours';
 
 import ChardhamYatra from '@/app/chardhamYatra/page';
-import FixedDepartures from '@/app/components/fd/page';
+import FixedDepartures from '@/app/fixedDeparture/page';
 import Gallery from '@/app/components/homepage/Gallery';
 // import WallOfLove from '@/app/components/homepage/Ugc';
 import Sponsors from '@/app/components/Ad/Sponsers';
