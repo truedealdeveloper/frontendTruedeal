@@ -16,17 +16,19 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion, useScroll, AnimatePresence } from "framer-motion";
 import { Poppins } from 'next/font/google';
 import  FixedDepartures  from '../page'
-import BannerCarousel from '../../valentine/page';
+// import BannerCarousel from '../../valentine/page';
+import BannerCarousel from '../../components/valentine/page';
 import Indonesia from '@/app/indonesia/page';
 import ChardhamYatra from '@/app/chardhamYatra/page';
-import Destinations from '../../homepage/Destinations';
-import Trending from '../../homepage/Trending';
-import Domestic from '../../homepage/Domestic';
-import Europe from '../../homepage/Europe';
-import ExoticDestinations from '../../homepage/Exotic';
-import Gallery from '../../homepage/Gallery';
-import ReviewsGlimpse from '../../homepage/ReviewsGlimpse';
-import Sponsors from '../../Ad/Sponsers';
+import Destinations from '../../components/homepage/Destinations';
+import Trending from '../../components/homepage/Trending';
+import Domestic from '../../components/homepage/Domestic';
+import Europe from '../../components/homepage/Europe';
+import ExoticDestinations from '../../components/homepage/Exotic';
+import Gallery from '../../components/homepage/Gallery';
+import ReviewsGlimpse from '../../components/homepage/ReviewsGlimpse';
+import Sponsors from '../../components/Ad/Sponsers';
+
 
 interface PageProps {
     params: Promise<{ id: string; }>

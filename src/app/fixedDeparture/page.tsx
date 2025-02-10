@@ -108,7 +108,7 @@ export default function FixedDepartures() {
 
 
                                 {/* View Details Button */}
-                                <Link href={`/components/fd/${departure.id}`}>
+                                <Link href={`/fixedDeparture/${departure.id}`}>
                                     <Button
                                         className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all duration-500"
                                     >
@@ -227,10 +227,11 @@ export default function FixedDepartures() {
                                             </div>
 
                                             {/* View Details Button */}
-                                            <Link href={`/components/fd/${destination.id}`}>
+                                            <Link href={`/fixedDeparture/${destination.id}`}>
                                                 <Button
                                                     className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all duration-500"
                                                 >
+
                                                     View Details
                                                 </Button>
                                             </Link>

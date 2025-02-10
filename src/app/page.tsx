@@ -15,7 +15,7 @@ import Gallery from "./components/homepage/Gallery";
 import Indonesia from "./indonesia/page";
 import ReviewsGlimpse from './components/homepage/ReviewsGlimpse'
 import NoCostEMIPage from "./no-cost-emi/page";
-import FixedDepartures from "./components/fd/page";
+import FixedDepartures from "./fixedDeparture/page";
 import BannerCarousel from "./components/valentine/page";
 // import ChardhamYatra from './chardhamYatra/page';
 // import SriLanka from './sriLanka/page';

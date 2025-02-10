@@ -52,7 +52,7 @@ export const fixedDepartures: FixedDeparture[] = [
 
 export const fixedDeparturesData: Record<string, FixedDeparture> = {
     europe: {
-        id: "TDWF002",
+        id: "europe-12-days-grand-tour",
         country: "Europe",
         days: 12,
         nights: 11,
@@ -219,7 +219,7 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         ]
     },
     vietnam2: {
-        id: "TDWF003",
+        id: "vietnam-8-days-highlights-tour",
         country: "Vietnam",
         days: 8,
         nights: 7,
@@ -338,7 +338,7 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         ]
     },
     turkey: {
-        id: "TDWF004",
+        id: "turkey-9-days-discovery-tour",
         country: "Turkey",
         days: 9,
         nights: 8,
@@ -450,7 +450,7 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
 
 export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight> = {
     miniEurope: {
-        id: "TDWOF001",
+        id: "europe-7-days-mini-europe-tour",
         country: "Mini Europe",
         days: 7,
         nights: 6,
@@ -558,7 +558,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         ]
     },
     almaty: {
-        id: "TDWOF002",
+        id: "almaty-5-days-kazakhstan-tour",
         country: "Almaty",
         days: 5,
         nights: 4,
@@ -639,7 +639,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         ]
     },
     dubai: {
-        id: "TDWOF003",
+        id: "dubai-5-days-desert-adventure",
         country: "Dubai",
         days: 5,
         nights: 4,
@@ -727,7 +727,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         minGroupSize: 20
     },
     hongKongMacau: {
-        id: "TDWOF004",
+        id: "hongkong-macau-5-days-combo-tour",
         country: "Hong Kong & Macau",
         days: 5,
         nights: 4,
@@ -818,7 +818,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         ]
     },
     sriLanka: {
-        id: "TDWOF005",
+        id: "srilanka-3-days-express-tour",
         country: "Sri Lanka",
         days: 3,
         nights: 2,
@@ -851,7 +851,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         ]
     },
     malaysia: {
-        id: "TDWOF008",
+        id: "malaysia-4-days-kuala-lumpur-tour",
         country: "Malaysia",
         days: 4,
         nights: 3,
@@ -928,7 +928,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         ]
     },
     southKorea: {
-        id: "TDWOF009",
+        id: "korea-7-days-discovery-tour",
         country: "South Korea",
         days: 7,
         nights: 6,
@@ -1028,7 +1028,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         
     },
     bali: {
-        id: "TDWOF010",
+        id: "bali-7-days-paradise-tour",
         country: "Bali",
         days: 7,
         nights: 6,
@@ -1129,7 +1129,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         ]
     },
     bhutan: {
-        id: "TDWOF011",
+        id: "bhutan-7-days-happiness-tour",
         country: "Bhutan",
         days: 7,
         nights: 6,
@@ -1222,7 +1222,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         
     },
     chinacanton: {
-        id: "TDWOF012",
+        id: "china-6-days-canton-fair-tour",
         country: "China Canton Fair",
         days: 6,
         nights: 5,
@@ -1303,7 +1303,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         ],
     },
     kashmir: {
-        id: "TDWOF013",
+        id: "kashmir-6-days-paradise-tour",
         country: "Kashmir",
         days: 6,
         nights: 5,
