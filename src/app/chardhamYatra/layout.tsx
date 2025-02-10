@@ -9,10 +9,10 @@ export const metadata: Metadata = {
         description: 'Experience the divine journey to four sacred shrines of Uttarakhand with our premium helicopter services. VIP darshan arrangements, comfortable stays, and expert guidance.',
         images: [
             {
-                url: '/UGCImages/chardham/Chardham/1.webp',
+                url: '/UGCImages/chardham/Chardham/2.webp',
                 width: 1200,
                 height: 630,
-                alt: 'Chardham Yatra Helicopter Services',
+                alt: 'Chardham Yatra Services',
             }
         ],
         type: 'website',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'Chardham Yatra by Helicopter 2025 | TrueDeal Travel',
         description: 'Book your divine Chardham Yatra helicopter packages. Packages starting from ₹1,15,000. VIP darshan and comfortable stays included.',
-        images: ['/UGCImages/chardham/Chardham/1.webp'],
+        images: ['/UGCImages/chardham/Chardham/2.webp'],
     },
     alternates: {
         canonical: 'https://truedeal4u.com/chardhamYatra',

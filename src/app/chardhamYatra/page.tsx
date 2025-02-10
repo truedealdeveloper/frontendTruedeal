@@ -12,26 +12,17 @@ import { BookingFormModal } from '@/app/components/BookingFormModal';
 
 import { usePathname } from 'next/navigation';
 
-const PackageCTA = () => (
-    <div className="flex flex-wrap justify-center gap-4 mt-8">
-        {[
-            { name: "Chardham Package", price: "₹2,30,000", link: "/chardhamYatra/CHARDHAM-5n6d" },
-            { name: "Same Day Dodham", price: "₹1,15,000", link: "/chardhamYatra/dodham-helicopter-tour-same-day" },
-            { name: "Ex-Sersi Tour", price: "₹3,50,000", link: "/chardhamYatra/dodham-ex-sersi-helicopter-tour" },
-            { name: "4 Days Dodham", price: "₹1,35,000", link: "/chardhamYatra/dodham-4-days-helicopter-tour" },
-            { name: "Ekdham Tour", price: "₹1,15,000", link: "/chardhamYatra/ekdham-same-day-tour" }
-        ].map((pkg, index) => (
-            <Link 
-                key={index}
-                href={pkg.link}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-md hover:shadow-lg 
-                    transition-all duration-300 group border border-gray-100"
-            >
-                <span className="text-gray-700 group-hover:text-blue-600 transition-colors">{pkg.name}</span>
-                <span className="text-blue-600 font-medium">{pkg.price}</span>
-            </Link>
-        ))}
-    </div>
+const GlobalStyles = () => (
+    <style jsx global>{`
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        .animate-blink {
+            animation: blink 1s infinite;
+        }
+    `}</style>
 );
 
 const FloatingCTA = () => {
@@ -54,20 +45,65 @@ const FloatingCTA = () => {
     if (!isVisible || pathname !== '/chardhamYatra') return null;
 
     return (
-        <div className="fixed bottom-24 left-1/2 -translate-x-1/2 z-40 bg-white rounded-full shadow-xl 
-            py-2 px-6 border border-gray-100 hover:shadow-2xl transition-all duration-300
+        <div className="fixed bottom-16 sm:bottom-24 left-1/2 -translate-x-1/2 z-40 bg-white rounded-full shadow-xl 
+            py-1.5 sm:py-2 px-4 sm:px-6 border border-gray-100 hover:shadow-2xl transition-all duration-300
             before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent
-            before:animate-shine before:rounded-full overflow-hidden">
-            <div className="flex items-center gap-4 relative">
-                <span className="text-sm text-gray-600">Book Now Starting from</span>
+            before:animate-shine before:rounded-full overflow-hidden w-[90%] sm:w-auto max-w-[320px] sm:max-w-none">
+            <div className="flex items-center justify-between sm:gap-4 relative">
+                <span className="text-xs sm:text-sm text-gray-600 whitespace-nowrap">Book Now Starting from</span>
                 <Link 
                     href="/chardhamYatra/ekdham-same-day-tour"
-                    className="text-blue-600 font-semibold whitespace-nowrap group flex items-center gap-1"
+                    className="text-blue-600 font-semibold whitespace-nowrap group flex items-center gap-1 text-sm sm:text-base"
                 >
                     ₹1,15,000
                     <span className="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300">→</span>
                 </Link>
             </div>
+        </div>
+    );
+};
+
+const TypewriterText = () => {
+    const [text, setText] = useState('');
+    const destinations = ['Badrinath', 'Kedarnath', 'Gangotri', 'Yamunotri'];
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isTyping, setIsTyping] = useState(true);
+    const [typingSpeed, setTypingSpeed] = useState(150);
+
+    useEffect(() => {
+        const currentDestination = destinations[currentIndex];
+        let timer: NodeJS.Timeout;
+
+        if (isTyping) {
+            if (text.length < currentDestination.length) {
+                timer = setTimeout(() => {
+                    setText(currentDestination.slice(0, text.length + 1));
+                }, typingSpeed);
+            } else {
+                timer = setTimeout(() => {
+                    setIsTyping(false);
+                }, 2000); // Wait before erasing
+            }
+        } else {
+            if (text.length > 0) {
+                timer = setTimeout(() => {
+                    setText(currentDestination.slice(0, text.length - 1));
+                }, 100); // Erasing speed
+            } else {
+                setCurrentIndex((prev) => (prev + 1) % destinations.length);
+                setIsTyping(true);
+            }
+        }
+
+        return () => clearTimeout(timer);
+    }, [text, isTyping, currentIndex]);
+
+    return (
+        <div className="inline-flex items-center">
+            <span className="text-lg sm:text-2xl md:text-3xl font-bold text-yellow-400 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
+                {text}
+            </span>
+            <span className="w-[2px] sm:w-[3px] h-6 sm:h-8 bg-yellow-400 ml-1 animate-blink drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"></span>
         </div>
     );
 };
@@ -159,8 +195,21 @@ export default function ChardhamYatra() {
 
     const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
+    useEffect(() => {
+        const videoElement = document.querySelector('video');
+        if (videoElement) {
+            console.log('Video element found:', videoElement);
+            videoElement.addEventListener('error', (e) => {
+                console.error('Video error:', e);
+            });
+        } else {
+            console.warn('Video element not found');
+        }
+    }, []);
+
     return (
         <div className="min-h-screen">
+            <GlobalStyles />
             {/* Hero Section with Video Background */}
             <section className="relative h-screen">
                 <video 
@@ -172,16 +221,27 @@ export default function ChardhamYatra() {
                     <source src="/Assets/HeroSectionImages/chardhamBg.mp4" type="video/mp4" />
                 </video>
                 <div className="absolute inset-0 bg-black/50" />
+                
+                {/* Add SVG overlay */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                    <Image
+                        src="/Assets/HeroSectionImages/Chardham.svg"
+                        alt="Chardham Yatra 2025"
+                        width={600}
+                        height={200}
+                        className="w-auto h-auto max-w-[80%] md:max-w-[600px] mb-10"
+                        priority
+                    />
+                </div>
+
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center p-4">
-                    <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                        Chardham Yatra 2025
-                    </h1>
-                    <p className="text-xl md:text-2xl mb-8 max-w-2xl">
-                        Experience the divine journey to four sacred shrines
-                    </p>
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-base sm:text-xl md:text-2xl mb-8 max-w-3xl mt-36 relative top-10">
+                        <span>Experience the divine journey to</span>
+                        <TypewriterText />
+                    </div>
                     <Button 
                         onClick={() => setIsBookingModalOpen(true)}
-                        className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-8 py-6 text-lg rounded-lg"
+                        className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-lg mt-6 sm:mt-10"
                     >
                         Book Your Journey Now
                     </Button>
@@ -253,11 +313,11 @@ export default function ChardhamYatra() {
             </section>
 
             {/* Add after the Hero section */}
-            <section className="py-8 bg-white">
+            {/* <section className="py-8 bg-white">
                 <div className="container mx-auto px-4">
                     <PackageCTA />
                 </div>
-            </section>
+            </section> */}
 
             {/* Early Bird Offer Section */}
             <section className="relative bg-gradient-to-r from-[#017ae3] to-[#00f6ff] overflow-hidden">
