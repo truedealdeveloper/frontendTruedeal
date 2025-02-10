@@ -232,7 +232,10 @@ export default function ChardhamYatra() {
                 </div>
 
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center p-4">
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-base sm:text-xl md:text-2xl mb-8 max-w-3xl mt-36 relative top-10">
+                    <h1 className="text-4xl sm:text-5xl font-bold mb-6 mt-36">
+                        चारधाम यात्रा 2025
+                    </h1>
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-base sm:text-xl md:text-2xl mb-8 max-w-3xl relative">
                         <span>Experience the divine journey to</span>
                         <TypewriterText />
                     </div>
@@ -1352,4 +1355,3 @@ export default function ChardhamYatra() {
         </div>
     );
 } 
-
