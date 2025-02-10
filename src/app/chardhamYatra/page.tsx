@@ -68,7 +68,7 @@ const TypewriterText = () => {
     const destinations = ['Badrinath', 'Kedarnath', 'Gangotri', 'Yamunotri'];
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isTyping, setIsTyping] = useState(true);
-    const [typingSpeed, setTypingSpeed] = useState(150);
+    const [typingSpeed] = useState(150);
 
     useEffect(() => {
         const currentDestination = destinations[currentIndex];
