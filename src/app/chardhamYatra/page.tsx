@@ -212,26 +212,23 @@ export default function ChardhamYatra() {
             <GlobalStyles />
             {/* Hero Section with Video Background */}
             <section className="relative h-screen">
-                <video 
-                    autoPlay 
-                    loop 
-                    muted 
-                    className="absolute inset-0 w-full h-full object-cover"
-                >
-                    <source src="/Assets/HeroSectionImages/chardhamBg.mp4" type="video/mp4" />
-                </video>
-                <div className="absolute inset-0 bg-black/50" />
-                
-                {/* Add SVG overlay */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <Image
-                        src="/Assets/HeroSectionImages/Chardham.svg"
-                        alt="Chardham Yatra 2025"
-                        width={600}
-                        height={200}
-                        className="w-auto h-auto max-w-[80%] md:max-w-[600px] mb-10"
-                        priority
-                    />
+                <div className="absolute inset-0 h-screen">
+                    <video 
+                        autoPlay 
+                        loop 
+                        muted 
+                        playsInline 
+                        preload="auto"
+                        className="absolute top-0 left-0 w-full h-full object-cover"
+                        poster="/Assets/HeroSectionImages/chardham-poster.jpg"
+                    >
+                        <source
+                            src="/Assets/HeroSectionImages/chardhamBg.mp4"
+                            type="video/mp4"
+                        />
+                        Your browser does not support the video tag.
+                    </video>
+                    <div className="absolute inset-0 bg-black/50"></div>
                 </div>
 
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center p-4">
