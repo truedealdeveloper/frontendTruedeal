@@ -19,7 +19,7 @@ import Sponsors from '@/app/components/Ad/Sponsers';
 import ReviewsGlimpse from '@/app/components/homepage/ReviewsGlimpse';
 import Indonesia from '@/app/indonesia/page';
 import BannerCarousel from '@/app/components/valentine/page';
-import FixedDepartures from '@/app/components/fd/page';
+import FixedDepartures from '@/app/fixedDeparture/page';
 import ChardhamYatra from '@/app/chardhamYatra/page';
 interface TrendingDestinationDetails {
     name: string;

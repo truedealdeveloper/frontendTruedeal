@@ -25,7 +25,7 @@ import Domestic from '@/app/components/homepage/Domestic';
 import ExoticDestinations from '@/app/components/homepage/Exotic';
 import Europe from '@/app/components/homepage/Europe';
 import ReviewsGlimpse from '@/app/components/homepage/ReviewsGlimpse';
-import FixedDepartures from '@/app/components/fd/page';
+import FixedDepartures from '@/app/fixedDeparture/page';
 import ChardhamYatra from '@/app/chardhamYatra/page';
 
 export default function GroupTourDetails() {
