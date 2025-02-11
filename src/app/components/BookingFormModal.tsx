@@ -23,8 +23,8 @@ export function BookingFormModal({
     isOpen, 
     onClose, 
     destinationName,
-    // price,
-    // dates 
+    price,
+    dates 
 }: BookingFormModalProps) {
     const [formData, setFormData] = useState({
         destination: destinationName,
@@ -61,6 +61,10 @@ export function BookingFormModal({
                 onClose();
                 setIsSubmissionSuccessful(false);
             }, 3000);
+
+            // Redirect to thank you page with encoded package name
+            const encodedName = encodeURIComponent(destinationName);
+            window.location.href = `/thankyou-query?name=${encodedName}`;
         } catch (error) {
             console.error("Error submitting form:", error);
             setSubmitError('Failed to send email. Please try again.');
