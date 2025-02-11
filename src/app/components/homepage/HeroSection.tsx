@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import TypingAnimation from "../../../components/ui/typing-animation"
 import FirstTimeTravelMessage from "./FirstTimeTravelMessage"
+// import { fixedDeparturesData } from "@/app/fixedDeparture/data"
 
 interface Destination {
     name: string
@@ -16,7 +17,82 @@ interface Destination {
         color: string
     }
     isTrending?: boolean
+    fixedDepartureId?: string
 }
+
+// Create a mapping of display names to their IDs
+const fixedDepartureDestinations = [
+    {
+        name: "Europe Trip",
+        tag: { label: "FIXED DEPARTURE", color: "blue" },
+        fixedDepartureId: "europe-12-days-grand-tour"
+    },
+    {
+        name: "Vietnam Trip",
+        tag: { label: "FIXED DEPARTURE", color: "blue" },
+        fixedDepartureId: "vietnam-8-days-highlights-tour"
+    },
+    {
+        name: "Turkey Trip",
+        tag: { label: "FIXED DEPARTURE", color: "blue" },
+        fixedDepartureId: "turkey-9-days-discovery-tour"
+    },
+    {
+        name: "Hong Kong & Macau Trip",
+        tag: { label: "FIXED DEPARTURE", color: "blue" },
+        fixedDepartureId: "hongkong-macau-5-days-combo-tour"
+    },
+    {
+        name: "Mini Europe Trip",
+        tag: { label: "FIXED DEPARTURE", color: "blue" },
+        fixedDepartureId: "europe-7-days-mini-europe-tour"
+    },
+    {
+        name: "Almaty Trip",
+        tag: { label: "FIXED DEPARTURE", color: "blue" },
+        fixedDepartureId: "almaty-5-days-kazakhstan-tour"
+    },
+    {
+        name: "Dubai Trip",
+        tag: { label: "FIXED DEPARTURE", color: "blue" },
+        fixedDepartureId: "dubai-5-days-desert-adventure"
+    },
+    {
+        name: "Bali Island Hopper Trip",
+        tag: { label: "FIXED DEPARTURE", color: "blue" },
+        fixedDepartureId: "bali-7-days-island-hopper"
+    },
+    {
+        name: "Russia Trip",
+        tag: { label: "FIXED DEPARTURE", color: "blue" },
+        fixedDepartureId: "russia-8-days-moscow-stpetersburg"
+    },
+    {
+        name: "Kashmir Trip",
+        tag: { label: "FIXED DEPARTURE", color: "blue" },
+        fixedDepartureId: "kashmir-6-days-paradise-tour"
+    },
+    {
+        name: "Srinagar Trip",
+        tag: { label: "FIXED DEPARTURE", color: "blue" },
+        fixedDepartureId: "srinagar-6-days-paradise-tour"
+    },
+    {
+        name: "Manali Trip",
+        tag: { label: "FIXED DEPARTURE", color: "blue" },
+        fixedDepartureId: "manali-5-days-volvo-tour"
+    },
+    {
+        name: "Bhutan Trip",
+        tag: { label: "FIXED DEPARTURE", color: "blue" },
+        fixedDepartureId: "bhutan-7-days-happiness-tour"
+    },
+    {
+        name: "China Canton Trip",
+        tag: { label: "FIXED DEPARTURE", color: "blue" },
+        fixedDepartureId: "china-6-days-canton-fair-tour"
+    }
+]
 
 const destinations: Destination[] = [
     { name: "Maldives", tag: { label: "HONEYMOON", color: "pink" } },
@@ -38,7 +114,7 @@ const destinations: Destination[] = [
     { name: "Kenya" },
     { name: "Malaysia" },
     { name: "Phillipines" },
-    { name: "Abu Dhabi", tag: { label: "POPULAR", color: "violet" } },
+    ...fixedDepartureDestinations  // Add all fixed departure destinations
 ]
 
 const placeholderDestinations = ["Almaty", "Bali", "Thailand", "Phillipines", "Kashmir"]
@@ -63,6 +139,8 @@ export default function HeroSection() {
             setIsSearchModalOpen(false)
             if (destination.isTrending) {
                 router.push(`/trending/${destination.name.toLowerCase()}`)
+            } else if (destination.tag?.label === "FIXED DEPARTURE" && destination.fixedDepartureId) {
+                router.push(`/fixedDeparture/${destination.fixedDepartureId}`)
             } else {
                 router.push(`/destinations/${destination.name.toLowerCase()}`)
             }
@@ -355,5 +433,3 @@ export default function HeroSection() {
         </>
     )
 }
-
-
