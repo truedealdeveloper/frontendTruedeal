@@ -10,7 +10,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion, useScroll, AnimatePresence } from "framer-motion";
 import { Poppins } from 'next/font/google';
 import ChardhamYatra from '../page';
-import FixedDepartures from '@/app/components/fd/page';
+import FixedDepartures from '@/app/fixedDeparture/page';
 import Domestic from '@/app/components/homepage/Domestic';
 import Indonesia from '@/app/indonesia/page';
 import BannerCarousel from '@/app/components/valentine/page';

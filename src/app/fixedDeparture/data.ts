@@ -715,12 +715,16 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
             }
         ],
         images: [
-            "/UGCImages/Images4/germany/horizontal/1.webp",
-            "/UGCImages/Images4/germany/horizontal/2.webp",
-            "/UGCImages/Images4/germany/horizontal/3.webp",
-            "/UGCImages/Images4/germany/horizontal/4.webp",
-            "/UGCImages/Images4/germany/horizontal/5.webp",
-            "/UGCImages/Images4/germany/horizontal/6.webp",
+            "/UGCImages/Images6/dubai/vertical/3.webp",
+            "/UGCImages/Images6/dubai/horizontal/2.webp",
+            "/UGCImages/Images6/dubai/horizontal/1.webp",
+            "/UGCImages/Images6/dubai/horizontal/3.webp",
+            "/UGCImages/Images6/dubai/horizontal/4.webp",
+            "/UGCImages/Images6/dubai/horizontal/5.webp",
+            "/UGCImages/Images6/dubai/horizontal/6.webp",
+            "/UGCImages/Images6/dubai/vertical/2.webp",
+            "/UGCImages/Images6/dubai/vertical/1.webp",
+
         ],
         packageType: "land-only",
         visaRequired: true,
@@ -807,14 +811,19 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
             }
         ],
         images: [
-            "/UGCImages/HD IMAGES/Bhutan/horizontal/1.png",
-            "/UGCImages/HD IMAGES/Bhutan/horizontal/2.png",
-            "/UGCImages/HD IMAGES/Bhutan/horizontal/3.png",
-            "/UGCImages/HD IMAGES/Bhutan/horizontal/4.png",
-            "/UGCImages/HD IMAGES/Bhutan/horizontal/5.png",
-            "/UGCImages/HD IMAGES/Bhutan/horizontal/6.png",
-            "/UGCImages/HD IMAGES/Bhutan/horizontal/7.png",
-            "/UGCImages/HD IMAGES/Bhutan/horizontal/8.png",
+            "/UGCImages/Images6/hongkong/horizontal/1.webp",
+            "/UGCImages/Images6/hongkong/horizontal/2.webp",
+            "/UGCImages/Images6/hongkong/horizontal/3.webp",
+            "/UGCImages/Images6/hongkong/horizontal/4.webp",
+            "/UGCImages/Images6/hongkong/horizontal/5.webp",
+            "/UGCImages/Images6/hongkong/horizontal/6.webp",
+            "/UGCImages/Images6/macau/horizontal/1.webp",
+            "/UGCImages/Images6/macau/horizontal/2.webp",
+            "/UGCImages/Images6/macau/horizontal/3.webp",
+            "/UGCImages/Images6/macau/horizontal/4.webp",
+            "/UGCImages/Images6/macau/horizontal/5.webp",
+            "/UGCImages/Images6/macau/horizontal/6.webp",
+            
         ]
     },
     sriLanka: {
@@ -1018,12 +1027,12 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
             }
         ],
         images: [
-            "/UGCImages/southkorea/1.webp",
-            "/UGCImages/southkorea/2.webp",
-            "/UGCImages/southkorea/3.webp",
-            "/UGCImages/southkorea/4.webp",
-            "/UGCImages/southkorea/5.webp",
-            "/UGCImages/southkorea/6.webp"
+            "/UGCImages/Images6/south korea/horizonta/3.webp",
+            "/UGCImages/Images6/south korea/horizonta/1.webp",
+            "/UGCImages/Images6/south korea/horizonta/2.webp",
+            "/UGCImages/Images6/south korea/horizonta/4.webp",
+            "/UGCImages/Images6/south korea/horizonta/5.webp",
+            "/UGCImages/Images6/south korea/horizonta/6.webp",
         ],
         
     },
@@ -1376,22 +1385,22 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
             {
                 day: 3,
                 title: "Excursion to Sonamarg | The Golden Meadows",
-                description: "Breakfast and check out for an excursion to Sonamarg. Explore the glacier-surrounded town with flower-laden meadows. Take a pony ride to Thajiwas Glacier with mesmerizing frozen lake views. Walk along the exotic grasslands of Baltal. Return to Srinagar and check in to a houseboat for an overnight stay with dinner."
+                description: "Breakfast and check out for an excursion to Sonamarg. Explore the glacier-surrounded town with flower-filled meadows. Take a pony ride to Thajiwas Glacier with mesmerizing frozen lake views. Walk along the exotic grasslands of Baltal. Return to Srinagar and check in to a houseboat for an overnight stay with dinner."
             },
             {
                 day: 4,
                 title: "Srinagar to Pahalgam | The Valley of Shepherds",
-                description: "Early morning transfer to Pahalgam. Check in to the hotel and relax before exploring Aru Valley. Visit Betaab Valley for stunning Lidder River views. Proceed to Chandanwari, famous for its snow bridge and Amarnath Yatra base. Return to the hotel for an overnight stay in Pahalgam."
+                description: "Transfer to Pahalgam. Visit Aru Valley, Betaab Valley, and Chandanwari. Overnight stay in Pahalgam."
             },
             {
                 day: 5,
                 title: "Pahalgam to Srinagar & Local Sightseeing",
-                description: "Breakfast and transfer back to Srinagar. Check in to the hotel and visit Chashmi-e-Shahi (natural spring). Explore Nishat Bagh (Garden of Pleasure) & Shalimar Bagh (Abode of Love). Visit Hazratbal Shrine and Shankaracharya Temple. Enjoy a sunset Shikara ride on Dal Lake with floating market shopping. Return to the hotel for dinner and overnight stay."
+                description: "Return to Srinagar. Visit Mughal gardens, Hazratbal Shrine, and Shankaracharya Temple. Evening Shikara ride on Dal Lake with floating market visit. Overnight stay in Srinagar."
             },
             {
                 day: 6,
                 title: "Departure from Srinagar",
-                description: "Breakfast and check out from the houseboat. Drop-off at the desired location in Srinagar with cherished memories."
+                description: "After breakfast, check-out and transfer to your preferred drop-off location in Srinagar."
             }
         ],
         images: [
@@ -1404,6 +1413,415 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         ],
         packageType: "customizable",
         visaRequired: false,
+        minGroupSize: 2
+    },
+    srinagar: {
+        id: "srinagar-6-days-paradise-tour",
+        country: "Srinagar",
+        days: 6,
+        nights: 5,
+        amount: 19999,
+        dateStart: "Multiple dates",
+        dateEnd: "March 2025",
+        description: "Experience the magical charm of Kashmir with a blend of adventure, history, and breathtaking landscapes. From serene lakes to snow-capped peaks, every moment of this journey promises unforgettable memories.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Twin Sharing Basis",
+            arrivalDate: "Multiple dates available",
+            duration: "5N6D Srinagar",
+            costBasis: "Cost Based On Double Sharing"
+        },
+        hotelDetails: [
+            {
+                city: "Srinagar",
+                hotel: "Deluxe Hotel/Houseboat",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Gulmarg",
+                hotel: "Deluxe Hotel",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Pahalgam",
+                hotel: "Deluxe Hotel",
+                roomType: "Standard Room"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Arrive in Srinagar",
+            "Day 2: Excursion to Gulmarg | The Meadow of Flowers",
+            "Day 3: Excursion to Sonamarg | The Golden Meadows",
+            "Day 4: Srinagar to Pahalgam | The Valley of Shepherds",
+            "Day 5: Pahalgam to Srinagar & Local Sightseeing",
+            "Day 6: Departure from Srinagar"
+        ],
+        inclusions: [
+            "Accommodation in hotels & houseboats as per the itinerary",
+            "Meals: Breakfast & dinner at all stays",
+            "Transport by Non AC Etios or Innova for all transfers and sightseeing",
+            "Shikara ride on Dal Lake",
+            "All toll taxes, parking fees, and driver allowances",
+            "Sightseeing as per the itinerary"
+        ],
+        exclusions: [
+            "Airfare/train fare",
+            "Personal expenses (laundry, tips, etc.)",
+            "Optional activities (skiing, snowboarding, gondola rides, pony rides)",
+            "Entry fees to monuments, gardens, or other attractions",
+            "Travel insurance",
+            "Anything not mentioned in inclusions"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrive in Srinagar",
+                description: "Meet and greet at Srinagar Airport. Transfer to hotel for check-in. Evening acclimatization and short walk around Dal Lake. Overnight stay at hotel."
+            },
+            {
+                day: 2,
+                title: "Excursion to Gulmarg | The Meadow of Flowers",
+                description: "After breakfast, transfer to Gulmarg. Enjoy breathtaking views and ride the world's second-highest Gondola. Optional activities include skiing and snowboarding. Visit India's largest golf course. Return to Srinagar for dinner and overnight stay."
+            },
+            {
+                day: 3,
+                title: "Excursion to Sonamarg | The Golden Meadows",
+                description: "Visit Sonamarg, surrounded by glaciers and flower-filled meadows. Optional pony ride to Thajiwas Glacier. Explore Baltal grasslands. Return to Srinagar for houseboat stay with dinner."
+            },
+            {
+                day: 4,
+                title: "Srinagar to Pahalgam | The Valley of Shepherds",
+                description: "Transfer to Pahalgam. Visit Aru Valley, Betaab Valley, and Chandanwari. Overnight stay in Pahalgam."
+            },
+            {
+                day: 5,
+                title: "Pahalgam to Srinagar & Local Sightseeing",
+                description: "Return to Srinagar. Visit Mughal gardens, Hazratbal Shrine, and Shankaracharya Temple. Evening Shikara ride on Dal Lake with floating market visit. Overnight stay in Srinagar."
+            },
+            {
+                day: 6,
+                title: "Departure from Srinagar",
+                description: "After breakfast, check-out and transfer to your preferred drop-off location in Srinagar."
+            }
+        ],
+        images: [
+            "/UGCImages/Images4/srinagar/horizontal/1.webp",
+            "/UGCImages/Images4/srinagar/horizontal/2.webp",
+            "/UGCImages/Images4/srinagar/horizontal/3.webp",
+            "/UGCImages/Images4/srinagar/horizontal/4.webp",
+            "/UGCImages/Images4/srinagar/horizontal/5.webp",
+            "/UGCImages/Images4/srinagar/horizontal/6.webp"
+        ],
+        packageType: "customizable",
+        visaRequired: false,
+        minGroupSize: 2
+    },
+    manali: {
+        id: "manali-5-days-volvo-tour",
+        country: "Manali",
+        days: 5,
+        nights: 4,
+        amount: 9999,
+        dateStart: "Multiple dates",
+        dateEnd: "March 2025",
+        description: "Experience the serene beauty of Manali with our perfectly curated 5-day Volvo package. From ancient temples to adventure activities in Solang Valley, this tour offers the perfect blend of relaxation and excitement.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Double Sharing Basis",
+            arrivalDate: "Multiple dates available",
+            duration: "4N5D Manali (2N Volvo + 2N Hotel)",
+            costBasis: "Cost Based On Double Sharing"
+        },
+        hotelDetails: [
+            {
+                city: "Manali",
+                hotel: "3 Star Hotel",
+                roomType: "Standard Room"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Delhi to Manali (Overnight Volvo Journey)",
+            "Day 2: Manali Arrival & Local Sightseeing",
+            "Day 3: Full-Day Solang Valley Tour",
+            "Day 4: Kullu & Naggar Sightseeing - Return Journey",
+            "Day 5: Arrival in Delhi"
+        ],
+        inclusions: [
+            "2 Nights Accommodation in Manali",
+            "2 Breakfasts and 2 Dinners",
+            "Private Cab for all sightseeing tours",
+            "Round-trip Volvo Bus Tickets (Delhi-Manali-Delhi)",
+            "Double Sharing Room Accommodation"
+        ],
+        exclusions: [
+            "Any Airfare or Train Tickets",
+            "Personal Expenses (Tips, Laundry, Shopping, etc.)",
+            "Adventure Activities at Solang Valley",
+            "Travel Insurance",
+            "Lunch or Meals not mentioned in the inclusions",
+            "Any additional costs due to natural calamities or unforeseen events"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Delhi to Manali",
+                description: "Begin your journey from Delhi in a comfortable Volvo bus to Manali for an overnight journey."
+            },
+            {
+                day: 2,
+                title: "Manali Local Sightseeing",
+                description: "Arrive in Manali and check-in to your hotel. After freshening up, enjoy half-day local sightseeing including visits to Hadimba Temple, Club House, Tibetan Monasteries, and Van Vihar. Return to hotel for dinner and overnight stay."
+            },
+            {
+                day: 3,
+                title: "Solang Valley Tour",
+                description: "Full day excursion to Solang Valley. Experience various adventure activities like skiing and snow scooter rides (optional), or simply enjoy the breathtaking mountain views. Evening return to hotel for dinner and overnight stay."
+            },
+            {
+                day: 4,
+                title: "Kullu & Naggar Sightseeing",
+                description: "After breakfast, check-out and proceed for sightseeing of the picturesque Kullu Valley and historic Naggar Castle. Evening board the overnight Volvo bus to Delhi."
+            },
+            {
+                day: 5,
+                title: "Arrival in Delhi",
+                description: "Early morning arrival in Delhi. Tour ends with fond memories of your Manali trip."
+            }
+        ],
+        images: [
+            "/UGCImages/Images4/manali/horizontal/1.webp",
+            "/UGCImages/Images4/manali/horizontal/2.webp",
+            "/UGCImages/Images4/manali/horizontal/3.webp",
+            "/UGCImages/Images4/manali/horizontal/4.webp",
+            "/UGCImages/Images4/manali/horizontal/5.webp",
+            "/UGCImages/Images4/manali/horizontal/6.webp"
+        ],
+        packageType: "land-only",
+        visaRequired: false,
+        minGroupSize: 2
+    },
+    baliIslandHopper: {
+        id: "bali-7-days-island-hopper",
+        country: "Bali",
+        days: 7,
+        nights: 6,
+        amount: 35999,
+        dateStart: "Multiple dates",
+        dateEnd: "30 June 2025",
+        description: "Experience the best of Bali with our Island Hopper package, covering Kuta, Nusa Penida, Gili Trawangan, and Ubud. From thrilling water sports to serene beaches and cultural experiences, this tour offers the perfect blend of adventure and relaxation.",
+        groupDetails: {
+            pax: "Based on 2 Pax",
+            rooms: "Double Sharing Basis",
+            arrivalDate: "Multiple dates till 30th June",
+            duration: "6N7D Bali Island Hopper",
+            costBasis: "Cost Based On Double Sharing"
+        },
+        hotelDetails: [
+            {
+                city: "Kuta",
+                hotel: "Bliss Surfer or Similar",
+                roomType: "4 Star"
+            },
+            {
+                city: "Nusa Penida",
+                hotel: "Bataran Garden Cottage or Similar",
+                roomType: "3 Star"
+            },
+            {
+                city: "Gili Trawangan",
+                hotel: "Ombak Sunset or Similar",
+                roomType: "3 Star"
+            },
+            {
+                city: "Ubud",
+                hotel: "Ladera Villas or Similar",
+                roomType: "Private Pool Villa (4 Star)"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Arrival in Bali - Kuta",
+            "Day 2: Water Sports & Tanah Lot Sunset",
+            "Day 3: West Nusa Penida Tour",
+            "Day 4: Nusa Penida to Gili Trawangan",
+            "Day 5: Gili Trawangan to Bali",
+            "Day 6: Full-Day Bali Highlights Tour",
+            "Day 7: Departure"
+        ],
+        inclusions: [
+            "6 Nights accommodation as per itinerary",
+            "Daily breakfast at hotels (from Day 2)",
+            "Return airport transfers in private vehicle",
+            "Welcome flower garland",
+            "One bottle of water per person per day during tours",
+            "Air-conditioned SUV for all tours and transfers",
+            "All local taxes, donations, entrance fees, and toll charges",
+            "English-speaking driver-guide for tours and transfers"
+        ],
+        exclusions: [
+            "International or domestic flights",
+            "Personal expenses (tips, laundry, beverages)",
+            "Travel insurance",
+            "Meals not mentioned in itinerary",
+            "Additional activities or sightseeing",
+            "Early check-in or late check-out charges"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Bali",
+                description: "Welcome to Bali! Transfer to your hotel in Kuta. Check-in and spend the rest of the day at leisure."
+            },
+            {
+                day: 2,
+                title: "Water Sports & Sunset",
+                description: "Enjoy exciting water sports including Banana Boat, Couple Parasailing, and Jet Ski. Evening visit to witness the stunning sunset at Tanah Lot temple."
+            },
+            {
+                day: 3,
+                title: "Explore West Nusa Penida",
+                description: "Take a fast boat to Nusa Penida. Full-day tour visiting Kelingking Beach, Angel's Billabong, Broken Bay, and Bubu Beach. Overnight stay in Nusa Penida."
+            },
+            {
+                day: 4,
+                title: "Nusa Penida to Gili Trawangan",
+                description: "Fast boat transfer to Gili Trawangan. Free time to explore the beautiful beaches and island life of Gili T."
+            },
+            {
+                day: 5,
+                title: "Gili Trawangan to Bali",
+                description: "Morning fast boat back to Bali mainland. Transfer to your hotel and afternoon at leisure."
+            },
+            {
+                day: 6,
+                title: "Full-Day Bali Tour",
+                description: "Comprehensive tour covering Kintamani Volcano, Coffee Plantation, Tegenungan Waterfall, Tegalalang Rice Terrace, and Bali Jungle Swing experience. Complimentary local lunch included."
+            },
+            {
+                day: 7,
+                title: "Departure from Bali",
+                description: "Check-out and transfer to the airport for your departure flight."
+            }
+        ],
+        images: [
+            "/UGCImages/bali/ISLAND HOPPER/horizontal/1.webp",
+            "/UGCImages/bali/ISLAND HOPPER/horizontal/2.webp",
+            "/UGCImages/bali/ISLAND HOPPER/horizontal/3.webp",
+            "/UGCImages/bali/ISLAND HOPPER/horizontal/4.webp",
+            "/UGCImages/bali/ISLAND HOPPER/horizontal/5.webp",
+            "/UGCImages/bali/ISLAND HOPPER/horizontal/6.webp"
+        ],
+        packageType: "land-only",
+        visaRequired: true,
+        minGroupSize: 2
+    },
+    russia: {
+        id: "russia-8-days-moscow-stpetersburg",
+        country: "Russia",
+        days: 8,
+        nights: 7,
+        amount: 85000,
+        dateStart: "25 February 2025",
+        dateEnd: "4 March 2025",
+        description: "Experience the grandeur of Russia with our comprehensive 8-day tour covering Moscow and Saint Petersburg. From iconic landmarks to world-class museums, immerse yourself in Russia's rich history and culture.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Double/Single Sharing Available",
+            arrivalDate: "25 February 2025",
+            duration: "7N8D Russia",
+            costBasis: "DBL: ₹85,000 | SNGL: ₹95,000"
+        },
+        hotelDetails: [
+            {
+                city: "Saint Petersburg",
+                hotel: "Cosmos St. Petersburg Olympia Garden Hotel",
+                roomType: "4 Star"
+            },
+            {
+                city: "Moscow",
+                hotel: "Vega Izmailovo Moscow",
+                roomType: "4 Star"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Delhi – Moscow – Saint Petersburg",
+            "Day 2: Saint Petersburg City Tour",
+            "Day 3: Hermitage Museum Visit",
+            "Day 4: Free Day in Saint Petersburg",
+            "Day 5: Saint Petersburg – Moscow",
+            "Day 6: Moscow City Tour & Metro Tour",
+            "Day 7: VDNH Tour & Cosmonaut Museum",
+            "Day 8: Moscow – Departure"
+        ],
+        inclusions: [
+            "4-star hotel accommodation with daily breakfast",
+            "One-way Speed Train ticket",
+            "Guided English sightseeing tours",
+            "All transfers in comfortable minibus",
+            "Monument entry fees",
+            "Daily bottled water (0.5L per person)",
+            "Russian e-Visa fees",
+            "Airfare with 10kg + 5kg hand luggage"
+        ],
+        exclusions: [
+            "Personal expenses (tips, laundry, calls)",
+            "Travel insurance",
+            "Meals other than breakfast",
+            "Additional tours not in itinerary",
+            "Early check-in/late check-out charges",
+            "Flight/train delay expenses"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Delhi – Moscow – Saint Petersburg",
+                description: "Arrival at Saint Petersburg Airport at 14:10 via Aeroflot SU 6214. Transfer to Cosmos St. Petersburg Olympia Garden Hotel for check-in."
+            },
+            {
+                day: 2,
+                title: "Saint Petersburg City Tour",
+                description: "4-hour guided tour exploring iconic landmarks including Peter and Paul Fortress and Kazan Cathedral."
+            },
+            {
+                day: 3,
+                title: "Hermitage Museum Visit",
+                description: "4-hour guided tour of the world-famous Hermitage Museum with included entry tickets."
+            },
+            {
+                day: 4,
+                title: "Free Day in Saint Petersburg",
+                description: "Full day at leisure to explore the beautiful city at your own pace."
+            },
+            {
+                day: 5,
+                title: "Saint Petersburg – Moscow",
+                description: "Check-out and transfer to train station. Speed train journey to Moscow. Check-in at Vega Izmailovo Moscow hotel."
+            },
+            {
+                day: 6,
+                title: "Moscow City Tour",
+                description: "4-hour guided tour covering Red Square, GUM Mall, Alexandrovsky Garden, Christ the Saviour Cathedral, Park Zaryadye with Sky Bridge, and Moscow Metro Tour."
+            },
+            {
+                day: 7,
+                title: "VDNH Tour & Cosmonaut Museum",
+                description: "4-hour guided tour including visit to the Cosmonaut Museum with entry tickets."
+            },
+            {
+                day: 8,
+                title: "Moscow – Departure",
+                description: "Breakfast and transfer to the airport for departure."
+            }
+        ],
+        images: [
+            "/UGCImages/Images4/russia/horizontal/1.webp",
+            "/UGCImages/Images4/russia/horizontal/2.webp",
+            "/UGCImages/Images4/russia/horizontal/3.webp",
+            "/UGCImages/Images4/russia/horizontal/4.webp",
+            "/UGCImages/Images4/russia/horizontal/5.webp",
+            "/UGCImages/Images4/russia/horizontal/6.webp"
+        ],
+        packageType: "land-only",
+        visaRequired: true,
         minGroupSize: 2
     }
 };
@@ -1435,7 +1853,13 @@ export const destinationGroups = [
     },
     {
         chinacanton: destinationsWithoutFlight.chinacanton,
-        kashmir: destinationsWithoutFlight.kashmir
+        kashmir: destinationsWithoutFlight.kashmir,
+        srinagar: destinationsWithoutFlight.srinagar
+    },
+    {
+        manali: destinationsWithoutFlight.manali,
+        baliIslandHopper: destinationsWithoutFlight.baliIslandHopper,
+        russia: destinationsWithoutFlight.russia
     }
 ];
 
