@@ -18,7 +18,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import CurrencyExchange from '../../components/forex/ForexLive';
 import Sponsors from "../../components/Ad/Sponsers";
 import ReviewsGlimpse from '@/app/components/homepage/ReviewsGlimpse';
-import FixedDepartures from '@/app/components/fd/page';
+import FixedDepartures from '@/app/fixedDeparture/page';
 import ChardhamYatra from '@/app/chardhamYatra/page';
 import BannerCarousel from '../../components/valentine/page';
 import Indonesia from '@/app/indonesia/page';
