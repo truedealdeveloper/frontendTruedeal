@@ -63,22 +63,24 @@ const FloatingCTA = () => {
     );
 };
 
+// Move these constants outside the component to avoid recreating them on every render
+const TYPING_SPEED = 150;
+const DESTINATIONS = ['Badrinath', 'Kedarnath', 'Gangotri', 'Yamunotri'];
+
 const TypewriterText = () => {
     const [text, setText] = useState('');
-    const destinations = ['Badrinath', 'Kedarnath', 'Gangotri', 'Yamunotri'];
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isTyping, setIsTyping] = useState(true);
-    const [typingSpeed] = useState(150);
 
     useEffect(() => {
-        const currentDestination = destinations[currentIndex];
+        const currentDestination = DESTINATIONS[currentIndex];
         let timer: NodeJS.Timeout;
 
         if (isTyping) {
             if (text.length < currentDestination.length) {
                 timer = setTimeout(() => {
                     setText(currentDestination.slice(0, text.length + 1));
-                }, typingSpeed);
+                }, TYPING_SPEED);
             } else {
                 timer = setTimeout(() => {
                     setIsTyping(false);
@@ -90,13 +92,13 @@ const TypewriterText = () => {
                     setText(currentDestination.slice(0, text.length - 1));
                 }, 100); // Erasing speed
             } else {
-                setCurrentIndex((prev) => (prev + 1) % destinations.length);
+                setCurrentIndex((prev) => (prev + 1) % DESTINATIONS.length);
                 setIsTyping(true);
             }
         }
 
         return () => clearTimeout(timer);
-    }, [text, isTyping, currentIndex]);
+    }, [text, isTyping, currentIndex]); // Now all dependencies are properly declared
 
     return (
         <div className="inline-flex items-center">

@@ -108,12 +108,6 @@ export default function ChardhamYatraPage({ params }: PageProps) {
         setActiveTab(tabId);
     };
 
-    const handleFormSubmitSuccess = () => {
-        setIsBookingModalOpen(false);
-        const encodedName = encodeURIComponent(package_.name);
-        window.location.href = `/thankyou-query?name=${encodedName}`;
-    };
-
     return (
         <div className={`min-h-screen bg-gray-50 ${poppins.className} relative`}>
             {/* Hero Section */}
