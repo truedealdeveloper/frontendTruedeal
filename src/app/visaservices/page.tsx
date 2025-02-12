@@ -163,6 +163,43 @@ const VisaServices = () => {
         setFormData({ ...formData, country: e.target.value })
     }
 
+    const validateStep1 = () => {
+        // Check if all required fields are filled
+        if (!contactInfo.name || !contactInfo.email || !contactInfo.phone ||
+            !formData.country || !formData.startDate || !formData.endDate ||
+            !formData.purpose || !formData.note || formData.travellers < 1) {
+            alert('Please fill in all required fields');
+            return false;
+        }
+        return true;
+    };
+
+    const validateStep2 = () => {
+        // Check if all required documents are uploaded
+        const requiredDocs = REQUIRED_DOCUMENTS.default.filter(doc => doc.required);
+        const missingDocs = requiredDocs.filter(doc => !formData.documents[doc.name]);
+        
+        if (missingDocs.length > 0) {
+            alert(`Please upload all required documents: ${missingDocs.map(d => d.name).join(', ')}`);
+            return false;
+        }
+        return true;
+    };
+
+    const handleNextStep = (e: React.MouseEvent) => {
+        e.preventDefault();
+        
+        if (currentStep === 1) {
+            if (validateStep1()) {
+                setCurrentStep(2);
+            }
+        } else if (currentStep === 2) {
+            if (validateStep2()) {
+                setCurrentStep(3);
+            }
+        }
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
@@ -239,7 +276,7 @@ const VisaServices = () => {
     }
 
     return (
-        <div className="max-w-6xl mx-auto p-2 sm:p-6 mt-8 sm:mt-12">
+        <div className="max-w-6xl mx-auto p-2 sm:p-6 mt-16 sm:mt-24 mb-8">
             {/* Progress Steps - Made more compact on mobile */}
             <div className="mb-6 sm:mb-8">
                 <div className="flex items-center justify-center space-x-2 sm:space-x-4">
@@ -283,14 +320,16 @@ const VisaServices = () => {
                             </div>
                         </div>
 
-                        {/* Application Form */}
+                        {/* Application Form - Updated with required fields */}
                         <div className="bg-white p-3 sm:p-6 rounded-lg shadow">
                             <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Visa Application Details</h2>
                             <form className="space-y-4 sm:space-y-6">
                                 {/* Contact Info Grid */}
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
-                                        <label className="block text-gray-700 mb-1 text-sm">Your Name</label>
+                                        <label className="block text-gray-700 mb-1 text-sm">
+                                            Your Name <span className="text-red-500">*</span>
+                                        </label>
                                         <input
                                             type="text"
                                             className="w-full p-2 sm:p-3 border rounded-lg text-sm"
@@ -300,7 +339,9 @@ const VisaServices = () => {
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-gray-700 mb-1 text-sm">Email Address</label>
+                                        <label className="block text-gray-700 mb-1 text-sm">
+                                            Email Address <span className="text-red-500">*</span>
+                                        </label>
                                         <input
                                             type="email"
                                             className="w-full p-2 sm:p-3 border rounded-lg text-sm"
@@ -314,7 +355,9 @@ const VisaServices = () => {
                                 {/* Phone and Country Grid */}
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
-                                        <label className="block text-gray-700 mb-1 text-sm">Phone Number</label>
+                                        <label className="block text-gray-700 mb-1 text-sm">
+                                            Phone Number <span className="text-red-500">*</span>
+                                        </label>
                                         <input
                                             type="tel"
                                             className="w-full p-2 sm:p-3 border rounded-lg text-sm"
@@ -324,7 +367,9 @@ const VisaServices = () => {
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-gray-700 mb-1 text-sm">Selected Country</label>
+                                        <label className="block text-gray-700 mb-1 text-sm">
+                                            Selected Country <span className="text-red-500">*</span>
+                                        </label>
                                         <input
                                             type="text"
                                             value={formData.country}
@@ -332,6 +377,7 @@ const VisaServices = () => {
                                             className="w-full p-2 sm:p-3 border rounded-lg text-sm"
                                             placeholder="Type or select a country"
                                             list="countries-list"
+                                            required
                                         />
                                         <datalist id="countries-list">
                                             {allCountries.map((country) => (
@@ -344,7 +390,9 @@ const VisaServices = () => {
                                 {/* Travel Dates Grid */}
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
-                                        <label className="block text-gray-700 mb-1 text-sm">Start Date</label>
+                                        <label className="block text-gray-700 mb-1 text-sm">
+                                            Start Date <span className="text-red-500">*</span>
+                                        </label>
                                         <input
                                             type="date"
                                             className="w-full p-2 sm:p-3 border rounded-lg text-sm"
@@ -354,7 +402,9 @@ const VisaServices = () => {
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-gray-700 mb-1 text-sm">End Date</label>
+                                        <label className="block text-gray-700 mb-1 text-sm">
+                                            End Date <span className="text-red-500">*</span>
+                                        </label>
                                         <input
                                             type="date"
                                             className="w-full p-2 sm:p-3 border rounded-lg text-sm"
@@ -368,21 +418,32 @@ const VisaServices = () => {
                                 {/* Purpose of Travel */}
                                 <div>
                                     <label className="block text-gray-700 mb-2">
-                                        Purpose of travel <span className="text-gray-500">(select one)</span>
+                                        Purpose of travel <span className="text-red-500">*</span>
                                     </label>
-                                    <div className="flex gap-4">
+                                    <input 
+                                        type="hidden" 
+                                        value={formData.purpose} 
+                                        required 
+                                    />
+                                    <div className="flex flex-col sm:flex-row gap-4">
                                         <button
                                             type="button"
-                                            className={`flex-1 p-3 border rounded-lg ${formData.purpose === 'Tourism' ? 'bg-blue-50 border-blue-500' : ''
-                                                }`}
+                                            className={`flex-1 p-3 border rounded-lg ${
+                                                formData.purpose === 'Tourism' 
+                                                    ? 'bg-blue-50 border-blue-500' 
+                                                    : 'border-gray-300'
+                                            }`}
                                             onClick={() => setFormData({ ...formData, purpose: 'Tourism' })}
                                         >
                                             🏖️ Tourism
                                         </button>
                                         <button
                                             type="button"
-                                            className={`flex-1 p-3 border rounded-lg ${formData.purpose === 'Business' ? 'bg-blue-50 border-blue-500' : ''
-                                                }`}
+                                            className={`flex-1 p-3 border rounded-lg ${
+                                                formData.purpose === 'Business' 
+                                                    ? 'bg-blue-50 border-blue-500' 
+                                                    : 'border-gray-300'
+                                            }`}
                                             onClick={() => setFormData({ ...formData, purpose: 'Business' })}
                                         >
                                             💼 Business
@@ -392,8 +453,10 @@ const VisaServices = () => {
 
                                 {/* Number of Travellers */}
                                 <div>
-                                    <label className="block text-gray-700 mb-2">No. of travellers</label>
-                                    000<input
+                                    <label className="block text-gray-700 mb-2">
+                                        No. of travellers <span className="text-red-500">*</span>
+                                    </label>
+                                    <input
                                         type="number"
                                         min="1"
                                         className="w-full p-3 border rounded-lg"
@@ -403,23 +466,24 @@ const VisaServices = () => {
                                     />
                                 </div>
 
-                                {/* Note */}
+                                {/* Note - Updated to be required */}
                                 <div>
                                     <label className="block text-gray-700 mb-2">
-                                        Note to our Visa Expert <span className="text-gray-500">(optional)</span>
+                                        Note to our Visa Expert <span className="text-red-500">*</span>
                                     </label>
                                     <textarea
                                         className="w-full p-3 border rounded-lg h-32"
                                         placeholder="Type here..."
                                         value={formData.note}
                                         onChange={(e) => setFormData({ ...formData, note: e.target.value })}
+                                        required
                                     />
                                 </div>
 
                                 <div className="mt-6 flex justify-between">
                                     <button
                                         type="button"
-                                        onClick={() => setCurrentStep(2)}
+                                        onClick={handleNextStep}
                                         className="w-full bg-cyan-600 text-white py-3 rounded-lg hover:bg-cyan-700 transition-colors"
                                     >
                                         Next: Upload Documents
@@ -434,13 +498,17 @@ const VisaServices = () => {
                 {currentStep === 2 && (
                     <div className="col-span-2">
                         <div className="bg-white p-3 sm:p-6 rounded-lg shadow">
-                            <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Required Documents</h2>
+                            <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">
+                                Required Documents <span className="text-red-500">*</span>
+                            </h2>
                             <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
                                 {REQUIRED_DOCUMENTS.default.map((doc) => (
                                     <div key={doc.name} className="border rounded-lg p-3 sm:p-4">
                                         <div className="flex justify-between items-start mb-2">
                                             <div>
-                                                <h3 className="font-semibold">{doc.name}</h3>
+                                                <h3 className="font-semibold">
+                                                    {doc.name} <span className="text-red-500">*</span>
+                                                </h3>
                                                 <p className="text-sm text-gray-600">{doc.description}</p>
                                             </div>
                                             {doc.required && (
@@ -456,6 +524,7 @@ const VisaServices = () => {
                                                     className="hidden"
                                                     onChange={(e) => handleFileUpload(doc.name, e.target.files?.[0] || null)}
                                                     accept="image/*,.pdf"
+                                                    required
                                                 />
                                                 <div className="flex items-center justify-center border-2 border-dashed border-gray-300 rounded-lg p-4 hover:border-cyan-500 cursor-pointer">
                                                     <FiUpload className="mr-2" />
@@ -478,7 +547,7 @@ const VisaServices = () => {
                                 </button>
                                 <button
                                     type="button"
-                                    onClick={() => setCurrentStep(3)}
+                                    onClick={handleNextStep}
                                     className="flex-1 bg-cyan-600 text-white py-3 rounded-lg hover:bg-cyan-700 transition-colors"
                                 >
                                     Next: Review
