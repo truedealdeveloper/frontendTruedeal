@@ -59,8 +59,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "TrueDeal | Best Tour & Travel Agency for Memorable Trips",
     description: "Plan your next adventure with TrueDeal4U, a trusted tour and travel agency. Explore custom packages, affordable deals, and expert guidance for a hassle-free journey.",
-    site: '@truedeal4u', // Replace with your Twitter handle
-    creator: '@truedeal4u', // Replace with your Twitter handle
+    site: '@truedeal4u', 
+    creator: '@truedeal4u', 
     images: ['https://www.truedeal4u.com/Assets/NavbarImages/logo.png'],
   },
 };
