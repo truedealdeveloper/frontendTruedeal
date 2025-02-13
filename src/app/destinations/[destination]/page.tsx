@@ -23,19 +23,19 @@ import ChardhamYatra from '@/app/chardhamYatra/page';
 import BannerCarousel from '../../components/valentine/page';
 import Indonesia from '@/app/indonesia/page';
 
-
-interface DestinationDetails {
+// Change from interface to export type
+export type DestinationDetails = {
     name: string;
-    price?: number; // Make optional since variants may have their own prices
+    price?: number;
     image: string;
-    baseImage?: string; // Add baseImage property
+    baseImage?: string;
     packages: number;
     description: string;
-    duration?: {  // Make optional since variants have their own duration
+    duration?: {
         days: number;
         nights: number;
     };
-    itinerary?: Array<{  // Make optional since variants have their own itinerary
+    itinerary?: Array<{
         day: number;
         title: string;
         description: string;
@@ -62,8 +62,7 @@ interface DestinationDetails {
     }>;
 }
 
-
-const destinationData: { [key: string]: DestinationDetails } = {
+export const destinationData: { [key: string]: DestinationDetails } = {
     thailand: {
         name: "Thailand - Phuket & Krabi",
         price: 25000,

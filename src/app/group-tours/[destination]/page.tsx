@@ -41,7 +41,7 @@ export default function GroupTourDetails() {
     }
 
     return (
-        <div className="min-h-screen bg-gray-50 mt-10">
+        <div className="min-h-screen bg-gray-50">
             <main className="container mx-auto px-4 py-8 max-w-7xl">
                 {/* Hero Image Section - Replace the single Image with Swiper */}
                 <div className="relative rounded-3xl overflow-hidden mb-8 shadow-xl">
