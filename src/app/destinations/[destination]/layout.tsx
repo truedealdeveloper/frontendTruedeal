@@ -22,8 +22,13 @@ function getDestinationMetadata(destination: string) {
 }
 
 // Metadata generation function
-export async function generateMetadata({ params }: { params: { destination: string } }): Promise<Metadata> {
-  const destination = params.destination
+export async function generateMetadata(
+  props: {
+    params: { destination: string },
+    searchParams: { [key: string]: string | string[] | undefined }
+  }
+): Promise<Metadata> {
+  const destination = props.params.destination
   const meta = getDestinationMetadata(destination)
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://truedeal4u.com'
