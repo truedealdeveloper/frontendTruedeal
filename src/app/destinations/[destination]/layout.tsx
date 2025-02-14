@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+import { Metadata, ResolvingMetadata } from 'next'
 import { destinationData } from './page'
 
 // Helper function to generate metadata for a specific destination
@@ -21,14 +21,13 @@ function getDestinationMetadata(destination: string) {
   }
 }
 
+type Props = {
+  params: { destination: string }
+}
+
 // Metadata generation function
-export async function generateMetadata(
-  props: {
-    params: { destination: string },
-    searchParams: { [key: string]: string | string[] | undefined }
-  }
-): Promise<Metadata> {
-  const destination = props.params.destination
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const destination = params.destination
   const meta = getDestinationMetadata(destination)
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://truedeal4u.com'
