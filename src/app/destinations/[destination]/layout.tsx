@@ -22,6 +22,7 @@ function getDestinationMetadata(destination: string) {
 }
 
 type Props = {
+  children: React.ReactNode,
   params: { destination: string }
 }
 
@@ -87,9 +88,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 // Layout component
 export default function DestinationLayout({
   children,
-}: {
-  children: React.ReactNode
-}) {
+  params,
+}: Props) {
   return (
     <>
       {/* Add any layout elements here if needed */}
