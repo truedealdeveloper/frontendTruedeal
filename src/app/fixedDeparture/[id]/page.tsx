@@ -480,61 +480,61 @@ export default function FixedDeparturePage({ params }: PageProps) {
 
                 {destination.country.toLowerCase().includes('vietnam') && (
                     <>
-                        <div className="mb-12">
+                        {/* <div className="mb-12">
                             <h2 className="text-2xl font-bold mb-6 text-[#017ae3]">Vietnam Highlights</h2>
                             <DestinationSights 
                                 sights={[
                                     {
                                         name: 'Ha Long Bay',
                                         location: 'Quảng Ninh Province',
-                                        description: 'UNESCO World Heritage site featuring thousands of limestone islands.',
-                                        image: '/images/destinations/vietnam/halong-bay.jpg'
+                                        description: 'A UNESCO World Heritage site featuring thousands of limestone karsts and isles in various shapes and sizes.',
+                                        image: '/UGCImages/Images4/vietnam/horizontal/halong.webp'
                                     },
                                     {
                                         name: 'Hoi An Ancient Town',
                                         location: 'Quang Nam Province',
-                                        description: 'Historic port city known for its well-preserved architecture.',
-                                        image: '/images/destinations/vietnam/hoi-an.jpg'
+                                        description: 'A well-preserved example of a Southeast Asian trading port from the 15th to 19th centuries.',
+                                        image: '/UGCImages/Images4/vietnam/horizontal/hoian.webp'
                                     },
                                     {
                                         name: 'Hanoi Old Quarter',
                                         location: 'Hanoi',
-                                        description: 'Historic heart of Hanoi with traditional architecture.',
-                                        image: '/images/destinations/vietnam/hanoi.jpg'
+                                        description: 'The historic heart of Hanoi with its maze of streets dating back to the 13th century.',
+                                        image: '/UGCImages/Images4/vietnam/horizontal/hanoi.webp'
                                     },
                                     {
                                         name: 'Mekong Delta',
                                         location: 'Southern Vietnam',
-                                        description: 'Network of rivers and floating markets.',
-                                        image: '/images/destinations/vietnam/mekong.jpg'
+                                        description: 'A vast maze of rivers, swamps and islands, home to floating markets, pagodas and villages.',
+                                        image: '/UGCImages/Images4/vietnam/horizontal/mekong.webp'
                                     }
                                 ]}
                             />
-                        </div>
+                        </div> */}
 
                         <div className="mb-12">
-                            <h2 className="text-2xl font-bold mb-6 text-[#017ae3]">Vietnamese Cuisine</h2>
+                            <h2 className="text-2xl font-bold mb-6 text-[#017ae3]">Vietnamese Highlights</h2>
                             <LocalCuisine 
                                 dishes={[
                                     {
-                                        name: 'Pho',
-                                        description: 'Traditional Vietnamese noodle soup with rich broth.',
-                                        image: '/images/destinations/vietnam/pho.jpg'
+                                        name: 'BEAUTIFUL PAGODAS',
+                                        description: 'The pagodas are the most important religious buildings in Vietnam. They are a symbol of the country’s rich culture and history.',
+                                        image: '/UGCImages/images5/VIETNAM/VERTICAL/4.webp'
                                     },
                                     {
-                                        name: 'Banh Mi',
-                                        description: 'Vietnamese sandwich with French-inspired baguette.',
-                                        image: '/images/destinations/vietnam/banh-mi.jpg'
+                                        name: 'Hạ Long Bay',
+                                        description: 'Hạ Long Bay is a UNESCO World Heritage site featuring thousands of limestone karsts and isles in various shapes and sizes.',
+                                        image: '/UGCImages/images5/VIETNAM/HORIZONTAL/2.webp'
                                     },
                                     {
-                                        name: 'Spring Rolls',
-                                        description: 'Fresh or fried rolls with various fillings.',
-                                        image: '/images/destinations/vietnam/spring-rolls.jpg'
+                                        name: 'Cát Bà Island',
+                                        description: 'Cát Bà Island is a beautiful island in Vietnam. It is a popular destination for tourists.',
+                                        image: '/UGCImages/images5/VIETNAM/HORIZONTAL/3.webp'
                                     },
                                     {
-                                        name: 'Vietnamese Coffee',
-                                        description: 'Strong coffee served with condensed milk.',
-                                        image: '/images/destinations/vietnam/coffee.jpg'
+                                        name: 'Vietnamese Hmong',
+                                        description: 'Vietnamese Hmong are a minority ethnic group in Vietnam. They are known for their unique culture and traditions.',
+                                        image: '/UGCImages/images5/VIETNAM/HORIZONTAL/7.webp'
                                     }
                                 ]}
                             />
@@ -553,7 +553,7 @@ export default function FixedDeparturePage({ params }: PageProps) {
                                     >
                                         <Image
                                             src={image}
-                                            alt={`${destination.country} tour image ${index + 1}`}
+                                            alt={`Vietnam tour image ${index + 1}`}
                                             fill
                                             className="object-cover hover:scale-110 transition-transform duration-300"
                                         />

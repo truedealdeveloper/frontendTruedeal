@@ -88,7 +88,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 // Layout component
 export default function DestinationLayout({
   children,
-  params,
 }: Props) {
   return (
     <>
