@@ -439,12 +439,13 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
             }
         ],
         images: [
-            "/UGCImages/Images4/turkey/horizontal/1.webp",
-            "/UGCImages/Images4/turkey/horizontal/2.webp",
-            "/UGCImages/Images4/turkey/horizontal/3.webp",
-            "/UGCImages/Images4/turkey/horizontal/4.webp",
-            "/UGCImages/Images4/turkey/horizontal/5.webp",
-            "/UGCImages/Images4/turkey/horizontal/6.webp"
+            "/UGCImages/turkey/1.webp",
+            "/UGCImages/turkey/2.webp",
+            "/UGCImages/turkey/3.webp",
+            "/UGCImages/turkey/4.webp",
+            "/UGCImages/turkey/5.webp",
+            "/UGCImages/turkey/6.webp",
+            
         ]
     }
 };
