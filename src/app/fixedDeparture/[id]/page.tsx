@@ -28,6 +28,9 @@ import ExoticDestinations from '../../components/homepage/Exotic';
 import Gallery from '../../components/homepage/Gallery';
 import ReviewsGlimpse from '../../components/homepage/ReviewsGlimpse';
 import Sponsors from '../../components/Ad/Sponsers';
+import { DestinationSights } from '@/app/components/destinations/DestinationSights';
+import { LocalCuisine } from '@/app/components/destinations/LocalCuisine';
+import Image from 'next/image';
 
 
 interface PageProps {
@@ -409,6 +412,159 @@ export default function FixedDeparturePage({ params }: PageProps) {
                 </div>
             </div>
 
+            {/* Add this before the FixedDepartures component */}
+            <div className="container mx-auto px-4 py-6">
+                {/* Destination Specific Content */}
+                {destination.country.toLowerCase().includes('europe') && (
+                    <>
+                        <div className="mb-12">
+                            <h2 className="text-2xl font-bold mb-6 text-[#017ae3]">European Sightseeing Highlights</h2>
+                            <DestinationSights 
+                                sights={[
+                                    {
+                                        name: 'Swedish Market',
+                                        location: 'Berlin, Germany',
+                                        description: 'Swedish Market is a popular market in Berlin, Germany.',
+                                        image: '/UGCImages/Images4/germany/horizontal/1.webp'
+                                    },
+                                    {
+                                        name: 'Ferris Wheel',
+                                        location: 'Berlin, Germany',
+                                        description: 'Ferris Wheel is a popular attraction in Berlin, Germany.',
+                                        image: '/UGCImages/Images4/germany/horizontal/2.webp'
+                                    },
+                                    {
+                                        name: 'Frauenkirche Dresden',
+                                        location: 'Dresden, Germany',
+                                        description: 'Frauenkirche Dresden is a beautiful church in Dresden, Germany.',
+                                        image: '/UGCImages/Images4/germany/horizontal/3.webp'
+                                    },
+                                    {
+                                        name: 'Neuschwanstein Castle',
+                                        location: 'Munich, Germany',
+                                        description: 'Neuschwanstein Castle is a beautiful castle in Munich, Germany.',
+                                        image: '/UGCImages/Images4/germany/horizontal/4.webp'
+                                    }
+                                ]}
+                            />
+                        </div>
+
+                        <div className="mb-12">
+                            <h2 className="text-2xl font-bold mb-6 text-[#017ae3]">Photo Gallery</h2>
+                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                                {destination.images?.map((image, index) => (
+                                    <motion.div
+                                        key={index}
+                                        className="relative aspect-square rounded-lg overflow-hidden"
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: index * 0.1 }}
+                                    >
+                                        <Image
+                                            src={image}
+                                            alt={`${destination.country} tour image ${index + 1}`}
+                                            fill
+                                            className="object-cover hover:scale-110 transition-transform duration-300"
+                                        />
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="mb-12">
+                            <h2 className="text-2xl font-bold mb-6 text-[#017ae3]">More European Destinations</h2>
+                            <Europe />
+                        </div>
+                    </>
+                )}
+
+                {destination.country.toLowerCase().includes('vietnam') && (
+                    <>
+                        <div className="mb-12">
+                            <h2 className="text-2xl font-bold mb-6 text-[#017ae3]">Vietnam Highlights</h2>
+                            <DestinationSights 
+                                sights={[
+                                    {
+                                        name: 'Ha Long Bay',
+                                        location: 'Quảng Ninh Province',
+                                        description: 'UNESCO World Heritage site featuring thousands of limestone islands.',
+                                        image: '/images/destinations/vietnam/halong-bay.jpg'
+                                    },
+                                    {
+                                        name: 'Hoi An Ancient Town',
+                                        location: 'Quang Nam Province',
+                                        description: 'Historic port city known for its well-preserved architecture.',
+                                        image: '/images/destinations/vietnam/hoi-an.jpg'
+                                    },
+                                    {
+                                        name: 'Hanoi Old Quarter',
+                                        location: 'Hanoi',
+                                        description: 'Historic heart of Hanoi with traditional architecture.',
+                                        image: '/images/destinations/vietnam/hanoi.jpg'
+                                    },
+                                    {
+                                        name: 'Mekong Delta',
+                                        location: 'Southern Vietnam',
+                                        description: 'Network of rivers and floating markets.',
+                                        image: '/images/destinations/vietnam/mekong.jpg'
+                                    }
+                                ]}
+                            />
+                        </div>
+
+                        <div className="mb-12">
+                            <h2 className="text-2xl font-bold mb-6 text-[#017ae3]">Vietnamese Cuisine</h2>
+                            <LocalCuisine 
+                                dishes={[
+                                    {
+                                        name: 'Pho',
+                                        description: 'Traditional Vietnamese noodle soup with rich broth.',
+                                        image: '/images/destinations/vietnam/pho.jpg'
+                                    },
+                                    {
+                                        name: 'Banh Mi',
+                                        description: 'Vietnamese sandwich with French-inspired baguette.',
+                                        image: '/images/destinations/vietnam/banh-mi.jpg'
+                                    },
+                                    {
+                                        name: 'Spring Rolls',
+                                        description: 'Fresh or fried rolls with various fillings.',
+                                        image: '/images/destinations/vietnam/spring-rolls.jpg'
+                                    },
+                                    {
+                                        name: 'Vietnamese Coffee',
+                                        description: 'Strong coffee served with condensed milk.',
+                                        image: '/images/destinations/vietnam/coffee.jpg'
+                                    }
+                                ]}
+                            />
+                        </div>
+
+                        <div className="mb-12">
+                            <h2 className="text-2xl font-bold mb-6 text-[#017ae3]">Photo Gallery</h2>
+                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                                {destination.images?.map((image, index) => (
+                                    <motion.div
+                                        key={index}
+                                        className="relative aspect-square rounded-lg overflow-hidden"
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: index * 0.1 }}
+                                    >
+                                        <Image
+                                            src={image}
+                                            alt={`${destination.country} tour image ${index + 1}`}
+                                            fill
+                                            className="object-cover hover:scale-110 transition-transform duration-300"
+                                        />
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </div>
+                    </>
+                )}
+            </div>
+
             <div className="">
                 <FixedDepartures />
                 <ChardhamYatra />   
@@ -418,10 +574,7 @@ export default function FixedDeparturePage({ params }: PageProps) {
             <Indonesia />
             <Domestic />                
             <ExoticDestinations />
-            <Europe />
-            {/* <HappyCustomers /> */}   
             <Gallery />
-            {/* <WallOfLove /> */}
             <Sponsors /> 
             <ReviewsGlimpse />
             </div>

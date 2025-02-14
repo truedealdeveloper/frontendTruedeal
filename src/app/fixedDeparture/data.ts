@@ -216,6 +216,7 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
             "/UGCImages/Images4/germany/horizontal/6.webp",
             "/UGCImages/Images4/germany/horizontal/1.webp",
             "/UGCImages/Images4/germany/horizontal/2.webp",
+            "/UGCImages/Images4/germany/horizontal/7.webp",
         ]
     },
     vietnam2: {

@@ -1,4 +1,4 @@
-import { Metadata, ResolvingMetadata } from 'next'
+import { Metadata } from 'next'
 import { destinationData } from './page'
 
 // Helper function to generate metadata for a specific destination
