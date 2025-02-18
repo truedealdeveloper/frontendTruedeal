@@ -20,7 +20,8 @@ import ReviewsGlimpse from '@/app/components/homepage/ReviewsGlimpse';
 import Indonesia from '@/app/indonesia/page';
 import BannerCarousel from '@/app/components/valentine/page';
 import FixedDepartures from '@/app/fixedDeparture/page';
-import ChardhamYatra from '@/app/chardhamYatra/page';
+// import ChardhamYatra from '@/app/chardhamYatra/page';
+
 interface TrendingDestinationDetails {
     name: string;
     price: number;
@@ -545,7 +546,7 @@ export default function TrendingDestinationDetails() {
                 <Trending />
             <BannerCarousel />      
             <FixedDepartures />
-            <ChardhamYatra />
+            {/* <ChardhamYatra /> */}
             <Indonesia />
             <Domestic />
             <ExoticDestinations />
