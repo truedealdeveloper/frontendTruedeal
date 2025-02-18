@@ -930,6 +930,7 @@ export default function DestinationDetails() {
                     </div>
                 </div>
             </main>
+            <Indonesia />
             <Trending />
             <Destinations />
             <BannerCarousel />  
