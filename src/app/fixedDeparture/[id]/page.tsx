@@ -1,11 +1,11 @@
 'use client';
 
-import { 
-    fixedDeparturesData, 
-    destinationsWithoutFlight, 
-    FixedDeparture, 
+import {
+    fixedDeparturesData,
+    destinationsWithoutFlight,
+    FixedDeparture,
     DestinationWithoutFlight,
-    isFixedDeparture 
+    isFixedDeparture
 } from '../data';
 import { notFound } from 'next/navigation';
 import { FaPlane, FaCalendarAlt } from 'react-icons/fa';
@@ -15,7 +15,7 @@ import { BookingFormModal } from '@/app/components/BookingFormModal';
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion, useScroll, AnimatePresence } from "framer-motion";
 import { Poppins } from 'next/font/google';
-import  FixedDepartures  from '../page'
+import FixedDepartures from '../page'
 // import BannerCarousel from '../../valentine/page';
 import BannerCarousel from '../../components/valentine/page';
 import Indonesia from '@/app/indonesia/page';
@@ -52,12 +52,12 @@ function formatIndianPrice(price: number): string {
 
 export default function FixedDeparturePage({ params }: PageProps) {
     const { id } = use(params);
-    
+
     // Look for the destination in both data objects
-    const destination: FixedDeparture | DestinationWithoutFlight | undefined = 
-        Object.values(fixedDeparturesData).find(dest => dest.id === id) || 
+    const destination: FixedDeparture | DestinationWithoutFlight | undefined =
+        Object.values(fixedDeparturesData).find(dest => dest.id === id) ||
         Object.values(destinationsWithoutFlight).find(dest => dest.id === id);
-    
+
     if (!destination) {
         notFound();
     }
@@ -111,7 +111,7 @@ export default function FixedDeparturePage({ params }: PageProps) {
 
     useEffect(() => {
         const timer = setInterval(() => {
-            setCurrentImageIndex((prev) => 
+            setCurrentImageIndex((prev) =>
                 prev === (destination?.images?.length || 1) - 1 ? 0 : prev + 1
             );
         }, 5000);
@@ -129,7 +129,7 @@ export default function FixedDeparturePage({ params }: PageProps) {
             {/* Hero Section with Parallax Effect */}
             <div className="relative h-[70vh] md:h-[80vh] overflow-hidden">
                 <AnimatePresence mode='wait'>
-                    <motion.img 
+                    <motion.img
                         key={currentImageIndex}
                         src={destination?.images?.[currentImageIndex] || '/default-image.jpg'}
                         alt={destination.country}
@@ -142,7 +142,7 @@ export default function FixedDeparturePage({ params }: PageProps) {
                 </AnimatePresence>
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/70" />
                 <div className="container mx-auto relative h-full">
-                    <motion.div 
+                    <motion.div
                         className="absolute bottom-12 left-4 md:left-8 text-white max-w-3xl"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -153,12 +153,12 @@ export default function FixedDeparturePage({ params }: PageProps) {
                         </h1>
                         <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 text-lg">
                             <span className="flex items-center gap-3">
-                                <FaCalendarAlt className="text-[#00f6ff] text-2xl" /> 
+                                <FaCalendarAlt className="text-[#00f6ff] text-2xl" />
                                 <span className="text-gray-100">{destination.dateStart} - {destination.dateEnd}</span>
                             </span>
                             {isFixedDep && (
                                 <span className="flex items-center gap-3">
-                                    <FaPlane className="text-[#00f6ff] text-2xl" /> 
+                                    <FaPlane className="text-[#00f6ff] text-2xl" />
                                     <span className="text-gray-100">{destination.flightFrom}</span>
                                 </span>
                             )}
@@ -176,7 +176,7 @@ export default function FixedDeparturePage({ params }: PageProps) {
             </div>
 
             {/* Fixed Tabs Navigation */}
-            <div 
+            <div
                 ref={tabsRef}
                 className="sticky top-0 z-50 bg-white border-b shadow-lg mt-0"
             >
@@ -195,11 +195,10 @@ export default function FixedDeparturePage({ params }: PageProps) {
                                         key={tab.id}
                                         value={tab.id}
                                         onClick={() => scrollToSection(tab.ref, tab.id)}
-                                        className={`px-4 py-2 text-sm md:text-base whitespace-nowrap border-b-2 transition-all duration-300 ${
-                                            activeTab === tab.id 
-                                                ? 'border-[#017ae3] text-[#017ae3] font-semibold' 
+                                        className={`px-4 py-2 text-sm md:text-base whitespace-nowrap border-b-2 transition-all duration-300 ${activeTab === tab.id
+                                                ? 'border-[#017ae3] text-[#017ae3] font-semibold'
                                                 : 'border-transparent text-gray-600 hover:text-[#017ae3]'
-                                        }`}
+                                            }`}
                                     >
                                         {tab.label}
                                     </TabsTrigger>
@@ -220,7 +219,7 @@ export default function FixedDeparturePage({ params }: PageProps) {
                                 <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-[#017ae3] border-b pb-4">
                                     About This Package
                                 </h2>
-                                
+
                                 <p className="text-gray-600 mb-6">{destination.description}</p>
 
                                 {/* Tour Summary Box */}
@@ -291,7 +290,7 @@ export default function FixedDeparturePage({ params }: PageProps) {
                                     )}
                                     <p className="text-sm text-gray-500">per person</p>
                                 </div>
-                                <Button 
+                                <Button
                                     className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white font-bold py-3 rounded-lg transition-all duration-300"
                                     onClick={() => setIsBookingModalOpen(true)}
                                 >
@@ -310,7 +309,7 @@ export default function FixedDeparturePage({ params }: PageProps) {
                             <div className="space-y-6">
                                 {destination.itinerary.map((day, index) => (
                                     <div key={index} className="group">
-                                        <div 
+                                        <div
                                             className="flex items-center gap-4 cursor-pointer bg-gradient-to-r from-[#017ae3]/5 to-[#00f6ff]/5 p-4 rounded-lg hover:from-[#017ae3]/10 hover:to-[#00f6ff]/10 transition-colors"
                                             onClick={() => setOpenDay(openDay === index ? null : index)}
                                         >
@@ -321,26 +320,25 @@ export default function FixedDeparturePage({ params }: PageProps) {
                                                 <h3 className="text-lg font-semibold text-gray-800">{day.title}</h3>
                                             </div>
                                             <div className="flex-shrink-0">
-                                                <svg 
-                                                    className={`w-6 h-6 text-[#017ae3] transform transition-transform duration-300 ${
-                                                        openDay === index ? 'rotate-180' : ''
-                                                    }`}
-                                                    fill="none" 
-                                                    stroke="currentColor" 
+                                                <svg
+                                                    className={`w-6 h-6 text-[#017ae3] transform transition-transform duration-300 ${openDay === index ? 'rotate-180' : ''
+                                                        }`}
+                                                    fill="none"
+                                                    stroke="currentColor"
                                                     viewBox="0 0 24 24"
                                                 >
-                                                    <path 
-                                                        strokeLinecap="round" 
-                                                        strokeLinejoin="round" 
-                                                        strokeWidth={2} 
-                                                        d="M19 9l-7 7-7-7" 
+                                                    <path
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                        strokeWidth={2}
+                                                        d="M19 9l-7 7-7-7"
                                                     />
                                                 </svg>
                                             </div>
                                         </div>
                                         <AnimatePresence>
                                             {openDay === index && (
-                                                <motion.div 
+                                                <motion.div
                                                     initial={{ height: 0, opacity: 0 }}
                                                     animate={{ height: "auto", opacity: 1 }}
                                                     exit={{ height: 0, opacity: 0 }}
@@ -419,7 +417,7 @@ export default function FixedDeparturePage({ params }: PageProps) {
                     <>
                         <div className="mb-12">
                             <h2 className="text-2xl font-bold mb-6 text-[#017ae3]">European Sightseeing Highlights</h2>
-                            <DestinationSights 
+                            <DestinationSights
                                 sights={[
                                     {
                                         name: 'Swedish Market',
@@ -514,7 +512,7 @@ export default function FixedDeparturePage({ params }: PageProps) {
 
                         <div className="mb-12">
                             <h2 className="text-2xl font-bold mb-6 text-[#017ae3]">Vietnamese Highlights</h2>
-                            <LocalCuisine 
+                            <LocalCuisine
                                 dishes={[
                                     {
                                         name: 'BEAUTIFUL PAGODAS',
@@ -567,22 +565,22 @@ export default function FixedDeparturePage({ params }: PageProps) {
 
             <div className="">
                 <FixedDepartures />
-                <ChardhamYatra />   
-                <Destinations />        
+                <ChardhamYatra />
+                <Destinations />
                 <Trending />
-            <BannerCarousel />  
-            <Indonesia />
-            <Domestic />                
-            <ExoticDestinations />
-            <Gallery />
-            <Sponsors /> 
-            <ReviewsGlimpse />
+                <BannerCarousel />
+                <Indonesia />
+                <Domestic />
+                <ExoticDestinations />
+                <Gallery />
+                <Sponsors />
+                <ReviewsGlimpse />
             </div>
 
             {/* Floating CTA Button - Shows on scroll */}
             <AnimatePresence>
                 {showFloatingCTA && destination.amount && (
-                    <motion.div 
+                    <motion.div
                         className="fixed bottom-28 right-4 md:bottom-24 md:right-6 z-30"
                         initial={{ opacity: 0, scale: 0.5, y: 50 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -596,7 +594,7 @@ export default function FixedDeparturePage({ params }: PageProps) {
                             <span className="text-sm md:text-base font-semibold">Book Now</span>
                             <motion.span
                                 animate={{ x: [0, 5, 0] }}
-                                transition={{ 
+                                transition={{
                                     duration: 1.5,
                                     repeat: Infinity,
                                     ease: "easeInOut"
