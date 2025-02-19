@@ -24,10 +24,6 @@ import BannerCarousel from '../../components/valentine/page';
 import Indonesia from '@/app/indonesia/page';
 import { destinationData } from '../destinationData';
 import type { DestinationDetails } from '../destinationData';
-import ItineraryBuilder from '@/app/components/itinerary/ItineraryBuilder';
-import MatchingItineraries from '@/app/components/itinerary/MatchingItineraries';
-import type { ItineraryPreference } from '@/app/components/itinerary/ItineraryBuilder';
-import type { Itinerary } from '@/app/components/itinerary/MatchingItineraries';
 
 // Update the type guard function
 function hasVariants(data: DestinationDetails | null): data is DestinationDetails & { variants: { id: string; name: string; }[] } {
@@ -44,57 +40,6 @@ const getDestinationDetails = (destinationSlug: string): DestinationDetails => {
     return destination;
 };
 
-// Add this function to match itineraries based on preferences
-function matchItineraries(preferences: ItineraryPreference, destinationData: { [key: string]: DestinationDetails }): Itinerary[] {
-  const matches: Itinerary[] = [];
-  
-  Object.entries(destinationData).forEach(([key, data]) => {
-    // Calculate match percentage based on preferences
-    let matchScore = 0;
-    let totalCriteria = 0;
-
-    // Match destination
-    if (data.name.toLowerCase().includes(preferences.destination.toLowerCase())) {
-      matchScore += 1;
-    }
-    totalCriteria += 1;
-
-    // Match duration
-    if (data.duration && Math.abs(data.duration.days - preferences.duration) <= 2) {
-      matchScore += 1;
-    }
-    totalCriteria += 1;
-
-    // Match budget
-    if (data.price && Math.abs(data.price - preferences.budget) <= 20000) {
-      matchScore += 1;
-    }
-    totalCriteria += 1;
-
-    // Calculate match percentage
-    const matchPercentage = Math.round((matchScore / totalCriteria) * 100);
-
-    // Only include if match percentage is above 30%
-    if (matchPercentage >= 30) {
-      matches.push({
-        id: key,
-        title: data.name,
-        destination: data.name,
-        duration: data.duration?.days || 0,
-        price: data.price || 0,
-        travelStyle: preferences.travelStyle,
-        groupSize: preferences.groupSize,
-        month: preferences.travelMonth,
-        image: data.image,
-        matchPercentage
-      });
-    }
-  });
-
-  // Sort by match percentage
-  return matches.sort((a, b) => b.matchPercentage - a.matchPercentage);
-}
-
 export default function DestinationDetails() {
     const params = useParams();
     const { destination } = params;
@@ -109,7 +54,6 @@ export default function DestinationDetails() {
     const [activeTab, setActiveTab] = useState<string>('');
     // Inside your component, add this new state
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const [matchingItineraries, setMatchingItineraries] = useState<Itinerary[]>([]);
 
     useEffect(() => {
         try {
@@ -140,17 +84,6 @@ export default function DestinationDetails() {
 
         return () => clearInterval(interval);
     }, [destinationData?.galleryImages?.length]);
-    const handleItinerarySearch = async (preferences: ItineraryPreference) => {
-        if (!destinationData) return;
-        const destinationMap = { [destination as string]: destinationData };
-        const matches = matchItineraries(preferences, destinationMap);
-        setMatchingItineraries(matches);
-    };
-
-    const handleItinerarySelect = (itinerary: Itinerary) => {
-        // Navigate to the selected destination's page
-        window.location.href = `/destinations/${itinerary.id}`;
-    };
 
     if (error) {
         return <div>Error: {error}</div>;
