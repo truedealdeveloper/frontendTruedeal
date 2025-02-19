@@ -16,16 +16,18 @@ import Indonesia from "./indonesia/page";
 import ReviewsGlimpse from './components/homepage/ReviewsGlimpse'
 import NoCostEMIPage from "./no-cost-emi/page";
 import FixedDepartures from "./fixedDeparture/page";
-import BannerCarousel from "./components/valentine/page";
+// import BannerCarousel from "./components/valentine/page";
 // import ChardhamYatra from './chardhamYatra/page';
 // import SriLanka from './sriLanka/page';
+import ItineraryBuilder from "./components/itinerary/ItineraryBuilder";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <HeroSection />
-      <BannerCarousel />  
+      {/* <BannerCarousel />   */}
       <FixedDepartures />
+      <ItineraryBuilder />
       {/* <ChardhamYatra /> */}
       {/* <SriLanka /> */}
       <Destination />

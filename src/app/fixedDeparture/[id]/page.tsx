@@ -19,7 +19,7 @@ import FixedDepartures from '../page'
 // import BannerCarousel from '../../valentine/page';
 import BannerCarousel from '../../components/valentine/page';
 import Indonesia from '@/app/indonesia/page';
-import ChardhamYatra from '@/app/chardhamYatra/page';
+// import ChardhamYatra from '@/app/chardhamYatra/page';
 import Destinations from '../../components/homepage/Destinations';
 import Trending from '../../components/homepage/Trending';
 import Domestic from '../../components/homepage/Domestic';
@@ -565,7 +565,7 @@ export default function FixedDeparturePage({ params }: PageProps) {
 
             <div className="">
                 <FixedDepartures />
-                <ChardhamYatra />
+                {/* <ChardhamYatra /> */}
                 <Destinations />
                 <Trending />
                 <BannerCarousel />
