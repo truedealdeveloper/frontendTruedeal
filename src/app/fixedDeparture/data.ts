@@ -447,6 +447,179 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
             "/UGCImages/turkey/6.webp",
             
         ]
+    },
+    euroQuest: {
+        id: "euro-quest-15-days-grand-tour",
+        country: "Euro Quest",
+        days: 15,
+        nights: 14,
+        amount: 336000,
+        dateStart: "7, 21 May 2025",
+        dateEnd: "4 June 2025",
+        flightFrom: "Multiple",
+        description: "Experience Europe Like Never Before with TrueDeal! Our exclusive 14 Nights / 15 Days group departure tour blends Europe's iconic landmarks with hidden gems—from the Eiffel Tower in Paris to the breathtaking Swiss Alps and the charm of the Italian Riviera. Features centrally located accommodations, pure Jain food with a dedicated kitchen caravan, unique & relaxed itinerary, and 24/7 assistance & support.",
+        groupDetails: {
+            pax: "Group Departure",
+            rooms: "Double/Twin Sharing",
+            arrivalDate: "Departure 1: May 7, 2025 – May 21, 2025\nDeparture 2: May 21, 2025 – June 4, 2025",
+            duration: "14N15D Euro Quest",
+            costBasis: "Cost Based On Double Sharing (Special Discount: Save up to INR 10,000 if booked by February 28, 2025)"
+        },
+        hotelDetails: [
+            {
+                city: "Paris",
+                hotel: "Centrally Located Hotel",
+                roomType: "Double/Twin Sharing"
+            },
+            {
+                city: "Amsterdam",
+                hotel: "Centrally Located Hotel",
+                roomType: "Double/Twin Sharing"
+            },
+            {
+                city: "Black Forest",
+                hotel: "Centrally Located Hotel",
+                roomType: "Double/Twin Sharing"
+            },
+            {
+                city: "Switzerland",
+                hotel: "Centrally Located Hotel",
+                roomType: "Double/Twin Sharing"
+            },
+            {
+                city: "French Riviera",
+                hotel: "Centrally Located Hotel",
+                roomType: "Double/Twin Sharing"
+            },
+            {
+                city: "Milan",
+                hotel: "Centrally Located Hotel",
+                roomType: "Double/Twin Sharing"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Arrival in Paris",
+            "Day 2: Paris City Tour & Eiffel Tower",
+            "Day 3: Louvre & Versailles",
+            "Day 4: Bruges, Ghent & Amsterdam",
+            "Day 5: Keukenhof, Zaanse Schaans & Giethoorn",
+            "Day 6: Cologne & Black Forest",
+            "Day 7: Exploring Colmar, Strasbourg & Baden-Baden",
+            "Day 8: Rhine Falls & Switzerland Arrival",
+            "Day 9: Jungfraujoch & Swiss Alps",
+            "Day 10: Gstaad, Glacier 3000 & Montreux",
+            "Day 11: Aare Gorge, Stoosbahn & Lucerne",
+            "Day 12: Lugano & Lake Como",
+            "Day 13: French Riviera Highlights",
+            "Day 14: Milan Exploration",
+            "Day 15: Departure from Milan"
+        ],
+        inclusions: [
+            "Accommodations in centrally located hotels (double/twin sharing)",
+            "Daily breakfast, 14 lunches, and 14 dinners by our Indian chef",
+            "Sightseeing as per itinerary",
+            "Private coach transportation with 55-seater luxury bus",
+            "Services of an experienced tour manager",
+            "Mandatory gratuities for tour staff",
+            "Standard travel insurance (for passengers up to 60 years)",
+            "Schengen visa processing (single entry)",
+            "Bottled drinking water on the coach",
+            "Airfare in economy class"
+        ],
+        exclusions: [
+            "5% GST on the invoice",
+            "5% TCS on the package value (if applicable)",
+            "Any meals not mentioned in the itinerary",
+            "Security deposits at hotels",
+            "Sightseeing & experiences not specifically listed in inclusions",
+            "Personal expenses, laundry, minibar, or in-room charges"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Paris",
+                description: "Arrive in Paris & check-in at your hotel. Leisure time to explore Parisian streets or unwind."
+            },
+            {
+                day: 2,
+                title: "Paris City Tour & Eiffel Tower",
+                description: "Explore Champs-Élysées, Arc de Triomphe, and Seine River Cruise. Visit the iconic Eiffel Tower for panoramic city views."
+            },
+            {
+                day: 3,
+                title: "Louvre & Versailles",
+                description: "Visit the Louvre Museum (Mona Lisa & more) & explore the grandeur of Versailles Palace."
+            },
+            {
+                day: 4,
+                title: "Bruges, Ghent & Amsterdam",
+                description: "Travel through Bruges' medieval charm & Ghent's rich history. Amsterdam city tour & canal cruise."
+            },
+            {
+                day: 5,
+                title: "Keukenhof, Zaanse Schaans & Giethoorn",
+                description: "Witness the vibrant tulip gardens of Keukenhof. Visit Zaanse Schans' windmills & experience Giethoorn, the 'Venice of the North'."
+            },
+            {
+                day: 6,
+                title: "Cologne & Black Forest",
+                description: "Visit the Cologne Cathedral & head to Germany's Black Forest region."
+            },
+            {
+                day: 7,
+                title: "Exploring Colmar, Strasbourg & Baden-Baden",
+                description: "Discover Colmar's canals, Strasbourg's medieval charm, & Baden-Baden's luxury."
+            },
+            {
+                day: 8,
+                title: "Rhine Falls & Switzerland Arrival",
+                description: "Witness Lake Titisee, Rhine Falls, and stroll through Zurich & Interlaken."
+            },
+            {
+                day: 9,
+                title: "Jungfraujoch & Swiss Alps",
+                description: "Ascend to Mt. Jungfrau (Top of Europe), visit Lauterbrunnen & Grindelwald."
+            },
+            {
+                day: 10,
+                title: "Gstaad, Glacier 3000 & Montreux",
+                description: "Enjoy Gstaad's luxury, Glacier 3000 adventure, & the scenic Montreux lakeside."
+            },
+            {
+                day: 11,
+                title: "Aare Gorge, Stoosbahn & Lucerne",
+                description: "Visit Aare Gorge, ride the steepest funicular – Stoosbahn, & explore Lucerne."
+            },
+            {
+                day: 12,
+                title: "Lugano & Lake Como",
+                description: "Discover Lugano's waterfront charm, explore Lake Como, and head to Savona."
+            },
+            {
+                day: 13,
+                title: "French Riviera Highlights",
+                description: "Explore Nice, Cannes, St. Paul de Vence, and the glamorous Monaco – Monte Carlo."
+            },
+            {
+                day: 14,
+                title: "Milan Exploration",
+                description: "Visit Milan's Duomo, enjoy a short city tour & prepare for departure."
+            },
+            {
+                day: 15,
+                title: "Departure from Milan",
+                description: "Transfer to Milan Malpensa Airport (MXP) for your flight back home."
+            }
+        ],
+        images: [
+            "/UGCImages/europe/1.svg",
+            "/UGCImages/europe/2.svg",  
+            "/UGCImages/europe/3.svg",
+            "/UGCImages/europe/4.svg",
+            "/UGCImages/europe/5.svg",
+            "/UGCImages/europe/6.svg",
+            
+        ]
     }
 };
 
