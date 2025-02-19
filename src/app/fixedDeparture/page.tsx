@@ -117,14 +117,12 @@ export default function FixedDepartures() {
         currentPage, 
         totalPages, 
         onPrev, 
-        onNext, 
-        type 
+        onNext
     }: { 
         currentPage: number, 
         totalPages: number, 
         onPrev: () => void, 
-        onNext: () => void,
-        type: 'withFlight' | 'withoutFlight'
+        onNext: () => void
     }) => (
         <>
             {/* Desktop Navigation */}
@@ -194,7 +192,6 @@ export default function FixedDepartures() {
                         totalPages={totalWithFlightPages}
                         onPrev={() => handlePrevPage('withFlight')}
                         onNext={() => handleNextPage('withFlight')}
-                        type="withFlight"
                     />
                     
                     <div className="overflow-x-auto -mx-4 px-4">
@@ -228,7 +225,6 @@ export default function FixedDepartures() {
                         totalPages={totalWithoutFlightPages}
                         onPrev={() => handlePrevPage('withoutFlight')}
                         onNext={() => handleNextPage('withoutFlight')}
-                        type="withoutFlight"
                     />
                     
                     <div className="overflow-x-auto -mx-4 px-4">
