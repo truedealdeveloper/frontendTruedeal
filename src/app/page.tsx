@@ -19,7 +19,7 @@ import FixedDepartures from "./fixedDeparture/page";
 // import BannerCarousel from "./components/valentine/page";
 // import ChardhamYatra from './chardhamYatra/page';
 // import SriLanka from './sriLanka/page';
-import ItineraryBuilder from "./components/itinerary/ItineraryBuilder";
+
 
 export default function Home() {
   return (
@@ -27,7 +27,7 @@ export default function Home() {
       <HeroSection />
       {/* <BannerCarousel />   */}
       <FixedDepartures />
-      <ItineraryBuilder />
+      
       {/* <ChardhamYatra /> */}
       {/* <SriLanka /> */}
       <Destination />
