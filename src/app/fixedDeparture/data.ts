@@ -620,6 +620,487 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
             "/UGCImages/europe/6.svg",
             
         ]
+    },
+    amTour: {
+        id: "russia-8-days-aurora-moscow-tour",
+        country: "Russia",
+        days: 8,
+        nights: 7,
+        amount: 149000,
+        dateStart: "Contact for dates",
+        dateEnd: "Contact for dates",
+        flightFrom: "Delhi",
+        description: "Experience the magical blend of Russian culture and natural wonders with our AM Tour. From the historic streets of Saint Petersburg to the mesmerizing Aurora lights in Murmansk, and the vibrant energy of Moscow, this tour offers an unforgettable journey through Russia's most captivating destinations.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Double Sharing",
+            arrivalDate: "Multiple dates available",
+            duration: "7N8D Russia AM Tour",
+            costBasis: "Cost Based On Double Sharing"
+        },
+        hotelDetails: [
+            {
+                city: "Saint Petersburg",
+                hotel: "4-5 Star Hotel",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Murmansk",
+                hotel: "4 Star Hotel",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Moscow",
+                hotel: "Cosmos Radisson Collection SVO 5*",
+                roomType: "Standard Room"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Arrival in Saint Petersburg - City Orientation",
+            "Day 2: Saint Petersburg Exploration",
+            "Day 3: Saint Petersburg – Murmansk",
+            "Day 4: Murmansk – Teriberka Adventure",
+            "Day 5: Murmansk – Saami Village & Reindeer Sledding",
+            "Day 6: Murmansk – Moscow City Tour",
+            "Day 7: Moscow – Space & Science Experience",
+            "Day 8: Moscow – Departure"
+        ],
+        inclusions: [
+            "All Flights ex-Delhi",
+            "5-4 stars Double Accommodation",
+            "All Meals",
+            "Daily Sightseeing & Activities",
+            "Comfortable Transfers",
+            "Professional Guide Services",
+            "Entry Tickets as per itinerary"
+        ],
+        exclusions: [
+            "Personal Expenses",
+            "Travel Insurance",
+            "Optional Activities",
+            "Any additional services not mentioned in inclusions"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Saint Petersburg",
+                description: "14:10 Arrival at the Airport. Transfer to hotel. Orientation tour of St. Petersburg and Kazan Cathedral Visit. Check-in. Transport & Guide: Transfer + 4 HRS. Meals: L, D"
+            },
+            {
+                day: 2,
+                title: "Saint Petersburg Exploration",
+                description: "Saint-Petersburg City Tour (Awarded World Travel Awards Prize). Visit Peter and Paul Fortress – Historical heart of St. Petersburg, and Hermitage Museum – One of the world's largest art museums. Transport & Guide: 10 HRS. Meals: L"
+            },
+            {
+                day: 3,
+                title: "Saint Petersburg – Murmansk",
+                description: "Check out, transfer to Airport. 09:10-11:10 Flight to Murmansk. Transfer to Hotel. Visit Arctic Home Village, Russian Banya, and enjoy dinner with bonfire. Transport & Guide: Transfers + 4 HRS. Meals: L, D"
+            },
+            {
+                day: 4,
+                title: "Murmansk – Teriberka Adventure",
+                description: "Trip to Teriberka with breathtaking views of the Arctic Ocean. Visit cemetery of wooden ships, take snowmobile sleigh ride. Marvel at frozen waterfall and boulder beach. 22:00-02:00 Aurora Hunting with professional photographer. Transport & Guide: 12 HRS. Meals: L, D"
+            },
+            {
+                day: 5,
+                title: "Murmansk – Saami Village & Reindeer Sledding",
+                description: "Murmansk City Tour. Visit Saami Village to explore traditional culture, feed and photograph wildlife, enjoy reindeer sledge ride, and photo session in traditional Saami clothing. Transfer to Airport. Transport & Guide: 12 HRS. Meals: L, D"
+            },
+            {
+                day: 6,
+                title: "Murmansk – Moscow",
+                description: "02:00 AM Flight to Moscow. City Tour including Red Square, Gum Mall, Alexandrovsky Garden, Cathedral of Christ the Saviour, Park Zaradye with Sky Bridge, and Metro Tour. Transport & Guide: Transfer + 6 HRS. Meals: L"
+            },
+            {
+                day: 7,
+                title: "Moscow – Space & Science Experience",
+                description: "VDNH Tour with Cosmonaut Museum. Transfer to Cosmos Radisson Collection SVO 5*. 20:00 Dinner at hotel with SVO Airport Runway View. Transport & Guide: 8 HRS. Meals: L, D"
+            },
+            {
+                day: 8,
+                title: "Moscow – Departure",
+                description: "Morning relaxation at hotel's SPA, Banya & Hamam. Destination Presentation in hotel's Conference Hall. Transfer to Airport. 18:00 Flight to Delhi. Transport: Only transfer. Meals: L"
+            }
+        ],
+        images: [
+            "/UGCImages/Images4/russia/horizontal/1.webp",
+            "/UGCImages/Images4/russia/horizontal/2.webp",
+            "/UGCImages/Images4/russia/horizontal/3.webp",
+            "/UGCImages/Images4/russia/horizontal/4.webp",
+            "/UGCImages/Images4/russia/horizontal/5.webp",
+            "/UGCImages/Images4/russia/horizontal/6.webp"
+        ]
+    },
+    japanTour: {
+        id: "japan-10-days-cultural-tour",
+        country: "Japan",
+        days: 10,
+        nights: 9,
+        amount: 470000,
+        dateStart: "Contact for dates",
+        dateEnd: "Contact for dates",
+        flightFrom: "Multiple",
+        description: "Experience the perfect blend of tradition and modernity with our Japan Fixed Departure Tour! From the towering skyscrapers of Tokyo to the serene temples of Kyoto, this trip is designed to give you an authentic Japanese experience.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Standard/Twin Sharing",
+            arrivalDate: "Multiple dates available",
+            duration: "9N10D Japan Cultural Tour",
+            costBasis: "Cost Based On Twin Sharing"
+        },
+        hotelDetails: [
+            {
+                city: "Tokyo",
+                hotel: "4 Star Hotel",
+                roomType: "Standard/Twin Room"
+            },
+            {
+                city: "Hiroshima",
+                hotel: "4 Star Hotel",
+                roomType: "Standard/Twin Room"
+            },
+            {
+                city: "Osaka",
+                hotel: "4 Star Hotel",
+                roomType: "Standard/Twin Room"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Fly to Tokyo",
+            "Day 2: Tokyo - Sky Tree, Ueno Park & Sensoji Temple",
+            "Day 3: Kawaguchiko Cruise - Lake Kawaguchiko & Oshino Hakkai",
+            "Day 4: Tokyo - TeamLab Planets, Odaiba & Shinkansen Nozomi",
+            "Day 5: Hiroshima - Peace Park & Atomic Bomb Dome",
+            "Day 6: Osaka - Tea Ceremony with Kimono Wearing & Bullet Train",
+            "Day 7: Kyoto - Fushimi Inari, Fushimi Sake & Arashiyama Bamboo Grove",
+            "Day 8: Kyoto - Kinkakuji Temple, Nijo Castle & Kiyomizu Temple",
+            "Day 9: Nara Park, Todaiji Temple, Osaka Castle & Dotonbori Shopping",
+            "Day 10: Departure from Osaka"
+        ],
+        inclusions: [
+            "International & Domestic Flights (Economy Class)",
+            "9 Nights Hotel Accommodation with Standard/Twin Rooms",
+            "Daily Breakfast, Lunch & Dinner",
+            "All Sightseeing as per Itinerary with Entry Tickets",
+            "Bullet Train Experience",
+            "Private Coach for Transfers",
+            "Tea Ceremony with Kimono Wearing Experience",
+            "English-Speaking Tour Guide"
+        ],
+        exclusions: [
+            "5% GST & TCS (as per Government Policy)",
+            "Visa & Travel Insurance",
+            "Any Personal Expenses (Shopping, Beverages, etc.)",
+            "Tips & Porterage Charges",
+            "Any Additional Activities Not Mentioned in Inclusions"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Fly to Tokyo",
+                description: "Board an international flight to Tokyo. Arrival at Narita Airport. Transfer by coach for dinner. Check-in at the hotel and relax. Overnight stay in Tokyo."
+            },
+            {
+                day: 2,
+                title: "Tokyo - Sky Tree, Ueno Park & Sensoji Temple",
+                description: "Breakfast at the hotel. Visit Sky Tree, Ueno Park, and Sensoji Temple. Lunch at a local restaurant. Explore Nakamise Shopping Street and Shibuya Crossing. Dinner and return to the hotel. Overnight stay in Tokyo."
+            },
+            {
+                day: 3,
+                title: "Kawaguchiko Cruise - Lake Kawaguchiko & Oshino Hakkai",
+                description: "Full-day tour to Lake Kawaguchiko & Oshino Hakkai. Enjoy a cruise at Lake Kawaguchiko. Lunch at a local restaurant. Return to Tokyo for dinner. Overnight stay in Tokyo."
+            },
+            {
+                day: 4,
+                title: "Tokyo - TeamLab Planets, Odaiba & Shinkansen Nozomi",
+                description: "Breakfast and hotel check-out. Visit TeamLab Planets & Odaiba. Experience Shinkansen Nozomi Bullet Train to Hiroshima. Dinner and hotel check-in. Overnight stay in Hiroshima."
+            },
+            {
+                day: 5,
+                title: "Hiroshima - Peace Park & Atomic Bomb Dome",
+                description: "Visit Hiroshima Peace Memorial Park. Explore Atomic Bomb Dome & Museum. Visit Miyajima Island & Itsukushima Shrine. Dinner and overnight stay in Hiroshima."
+            },
+            {
+                day: 6,
+                title: "Osaka - Tea Ceremony with Kimono Wearing & Bullet Train",
+                description: "Breakfast and depart for Osaka via Shinkansen Bullet Train. Traditional Japanese Tea Ceremony with Kimono Experience. Dinner and overnight stay in Osaka."
+            },
+            {
+                day: 7,
+                title: "Kyoto - Fushimi Inari, Fushimi Sake & Arashiyama Bamboo Grove",
+                description: "Visit Fushimi Inari Shrine and Fushimi Sake Brewery. Lunch at a local restaurant. Explore Arashiyama Bamboo Grove. Return to Osaka for dinner and overnight stay."
+            },
+            {
+                day: 8,
+                title: "Kyoto - Kinkakuji Temple, Nijo Castle & Kiyomizu Temple",
+                description: "Visit Kinkakuji Temple, Nijo Castle & Kiyomizu Temple. Return to Osaka for overnight stay."
+            },
+            {
+                day: 9,
+                title: "Nara Park, Todaiji Temple, Osaka Castle & Dotonbori Shopping",
+                description: "Visit Nara Park, Todaiji Temple, and Osaka Castle. Shopping at Dotonbori Street. Return to hotel for overnight stay in Osaka."
+            },
+            {
+                day: 10,
+                title: "Departure from Osaka",
+                description: "Breakfast and transfer to Osaka Airport."
+            }
+        ],
+        images: [
+            "/UGCImages/Images4/japan/horizontal/1.webp",
+            "/UGCImages/Images4/japan/horizontal/2.webp",
+            "/UGCImages/Images4/japan/horizontal/3.webp",
+            "/UGCImages/Images4/japan/horizontal/4.webp",
+            "/UGCImages/Images4/japan/horizontal/5.webp",
+            "/UGCImages/Images4/japan/horizontal/6.webp"
+        ]
+    },
+    thailandTour: {
+        id: "thailand-8-days-adventure-tour",
+        country: "Thailand",
+        days: 8,
+        nights: 7,
+        amount: 89999,
+        dateStart: "10 May 2025",
+        dateEnd: "17 May 2025",
+        flightFrom: "Mumbai",
+        description: "Experience the best of Thailand with our meticulously planned 8-day adventure tour. From the pristine beaches of Phuket and Krabi to the vibrant city life of Bangkok, this tour offers a perfect blend of relaxation, adventure, and cultural experiences.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Double/Twin Sharing",
+            arrivalDate: "10 May 2025",
+            duration: "7N8D Thailand Tour",
+            costBasis: "Cost Based On Double Sharing"
+        },
+        hotelDetails: [
+            {
+                city: "Phuket",
+                hotel: "4 Star Premium Hotel",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Krabi",
+                hotel: "4 Star Premium Hotel",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Bangkok",
+                hotel: "4 Star Premium Hotel",
+                roomType: "Standard Room"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Arrival in Phuket",
+            "Day 2: Phi Phi Island Tour",
+            "Day 3: Full-Day Adventure Tour in Phuket",
+            "Day 4: Transfer from Phuket to Krabi",
+            "Day 5: Seven Island Tour in Krabi",
+            "Day 6: Transfer from Krabi to Bangkok with Temple Tour",
+            "Day 7: Safari World & Marine Park, Bangkok",
+            "Day 8: Departure from Bangkok"
+        ],
+        inclusions: [
+            "Return Flight Tickets from Mumbai (20+7 KG luggage)",
+            "7 Nights Accommodation in 4-star hotels with premium locations",
+            "7 Buffet Breakfasts, 1 Dinner, 4 Indian Buffet Lunches",
+            "All major excursions: Phi Phi Island, 7-Island Tour, River Rafting, ATV Ride",
+            "English-speaking guide and AC VIP coach for major transfers",
+            "Daily pick-up & drop service for dinners (Fixed time and location)",
+            "All entrance fees for mentioned activities"
+        ],
+        exclusions: [
+            "International Visa Fees (if applicable)",
+            "Personal Expenses (phone calls, laundry, souvenirs)",
+            "Tips and Gratuities",
+            "Travel Insurance",
+            "Meals and Drinks not mentioned in the itinerary",
+            "Optional Activities/Excursions",
+            "Entry Fees for attractions not mentioned",
+            "Personal Photography and Video Fees",
+            "International or Domestic Airfare Changes"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Phuket",
+                description: "Meet our airport representative at Phuket Airport. Transfer to hotel. Enjoy Indian buffet lunch. Rest of day at leisure for local exploration or relaxation. Overnight in Phuket."
+            },
+            {
+                day: 2,
+                title: "Phi Phi Island Tour",
+                description: "After breakfast, transfer to pier for Phi Phi Islands speedboat tour. Enjoy snorkeling, swimming, and beach time. Indian buffet lunch included. Return to hotel (07:30-07:45 AM pickup, 05:30-06:00 PM drop-off). Overnight in Phuket."
+            },
+            {
+                day: 3,
+                title: "Full-Day Adventure Tour in Phuket",
+                description: "Action-packed day including cave exploration at Wat Suwan Khuha, 5km river rafting, Thai lunch, ziplining, ATV riding, and waterfall trekking (07:30 AM - 05:30 PM). Overnight in Phuket."
+            },
+            {
+                day: 4,
+                title: "Transfer from Phuket to Krabi",
+                description: "Road transfer to Krabi with stops at Wat Chalong Temple. Optional visits to Tiger Kingdom and Elephant Park. Hotel check-in in Krabi. Overnight in Krabi."
+            },
+            {
+                day: 5,
+                title: "Seven Island Tour in Krabi",
+                description: "Full-day island hopping tour visiting Tup, Mohr, Chicken, Poda, and Taming Islands. Snorkeling opportunities, dinner at Railay Beach, and bioluminescent plankton viewing. Overnight in Krabi."
+            },
+            {
+                day: 6,
+                title: "Transfer from Krabi to Bangkok with Temple Tour",
+                description: "Flight to Bangkok. Temple tour including Wat Traimit and Mini Reclining Buddha Temple. Free evening. Overnight in Bangkok."
+            },
+            {
+                day: 7,
+                title: "Safari World & Marine Park, Bangkok",
+                description: "Full day at Safari World and Marine Park enjoying various shows including Sea Lion, Dolphin, and Cowboy stunt shows. Lunch included. Overnight in Bangkok."
+            },
+            {
+                day: 8,
+                title: "Departure from Bangkok",
+                description: "Breakfast at hotel. Airport transfer for return flight."
+            }
+        ],
+        images: [
+            "/UGCImages/Images4/thailand/horizontal/1.webp",
+            "/UGCImages/Images4/thailand/horizontal/2.webp",
+            "/UGCImages/Images4/thailand/horizontal/3.webp",
+            "/UGCImages/Images4/thailand/horizontal/4.webp",
+            "/UGCImages/Images4/thailand/horizontal/5.webp",
+            "/UGCImages/Images4/thailand/horizontal/6.webp"
+        ]
+    },
+    thailandDeluxeTour: {
+        id: "thailand-11-days-deluxe-tour",
+        country: "Thailand",
+        days: 11,
+        nights: 10,
+        amount: 99999,
+        dateStart: "6 May 2025",
+        dateEnd: "18 May 2025",
+        flightFrom: "Mumbai",
+        description: "Experience the ultimate Thailand adventure with our comprehensive 11-day tour covering Phuket, Krabi, Pattaya, and Bangkok. From pristine islands to cultural landmarks, this tour offers the perfect blend of relaxation, adventure, and urban exploration.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Double Sharing",
+            arrivalDate: "6 May 2025",
+            duration: "10N11D Thailand Deluxe Tour",
+            costBasis: "Cost Based On Double Sharing"
+        },
+        hotelDetails: [
+            {
+                city: "Phuket",
+                hotel: "4 Star Premium Hotel",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Krabi",
+                hotel: "4 Star Premium Hotel",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Pattaya",
+                hotel: "4 Star Premium Hotel",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Bangkok",
+                hotel: "4 Star Premium Hotel",
+                roomType: "Standard Room"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Arrival in Phuket (06-05-2025)",
+            "Day 2: Phi Phi Island Tour (07-05-2025)",
+            "Day 3-4: Phuket Activities",
+            "Day 5: 7 Island Tour (10-05-2025)",
+            "Day 6: Krabi to Pattaya via Bangkok (11-05-2025)",
+            "Day 7: Coral Island Tour (12-05-2025)",
+            "Day 8: Pattaya Floating Market & City Tour (13-05-2025)",
+            "Day 9: Pattaya to Bangkok with Temple Tour (14-05-2025)",
+            "Day 10: Safari World & Marine Park (15-05-2025)",
+            "Day 11: Departure (18-05-2025)"
+        ],
+        inclusions: [
+            "Round-trip flight from Mumbai (20+7 KG baggage)",
+            "10 Nights accommodation in 4-star hotels (3N Phuket, 2N Krabi, 3N Pattaya, 2N Bangkok)",
+            "Daily buffet breakfast at hotels",
+            "1 dinner and 5 lunches included",
+            "Phi Phi Island tour by speedboat with Indian buffet lunch",
+            "River rafting, ATV ride, elephant ride, and waterfall visit",
+            "7 Island tour with bioluminescent plankton experience",
+            "Alcazar Cabaret Show (standard seat)",
+            "Coral Island tour by speedboat",
+            "Pattaya Floating Market entry and boat ride",
+            "Bangkok Temple Tour",
+            "Safari World & Marine Park with Indian lunch",
+            "English-speaking guide",
+            "All transportation by AC VIP coach/van",
+            "Daily dinner transfer service (fixed time)"
+        ],
+        exclusions: [
+            "Visa fees",
+            "Meals not mentioned in itinerary",
+            "Tips and personal expenses",
+            "Optional activities entrance fees",
+            "Travel insurance",
+            "GST & TCS charges"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Phuket (06-05-2025)",
+                description: "Upon arrival at Phuket Airport, meet our representative. Transfer to hotel and enjoy Indian lunch. Rest of day at leisure. Overnight in Phuket."
+            },
+            {
+                day: 2,
+                title: "Phi Phi Island Tour (07-05-2025)",
+                description: "Speedboat tour to Phi Phi Islands. Enjoy snorkeling, swimming, and beach time. Lunch at beachside hotel. Return to Phuket (Pick-up: 07:30-07:45 AM, Drop-off: 05:30-06:00 PM)."
+            },
+            {
+                day: 5,
+                title: "7 Island Tour (10-05-2025)",
+                description: "Full-day island hopping tour visiting Tup, Mohr, Chicken, Poda, and Taming Islands. Snorkeling, sunset at Phranang Cave Beach, dinner at Railay Beach, and bioluminescent plankton viewing."
+            },
+            {
+                day: 6,
+                title: "Krabi to Pattaya via Bangkok (11-05-2025)",
+                description: "Flight to Bangkok and transfer to Pattaya. Evening Alcazar Cabaret Show. Overnight in Pattaya."
+            },
+            {
+                day: 7,
+                title: "Coral Island Tour (12-05-2025)",
+                description: "Speedboat to Coral Island (Koh Larn). Beach activities and optional water sports. Indian lunch in Pattaya. Pick-up at 09:30 AM."
+            },
+            {
+                day: 8,
+                title: "Pattaya Floating Market & City Tour (13-05-2025)",
+                description: "Visit Floating Market, Pattaya Viewpoint, Big Buddha, Gems Gallery, and Tiger Park (optional). Afternoon at leisure."
+            },
+            {
+                day: 9,
+                title: "Pattaya to Bangkok with Temple Tour (14-05-2025)",
+                description: "Transfer to Bangkok with temple visits including Wat Traimit and Mini Reclining Buddha Temple. Overnight in Bangkok."
+            },
+            {
+                day: 10,
+                title: "Safari World & Marine Park (15-05-2025)",
+                description: "Full day at Safari World enjoying various shows. Indian lunch included. Overnight in Bangkok."
+            },
+            {
+                day: 11,
+                title: "Departure (18-05-2025)",
+                description: "Breakfast and airport transfer for return flight."
+            }
+        ],
+        images: [
+            "/UGCImages/Images4/thailand/deluxe/1.webp",
+            "/UGCImages/Images4/thailand/deluxe/2.webp",
+            "/UGCImages/Images4/thailand/deluxe/3.webp",
+            "/UGCImages/Images4/thailand/deluxe/4.webp",
+            "/UGCImages/Images4/thailand/deluxe/5.webp",
+            "/UGCImages/Images4/thailand/deluxe/6.webp"
+        ]
     }
 };
 
