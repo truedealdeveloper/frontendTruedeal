@@ -1,5 +1,3 @@
-'use client';
-
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/common/Navbar";
@@ -7,12 +5,8 @@ import Footer from "./components/common/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Chatbot } from "./components/chatbot/Chatbot";
-import Script from 'next/script'
-import { GA_MEASUREMENT_ID } from '@/lib/gtag'
 import { Analytics } from "@vercel/analytics/react"
-import GoogleAnalytics from '../components/GoogleAnalytics';
 import { Poppins } from 'next/font/google';
-import {GoogleTagManager} from '@next/third-parties/google'
 import AnalyticsScripts from '@/components/Analytics';
 
 const poppins = Poppins({
@@ -77,37 +71,8 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <head>
-          <GoogleTagManager gtmId="GTM-NTPTHZPG" />
-          <Script
-            strategy="worker"
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          />
-          <Script
-            id="google-analytics"
-            strategy="worker"
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${GA_MEASUREMENT_ID}');
-              `,
-            }}
-          />
-        </head>
-        <body
-          className={poppins.className}
-        >
-          <noscript>
-            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NTPTHZPG"
-              height="0"
-              width="0"
-              style={{ display: 'none', visibility: 'hidden' }}
-            />
-          </noscript>
+        <body className={poppins.className}>
           <AnalyticsScripts />
-          <GoogleAnalytics />
           <Navbar />
           {children}
           <SpeedInsights />
