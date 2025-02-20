@@ -6,9 +6,27 @@ import { InstagramIcon } from "../icons/social/Instagram"
 import { FacebookIcon } from "../icons/social/Facebook"
 import { TwitterIcon } from "../icons/social/Twitter"
 import { LinkedInIcon } from "../icons/social/LinkedIn"
-import { Phone, Mail, MapPin } from "lucide-react"
+import { Phone, Mail, MapPin, Plane, Compass, Globe, Map, Cloud, Sun, Palmtree } from "lucide-react"
 import { YouTubeIcon } from "../icons/social/YouTube"
 import { motion } from "framer-motion"
+import { ReactNode } from 'react'
+
+const FloatingElement = ({ children, className = "" }: { children: ReactNode, className?: string }) => (
+    <motion.div
+        animate={{ 
+            y: [0, -10, 0],
+            x: [0, 5, 0]
+        }}
+        transition={{ 
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut"
+        }}
+        className={className}
+    >
+        {children}
+    </motion.div>
+);
 
 export default function Component() {
     return (
@@ -18,8 +36,39 @@ export default function Component() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="py-12 px-4 bg-gradient-to-br from-[#017ae3] to-[#00f6ff]"
+                className="py-12 px-4 bg-gradient-to-br from-[#017ae3] to-[#00f6ff] relative overflow-hidden"
             >
+                {/* Add floating clouds */}
+                <FloatingElement className="absolute left-[10%] top-10 text-white/10">
+                    <Cloud size={40} />
+                </FloatingElement>
+                <FloatingElement className="absolute right-[20%] top-20 text-white/10">
+                    <Cloud size={30} />
+                </FloatingElement>
+                
+                {/* Add animated plane trail */}
+                <motion.div
+                    animate={{ 
+                        x: [-100, window.innerWidth + 100],
+                        y: [0, -50, 0]
+                    }}
+                    transition={{ 
+                        duration: 20,
+                        repeat: Infinity,
+                        ease: "linear"
+                    }}
+                    className="absolute top-1/3 text-white/20"
+                >
+                    <div className="relative">
+                        <Plane size={48} className="rotate-12" />
+                        <motion.div 
+                            className="absolute top-1/2 right-full w-20 h-0.5 bg-gradient-to-r from-white/0 to-white/20"
+                            animate={{ width: [0, 80] }}
+                            transition={{ duration: 0.8, repeat: Infinity }}
+                        />
+                    </div>
+                </motion.div>
+
                 <div className="max-w-6xl mx-auto">
                     <h2 className="text-3xl font-bold text-center text-white mb-8">
                         Get in Touch
@@ -93,13 +142,48 @@ export default function Component() {
                 </div>
             </motion.section>
 
-            <footer className="bg-white py-12 px-4 border-t">
+            <footer className="bg-white py-12 px-4 border-t relative">
+                {/* Enhanced decorative background */}
+                <div className="absolute inset-0 opacity-5 pointer-events-none">
+                    <div className="w-full h-full bg-[url('/Assets/world-map.png')] bg-no-repeat bg-center bg-contain" />
+                    <FloatingElement className="absolute bottom-10 right-10">
+                        <Palmtree size={100} className="text-[#017ae3]/10" />
+                    </FloatingElement>
+                    <FloatingElement className="absolute top-20 left-10">
+                        <Sun size={80} className="text-[#017ae3]/10" />
+                    </FloatingElement>
+                </div>
+
                 <div className="max-w-7xl mx-auto">
                     {/* Blog Promotion Section */}
                     <motion.div 
                         whileHover={{ scale: 1.01 }}
-                        className="mb-12 flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-[#017ae3] to-[#00f6ff] p-8 rounded-2xl shadow-lg"
+                        className="mb-12 flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-[#017ae3] to-[#00f6ff] p-8 rounded-2xl shadow-lg relative overflow-hidden"
                     >
+                        {/* Add animated compass */}
+                        <motion.div
+                            animate={{ rotate: 360 }}
+                            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                            className="absolute left-4 bottom-4 text-white/20"
+                        >
+                            <Compass size={60} />
+                        </motion.div>
+
+                        {/* Add floating globe with pulsing effect */}
+                        <motion.div
+                            animate={{ 
+                                scale: [1, 1.1, 1],
+                                rotate: 360
+                            }}
+                            transition={{ 
+                                scale: { duration: 2, repeat: Infinity },
+                                rotate: { duration: 20, repeat: Infinity, ease: "linear" }
+                            }}
+                            className="absolute right-4 top-4 text-white/20"
+                        >
+                            <Globe size={80} />
+                        </motion.div>
+
                         <div className="mb-6 md:mb-0 text-white md:max-w-xl">
                             <h2 className="text-2xl font-bold mb-3">Explore Our Travel Blog</h2>
                             <p className="text-white/90 mb-4">
@@ -202,11 +286,14 @@ export default function Component() {
 
                         {/* Quick Links */}
                         <div>
-                            <h3 className="font-bold text-[#017ae3] mb-4 text-lg">Quick Links</h3>
+                            <h3 className="font-bold text-[#017ae3] mb-4 text-lg flex items-center gap-2">
+                                <Map className="w-5 h-5" />
+                                Quick Links
+                            </h3>
                             <ul className="space-y-2">
                                 {[
                                     { name: "Home", path: "/" },
-                                    { name: "About", path: "/about" },
+                                    { name: "About", path: "/about-us" },
                                     { name: "Destination Package", path: "/destinationpackage" },
                                     { name: "Trending Package", path: "/trendingpackage" },
                                     { name: "Contact Us", path: "/contact-us" },
@@ -218,14 +305,22 @@ export default function Component() {
                                 ].map((link) => (
                                     <motion.li 
                                         key={link.name}
-                                        whileHover={{ x: 5 }}
-                                        transition={{ type: "spring", stiffness: 300 }}
+                                        whileHover={{ 
+                                            x: 5,
+                                            backgroundColor: "rgba(1, 122, 227, 0.05)"
+                                        }}
+                                        className="rounded-lg px-2 py-1"
                                     >
                                         <Link 
                                             href={link.path} 
                                             className="text-gray-700 hover:text-[#017ae3] text-sm transition-all duration-200 flex items-center gap-2"
                                         >
-                                            <span>→</span>
+                                            <motion.span
+                                                animate={{ x: [0, 3, 0] }}
+                                                transition={{ duration: 1.5, repeat: Infinity }}
+                                            >
+                                                →
+                                            </motion.span>
                                             {link.name}
                                         </Link>
                                     </motion.li>
@@ -267,6 +362,23 @@ export default function Component() {
                         </div>
                     </div>
                 </div>
+
+                {/* Enhanced travel quote section */}
+                <motion.div 
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    className="mt-12 text-center relative"
+                >
+                    <motion.div
+                        animate={{ rotate: [0, 5, 0] }}
+                        transition={{ duration: 4, repeat: Infinity }}
+                        className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-[#017ae3]/20"
+                    >
+                        <Plane size={40} />
+                    </motion.div>
+                    <p className="text-gray-600 italic text-lg">"The world is a book and those who do not travel read only one page."</p>
+                    <p className="text-sm text-gray-500 mt-2">- Saint Augustine</p>
+                </motion.div>
             </footer>
         </>
     )

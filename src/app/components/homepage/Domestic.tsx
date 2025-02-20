@@ -19,12 +19,6 @@ const destinations: Destination[] = [
         slug: 'amritsar_to_shimla'
     },
     {
-        name: 'Bhutan',
-        price: '12,999',
-        image: '/UGCImages/HD IMAGES/Bhutan/vertical/4.png',
-        slug: 'bhutan'
-    },
-    {
         name: 'Kashmir',
         price: '24,499',
         image: '/UGCImages/Hd images2/kashmir/vertical/3.webp',
