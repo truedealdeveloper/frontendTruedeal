@@ -11,6 +11,8 @@ import { Analytics } from "@vercel/analytics/react"
 import GoogleAnalytics from '../components/GoogleAnalytics';
 import { Poppins } from 'next/font/google';
 import {GoogleTagManager} from '@next/third-parties/google'
+import AnalyticsScripts from '@/components/Analytics';
+'use client';
 
 const poppins = Poppins({
     weight: ['400', '500', '600', '700'],
@@ -77,12 +79,12 @@ export default function RootLayout({
         <head>
           <GoogleTagManager gtmId="GTM-NTPTHZPG" />
           <Script
-            strategy="afterInteractive"
+            strategy="worker"
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           />
           <Script
             id="google-analytics"
-            strategy="afterInteractive"
+            strategy="worker"
             dangerouslySetInnerHTML={{
               __html: `
                 window.dataLayer = window.dataLayer || [];
@@ -103,6 +105,7 @@ export default function RootLayout({
               style={{ display: 'none', visibility: 'hidden' }}
             />
           </noscript>
+          <AnalyticsScripts />
           <GoogleAnalytics />
           <Navbar />
           {children}
