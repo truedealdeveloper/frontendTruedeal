@@ -2479,7 +2479,8 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         packageType: "land-only",
         visaRequired: true,
         minGroupSize: 2
-    }
+    },
+    
 };
 
 export function isFixedDeparture(destination: FixedDeparture | DestinationWithoutFlight): destination is FixedDeparture {

@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { FaEnvelope } from "react-icons/fa"
 import { blogPosts } from "./blogData"
 
 // Helper function to generate metadata based on current path
