@@ -10,6 +10,7 @@ import { GA_MEASUREMENT_ID } from '@/lib/gtag'
 import { Analytics } from "@vercel/analytics/react"
 import GoogleAnalytics from '../components/GoogleAnalytics';
 import { Poppins } from 'next/font/google';
+import {GoogleTagManager} from '@next/third-parties/google'
 
 const poppins = Poppins({
     weight: ['400', '500', '600', '700'],
@@ -74,6 +75,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <head>
+          <GoogleTagManager gtmId="GTM-NTPTHZPG" />
           <Script
             strategy="afterInteractive"
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
@@ -94,6 +96,13 @@ export default function RootLayout({
         <body
           className={poppins.className}
         >
+          <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NTPTHZPG"
+              height="0"
+              width="0"
+              style={{ display: 'none', visibility: 'hidden' }}
+            />
+          </noscript>
           <GoogleAnalytics />
           <Navbar />
           {children}
