@@ -377,7 +377,7 @@ export default function Component() {
                         <Plane size={40} />
                     </motion.div>
                     <p className="text-gray-600 italic text-lg">The world is a book and those who do not travel read only one page.</p>
-                    <p className="text-sm text-gray-500 mt-2">- Saint Augustine</p>
+                    <p className="text-sm text-gray-500 mt-2">-Saint Augustine</p>
                 </motion.div>
             </footer>
         </>
