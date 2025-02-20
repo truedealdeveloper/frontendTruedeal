@@ -1,3 +1,5 @@
+'use client';
+
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/common/Navbar";
@@ -12,7 +14,6 @@ import GoogleAnalytics from '../components/GoogleAnalytics';
 import { Poppins } from 'next/font/google';
 import {GoogleTagManager} from '@next/third-parties/google'
 import AnalyticsScripts from '@/components/Analytics';
-'use client';
 
 const poppins = Poppins({
     weight: ['400', '500', '600', '700'],
