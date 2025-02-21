@@ -10,6 +10,7 @@ import { Chatbot } from "./components/chatbot/Chatbot";
 import { Analytics } from "@vercel/analytics/react"
 import GoogleAnalytics from '../components/GoogleAnalytics';
 import { Poppins } from 'next/font/google';
+import { GoogleTagManager } from '@next/third-parties/google'
 
 const poppins = Poppins({
     weight: ['400', '500', '600', '700'],
@@ -73,7 +74,15 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
+        <GoogleTagManager gtmId="GTM-NTPTHZPG" />
         <body className={poppins.className}>
+          <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NTPTHZPG"
+              height="0"
+              width="0"
+              style={{ display: 'none', visibility: 'hidden' }}
+            />
+          </noscript>
           <GoogleAnalytics />
           <Navbar />
           {children}
