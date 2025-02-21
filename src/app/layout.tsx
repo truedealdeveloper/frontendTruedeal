@@ -5,14 +5,16 @@ import Footer from "./components/common/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Chatbot } from "./components/chatbot/Chatbot";
+import Script from 'next/script'
+import { GA_MEASUREMENT_ID } from '@/lib/gtag'
 import { Analytics } from "@vercel/analytics/react"
+import GoogleAnalytics from '../components/GoogleAnalytics';
 import { Poppins } from 'next/font/google';
-import AnalyticsScripts from '@/components/Analytics';
 
 const poppins = Poppins({
-    weight: ['400', '500', '600', '700'],
-    subsets: ['latin'],
-    display: 'swap',
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -57,8 +59,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "TrueDeal | Best Tour & Travel Agency for Memorable Trips",
     description: "Plan your next adventure with TrueDeal4U, a trusted tour and travel agency. Explore custom packages, affordable deals, and expert guidance for a hassle-free journey.",
-    site: '@truedeal4u', 
-    creator: '@truedeal4u', 
+    site: '@truedeal4u',
+    creator: '@truedeal4u',
     images: ['https://www.truedeal4u.com/Assets/NavbarImages/logo.png'],
   },
 };
@@ -71,8 +73,28 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={poppins.className}>
-          <AnalyticsScripts />
+        <head>
+          <Script
+            strategy="afterInteractive"
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          />
+          <Script
+            id="google-analytics"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_MEASUREMENT_ID}');
+              `,
+            }}
+          />
+        </head>
+        <body
+          className={poppins.className}
+        >
+          <GoogleAnalytics />
           <Navbar />
           {children}
           <SpeedInsights />
