@@ -5,8 +5,8 @@ import Footer from "./components/common/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Chatbot } from "./components/chatbot/Chatbot";
-import Script from 'next/script'
-import { GA_MEASUREMENT_ID } from '@/lib/gtag'
+// import Script from 'next/script'
+// import { GA_MEASUREMENT_ID } from '@/lib/gtag'
 import { Analytics } from "@vercel/analytics/react"
 import GoogleAnalytics from '../components/GoogleAnalytics';
 import { Poppins } from 'next/font/google';
@@ -73,27 +73,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <head>
-          <Script
-            strategy="afterInteractive"
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          />
-          <Script
-            id="google-analytics"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${GA_MEASUREMENT_ID}');
-              `,
-            }}
-          />
-        </head>
-        <body
-          className={poppins.className}
-        >
+        <body className={poppins.className}>
           <GoogleAnalytics />
           <Navbar />
           {children}
