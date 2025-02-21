@@ -4,7 +4,7 @@ import Ad from "./components/Ad/Ad";
 import Sponsors from "./components/Ad/Sponsers";
 import Trending from "./components/homepage/Trending";
 import CurrencyExchange from "./components/forex/ForexLive";
-  // import Exclusive from "./components/forex/Exclusive";
+import Exclusive from "./components/forex/Exclusive";
 // import { AnimatedListDemo } from "./components/CardsSwap";
 // import HappyCustomers from "./components/Ad/HappyCustomers";
 import ExoticDestinations from "./components/homepage/Exotic"
@@ -33,6 +33,7 @@ export default function Home() {
       <Destination />
       <Domestic />
       <Trending />
+      <Exclusive />
       {/* <AnimatedListDemo /> */}
       <ExoticDestinations />
       <NoCostEMIPage />
