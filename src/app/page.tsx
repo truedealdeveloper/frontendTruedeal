@@ -18,8 +18,8 @@ import NoCostEMIPage from "./no-cost-emi/page";
 import FixedDepartures from "./fixedDeparture/page";
 // import BannerCarousel from "./components/valentine/page";
 // import ChardhamYatra from './chardhamYatra/page';
-// import SriLanka from './sriLanka/page';
-
+import SriLanka from './sriLanka/page';
+import TripPlanRequest from "../components/TripPlanRequest";
 
 export default function Home() {
   return (
@@ -27,9 +27,10 @@ export default function Home() {
       <HeroSection />
       {/* <BannerCarousel />   */}
       <FixedDepartures />
+
       
       {/* <ChardhamYatra /> */}
-      {/* <SriLanka /> */}
+      <SriLanka />  
       <Destination />
       <Domestic />
       <Trending />
@@ -42,11 +43,13 @@ export default function Home() {
       <Ad />
       {/* <HappyCustomers /> */}
       <CurrencyExchange />
+
       <Gallery />
       
       {/* <WallOfLove /> */}
       <Sponsors />
       <ReviewsGlimpse />
+      <TripPlanRequest />
 
     </main>
   );
