@@ -15,6 +15,11 @@ interface TripPlanRequestBody {
   package_type?: string;
 }
 
+interface SembarkErrorResponse {
+  message: string;
+  [key: string]: unknown;
+}
+
 export async function POST(request: Request) {
   try {
     const body = await request.json() as TripPlanRequestBody;
@@ -43,7 +48,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json(response.data);
   } catch (error: unknown) {
-    const axiosError = error as AxiosError;
+    const axiosError = error as AxiosError<SembarkErrorResponse>;
     console.error('Sembark API Error:', {
       status: axiosError.response?.status,
       data: axiosError.response?.data,
@@ -58,7 +63,7 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json(
-      { message: (axiosError.response?.data as any)?.message || 'Something went wrong' },
+      { message: axiosError.response?.data?.message || 'Something went wrong' },
       { status: axiosError.response?.status || 500 }
     );
   }
