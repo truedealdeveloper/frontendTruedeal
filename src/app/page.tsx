@@ -18,7 +18,7 @@ import NoCostEMIPage from "./no-cost-emi/page";
 import FixedDepartures from "./fixedDeparture/page";
 // import BannerCarousel from "./components/valentine/page";
 // import ChardhamYatra from './chardhamYatra/page';
-import SriLanka from './sriLanka/page';
+// import SriLanka from './sriLanka/page';
 import TripPlanRequest from "../components/TripPlanRequest";
 
 export default function Home() {
@@ -30,7 +30,7 @@ export default function Home() {
 
       
       {/* <ChardhamYatra /> */}
-      <SriLanka />  
+      {/* <SriLanka />   */}
       <Destination />
       <Domestic />
       <Trending />
