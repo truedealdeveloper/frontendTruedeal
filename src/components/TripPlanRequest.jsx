@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import axios from 'axios';
+import Image from 'next/image';
 
 const TripPlanRequest = () => {
   const [formData, setFormData] = useState({
@@ -76,11 +77,16 @@ const TripPlanRequest = () => {
       <div className="container mx-auto px-4 py-8 min-h-screen flex flex-col lg:flex-row items-center gap-8">
         {/* Image Section */}
         <div className="w-full lg:w-3/5 relative rounded-2xl overflow-hidden shadow-2xl">
-          <img 
-            src="/UGCImages/groupManali.png" 
-            alt="Truedeal Team" 
-            className="w-full h-auto object-cover"
-          />
+          <div className="relative w-full aspect-[16/9]">
+            <Image 
+              src="/UGCImages/groupManali.png" 
+              alt="Truedeal Team" 
+              fill
+              priority
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 60vw"
+            />
+          </div>
           <div className="absolute inset-0 bg-gradient-to-r from-[#00B5C3]/30 to-transparent"></div>
         </div>
 

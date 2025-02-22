@@ -1,9 +1,23 @@
 import { NextResponse } from 'next/server';
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
+
+interface TripPlanRequestBody {
+  name: string;
+  phone_number: string;
+  email?: string;
+  start_date: string;
+  no_of_days: string;
+  no_of_adults: string;
+  no_of_children?: string;
+  destination: string;
+  comments?: string;
+  origin_city?: string;
+  package_type?: string;
+}
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
+    const body = await request.json() as TripPlanRequestBody;
     
     // Get token from environment variable (removed NEXT_PUBLIC_ prefix)
     const token = process.env.SEMBARK_ACCESS_TOKEN;
@@ -28,14 +42,15 @@ export async function POST(request: Request) {
     });
 
     return NextResponse.json(response.data);
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const axiosError = error as AxiosError;
     console.error('Sembark API Error:', {
-      status: error.response?.status,
-      data: error.response?.data,
-      message: error.message
+      status: axiosError.response?.status,
+      data: axiosError.response?.data,
+      message: axiosError.message
     });
 
-    if (error.response?.status === 401) {
+    if (axiosError.response?.status === 401) {
       return NextResponse.json(
         { message: 'Authentication failed. Please check API token.' },
         { status: 401 }
@@ -43,8 +58,8 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json(
-      { message: error.response?.data?.message || 'Something went wrong' },
-      { status: error.response?.status || 500 }
+      { message: (axiosError.response?.data as any)?.message || 'Something went wrong' },
+      { status: axiosError.response?.status || 500 }
     );
   }
 } 
