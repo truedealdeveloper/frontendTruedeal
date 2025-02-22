@@ -723,12 +723,15 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
             }
         ],
         images: [
-            "/UGCImages/Images4/russia/horizontal/1.webp",
-            "/UGCImages/Images4/russia/horizontal/2.webp",
-            "/UGCImages/Images4/russia/horizontal/3.webp",
-            "/UGCImages/Images4/russia/horizontal/4.webp",
-            "/UGCImages/Images4/russia/horizontal/5.webp",
-            "/UGCImages/Images4/russia/horizontal/6.webp"
+            "/UGCImages/russia/1.svg",
+            "/UGCImages/russia/2.svg",
+            "/UGCImages/russia/3.svg",
+            "/UGCImages/russia/4.svg",
+            "/UGCImages/russia/5.svg",
+            "/UGCImages/russia/6.svg",
+            "/UGCImages/russia/7.svg",
+            "/UGCImages/russia/8.svg",
+            
         ]
     },
     japanTour: {
@@ -847,12 +850,14 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
             }
         ],
         images: [
-            "/UGCImages/Images4/japan/horizontal/1.webp",
-            "/UGCImages/Images4/japan/horizontal/2.webp",
-            "/UGCImages/Images4/japan/horizontal/3.webp",
-            "/UGCImages/Images4/japan/horizontal/4.webp",
-            "/UGCImages/Images4/japan/horizontal/5.webp",
-            "/UGCImages/Images4/japan/horizontal/6.webp"
+            "/UGCImages/japan/1.svg",
+            "/UGCImages/japan/2.svg",
+            "/UGCImages/japan/3.svg",
+            "/UGCImages/japan/4.svg",
+            "/UGCImages/japan/5.svg",
+            "/UGCImages/japan/6.svg",
+            "/UGCImages/japan/7.svg",
+            "/UGCImages/japan/8.svg",
         ]
     },
     thailandTour: {
@@ -962,12 +967,14 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
             }
         ],
         images: [
-            "/UGCImages/Images4/thailand/horizontal/1.webp",
-            "/UGCImages/Images4/thailand/horizontal/2.webp",
-            "/UGCImages/Images4/thailand/horizontal/3.webp",
-            "/UGCImages/Images4/thailand/horizontal/4.webp",
-            "/UGCImages/Images4/thailand/horizontal/5.webp",
-            "/UGCImages/Images4/thailand/horizontal/6.webp"
+            "/UGCImages/thailand/2.svg",
+            "/UGCImages/thailand/4.svg",
+            "/UGCImages/thailand/5.svg",
+            "/UGCImages/thailand/6.svg",
+            "/UGCImages/thailand/7.svg",
+            "/UGCImages/thailand/8.svg",
+            "/UGCImages/thailand/9.svg",
+            "/UGCImages/thailand/10.svg",
         ]
     },
     thailandDeluxeTour: {
@@ -1094,12 +1101,14 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
             }
         ],
         images: [
-            "/UGCImages/Images4/thailand/deluxe/1.webp",
-            "/UGCImages/Images4/thailand/deluxe/2.webp",
-            "/UGCImages/Images4/thailand/deluxe/3.webp",
-            "/UGCImages/Images4/thailand/deluxe/4.webp",
-            "/UGCImages/Images4/thailand/deluxe/5.webp",
-            "/UGCImages/Images4/thailand/deluxe/6.webp"
+            "/UGCImages/thailand/6.svg",
+            "/UGCImages/thailand/5.svg",
+            "/UGCImages/thailand/7.svg",
+            "/UGCImages/thailand/9.svg",
+            "/UGCImages/thailand/2.svg",
+            "/UGCImages/thailand/4.svg",
+            "/UGCImages/thailand/8.svg",
+            "/UGCImages/thailand/10.svg",
         ]
     }
 };
