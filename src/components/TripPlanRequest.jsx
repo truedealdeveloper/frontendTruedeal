@@ -62,10 +62,12 @@ const TripPlanRequest = () => {
         data: error.response?.data
       });
       
-      setError(
-        error.response?.data?.message || 
-        'Failed to submit form. Please try again later.'
-      );
+      // More specific error message
+      const errorMessage = error.response?.data?.error === 'MISSING_TOKEN'
+        ? 'Service is temporarily unavailable. Please try again later or contact support.'
+        : error.response?.data?.message || 'Failed to submit form. Please try again later.';
+      
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }
