@@ -1228,6 +1228,106 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
             
         ]
     },
+    almatyFixedDeparture: {
+        id: "almaty-7-days-luxury-tour",
+        country: "Almaty",
+        days: 7,
+        nights: 6,
+        amount: 79999,
+        dateStart: "31 March 2025",
+        dateEnd: "6 April 2025",
+        flightFrom: "Delhi",
+        description: "Experience the stunning beauty of Kazakhstan with our luxury Almaty tour package. From scenic mountain resorts to historical sites and natural wonders, this comprehensive tour offers the perfect blend of adventure, culture, and relaxation.",
+        groupDetails: {
+            pax: "Group Tour (13 adults)",
+            rooms: "Double Sharing",
+            arrivalDate: "31st March 2025",
+            duration: "6N7D Almaty",
+            costBasis: "Cost Based On Double Sharing"
+        },
+        hotelDetails: [
+            {
+                city: "Almaty",
+                hotel: "Rahat Palace",
+                roomType: "5 Star Luxury Room"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Arrival in Almaty",
+            "Day 2: Shymbulak Ski Resort & Historical Sites",
+            "Day 3: Qi-Qaragai & Kok Tobe Hill",
+            "Day 4: Ile Alatau Natural Park & City Tour",
+            "Day 5: Charyn Canyon & Kolsai Lake",
+            "Day 6: Issyk Lake & Shopping",
+            "Day 7: Departure"
+        ],
+        inclusions: [
+            "Return Flights from Delhi",
+            "6 Nights accommodation at 5-star Rahat Palace Hotel",
+            "Daily Breakfast at Hotel",
+            "Airport Transfers",
+            "5 Days Guided Tours",
+            "Transportation in Toyota Hiace",
+            "Professional Tour Guide Services",
+            "All Entrance Tickets",
+            "Shymbulak Mountain Resort Cable Car",
+            "Kok Tobe Cable Car",
+            "Almarassan Valley Eco Post",
+            "Issyk Lake Eco Post",
+            "Kolsay, Charyn & Kayindy Eco Post"
+        ],
+        exclusions: [
+            "Optional activities (horse riding, zip line, rope park)",
+            "Personal expenses",
+            "Travel insurance",
+            "Any items not mentioned in inclusions"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Almaty",
+                description: "Arrival at Almaty Airport. Meet and greet service. Transfer to Rahat Palace Hotel for check-in. Rest of the day at leisure to acclimatize and explore nearby areas."
+            },
+            {
+                day: 2,
+                title: "Shymbulak Ski Resort & Historical Sites",
+                description: "Visit Shymbulak Ski Resort (3200m) via cable car. Explore Park of 28 Panfilov Guardsmen featuring the historic cathedral and eternal flame. Evening at Arbat and Panfilov Pedestrian Streets."
+            },
+            {
+                day: 3,
+                title: "Qi-Qaragai & Kok Tobe Hill",
+                description: "Full day at Qi-Qaragai Lesnaya Skazka with optional activities. Evening visit to Kok Tobe hill via cable car with optional activities like fast coaster and mini zoo."
+            },
+            {
+                day: 4,
+                title: "Ile Alatau Natural Park & City Tour",
+                description: "Visit Ile Alatau Natural Park and Big Almaty River. Experience natural hot springs. Afternoon city tour including Green Bazar and Rahat Chocolate Factory with shopping time."
+            },
+            {
+                day: 5,
+                title: "Charyn Canyon & Kolsai Lake",
+                description: "Full-day excursion to Charyn Canyon for spectacular views. Visit Black Canyon en route to Kolsai Lake. Enjoy walking tours and photo opportunities at both locations."
+            },
+            {
+                day: 6,
+                title: "Issyk Lake & Shopping",
+                description: "Morning tour to Issyk Lake. Afternoon shopping at Mega Mall. Return to hotel for final night in Almaty."
+            },
+            {
+                day: 7,
+                title: "Departure",
+                description: "Breakfast at hotel. Check-out and transfer to airport for departure flight."
+            }
+        ],
+        images: [
+            "/UGCImages/Images4/almaty/horizontal/1.webp",
+            "/UGCImages/Images4/almaty/horizontal/2.webp",
+            "/UGCImages/Images4/almaty/horizontal/3.webp",
+            "/UGCImages/Images4/almaty/horizontal/4.webp",
+            "/UGCImages/Images4/almaty/horizontal/5.webp",
+            "/UGCImages/Images4/almaty/horizontal/6.webp"
+        ]
+    },
 };
 
 export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight> = {
@@ -1818,7 +1918,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         ],
         
     },
-    bali: {
+    baliFixedDeparture: {
         id: "bali-7-days-paradise-tour",
         country: "Bali",
         days: 7,
