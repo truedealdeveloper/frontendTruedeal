@@ -378,7 +378,7 @@ export default function HeroSection() {
                         playsInline 
                         preload="auto"
                         className="absolute top-0 left-0 w-full h-full object-cover object-center z-0"
-                        poster="/Assets/HeroSectionImages/video-poster.jpg"
+                        // poster="/Assets/HeroSectionImages/video-poster.jpg"
                     >
                         <source
                             src="/Assets/HeroSectionImages/bgg.mp4"
