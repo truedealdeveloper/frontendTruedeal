@@ -94,8 +94,11 @@ export const sriLankaData: Record<string, BaseDestination> = {
             }
         ],
         images: [
-            "/SriLankaImages/bentota/1.webp",
-            "/SriLankaImages/bentota/2.webp"
+            "/UGCImages/sri lanka/lanka (1).webp",
+            "/UGCImages/sri lanka/lanka (2).webp",
+            "/UGCImages/sri lanka/lanka (3).webp",
+            "/UGCImages/sri lanka/lanka (4).webp",
+            "/UGCImages/sri lanka/lanka (5).webp"
         ],
         tourSummary: [
             "Thrilling Water Sports: Experience snorkeling, diving, sailing, windsurfing & jet skiing",
@@ -158,8 +161,11 @@ export const sriLankaData: Record<string, BaseDestination> = {
             }
         ],
         images: [
-            "/SriLankaImages/colombo/1.webp",
-            "/SriLankaImages/colombo/2.webp"
+            "/UGCImages/sri lanka/lanka (6).webp",
+            "/UGCImages/sri lanka/lanka (7).webp",
+            "/UGCImages/sri lanka/lanka (8).webp",
+            "/UGCImages/sri lanka/lanka (9).webp",
+            "/UGCImages/sri lanka/lanka (10).webp"
         ],
         tourSummary: [
             "Explore Colombo's vibrant culture and nightlife",
@@ -236,9 +242,11 @@ export const sriLankaData: Record<string, BaseDestination> = {
             }
         ],
         images: [
-            "/SriLankaImages/kandy/1.webp",
-            "/SriLankaImages/bentota/1.webp",
-            "/SriLankaImages/colombo/1.webp"
+            "/UGCImages/sri lanka/lanka (11).webp",
+            "/UGCImages/sri lanka/lanka (12).webp",
+            "/UGCImages/sri lanka/lanka (13).webp",
+            "/UGCImages/sri lanka/lanka (14).webp",
+            "/UGCImages/sri lanka/lanka (15).webp"
         ],
         tourSummary: [
             "Serene hills and cultural sites in Kandy",
@@ -305,8 +313,11 @@ export const sriLankaData: Record<string, BaseDestination> = {
         }
     ],
     images: [
-        "/SriLankaImages/kandy/1.webp",
-        "/SriLankaImages/bentota/1.webp"
+        "/UGCImages/sri lanka/lanka (16).webp",
+        "/UGCImages/sri lanka/lanka (17).webp",
+        "/UGCImages/sri lanka/lanka (18).webp",
+        "/UGCImages/sri lanka/lanka (19).webp",
+        "/UGCImages/sri lanka/lanka (20).webp"
     ],
     tourSummary: [
         "Cultural richness of Kandy with visits to sacred temples",
@@ -373,8 +384,11 @@ export const sriLankaData: Record<string, BaseDestination> = {
             }
         ],
         images: [
-            "/SriLankaImages/bentota/1.webp",
-            "/SriLankaImages/colombo/1.webp"
+            "/UGCImages/sri lanka/lanka (21).webp",
+            "/UGCImages/sri lanka/lanka (22).webp",
+            "/UGCImages/sri lanka/lanka (23).webp",
+            "/UGCImages/sri lanka/lanka (24).webp",
+            "/UGCImages/sri lanka/lanka (25).webp"
         ],
         tourSummary: [
             "Discover the coastal charm of Bentota with its golden beaches and serene lagoons",
@@ -436,8 +450,11 @@ export const sriLankaData: Record<string, BaseDestination> = {
             }
         ],
         images: [
-            "/SriLankaImages/kandy/1.webp",
-            "/SriLankaImages/colombo/1.webp"
+            "/UGCImages/sri lanka/lanka (26).webp",
+            "/UGCImages/sri lanka/lanka (27).webp",
+            "/UGCImages/sri lanka/lanka (28).webp",
+            "/UGCImages/sri lanka/lanka (29).webp",
+            "/UGCImages/sri lanka/lanka (30).webp"
         ],
         tourSummary: [
             "Cultural heritage and scenic beauty in Kandy",
@@ -509,10 +526,11 @@ export const sriLankaData: Record<string, BaseDestination> = {
             }
         ],
         images: [
-            "/SriLankaImages/kandy/1.webp",
-            "/SriLankaImages/nuwara-eliya/1.webp",
-            "/SriLankaImages/bentota/1.webp",
-            "/SriLankaImages/colombo/1.webp"
+            "/UGCImages/sri lanka/lanka (31).webp",
+            "/UGCImages/sri lanka/lanka (32).webp",
+            "/UGCImages/sri lanka/lanka (33).webp",
+            "/UGCImages/sri lanka/lanka (34).webp",
+            "/UGCImages/sri lanka/lanka (35).webp"
         ],
         tourSummary: [
             "Cultural exploration in Kandy with visits to sacred sites",
@@ -590,9 +608,11 @@ export const sriLankaData: Record<string, BaseDestination> = {
             }
         ],
         images: [
-            "/SriLankaImages/bentota/1.webp",
-            "/SriLankaImages/galle/1.webp",
-            "/SriLankaImages/colombo/1.webp"
+            "/UGCImages/sri lanka/lanka (36).webp",
+            "/UGCImages/sri lanka/lanka (37).webp",
+            "/UGCImages/sri lanka/lanka (38).webp",
+            "/UGCImages/sri lanka/lanka (39).webp",
+            "/UGCImages/sri lanka/lanka (40).webp"
         ],
         tourSummary: [
             "Golden beaches of Bentota and historic charm of Galle",
@@ -669,9 +689,11 @@ export const sriLankaData: Record<string, BaseDestination> = {
             }
         ],
         images: [
-            "/SriLankaImages/dambulla/1.webp",
-            "/SriLankaImages/kandy/1.webp",
-            "/SriLankaImages/bentota/1.webp"
+            "/UGCImages/sri lanka/lanka (41).webp",
+            "/UGCImages/sri lanka/lanka (42).webp",
+            "/UGCImages/sri lanka/lanka (43).webp",
+            "/UGCImages/sri lanka/lanka (44).webp",
+            "/UGCImages/sri lanka/lanka (45).webp"
         ],
         tourSummary: [
             "Explore ancient caves and cultural sites in Dambulla",
@@ -748,9 +770,11 @@ export const sriLankaData: Record<string, BaseDestination> = {
             }
         ],
         images: [
-            "/SriLankaImages/dambulla/1.webp",
-            "/SriLankaImages/nuwara-eliya/1.webp",
-            "/SriLankaImages/colombo/1.webp"
+            "/UGCImages/sri lanka/lanka (46).webp",
+            "/UGCImages/sri lanka/lanka (47).webp",
+            "/UGCImages/sri lanka/lanka (48).webp",
+            "/UGCImages/sri lanka/lanka (49).webp",
+            "/UGCImages/sri lanka/lanka (50).webp"
         ],
         tourSummary: [
             "Explore ancient caves and cultural sites in Dambulla",
