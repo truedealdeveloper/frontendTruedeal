@@ -2714,9 +2714,8 @@ export const destinationGroups = [
         baliIslandHopper: destinationsWithoutFlight.baliIslandHopper,
         russia: destinationsWithoutFlight.russia
     }
-]; // Remove trailing comma and empty line
+]; 
 
-// Helper function to get total number of pages
 export const getTotalPages = (): number => destinationGroups.length;
 
 // Helper function to get destinations for a specific page
