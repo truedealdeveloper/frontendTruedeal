@@ -235,18 +235,16 @@ export default function FixedDepartures() {
                     
                     <div className="overflow-x-auto -mx-4 px-4">
                         <div className="flex md:grid md:grid-cols-3 gap-6 min-w-min md:min-w-0">
-                            {destinationGroups[currentWithoutFlightPage] ? 
-                                Object.values(destinationGroups[currentWithoutFlightPage])
-                                    .filter(destination => destination)
-                                    .slice(0, 3)
-                                    .map((destination, index) => (
+                            {destinationGroups[currentWithoutFlightPage] && 
+                                Object.entries(destinationGroups[currentWithoutFlightPage])
+                                    .filter(([_, destination]) => destination !== undefined)
+                                    .map(([key, destination]) => (
                                         <DestinationCard 
-                                            key={destination?.id || `destination-${index}`} 
+                                            key={key} 
                                             destination={destination} 
                                             type="withoutFlight"
                                         />
                                     ))
-                                : null
                             }
                         </div>
                     </div>
