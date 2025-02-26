@@ -850,14 +850,12 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
             }
         ],
         images: [
-            "/UGCImages/japan/1.svg",
-            "/UGCImages/japan/2.svg",
-            "/UGCImages/japan/3.svg",
-            "/UGCImages/japan/4.svg",
-            "/UGCImages/japan/5.svg",
-            "/UGCImages/japan/6.svg",
-            "/UGCImages/japan/7.svg",
-            "/UGCImages/japan/8.svg",
+            "/UGCImages/japan/1.webp",
+            "/UGCImages/japan/2.webp",
+            "/UGCImages/japan/3.webp",
+            "/UGCImages/japan/4.webp",
+            "/UGCImages/japan/5.webp",
+            "/UGCImages/japan/6.webp",
         ]
     },
     thailandTour: {
