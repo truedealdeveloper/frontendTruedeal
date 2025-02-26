@@ -199,24 +199,7 @@ export default function Component() {
                             </ul>
                         </div>
 
-                        {/* Our Services Column 2 */}
-                        <div>
-                            <h3 className="font-bold text-[#017ae3] mb-4 text-lg">More Services</h3>
-                            <ul className="space-y-2">
-                                {[
-                                    { name: "Land Packages", path: "#" },
-                                    { name: "Holiday Packages", path: "#" },
-                                    { name: "Travel Insurance", path: "#" },
-                                    { name: "Cruise Bookings", path: "#" },
-                                ].map((service) => (
-                                    <li key={service.name}>
-                                        <Link href={service.path} className="text-gray-700 hover:text-[#017ae3] text-sm transition-colors duration-200">
-                                            {service.name}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </footer>

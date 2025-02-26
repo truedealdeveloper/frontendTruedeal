@@ -28,90 +28,96 @@ export default function FixedDepartures() {
         if (section === 'withFlight') {
             setCurrentWithFlightPage(prev => prev < totalWithFlightPages - 1 ? prev + 1 : prev);
         } else {
-            setCurrentWithoutFlightPage(prev => prev < totalWithoutFlightPages - 1 ? prev + 1 : prev);
+            setCurrentWithoutFlightPage(prev => 
+                prev < Math.min(totalWithoutFlightPages - 1, destinationGroups.length - 1) ? prev + 1 : prev
+            );
         }
     };
 
-    const DestinationCard = ({ destination, type }: { destination: FixedDeparture | DestinationWithoutFlight, type: 'withFlight' | 'withoutFlight' }) => (
-        <div 
-            className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0"
-        >
-            {/* Background Image */}
-            <Image 
-                src={destination.images?.[0] || '/default-destination-image.jpg'} 
-                alt={destination.country}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-            />
-            
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/50 to-black" />
+    const DestinationCard = ({ destination, type }: { destination: FixedDeparture | DestinationWithoutFlight, type: 'withFlight' | 'withoutFlight' }) => {
+        if (!destination) return null;
 
-            {/* Price Tag */}
-            {destination.amount && (
-                <div className="absolute top-3 left-0 z-10">
-                    <div className="bg-yellow-400 px-4 py-1.5 rounded-full shadow-lg">
-                        <span className="line-through text-sm mr-2">
-                            ₹{destination.amount * 1.2 >= 1000 ? (destination.amount * 1.2).toLocaleString('en-IN') : destination.amount * 1.2}/-
-                        </span>
-                        <span className="font-bold">
-                            ₹{destination.amount >= 1000 ? destination.amount.toLocaleString('en-IN') : destination.amount}/-
-                        </span>
-                        <span className="text-sm ml-1">onwards</span>
-                    </div>
-                </div>
-            )}
+        return (
+            <div 
+                className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0"
+            >
+                {/* Background Image */}
+                <Image 
+                    src={destination?.images?.[0] || '/default-destination-image.jpg'} 
+                    alt={destination?.country || 'Destination'}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                />
+                
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/50 to-black" />
 
-            {/* Content */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <h2 className="text-2xl font-bold mb-2">
-                    {destination.days} Days {destination.country} Tour Package
-                </h2>
-
-                {/* Cities List */}
-                <div className="flex flex-wrap gap-x-2 text-sm mb-4">
-                    {destination.hotelDetails?.map((hotel, idx) => (
-                        <span key={idx} className="text-gray-200">
-                            {hotel.city}
-                            {idx < (destination.hotelDetails?.length || 0) - 1 && ' •'}
-                        </span>
-                    ))}
-                </div>
-
-                {/* Details Grid */}
-                <div className="grid grid-cols-2 gap-y-2 text-sm mb-4">
-                    <div className="flex items-center gap-2">
-                        <FaClock className="text-yellow-400" />
-                        <span>{destination.days}D/{destination.nights}N</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <IoLocationSharp className="text-yellow-400" />
-                        <span>{destination.hotelDetails?.[0]?.city}</span>
-                    </div>
-                    {type === 'withFlight' && 'flightFrom' in destination && (
-                        <div className="flex items-center gap-2">
-                            <FaPlane className="text-yellow-400" />
-                            <span>{destination.flightFrom}</span>
+                {/* Price Tag */}
+                {destination?.amount && (
+                    <div className="absolute top-3 left-0 z-10">
+                        <div className="bg-yellow-400 px-4 py-1.5 rounded-full shadow-lg">
+                            <span className="line-through text-sm mr-2">
+                                ₹{destination.amount * 1.2 >= 1000 ? (destination.amount * 1.2).toLocaleString('en-IN') : destination.amount * 1.2}/-
+                            </span>
+                            <span className="font-bold">
+                                ₹{destination.amount >= 1000 ? destination.amount.toLocaleString('en-IN') : destination.amount}/-
+                            </span>
+                            <span className="text-sm ml-1">onwards</span>
                         </div>
-                    )}
-                    <div className="flex items-center gap-2">
-                        <FaCalendarAlt className="text-yellow-400" />
-                        <span>{destination.dateStart}</span>
                     </div>
-                </div>
+                )}
 
-                {/* View Details Button */}
-                <Link href={`/fixedDeparture/${destination.id}`}>
-                    <Button
-                        className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all duration-500"
-                    >
-                        View Details
-                    </Button>
-                </Link>
+                {/* Content */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <h2 className="text-2xl font-bold mb-2">
+                        {destination?.days} Days {destination?.country} Tour Package
+                    </h2>
+
+                    {/* Cities List */}
+                    <div className="flex flex-wrap gap-x-2 text-sm mb-4">
+                        {destination?.hotelDetails?.map((hotel, idx) => (
+                            <span key={idx} className="text-gray-200">
+                                {hotel.city}
+                                {idx < (destination?.hotelDetails?.length || 0) - 1 && ' •'}
+                            </span>
+                        ))}
+                    </div>
+
+                    {/* Details Grid */}
+                    <div className="grid grid-cols-2 gap-y-2 text-sm mb-4">
+                        <div className="flex items-center gap-2">
+                            <FaClock className="text-yellow-400" />
+                            <span>{destination?.days}D/{destination?.nights}N</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <IoLocationSharp className="text-yellow-400" />
+                            <span>{destination?.hotelDetails?.[0]?.city}</span>
+                        </div>
+                        {type === 'withFlight' && 'flightFrom' in destination && (
+                            <div className="flex items-center gap-2">
+                                <FaPlane className="text-yellow-400" />
+                                <span>{destination.flightFrom}</span>
+                            </div>
+                        )}
+                        <div className="flex items-center gap-2">
+                            <FaCalendarAlt className="text-yellow-400" />
+                            <span>{destination?.dateStart}</span>
+                        </div>
+                    </div>
+
+                    {/* View Details Button */}
+                    <Link href={`/fixedDeparture/${destination.id}`}>
+                        <Button
+                            className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all duration-500"
+                        >
+                            View Details
+                        </Button>
+                    </Link>
+                </div>
             </div>
-        </div>
-    );
+        );
+    };
 
     const NavigationControls = ({ 
         currentPage, 
@@ -229,15 +235,19 @@ export default function FixedDepartures() {
                     
                     <div className="overflow-x-auto -mx-4 px-4">
                         <div className="flex md:grid md:grid-cols-3 gap-6 min-w-min md:min-w-0">
-                            {Object.values(destinationGroups[currentWithoutFlightPage])
-                                .slice(0, 3)
-                                .map((destination) => (
-                                    <DestinationCard 
-                                        key={destination.id} 
-                                        destination={destination} 
-                                        type="withoutFlight"
-                                    />
-                                ))}
+                            {destinationGroups[currentWithoutFlightPage] ? 
+                                Object.values(destinationGroups[currentWithoutFlightPage])
+                                    .filter(destination => destination)
+                                    .slice(0, 3)
+                                    .map((destination, index) => (
+                                        <DestinationCard 
+                                            key={destination?.id || `destination-${index}`} 
+                                            destination={destination} 
+                                            type="withoutFlight"
+                                        />
+                                    ))
+                                : null
+                            }
                         </div>
                     </div>
                 </div>

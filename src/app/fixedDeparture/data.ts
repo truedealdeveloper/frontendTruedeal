@@ -1708,39 +1708,6 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
             
         ]
     },
-    sriLanka: {
-        id: "srilanka-3-days-express-tour",
-        country: "Sri Lanka",
-        days: 3,
-        nights: 2,
-        dateStart: "11 Jan 2025",
-        dateEnd: "31 March 2025",
-        description: "Discover the pearl of Indian Ocean with its rich culture, wildlife, and beautiful beaches.",
-        groupDetails: {
-            pax: "Group Tour",
-            rooms: "Twin Sharing Basis",
-            arrivalDate: "Multiple dates available",
-            duration: "2N3D Sri Lanka",
-            costBasis: "Cost Based On Double Sharing"
-        },
-        hotelDetails: [
-            {
-                city: "Colombo",
-                hotel: "4 Star Hotel",
-                roomType: "Standard Room"
-            }
-        ],
-        tourSummary: ["Day 1: Arrival", "Day 2: City Tour", "Day 3: Departure"],
-        inclusions: ["Hotel", "Breakfast", "Transfers"],
-        exclusions: ["Flights", "Visa", "Personal Expenses"],
-        itinerary: [
-            {
-                day: 1,
-                title: "Arrival Day",
-                description: "Welcome to Sri Lanka"
-            }
-        ]
-    },
     malaysia: {
         id: "malaysia-4-days-kuala-lumpur-tour",
         country: "Malaysia",
@@ -2187,10 +2154,11 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
             }
         ],
         images: [
-            "/UGCImages/canton/1.webp",
-            "/UGCImages/canton/2.webp",
-            "/UGCImages/canton/3.webp",
-            "/UGCImages/canton/4.webp"
+            "/UGCImages/china/horizontal/1.webp",
+            "/UGCImages/china/horizontal/2.webp",
+            "/UGCImages/china/horizontal/3.webp",
+            "/UGCImages/china/horizontal/5.webp",
+            "/UGCImages/china/horizontal/6.webp",
         ],
     },
     kashmir: {
@@ -2387,12 +2355,12 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
             }
         ],
         images: [
-            "/UGCImages/Images4/srinagar/horizontal/1.webp",
-            "/UGCImages/Images4/srinagar/horizontal/2.webp",
-            "/UGCImages/Images4/srinagar/horizontal/3.webp",
-            "/UGCImages/Images4/srinagar/horizontal/4.webp",
-            "/UGCImages/Images4/srinagar/horizontal/5.webp",
-            "/UGCImages/Images4/srinagar/horizontal/6.webp"
+            "/UGCImages/Hd images2/shimla/horizontal/1.webp",
+            "/UGCImages/Hd images2/shimla/horizontal/2.webp",
+            "/UGCImages/Hd images2/shimla/horizontal/3.webp",
+            "/UGCImages/Hd images2/shimla/horizontal/4.webp",
+            "/UGCImages/Hd images2/shimla/horizontal/5.webp",
+            "/UGCImages/Hd images2/shimla/horizontal/6.webp"
         ],
         packageType: "customizable",
         visaRequired: false,
@@ -2471,12 +2439,19 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
             }
         ],
         images: [
-            "/UGCImages/Images4/manali/horizontal/1.webp",
-            "/UGCImages/Images4/manali/horizontal/2.webp",
-            "/UGCImages/Images4/manali/horizontal/3.webp",
-            "/UGCImages/Images4/manali/horizontal/4.webp",
-            "/UGCImages/Images4/manali/horizontal/5.webp",
-            "/UGCImages/Images4/manali/horizontal/6.webp"
+            "/UGCImages/Hd images2/sikkim/horizontal/1.webp",
+            "/UGCImages/Hd images2/sikkim/horizontal/2.webp",
+            "/UGCImages/Hd images2/sikkim/horizontal/3.webp",
+            "/UGCImages/Hd images2/sikkim/horizontal/4.webp",
+            "/UGCImages/Hd images2/sikkim/horizontal/5.webp",
+            "/UGCImages/Hd images2/sikkim/horizontal/6.webp",
+            "/UGCImages/Hd images2/sikkim/vertical/1.webp",
+            "/UGCImages/Hd images2/sikkim/vertical/2.webp",
+            "/UGCImages/Hd images2/sikkim/vertical/3.webp",
+            "/UGCImages/Hd images2/sikkim/vertical/4.webp",
+            "/UGCImages/Hd images2/sikkim/vertical/5.webp",
+            "/UGCImages/Hd images2/sikkim/vertical/6.webp",
+
         ],
         packageType: "land-only",
         visaRequired: false,
@@ -2585,12 +2560,10 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
             }
         ],
         images: [
-            "/UGCImages/bali/ISLAND HOPPER/horizontal/1.webp",
-            "/UGCImages/bali/ISLAND HOPPER/horizontal/2.webp",
-            "/UGCImages/bali/ISLAND HOPPER/horizontal/3.webp",
-            "/UGCImages/bali/ISLAND HOPPER/horizontal/4.webp",
-            "/UGCImages/bali/ISLAND HOPPER/horizontal/5.webp",
-            "/UGCImages/bali/ISLAND HOPPER/horizontal/6.webp"
+            "/UGCImages/bali/BALI DOLPHIN/horizontal/2.webp",
+            "/UGCImages/bali/BALI DOLPHIN/horizontal/3.webp",
+            "/UGCImages/bali/BALI DOLPHIN/horizontal/4.webp",
+            "/UGCImages/bali/BALI DOLPHIN/horizontal/6.webp"
         ],
         packageType: "land-only",
         visaRequired: true,
@@ -2726,12 +2699,11 @@ export const destinationGroups = [
     },
     {
         hongKongMacau: destinationsWithoutFlight.hongKongMacau,
-        sriLanka: destinationsWithoutFlight.sriLanka,
         malaysia: destinationsWithoutFlight.malaysia
     },
     {
         southKorea: destinationsWithoutFlight.southKorea,
-        bali: destinationsWithoutFlight.bali,
+        bali: destinationsWithoutFlight.baliFixedDeparture, // Updated to use baliFixedDeparture
         bhutan: destinationsWithoutFlight.bhutan
     },
     {
@@ -2744,7 +2716,7 @@ export const destinationGroups = [
         baliIslandHopper: destinationsWithoutFlight.baliIslandHopper,
         russia: destinationsWithoutFlight.russia
     }
-];
+]; // Remove trailing comma and empty line
 
 // Helper function to get total number of pages
 export const getTotalPages = (): number => destinationGroups.length;
