@@ -225,7 +225,7 @@ export default function ChardhamYatra() {
                         poster="/Assets/HeroSectionImages/chardham-poster.jpg"
                     >
                         <source
-                            src="/Assets/HeroSectionImages/chaar.mp4"
+                            src="/Videos/chardham.mp4"
                             type="video/mp4"
                         />
                         Your browser does not support the video tag.

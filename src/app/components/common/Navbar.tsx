@@ -80,7 +80,7 @@ function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
 
     return (
         <Dialog open={isOpen} onOpenChange={onClose}>
-            <DialogContent className="sm:max-w-[90vw] md:max-w-[70vw] lg:max-w-[50vw] xl:max-w-[40vw] bg-white border-gray-800 w-[90vw] h-[80vh] max-h-[600px] overflow-hidden flex flex-col">
+            <DialogContent className="sm:max-w-[90vw] md:max-w-[70vw] lg:max-w-[50vw] xl:max-w-[40vw] bg-white border-gray-800 w-[90vw] h-[80vh] max-h-[600px] overflow-y-auto overflow-x-hidden flex flex-col">
                 <DialogTitle className="sr-only">Search Destinations</DialogTitle>
                 <div className="w-full flex flex-col h-full">
                     {/* Search Input */}
@@ -175,10 +175,9 @@ export default function Navbar() {
 
 
     return (
-        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-white backdrop-blur-sm'
-            }`}>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                <div className="flex items-center justify-between py-2 border-b-2 border-gray-200 w-full">
+        <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white w-full">
+            <div className="max-w-7xl mx-auto px-1 sm:px-4 lg:px-6">
+                <div className="flex items-center justify-between py-1 sm:py-2 border-b-2 border-gray-200">
                     <div className="flex items-center">
                         <Link href="/" className="flex-shrink-0">
                             <Image
@@ -186,7 +185,7 @@ export default function Navbar() {
                                 alt="Truedeal Logo"
                                 width={200}
                                 height={80}
-                                className="w-[140px] md:w-[180px] h-[45px] md:h-[60px] object-contain"
+                                className="w-[100px] sm:w-[140px] md:w-[180px] h-[40px] sm:h-[45px] md:h-[60px] object-contain"
                                 quality={100}
                                 priority
                             />
@@ -253,46 +252,44 @@ export default function Navbar() {
                         </div>
                     </div>
 
-                    <div className="flex items-center gap-4 shrink-0">
-                        {/* Mobile layout adjustments */}
+                    <div className="flex items-center gap-1 sm:gap-2 shrink-0">
                         <div className="flex items-center md:hidden">
                             <div className="flex items-center hover:scale-105 transition-transform duration-300">
-                                <Phone className="h-4 w-4 text-gray-500" />
+                                <Phone className="h-4 w-4 text-gray-500 flex-shrink-0" />
                                 <a
-                                    href="tel:+918447498498"
-                                    className="bg-gradient-to-r from-[#343232] to-[#000000] text-transparent bg-clip-text font-poppins text-xs md:text-sm font-semibold ml-1"
+                                    href="tel:+919911179796"
+                                    className="bg-gradient-to-r from-[#343232] to-[#000000] text-transparent bg-clip-text font-poppins text-[10px] sm:text-xs md:text-sm font-semibold ml-1 whitespace-nowrap"
                                 >
-                                    +91 8447498498
+                                    +91 9911179796
                                 </a>
                             </div>
 
                             <button
-                                className="text-gray-500 focus:outline-none ml-4"
+                                className="text-gray-500 focus:outline-none ml-2 sm:ml-4"
                                 onClick={() => setIsSearchModalOpen(true)}
                             >
-                                <Search className="h-5 w-5" />
+                                <Search className="h-4 w-4 sm:h-5 sm:w-5" />
                             </button>
 
                             <button
-                                className="text-gray-500 focus:outline-none ml-4"
+                                className="text-gray-500 focus:outline-none ml-2 sm:ml-4"
                                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                             >
                                 {isMenuOpen ? (
-                                    <X className="h-5 w-5" />
+                                    <X className="h-4 w-4 sm:h-5 sm:w-5" />
                                 ) : (
-                                    <MoreVertical className="h-5 w-5" />
+                                    <MoreVertical className="h-4 w-4 sm:h-5 sm:w-5" />
                                 )}
                             </button>
                         </div>
 
-                        {/* Desktop and Tablet layout */}
                         <div className="hidden md:flex items-center hover:scale-105 transition-transform duration-300">
                             <Phone className="h-4 w-4 text-gray-500" />
                             <a
-                                href="tel:+918447498498"
+                                href="tel:+919911179796"
                                 className="bg-gradient-to-r from-[#3f3e3e] to-[#4f4e4e] text-transparent bg-clip-text font-poppins text-xs md:text-sm font-semibold ml-1"
                             >
-                                +91 8447498498
+                                +91 9911179796
                             </a>
                         </div>
 
@@ -337,9 +334,8 @@ export default function Navbar() {
                 </div>
             </div>
 
-            {/* Mobile Menu */}
             {isMenuOpen && (
-                <div className="sm:hidden bg-white shadow-lg animate-slideDown">
+                <div className="sm:hidden bg-white shadow-lg animate-slideDown w-full">
                     {navItems.map((item) => (
                         <Link
                             key={item.label}
@@ -389,7 +385,6 @@ export default function Navbar() {
                 </div>
             )}
 
-            {/* Add Search Modal */}
             <SearchModal 
                 isOpen={isSearchModalOpen} 
                 onClose={() => setIsSearchModalOpen(false)} 
