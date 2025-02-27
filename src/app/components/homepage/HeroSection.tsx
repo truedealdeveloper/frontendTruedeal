@@ -377,8 +377,7 @@ export default function HeroSection() {
                         muted 
                         playsInline 
                         preload="auto"
-                        className="absolute top-0 left-0 w-full h-full object-cover object-center z-0"
-                        // poster="/Assets/HeroSectionImages/video-poster.jpg"
+                        className="absolute top-0 left-0 w-full md:w-[1282px] h-full md:h-[814px] object-cover md:object-contain object-center z-0 md:left-1/2 md:-translate-x-1/2"
                     >
                         <source
                             src="/Assets/HeroSectionImages/bgg.mp4"

@@ -185,12 +185,16 @@ export default function FixedDepartures() {
         <div className="container mx-auto px-4 py-6">
             {/* With Flights Section */}
             <section className="mb-16">
-                <h1 className="text-3xl font-bold mb-6 text-center">
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
-                        Fixed Departures
-                        <p className="text-sm text-gray-500 mt-1 underline">With Flights</p>
-                    </span>
-                </h1>
+                <div className="text-center mb-8">
+                    <h1 className="text-3xl font-bold relative inline-block">
+                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
+                            Fixed Departures
+                        </span>
+                        <div className="mt-2 px-6 py-1 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] rounded-full">
+                            <p className="text-sm text-white font-medium">With Flights</p>
+                        </div>
+                    </h1>
+                </div>
                 
                 <div className="relative">
                     <NavigationControls 
@@ -218,12 +222,16 @@ export default function FixedDepartures() {
 
             {/* Without Flights Section */}
             <section className="mb-8">
-                <h2 className="text-3xl font-bold mb-6 text-center">
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
-                        Fixed Departures
-                        <p className="text-sm text-gray-500 mt-1 underline">Without Flights</p>
-                    </span>
-                </h2>
+                <div className="text-center mb-8">
+                    <h2 className="text-3xl font-bold relative inline-block">
+                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
+                            Fixed Departures
+                        </span>
+                        <div className="mt-2 px-6 py-1 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] rounded-full">
+                            <p className="text-sm text-white font-medium">Without Flights</p>
+                        </div>
+                    </h2>
+                </div>
                 
                 <div className="relative">
                     <NavigationControls 
