@@ -213,8 +213,8 @@ export default function ChardhamYatra() {
         <div className="min-h-screen">
             <GlobalStyles />
             {/* Hero Section with Video Background */}
-            <section className="relative h-screen">
-                <div className="absolute inset-0 h-screen">
+            <section className="relative h-[60vh] md:h-screen">
+                <div className="absolute inset-0 h-[60vh] md:h-screen">
                     <video 
                         autoPlay 
                         loop 
@@ -234,23 +234,23 @@ export default function ChardhamYatra() {
                 </div>
 
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center p-4">
-                    <h1 className="text-4xl sm:text-5xl font-bold mb-6 mt-36">
+                    <h1 className="text-3xl sm:text-5xl font-bold mb-4 mt-12 sm:mt-36">
                         चारधाम यात्रा 2025
                     </h1>
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-base sm:text-xl md:text-2xl mb-8 max-w-3xl relative">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-base sm:text-xl md:text-2xl mb-4 sm:mb-8 max-w-3xl relative">
                         <span>Experience the divine journey to</span>
                         <TypewriterText />
                     </div>
                     <Button 
                         onClick={() => setIsBookingModalOpen(true)}
-                        className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-lg mt-6 sm:mt-10"
+                        className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-4 sm:px-8 py-3 sm:py-6 text-sm sm:text-lg rounded-lg mt-4 sm:mt-10"
                     >
                         Book Your Journey Now
                     </Button>
                 </div>
 
-                {/* Add image slider below video */}
-                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/80 to-transparent overflow-hidden">
+                {/* Image slider - Only show on desktop */}
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/80 to-transparent overflow-hidden hidden md:block">
                     <div className="container mx-auto px-4 ">
                         <div className="relative">
                             {/* Add gradient overlays */}
@@ -323,64 +323,62 @@ export default function ChardhamYatra() {
 
             {/* Early Bird Offer Section */}
             <section className="relative bg-gradient-to-r from-[#017ae3] to-[#00f6ff] overflow-hidden">
-                {/* Animated background elements */}
+                {/* Animated background elements - Made smaller on mobile */}
                 <div className="absolute inset-0">
-                    <div className="absolute top-0 left-0 w-20 h-20 md:w-32 md:h-32 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2 animate-float-slow"></div>
-                    <div className="absolute bottom-0 right-0 w-16 h-16 md:w-24 md:h-24 bg-white/10 rounded-full translate-x-1/2 translate-y-1/2 animate-float-medium"></div>
-                    <div className="absolute top-1/2 right-1/4 w-12 h-12 bg-white/10 rounded-full animate-float-fast"></div>
+                    <div className="absolute top-0 left-0 w-12 h-12 md:w-32 md:h-32 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2 animate-float-slow"></div>
+                    <div className="absolute bottom-0 right-0 w-8 h-8 md:w-24 md:h-24 bg-white/10 rounded-full translate-x-1/2 translate-y-1/2 animate-float-medium"></div>
+                    <div className="absolute top-1/2 right-1/4 w-6 h-6 md:w-12 md:h-12 bg-white/10 rounded-full animate-float-fast"></div>
                 </div>
 
                 {/* Content */}
-                <div className="container mx-auto px-4 py-8 md:py-12 relative">
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12">
+                <div className="container mx-auto px-4 py-4 md:py-12 relative">
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-3 md:gap-12">
                         {/* Left side content */}
-                        <div className="text-white text-center md:text-left space-y-4 max-w-xl">
+                        <div className="text-white text-center md:text-left space-y-2 md:space-y-4 max-w-xl">
                             <div className="inline-block animate-bounce-slow">
-                                <span className="bg-white/20 text-white text-sm md:text-base px-4 py-1 rounded-full">
+                                <span className="bg-white/20 text-white text-xs md:text-base px-2 md:px-4 py-0.5 md:py-1 rounded-full">
                                     Limited Time Offer
                                 </span>
                             </div>
-                            <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+                            <h2 className="text-xl md:text-4xl font-bold leading-tight">
                                 Early Bird Special
-                                <span className="block text-xl md:text-2xl font-normal mt-2 text-white/90">
+                                <span className="block text-sm md:text-2xl font-normal mt-1 md:mt-2 text-white/90">
                                     Book now and save up to
                                 </span>
-                                <span className="text-4xl md:text-6xl font-bold text-yellow-300 transition-all duration-700 hover:text-yellow-200">
+                                <span className="text-2xl md:text-6xl font-bold text-yellow-300 transition-all duration-700 hover:text-yellow-200">
                                     20% OFF
                                 </span>
                             </h2>
-                            <p className="text-lg md:text-xl text-white/80">
-                                on all Chardham packages for the 2025 season
-                            </p>
+                            
                         </div>
 
                         {/* Right side CTA */}
                         <div className="w-full md:w-auto animate-fade-in-up">
-                            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl shadow-lg">
-                                <div className="text-white text-center mb-4">
-                                    <p className="text-sm uppercase tracking-wider mb-1">Offer Ends Soon</p>
-                                    <div className="flex gap-4 justify-center text-white font-mono bg-white/10 p-4 rounded-xl">
-                                        <div className="bg-white/10 px-3 py-2 rounded-lg">
-                                            <span className="text-2xl font-bold">{timeLeft.days.toString().padStart(2, '0')}</span>
-                                            <span className="text-xs block mt-1">DAYS</span>
+                            <div className="bg-white/10 backdrop-blur-sm p-3 md:p-6 rounded-2xl shadow-lg">
+                                <div className="text-white text-center mb-2 md:mb-4">
+                                    <p className="text-[10px] md:text-sm uppercase tracking-wider mb-1">Offer Ends Soon</p>
+                                    <div className="flex gap-2 md:gap-4 justify-center text-white font-mono bg-white/10 p-2 md:p-4 rounded-xl">
+                                        <div className="bg-white/10 px-2 md:px-3 py-1 md:py-2 rounded-lg">
+                                            <span className="text-lg md:text-2xl font-bold">{timeLeft.days.toString().padStart(2, '0')}</span>
+                                            <span className="text-[8px] md:text-xs block mt-0.5 md:mt-1">DAYS</span>
                                         </div>
-                                        <div className="bg-white/10 px-3 py-2 rounded-lg">
-                                            <span className="text-2xl font-bold">{timeLeft.hours.toString().padStart(2, '0')}</span>
-                                            <span className="text-xs block mt-1">HOURS</span>
+                                        <div className="bg-white/10 px-2 md:px-3 py-1 md:py-2 rounded-lg">
+                                            <span className="text-lg md:text-2xl font-bold">{timeLeft.hours.toString().padStart(2, '0')}</span>
+                                            <span className="text-[8px] md:text-xs block mt-0.5 md:mt-1">HOURS</span>
                                         </div>
-                                        <div className="bg-white/10 px-3 py-2 rounded-lg">
-                                            <span className="text-2xl font-bold">{timeLeft.minutes.toString().padStart(2, '0')}</span>
-                                            <span className="text-xs block mt-1">MINS</span>
+                                        <div className="bg-white/10 px-2 md:px-3 py-1 md:py-2 rounded-lg">
+                                            <span className="text-lg md:text-2xl font-bold">{timeLeft.minutes.toString().padStart(2, '0')}</span>
+                                            <span className="text-[8px] md:text-xs block mt-0.5 md:mt-1">MINS</span>
                                         </div>
-                                        <div className="bg-white/10 px-3 py-2 rounded-lg">
-                                            <span className="text-2xl font-bold">{timeLeft.seconds.toString().padStart(2, '0')}</span>
-                                            <span className="text-xs block mt-1">SECS</span>
+                                        <div className="bg-white/10 px-2 md:px-3 py-1 md:py-2 rounded-lg">
+                                            <span className="text-lg md:text-2xl font-bold">{timeLeft.seconds.toString().padStart(2, '0')}</span>
+                                            <span className="text-[8px] md:text-xs block mt-0.5 md:mt-1">SECS</span>
                                         </div>
                                     </div>
                                 </div>
                                 <Button 
                                     onClick={() => setIsBookingModalOpen(true)}
-                                    className="w-full bg-white hover:bg-gray-100 text-blue-600 font-semibold px-8 py-4 text-lg rounded-xl 
+                                    className="w-full bg-white hover:bg-gray-100 text-blue-600 font-semibold px-3 md:px-8 py-2 md:py-4 text-xs md:text-lg rounded-xl 
                                         transform transition-all duration-300 hover:scale-105 hover:shadow-xl
                                         relative overflow-hidden group"
                                 >

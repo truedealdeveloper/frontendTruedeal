@@ -142,36 +142,41 @@ export default function FixedDeparturePage({ params }: PageProps) {
                 </AnimatePresence>
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/70" />
                 <div className="container mx-auto relative h-full">
-                    <motion.div
-                        className="absolute bottom-12 left-4 md:left-8 text-white max-w-3xl"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                    >
-                        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                            {destination.days} Days {destination.country} Tour Package
-                        </h1>
-                        <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 text-lg">
-                            <span className="flex items-center gap-3">
-                                <FaCalendarAlt className="text-[#00f6ff] text-2xl" />
-                                <span className="text-gray-100">{destination.dateStart} - {destination.dateEnd}</span>
-                            </span>
-                            {isFixedDep && (
-                                <span className="flex items-center gap-3">
-                                    <FaPlane className="text-[#00f6ff] text-2xl" />
-                                    <span className="text-gray-100">{destination.flightFrom}</span>
-                                </span>
-                            )}
+                    <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8">
+                        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+                            <motion.div
+                                className="text-white max-w-3xl"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.2 }}
+                            >
+                                <h1 className="text-3xl md:text-6xl font-bold mb-4 leading-tight">
+                                    {destination.days} Days {destination.country} Tour Package
+                                </h1>
+                                <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-8 text-base md:text-lg mb-4 md:mb-0">
+                                    <span className="flex items-center gap-3">
+                                        <FaCalendarAlt className="text-[#00f6ff] text-xl" />
+                                        <span className="text-gray-100">{destination.dateStart} - {destination.dateEnd}</span>
+                                    </span>
+                                    {isFixedDep && (
+                                        <span className="flex items-center gap-3">
+                                            <FaPlane className="text-[#00f6ff] text-xl" />
+                                            <span className="text-gray-100">{destination.flightFrom}</span>
+                                        </span>
+                                    )}
+                                </div>
+                            </motion.div>
+                            
+                            <div className="flex justify-end">
+                                <Button
+                                    className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white px-6 py-3 md:px-8 md:py-6 text-base md:text-lg rounded-lg shadow-lg transform transition hover:scale-105"
+                                    onClick={() => setIsBookingModalOpen(true)}
+                                >
+                                    Book Now
+                                </Button>
+                            </div>
                         </div>
-                    </motion.div>
-                </div>
-                <div className="absolute bottom-8 right-8">
-                    <Button
-                        className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white px-8 py-6 text-lg rounded-lg shadow-lg transform transition hover:scale-105"
-                        onClick={() => setIsBookingModalOpen(true)}
-                    >
-                        Book Now
-                    </Button>
+                    </div>
                 </div>
             </div>
 
@@ -516,7 +521,7 @@ export default function FixedDeparturePage({ params }: PageProps) {
                                 dishes={[
                                     {
                                         name: 'BEAUTIFUL PAGODAS',
-                                        description: 'The pagodas are the most important religious buildings in Vietnam. They are a symbol of the country’s rich culture and history.',
+                                        description: 'The pagodas are the most important religious buildings in Vietnam. They are a symbol of the countrys rich culture and history.',
                                         image: '/UGCImages/images5/VIETNAM/VERTICAL/4.webp'
                                     },
                                     {
