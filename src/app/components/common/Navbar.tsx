@@ -156,161 +156,166 @@ export default function Navbar() {
 
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white w-full">
-            <div className="max-w-7xl mx-auto px-1 sm:px-4 lg:px-6">
-                <div className="flex items-center justify-between py-1 sm:py-2 border-b-2 border-gray-200">
-                    <div className="flex items-center">
-                        <Link href="/" className="flex-shrink-0">
-                            <Image
-                                src="/Assets/NavbarImages/logo.png"
-                                alt="Truedeal Logo"
-                                width={200}
-                                height={80}
-                                className="w-[100px] sm:w-[140px] md:w-[180px] h-[40px] sm:h-[45px] md:h-[60px] object-contain"
-                                quality={100}
-                                priority
-                            />
-                        </Link>
-                    </div>
-
-                    <div className="hidden md:flex space-x-8 font-semibold">
-                        {navItems.map((item) => (
-                            <Link
-                                key={item.label}
-                                href={item.href}
-                                className={`transition-colors duration-300 ${pathname === item.href
-                                    ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
-                                    : 'text-gray-500 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
-                                    }`}
-                            >
-                                {item.label}
+        <nav className="relative">
+            {/* Add this div for subtle Holi decoration */}
+            <div className="absolute inset-0 bg-gradient-to-r from-pink-50/30 via-purple-50/30 to-yellow-50/30 pointer-events-none"></div>
+            
+            <div className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white w-full">
+                <div className="max-w-7xl mx-auto px-1 sm:px-4 lg:px-6">
+                    <div className="flex items-center justify-between py-1 sm:py-2 border-b-2 border-gray-200">
+                        <div className="flex items-center">
+                            <Link href="/" className="flex-shrink-0">
+                                <Image
+                                    src="/Assets/NavbarImages/logo.png"
+                                    alt="Truedeal Logo"
+                                    width={200}
+                                    height={80}
+                                    className="w-[100px] sm:w-[140px] md:w-[180px] h-[40px] sm:h-[45px] md:h-[60px] object-contain"
+                                    quality={100}
+                                    priority
+                                />
                             </Link>
-                        ))}
+                        </div>
 
-                        {/* Group Tours Dropdown - Desktop */}
-                        <div className="relative group">
-                            <Link
-                                href="/group-tours"
-                                className={`flex items-center gap-1 transition-colors duration-300 ${pathname.startsWith('/group-tours')
-                                    ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
-                                    : 'text-gray-500 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
-                                    }`}
-                            >
-                                Group Tours
-                                <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
-                            </Link>
+                        <div className="hidden md:flex space-x-8 font-semibold">
+                            {navItems.map((item) => (
+                                <Link
+                                    key={item.label}
+                                    href={item.href}
+                                    className={`transition-colors duration-300 ${pathname === item.href
+                                        ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
+                                        : 'text-gray-500 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
+                                        }`}
+                                >
+                                    {item.label}
+                                </Link>
+                            ))}
 
-                            {/* Dropdown Menu - Shows on hover */}
-                            <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
-                                <div className="py-2">
-                                    {groupToursList.map((tour) => (
-                                        <Link
-                                            key={tour.id}
-                                            href={`/group-tours/${tour.id}`}
-                                            className="flex items-center px-4 py-2 hover:bg-gray-50 transition-colors duration-300"
-                                        >
-                                            <div className="w-8 h-8 rounded-full overflow-hidden mr-3 flex-shrink-0">
-                                                <Image
-                                                    src={tour.image}
-                                                    alt={tour.name}
-                                                    width={32}
-                                                    height={32}
-                                                    className="object-cover w-full h-full"
-                                                />
-                                            </div>
-                                            <div>
-                                                <div className="text-sm font-medium text-gray-900">
-                                                    {tour.name.split(':')[0]}
+                            {/* Group Tours Dropdown - Desktop */}
+                            <div className="relative group">
+                                <Link
+                                    href="/group-tours"
+                                    className={`flex items-center gap-1 transition-colors duration-300 ${pathname.startsWith('/group-tours')
+                                        ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
+                                        : 'text-gray-500 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
+                                        }`}
+                                >
+                                    Group Tours
+                                    <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+                                </Link>
+
+                                {/* Dropdown Menu - Shows on hover */}
+                                <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+                                    <div className="py-2">
+                                        {groupToursList.map((tour) => (
+                                            <Link
+                                                key={tour.id}
+                                                href={`/group-tours/${tour.id}`}
+                                                className="flex items-center px-4 py-2 hover:bg-gray-50 transition-colors duration-300"
+                                            >
+                                                <div className="w-8 h-8 rounded-full overflow-hidden mr-3 flex-shrink-0">
+                                                    <Image
+                                                        src={tour.image}
+                                                        alt={tour.name}
+                                                        width={32}
+                                                        height={32}
+                                                        className="object-cover w-full h-full"
+                                                    />
                                                 </div>
-                                                <div className="text-xs text-gray-500">
-                                                    {tour.duration.days} Days | ₹{tour.price.toLocaleString()}
+                                                <div>
+                                                    <div className="text-sm font-medium text-gray-900">
+                                                        {tour.name.split(':')[0]}
+                                                    </div>
+                                                    <div className="text-xs text-gray-500">
+                                                        {tour.duration.days} Days | ₹{tour.price.toLocaleString()}
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </Link>
-                                    ))}
+                                            </Link>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div className="flex items-center gap-1 sm:gap-2 shrink-0">
-                        <div className="flex items-center md:hidden">
-                            <div className="flex items-center hover:scale-105 transition-transform duration-300">
-                                <Phone className="h-4 w-4 text-gray-500 flex-shrink-0" />
+                        <div className="flex items-center gap-1 sm:gap-2 shrink-0">
+                            <div className="flex items-center md:hidden">
+                                <div className="flex items-center hover:scale-105 transition-transform duration-300">
+                                    <Phone className="h-4 w-4 text-gray-500 flex-shrink-0" />
+                                    <a
+                                        href="tel:+919911179796"
+                                        className="bg-gradient-to-r from-[#343232] to-[#000000] text-transparent bg-clip-text font-poppins text-[10px] sm:text-xs md:text-sm font-semibold ml-1 whitespace-nowrap"
+                                    >
+                                        +91 9911179796
+                                    </a>
+                                </div>
+
+                                <button
+                                    className="text-gray-500 focus:outline-none ml-2 sm:ml-4"
+                                    onClick={() => setIsSearchModalOpen(true)}
+                                >
+                                    <Search className="h-4 w-4 sm:h-5 sm:w-5" />
+                                </button>
+
+                                <button
+                                    className="text-gray-500 focus:outline-none ml-2 sm:ml-4"
+                                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                                >
+                                    {isMenuOpen ? (
+                                        <X className="h-4 w-4 sm:h-5 sm:w-5" />
+                                    ) : (
+                                        <MoreVertical className="h-4 w-4 sm:h-5 sm:w-5" />
+                                    )}
+                                </button>
+                            </div>
+
+                            <div className="hidden md:flex items-center hover:scale-105 transition-transform duration-300">
+                                <Phone className="h-4 w-4 text-gray-500" />
                                 <a
                                     href="tel:+919911179796"
-                                    className="bg-gradient-to-r from-[#343232] to-[#000000] text-transparent bg-clip-text font-poppins text-[10px] sm:text-xs md:text-sm font-semibold ml-1 whitespace-nowrap"
+                                    className="bg-gradient-to-r from-[#3f3e3e] to-[#4f4e4e] text-transparent bg-clip-text font-poppins text-xs md:text-sm font-semibold ml-1"
                                 >
                                     +91 9911179796
                                 </a>
                             </div>
 
-                            <button
-                                className="text-gray-500 focus:outline-none ml-2 sm:ml-4"
-                                onClick={() => setIsSearchModalOpen(true)}
-                            >
-                                <Search className="h-4 w-4 sm:h-5 sm:w-5" />
-                            </button>
+                            <SignedOut>
+                                <div className="hidden sm:flex gap-2 shrink-0">
+                                    <Link
+                                        href="/sign-in"
+                                        className="px-2 py-1 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-medium bg-white relative group hover:scale-105 transition-transform duration-300"
+                                    >
+                                        <span className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent relative font-bold">
+                                            Sign In
+                                        </span>
+                                        <span
+                                            className="absolute inset-0 rounded-full border-2 border-transparent"
+                                            style={{
+                                                background: 'linear-gradient(to right, #017ae3, #00f6ff) border-box',
+                                                WebkitMask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)',
+                                                WebkitMaskComposite: 'xor',
+                                                maskComposite: 'exclude',
+                                            }}
+                                        />
+                                    </Link>
+                                    <Link
+                                        href="/sign-up"
+                                        className="px-2 py-1 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-bold text-white bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:scale-105 transition-transform duration-300"
+                                    >
+                                        Sign Up
+                                    </Link>
+                                </div>
+                            </SignedOut>
 
-                            <button
-                                className="text-gray-500 focus:outline-none ml-2 sm:ml-4"
-                                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            >
-                                {isMenuOpen ? (
-                                    <X className="h-4 w-4 sm:h-5 sm:w-5" />
-                                ) : (
-                                    <MoreVertical className="h-4 w-4 sm:h-5 sm:w-5" />
-                                )}
-                            </button>
+                            <SignedIn>
+                                <UserButton
+                                    appearance={{
+                                        elements: {
+                                            avatarBox: "w-8 h-8 md:w-10 md:h-10"
+                                        }
+                                    }}
+                                />
+                            </SignedIn>
                         </div>
-
-                        <div className="hidden md:flex items-center hover:scale-105 transition-transform duration-300">
-                            <Phone className="h-4 w-4 text-gray-500" />
-                            <a
-                                href="tel:+919911179796"
-                                className="bg-gradient-to-r from-[#3f3e3e] to-[#4f4e4e] text-transparent bg-clip-text font-poppins text-xs md:text-sm font-semibold ml-1"
-                            >
-                                +91 9911179796
-                            </a>
-                        </div>
-
-                        <SignedOut>
-                            <div className="hidden sm:flex gap-2 shrink-0">
-                                <Link
-                                    href="/sign-in"
-                                    className="px-2 py-1 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-medium bg-white relative group hover:scale-105 transition-transform duration-300"
-                                >
-                                    <span className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent relative font-bold">
-                                        Sign In
-                                    </span>
-                                    <span
-                                        className="absolute inset-0 rounded-full border-2 border-transparent"
-                                        style={{
-                                            background: 'linear-gradient(to right, #017ae3, #00f6ff) border-box',
-                                            WebkitMask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)',
-                                            WebkitMaskComposite: 'xor',
-                                            maskComposite: 'exclude',
-                                        }}
-                                    />
-                                </Link>
-                                <Link
-                                    href="/sign-up"
-                                    className="px-2 py-1 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-bold text-white bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:scale-105 transition-transform duration-300"
-                                >
-                                    Sign Up
-                                </Link>
-                            </div>
-                        </SignedOut>
-
-                        <SignedIn>
-                            <UserButton
-                                appearance={{
-                                    elements: {
-                                        avatarBox: "w-8 h-8 md:w-10 md:h-10"
-                                    }
-                                }}
-                            />
-                        </SignedIn>
                     </div>
                 </div>
             </div>
@@ -370,6 +375,14 @@ export default function Navbar() {
                 isOpen={isSearchModalOpen} 
                 onClose={() => setIsSearchModalOpen(false)} 
             />
+
+            {/* Add these decorative elements at the end of your navbar */}
+            <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-pink-200 via-purple-200 to-yellow-200"></div>
+            <div className="hidden lg:flex absolute -bottom-1 right-4 space-x-1">
+                <span className="h-1.5 w-1.5 rounded-full bg-pink-400"></span>
+                <span className="h-1.5 w-1.5 rounded-full bg-purple-400"></span>
+                <span className="h-1.5 w-1.5 rounded-full bg-yellow-400"></span>
+            </div>
         </nav>
     )
 }

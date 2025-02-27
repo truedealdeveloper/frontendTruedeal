@@ -84,11 +84,13 @@ export default function RootLayout({
             />
           </noscript>
           <GoogleAnalytics />
-          <Navbar />
-          {children}
-          <SpeedInsights />
-          <Chatbot />
-          <Footer />
+          
+            <Navbar />
+              {children}
+            <SpeedInsights />
+            <Chatbot />
+            <Footer />
+          
           <Analytics />
         </body>
       </html>

@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import TypingAnimation from "../../../components/ui/typing-animation"
 import FirstTimeTravelMessage from "./FirstTimeTravelMessage"
+import HoliBanner from './HoliBanner'
 // import { fixedDeparturesData } from "@/app/fixedDeparture/data"
 
 interface Destination {
@@ -429,6 +430,7 @@ export default function HeroSection() {
                 </div>
             </div>
             <FirstTimeTravelMessage />
+            <HoliBanner />
         </>
     )
 }
