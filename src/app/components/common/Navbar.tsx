@@ -144,27 +144,8 @@ function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
 // Main Navbar Component
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
-    const [isScrolled, setIsScrolled] = useState(false)
     const pathname = usePathname()
     const [isSearchModalOpen, setIsSearchModalOpen] = useState(false)
-
-    useEffect(() => {
-        const header = document.querySelector('header')
-        const observer = new IntersectionObserver(
-            ([entry]) => setIsScrolled(!entry.isIntersecting)
-        )
-
-        if (header) {
-            observer.observe(header)
-        }
-
-        return () => {
-            observer.disconnect()
-            if (header && header.parentNode) {
-                header.parentNode.removeChild(header)
-            }
-        }
-    }, [])
 
     const navItems = [
         { href: "/", label: "Home" },
