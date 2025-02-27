@@ -612,12 +612,19 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
             }
         ],
         images: [
-            "/UGCImages/europe/1.svg",
-            "/UGCImages/europe/2.svg",  
-            "/UGCImages/europe/3.svg",
-            "/UGCImages/europe/4.svg",
-            "/UGCImages/europe/5.svg",
-            "/UGCImages/europe/6.svg",
+            "/UGCImages/web/europe/1.webp",
+            "/UGCImages/web/europe/2.webp",  
+            "/UGCImages/web/europe/3.webp",
+            "/UGCImages/web/europe/4.webp",
+            "/UGCImages/web/europe/5.webp",
+            "/UGCImages/web/europe/6.webp",
+            "/UGCImages/web/europe/7.webp",
+            "/UGCImages/web/europe/8.webp",
+            "/UGCImages/web/europe/9.webp",
+            "/UGCImages/web/europe/10.webp",
+            "/UGCImages/web/europe/11.webp",
+            "/UGCImages/web/europe/12.webp",
+            "/UGCImages/web/europe/13.webp",
             
         ]
     },
@@ -723,14 +730,13 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
             }
         ],
         images: [
-            "/UGCImages/russia/1.svg",
-            "/UGCImages/russia/2.svg",
-            "/UGCImages/russia/3.svg",
-            "/UGCImages/russia/4.svg",
-            "/UGCImages/russia/5.svg",
-            "/UGCImages/russia/6.svg",
-            "/UGCImages/russia/7.svg",
-            "/UGCImages/russia/8.svg",
+            "/UGCImages/web/russia/1.webp",
+            "/UGCImages/web/russia/2.webp",
+            "/UGCImages/web/russia/3.webp",
+            "/UGCImages/web/russia/4.webp",
+            "/UGCImages/web/russia/5.webp",
+            "/UGCImages/web/russia/6.webp",
+            "/UGCImages/web/russia/7.webp",
             
         ]
     },
@@ -863,7 +869,7 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         country: "Thailand",
         days: 8,
         nights: 7,
-        amount: 89999,
+        amount: 75895,
         dateStart: "10 May 2025",
         dateEnd: "17 May 2025",
         flightFrom: "Mumbai",
@@ -965,14 +971,12 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
             }
         ],
         images: [
-            "/UGCImages/thailand/2.svg",
-            "/UGCImages/thailand/4.svg",
-            "/UGCImages/thailand/5.svg",
-            "/UGCImages/thailand/6.svg",
-            "/UGCImages/thailand/7.svg",
-            "/UGCImages/thailand/8.svg",
-            "/UGCImages/thailand/9.svg",
-            "/UGCImages/thailand/10.svg",
+            "/UGCImages/web/thailand/1.webp",
+            "/UGCImages/web/thailand/2.webp",
+            "/UGCImages/web/thailand/3.webp",
+            "/UGCImages/web/thailand/4.webp",
+            "/UGCImages/web/thailand/5.webp",
+            "/UGCImages/web/thailand/6.webp",
         ]
     },
     thailandDeluxeTour: {
@@ -980,7 +984,7 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         country: "Thailand",
         days: 11,
         nights: 10,
-        amount: 99999,
+        amount: 86895,
         dateStart: "6 May 2025",
         dateEnd: "18 May 2025",
         flightFrom: "Mumbai",
@@ -1055,58 +1059,79 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
             {
                 day: 1,
                 title: "Arrival in Phuket (06-05-2025)",
-                description: "Upon arrival at Phuket Airport, meet our representative. Transfer to hotel and enjoy Indian lunch. Rest of day at leisure. Overnight in Phuket."
+                description: `Upon arrival at Phuket Airport, meet our representative for a warm welcome and a guided transfer to your hotel. Enjoy a delicious Indian lunch at one of Phuket’s best Indian restaurants. Complete the check-in formalities and spend the rest of the day at leisure. You can explore the stunning landscapes, try adventure activities, or relax in the comfort of your hotel. Overnight stay in Phuket.
+`
             },
             {
                 day: 2,
                 title: "Phi Phi Island Tour (07-05-2025)",
-                description: "Speedboat tour to Phi Phi Islands. Enjoy snorkeling, swimming, and beach time. Lunch at beachside hotel. Return to Phuket (Pick-up: 07:30-07:45 AM, Drop-off: 05:30-06:00 PM)."
+                description: `After breakfast, get transferred to the breathtaking Phi Phi Islands via a scenic boat ride. Enjoy the stunning island views and savor lunch at a beachside hotel. Spend time at the secluded beach, where you can go snorkeling, swimming, or simply relax in the sunshine. Return to the hotel in Phuket for an overnight stay.
+Pick-up: 07:30 - 07:45 AM | Drop-off: 05:30 - 06:00 PM
+`
+            },
+            {
+                day: 3,
+                title: "Full-Day Adventure Tour (08-05-2025)",
+                description: `Start your day with a delicious breakfast and prepare for an action-packed adventure in Phuket. Begin with a visit to Wat Suwan Khuha, home to the magnificent Reclining Buddha. Experience the thrill of white-water rafting before enjoying a refreshing lunch break. Continue the adventure with ziplining and an ATV ride, followed by a mini trek through untouched trails leading to a beautiful waterfall. Return to the hotel for an overnight stay.
+`
+            },
+            {
+                day: 4,
+                title: "Phuket to Krabi Transfer (09-05-2025)",
+                description: `After breakfast, check out from the hotel and travel to the stunning coastal town of Krabi. Along the way, explore Portuguese-style architecture and vibrant local markets for unique souvenirs. Visit the revered Wat Chalong Temple, followed by optional visits to Tiger Kingdom and an Elephant Trekking Park (tickets not included). Upon arrival in Krabi, check in to your hotel and relax for the evening.
+`
             },
             {
                 day: 5,
                 title: "7 Island Tour (10-05-2025)",
-                description: "Full-day island hopping tour visiting Tup, Mohr, Chicken, Poda, and Taming Islands. Snorkeling, sunset at Phranang Cave Beach, dinner at Railay Beach, and bioluminescent plankton viewing."
+                description: `Start your adventure with a pick-up from Krabi and visit the stunning islands of Thailand. Witness the unique sandbar phenomenon at Tup & Mohr Islands, capture the iconic rock formation at Chicken Island, and relax on the white sandy beaches of Poda Island. Snorkel at Taming Island and Puya Bay, and visit Phranang Cave Beach for spectacular sunset views. Enjoy dinner at a restaurant on Railay Beach, followed by a mesmerizing view of bioluminescent plankton.
+`
             },
             {
                 day: 6,
                 title: "Krabi to Pattaya via Bangkok (11-05-2025)",
-                description: "Flight to Bangkok and transfer to Pattaya. Evening Alcazar Cabaret Show. Overnight in Pattaya."
+                description: `After breakfast, check out and transfer to Krabi Airport for your flight to Bangkok. Upon arrival, meet our representative and enjoy a comfortable two-hour drive to Pattaya. Check-in at your pre-booked hotel and relax. In the evening, get picked up for the famous Alcazar Cabaret Show, a spectacular artistic performance. Return to the hotel for an overnight stay.`
             },
             {
                 day: 7,
                 title: "Coral Island Tour (12-05-2025)",
-                description: "Speedboat to Coral Island (Koh Larn). Beach activities and optional water sports. Indian lunch in Pattaya. Pick-up at 09:30 AM."
+                description: `After breakfast, get transferred to the jetty for a speedboat ride to Coral Island, also known as Koh Larn. Enjoy the serene beaches, take a leisurely walk on the white sand, or participate in water activities like parasailing, underwater sea walking, banana boat rides, and jet skiing (available at an extra cost). After a fulfilling day, return to Pattaya for lunch at an Indian restaurant and spend the rest of the day at leisure. Overnight stay in Pattaya.
+`
             },
             {
                 day: 8,
                 title: "Pattaya Floating Market & City Tour (13-05-2025)",
-                description: "Visit Floating Market, Pattaya Viewpoint, Big Buddha, Gems Gallery, and Tiger Park (optional). Afternoon at leisure."
+                description: `After breakfast, explore Pattayas attractions, including the Floating Market (entry ticket included), Pattaya Viewpoint, Big Buddha, Gems Gallery, and Tiger Park (ticket extra). After an exciting half-day city tour, return to the hotel for an overnight stay.
+`
             },
             {
                 day: 9,
                 title: "Pattaya to Bangkok with Temple Tour (14-05-2025)",
-                description: "Transfer to Bangkok with temple visits including Wat Traimit and Mini Reclining Buddha Temple. Overnight in Bangkok."
+                description: `After breakfast, travel back to Bangkok. En route, visit the famous temples of Bangkok, including Wat Traimit (Golden Buddha) and the Mini Reclining Buddha Temple. Upon arrival in Bangkok, check in at your hotel and unwind. Overnight stay in Bangkok.
+`
             },
             {
                 day: 10,
                 title: "Safari World & Marine Park (15-05-2025)",
-                description: "Full day at Safari World enjoying various shows. Indian lunch included. Overnight in Bangkok."
+                description: `After breakfast, visit Safari World and Marine Park for a thrilling wildlife experience. Enjoy shows featuring dolphins, sea lions, elephants, birds, and Hollywood-style stunt performances. A delicious Indian lunch is included. Return to the hotel for an overnight stay in Bangkok.
+`
             },
             {
                 day: 11,
                 title: "Departure (18-05-2025)",
-                description: "Breakfast and airport transfer for return flight."
+                description:    `After breakfast, check out from the hotel and transfer to the airport for your return journey, marking the end of an unforgettable Thailand adventure.
+`
             }
         ],
         images: [
-            "/UGCImages/thailand/6.svg",
-            "/UGCImages/thailand/5.svg",
-            "/UGCImages/thailand/7.svg",
-            "/UGCImages/thailand/9.svg",
-            "/UGCImages/thailand/2.svg",
-            "/UGCImages/thailand/4.svg",
-            "/UGCImages/thailand/8.svg",
-            "/UGCImages/thailand/10.svg",
+            "/UGCImages/web/thailand/7.webp",
+            "/UGCImages/web/thailand/8.webp",
+            "/UGCImages/web/thailand/9.webp",
+            "/UGCImages/web/thailand/10.webp",
+            "/UGCImages/web/thailand/11.webp",
+            "/UGCImages/web/thailand/12.webp",
+
+
         ]
     },
     baliFixedDeparture: {
@@ -2666,12 +2691,10 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
             }
         ],
         images: [
-            "/UGCImages/Images4/russia/horizontal/1.webp",
-            "/UGCImages/Images4/russia/horizontal/2.webp",
-            "/UGCImages/Images4/russia/horizontal/3.webp",
-            "/UGCImages/Images4/russia/horizontal/4.webp",
-            "/UGCImages/Images4/russia/horizontal/5.webp",
-            "/UGCImages/Images4/russia/horizontal/6.webp"
+            "/UGCImages/web/russia/9.webp",
+            "/UGCImages/web/russia/10.webp",
+            "/UGCImages/web/russia/11.webp",
+            "/UGCImages/web/russia/12.webp",
         ],
         packageType: "land-only",
         visaRequired: true,

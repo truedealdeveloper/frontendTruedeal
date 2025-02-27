@@ -265,8 +265,6 @@ Return to Badrinath helipad for departure
         ],
         tourSummary: [
             "FIXED DEPARTURES - DODHAM BY HELICOPTER (3N/4D Heli-Tour)",
-            "Warm greetings from Himalayan Heli! Flying with expertise, care & love since 1998, we take immense pride in our dedication to providing the best pilgrimage helicopter services. Over the past two decades, we have facilitated thousands of pilgrims, ensuring a seamless and comfortable travel experience.",
-            "The Dodham Tour covers the two most revered shrines of India—Kedarnath ji & Badrinath ji—making it one of our most sought-after packages."
         ],
         inclusions: [
             "Helicopter service from Dehradun to Kedarnath ji & Badrinath ji, & return.",
