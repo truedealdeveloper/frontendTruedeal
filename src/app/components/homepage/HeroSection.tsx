@@ -371,14 +371,14 @@ export default function HeroSection() {
         <>
             <div className="relative min-h-[65svh] md:min-h-[85vh] overflow-hidden">
                 {/* Background Video */}
-                <div className="absolute inset-0 h-[65svh] md:h-[85vh]">
+                <div className="absolute inset-0 h-[60svh] md:h-[85vh]">
                     <video 
                         autoPlay 
                         loop 
                         muted 
                         playsInline 
                         preload="auto"
-                        className="absolute top-0 left-0 w-full md:w-[1282px] h-full md:h-[814px] object-cover md:object-contain object-center z-0 md:left-1/2 md:-translate-x-1/2"
+                        className="absolute top-0 left-0 w-full h-full object-cover object-center z-0"
                     >
                         <source
                             src="/Assets/HeroSectionImages/bgg.mp4"
