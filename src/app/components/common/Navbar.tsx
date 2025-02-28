@@ -157,20 +157,27 @@ export default function Navbar() {
 
     return (
         <nav className="relative">
-            {/* Add this div for subtle Holi decoration */}
-            <div className="absolute inset-0 bg-gradient-to-r from-pink-50/30 via-purple-50/30 to-yellow-50/30 pointer-events-none"></div>
+            {/* Holi-themed background decorations */}
+            <div className="absolute inset-0 bg-gradient-to-r from-pink-100/40 via-purple-100/40 to-yellow-100/40 animate-pulse"></div>
+            <div className="absolute inset-0">
+                <div className="absolute top-0 left-1/4 w-24 h-24 bg-pink-200/20 rounded-full blur-3xl"></div>
+                <div className="absolute top-0 right-1/4 w-24 h-24 bg-purple-200/20 rounded-full blur-3xl"></div>
+                <div className="absolute top-0 left-1/2 w-24 h-24 bg-yellow-200/20 rounded-full blur-3xl"></div>
+            </div>
             
-            <div className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white w-full">
+            <div className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm w-full">
                 <div className="max-w-7xl mx-auto px-1 sm:px-4 lg:px-6">
-                    <div className="flex items-center justify-between py-1 sm:py-2 border-b-2 border-gray-200">
-                        <div className="flex items-center">
-                            <Link href="/" className="flex-shrink-0">
+                    <div className="flex items-center justify-between py-1 sm:py-2 border-b-2 border-gray-200 relative">
+                        <div className="flex items-center relative">
+                            {/* Holi color effect behind logo */}
+                            <div className="absolute -inset-4 bg-gradient-to-r from-pink-200/50 via-purple-200/50 to-yellow-200/50 blur-lg rounded-full"></div>
+                            <Link href="/" className="flex-shrink-0 relative">
                                 <Image
                                     src="/Assets/NavbarImages/logo.png"
                                     alt="Truedeal Logo"
                                     width={200}
                                     height={80}
-                                    className="w-[100px] sm:w-[140px] md:w-[180px] h-[40px] sm:h-[45px] md:h-[60px] object-contain"
+                                    className="w-[100px] sm:w-[140px] md:w-[180px] h-[40px] sm:h-[45px] md:h-[60px] object-contain relative z-10"
                                     quality={100}
                                     priority
                                 />
@@ -318,6 +325,8 @@ export default function Navbar() {
                         </div>
                     </div>
                 </div>
+
+               
             </div>
 
             {isMenuOpen && (
@@ -375,14 +384,6 @@ export default function Navbar() {
                 isOpen={isSearchModalOpen} 
                 onClose={() => setIsSearchModalOpen(false)} 
             />
-
-            {/* Add these decorative elements at the end of your navbar */}
-            <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-pink-200 via-purple-200 to-yellow-200"></div>
-            <div className="hidden lg:flex absolute -bottom-1 right-4 space-x-1">
-                <span className="h-1.5 w-1.5 rounded-full bg-pink-400"></span>
-                <span className="h-1.5 w-1.5 rounded-full bg-purple-400"></span>
-                <span className="h-1.5 w-1.5 rounded-full bg-yellow-400"></span>
-            </div>
         </nav>
     )
 }

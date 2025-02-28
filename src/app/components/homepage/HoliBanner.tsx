@@ -2,16 +2,32 @@ import React from 'react';
 
 const HoliBanner = () => {
   return (
-    <div className="w-full py-3 bg-gradient-to-r from-pink-100 via-purple-100 to-yellow-100 border-y border-opacity-20 border-purple-300">
+    <div className="w-full py-2 bg-gradient-to-r from-pink-100 via-purple-100 to-yellow-100 border-y border-opacity-20 border-purple-300">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-center space-x-2">
-          <span className="h-2 w-2 rounded-full bg-pink-400 animate-pulse"></span>
-          <span className="h-2 w-2 rounded-full bg-yellow-400 animate-pulse delay-100"></span>
-          <p className="text-gray-800 text-sm font-medium">
-            Celebrating the Festival of Colors! Happy Holi 🎨
+        <div className="flex items-center justify-center space-x-3">
+          {/* Left dots */}
+          <div className="flex space-x-1.5">
+            <span className="h-2 w-2 rounded-full bg-pink-400 animate-pulse"></span>
+            <span className="h-2 w-2 rounded-full bg-yellow-400 animate-pulse delay-100"></span>
+          </div>
+
+          
+
+          {/* Message */}
+          <p className="text-sm font-medium">
+            <span className="bg-gradient-to-r from-red-500 via-green-500 to-yellow-500 bg-clip-text text-transparent">
+              Celebrate Holi with Truedeal!
+            </span>
+            <span className="text-gray-800 ml-2">
+              Get 10% off on all bookings
+            </span>
           </p>
-          <span className="h-2 w-2 rounded-full bg-purple-400 animate-pulse delay-200"></span>
-          <span className="h-2 w-2 rounded-full bg-orange-400 animate-pulse delay-300"></span>
+
+          {/* Right dots */}
+          <div className="flex space-x-1.5">
+            <span className="h-2 w-2 rounded-full bg-purple-400 animate-pulse delay-200"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-400 animate-pulse delay-300"></span>
+          </div>
         </div>
       </div>
     </div>

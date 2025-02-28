@@ -92,7 +92,9 @@ const fixedDepartureDestinations = [
         name: "China Canton Trip",
         tag: { label: "FIXED DEPARTURE", color: "blue" },
         fixedDepartureId: "china-6-days-canton-fair-tour"
-    }
+    },
+    
+
 ]
 
 const destinations: Destination[] = [
@@ -326,42 +328,39 @@ export default function HeroSection() {
     const MobileStatsSection = () => (
         <div className="md:hidden block">
             <div className="container mx-auto px-4">
-                <div className="grid grid-cols-3 gap-6 max-w-sm mx-auto">
+                <div className="grid grid-cols-3 gap-2 max-w-sm mx-auto">
                     {/* MICE Services */}
-                    <div className="flex flex-col items-center text-white">
+                    {/* <div className="flex flex-col items-center text-white">
                         <div className="mb-1">
-                            <Briefcase className="w-5 h-5 text-blue-400" />
+                            <Briefcase className="w-4 h-4 text-blue-400" />
                         </div>
                         <div className="text-center">
-                            <p className="font-bold text-xs">MICE</p>
-                            <p className="text-[10px]">Specialists</p>
+                            <p className="font-semibold text-[11px] leading-tight">MICE</p>
+                            <p className="text-[9px] leading-tight">Specialists</p>
                         </div>
-                    </div>
+                    </div> */}
 
                     {/* Experience */}
-                    <div className="flex flex-col items-center text-white">
+                    {/* <div className="flex flex-col items-center text-white">
                         <div className="mb-1">
-                            <Award className="w-5 h-5 text-yellow-400" />
+                            <Award className="w-4 h-4 text-yellow-400" />
                         </div>
                         <div className="text-center">
-                            <p className="font-bold text-xs">10+ Years</p>
-                            <p className="text-[10px]">Experience</p>
+                            <p className="font-semibold text-[11px] leading-tight">10+ Years</p>
+                            <p className="text-[9px] leading-tight">Experience</p>
                         </div>
-                    </div>
-
+                    </div> */}
 
                     {/* EMI */}
-                    <div className="flex flex-col items-center text-white">
+                    {/* <div className="flex flex-col items-center text-white">
                         <div className="mb-1">
-                            <CreditCard className="w-5 h-5 text-purple-400" />
+                            <CreditCard className="w-4 h-4 text-purple-400" />
                         </div>
                         <div className="text-center">
-                            <p className="font-bold text-xs">No Cost</p>
-                            <p className="text-[10px]">EMI Available</p>
+                            <p className="font-semibold text-[11px] leading-tight">No Cost</p>
+                            <p className="text-[9px] leading-tight">EMI Available</p>
                         </div>
-                    </div>
-
-                
+                    </div> */}
                 </div>
             </div>
         </div>
