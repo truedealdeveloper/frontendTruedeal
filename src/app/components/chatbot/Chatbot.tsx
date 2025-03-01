@@ -44,7 +44,7 @@ export function Chatbot() {
 
     useEffect(() => {
         if (isOpen && messages.length === 0) {
-            addBotMessage("Hello! I'm True Friend, your personal assistant. May I know your name?");
+            addBotMessage("Hello! I'm True Deal, your personal assistant. May I know your name?");
         }
     }, [isOpen, messages.length]);
 
@@ -142,34 +142,27 @@ export function Chatbot() {
 
     return (
         <>
-            <motion.div
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                animate={{
-                    scale: [1, 1.1, 1],
-                    transition: {
+            <div className="fixed bottom-4 right-4 z-50">
+                <motion.div
+                    animate={{
+                        scale: [1, 1.1, 1],
+                    }}
+                    transition={{
                         duration: 2,
                         repeat: Infinity,
-                        repeatType: "reverse"
-                    }
-                }}
-                className="fixed bottom-4 right-4 z-50"
-            >
-                <Button
-                    onClick={() => setIsOpen(true)}
-                    className="rounded-full shadow-lg bg-gradient-to-r from-[#017ae3] to-[#00f6ff] p-0 w-14 h-14"
-                    size="icon"
+                        ease: "easeInOut"
+                    }}
                 >
                     <Image
-                        src="/Assets/chatbot/botGif.svg"
-                        alt="Chatbot"
-                        width={48}
-                        height={48}
-                        className="rounded-full"
+                        src="/Assets/chatbot/whatsapp.svg"
+                        alt="WhatsApp"
+                        width={42}
+                        height={42} 
+                        className="cursor-pointer"
+                        onClick={() => setIsOpen(true)}
                     />
-                    <span className="sr-only">Open chat</span>
-                </Button>
-            </motion.div>
+                </motion.div>
+            </div>
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -181,7 +174,7 @@ export function Chatbot() {
                     >
                         <Card className="w-full h-full flex flex-col overflow-hidden">
                             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
-                                <CardTitle className="text-lg font-semibold text-white">True Friend</CardTitle>
+                                <CardTitle className="text-lg font-semibold text-white">True Deal</CardTitle>
                                 <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="text-white">
                                     <X className="h-4 w-4" />
                                     <span className="sr-only">Close chat</span>
@@ -219,8 +212,15 @@ export function Chatbot() {
                                 {step === 'finished' ? (
                                     <Button
                                         onClick={handleWhatsAppRedirect}
-                                        className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white"
+                                        className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white flex items-center justify-center gap-2"
                                     >
+                                        <Image
+                                            src="/Assets/whatsapp.svg"
+                                            alt="WhatsApp"
+                                            width={24}
+                                            height={24}
+                                            className="rounded-full"
+                                        />
                                         Connect on WhatsApp
                                     </Button>
                                 ) : (
