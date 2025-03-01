@@ -170,7 +170,7 @@ export default function Component() {
                             <ul className="space-y-2">
                                 {[
                                     { name: "Home", path: "/" },
-                                    { name: "About", path: "/about" },
+                                    { name: "About", path: "/about-us" },
                                     { name: "Destination Package", path: "/destinationpackage" },
                                     { name: "Trending Package", path: "/trendingpackage" },
                                     { name: "Contact Us", path: "/contact-us" },

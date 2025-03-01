@@ -964,12 +964,12 @@ And Local Lunch and drinks Balinese coffee, tea and water.`
             }
         ],
         images: [
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/1.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/2.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/3.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/4.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/5.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/6.webp"
+            "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/1.webp",
+            "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/2.webp",
+            "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/3.webp",
+            "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/4.webp",
+            "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/5.webp",
+            
         ],
         sightseeingSpots: [
             {
