@@ -135,10 +135,9 @@ select::-webkit-listbox {
 }
 
 .animate-scroll {
-  animation: scroll 60s linear infinite;
+  animation: scroll 50s linear infinite;
 }
 
-/* Optional: Pause animation on hover */
 .animate-scroll:hover {
   animation-play-state: paused;
 }

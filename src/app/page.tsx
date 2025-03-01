@@ -20,6 +20,7 @@ import FixedDepartures from "./fixedDeparture/page";
 // import ChardhamYatra from './chardhamYatra/page';
 import SriLanka from './sriLanka/page';
 import TripPlanRequest from "../components/TripPlanRequest";
+import BaliPackages from "./bali/page";
 
 export default function Home() {
   return (
@@ -31,6 +32,8 @@ export default function Home() {
       
       {/* <ChardhamYatra /> */}
             <SriLanka />  
+
+      <BaliPackages />
       <Destination />
       <Domestic />
       <Trending />
