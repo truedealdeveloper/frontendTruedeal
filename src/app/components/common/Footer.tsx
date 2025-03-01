@@ -257,11 +257,58 @@ export default function Component() {
                     </div>
                 </div>
 
-                {/* Copyright Section with enhanced styling */}
-                <div className="mt-12 pt-8 border-t border-gray-200">
+                {/* Copyright Section with enhanced styling and illustrations */}
+                <div className="mt-12 pt-8 border-t border-gray-200 relative">
+                   
+                    
+                    {/* Certification Badges */}
+                    <div className="max-w-7xl mx-auto mb-6">
+                        <div className="flex justify-center gap-8 mb-6">
+                            <Image
+                                src="/Assets/chatbot/coll.png"
+                                alt="IATA Certified"
+                                width={60}
+                                height={30}
+                                className="opacity-70 hover:opacity-100 transition-opacity"
+                            />
+                            <Image
+                                src="/Assets/chatbot/colosseum.png"
+                                alt="Tourism Certified"
+                                width={60}
+                                height={30}
+                                className="opacity-70 hover:opacity-100 transition-opacity"
+                            />
+                            <Image
+                                src="/Assets/chatbot/bali.png"
+                                alt="Tourism Certified"
+                                width={60}
+                                height={30}
+                                className="opacity-70 hover:opacity-100 transition-opacity"
+                            />
+
+<Image
+                                src="/Assets/chatbot/building.png"
+                                alt="Tourism Certified"
+                                width={60}
+                                height={30}
+                                className="opacity-70 hover:opacity-100 transition-opacity"
+                            />
+                            <Image
+                                src="/Assets/chatbot/eiffel.png"
+                                alt="Tourism Certified"
+                                width={60}
+                                height={30}
+                                className="opacity-70 hover:opacity-100 transition-opacity"
+                            />
+                        </div>
+                    </div>
+
                     <div className="max-w-7xl mx-auto text-center">
-                        <p className="text-gray-600 text-sm transition-colors duration-300 hover:text-[#017ae3]">
+                        <p className="text-gray-600 text-sm font-medium mb-2">
                             © {new Date().getFullYear()} Truedeal Travels Private Limited. All rights reserved.
+                        </p>
+                        <p className="text-gray-500 text-xs">
+                            Making travel dreams come true since 2014
                         </p>
                     </div>
                 </div>
