@@ -2882,6 +2882,134 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         visaRequired: true,
         minGroupSize: 2
     },
+    europeMiceZurich: {
+        id: "europe-group-tour-zurich-20-44-pax-5N-6D",
+        country: "Europe",
+        days: 6,
+        nights: 5,
+        amount: 168000,
+        dateStart: "Contact Us",
+        dateEnd: "Contact Us",
+        description: `Embark on a luxurious and professionally curated Truedeal itinerary through Basel, Interlaken, and Jura Mountain. Enjoy scenic landscapes, cultural highlights, and seamless travel arrangements tailored for an enriching experience.
+`,
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Double/Single Sharing Available",
+            arrivalDate: "Contact Us",
+            duration: "5N6D Eurpope",
+            costBasis: "DBL: ₹1,68,000"
+        },
+        tourSummary: [
+            "Day 1: Arrival in Zurich & Transfer to Basel",
+            "Day 2: Basel City Tour & Congress Visit",
+            "Day 3: Interlaken & Schynige Platte Excursion",
+            "Day 4: Jura Mountain Adventure",
+            "Day 5: Basel Shopping & Exploration",
+            "Day 6: Departure from Zurich"
+        ],
+        inclusions: [
+            "Meet & Greet Assistance on Arrival",
+            "6 Days Through Coach (12 Hrs/Day) including parking, taxes & driver accommodation",
+            "5 Nights Accommodation at Hotel Metropol Basel / Hotel Victoria or Similar (4-Star Hotel)",
+            "Daily Hot Buffet Breakfast at the hotel",
+            "All Transfers & Excursions as per itinerary",
+            "Guided Tours with English-speaking Guide",
+            "Entrance Tickets for Kunstmuseum Basel, Grottes de Réclère, Musée jurassien d'Art et d'Histoire",
+            "Schynige Platte Cogwheel Train, Harder Kulm Funicular, and Boat Cruise on Lake Brienz",
+            "3-Course Meals for Lunch & Dinner (as per itinerary)",
+            "Driver Tips CHF 2/PP/Day (Included)",
+            "2 x 500ml Bottles of Water per person per day (Included)"
+           
+        ],
+        exclusions: [
+            "International & Domestic Airfare",
+            "Personal expenses (Laundry, Phone calls, etc.)",
+            "Travel Insurance",
+            "City Tax (included in package price)",
+            "Optional Excursions",
+            "Portage at Hotels"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Zurich & Transfer to Basel",
+                description: `Meet & Greet at Zurich International Airport
+Transfer to Basel with a stopover for Lunch at a Local Restaurant (3-course meal)
+Arrive in Basel and check-in at the hotel
+Free time for leisure
+Dinner at a Local Restaurant in Basel (3-course meal)
+Overnight in Basel
+`
+            },
+            {
+                day: 2,
+                title: "Basel City Tour & Congress Visit",
+                description:  `Breakfast at the hotel
+Transfer to Congress Venue (Amee, an International Association for Health Professions Education) – Photo-stop
+Lunch at a Local Restaurant
+Half-day guided Basel City Tour (Historic Museum, Mittlere Brücke, Basler Münster, Museum der Kulturen, City Hall)
+Visit Kunstmuseum Basel (Entrance Included)
+Dinner at a Local Restaurant
+Overnight in Basel
+`
+            },
+            {
+                day: 3,
+                title: "Interlaken & Schynige Platte Excursion",
+                description: `Breakfast at the hotel
+Transfer to Interlaken OST (2.5 Hrs Drive)
+Meet your Full Day English-speaking Guide
+Train ride to Schynige Platte & Alpine Garden Visit
+Lunch at Panorama Restaurant
+Return via Harder Kulm Funicular
+Boat Cruise on Lake Brienz
+Return to Basel with a Stopover for Dinner at a Chinese Restaurant
+Overnight in Basel
+
+`
+            },
+            {
+                day: 4,
+                title: "Jura Mountain Adventure",
+                description: `Breakfast at the hotel
+Full-day Jura Mountain Adventure with Local Guide
+Explore Delémont Old Town & Delémont Castle
+Visit Musée jurassien d'Art et d'Histoire (Entrance Included)
+Lunch at La Chaux-d'Abel (Seasonal fresh meals)
+Guided Tour of Grottes de Réclère & Ice Cave
+Chairlift ride to Crêt du Midi for panoramic views
+Dinner at a Local Restaurant
+Overnight in Basel
+`
+            },
+            {
+                day: 5,
+                title: "Basel Shopping & Exploration",
+                description: `Breakfast at the hotel
+Full-day Shopping Tour (Old Town, Freie Strasse, St. Jakob-Park, Stücki Park, Läderach Chocolates)
+Lunch at a Local Restaurant
+Free time for shopping & leisure
+Dinner at a Local Restaurant
+Overnight in Basel
+
+`
+            },
+            {
+                day: 6,
+                title: "Departure from Zurich",
+                description: "Breakfast at the hotel. Transfer to Zurich Airport for departure."
+            },
+        ],
+        images: [
+            "/UGCImages/web/russia/12.webp",
+            "/UGCImages/web/russia/10.webp",
+            "/UGCImages/web/russia/11.webp",
+            "/UGCImages/web/russia/9.webp",
+        ],
+        packageType: "land-only",
+        visaRequired: true,
+        minGroupSize: 20
+    },
     
 };
 
@@ -2918,6 +3046,9 @@ export const destinationGroups = [
         manali: destinationsWithoutFlight.manali,
         baliIslandHopper: destinationsWithoutFlight.baliIslandHopper,
         russia: destinationsWithoutFlight.russia
+    },
+    {
+        europeMiceZurich: destinationsWithoutFlight.europeMiceZurich
     }
 ]; 
 
