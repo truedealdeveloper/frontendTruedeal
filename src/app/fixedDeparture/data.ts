@@ -1134,6 +1134,188 @@ Pick-up: 07:30 - 07:45 AM | Drop-off: 05:30 - 06:00 PM
 
         ]
     },
+    thailandSpeedboatTour: {
+        id: "thailand-8-days-speedboat-tour",
+        country: "Thailand",
+        days: 8,
+        nights: 7,
+        amount: 77895,
+        dateStart: "3 May 2025",
+        dateEnd: "10 May 2025",
+        flightFrom: "Mumbai",
+        description: "Experience the ultimate Thailand adventure with our comprehensive 8-day speedboat  tour covering Phuket, Krabi, Pattaya, and Bangkok. From pristine islands to cultural landmarks, this tour offers the perfect blend of relaxation, adventure, and urban exploration.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Double Sharing",
+            arrivalDate: "3 May 2025",
+            duration: "7N8D Thailand Speedboat Tour",
+            costBasis: "Cost Based On Double Sharing"
+        },
+        hotelDetails: [
+            {
+                city: "Phuket",
+                hotel: "4 Star Premium Hotel",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Krabi",
+                hotel: "4 Star Premium Hotel",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Bangkok",
+                hotel: "4 Star Premium Hotel",
+                roomType: "Standard Room"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Arrival in Phuket (03-05-2025)",
+            "Day 2: Phi Phi Island Tour by Speedboat (04-05-2025)",
+            "Day 3: Sundowner Romantic Yacht Party (05-05-2025)",
+            "Day 4: Phuket to Krabi Transfer | City Tour (06-05-2025)",
+            "Day 5: 7 Islands Tour with Bioluminescent Plankton Experience (07-05-2025)",
+            "Day 6:  Krabi to Bangkok | Temple Tour (08-05-2025)",
+            "Day 7: Safari World & Marine Park with Indian Lunch (09-05-2025)",
+            "Day 8: Departure | Return Home with Beautiful Memories (10-05-2025)",
+        ],
+        inclusions: [
+            "Flights: Ex Mumbai round-trip flight (20+7 KG luggage)",
+            "Accommodation: 7 nights stay at premium 4-star hotels (3N Phuket, 2N Krabi, 2N Bangkok)",
+            "Meals: 7 Buffet Breakfasts at the hotel",
+            "Indian Buffet Lunch on arrival day",
+            "Indian Buffet Lunch at Phi Phi Island",
+            "Thai Veg Dinner during the 7 Islands Tour",
+            "Sightseeing & Activities: Phi Phi Island Tour by speedboat (including National Park Fee), 7 Islands Tour by long-tail boat (including National Park Fee), Sundowner Romantic Yacht Party with Johnnie Walker Liquor, snacks & light dinner, Phuket City Tour, Enroute Bangkok 2 Temple Tour (Golden Buddha & Mini Reclining Buddha Temple), Safari World & Marine Park Tour with Indian Lunch",
+            "Transfers & Transportation: Airport Transfers & Hotel Transfers in Thailand",
+            "Major Transportation by AC VIP Coach/Van",
+            "Daily Complimentary Pick-up & Drop Service for Dinner (Fixed Time & Location)",
+            "Guides & Assistance: English-speaking Guide throughout the trip",
+        ],
+        exclusions: [
+            "Visa & Travel Insurance",
+            "Personal Expenses (Tips, Camera & Entrance Fees)",
+            "Meals Not Mentioned in the Itinerary",
+            "GST & TCS (Extra Cost)",
+            "Optional Activities (Elephant Trekking & Tiger Kingdom Entry Tickets)",
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Phuket (06-05-2025)",
+                description: `Meet our airport representative upon arrival at Phuket International Airport
+Transfer to the 4-star hotel and complete check-in formalities
+Enjoy a delicious Indian buffet lunch at one of Phukets best Indian restaurants
+Spend the rest of the day exploring at your leisure
+Overnight stay in Phuket
+
+`
+            },
+            {
+                day: 2,
+                title: "Phi Phi Island Tour by Speedboat (04-05-2025)",
+                description: `Enjoy a buffet breakfast at the hotel
+Head for the Phi Phi Island tour by speedboat (Pick-up: 07:30 AM)
+Visit stunning beaches, enjoy swimming & snorkeling
+Relish a beachside Indian buffet lunch
+Return to the hotel in the evening (Drop-off: 05:30 - 06:00 PM)
+Overnight stay in Phuket
+
+`
+            },
+            {
+                day: 3,
+                title: "Sundowner Romantic Yacht Party (05-05-2025)",
+                description: `After breakfast, explore Phuket at leisure
+Afternoon: Get ready for an unforgettable Sundowner Romantic Yacht Party 
+Sail to Coral Island (Koh Hey) on a luxury catamaran yacht
+Enjoy Johnnie Walker branded liquor, snacks & fruits
+Engage in swimming, sunbathing & fishing
+Return to the hotel in the evening (Pick-up: 12:30 PM)
+Overnight stay in Phuket
+
+`
+            },
+            {
+                day: 4,
+                title: "Phuket to Krabi Transfer  (06-05-2025)",
+                description: `Enjoy breakfast at the hotel & check out
+Drive to Krabi, exploring en route:
+Portuguese-style buildings
+Vibrant local markets
+Wat Chalong Temple
+Tiger Kingdom (Entry ticket at own cost)
+Elephant Trekking (Entry ticket at own cost)
+Arrive in Krabi & check in to your 4-star hotel
+Overnight stay in Krabi
+
+`
+            },
+            {
+                day: 5,
+                title: "7 Islands Tour with Bioluminescent Plankton Experience (07-05-2025)",
+                description: `Have a relaxing breakfast
+Begin an exciting 7 Islands Tour (Pick-up: 11:30 AM - 12:30 PM)
+Visit:
+ Tup & Mohr Island (White sandbanks during low tide)
+ Chicken Island (Iconic rock formation)
+ Poda Island (Stunning white sand beaches)
+ Taming Island (Best snorkeling experience)
+ Puya Bay (Vibrant marine life)
+ Phranang Cave Beach (Famous for sunset views)
+Enjoy Thai Veg Dinner at Railay Beach
+Witness the magical bioluminescent plankton (Sparkling blue water)
+Overnight stay in Krabi
+
+`
+            },
+            {
+                day: 6,
+                title: "Krabi to Bangkok (08-05-2025)",
+                description: `After breakfast, transfer to Krabi Airport
+Fly to Bangkok & meet our representative
+Bangkok Temple Tour:
+ Golden Buddha Temple (Wat Traimit)
+ Mini Reclining Buddha Temple
+Check in at your 4-star Bangkok hotel
+Overnight stay in Bangkok
+`
+            },
+            {
+                day: 7,
+                title: "Safari World & Marine Park with Indian Lunch (09-05-2025)",
+                description: `Start the day with breakfast at the hotel
+Enjoy a fun-filled day at Safari World & Marine Park 
+Watch exciting shows:
+Hollywood Cowboy Stunt Show 
+Dolphin & Sea Lion Show 
+ Elephant & Bird Show 
+Relish a delicious Indian lunch
+Return to the hotel in the evening
+Overnight stay in Bangkok
+
+`
+            },
+            {
+                day: 8,
+                title: "Departure | Return Home with Beautiful Memories (10-05-2025)",
+                description: `Enjoy breakfast at the hotel
+Transfer to Bangkok Airport for your return flight
+Bid farewell to an unforgettable Thailand experience
+
+`
+            },
+        ],
+        images: [
+            "/UGCImages/web/thailand/11.webp",
+            "/UGCImages/web/thailand/12.webp",
+            "/UGCImages/web/thailand/9.webp",
+            "/UGCImages/web/thailand/10.webp",
+            "/UGCImages/web/thailand/7.webp",
+            "/UGCImages/web/thailand/8.webp",
+
+
+        ]
+    },
     baliFixedDeparture: {
         id: "bali-fixed-departure",
         country: "Bali",
