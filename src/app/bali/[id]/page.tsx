@@ -118,7 +118,7 @@ export default function BaliPackagePage({ params }: PageProps) {
                     cancelAnimationFrame(animationFrameId);
                 }
             };
-        }, [duration]);
+        }, [scrollRef, duration]);
     };
 
     useAutoScroll(cultureScrollRef, 50000);

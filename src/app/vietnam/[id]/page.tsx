@@ -24,7 +24,7 @@ const poppins = Poppins({
     display: 'swap',
 });
 
-export default function vietnamPackagePage({ params }: PageProps) {
+export default function VietnamPackagePage({ params }: PageProps) {
     const { id } = use(params);
     const vietnamPkg = Object.values(vietnamPackages).find(p => p.id === id);
 
