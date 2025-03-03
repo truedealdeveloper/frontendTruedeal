@@ -12,6 +12,7 @@ import { motion, useScroll, AnimatePresence } from "framer-motion";
 import { Poppins } from 'next/font/google';
 import Image from 'next/image';
 import BaliPackages from '../page';
+import BaliBanner from '@/app/components/homepage/BaliBanner';
 
 interface PageProps {
     params: Promise<{ id: string; }>
@@ -556,7 +557,10 @@ export default function BaliPackagePage({ params }: PageProps) {
                     scrollbar-width: none;
                 }
             `}</style>
+            <BaliBanner />  
+                <div className='mt-[50px]'>
             <BaliPackages />
+            </div>
         </div>
     );
 } 
