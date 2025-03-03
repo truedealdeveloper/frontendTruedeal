@@ -59,11 +59,6 @@ const fixedDepartureDestinations = [
         fixedDepartureId: "dubai-5-days-desert-adventure"
     },
     {
-        name: "Bali Island Hopper Trip",
-        tag: { label: "FIXED DEPARTURE", color: "blue" },
-        fixedDepartureId: "bali-7-days-island-hopper"
-    },
-    {
         name: "Russia Trip",
         tag: { label: "FIXED DEPARTURE", color: "blue" },
         fixedDepartureId: "russia-8-days-moscow-stpetersburg"
@@ -140,7 +135,9 @@ export default function HeroSection() {
         (destination: Destination) => {
             setSearchTerm(destination.name)
             setIsSearchModalOpen(false)
-            if (destination.isTrending) {
+            if (destination.name.toLowerCase() === "bali") {
+                router.push("/bali")
+            } else if (destination.isTrending) {
                 router.push(`/trending/${destination.name.toLowerCase()}`)
             } else if (destination.tag?.label === "FIXED DEPARTURE" && destination.fixedDepartureId) {
                 router.push(`/fixedDeparture/${destination.fixedDepartureId}`)

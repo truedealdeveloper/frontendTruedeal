@@ -20,8 +20,7 @@ import FixedDepartures from "./fixedDeparture/page";
 // import ChardhamYatra from './chardhamYatra/page';
 import SriLanka from './sriLanka/page';
 import TripPlanRequest from "../components/TripPlanRequest";
-import BaliPackages from "./bali/page";
-
+import BaliBanner from "./components/homepage/BaliBanner";
 export default function Home() {
   return (
     <main className="min-h-screen">
@@ -32,8 +31,7 @@ export default function Home() {
       
       {/* <ChardhamYatra /> */}
             <SriLanka />  
-
-      <BaliPackages />
+            <BaliBanner />
       <Destination />
       <Domestic />
       <Trending />

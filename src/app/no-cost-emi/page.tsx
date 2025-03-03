@@ -18,9 +18,7 @@ const NoCostEMIPage = () => {
                                 className="w-full h-auto object-cover"
                                 priority
                             />
-                        </div>
-
-                        
+                        </div>                        
                     </div>
                 </div>
             </div>

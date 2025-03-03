@@ -18,7 +18,7 @@ import { Poppins } from 'next/font/google';
 import FixedDepartures from '../page'
 // import BannerCarousel from '../../valentine/page';
 // import BannerCarousel from '../../components/valentine/page';
-import Indonesia from '@/app/indonesia/page';
+// import Indonesia from '@/app/indonesia/page';
 // import ChardhamYatra from '@/app/chardhamYatra/page';
 import Destinations from '../../components/homepage/Destinations';
 import Trending from '../../components/homepage/Trending';
@@ -31,6 +31,8 @@ import Sponsors from '../../components/Ad/Sponsers';
 import { DestinationSights } from '@/app/components/destinations/DestinationSights';
 import { LocalCuisine } from '@/app/components/destinations/LocalCuisine';
 import Image from 'next/image';
+import BaliBanner from '@/app/components/homepage/BaliBanner';
+import BaliPage from '@/app/bali/page';
 
 
 interface PageProps {
@@ -413,6 +415,16 @@ export default function FixedDeparturePage({ params }: PageProps) {
                         </div>
                     </div>
                 </div>
+
+                {/* Add Bali content after Other Information for Bali packages */}
+                {destination.country.toLowerCase().includes('bali') && (
+                    <div className="mt-12">
+                        <BaliBanner />
+                        <div className='mt-[50px]'>
+                        <BaliPage />
+                        </div>
+                    </div>
+                )}
             </div>
 
             {/* Add this before the FixedDepartures component */}
@@ -574,7 +586,7 @@ export default function FixedDeparturePage({ params }: PageProps) {
                 <Destinations />
                 <Trending />
                 {/* <BannerCarousel /> */}
-                <Indonesia />
+                {/* <Indonesia /> */}
                 <Domestic />
                 <ExoticDestinations />
                 <Gallery />

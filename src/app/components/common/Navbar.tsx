@@ -60,7 +60,9 @@ function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
 
     const handleDestinationSelect = useCallback((destination: Destination) => {
         onClose()
-        if (destination.isTrending) {
+        if (destination.name.toLowerCase() === "bali") {
+            router.push("/bali")
+        } else if (destination.isTrending) {
             router.push(`/trending/${destination.name.toLowerCase()}`)
         } else {
             router.push(`/destinations/${destination.name.toLowerCase()}`)
