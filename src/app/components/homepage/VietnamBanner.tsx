@@ -19,7 +19,7 @@ interface BannerImage {
 
 const bannerImages: BannerImage[] = [
     {
-        desktop: "/UGCImages/vietnam/desktop/1.png",
+        desktop: "/UGCImages/vietnam/desktop/1.webp",
         mobile: "/UGCImages/vietnam/mobile/1.png",
         message: "Experience Vietnam's Beauty",
         subtext: "Where Culture Meets Nature",
@@ -28,7 +28,7 @@ const bannerImages: BannerImage[] = [
         price: "Starting Price Rs. 39,999/-"
     },
     {
-        desktop: "/UGCImages/vietnam/desktop/2.png",
+        desktop: "/UGCImages/vietnam/desktop/2.webp",
         mobile: "/UGCImages/vietnam/mobile/2.png",
         message: "Discover Ancient Wonders",
         subtext: "Journey Through Time",
@@ -37,7 +37,7 @@ const bannerImages: BannerImage[] = [
         price: "Starting Price Rs. 42,999/-"
     },
     {
-        desktop: "/UGCImages/vietnam/desktop/3.png",
+        desktop: "/UGCImages/vietnam/desktop/3.webp",
         mobile: "/UGCImages/vietnam/mobile/3.png",
         message: "Embrace Vietnamese Culture",
         subtext: "Traditional Charm Awaits",
@@ -46,7 +46,7 @@ const bannerImages: BannerImage[] = [
         price: "Starting Price Rs. 37,500/-"
     },
     {
-        desktop: "/UGCImages/vietnam/desktop/4.png",
+        desktop: "/UGCImages/vietnam/desktop/4.webp",
         mobile: "/UGCImages/vietnam/mobile/4.png",
         message: "Hoi An",
         subtext: "Ancient Trading Port",
@@ -128,12 +128,12 @@ export default function VietnamBanner() {
                                 sizes="1280px"
                                 priority={index === 0}
                             />
-                            {/* Message Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40 flex flex-col items-center justify-center text-white">
-                                <h2 className="text-4xl font-bold text-center mb-2 drop-shadow-lg transform transition-transform group-hover:scale-105 px-4">
+                            {/* Enhanced Message Overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/60 flex flex-col items-center justify-center text-white">
+                                <h2 className="text-4xl font-bold text-center mb-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] transform transition-transform group-hover:scale-105 px-4">
                                     {image.message}
                                 </h2>
-                                <p className="text-lg text-center text-white/90 drop-shadow-md px-4">
+                                <p className="text-lg text-center text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] px-4">
                                     {image.subtext}
                                 </p>
                             </div>

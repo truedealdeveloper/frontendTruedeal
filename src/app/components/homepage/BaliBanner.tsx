@@ -107,12 +107,12 @@ export default function BaliBanner() {
                             sizes="640px"
                             priority={index === 0}
                         />
-                        {/* Message Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40 flex flex-col items-center justify-center text-white">
-                            <h2 className="text-2xl md:text-4xl font-bold text-center mb-2 drop-shadow-lg transform transition-transform group-hover:scale-105 px-4">
+                        {/* Enhanced Message Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/60 flex flex-col items-center justify-center text-white">
+                            <h2 className="text-2xl md:text-4xl font-bold text-center mb-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] transform transition-transform group-hover:scale-105 px-4">
                                 {image.message}
                             </h2>
-                            <p className="text-sm md:text-lg text-center text-white/90 drop-shadow-md px-4">
+                            <p className="text-sm md:text-lg text-center text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] px-4">
                                 {image.subtext}
                             </p>
                         </div>
