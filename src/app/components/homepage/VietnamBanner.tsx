@@ -87,7 +87,7 @@ export default function VietnamBanner() {
                         priority
                     />
                     <div className="relative">
-                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff] block mb-0.5">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff] block mb-1">
                             Explore Vietnam
                         </span>
                         <div className="mt-[-12px] transform -rotate-2">

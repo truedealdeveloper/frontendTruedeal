@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { baliPackages, BaliPackage } from './data';
-import { FaCalendarAlt, FaClock, FaChevronLeft, FaChevronRight, FaPlus, FaMinus } from 'react-icons/fa';
+import { FaCalendarAlt, FaClock, FaChevronLeft, FaChevronRight, FaPlus, FaMinus, FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 import { IoLocationSharp } from 'react-icons/io5';
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
@@ -15,6 +15,7 @@ export default function BaliPackages() {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
     const packages = Object.values(baliPackages);
     const totalPages = Math.ceil(packages.length / 3);
+    const [isMuted, setIsMuted] = useState(true);
 
     const handlePrevPage = () => {
         setCurrentPage(prev => prev > 0 ? prev - 1 : prev);
@@ -22,6 +23,25 @@ export default function BaliPackages() {
 
     const handleNextPage = () => {
         setCurrentPage(prev => prev < totalPages - 1 ? prev + 1 : prev);
+    };
+
+    const toggleMute = () => {
+        const audio = document.getElementById('baliAudio') as HTMLAudioElement;
+        const video = document.getElementById('baliVideo') as HTMLVideoElement;
+        if (audio && video) {
+            if (isMuted) {
+                // When unmuting
+                audio.muted = false;
+                video.muted = true; // Keep video muted
+                audio.play(); // Ensure audio plays
+                audio.volume = 0.5; // Set volume to 50%
+            } else {
+                // When muting
+                audio.muted = true;
+                audio.pause(); // Pause the audio
+            }
+            setIsMuted(!isMuted);
+        }
     };
 
     const PackageCard = ({ package: baliPackage }: { package: BaliPackage }) => {
@@ -142,8 +162,33 @@ export default function BaliPackages() {
     return (
         <div className="min-h-screen">
             {/* Hero Section with Video */}
-            <div className="relative h-[60vh] w-full overflow-hidden">
+            <div className="relative h-[60vh] md:h-[100vh] w-full overflow-hidden">
+                {/* Add audio element */}
+                <audio
+                    id="baliAudio"
+                    loop
+                    muted
+                    autoPlay
+                    className="hidden"
+                >
+                    <source src="/UGCImages/bali/Bali Banner/baliMobile/bali.mp3" type="audio/mp3" />
+                </audio>
+
+                {/* Add audio control button */}
+                <button
+                    onClick={toggleMute}
+                    className="absolute bottom-4 right-4 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm p-3 rounded-full transition-all duration-300 text-white shadow-lg"
+                    aria-label={isMuted ? "Unmute audio" : "Mute audio"}
+                >
+                    {isMuted ? (
+                        <FaVolumeMute className="w-6 h-6" />
+                    ) : (
+                        <FaVolumeUp className="w-6 h-6" />
+                    )}
+                </button>
+
                 <video 
+                    id="baliVideo"
                     autoPlay 
                     loop 
                     muted 

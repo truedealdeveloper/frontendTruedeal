@@ -3,18 +3,23 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { vietnamPackages, vietnamPackage } from './data';
-import { FaCalendarAlt, FaClock, FaChevronLeft, FaChevronRight, FaPlus, FaMinus } from 'react-icons/fa';
+import { FaCalendarAlt, FaClock, FaChevronLeft, FaChevronRight, FaPlus, FaMinus, FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 import { IoLocationSharp } from 'react-icons/io5';
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import TripPlanRequest from '../../components/TripPlanRequest';
+import { Dancing_Script, Playfair_Display } from 'next/font/google';
+
+const dancingScript = Dancing_Script({ subsets: ['latin'] });
+const playfair = Playfair_Display({ subsets: ['latin'] });
 
 export default function VietnamPackages() {
     const [currentPage, setCurrentPage] = useState(0);
     const [openFaq, setOpenFaq] = useState<number | null>(null);
     const packages = Object.values(vietnamPackages);
     const totalPages = Math.ceil(packages.length / 3);
+    const [isMuted, setIsMuted] = useState(true);
 
     const handlePrevPage = () => {
         setCurrentPage(prev => prev > 0 ? prev - 1 : prev);
@@ -22,6 +27,25 @@ export default function VietnamPackages() {
 
     const handleNextPage = () => {
         setCurrentPage(prev => prev < totalPages - 1 ? prev + 1 : prev);
+    };
+
+    const toggleMute = () => {
+        const audio = document.getElementById('vietnamAudio') as HTMLAudioElement;
+        const video = document.getElementById('vietnamVideo') as HTMLVideoElement;
+        if (audio && video) {
+            if (isMuted) {
+                // When unmuting
+                audio.muted = false;
+                video.muted = true; // Keep video muted
+                audio.play(); // Ensure audio plays
+                audio.volume = 0.5; // Set volume to 50%
+            } else {
+                // When muting
+                audio.muted = true;
+                audio.pause(); // Pause the audio
+            }
+            setIsMuted(!isMuted);
+        }
     };
 
     const PackageCard = ({ package: vietnamPackage }: { package: vietnamPackage }) => {
@@ -142,8 +166,33 @@ export default function VietnamPackages() {
     return (
         <div className="min-h-screen">
             {/* Hero Section with Video */}
-            <div className="relative h-[60vh] w-full overflow-hidden">
+            <div className="relative h-[60vh] md:h-[100vh] w-full overflow-hidden">
+                {/* Add audio element */}
+                <audio
+                    id="vietnamAudio"
+                    loop
+                    muted
+                    autoPlay
+                    className="hidden"
+                >
+                    <source src="/UGCImages/bali/Bali Banner/baliMobile/vietnam.mp3" type="audio/mp3" />
+                </audio>
+
+                {/* Add audio control button */}
+                <button
+                    onClick={toggleMute}
+                    className="absolute bottom-4 right-4 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm p-3 rounded-full transition-all duration-300 text-white shadow-lg"
+                    aria-label={isMuted ? "Unmute audio" : "Mute audio"}
+                >
+                    {isMuted ? (
+                        <FaVolumeMute className="w-6 h-6" />
+                    ) : (
+                        <FaVolumeUp className="w-6 h-6" />
+                    )}
+                </button>
+
                 <video 
+                    id="vietnamVideo"
                     autoPlay 
                     loop 
                     muted 
@@ -169,11 +218,11 @@ export default function VietnamPackages() {
                             transition={{ duration: 0.8 }}
                             className="text-4xl md:text-7xl font-bold mb-6"
                         >
-                            <span className="block bg-gradient-to-r from-yellow-300 via-pink-200 to-yellow-300 bg-clip-text text-transparent font-serif mt-10 sm:text-3xl md:text-4xl lg:text-5xl">
-                                Discover Paradise
+                            <span className={`block font-dancing-script text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] mb-2 ${dancingScript.className}`}>
+                                Find Yourself 
                             </span>
-                            <span className="block bg-gradient-to-r from-blue-400 via-teal-300 to-blue-400 bg-clip-text text-transparent mt-2">
-                                in vietnam
+                            <span className={`block text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-rose-100 to-teal-100 bg-clip-text text-transparent mt-2 ${playfair.className}`}>
+                                in Vietnam
                             </span>
                         </motion.h1>
                         
@@ -198,7 +247,7 @@ export default function VietnamPackages() {
                                     transition={{ delay: 1.5, duration: 0.5 }}
                                     className="text-yellow-300"
                                 >
-                                    Culture
+                                    Timeless Traditions
                                 </motion.span>
                                 <motion.span
                                     initial={{ opacity: 0, y: 20 }}
@@ -206,7 +255,7 @@ export default function VietnamPackages() {
                                     transition={{ delay: 1.8, duration: 0.5 }}
                                     className="text-blue-300"
                                 >
-                                    Adventure
+                                    Pristine Beaches
                                 </motion.span>
                                 <motion.span
                                     initial={{ opacity: 0, x: 20 }}
@@ -214,7 +263,7 @@ export default function VietnamPackages() {
                                     transition={{ delay: 2.1, duration: 0.5 }}
                                     className="text-green-300"
                                 >
-                                    Relaxation
+                                    Ancient Temples
                                 </motion.span>
                             </div>
                         </motion.div>
