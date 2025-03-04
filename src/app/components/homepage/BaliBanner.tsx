@@ -8,26 +8,26 @@ const dancingScript = Dancing_Script({ subsets: ['latin'] });
 
 const bannerImages = [
     {
-        desktop: "/UGCImages/bali/Bali Banner/baliDesktop/baliBanner.png",
-        mobile: "/UGCImages/bali/Bali Banner/baliMobile/baliBanner-Mobile.png",
+        desktop: "/UGCImages/bali/Bali Banner/baliDesktop/baliBanner.webp",
+        mobile: "/UGCImages/bali/Bali Banner/baliMobile/baliBanner-Mobile.webp",
         message: "Experience Paradise in Bali",
         subtext: "Where Dreams Meet Paradise"
     },
     {
-        desktop: "/UGCImages/bali/Bali Banner/baliDesktop/baliBanner2.png",
-        mobile: "/UGCImages/bali/Bali Banner/baliMobile/baliBanner2-Mobile.png",
+        desktop: "/UGCImages/bali/Bali Banner/baliDesktop/baliBanner2.webp",
+        mobile: "/UGCImages/bali/Bali Banner/baliMobile/baliBanner2-Mobile.webp",
         message: "Discover Bali's Magic",
         subtext: "Culture, Beauty & Adventure Awaits"
     },
     {
-        desktop: "/UGCImages/bali/Bali Banner/baliDesktop/baliBanner3.png",
-        mobile: "/UGCImages/bali/Bali Banner/baliMobile/baliBanner3-Mobile.png",
+        desktop: "/UGCImages/bali/Bali Banner/baliDesktop/baliBanner3.webp",
+        mobile: "/UGCImages/bali/Bali Banner/baliMobile/baliBanner3-Mobile.webp",
         message: "Escape to Serenity",
         subtext: "Your Perfect Balinese Gateway"
     },
     {
-        desktop: "/UGCImages/bali/Bali Banner/baliDesktop/baliBanner4.png",
-        mobile: "/UGCImages/bali/Bali Banner/baliMobile/baliBanner4-Mobile.png",
+        desktop: "/UGCImages/bali/Bali Banner/baliDesktop/baliBanner4.webp",
+        mobile: "/UGCImages/bali/Bali Banner/baliMobile/baliBanner4-Mobile.webp",
         message: "Embrace the Island Life",
         subtext: "Create Memories That Last Forever"
     }
