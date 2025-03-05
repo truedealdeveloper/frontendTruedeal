@@ -227,7 +227,7 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         amount: 89999,
         dateStart: "Multiple",
         dateEnd: "May 2025",
-        flightFrom: "Multiple",
+        flightFrom: "DEL/BOM/KOL",
         description: "Experience the best of Vietnam in 8 days covering Hanoi, Danang, and Ho Chi Minh. Explore natural beauty including Ha Long Bay, cultural treasures like ancient temples, and historic sites across Vietnam's most vibrant cities.",
         groupDetails: {
             pax: "Group Departure",
@@ -1316,123 +1316,6 @@ Bid farewell to an unforgettable Thailand experience
 
         ]
     },
-    baliFixedDeparture: {
-        id: "bali-fixed-departure",
-        country: "Bali",
-        days: 7,
-        nights: 6,
-        amount: 55999,
-        dateStart: "11 May 2025",
-        dateEnd: "17 May 2025",
-        flightFrom: "Mumbai",
-        description: "Experience the ultimate Bali adventure with our comprehensive 7-day tour covering Ubud, Kintamani, and Ubud. From pristine islands to cultural landmarks, this tour offers the perfect blend of relaxation, adventure, and urban exploration.",
-        groupDetails: {
-            pax: "Group Tour",
-            rooms: "Double Sharing",
-            arrivalDate: "11 May 2025",
-            duration: "6N7D Bali Fixed Departure",
-            costBasis: "Cost Based On Double Sharing"
-        },
-        hotelDetails: [
-            {
-                city: "Ubud",
-                hotel: "4 Star Premium Hotel",
-                roomType: "Standard Room"
-            },
-            {
-                city: "Kintamani",
-                hotel: "4 Star Premium Hotel",
-                roomType: "Standard Room"
-            },
-            {
-                city: "Ubud",
-                hotel: "4 Star Premium Hotel",
-                roomType: "Standard Room"
-            },
-            {
-                    city: "Bangkok",
-                hotel: "4 Star Premium Hotel",
-                roomType: "Standard Room"
-            }
-        ],
-        tourSummary: [
-            "Day 1: Arrival in Bali (11-05-2025)",
-            "Day 2: Water Sport – Uluwatu Temple with Kecak Dance (12-05-2025)",
-            "Day 3: Nusa Penida Island Tour (13-05-2025)",
-            "Day 4: Ulundanu – Git Git Waterfall – Handara Gate (14-05-2025)",
-            "Day 5: Inter Hotel Transfer – Kintamani & Ubud Village Tour – Monkey Forest – Tegenungan Waterfall (15-05-2025)",
-            "Day 6: Bali Swing – Ubud Palace – Ubud Market Shopping Tour (16-05-2025)",
-            "Day 7: Departure (17-05-2025)"
-        ],
-        inclusions: [
-            "Round-trip flight from Mumbai (20+7 KG baggage)",
-            "6 Nights accommodation in 4-star hotels (3N Ubud, 2N Kintamani, 1N Ubud)",
-            "Daily buffet breakfast at hotels",
-            "1 dinner and 5 lunches included",
-            "Water Sport – Uluwatu Temple with Kecak Dance",
-            "Nusa Penida Island Tour",
-            "Ulundanu – Git Git Waterfall – Handara Gate",
-            "Inter Hotel Transfer – Kintamani & Ubud Village Tour – Monkey Forest – Tegenungan Waterfall",
-            "Bali Swing – Ubud Palace – Ubud Market Shopping Tour",
-            "English-speaking guide",
-                    "All transportation by AC VIP coach/van",
-            "Daily dinner transfer service (fixed time)"
-        ],
-        exclusions: [
-            "Visa fees",
-            "Meals not mentioned in itinerary",
-            "Tips and personal expenses",
-            "Optional activities entrance fees",
-            "Travel insurance",
-            "GST & TCS charges"
-        ],
-        itinerary: [
-            {
-                day: 1,
-                    title: "Arrival in Bali (11-05-2025)",
-                    description: "Upon arrival at Ngurah Rai Airport, meet and greet with our representative. Transfer to the hotel for check-in. Lunch & Dinner in an Indian restaurant. Overnight stay at the hotel."
-                },
-            {
-                day: 2,
-                title: "Water Sport – Uluwatu Temple with Kecak Dance (12-05-2025)",
-                description: "Breakfast at the hotel. Enjoy watersport activities including 1X Round Banana Boat, 1X Round Jetski, 1X Round Parasailing Adventure. Lunch in an Indian restaurant. Later, visit Uluwatu Temple and witness the Kecak Dance, followed by dinner at an Indian restaurant."
-            },
-            {
-                day: 3,
-                title: "Nusa Penida Island Tour (13-05-2025)",
-                description: "Breakfast at the hotel. Pick-up at 7 AM for transfer to Sanur Jetty. Speedboat transfer to Nusa Penida Island. Tour includes visits to Kelingking Beach, Broken Beach, Angel Billabong. Local lunch at a restaurant. Return to the hotel and later pick-up for dinner at an Indian restaurant."
-            },
-            {
-                day: 4,
-                title: "Ulundanu – Git Git Waterfall – Handara Gate (14-05-2025)",
-                description: "Breakfast at the hotel. Visit Ulundanu Temple & Bratan Lake, the most iconic temple in Bali. Visit Git Git Waterfall followed by lunch at an Indian restaurant. Later, visit Handara Gate followed by dinner at an Indian restaurant."
-            },
-            {
-                day: 5,
-                title: "Inter Hotel Transfer – Kintamani & Ubud Village Tour – Monkey Forest – Tegenungan Waterfall (15-05-2025)",
-                description: "Breakfast at the hotel & checkout. Proceed for Kintamani – Ubud Village Tour, including visits to Celuk & Mas Silver and Gold Smith Village, Batik Factory, Tegalalang Rice Terrace, Kintamani Viewing Point to see Mt. Batur from distance. Lunch at an Indian restaurant. Visit Coffee Plantation, Monkey Forest, & Tegenungan Waterfall. Dinner at an Indian restaurant."
-            },
-            {
-                day: 6,
-                    title: "Bali Swing – Ubud Palace – Ubud Market Shopping Tour (16-05-2025)",
-                    description: "Breakfast at the villa. Proceed for Bali Swing Pioneer Package including 2 Single Swings, 1X Romantic Swing, 1X Bed Swing, 1X Bird Nest, 1X Sky Bed, 1X Sky. Lunch at an Indian restaurant, followed by visits to Ubud Palace and Ubud Market for shopping. Dinner at an Indian restaurant."
-                    },
-                {
-                day: 7,
-                title: "Departure from Bali (17-05-2025)",
-                description: "Floating breakfast at the villa. Pickup and transfers to the airport for the return flight."
-            }
-            ],
-        images: [
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/1.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/2.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/3.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/4.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/5.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/6.webp",
-            
-        ]
-    },
     almatyFixedDeparture: {
         id: "almaty-7-days-luxury-tour",
         country: "Almaty",
@@ -2090,107 +1973,6 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         ],
         
     },
-    baliFixedDeparture: {
-        id: "bali-7-days-paradise-tour",
-        country: "Bali",
-        days: 7,
-        nights: 6,
-        amount: 75000,
-        dateStart: "Contact for dates",
-        dateEnd: "31 March 2025",
-        description: "Discover the enchanting paradise of Bali, a perfect blend of culture, adventure, and natural beauty. From vibrant cityscapes to serene rice terraces and pristine beaches, Bali offers an unforgettable experience. This 7-day group tour is designed for 18 PAX with premium accommodation, a professional tour guide, and seamless transfers in a Long Elf + Luggage Van.",
-        groupDetails: {
-            pax: "Group Tour (18 PAX)",
-            rooms: "Twin Sharing Basis",
-            arrivalDate: "Contact for available dates",
-            duration: "6N7D Bali",
-            costBasis: "Cost Based On Group Size"
-        },
-        hotelDetails: [
-            {
-                city: "Kuta",
-                hotel: "Royal Regantris",
-                roomType: "Deluxe Room with City View + Bathtub (4 Nights)"
-            },
-            {
-                city: "Ubud",
-                hotel: "Uma Linga / Sebatu Valley / Ladera Ubud",
-                roomType: "01 Bedroom Pool Villa with Floating Breakfast (2 Nights)"
-            }
-        ],
-        tourSummary: [
-            "Day 1: Arrival in Bali",
-            "Day 2: ATV Ride & Jungle Swing Adventure",
-            "Day 3: Cultural & Scenic Tour",
-            "Day 4: Nusa Penida West Tour",
-            "Day 5: Kintamani & Ubud Tour",
-            "Day 6: Leisure Day",
-            "Day 7: Departure"
-        ],
-        inclusions: [
-            "6 nights accommodation as per itinerary",
-            "Daily breakfast at hotels",
-            "Local lunch during tours",
-            "90-minute ATV ride (Double Sharing)",
-            "Bali Jungle Swing experience",
-            "All sightseeing and entrance fees",
-            "Professional tour guide",
-            "Transportation in Long Elf + Luggage Van",
-            "Airport transfers"
-        ],
-        exclusions: [
-            "Airfare",
-            "Personal expenses",
-            "Optional activities",
-            "Meals not mentioned in inclusions",
-            "Travel insurance"
-        ],
-        itinerary: [
-            {
-                day: 1,
-                title: "Arrival in Bali",
-                description: "Warm welcome at the airport and transfer to your hotel. Rest of the day at leisure to relax and settle in."
-            },
-            {
-                day: 2,
-                title: "ATV Ride & Jungle Swing Adventure",
-                description: "Exciting ATV Ride (90 mins, Double Sharing) followed by the thrilling Bali Jungle Swing experience. Enjoy a local lunch during the tour."
-            },
-            {
-                day: 3,
-                title: "Cultural & Scenic Tour",
-                description: "Explore Wanagiri Viewpoint, Handara Gate, Ulun Danu Temple, Tanah Lot, and The Beach Love. A full day of cultural immersion and scenic beauty."
-            },
-            {
-                day: 4,
-                title: "Nusa Penida West Tour",
-                description: "Full-day tour of Nusa Penida West with local lunch included. Free snorkeling activity at the harbor."
-            },
-            {
-                day: 5,
-                title: "Kintamani & Ubud Tour",
-                description: "Scenic tour covering Kintamani, Tegenungan Waterfall, Tegalalang Rice Terrace, Ubud Artist Colonies, and Ubud Palace."
-            },
-            {
-                day: 6,
-                title: "Leisure Day",
-                description: "Free day at leisure to explore Bali at your own pace or relax at your villa with floating breakfast."
-            },
-            {
-                day: 7,
-                title: "Departure",
-                description: "Check-out and transfer to the airport for your departure flight."
-            }
-        ],
-        images: [
-            "/UGCImages/bali/BALI DELIGHT PACKAGE/horizontal/1.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE/horizontal/2.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE/horizontal/3.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE/horizontal/4.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE/horizontal/5.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE/horizontal/6.webp",
-        ]
-    },
     bhutan: {
         id: "bhutan-7-days-happiness-tour",
         country: "Bhutan",
@@ -2662,226 +2444,6 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         visaRequired: false,
         minGroupSize: 2
     },
-    baliIslandHopper: {
-        id: "bali-7-days-island-hopper",
-        country: "Bali",
-        days: 7,
-        nights: 6,
-        amount: 35999,
-        dateStart: "Multiple dates",
-        dateEnd: "30 June 2025",
-        description: "Experience the best of Bali with our Island Hopper package, covering Kuta, Nusa Penida, Gili Trawangan, and Ubud. From thrilling water sports to serene beaches and cultural experiences, this tour offers the perfect blend of adventure and relaxation.",
-        groupDetails: {
-            pax: "Based on 2 Pax",
-            rooms: "Double Sharing Basis",
-            arrivalDate: "Multiple dates till 30th June",
-            duration: "6N7D Bali Island Hopper",
-            costBasis: "Cost Based On Double Sharing"
-        },
-        hotelDetails: [
-            {
-                city: "Kuta",
-                hotel: "Bliss Surfer or Similar",
-                roomType: "4 Star"
-            },
-            {
-                city: "Nusa Penida",
-                hotel: "Bataran Garden Cottage or Similar",
-                roomType: "3 Star"
-            },
-            {
-                city: "Gili Trawangan",
-                hotel: "Ombak Sunset or Similar",
-                roomType: "3 Star"
-            },
-            {
-                city: "Ubud",
-                hotel: "Ladera Villas or Similar",
-                roomType: "Private Pool Villa (4 Star)"
-            }
-        ],
-        tourSummary: [
-            "Day 1: Arrival in Bali - Kuta",
-            "Day 2: Water Sports & Tanah Lot Sunset",
-            "Day 3: West Nusa Penida Tour",
-            "Day 4: Nusa Penida to Gili Trawangan",
-            "Day 5: Gili Trawangan to Bali",
-            "Day 6: Full-Day Bali Highlights Tour",
-            "Day 7: Departure"
-        ],
-        inclusions: [
-            "6 Nights accommodation as per itinerary",
-            "Daily breakfast at hotels (from Day 2)",
-            "Return airport transfers in private vehicle",
-            "Welcome flower garland",
-            "One bottle of water per person per day during tours",
-            "Air-conditioned SUV for all tours and transfers",
-            "All local taxes, donations, entrance fees, and toll charges",
-            "English-speaking driver-guide for tours and transfers"
-        ],
-        exclusions: [
-            "International or domestic flights",
-            "Personal expenses (tips, laundry, beverages)",
-            "Travel insurance",
-            "Meals not mentioned in itinerary",
-            "Additional activities or sightseeing",
-            "Early check-in or late check-out charges"
-        ],
-        itinerary: [
-            {
-                day: 1,
-                title: "Arrival in Bali",
-                description: "Welcome to Bali! Transfer to your hotel in Kuta. Check-in and spend the rest of the day at leisure."
-            },
-            {
-                day: 2,
-                title: "Water Sports & Sunset",
-                description: "Enjoy exciting water sports including Banana Boat, Couple Parasailing, and Jet Ski. Evening visit to witness the stunning sunset at Tanah Lot temple."
-            },
-            {
-                day: 3,
-                title: "Explore West Nusa Penida",
-                description: "Take a fast boat to Nusa Penida. Full-day tour visiting Kelingking Beach, Angel's Billabong, Broken Bay, and Bubu Beach. Overnight stay in Nusa Penida."
-            },
-            {
-                day: 4,
-                title: "Nusa Penida to Gili Trawangan",
-                description: "Fast boat transfer to Gili Trawangan. Free time to explore the beautiful beaches and island life of Gili T."
-            },
-            {
-                day: 5,
-                title: "Gili Trawangan to Bali",
-                description: "Morning fast boat back to Bali mainland. Transfer to your hotel and afternoon at leisure."
-            },
-            {
-                day: 6,
-                title: "Full-Day Bali Tour",
-                description: "Comprehensive tour covering Kintamani Volcano, Coffee Plantation, Tegenungan Waterfall, Tegalalang Rice Terrace, and Bali Jungle Swing experience. Complimentary local lunch included."
-            },
-            {
-                day: 7,
-                title: "Departure from Bali",
-                description: "Check-out and transfer to the airport for your departure flight."
-            }
-        ],
-        images: [
-            "/UGCImages/bali/BALI DOLPHIN/horizontal/2.webp",
-            "/UGCImages/bali/BALI DOLPHIN/horizontal/3.webp",
-            "/UGCImages/bali/BALI DOLPHIN/horizontal/4.webp",
-            "/UGCImages/bali/BALI DOLPHIN/horizontal/6.webp"
-        ],
-        packageType: "land-only",
-        visaRequired: true,
-        minGroupSize: 2
-    },
-    russia: {
-        id: "russia-8-days-moscow-stpetersburg",
-        country: "Russia",
-        days: 8,
-        nights: 7,
-        amount: 85000,
-        dateStart: "25 February 2025",
-        dateEnd: "4 March 2025",
-        description: "Experience the grandeur of Russia with our comprehensive 8-day tour covering Moscow and Saint Petersburg. From iconic landmarks to world-class museums, immerse yourself in Russia's rich history and culture.",
-        groupDetails: {
-            pax: "Group Tour",
-            rooms: "Double/Single Sharing Available",
-            arrivalDate: "25 February 2025",
-            duration: "7N8D Russia",
-            costBasis: "DBL: ₹85,000 | SNGL: ₹95,000"
-        },
-        hotelDetails: [
-            {
-                city: "Saint Petersburg",
-                hotel: "Cosmos St. Petersburg Olympia Garden Hotel",
-                roomType: "4 Star"
-            },
-            {
-                city: "Moscow",
-                hotel: "Vega Izmailovo Moscow",
-                roomType: "4 Star"
-            }
-        ],
-        tourSummary: [
-            "Day 1: Delhi – Moscow – Saint Petersburg",
-            "Day 2: Saint Petersburg City Tour",
-            "Day 3: Hermitage Museum Visit",
-            "Day 4: Free Day in Saint Petersburg",
-            "Day 5: Saint Petersburg – Moscow",
-            "Day 6: Moscow City Tour & Metro Tour",
-            "Day 7: VDNH Tour & Cosmonaut Museum",
-            "Day 8: Moscow – Departure"
-        ],
-        inclusions: [
-            "4-star hotel accommodation with daily breakfast",
-            "One-way Speed Train ticket",
-            "Guided English sightseeing tours",
-            "All transfers in comfortable minibus",
-            "Monument entry fees",
-            "Daily bottled water (0.5L per person)",
-            "Russian e-Visa fees",
-            "Airfare with 10kg + 5kg hand luggage"
-        ],
-        exclusions: [
-            "Personal expenses (tips, laundry, calls)",
-            "Travel insurance",
-            "Meals other than breakfast",
-            "Additional tours not in itinerary",
-            "Early check-in/late check-out charges",
-            "Flight/train delay expenses"
-        ],
-        itinerary: [
-            {
-                day: 1,
-                title: "Delhi – Moscow – Saint Petersburg",
-                description: "Arrival at Saint Petersburg Airport at 14:10 via Aeroflot SU 6214. Transfer to Cosmos St. Petersburg Olympia Garden Hotel for check-in."
-            },
-            {
-                day: 2,
-                title: "Saint Petersburg City Tour",
-                description: "4-hour guided tour exploring iconic landmarks including Peter and Paul Fortress and Kazan Cathedral."
-            },
-            {
-                day: 3,
-                title: "Hermitage Museum Visit",
-                description: "4-hour guided tour of the world-famous Hermitage Museum with included entry tickets."
-            },
-            {
-                day: 4,
-                title: "Free Day in Saint Petersburg",
-                description: "Full day at leisure to explore the beautiful city at your own pace."
-            },
-            {
-                day: 5,
-                title: "Saint Petersburg – Moscow",
-                description: "Check-out and transfer to train station. Speed train journey to Moscow. Check-in at Vega Izmailovo Moscow hotel."
-            },
-            {
-                day: 6,
-                title: "Moscow City Tour",
-                description: "4-hour guided tour covering Red Square, GUM Mall, Alexandrovsky Garden, Christ the Saviour Cathedral, Park Zaryadye with Sky Bridge, and Moscow Metro Tour."
-            },
-            {
-                day: 7,
-                title: "VDNH Tour & Cosmonaut Museum",
-                description: "4-hour guided tour including visit to the Cosmonaut Museum with entry tickets."
-            },
-            {
-                day: 8,
-                title: "Moscow – Departure",
-                description: "Breakfast and transfer to the airport for departure."
-            }
-        ],
-        images: [
-            "/UGCImages/web/russia/9.webp",
-            "/UGCImages/web/russia/10.webp",
-            "/UGCImages/web/russia/11.webp",
-            "/UGCImages/web/russia/12.webp",
-        ],
-        packageType: "land-only",
-        visaRequired: true,
-        minGroupSize: 2
-    },
     europeMiceZurich: {
         id: "europe-group-tour-zurich-20-44-pax-5N-6D",
         country: "Europe",
@@ -3030,26 +2592,25 @@ export const destinationGroups = [
     },
     {
         hongKongMacau: destinationsWithoutFlight.hongKongMacau,
-        malaysia: destinationsWithoutFlight.malaysia
-    },
-    {
+        malaysia: destinationsWithoutFlight.malaysia,
         southKorea: destinationsWithoutFlight.southKorea,
-        bali: destinationsWithoutFlight.baliFixedDeparture, // Updated to use baliFixedDeparture
-        bhutan: destinationsWithoutFlight.bhutan
     },
     {
+        
+        bhutan: destinationsWithoutFlight.bhutan,
         chinacanton: destinationsWithoutFlight.chinacanton,
         kashmir: destinationsWithoutFlight.kashmir,
-        srinagar: destinationsWithoutFlight.srinagar
     },
     {
+        
+        srinagar: destinationsWithoutFlight.srinagar,
         manali: destinationsWithoutFlight.manali,
-        baliIslandHopper: destinationsWithoutFlight.baliIslandHopper,
-        russia: destinationsWithoutFlight.russia
+        russia: destinationsWithoutFlight.russia,
     },
     {
+        
         europeMiceZurich: destinationsWithoutFlight.europeMiceZurich
-    }
+    },
 ]; 
 
 export const getTotalPages = (): number => destinationGroups.length;

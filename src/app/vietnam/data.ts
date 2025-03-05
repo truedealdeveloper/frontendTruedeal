@@ -79,102 +79,109 @@ export interface vietnamPackage {
 
 export const vietnamPackages: Record<string, vietnamPackage> = {
     vietnamFixedDeparture: {
-        id: "vietnam-fixed-departure",
-        packageName: "vietnam Fixed Departure Package",
-        days: 7,
-        nights: 6,
-        amount: 55999,
-        dateStart: "11 May 2025",
-        dateEnd: "17 May 2025",
+        id: "4-days-south-of-vietnam",
+        packageName: "4 Days South of vietnam",
+        days: 4,
+        nights: 3,
+        amount: 30799,
+        dateStart: "Contact Us",
+        dateEnd: "Contact Us",
         description: "Experience the ultimate vietnam adventure with our comprehensive 7-day tour covering Ubud, Kintamani, and Ubud. From pristine beaches to cultural landmarks, this tour offers the perfect blend of relaxation, adventure, and urban exploration.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "11 May 2025",
-            duration: "6N7D vietnam Fixed Departure",
-            costBasis: "Cost Based On Double Sharing"
+            arrivalDate: "Contact Us",
+            duration: "4N3D vietnam Fixed Departure",
+            costBasis: "Cost Based On per person"
         },
         hotelDetails: [
             {
-                city: "Ubud",
-                hotel: "4 Star Premium Hotel",
-                roomType: "Standard Room"
+                city: "Ho Chi Minh City",
+                hotel: "3 star SEN VIET HOTEL",
+                roomType: "Superior Room"
             },
             {
-                city: "Kintamani",
-                hotel: "4 Star Premium Hotel",
-                roomType: "Standard Room"
+                city: "Ho Chi Minh City",
+                hotel: "4 star HARMONY SAI GON HOTEL",
+                roomType: "Deluxe Room"
             },
             {
-                city: "Ubud",
-                hotel: "4 Star Premium Hotel",
-                roomType: "Standard Room"
+                city: "Ho Chi Minh City",
+                hotel: "5 star EASTIN GRAND HOTEL",
+                roomType: "Superior Room"
             }
+            
         ],
         tourSummary: [
-            "Day 1: Arrival in vietnam",
-            "Day 2: Water Sport – Uluwatu Temple with Kecak Dance",
-            "Day 3: Nusa Penida Island Tour",
-            "Day 4: Ulundanu – Git Git Waterfall – Handara Gate",
-            "Day 5: Inter Hotel Transfer – Kintamani & Ubud Village Tour – Monkey Forest – Tegenungan Waterfall",
-            "Day 6: vietnam Swing – Ubud Palace – Ubud Market Shopping Tour",
-            "Day 7: Departure"
+            "Day 1: Ho Chi Minh City - Arrival ",
+            "Day 2: Mekong Delta - My Tho &amp; Ben Tre Coconut Village (B/L/-)",
+            "Day 3: Cu Chi Tunnels - Ho Chi Minh City Tour (B/L/-)",
+            "Day 4: Ho Chi Minh City - Departure (B/-/-)",
         ],
         inclusions: [
-            "5 Nights Hotel Accommodation (Standard Category)",
-            "Daily Shuttle Service to and from attractions",
-            "Daily Breakfast at the Hotel",
-            "Guided city tour and evening activities",
-            "Local Transportation",
-            "All entrance tickets as per itinerary",
-            "Water Sport Activities",
-            "Nusa Penida Tour",
-            "vietnam Swing Experience",
-            "Professional English-speaking guide"
+            "Hotel transfers for arrival and departure",
+            "Transportation with air-conditioning",
+            "Entrance fees",
+            "Accommodation twin/double/triple sharing; Check-in time: 14:00, Check-out time: 12:00 - 3 nights in hotel",
+            "Mineral water on day tours",
+            "Meals as specified in the itinerary (3 breakfasts, 2 lunches)",
+            "English speaking guides (other languages available upon request with surcharge)"
         ],
         exclusions: [
-            "International flights",
+            "Visa fees",
             "Travel insurance",
-            "Personal expenses",
-            "Meals outside the itinerary",
-            "Optional activities or additional excursions"
+            "Compulsory dinner on 24 Dec and 31 Dec surcharge (depending on hotel policy)",
+            "Tips and gratuities",
+            "Personal expenses such as: shopping, telephone, beverage, etc.",
+            "International or domestic air tickets not mentioned above"
         ],
         itinerary: [
             {
                 day: 1,
-                title: "Arrival in vietnam",
-                description: "Upon arrival at Ngurah Rai Airport, meet and greet with our representative. Transfer to the hotel for check-in. Lunch & Dinner in an Indian restaurant. Overnight stay at the hotel."
+                title: "Ho Chi Minh City - Arrival ",
+                description: `Pick-up at Tan Son Nhat International airport. Transfer to your hotel. Overnight in Ho Chi Minh City.`
             },
             {
                 day: 2,
-                title: "Water Sport – Uluwatu Temple with Kecak Dance",
-                description: "Breakfast at the hotel. Enjoy watersport activities including 1X Round Banana Boat, 1X Round Jetski, 1X Round Parasailing Adventure. Lunch in an Indian restaurant. Later, visit Uluwatu Temple and witness the Kecak Dance, followed by dinner at an Indian restaurant."
+                title: "Mekong Delta - My Tho &amp; Ben Tre Coconut Village (B/L)",
+                description: `A trip to Mekong Delta offers a glimpse into the unique and distinct agrarian life of the vibrant southern
+Delta region. We will enjoy a cruise along the Mekong River to one of the Islands (located in the town of
+My Tho) where we will be entertained with traditional music while enjoying some tea sweetened with
+bees honey and seasonal fresh fruits. We will then take a paddle-boat to cruise through the narrow
+canals of the Mekong. One interesting thing about transportation in this region is that mostly everybody
+here travels by boats or ships because the number of canals is very interlaced. Here a system of
+transportation on water is developed so much. By travelling on canals, we can discover many distinct
+things such as along with the banks, a number of coconut trees grow side by side. The paddle-boat ride
+provides an interesting look into the local cottage industry of making coconut candies. We will then
+have a lunch of Elephant-Ear Fish combined with other delicious Vietnamese dishes - a local specialty.
+Visit Vinh Trang Pagoda, which is recognized as a national historical and cultural relic with distinctive
+architectural and spiritual values, a place worth visiting should not be missed. Overnight in Ho Chi Minh
+City.`
             },
             {
                 day: 3,
-                title: "Nusa Penida Island Tour",
-                description: "Breakfast at the hotel. Pick-up at 7 AM for transfer to Sanur Jetty. Speedboat transfer to Nusa Penida Island. Tour includes visits to Kelingking Beach, Broken Beach, Angel Billabong. Local lunch at a restaurant. Return to the hotel and later pick-up for dinner at an Indian restaurant."
+                title: "Cu Chi Tunnels - Ho Chi Minh City Tour (B/L)",
+                description: `Start the day with a visit to the famous Cu Chi Tunnels. Stretching over 250 kilometers, Cu Chi is one of
+the most famous and historical aspects of war in Vietnam. The tunnel system was created in 1948 to
+assist the Viet Minh as they fought the French for independence and became legendary during the
+1960s in playing a vital role in the Vietnam War by allowing the Viet Cong (communist guerrillas) to
+control large rural areas, just 65 kilometers away from Ho Chi Minh City. This system of tunnels consists
+of hospitals, rooms, kitchens, store areas, and working rooms underground. This tunnel was excavated
+in the area with clay mixing with laterite. So this tunnel is rather durable and stable. The air is
+transferred to the tunnels through ventilation holes.
+In the afternoon, we will visit some of the other major attractions in Ho Chi Minh City: War Remnants,
+Reunification Palace, Notre Dame Cathedral and Old Post Office. These buildings are considered as the
+symbols of Ho Chi Minh City because of their architecture and historical meanings. We also will visit
+Thien Hau Pagoda in Cho Lon - a Chinese-style temple located on Nguyen Trai Street in Cho Lon (China
+Town). Overnight in Ho Chi Minh City.`
             },
             {
                 day: 4,
-                title: "Ulundanu – Git Git Waterfall – Handara Gate",
-                description: "Breakfast at the hotel. Visit Ulundanu Temple & Bratan Lake, the most iconic temple in vietnam. Visit Git Git Waterfall followed by lunch at an Indian restaurant. Later, visit Handara Gate followed by dinner at an Indian restaurant."
+                title: "Ho Chi Minh City - Departure (B)",
+                description: `Have breakfast at the hotel and relax until the time of transfer to Tan Son Nhat International airport for
+your departure flight.`
             },
-            {
-                day: 5,
-                title: "Kintamani & Ubud Village Tour",
-                description: "Breakfast at the hotel & checkout. Proceed for Kintamani – Ubud Village Tour, including visits to Celuk & Mas Silver and Gold Smith Village, Batik Factory, Tegalalang Rice Terrace, Kintamani Viewing Point. Visit Coffee Plantation, Monkey Forest, & Tegenungan Waterfall."
-            },
-            {
-                day: 6,
-                title: "vietnam Swing – Ubud Palace",
-                description: "Breakfast at the villa. Proceed for vietnam Swing Pioneer Package including multiple swing experiences. Lunch at an Indian restaurant, followed by visits to Ubud Palace and Ubud Market for shopping. Dinner at an Indian restaurant."
-            },
-            {
-                day: 7,
-                title: "Departure",
-                description: "Floating breakfast at the villa. Pickup and transfers to the airport for the return flight."
-            }
+            
         ],
         images: [
             "/UGCImages/vietnam/vietnam DELIGHT PACKAGE 2/HORIZONTAL/6.webp",
