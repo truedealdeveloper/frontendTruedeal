@@ -1416,6 +1416,136 @@ Bid farewell to an unforgettable Thailand experience
             "/UGCImages/Images4/almaty/horizontal/6.webp"
         ]
     },
+    russiaFixedDeparture: {
+        id: "russia-fixed-departure-tour",
+        country: "Russia",
+        days: 6,
+        nights: 5,
+        amount: 97000,
+        flightFrom: "Delhi",
+        dateStart: "17 April 2025",
+        dateEnd: "22 April 2025",
+        description: `Enjoy the best of Russia with our fixed departure tour. From the Red Square to the Kremlin, this tour offers a comprehensive and all-inclusive experience of the country's highlights.`,
+        groupDetails: {
+            pax: "Group Tour Saint Petersburg - Moscow",
+            rooms: "Double/Single Sharing Available",
+            arrivalDate: "17 April 2025",
+            duration: "5N6D Russia",
+            costBasis: "DBL: ₹97,000"
+        },
+        tourSummary: [
+            "Day 1: Arrival in Saint Petersburg",
+            "Day 2: Saint-Petersburg City tour",
+            "Day 3: Saint Petersburg Hermitage",
+            "Day 4: Speed Train to Moscow",
+            "Day 5: Moscow City Tour",
+            "Day 6: Departure from Moscow"
+        ],
+        hotelDetails: [
+            {
+                city: "Saint Petersburg",
+                hotel: "Cosmos Saint-Petersburg Pribaltiyskaya Hotel, a member of Radisson Individuals 4*",
+                roomType: "Standard Room (Check In: 17 April / 22 May / 29 May / 26 June)"
+            },
+            {
+                city: "Saint Petersburg",
+                hotel: "Theatre Square Hotel or Sadovaya (ex. Holiday Inn)",
+                roomType: "Standard Room (Check-in dates: 8 May / 29 May / 12 June)"
+            },
+            {
+                city: "Moscow",
+                hotel: "Vega Izmailovo Hotel 4*",
+                roomType: "Standard Room"
+            }
+        ],
+        inclusions: [
+            "Airfare by Aeroflot with hand luggage 10+2 Kg",
+            "DEL- SVO – LED",
+            "05:50 – 10:10 SU 0233",
+            "12:00 – 13:40 SU 6482",
+            "SVO-DEL",
+            "18:40 – 03:20 (+1) SU0232",
+            "Russian e-visa fees",
+            "Accommodation in Hotels with breakfast",
+            "Meals: Breakfast",
+            "All sightseeing with English-speaking guide",
+            "All transfers and sightseeing by minibus/minivan as per program",
+            "Entry fees for the monument",
+            "Water bottle in the car 0.5 per day per person",
+            "Speed train St. Petersburg-Moscow economy class",
+            "Invitation Letter",
+           
+        ],
+        exclusions: [
+            "Half Board Supplement (Indian/Local Dinners at the hotel): 8100 INR per person",
+            "Personal expenses (Laundry, Phone calls, etc.)",
+            "Optional Excursions",
+            "Portage at Hotels"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Saint Petersburg",
+                description: `Meet & Greet at Saint Petersburg International Airport
+Transfer to hotel
+Check-in at the hotel
+Free time for leisure
+`
+            },
+            {
+                day: 2,
+                title: "Saint-Petersburg City tour",
+                description:  `Saint-Petersburg City tour. In 2017 St. Petersburg was awarded third time the World Travel Awards prize as the leading tourist destination in World. St. Petersburg is a unique mixture of architectural styles; the city has retained the authentic monuments of architecture since its founding. 
+Kazan Cathedral - Traveling through Europe, imperator Pavel Petrovich, was struck by the beauty and harmony of the Cathedral of St. Peter's in Rome and the square in front of it, surrounded by colonnades. In 1799, when he was come back to Russian Capital, St-Petersburg, he announced a competition to design the cathedral, which would replace the dilapidated church of the Nativity of the Virgin (popularly known as Kazan), built earlier on the same place. The church houses one of the most important relics of Russia - the miraculous icon of Our Lady of Kazan.
+Peter and Paul Fortress - the historical kernel of St. Petersburg, military engineering and architectural monument.  From this place the city began its construction in 1701.
+
+`
+            },
+            {
+                day: 3,
+                title: "Saint Petersburg Hermitage",
+                description: `Hermitage - It is one of the largest art museums in the world, with its exhibits placed in more than 350 rooms. 
+The State Hermitage Museum - one of the greatest assets of the Russian Federation is not only the most important museum in St. Petersburg, but also one of the largest art museums in the world. Hermitage consists of six historic buildings located along the banks of the Neva river. The heart of the Hermitage is the Winter Palace (the former residence of the kings).
+Transport, guide: 4HRS
+Entry Included: Hermitage
+
+
+`
+            },
+            {
+                day: 4,
+                title: "Speed Train to Moscow",
+                description: `Transfer to Station
+Speed Train to Moscow
+Transfer to the hotel
+Transport: only transfers
+
+`
+            },
+            {
+                day: 5,
+                title: "Moscow City Tour",
+                description: `Moscow City tour: Tour will cover all the major significant places of the Russian capital. We will visit Red Square, Gum Mall, Alexandrovsky Garden also The Cathedral of Christ the Saviour, and Park Zaradye with sky bridge (Kremlin view) 
+Metro tour (to hotel by Metro): Moscow Metro plays a very important role in the life of Moscovites, and still is the main transport artery of the city. It is a monument of culture, architecture, a tour of the underground transport network will reveal secrets, a secret underground city.  
+Transport, guide: 5 HRS
+Entry Included: Metro
+
+
+`
+            },
+            {
+                day: 6,
+                title: "Departure from Moscow",
+                description: "Breakfast at the hotel. Transfer to Moscow Airport for departure."
+            },
+        ],
+        images: [
+            "/UGCImages/web/russia/12.webp",
+            "/UGCImages/web/russia/10.webp",
+            "/UGCImages/web/russia/11.webp",
+            "/UGCImages/web/russia/9.webp",
+        ],
+    },
 };
 
 export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight> = {
@@ -2609,7 +2739,8 @@ export const destinationGroups = [
     },
     {
         
-        europeMiceZurich: destinationsWithoutFlight.europeMiceZurich
+        europeMiceZurich: destinationsWithoutFlight.europeMiceZurich,
+        russiaFixedDeparture: destinationsWithoutFlight.russiaFixedDeparture
     },
 ]; 
 
