@@ -23,9 +23,9 @@ const bannerImages: BannerImage[] = [
         mobile: "/UGCImages/vietnam/mobile/1.png",
         message: "Experience Vietnam's Beauty",
         subtext: "Where Culture Meets Nature",
-        mobileTitle: "Ha Long Bay",
+        mobileTitle: "Ho Chi Minh City",
         mobileSubtitle: "Natural Wonder of the World",
-        price: "Starting Price Rs. 39,999/-"
+        price: "Starting Price Rs. 30,799/-"
     },
     {
         desktop: "/UGCImages/vietnam/desktop/2.webp",

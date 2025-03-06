@@ -49,6 +49,8 @@ export default function VietnamPackages() {
     };
 
     const PackageCard = ({ package: vietnamPackage }: { package: vietnamPackage }) => {
+        const [showDates, setShowDates] = useState(false);
+
         return (
             <div className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0">
                 {/* Background Image */}
@@ -94,9 +96,34 @@ export default function VietnamPackages() {
                         </div>
                         <div className="flex items-center gap-2">
                             <FaCalendarAlt className="text-yellow-400" />
-                            <span>{vietnamPackage.dateStart}</span>
+                            <button 
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    setShowDates(!showDates);
+                                }}
+                                className="hover:text-yellow-400 transition-colors"
+                            >
+                                View Dates
+                            </button>
                         </div>
                     </div>
+
+                    {/* Departure Dates Popup */}
+                    {showDates && vietnamPackage.departureDates && (
+                        <div 
+                            className="absolute bottom-full left-0 right-0 bg-black/90 p-4 rounded-t-lg max-h-[200px] overflow-y-auto"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <h3 className="text-yellow-400 font-semibold mb-2">Departure Dates</h3>
+                            <div className="space-y-2">
+                                {vietnamPackage.departureDates.map((departure, index) => (
+                                    <div key={index} className="text-sm">
+                                        {departure.date}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
 
                     {/* View Details Button */}
                     <Link href={`/vietnam/${vietnamPackage.id}`}>
@@ -275,7 +302,7 @@ export default function VietnamPackages() {
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl font-bold text-center mb-12">
                         <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
-                            Our vietnam Packages
+                            Our Vietnam Packages
                         </span>
                     </h2>
                     <div className="relative ">

@@ -261,6 +261,29 @@ export default function VietnamPackagePage({ params }: PageProps) {
                                         </>
                                     )}
                                 </div>
+
+                                {vietnamPkg.departureDates && (
+                                    <div className="mt-6">
+                                        <h3 className="text-lg font-semibold mb-4">Departure Dates</h3>
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                                            {vietnamPkg.departureDates.map((departure, index) => (
+                                                <div key={index} className="bg-gray-50 p-4 rounded-lg">
+                                                    <div className="text-gray-700">{departure.date}</div>
+                                                    {departure.availability && (
+                                                        <div className="text-sm text-gray-500 mt-1">
+                                                            Availability: {departure.availability}
+                                                        </div>
+                                                    )}
+                                                    {departure.price && (
+                                                        <div className="text-sm text-[#017ae3] mt-1">
+                                                            Price: ₹{departure.price.toLocaleString('en-IN')}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
                             </div>
                         </div>
 
@@ -532,7 +555,7 @@ export default function VietnamPackagePage({ params }: PageProps) {
             <AnimatePresence>
                 {showFloatingCTA && (
                     <motion.div
-                        className="fixed bottom-4 right-4 z-50"
+                        className="fixed bottom-20 right-4 z-50"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 20 }}

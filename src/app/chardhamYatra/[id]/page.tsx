@@ -12,8 +12,8 @@ import { Poppins } from 'next/font/google';
 import ChardhamYatra from '../page';
 import FixedDepartures from '@/app/fixedDeparture/page';
 import Domestic from '@/app/components/homepage/Domestic';
-import Indonesia from '@/app/indonesia/page';
-import BannerCarousel from '@/app/components/valentine/page';
+// import Indonesia from '@/app/indonesia/page';
+// import BannerCarousel from '@/app/components/valentine/page';
 import Destinations from '@/app/components/homepage/Destinations';
 import Trending from '@/app/components/homepage/Trending';
 import ReviewsGlimpse from '@/app/components/homepage/ReviewsGlimpse';
@@ -22,7 +22,7 @@ import ExoticDestinations from '@/app/components/homepage/Exotic';
 import Gallery from '@/app/components/homepage/Gallery';
 import Sponsors from '@/app/components/Ad/Sponsers';
 import HappyCustomers from '@/app/components/Ad/HappyCustomers';
-import WallOfLove from '@/app/components/homepage/Ugc';
+// import WallOfLove from '@/app/components/homepage/Ugc';
 
 
 interface PageProps {
@@ -414,14 +414,14 @@ export default function ChardhamYatraPage({ params }: PageProps) {
                 <FixedDepartures />
                 <Destinations />        
                 <Trending />
-                <BannerCarousel />  
-                <Indonesia />
+                {/* <BannerCarousel />   */}
+                {/* <Indonesia /> */}
                 <Domestic />
                 <ExoticDestinations />
                 <Europe />
                 <HappyCustomers />   
                 <Gallery />
-                <WallOfLove />
+                {/* <WallOfLove /> */}
                 <Sponsors /> 
                 <ReviewsGlimpse />
             </div>
