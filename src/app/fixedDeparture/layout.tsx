@@ -1,5 +1,8 @@
 import { Metadata } from 'next';
 
+// const handleClick = (fixedDeparturesData: String) => {
+//     console
+
 export const metadata: Metadata = {
     title: 'Fixed Departure Tours 2024-25 | Group Tours | TrueDeal Travel',
     description: 'Book guaranteed fixed departure group tours for 2024-25. International & domestic tour packages with flights, hotels, and sightseeing included. Best prices guaranteed.',
