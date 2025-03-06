@@ -1431,7 +1431,7 @@ Bid farewell to an unforgettable Thailand experience
             rooms: "Double/Single Sharing Available",
             arrivalDate: "17 April 2025",
             duration: "5N6D Russia",
-            costBasis: "DBL: ₹97,000"
+            costBasis: "Double sharing basis"
         },
         tourSummary: [
             "Day 1: Arrival in Saint Petersburg",
