@@ -648,7 +648,7 @@ your departure flight.`
             {
                 day: 4,
                 title: "Ha Noi City Tour in the afternoon (B)",
-                description: `Free time at your leisure in the morning. In the afternoon, visit some of Ha Noi heritage sites such as Van Mieu - Quoc Tu Giam (Temple of Literature), the first Imperial school in Vietnam, built in 1070 during the dynasty of King Ly. We will also visit Hoan Kiem Lake, Ngoc Son Temple (Jade Mountain Temple), But Tower (Pen Shaped Tower), Dai Nghien (Inkstone Stand) and The Huc Bridge (Wooden Bridge painted in red). Then, we will take a cyclo (pedicab) ride around “the 36 meandering streets” of Ha Nois historic Old Quarter to enjoy the bustling local life. The history of Ha Noi dated back for over one thousand years, and Ha Noi has different cultural characteristics compared to other areas in Vietnam. The lifestyle, cuisine, fashion… of Ha Noi folks bear special features and through this journey, we can perceive these. It is very interesting to discover Ha Noi in the morning, when the life has just started and we can enjoy the busy atmosphere. Hanoians are very friendly and hospitable. Hopefully, this is the most remarkable memory of your trip to Vietnam. Overnight in Ha Noi.`
+                description: `Free time at your leisure in the morning. In the afternoon, visit some of Ha Noi heritage sites such as Van Mieu - Quoc Tu Giam (Temple of Literature), the first Imperial school in Vietnam, built in 1070 during the dynasty of King Ly. We will also visit Hoan Kiem Lake, Ngoc Son Temple (Jade Mountain Temple), But Tower (Pen Shaped Tower), Dai Nghien (Inkstone Stand) and The Huc Bridge (Wooden Bridge painted in red). Then, we will take a cyclo (pedicab) ride around "the 36 meandering streets" of Ha Nois historic Old Quarter to enjoy the bustling local life. The history of Ha Noi dated back for over one thousand years, and Ha Noi has different cultural characteristics compared to other areas in Vietnam. The lifestyle, cuisine, fashion… of Ha Noi folks bear special features and through this journey, we can perceive these. It is very interesting to discover Ha Noi in the morning, when the life has just started and we can enjoy the busy atmosphere. Hanoians are very friendly and hospitable. Hopefully, this is the most remarkable memory of your trip to Vietnam. Overnight in Ha Noi.`
             },
             {
                 day: 5,
@@ -885,7 +885,7 @@ your departure flight.`
             {
                 day: 3,
                 title: "Hoi An - Free tailor made item of clothing at Ann Tailor - Hoi An Foodie tour - My Son Sanctuary (B/L)",
-                description: `Contact Ann Tailor to have a free tailor made item of clothing. Discover Hoi An countryside and its local foods by bicycle. Local foods in Hoi An are known and enjoyed by the tourists once setting foot here. In Hoi An, these cuisines are very popular and sold everywhere in all streets. Moreover, these cuisines are considered as unique symbols for the culture and introduced to every tourist. We will ride to a local restaurant for Hoi An specialty - Cao Lau. We then bike through the countryside to a Tra Que Village. You will also learn how to make special “white rose” dumpling cakes with a local family and taste your products. Continue riding to Cam Nam to enjoy the Yin and Yang food such as: Banh Dap (“cracked or smashed rice pancake”), Che Bap (“corn and coconut sweet soup”).
+                description: `Contact Ann Tailor to have a free tailor made item of clothing. Discover Hoi An countryside and its local foods by bicycle. Local foods in Hoi An are known and enjoyed by the tourists once setting foot here. In Hoi An, these cuisines are very popular and sold everywhere in all streets. Moreover, these cuisines are considered as unique symbols for the culture and introduced to every tourist. We will ride to a local restaurant for Hoi An specialty - Cao Lau. We then bike through the countryside to a Tra Que Village. You will also learn how to make special "white rose" dumpling cakes with a local family and taste your products. Continue riding to Cam Nam to enjoy the Yin and Yang food such as: Banh Dap ("cracked or smashed rice pancake"), Che Bap ("corn and coconut sweet soup").
                 
                 In the afternoon, visit My Son Sanctuary - an experience that should not be missed. Located in the heart of a beautiful valley and surrounded by high mountains ranges, My Son was named a Cultural Heritage site by UNESCO in 1999. Wander around the lost Champa Kingdom that dated back to the 3rd century, explore the temples and learn about the fascinating history behind this sanctuary of Hinduism. Overnight in Hoi An. 
                 `
@@ -1042,6 +1042,7 @@ your departure flight.`
             { date: "7, 14, 21 Apr 2025" },
             { date: "5, 12, 19, 26 May 2025" },
             { date: "2, 9, 16, 23, 30 Jun 2025" },
+            
         ]
     },
     vietnamDiscovery: {
@@ -1157,7 +1158,7 @@ your departure flight.`
             {
                 day: 5,
                 title: "Hoi An - Free tailor made item of clothing at Ann Tailor - Hoi An Foodie tour - My Son Sanctuary (B/L)",
-                description: `Contact Ann Tailor to have a free tailor made item of clothing. Discover Hoi An countryside and its local foods by bicycle. Local foods in Hoi An are known and enjoyed by the tourists once setting foot here. In Hoi An, these cuisines are very popular and sold everywhere in all streets. Moreover, these cuisines are considered as unique symbols for the culture and introduced to every tourist. We will ride to a local restaurant for Hoi An specialty - Cao Lau. We then bike through the countryside to a Tra Que Village. You will also learn how to make special “white rose” dumpling cakes with a local family and taste your products. Continue riding to Cam Nam to enjoy the Yin and Yang food such as: Banh Dap (“cracked or smashed rice pancake”), Che Bap (“corn and coconut sweet soup”).
+                description: `Contact Ann Tailor to have a free tailor made item of clothing. Discover Hoi An countryside and its local foods by bicycle. Local foods in Hoi An are known and enjoyed by the tourists once setting foot here. In Hoi An, these cuisines are very popular and sold everywhere in all streets. Moreover, these cuisines are considered as unique symbols for the culture and introduced to every tourist. We will ride to a local restaurant for Hoi An specialty - Cao Lau. We then bike through the countryside to a Tra Que Village. You will also learn how to make special "white rose" dumpling cakes with a local family and taste your products. Continue riding to Cam Nam to enjoy the Yin and Yang food such as: Banh Dap ("cracked or smashed rice pancake"), Che Bap ("corn and coconut sweet soup").
                 
                 In the afternoon, visit My Son Sanctuary - an experience that should not be missed. Located in the heart of a beautiful valley and surrounded by high mountains ranges, My Son was named a Cultural Heritage site by UNESCO in 1999. Wander around the lost Champa Kingdom that dated back to the 3rd century, explore the temples and learn about the fascinating history behind this sanctuary of Hinduism. Overnight in Hoi An. 
                 `
@@ -1400,7 +1401,7 @@ your departure flight.`
             {
                 day: 2,
                 title: "Mekong Delta – My Tho & Ben Tre Coconut Village - Food Tour by Motorbike (B/L/D)",
-                description: `A trip to Mekong Delta offers a glimpse into the unique and distinct agrarian life of the vibrant southern Delta region. We will enjoy a cruise along the Mekong River to one of the Islands (located in the town of My Tho) where we will be entertained with traditional music while enjoying some tea sweetened with bee’s honey and seasonal fresh fruits. We will then take a paddle-boat to cruise through the narrow canals of the Mekong. One interesting thing about transportation in this region is that mostly everybody here travels by boats or ships because the number of canals is very interlaced. Here a system of transportation on water is developed so much. By travelling on canals, we can discover many distinct things such as along with the banks, a number of coconut trees grow side by side. The paddle-boat ride provides an interesting look into the local cottage industry of making coconut candies. We will then have a lunch of Elephant-Ear Fish combined with other delicious Vietnamese dishes - a local specialty. Visit Vinh Trang Pagoda, which is recognized as a national historical and cultural relic with distinctive architectural and spiritual values, a place worth visiting should not be missed.
+                description: `A trip to Mekong Delta offers a glimpse into the unique and distinct agrarian life of the vibrant southern Delta region. We will enjoy a cruise along the Mekong River to one of the Islands (located in the town of My Tho) where we will be entertained with traditional music while enjoying some tea sweetened with bee's honey and seasonal fresh fruits. We will then take a paddle-boat to cruise through the narrow canals of the Mekong. One interesting thing about transportation in this region is that mostly everybody here travels by boats or ships because the number of canals is very interlaced. Here a system of transportation on water is developed so much. By travelling on canals, we can discover many distinct things such as along with the banks, a number of coconut trees grow side by side. The paddle-boat ride provides an interesting look into the local cottage industry of making coconut candies. We will then have a lunch of Elephant-Ear Fish combined with other delicious Vietnamese dishes - a local specialty. Visit Vinh Trang Pagoda, which is recognized as a national historical and cultural relic with distinctive architectural and spiritual values, a place worth visiting should not be missed.
 
 In the evening, step into the bustling streets of Vietnam when sitting on the back of our tour guide and drivers, you will have lifetime chance to feel a bit scaring but safe moving in the chaotic transportation in Vietnam to experience famous local street foods. We will go to an old park to taste "Banh Trang Tron" - Vietnamese Rice Paper Salad, "Bo Bia" - a Vietnamese Spring Rolls. Continue heading to another busy area for "Banh Xeo" - Crispy Vietnamese Pancake, "Trung Vit Lon" - Half-hatched Duck Eggs. Next, we will stop to try some of Sai Gons famous "Oc" - Steamed and Roasted Shell and Snail and local beer. 
 Overnight in Ho Chi Minh City. Overnight in Ho Chi Minh City.
@@ -1409,17 +1410,17 @@ Overnight in Ho Chi Minh City. Overnight in Ho Chi Minh City.
             {
                 day: 3,
                 title: "Ho Chi Minh City - Da Nang - Hoi An - Free tailor-made item of clothing at Ann Tailor (B) by - 1 hour flight ",
-                description: `After breakfast at the hotel, transfer to Tan Son Nhat airport to go to Hoi An. Upon arrival at Da Nang airport, pick up and transfer to Hoi An and contact Ann Tailor to have a free tailor-made item of clothing. Overnight in Hoi An.`
+                description: `After breakfast at the hotel, transfer to Tan Son Nhat airport to go to Hoi An. Upon arrival at Da Nang airport, pick up and transfer to Hoi An and contact Ann Tailor to have a free tailor made item of clothing. Overnight in Hoi An.`
             },
             {
                 day: 4,
                 title: "Hoi An Foodie tour in the morning (B/L)",
-                description: `Discover Hoi Ans countryside and its local foods by bicycle. Local foods in Hoi An are known and enjoyed by the tourists once setting foot here. In Hoi An, these cuisines are very popular and sold everywhere in all streets. Moreover, these cuisines are considered as unique symbols for the culture and introduced to every tourist. We will ride to a local restaurant for Hoi An specialty - Cao Lau. Cao Lau is a traditional Hoi An specialty composed of local noodles, pork, fresh vegetables and rice paper. The noodles are made with local sticky rice soaked in the water that must be taken from Ba Le Well: the oldest well in Hoi An, believed to have the best water anywhere. We then bike through the countryside to a Tra Que Village. Vegetables from this village are distributed to most of the restaurants in town and specially make the Cao Lau to have a perfect taste. You will also learn how to make special “white rose” dumpling cakes with a local family and taste your products. Continue riding to Cam Nam to enjoy the Yin and Yang food such as: Banh Dap (“cracked or smashed rice pancake”), Che Bap (“corn and coconut sweet soup”). Overnight in Hoi An.`
+                description: `Discover Hoi Ans countryside and its local foods by bicycle. Local foods in Hoi An are known and enjoyed by the tourists once setting foot here. In Hoi An, these cuisines are very popular and sold everywhere in all streets. Moreover, these cuisines are considered as unique symbols for the culture and introduced to every tourist. We will ride to a local restaurant for Hoi An specialty - Cao Lau. Cao Lau is a traditional Hoi An specialty composed of local noodles, pork, fresh vegetables and rice paper. The noodles are made with local sticky rice soaked in the water that must be taken from Ba Le Well: the oldest well in Hoi An, believed to have the best water anywhere. We then bike through the countryside to a Tra Que Village. Vegetables from this village are distributed to most of the restaurants in town and specially make the Cao Lau to have a perfect taste. You will also learn how to make special "white rose" dumpling cakes with a local family and taste your products. Continue riding to Cam Nam to enjoy the Yin and Yang food such as: Banh Dap ("cracked or smashed rice pancake"), Che Bap ("corn and coconut sweet soup"). Overnight in Hoi An.`
             },
             {
                 day: 5,
                 title: "Marble Mountains & Linh Ung Pagoda in the morning (B)",
-                description: `The Marble Mountains (Vietnamese: Ngu Hanh Son; literally "five elements mountains") is a popular sightseeing location in Da Nang because of its alluring beauty. Stone steps carved into the mountain lead to a Buddhist Pagoda. There are plenty of exercises going up with many steps for a beautiful view from the top of the mountain. We will then visit the stone village where the skilled local sculptors create many marble products. Then, you will go to Am Phu Cave where there is a replica of “Heaven and Hell”, eerie underground tunnels while listening to the clapping of bats' wings in the cave. Before getting back to the hotel, we head to Son Tra Linh Ung Pagoda. Built under the reign of King Minh Mang in the Nguyen Dynasty (the 19th century), legend has it a Buddhist statue drifted downstream to the area and got anchored at a sandy embankment. The local villagers thought it was a good sign, so they built up a small pagoda to worship the statue. From that day, they said, the whole coastal region has been granted with good weather, no big storms or rough sea waves, while local fishermen harvesting good fishing. Have free time in the afternoon. Overnight in Hoi An.
+                description: `The Marble Mountains (Vietnamese: Ngu Hanh Son; literally "five elements mountains") is a popular sightseeing location in Da Nang because of its alluring beauty. Stone steps carved into the mountain lead to a Buddhist Pagoda. There are plenty of exercises going up with many steps for a beautiful view from the top of the mountain. We will then visit the stone village where the skilled local sculptors create many marble products. Then, you will go to Am Phu Cave where there is a replica of "Heaven and Hell", eerie underground tunnels while listening to the clapping of bats' wings in the cave. Before getting back to the hotel, we head to Son Tra Linh Ung Pagoda. Built under the reign of King Minh Mang in the Nguyen Dynasty (the 19th century), legend has it a Buddhist statue drifted downstream to the area and got anchored at a sandy embankment. The local villagers thought it was a good sign, so they built up a small pagoda to worship the statue. From that day, they said, the whole coastal region has been granted with good weather, no big storms or rough sea waves, while local fishermen harvesting good fishing. Have free time in the afternoon. Overnight in Hoi An.
                 `
             },
             {
@@ -1701,7 +1702,7 @@ In the afternoon, transfer to Da Nang airport to go to Ho Chi Minh City. Upon ar
             {
                 day: 6,
                 title: "Hoi An - Free tailor made item of clothing at Ann Tailor - Foodie Tour in the morning (B/L)",
-                description: `Contact Ann Tailor to have a free tailor made item of clothing. Discover Hoi Ans countryside and its local foods by bicycle. Local foods in Hoi An are known and enjoyed by the tourists once setting foot here. In Hoi An, these cuisines are very popular and sold everywhere in all streets. Moreover, these cuisines are considered as unique symbols for the culture and introduced to every tourist. We will ride to a local restaurant for Hoi An specialty - Cao Lau. Cao Lau is a traditional Hoi An specialty composed of local noodles, pork, fresh vegetables and rice paper. The noodles are made with local sticky rice soaked in the water that must be taken from Ba Le Well: the oldest well in Hoi An, believed to have the best water anywhere. We then bike through the countryside to a Tra Que Village. Vegetables from this village are distributed to most of the restaurants in town and specially make the Cao Lau to have a perfect taste. You will also learn how to make special “white rose” dumpling cakes with a local family and taste your products. Continue riding to Cam Nam to enjoy the Yin and Yang food such as: Banh Dap (“cracked or smashed rice pancake”), Che Bap (“corn and coconut sweet soup”). Have free time in the afternoon. 
+                description: `Contact Ann Tailor to have a free tailor made item of clothing. Discover Hoi Ans countryside and its local foods by bicycle. Local foods in Hoi An are known and enjoyed by the tourists once setting foot here. In Hoi An, these cuisines are very popular and sold everywhere in all streets. Moreover, these cuisines are considered as unique symbols for the culture and introduced to every tourist. We will ride to a local restaurant for Hoi An specialty - Cao Lau. Cao Lau is a traditional Hoi An specialty composed of local noodles, pork, fresh vegetables and rice paper. The noodles are made with local sticky rice soaked in the water that must be taken from Ba Le Well: the oldest well in Hoi An, believed to have the best water anywhere. We then bike through the countryside to a Tra Que Village. Vegetables from this village are distributed to most of the restaurants in town and specially make the Cao Lau to have a perfect taste. You will also learn how to make special "white rose" dumpling cakes with a local family and taste your products. Continue riding to Cam Nam to enjoy the Yin and Yang food such as: Banh Dap ("cracked or smashed rice pancake"), Che Bap ("corn and coconut sweet soup"). Have free time in the afternoon. 
 `
             },
             {
@@ -1975,13 +1976,13 @@ In the afternoon, transfer to Da Nang airport to go to Ho Chi Minh City. Upon ar
             {
                 day: 2,
                 title: "Mekong Delta – My Tho & Ben Tre Coconut Village (B/L)",
-                description: `A trip to Mekong Delta offers a glimpse into the unique and distinct agrarian life of the vibrant southern Delta region. We will enjoy a cruise along the Mekong River to one of the Islands (located in the town of My Tho) where we will be entertained with traditional music while enjoying some tea sweetened with bees honey and seasonal fresh fruits. We will then take a paddle-boat to cruise through the narrow canals of the Mekong. One interesting thing about transportation in this region is that mostly everybody here travels by boats or ships because the number of canals is very interlaced. Here a system of transportation on water is developed so much. By travelling on canals, we can discover many distinct things such as along with the banks, a number of coconut trees grow side by side. The paddle-boat ride provides an interesting look into the local cottage industry of making coconut candies. We will then have a lunch of Elephant-Ear Fish combined with other delicious Vietnamese dishes - a local specialty. Visit Vinh Trang Pagoda, which is recognized as a national historical and cultural relic with distinctive architectural and spiritual values, a place worth visiting should not be missed. Overnight in Ho Chi Minh City.
+                description: `A trip to Mekong Delta offers a glimpse into the unique and distinct agrarian life of the vibrant southern Delta region. We will enjoy a cruise along the Mekong River to one of the Islands (located in the town of My Tho) where we will be entertained with traditional music while enjoying some tea sweetened with bee's honey and seasonal fresh fruits. We will then take a paddle-boat to cruise through the narrow canals of the Mekong. One interesting thing about transportation in this region is that mostly everybody here travels by boats or ships because the number of canals is very interlaced. Here a system of transportation on water is developed so much. By travelling on canals, we can discover many distinct things such as along with the banks, a number of coconut trees grow side by side. The paddle-boat ride provides an interesting look into the local cottage industry of making coconut candies. We will then have a lunch of Elephant-Ear Fish combined with other delicious Vietnamese dishes - a local specialty. Visit Vinh Trang Pagoda, which is recognized as a national historical and cultural relic with distinctive architectural and spiritual values, a place worth visiting should not be missed. Overnight in Ho Chi Minh City.
 `
             },
             {
                 day: 3,
                 title: "Ho Chi Minh City - Cu Chi Tunnels (B/-/-) - by flight - 1 hour ",
-                description: `Check out for a half-day tour to Cu Chi Tunnels before flying to Da Nang. Cu Chi Tunnels, a network of tunnels stretching over 250 kilometers, have proven to be one of the most famous and historical aspects of the Vietnam War. The tunnel system was created in 1948 to assist the Viet Minh as they fought the French for independence. Digging and building of tunnels continued over the next 25 years until it was an underground city with living areas, kitchens, storages, weapons factories, field hospitals and command centers. The tunnels could house thousands of people who lived almost entirely underground for years. There, people led relatively normal lives, which included getting married and raising children. During the American War, the entire area of Cu Chi was designated as a free fire zone; and was therefore, heavily attacked and bombed. In 1988, two sections of tunnels were opened up for visitors. Now you have the chance to enjoy this wonderful and informative experience. Created with “moving parts” these structures were designed to be livable for long periods of time. And for those who are interested, there is an opportunity for you to fire off rounds from a war era M16 or AK47 at the nearby firing range. (This activity is optional; fees for firing range are not included). After the trip, transfer to Tan Son Nhat airport to go to Hoi An. Upon arrival at Da Nang airport, pick up and transfer to Hoi An and contact Ann Tailor to have a free tailor made item of clothing. Overnight in Hoi An.`
+                description: `Check out for a half-day tour to Cu Chi Tunnels before flying to Da Nang. Cu Chi Tunnels, a network of tunnels stretching over 250 kilometers, have proven to be one of the most famous and historical aspects of the Vietnam War. The tunnel system was created in 1948 to assist the Viet Minh as they fought the French for independence. Digging and building of tunnels continued over the next 25 years until it was an underground city with living areas, kitchens, storages, weapons factories, field hospitals and command centers. The tunnels could house thousands of people who lived almost entirely underground for years. There, people led relatively normal lives, which included getting married and raising children. During the American War, the entire area of Cu Chi was designated as a free fire zone; and was therefore, heavily attacked and bombed. In 1988, two sections of tunnels were opened up for visitors. Now you have the chance to enjoy this wonderful and informative experience. Created with "moving parts" these structures were designed to be livable for long periods of time. And for those who are interested, there is an opportunity for you to fire off rounds from a war era M16 or AK47 at the nearby firing range. (This activity is optional; fees for firing range are not included). After the trip, transfer to Tan Son Nhat airport to go to Hoi An. Upon arrival at Da Nang airport, pick up and transfer to Hoi An and contact Ann Tailor to have a free tailor made item of clothing. Overnight in Hoi An.`
             },
             {
                 day: 4,
@@ -1991,7 +1992,7 @@ In the afternoon, transfer to Da Nang airport to go to Ho Chi Minh City. Upon ar
             {
                 day: 5,
                 title: "Hoi An Foodie tour - My Son Sanctuary (B/L)",
-                description: `Discover Hoi Ans countryside and its local foods by bicycle. Local foods in Hoi An are known and enjoyed by the tourists once setting foot here. In Hoi An, these cuisines are very popular and sold everywhere in all streets. Moreover, these cuisines are considered as unique symbols for the culture and introduced to every tourist. We will ride to a local restaurant for Hoi An specialty - Cao Lau. We then bike through the countryside to a Tra Que Village. You will also learn how to make special “white rose” dumpling cakes with a local family and taste your products. Continue riding to Cam Nam to enjoy the Yin and Yang food such as: Banh Dap (“cracked or smashed rice pancake”), Che Bap (“corn and coconut sweet soup”). 
+                description: `Discover Hoi Ans countryside and its local foods by bicycle. Local foods in Hoi An are known and enjoyed by the tourists once setting foot here. In Hoi An, these cuisines are very popular and sold everywhere in all streets. Moreover, these cuisines are considered as unique symbols for the culture and introduced to every tourist. We will ride to a local restaurant for Hoi An specialty - Cao Lau. We then bike through the countryside to a Tra Que Village. You will also learn how to make special "white rose" dumpling cakes with a local family and taste your products. Continue riding to Cam Nam to enjoy the Yin and Yang food such as: Banh Dap ("cracked or smashed rice pancake"), Che Bap ("corn and coconut sweet soup"). 
 
 In the afternoon, visit My Son Sanctuary - an experience that should not be missed. Located in the heart of a beautiful valley and surrounded by high mountains ranges My Son was named a Cultural Heritage site by UNESCO in 1999. Wander around the lost Champa Kingdom that dated back to the 3rd century, explore the temples and learn about the fascinating history behind this sanctuary of Hinduism. Overnight in Hoi An. 
 
@@ -2006,7 +2007,7 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
             {
                 day: 7,
                 title: "Da Nang - Ha Noi City Tour (B/L) - by flight - 1 hour",
-                description: `After breakfast at the hotel, transfer to Da Nang airport to go to Ha Noi. Upon arrival at Noi Bai airport, pick up and transfer to the hotel. Check in and go for lunch before a City tour. With ochre-colored colonial buildings, tree-lined boulevards and scenic lakes, Ha Noi is full of charms. Visit some of Ha Nois heritage sites such as Van Mieu - Quoc Tu Giam (Temple of Literature), the first Imperial school in Vietnam, built in 1070 during the dynasty of King Ly. We will also visit Hoan Kiem Lake, Ngoc Son Temple (Jade Mountain Temple), But Tower (Pen Shaped Tower), Dai Nghien (Inkstone Stand) and The Huc Bridge (Wooden Bridge painted in red). Then, we will take a cyclo (pedicab) ride around “the 36 meandering streets” of Ha Nois historic Old Quarter to enjoy the bustling local life. The history of Ha Noi dated back over one thousand years, and Ha Noi has different cultural characteristics compared to other areas in Vietnam. The lifestyle, cuisine, fashion… of Ha Noi folks bear special features and through this journey, we can perceive these. It is very interesting to discover Ha Noi in the morning, when the life has just started and we can enjoy the busy atmosphere. Hanoians are very friendly and hospitable. Hopefully, this is the most remarkable memory of your trip to Vietnam. Overnight in Ha Noi.`
+                description: `After breakfast at the hotel, transfer to Da Nang airport to go to Ha Noi. Upon arrival at Noi Bai airport, pick up and transfer to the hotel. Check in and go for lunch before a City tour. With ochre-colored colonial buildings, tree-lined boulevards and scenic lakes, Ha Noi is full of charms. Visit some of Ha Nois heritage sites such as Van Mieu - Quoc Tu Giam (Temple of Literature), the first Imperial school in Vietnam, built in 1070 during the dynasty of King Ly. We will also visit Hoan Kiem Lake, Ngoc Son Temple (Jade Mountain Temple), But Tower (Pen Shaped Tower), Dai Nghien (Inkstone Stand) and The Huc Bridge (Wooden Bridge painted in red). Then, we will take a cyclo (pedicab) ride around "the 36 meandering streets" of Ha Nois historic Old Quarter to enjoy the bustling local life. The history of Ha Noi dated back over one thousand years, and Ha Noi has different cultural characteristics compared to other areas in Vietnam. The lifestyle, cuisine, fashion… of Ha Noi folks bear special features and through this journey, we can perceive these. It is very interesting to discover Ha Noi in the morning, when the life has just started and we can enjoy the busy atmosphere. Hanoians are very friendly and hospitable. Hopefully, this is the most remarkable memory of your trip to Vietnam. Overnight in Ha Noi.`
 
             },
             {
@@ -2166,6 +2167,626 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
             { date: "5, 12, 19, 26 Apr 2025" },
             { date: "3, 10, 17, 24, 31 May 2025" },
             { date: "7, 14, 21, 28 Jun 2025" },
+        ]
+    },
+    vietnamFoodTastingAndBeachRelaxTour: {
+        id: "10-days-vietnam-food-tasting-and-beach-relax-tour",
+        packageName: "10 days Vietnam food tasting and beach relax tour",
+        days: 10,
+        nights: 9,
+        amount: 84000,
+        dateStart: "01 March 2025",
+        dateEnd: "27 Jun 25",
+        description: "Discover the highlights of Vietnam's central region, from the ancient capital of Hue to the charming Hoi An, with visits to historical sites, natural wonders, and culinary delights.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Double Sharing",
+            arrivalDate: "Contact Us",
+            duration: "10N9D Vietnam Fixed Departure",
+            costBasis: "Double sharing basis"
+        },
+        hotelDetails: [
+            {
+                city: "Ho Chi Minh City",
+                hotel: "3 star SEN VIET HOTEL",
+                roomType: "Deluxe"
+            },
+            {
+                city: "Ho Chi Minh City",
+                hotel: "4 star HARMONY SAI GON HOTEL",
+                roomType: "Deluxe"
+            },
+            {
+                city: "Ho Chi Minh City",
+                hotel: "5 star EASTIN GRAND HOTEL",
+                roomType: "Superior"
+            },
+            {
+                city: "Nha Trang",
+                hotel: "3 star AARON HOTEL",
+                roomType: "Superior"
+            },
+            {
+                city: "Nha Trang",
+                hotel: "4 star LIBERTY CENTRAL NHA TRANG",
+                roomType: "Deluxe"
+            },
+            {
+                city: "Nha Trang",
+                hotel: "5 star SUNRISE NHA TRANG",
+                roomType: "Superior"
+            },
+            {
+                city: "Hoi An",
+                hotel: "3 star SUNSHINE HOI AN HOTEL",
+                roomType: "Superior"
+            },
+            {
+                city: "Hoi An",
+                hotel: "4 star EMM HOTEL HOI AN",
+                roomType: "Superior"
+            },
+            {
+                city: "Hoi An",
+                hotel: "5 star ALMANITY HOI AN RESORT & SPA",
+                roomType: "Loft Deluxe"
+            },
+            {
+                city: "Da Nang",
+                hotel: "3 star TITAN HOTEL",
+                roomType: "Deluxe"
+            },
+            {
+                city: "Da Nang",
+                hotel: "4 star HADANA BOUTIQUE HOTEL",
+                roomType: "Superior"
+            },
+            {
+                city: "Da Nang",
+                hotel: "5 star TMS HOTEL DA NANG BEACH",
+                roomType: "Premier Suite City"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Ho Chi Minh City - Arrival",
+            "Day 2: Ho Chi Minh City - Free day - Food Tour by Motorbike (B/D)",
+            "Day 3: Cu Chi Tunnels - Da Nang - Hoi An - Free tailor made item of clothing at Ann Tailor (B)",
+            "Day 4: Hoi An Foodie Tour in the morning (B/L)",
+            "Day 5: Hoi An - Free day - Da Nang (B)",
+            "Day 6: Da Nang - Nha Trang (B) - by train - 11 hours",
+            "Day 7: Nha Trang - Free day (B)",
+            "Day 8: Nha Trang - Free time - Food tour in the evening (B/D)",
+            "Day 9: Nha Trang - Ho Chi Minh City (B) - by flight - 1 hour",
+            "Day 10: Ho Chi Minh City - Departure (B)",
+        ],
+        inclusions: [
+            "Hotel transfers for arrival and departure",
+            "Transportation with air-conditioning",
+            "Entrance fees",
+            "Accommodation twin/double/triple sharing; Check-in time: 14:00, Check-out time: 12:00 - 3 nights in hotel",
+            "Mineral water on day tours",
+            "Meals as specified in the itinerary (9 breakfasts, 5 lunches, 1 dinner)",
+            "English speaking guides (other languages available upon request with surcharge)",
+            "Domestic flight tickets (Ho Chi Minh City - Da Nang, Nha Trang - Ho Chi Minh City), 20 kg checked baggage, 7 kg hand baggage",
+            "Train ticket (Da Nang - Nha Trang), soft berth-shared cabin",
+            "Bicycle rental for Hoi An Foodie Tour",
+        ],
+        exclusions: [
+            "Visa fees",
+            "Travel insurance",
+            "Tips and gratuities",
+            "Personal expenses such as: shopping, telephone, beverage, etc.",
+            "International or domestic air tickets not mentioned above"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Ho Chi Minh City - Arrival (-/-/-)",
+                description: `Pick-up at the airport. Transfer to your hotel. Overnight in Ho Chi Minh City.`
+            },
+            {
+                day: 2,
+                title: "Ho Chi Minh City - Free day - Food Tour by Motorbike (B/-/D)",
+                description: `Free time all day to explore Ho Chi Minh City on your own or take an optional tour with Hoi An Express. In the evening, have a Foodie tour by Motorbike. Most of Vietnamese transport forms in their daily life are motorcycles and scooters. Step into the bustling streets of Vietnam when sitting on the back of our tour guide and drivers, you will have a lifetime chance to feel a bit scaring but safe moving in the chaotic transportation in Vietnam to experience famous local street foods. We will go to an old park to taste "Banh Trang Tron" - Vietnamese Rice Paper Salad, a magical mix of crispy textures that's incredibly refreshing and so fun to eat and "Bo Bia" - a Vietnamese Spring Rolls, a fresh type of spring roll, packed with vegetables. Continue heading to another busy area for "Banh Xeo" - Crispy Vietnamese Pancake, "Trung Vit Lon" - Half-hatched Duck Eggs. Next, we will stop to try some of Sai Gons famous "Oc" - Steamed and Roasted Shell and Snail and local beer. Vietnamese, mostly men, like going out for drinking beer with their clients or friends after work. Locals drink beer pouring in a mug with ice, not directly cold bottle. Overnight in Ho Chi Minh City.`
+            },
+            {
+                day: 3,
+                title: "Cu Chi Tunnels - Da Nang - Hoi An - Free tailor made item of clothing at Ann Tailor (B/-/-) - by flight - 1 hour",
+                description: `Check out for a half-day tour to Cu Chi Tunnels before flying to Da Nang. Cu Chi Tunnels, a network of tunnels stretching over 250 kilometers, have proven to be one of the most famous and historical aspects of the Vietnam War. The tunnel system was created in 1948 to assist the Viet Minh as they fought the French for independence. Digging and building of tunnels continued over the next 25 years until it was an underground city with living areas, kitchens, storages, weapons factories, field hospitals and command centers. The tunnels could house thousands of people who lived almost entirely underground for years. There, people led relatively normal lives, which included getting married and raising children. During the American War, the entire area of Cu Chi was designated as a free fire zone; and was therefore, heavily attacked and bombed. In 1988, two sections of tunnels were opened up for visitors. Now you have the chance to enjoy this wonderful and informative experience. Created with "moving parts" these structures were designed to be livable for long periods of time. And for those who are interested, there is an opportunity for you to fire off rounds from a war era M16 or AK47 at the nearby firing range. (This activity is optional; fees for firing range are not included). After the trip, transfer to Tan Son Nhat airport to go to Hoi An. Upon arrival at Da Nang airport, pick up and transfer to Hoi An and contact Ann Tailor to have a free tailor made item of clothing. Overnight in Hoi An`
+            },
+            {
+                day: 4,
+                title: "Hoi An Foodie Tour in the morning (B/L/-)",
+                description: `Discover Hoi An's countryside and its local foods by bicycle. Local foods in Hoi An are known and enjoyed by the tourists once setting foot here. In Hoi An, these cuisines are very popular and sold everywhere in all streets. Moreover, these cuisines are considered as unique symbols for the culture and introduced to every tourist. We will ride to a local restaurant for Hoi An specialty - Cao Lau. Cao Lau is a traditional Hoi An specialty composed of local noodles, pork, fresh vegetables and rice paper. The noodles are made with local sticky rice soaked in the water that must be taken from Ba Le Well: the oldest well in Hoi An, believed to have the best water anywhere. We then bike through the countryside to a Tra Que Village. Vegetables from this village are distributed to most of the restaurants in town and specially make the Cao Lau to have a perfect taste. You will also learn how to make special "white rose" dumpling cakes with a local family and taste your products. Continue riding to Cam Nam to enjoy the Yin and Yang food such as: Banh Dap ("cracked or smashed rice pancake"), Che Bap ("corn and coconut sweet soup"). Have free time in the afternoon. Overnight in Hoi An.`
+            },
+            {
+                day: 5,
+                title: "Hoi An - Free day - Da Nang (B/-/-)",
+                description: `Free time all day to explore Hoi An on your own or take an optional tour with Hoi An Express until transfer to Da Nang. Overnight in Da Nang.`
+            },
+            {
+                day: 6,
+                title: "Da Nang - Nha Trang (B/-/-) - by train - 11 hours",
+                description: `After breakfast at the hotel, transfer to the train station in Da Nang to go to Nha Trang. Upon arrival at the train station, pick up and transfer to the hotel. Check in and relax. Overnight in Nha Trang.`
+            },
+            {
+                day: 7,
+                title: "Nha Trang - Free day (B/-/-)",
+                description: `Free time all day to explore Nha Trang on your own or take an optional tour with Hoi An Express. Overnight in Nha Trang.`
+            },
+            {
+                day: 8,
+                title: "Nha Trang - Free time - Food tour in the evening (B/-/D)",
+                description: `Free time all day to explore Nha Trang on your own or take an optional tour with Hoi An Express. Have food tour in the evening. For those who are looking to immerse themselves in the local culture, then Nha Trang will not disappoint them because this city is home to various cultural spaces, local foods in restaurant or on streets. It will be very fun riding on the back of a motorcycle through the streets of Nha Trang. We firstly try "Nem Nuong Ninh Hoa" - Ninh Hoa Grilled Fermented Pork Roll at a local restaurant. Taste this typical food at this local restaurant surrounding with many locals, you actually eat like a local and with the locals. Continue going to a famous street stall for "Banh Xeo Muc" - Nha Trang pancake. You can find Nha Trang pancake is specially made with squid instead of pork and shrimp like in other cities. You will then totally satisfy with "Bo Nuong Lac Canh" - Lac Canh grilled beef at a 40-year old specialty restaurant. This is a must-try not only because the meat is really good, but because you get to cook it yourself, adding excitement to your whole dining experience. You will also get the chance to take a wander down the city's night-time 'Walking Street', and try fresh seafood along the beaches of Nha Trang called, Bo Ke. At the end of tour, enjoy the view of the beach while sipping some drinks. Overnight in Nha Trang.`
+            },
+            {
+                day: 9,
+                title: "Nha Trang - Ho Chi Minh City (B/-/-) - by flight - 1 hour",
+                description: `After breakfast at the hotel, transfer to Nha Trang airport to go to Ho Chi Minh City. Upon arrival at Tan Son Nhat airport, pick up and transfer to the hotel. Check in and relax. Overnight in Ho Chi Minh City.`
+            },
+            {
+                day: 10,
+                title: "Ho Chi Minh City - Departure (B/-/-)",
+                description: `Have breakfast at the hotel and relax until the time of transfer to Tan Son Nhat International airport for your departure flight.`
+            }
+        ],
+        images: [
+            "/UGCImages/vietnam/HORIZONTAL/1.png",
+            "/UGCImages/vietnam/HORIZONTAL/2.png",
+            "/UGCImages/vietnam/HORIZONTAL/3.png",
+            "/UGCImages/vietnam/HORIZONTAL/4.png",
+            "/UGCImages/vietnam/HORIZONTAL/5.png",
+            "/UGCImages/vietnam/HORIZONTAL/6.png",
+            
+        ],
+        sightseeingSpots: [
+            {
+                name: "Tanah Lot Temple",
+                description: "Ancient Hindu shrine perched on a rocky outcrop, offering stunning sunset views and cultural performances",
+                image: "/UGCImages/vietnam/extra/Tanah Lot Temple.jpg"
+            },
+            {
+                name: "Tegalalang Rice Terraces",
+                description: "Spectacular terraced rice fields showcasing traditional vietnamnese irrigation system (subak)",
+                image: "/UGCImages/vietnam/extra/Tegalalang Rice Terraces.jpg"
+            },
+            {
+                name: "Sacred Monkey Forest",
+                description: "Ancient forest temple complex home to hundreds of playful monkeys and stunning architecture",
+                image: "/UGCImages/vietnam/extra/monkeyForest.jpg"
+            },
+            {
+                name: "Mount Batur",
+                description: "Active volcano offering sunrise trekking experiences and breathtaking caldera views",
+                image: "/UGCImages/vietnam/extra/mountBatur.jpg"
+            },
+            {
+                name: "Uluwatu Temple",
+                description: "Clifftop temple famous for traditional Kecak fire dance performances at sunset",
+                image: "/UGCImages/vietnam/extra/Uluwatu.jpg"
+            }
+        ],
+        localFood: [
+            {
+                name: "Nasi Goreng",
+                description: "Indonesian fried rice with vegetables, chicken or seafood, topped with a fried egg",
+                image: "/UGCImages/vietnam/cuisine/Nasi Goreng.jpg",
+                where: "Warung Made, Kuta"
+            },
+            {
+                name: "Babi Guling",
+                description: "Traditional vietnamnese-style roasted pig served with rice and local spices",
+                image: "/UGCImages/vietnam/cuisine/Babi Guling.png",
+                where: "Warung Ibu Oka, Ubud"
+            },
+            {
+                name: "Bebek Betutu",
+                description: "Slow-cooked duck with vietnamnese spices, served with plecing kangkung",
+                image: "/UGCImages/vietnam/cuisine/Bebek Betutu.png",
+                where: "Bebek Tepi Sawah, Ubud"
+            },
+            {
+                name: "Sambal Matah",
+                description: "Raw spicy vietnamnese relish made with shallots, lemongrass, and chili",
+                image: "/UGCImages/vietnam/cuisine/Sambal Matah.jpg",
+                where: "Merah Putih Restaurant, Seminyak"
+            },
+        ],
+        culture: [
+            {
+                title: "Legong Dance",
+                description: "Graceful traditional dance performed by young girls in elaborate costumes, telling stories of ancient kingdoms",
+                image: "/UGCImages/vietnam/culture/dance.jpg"
+            },
+            {
+                title: "Temple Ceremonies",
+                description: "Vibrant religious ceremonies with offerings, traditional music, and elaborate decorations",
+                image: "/UGCImages/vietnam/culture/vietnamTemple.jpg"
+            },
+            {
+                title: "Traditional Crafts",
+                description: "Ancient art of wood carving, silver smithing, and batik making passed down through generations",
+                image: "/UGCImages/vietnam/culture/craft.jpg"
+            },
+            {
+                title: "Galungan Festival",
+                description: "Major vietnamnese holiday celebrating the victory of dharma over adharma, marked by decorated bamboo poles",
+                image: "/UGCImages/vietnam/culture/festival.png"
+            },
+            {
+                title: "Traditional Markets",
+                description: "Bustling local markets selling fresh produce, spices, crafts, and traditional offerings",
+                image: "/UGCImages/vietnam/culture/market.png"
+            }
+        ],
+        additionalInfo: {
+            highlights: [
+                "Visit to iconic Tanah Lot Temple",
+                "Traditional Kecak Fire Dance show",
+                "Nusa Penida Island exploration",
+                "Water sports activities package",
+                "Scenic Tegalalang Rice Terraces"
+            ],
+            bestTimeToVisit: "April to October (Dry Season)",
+            cuisine: [
+                "Traditional vietnamnese dishes",
+                "Fresh seafood specialties",
+                "Local fruit varieties",
+                "Indonesian street food"
+            ],
+            accommodation: {
+                type: "4-Star Premium Hotels",
+                amenities: [
+                    "Swimming pool",
+                    "Spa facilities",
+                    "Restaurant & bar",
+                    "Free Wi-Fi",
+                    "Room service"
+                ]
+            },
+            transportation: {
+                type: "Private AC Vehicle",
+                features: [
+                    "Professional driver",
+                    "Comfortable seating",
+                    "Air conditioning",
+                    "Tourist permit"
+                ]
+            },
+            visaInfo: {
+                requirement: "Visa on Arrival",
+                duration: "30 days",
+                cost: "USD 35",
+                documents: [
+                    "Valid passport (minimum 6 months)",
+                    "Return flight tickets",
+                    "Hotel booking confirmation",
+                    "Sufficient funds proof"
+                ]
+            }
+        },
+        departureDates: [
+            { date: "1, 8, 15, 22, 29 Mar 2025" },
+            { date: "5, 12, 19, 26 Apr 2025" },
+            { date: "3, 10, 17, 24, 31 May 2025" },
+            { date: "7, 14, 21, 28 Jun 2025" },
+        ]
+    },
+    northtoSouthVietnamTour: {
+        id: "11-days-north-to-south-vietnam-tour",
+        packageName: "11 days north to south Vietnam tour",
+        days: 11,
+        nights: 10,
+        amount: 107000,
+        dateStart: "01 March 2025",
+        dateEnd: "27 Jun 25",
+        description: "Discover the highlights of Vietnam's central region, from the ancient capital of Hue to the charming Hoi An, with visits to historical sites, natural wonders, and culinary delights.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Double Sharing",
+            arrivalDate: "Contact Us",
+            duration: "10N9D Vietnam Fixed Departure",
+            costBasis: "Double sharing basis"
+        },
+        hotelDetails: [
+            {
+                city: "Ha Noi",
+                hotel: "3 star ANISE HOTEL & SPA",
+                roomType: "ROH"
+            },
+            {
+                city: "Ha Noi",
+                hotel: "4 star FLOWER GARDEN HOTEL",
+                roomType: "Deluxe"
+            },
+            {
+                city: "Ha Noi",
+                hotel: "5 star GRAND VISTA HA NOI HOTEL",
+                roomType: "Deluxe"
+            },
+            {
+                city: "Ha Long",
+                hotel: "3 star COZY BAY CRUISE",
+                roomType: "Superior"
+            },
+            {
+                city: "Ha Long",
+                hotel: "4 star VICTORIA CRUISE",
+                roomType: "Deluxe"
+            },
+            {
+                city: "Ha Long",
+                hotel: "5 star PARADISE SAILS CRUISE",
+                roomType: "Deluxe"
+            },
+            {
+                city: "Hoi An",
+                hotel: "3 star SUNSHINE HOI AN HOTEL",
+                roomType: "Superior"
+            },
+            {
+                city: "Hoi An",
+                hotel: "4 star EMM HOTEL HOI AN",
+                roomType: "Superior"
+            },
+            {
+                city: "Hoi An",
+                hotel: "5 star ALMANITY HOI AN RESORT & SPA",
+                roomType: "Loft Deluxe"
+            },
+            {
+                city: "Da Nang",
+                hotel: "3 star TITAN HOTEL",
+                roomType: "Deluxe"
+            },
+            {
+                city: "Da Nang",
+                hotel: "4 star HADANA BOUTIQUE HOTEL",
+                roomType: "Superior"
+            },
+            {
+                city: "Da Nang",
+                hotel: "5 star TMS HOTEL DA NANG BEACH",
+                roomType: "Premier Suite City"
+            },
+            {
+                city: "Ho Chi Minh City",
+                hotel: "3 star SEN VIET HOTEL",
+                roomType: "Deluxe"
+            },
+            {
+                city: "Ho Chi Minh City",
+                hotel: "4 star HARMONY SAI GON HOTEL",
+                roomType: "Deluxe"
+            },
+            {
+                city: "Ho Chi Minh City",
+                hotel: "5 star EASTIN GRAND HOTEL",
+                roomType: "Superior"
+            }
+
+        ],
+        tourSummary: [
+            "Day 1: Ho Chi Minh City - Arrival",
+            "Day 2: Ho Chi Minh City - Free day - Food Tour by Motorbike (B/D)",
+            "Day 3: Cu Chi Tunnels - Da Nang - Hoi An - Free tailor made item of clothing at Ann Tailor (B)",
+            "Day 4: Hoi An Foodie Tour in the morning (B/L)",
+            "Day 5: Hoi An - Free day - Da Nang (B)",
+            "Day 6: Da Nang - Nha Trang (B) - by train - 11 hours",
+            "Day 7: Nha Trang - Free day (B)",
+            "Day 8: Nha Trang - Free time - Food tour in the evening (B/D)",
+            "Day 9: Nha Trang - Ho Chi Minh City (B) - by flight - 1 hour",
+            "Day 10: Ho Chi Minh City - Departure (B)",
+        ],
+        inclusions: [
+            "Hotel transfers for arrival and departure",
+            "Transportation with air-conditioning",
+            "Entrance fees",
+            "Accommodation twin/double/triple sharing; Check-in time: 14:00, Check-out time: 12:00 - 3 nights in hotel",
+            "Mineral water on day tours",
+            "Meals as specified in the itinerary (9 breakfasts, 5 lunches, 1 dinner)",
+            "English speaking guides (other languages available upon request with surcharge)",
+            "Domestic flight ticket (Ha Noi - Da Nang - Ho Chi Minh City), 20 kg checked baggage, 7 kg hand baggage"
+        ],
+        exclusions: [
+            "Visa fees",
+            "Travel insurance",
+            "Tips and gratuities",
+            "Personal expenses such as: shopping, telephone, beverage, etc.",
+            "International or domestic air tickets not mentioned above"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Ho Chi Minh City - Arrival (-/-/-)",
+                description: `Pick-up at the airport. Transfer to your hotel. Overnight in Ho Chi Minh City.`
+            },
+            {
+                day: 2,
+                title: "Ho Chi Minh City - Free day - Food Tour by Motorbike (B/-/D)",
+                description: `Free time all day to explore Ho Chi Minh City on your own or take an optional tour with Hoi An Express. In the evening, have a Foodie tour by Motorbike. Most of Vietnamese transport forms in their daily life are motorcycles and scooters. Step into the bustling streets of Vietnam when sitting on the back of our tour guide and drivers, you will have a lifetime chance to feel a bit scaring but safe moving in the chaotic transportation in Vietnam to experience famous local street foods. We will go to an old park to taste "Banh Trang Tron" - Vietnamese Rice Paper Salad, a magical mix of crispy textures that's incredibly refreshing and so fun to eat and "Bo Bia" - a Vietnamese Spring Rolls, a fresh type of spring roll, packed with vegetables. Continue heading to another busy area for "Banh Xeo" - Crispy Vietnamese Pancake, "Trung Vit Lon" - Half-hatched Duck Eggs. Next, we will stop to try some of Sai Gons famous "Oc" - Steamed and Roasted Shell and Snail and local beer. Vietnamese, mostly men, like going out for drinking beer with their clients or friends after work. Locals drink beer pouring in a mug with ice, not directly cold bottle. Overnight in Ho Chi Minh City.`
+            },
+            {
+                day: 3,
+                title: "Cu Chi Tunnels - Da Nang - Hoi An - Free tailor made item of clothing at Ann Tailor (B/-/-) - by flight - 1 hour",
+                description: `Check out for a half-day tour to Cu Chi Tunnels before flying to Da Nang. Cu Chi Tunnels, a network of tunnels stretching over 250 kilometers, have proven to be one of the most famous and historical aspects of the Vietnam War. The tunnel system was created in 1948 to assist the Viet Minh as they fought the French for independence. Digging and building of tunnels continued over the next 25 years until it was an underground city with living areas, kitchens, storages, weapons factories, field hospitals and command centers. The tunnels could house thousands of people who lived almost entirely underground for years. There, people led relatively normal lives, which included getting married and raising children. During the American War, the entire area of Cu Chi was designated as a free fire zone; and was therefore, heavily attacked and bombed. In 1988, two sections of tunnels were opened up for visitors. Now you have the chance to enjoy this wonderful and informative experience. Created with "moving parts" these structures were designed to be livable for long periods of time. And for those who are interested, there is an opportunity for you to fire off rounds from a war era M16 or AK47 at the nearby firing range. (This activity is optional; fees for firing range are not included). After the trip, transfer to Tan Son Nhat airport to go to Hoi An. Upon arrival at Da Nang airport, pick up and transfer to Hoi An and contact Ann Tailor to have a free tailor made item of clothing. Overnight in Hoi An`
+            },
+            {
+                day: 4,
+                title: "Hoi An Foodie Tour in the morning (B/L/-)",
+                description: `Discover Hoi An's countryside and its local foods by bicycle. Local foods in Hoi An are known and enjoyed by the tourists once setting foot here. In Hoi An, these cuisines are very popular and sold everywhere in all streets. Moreover, these cuisines are considered as unique symbols for the culture and introduced to every tourist. We will ride to a local restaurant for Hoi An specialty - Cao Lau. Cao Lau is a traditional Hoi An specialty composed of local noodles, pork, fresh vegetables and rice paper. The noodles are made with local sticky rice soaked in the water that must be taken from Ba Le Well: the oldest well in Hoi An, believed to have the best water anywhere. We then bike through the countryside to a Tra Que Village. Vegetables from this village are distributed to most of the restaurants in town and specially make the Cao Lau to have a perfect taste. You will also learn how to make special "white rose" dumpling cakes with a local family and taste your products. Continue riding to Cam Nam to enjoy the Yin and Yang food such as: Banh Dap ("cracked or smashed rice pancake"), Che Bap ("corn and coconut sweet soup"). Have free time in the afternoon. Overnight in Hoi An.`
+            },
+            {
+                day: 5,
+                title: "Hoi An - Free day - Da Nang (B/-/-)",
+                description: `Free time all day to explore Hoi An on your own or take an optional tour with Hoi An Express until transfer to Da Nang. Overnight in Da Nang.`
+            },
+            {
+                day: 6,
+                title: "Da Nang - Nha Trang (B/-/-) - by train - 11 hours",
+                description: `After breakfast at the hotel, transfer to the train station in Da Nang to go to Nha Trang. Upon arrival at the train station, pick up and transfer to the hotel. Check in and relax. Overnight in Nha Trang.`
+            },
+            {
+                day: 7,
+                title: "Nha Trang - Free day (B/-/-)",
+                description: `Free time all day to explore Nha Trang on your own or take an optional tour with Hoi An Express. Overnight in Nha Trang.`
+            },
+            {
+                day: 8,
+                title: "Nha Trang - Free time - Food tour in the evening (B/-/D)",
+                description: `Free time all day to explore Nha Trang on your own or take an optional tour with Hoi An Express. Have food tour in the evening. For those who are looking to immerse themselves in the local culture, then Nha Trang will not disappoint them because this city is home to various cultural spaces, local foods in restaurant or on streets. It will be very fun riding on the back of a motorcycle through the streets of Nha Trang. We firstly try "Nem Nuong Ninh Hoa" - Ninh Hoa Grilled Fermented Pork Roll at a local restaurant. Taste this typical food at this local restaurant surrounding with many locals, you actually eat like a local and with the locals. Continue going to a famous street stall for "Banh Xeo Muc" - Nha Trang pancake. You can find Nha Trang pancake is specially made with squid instead of pork and shrimp like in other cities. You will then totally satisfy with "Bo Nuong Lac Canh" - Lac Canh grilled beef at a 40-year old specialty restaurant. This is a must-try not only because the meat is really good, but because you get to cook it yourself, adding excitement to your whole dining experience. You will also get the chance to take a wander down the city's night-time 'Walking Street', and try fresh seafood along the beaches of Nha Trang called, Bo Ke. At the end of tour, enjoy the view of the beach while sipping some drinks. Overnight in Nha Trang.`
+            },
+            {
+                day: 9,
+                title: "Nha Trang - Ho Chi Minh City (B/-/-) - by flight - 1 hour",
+                description: `After breakfast at the hotel, transfer to Nha Trang airport to go to Ho Chi Minh City. Upon arrival at Tan Son Nhat airport, pick up and transfer to the hotel. Check in and relax. Overnight in Ho Chi Minh City.`
+            },
+            {
+                day: 10,
+                title: "Ho Chi Minh City - Departure (B/-/-)",
+                description: `Have breakfast at the hotel and relax until the time of transfer to Tan Son Nhat International airport for your departure flight.`
+            }
+        ],
+        images: [
+            "/UGCImages/vietnam/HORIZONTAL/1.png",
+            "/UGCImages/vietnam/HORIZONTAL/2.png",
+            "/UGCImages/vietnam/HORIZONTAL/3.png",
+            "/UGCImages/vietnam/HORIZONTAL/4.png",
+            "/UGCImages/vietnam/HORIZONTAL/5.png",
+            "/UGCImages/vietnam/HORIZONTAL/6.png",
+            
+        ],
+        sightseeingSpots: [
+            {
+                name: "Tanah Lot Temple",
+                description: "Ancient Hindu shrine perched on a rocky outcrop, offering stunning sunset views and cultural performances",
+                image: "/UGCImages/vietnam/extra/Tanah Lot Temple.jpg"
+            },
+            {
+                name: "Tegalalang Rice Terraces",
+                description: "Spectacular terraced rice fields showcasing traditional vietnamnese irrigation system (subak)",
+                image: "/UGCImages/vietnam/extra/Tegalalang Rice Terraces.jpg"
+            },
+            {
+                name: "Sacred Monkey Forest",
+                description: "Ancient forest temple complex home to hundreds of playful monkeys and stunning architecture",
+                image: "/UGCImages/vietnam/extra/monkeyForest.jpg"
+            },
+            {
+                name: "Mount Batur",
+                description: "Active volcano offering sunrise trekking experiences and breathtaking caldera views",
+                image: "/UGCImages/vietnam/extra/mountBatur.jpg"
+            },
+            {
+                name: "Uluwatu Temple",
+                description: "Clifftop temple famous for traditional Kecak fire dance performances at sunset",
+                image: "/UGCImages/vietnam/extra/Uluwatu.jpg"
+            }
+        ],
+        localFood: [
+            {
+                name: "Nasi Goreng",
+                description: "Indonesian fried rice with vegetables, chicken or seafood, topped with a fried egg",
+                image: "/UGCImages/vietnam/cuisine/Nasi Goreng.jpg",
+                where: "Warung Made, Kuta"
+            },
+            {
+                name: "Babi Guling",
+                description: "Traditional vietnamnese-style roasted pig served with rice and local spices",
+                image: "/UGCImages/vietnam/cuisine/Babi Guling.png",
+                where: "Warung Ibu Oka, Ubud"
+            },
+            {
+                name: "Bebek Betutu",
+                description: "Slow-cooked duck with vietnamnese spices, served with plecing kangkung",
+                image: "/UGCImages/vietnam/cuisine/Bebek Betutu.png",
+                where: "Bebek Tepi Sawah, Ubud"
+            },
+            {
+                name: "Sambal Matah",
+                description: "Raw spicy vietnamnese relish made with shallots, lemongrass, and chili",
+                image: "/UGCImages/vietnam/cuisine/Sambal Matah.jpg",
+                where: "Merah Putih Restaurant, Seminyak"
+            },
+        ],
+        culture: [
+            {
+                title: "Legong Dance",
+                description: "Graceful traditional dance performed by young girls in elaborate costumes, telling stories of ancient kingdoms",
+                image: "/UGCImages/vietnam/culture/dance.jpg"
+            },
+            {
+                title: "Temple Ceremonies",
+                description: "Vibrant religious ceremonies with offerings, traditional music, and elaborate decorations",
+                image: "/UGCImages/vietnam/culture/vietnamTemple.jpg"
+            },
+            {
+                title: "Traditional Crafts",
+                description: "Ancient art of wood carving, silver smithing, and batik making passed down through generations",
+                image: "/UGCImages/vietnam/culture/craft.jpg"
+            },
+            {
+                title: "Galungan Festival",
+                description: "Major vietnamnese holiday celebrating the victory of dharma over adharma, marked by decorated bamboo poles",
+                image: "/UGCImages/vietnam/culture/festival.png"
+            },
+            {
+                title: "Traditional Markets",
+                description: "Bustling local markets selling fresh produce, spices, crafts, and traditional offerings",
+                image: "/UGCImages/vietnam/culture/market.png"
+            }
+        ],
+        additionalInfo: {
+            highlights: [
+                "Visit to iconic Tanah Lot Temple",
+                "Traditional Kecak Fire Dance show",
+                "Nusa Penida Island exploration",
+                "Water sports activities package",
+                "Scenic Tegalalang Rice Terraces"
+            ],
+            bestTimeToVisit: "April to October (Dry Season)",
+            cuisine: [
+                "Traditional vietnamnese dishes",
+                "Fresh seafood specialties",
+                "Local fruit varieties",
+                "Indonesian street food"
+            ],
+            accommodation: {
+                type: "4-Star Premium Hotels",
+                amenities: [
+                    "Swimming pool",
+                    "Spa facilities",
+                    "Restaurant & bar",
+                    "Free Wi-Fi",
+                    "Room service"
+                ]
+            },
+            transportation: {
+                type: "Private AC Vehicle",
+                features: [
+                    "Professional driver",
+                    "Comfortable seating",
+                    "Air conditioning",
+                    "Tourist permit"
+                ]
+            },
+            visaInfo: {
+                requirement: "Visa on Arrival",
+                duration: "30 days",
+                cost: "USD 35",
+                documents: [
+                    "Valid passport (minimum 6 months)",
+                    "Return flight tickets",
+                    "Hotel booking confirmation",
+                    "Sufficient funds proof"
+                ]
+            }
+        },
+        departureDates: [
+            { date: "7, 14, 21, 28 Mar 2025" },
+            { date: "4, 11, 18, 25 Apr 2025" },
+            { date: "2, 9, 16, 23, 30 May 2025" },
+            { date: "6, 13, 20, 27 Jun 2025" },
         ]
     },
 }; 
