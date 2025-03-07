@@ -93,7 +93,7 @@ export const vietnamPackages: Record<string, vietnamPackage> = {
         amount: 30799,
         dateStart: "01 March 2025",
         dateEnd: "26 Jun 2025",
-        description: "Experience the ultimate vietnam adventure with our comprehensive 7-day tour covering Ubud, Kintamani, and Ubud. From pristine beaches to cultural landmarks, this tour offers the perfect blend of relaxation, adventure, and urban exploration.",
+        description: "Explore the highlights of Vietnam's south with our 4-day tour covering Ho Chi Minh City, Mekong Delta, and Cu Chi Tunnels. From bustling markets to historical sites, this tour offers a perfect blend of culture, adventure, and relaxation.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
@@ -340,7 +340,7 @@ your departure flight.`
         amount: 39000,
         dateStart: "01 March 2025",
         dateEnd: "30 Jun 2025",
-        description: "Experience the ultimate vietnam adventure with our comprehensive 7-day tour covering Ubud, Kintamani, and Ubud. From pristine beaches to cultural landmarks, this tour offers the perfect blend of relaxation, adventure, and urban exploration.",
+        description: "Discover the highlights of Vietnam's north with our 5-day tour covering Hanoi, Halong Bay. From ancient temples to stunning landscapes, this tour offers a perfect blend of culture, adventure, and relaxation.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
