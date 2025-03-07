@@ -118,7 +118,7 @@ export default function VietnamPackagePage({ params }: PageProps) {
                     cancelAnimationFrame(animationFrameId);
                 }
             };
-        }, [duration]);
+        }, [duration, scrollRef]);
     };
 
     useAutoScroll(cultureScrollRef, 50000);

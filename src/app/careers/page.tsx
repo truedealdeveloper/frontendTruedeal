@@ -62,7 +62,7 @@ export default function CareersPage() {
                         <div className="mb-4">
                             <h4 className="font-medium text-gray-900 mb-2">Qualifications:</h4>
                             <ul className="list-disc pl-5 text-gray-600 text-sm">
-                                <li>Bachelor's degree in Tourism Management, Hospitality, Business Administration, or a related field.</li>
+                                <li>Bachelor&apos;s degree in Tourism Management, Hospitality, Business Administration, or a related field.</li>
                                 <li>Minimum of 2 years of experience in travel operations or management.</li>
                                 <li>Strong leadership and team management skills.</li>
                                 <li>Excellent communication and interpersonal abilities.</li>
