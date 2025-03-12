@@ -48,15 +48,19 @@ export default function VietnamPackages() {
         }
     };
 
-    const PackageCard = ({ package: vietnamPackage }: { package: vietnamPackage }) => {
+    const PackageCard = ({ 
+        package: pkg
+    }: { 
+        package: vietnamPackage;
+    }) => {
         const [showDates, setShowDates] = useState(false);
 
         return (
             <div className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0">
                 {/* Background Image */}
                 <Image 
-                    src={vietnamPackage.images[0]} 
-                    alt={vietnamPackage.packageName}
+                    src={pkg.images[0]} 
+                    alt={pkg.packageName}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
@@ -69,10 +73,10 @@ export default function VietnamPackages() {
                 <div className="absolute top-3 left-0 z-10">
                     <div className="bg-yellow-400 px-4 py-1.5 rounded-full shadow-lg">
                         <span className="line-through text-sm mr-2">
-                            ₹{(vietnamPackage.amount * 1.2).toLocaleString('en-IN')}/-
+                            ₹{(pkg.amount * 1.2).toLocaleString('en-IN')}/-
                         </span>
                         <span className="font-bold">
-                            ₹{vietnamPackage.amount.toLocaleString('en-IN')}/-
+                            ₹{pkg.amount.toLocaleString('en-IN')}/-
                         </span>
                         <span className="text-sm ml-1">onwards</span>
                     </div>
@@ -81,18 +85,18 @@ export default function VietnamPackages() {
                 {/* Content */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                     <h2 className="text-2xl font-bold mb-2">
-                        {vietnamPackage.packageName}
+                        {pkg.packageName}
                     </h2>
 
                     {/* Details Grid */}
                     <div className="grid grid-cols-2 gap-y-2 text-sm mb-4">
                         <div className="flex items-center gap-2">
                             <FaClock className="text-yellow-400" />
-                            <span>{vietnamPackage.days}D/{vietnamPackage.nights}N</span>
+                            <span>{pkg.days}D/{pkg.nights}N</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <IoLocationSharp className="text-yellow-400" />
-                            <span>{vietnamPackage.hotelDetails[0].city}</span>
+                            <span>{pkg.hotelDetails[0].city}</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <FaCalendarAlt className="text-yellow-400" />
@@ -109,14 +113,14 @@ export default function VietnamPackages() {
                     </div>
 
                     {/* Departure Dates Popup */}
-                    {showDates && vietnamPackage.departureDates && (
+                    {showDates && pkg.departureDates && (
                         <div 
                             className="absolute bottom-full left-0 right-0 bg-black/90 p-4 rounded-t-lg max-h-[200px] overflow-y-auto"
                             onClick={(e) => e.stopPropagation()}
                         >
                             <h3 className="text-yellow-400 font-semibold mb-2">Departure Dates</h3>
                             <div className="space-y-2">
-                                {vietnamPackage.departureDates.map((departure, index) => (
+                                {pkg.departureDates.map((departure, index) => (
                                     <div key={index} className="text-sm">
                                         {departure.date}
                                     </div>
@@ -126,7 +130,7 @@ export default function VietnamPackages() {
                     )}
 
                     {/* View Details Button */}
-                    <Link href={`/vietnam/${vietnamPackage.id}`}>
+                    <Link href={`/vietnam/${pkg.id}`}>
                         <Button
                             className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all duration-500"
                         >
@@ -137,25 +141,6 @@ export default function VietnamPackages() {
             </div>
         );
     };
-
-    const faqs = [
-        {
-            question: "What is the best time to visit vietnam?",
-            answer: "The best time to visit vietnam is from May to July when the weather is dry and less humid. December is peak season with higher prices, while January sees more rainfall."
-        },
-        {
-            question: "What activities can I do in vietnam?",
-            answer: "vietnam offers numerous activities including scuba diving, snorkeling, surfing, temple visits, mountain trekking, rice terrace tours, and traditional dance performances."
-        },
-        {
-            question: "Which temples should I visit in vietnam?",
-            answer: "Must-visit temples include Uluwatu Temple (famous for sunset views and Kecak dance), Tanah Lot Temple, and Ulun Danu Temple."
-        },
-        {
-            question: "What adventure activities are available?",
-            answer: "You can enjoy mountain biking, trekking Mount Batur, white water rafting, parasailing, canyon tubing, and various water sports."
-        }
-    ];
 
     const vietnamHighlights = [
         {
@@ -189,6 +174,25 @@ export default function VietnamPackages() {
             description: "Indulge in traditional vietnamnese spa treatments and yoga retreats"
         }
     ];
+
+    const faqs = [
+        {
+            question: "What is the best time to visit Vietnam?",
+            answer: "The best time to visit Vietnam is from May to July when the weather is dry and less humid. December is peak season with higher prices, while January sees more rainfall."
+        },
+        {
+            question: "What activities can I do in Vietnam?",
+            answer: "Vietnam offers numerous activities including scuba diving, snorkeling, surfing, temple visits, mountain trekking, rice terrace tours, and traditional dance performances."
+        },
+        {
+            question: "Which temples should I visit in Vietnam?",
+            answer: "Must-visit temples include Uluwatu Temple (famous for sunset views and Kecak dance), Tanah Lot Temple, and Ulun Danu Temple."
+        },
+        {
+            question: "What adventure activities are available?",
+            answer: "You can enjoy mountain biking, trekking Mount Batur, white water rafting, parasailing, canyon tubing, and various water sports."
+        }
+    ] as const;
 
     return (
         <div className="min-h-screen">
@@ -298,6 +302,7 @@ export default function VietnamPackages() {
                 </div>
             </div>
 
+            {/* Vietnam Packages Section */}
             <div className="bg-gray-50 py-16">
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl font-bold text-center mb-12">
@@ -305,7 +310,7 @@ export default function VietnamPackages() {
                             Our Vietnam Packages
                         </span>
                     </h2>
-                    <div className="relative ">
+                    <div className="relative">
                         <div className="relative">
                             {/* Navigation Controls */}
                             <div className="absolute top-1/2 -translate-y-1/2 left-0 z-10 hidden md:block">
@@ -414,9 +419,6 @@ export default function VietnamPackages() {
                 </div>
             </div>
 
-            {/* Packages Section */}
-           
-
             {/* FAQ Section */}
             <div className="max-w-3xl mx-auto mt-16">
                 <h2 className="text-3xl font-bold text-center mb-8">
@@ -425,7 +427,7 @@ export default function VietnamPackages() {
                     </span>
                 </h2>
                 <div className="space-y-4">
-                    {faqs.map((faq, index) => (
+                    {faqs.map((faq: { question: string; answer: string }, index: number) => (
                         <div
                             key={index}
                             className="border rounded-lg overflow-hidden"

@@ -340,12 +340,12 @@ your departure flight.`
         amount: 39000,
         dateStart: "01 March 2025",
         dateEnd: "30 Jun 2025",
-        description: "Discover the highlights of Vietnam's north with our 5-day tour covering Hanoi, Halong Bay. From ancient temples to stunning landscapes, this tour offers a perfect blend of culture, adventure, and relaxation.",
+        description: "Experience the Phu Quoc Island with our 4-day tour covering Phu Quoc Island. From pristine beaches to cultural landmarks, this tour offers a perfect blend of relaxation, adventure, and urban exploration.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
             arrivalDate: "Contact Us",
-            duration: "4N3D vietnam Fixed Departure",
+            duration: "4D3N vietnam Fixed Departure",
             costBasis: "Cost Based On per person"
         },
         hotelDetails: [
@@ -569,7 +569,7 @@ your departure flight.`
             pax: "Group Tour",
             rooms: "Double Sharing",
             arrivalDate: "Contact Us",
-            duration: "5N4D vietnam Fixed Departure",
+            duration: "5D4N vietnam Fixed Departure",
             costBasis: "Cost Based On per person"
         },
         hotelDetails: [
@@ -812,7 +812,7 @@ your departure flight.`
             pax: "Group Tour",
             rooms: "Double Sharing",
             arrivalDate: "Contact Us",
-            duration: "5N4D Vietnam Fixed Departure",
+            duration: "5D4N Vietnam Fixed Departure",
             costBasis: "Double sharing basis"
         },
         hotelDetails: [
@@ -1058,7 +1058,7 @@ your departure flight.`
             pax: "Group Tour",
             rooms: "Double Sharing",
             arrivalDate: "Contact Us",
-            duration: "7N6D Vietnam Fixed Departure",
+            duration: "7D6N Vietnam Fixed Departure",
             costBasis: "Double sharing basis"
         },
         hotelDetails: [
@@ -1330,7 +1330,7 @@ your departure flight.`
             pax: "Group Tour",
             rooms: "Double Sharing",
             arrivalDate: "Contact Us",
-            duration: "7N6D Vietnam Fixed Departure",
+            duration: "7D6N Vietnam Fixed Departure",
             costBasis: "Double sharing basis"
         },
         hotelDetails: [
@@ -1594,7 +1594,7 @@ In the afternoon, transfer to Da Nang airport to go to Ho Chi Minh City. Upon ar
             pax: "Group Tour",
             rooms: "Double Sharing",
             arrivalDate: "Contact Us",
-            duration: "8N7D Vietnam Fixed Departure",
+            duration: "8D7N Vietnam Fixed Departure",
             costBasis: "Double sharing basis"
         },
         hotelDetails: [
@@ -1872,7 +1872,7 @@ In the afternoon, transfer to Da Nang airport to go to Ho Chi Minh City. Upon ar
             pax: "Group Tour",
             rooms: "Double Sharing",
             arrivalDate: "Contact Us",
-            duration: "10N9D Vietnam Fixed Departure",
+            duration: "10D9N Vietnam Fixed Departure",
             costBasis: "Double sharing basis"
         },
         hotelDetails: [
@@ -2182,7 +2182,7 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
             pax: "Group Tour",
             rooms: "Double Sharing",
             arrivalDate: "Contact Us",
-            duration: "10N9D Vietnam Fixed Departure",
+            duration: "10D9N Vietnam Fixed Departure",
             costBasis: "Double sharing basis"
         },
         hotelDetails: [
@@ -2485,7 +2485,7 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
             pax: "Group Tour",
             rooms: "Double Sharing",
             arrivalDate: "Contact Us",
-            duration: "10N9D Vietnam Fixed Departure",
+            duration: "10D9N Vietnam Fixed Departure",
             costBasis: "Double sharing basis"
         },
         hotelDetails: [
@@ -2787,6 +2787,673 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
             { date: "4, 11, 18, 25 Apr 2025" },
             { date: "2, 9, 16, 23, 30 May 2025" },
             { date: "6, 13, 20, 27 Jun 2025" },
+        ]
+    },
+    authenticVietnamPlusGoldenBridge: {
+        id: "13-days-authentic-vietnam-plus-golden-bridge",
+        packageName: "13 days authentic Vietnam plus golden bridge",
+        days: 13,
+        nights: 12,
+        amount: 141000,
+        dateStart: "01 March 2025",
+        dateEnd: "27 Jun 2025",
+        description: "Enjoy the 13 days authentic Vietnam plus golden bridge tour with us. This tour covers the highlights of Vietnam, from the ancient capital of Hue to the charming Hoi An, with visits to historical sites, natural wonders, and culinary delights.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Double Sharing",
+            arrivalDate: "Contact Us",
+            duration: "13 days Vietnam Fixed Departure",
+            costBasis: "Double sharing basis"
+        },
+        hotelDetails: [
+            {
+                city: "Ha Noi",
+                hotel: "3 star ANISE HOTEL & SPA",
+                roomType: "ROH"
+            },
+            {
+                city: "Ha Noi",
+                hotel: "4 star FLOWER GARDEN HOTEL",
+                roomType: "Deluxe"
+            },
+            {
+                city: "Ha Noi",
+                hotel: "5 star GRAND VISTA HA NOI HOTEL",
+                roomType: "Deluxe"
+            },
+            {
+                city: "Hoi An",
+                hotel: "3 star SUNSHINE HOI AN HOTEL",
+                roomType: "Superior"
+            },
+            {
+                city: "Hoi An",
+                hotel: "4 star EMM HOTEL HOI AN",
+                roomType: "Superior"
+            },
+            {
+                city: "Hoi An",
+                hotel: "5 star ALMANITY HOI AN RESORT & SPA",
+                roomType: "Loft Deluxe"
+            },
+            {
+                city: "Da Nang",
+                hotel: "3 star TITAN HOTEL",
+                roomType: "Deluxe"
+            },
+            {
+                city: "Da Nang",
+                hotel: "4 star HADANA BOUTIQUE HOTEL",
+                roomType: "Superior"
+            },
+            {
+                city: "Da Nang",
+                hotel: "5 star TMS HOTEL DA NANG BEACH",
+                roomType: "Premier Suite City"
+            },
+
+        ],
+        tourSummary: [
+            "Day 1: Da Nang - Arrival ",
+            "Day 2: Da Nang - Hue Heritage (B/L)",
+            "Day 3: Da Nang - Ba Na Hills and Golden Bridge - Hoi An (B/L)",
+            "Day 4: Free tailor made item of clothing at Ann Tailor - Hoi An Foodie tour - My Son Sanctuary (B/L)",
+            "Day 5: Hoi An Cyclo Tour in Vietnamese Traditional Ao Dai (B)",
+            "Day 6: Hoi An Countryside by Electric scooter in the morning (B)",
+            "Day 7: Hoi An - Free time - Dinner & Hoi An Memories Show in the evening (B/-/D)",
+            "Day 8: Hoi An - Da Nang - Ha Noi (B) - by flight - 1 hour",
+            "Day 9: Ha Noi - Sapa (B/L/D) - by bus - 5 hours",
+            "Day 10: Cat Cat village - Ha Noi (B/L/-) - by bus - 5 hours",
+            "Day 11: Ha Noi - Hanoi Old Quarter - Hoan Kiem Lake - Ho Chi Minh Mausoleum - Ho Chi Minh Museum - Tran Quoc Pagoda (B/L)",
+            "Day 12: Ha Noi - Free day (B)",
+            "Day 13: Hoi An - Departure (B)",
+        ],
+        inclusions: [
+            "Hotel transfers for arrival and departure",
+            "Transportation with air-conditioning",
+            "Entrance fees",
+            "Accommodation twin/double/triple sharing; Check-in time: 14:00, Check-out time: 12:00 - 3 nights in hotel",
+            "Mineral water on day tours",
+            "Meals as specified in the itinerary (12 breakfasts, 6 lunches, 2 dinner)",
+            "English speaking guides (other languages available upon request with surcharge)",
+            "Domestic flight ticket (Da Nang - Ha Noi), 20 kg checked baggage, 7 kg hand baggage",
+            "Bus ticket (Ha Noi - Sapa - Ha Noi)"
+        ],
+        exclusions: [
+            "Visa fees",
+            "Travel insurance",
+            "Tips and gratuities",
+            "Personal expenses such as: shopping, telephone, beverage, etc.",
+            "International or domestic air tickets not mentioned above"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Da Nang - Arrival ",
+                description: `Pick-up at the airport. Transfer to your hotel. Overnight in Da Nang.`
+            },
+            {
+                day: 2,
+                title: "Da Nang - Hue Heritage (B/L)",
+                description: `Head to Hue, along the North coast of Da Nang to the top of Hai Van Pass where bunkers remaining from the war can be explored. Upon arrival in Hue, we will visit the Citadel, Hue&apos;s prime attraction, which contains the Imperial City, the Forbidden Purple City and the Emperor&apos;s Private Residence. Hue Citadel was built from 1804 to 1833 under the Nguyen&apos;s Dynasty (the last feudalist kingdom in Vietnam). The grounds of the Imperial City are protected by 2-kilometer fortified ramparts and ringed by a moat. Inside the Citadel, there are many different construction works such as: Imperial City Gates, Purple Forbidden City, Temples and places of worshipping, pavilions, gardens, etc. We will have a short break for lunch then take a boat trip on the Perfume River with a stopover at Thien Mu Pagoda, which is an active Buddhist monastery with its origins dating back to 1601. One of its most poignant displays is a car belonging to a former monk, who in 1963, drove to Sai Gon and set himself alight to protest against the South Vietnamese regime and its cruel treatment of Buddhist monks and followers. We finally visit the serene Khai Dinh Royal Tomb, designed to blend in with its natural surroundings and built on principles of feng-shui. Overnight in Da Nang.`
+            },
+            {
+                day: 3,
+                title: "Da Nang - Ba Na Hills and Golden Bridge - Hoi An (B/L)",
+                description: `Ba Na is one of the most interesting areas in the region as often one can feel the four distinct seasons within a single day: morning - spring, noon - summer, afternoon - autumn and evening - winter. You will have a chance to visit Golden Bridge which is a 150-meter long pedestrian bridge with two giant stone hands supporting the structure. It is designed to connect the cable car station with the gardens and to provide a scenic overlook and tourist attraction. We can enjoy the view of the beautiful landscape of nature comfortably and smoothly. Past the Golden Bridge, and into the center of a charming (and very Epcot-like) French village, complete with French Gothic-style cathedral, French restaurants, cobblestoned streets and impressive French gardens. There are many more places in Ba Na Hills to explore including Linh Ung Ba Na Pagoda, Le Jardin Garden and a complex of ancient villas. Linh Ung Ba Na Pagoda with an exquisite architectural design was built in 2004 and is symbolized by a 30-meter high Buddha statue that is exposed amidst an immense space of clouds and mountains. We will continue our trip discovering Tinh Tam Garden, Nghinh Phong Peak and Vong Nguyet Hill where we can enjoy the panoramic views the areas have to offer. Overnight in Hoi An.`
+            },
+            {
+                day: 4,
+                title: "Free tailor made item of clothing at Ann Tailor - Hoi An Foodie tour - My Son Sanctuary (B/L)",
+                description: `After Contact Ann Tailor to have a free tailor made item of clothing. Discover Hoi An's countryside and its local foods by bicycle. Local foods in Hoi An are known and enjoyed by the tourists once setting foot here. In Hoi An, these cuisines are very popular and sold everywhere in all streets. Moreover, these cuisines are considered as unique symbols for the culture and introduced to every tourist. We will ride to a local restaurant for Hoi An specialty - Cao Lau. We then bike through the countryside to a Tra Que Village. You will also learn how to make special "white rose" dumpling cakes with a local family and taste your products. Continue riding to Cam Nam to enjoy the Yin and Yang food such as: Banh Dap ("cracked or smashed rice pancake"), Che Bap ("corn and coconut sweet soup").
+
+In the afternoon, visit My Son Sanctuary - an experience that should not be missed. Located in the heart of a beautiful valley and surrounded by high mountains ranges My Son was named a Cultural Heritage site by UNESCO in 1999. Wander around the lost Champa Kingdom that dated back to the 3rd century, explore the temples and learn about the fascinating history behind this sanctuary of Hinduism. Overnight in Hoi An. `
+            },
+            {
+                day: 5,
+                title: "Hoi An Cyclo Tour in Vietnamese Traditional Ao Dai (B)",
+                description: `Exploring Hoi An in Ao Dai - Vietnamese traditional costume is one of the best ways to take in the city&apos;s charm. You will have the opportunity to wear the traditional Ao Dai styles and colors. While exploring this small yet beautiful town, tourists and frequent visitors find that it is a place of tranquility and peace.
+The unique atmosphere here combines elements of Vietnamese, Chinese and Japanese culture. Some of the most remarkable views of the city are from the ancient houses. From here, visitors can catch a glimpse of a long gone past and more subdued and simple time. The tour includes visits by cyclo to Hoi An Museum, many of the town&apos;s renowned Ancient Houses which boast a remarkable architectural style, Assembly Halls of Chinese influence, Art Craft Manufacturing Workshop, and of course the must-see Japanese Covered Bridge. These spots are considered as typical architecture styles in Hoi An and reflect clearly the cross culture among France, Japan, China and Vietnam. Passing over hundreds of years and withstanding the severity of the weather, Hoi An still exists and keeps the ancient and quiet beauty. Sit on a cyclo with the traditional long dresses, you will feel comfortable and discover the quiet and peaceful beauty. Overnight in Hoi An.`
+            },
+            {
+                day: 6,
+                title: "Hoi An Countryside by Electric scooter in the morning (B",
+                description: `The tour kicks off in style with coffee in local style then hop on your scooter to start exploring Hoi An&apos;s hidden gems and charismatic locals. Take a drive to Cam Nam Island to visit some local houses and places where people live and work traditional lives. Visit a ship repair yard to experience the hard work involved in maintaining a local fishing boat. Then, a short drive through a local village and beautiful countryside includes a stop at an ancestor house where guests can learn more about the belief system in Vietnam. We will visit the local shoes-making shop to learn about the ancient tradition of tailoring and shoe-making in Hoi An. Before having a short break at a stall overlooking Hoi An Ancient Town and Thu Bon River, we visit a rice cracker place to observe the traditional cracker making process as well as have a taste of the yummy end-product. Afterwards, on our drive through the countryside, you will experience the resplendent beauty of the rice paddies, grazing buffalo and monkey bridges, all of which you can take photos of. We will ride to Tra Que Village, a beautiful herb and vegetable garden which supplies vegetables for the restaurants in the ancient town. At the end of the tour, guests can unwind at a stunning beach lounge overlooking one of the best beaches in Vietnam, An Bang Beach, with a refreshing drink. Overnight in Hoi An.`
+            },
+            {
+                day: 7,
+                title: "Hoi An - Free time - Dinner & Hoi An Memories Show in the evening (B/-/D)",
+                description: `Free time all day to explore the place on your own. 
+
+We will begin our evening with a dinner at a lovely local restaurant. After dinner, we will make our way to Hoi An Impression Theme Park - a Hoi An miniature - on the Hoai River. With beautiful architecture, interesting folk games, and 5 fascinating super mini-shows, as soon as the night falls, visitors will feel lost in another space with shimmering virtual fantasy, seemingly only in the old stories. When you come to the park, you will have the opportunity to enjoy sweet soup, a special kind of dessert in Vietnam. And finally, Hoi An Memories Show is a large-scale real-time show with an outdoor stage which has a capacity of 3300 spectators. The stage setting combines mountains and rivers with a 1-kilometer stage length, using more than 500 actors. Field performance shows the use of modern sound and lighting technology, with the participation of international experts in organization and production. With the purpose of conveying the most authentic historical-cultural values to the audience, making a deep impression on each audience watching the show thanks to the scale and extremely elaborate investment in both quality and quantity, Hoi An Memories Show will take the audience from one surprise to another. Overnight in Hoi An.`
+            },
+            {
+                day: 8,
+                title: "Hoi An - Da Nang - Ha Noi (B/-/-) - by flight - 1 hour",
+                description: `After breakfast at the hotel, transfer to Da Nang airport to go to Ha Noi. Upon arrival at Noi Bai airport, pick up and transfer to the hotel. Check in and relax. Overnight in Ha Noi.`
+            },
+            {
+                day: 9,
+                title: "Ha Noi - Sapa (B/L/D) - by bus - 5 hours",
+                description: `We will pick you up at your hotel for departure to Sapa. After lunch, take a scenic drive up to the hill station of Sapa. From there we will take a short 30-minute journey south toward Muong Hoa Valley. The walk takes you from Lao Chai Village of the Black H'Mong Minority to the Ta Van Village of the Giay Minority with a stop at the local Catholic Church, taking in the different traditions, cultures and costumes of the two minority groups. Have dinner. Overnight at homestay.`
+            },
+            {
+                day: 10,
+                title: "Cat Cat village - Ha Noi (B/L/-) - by bus - 5 hours",
+                description: `Sapa has always been famous for its breathtaking scenery and tranquil air. Enjoying the Sapa view when trekking to Cat Cat village in the morning is indeed your first reward. You will have a chance to enjoy Cat Cat waterfall, admire giant water wheels, visit the Hmong house, learn the Hmong culture and practices, taste the Hmong wine, experience the Hmong foods. Check out, come back to Ha Noi. Overnight in Ha Noi.`
+            },
+            {
+                day: 11,
+                title: "Tam Coc - Bich Dong & Hoa Lu, the Vietnam&apos;s ancient capital (B/L)",
+                description: `Take a two-hour ride heading South of Ha Noi to Tam Coc - Bich Dong, Ninh Binh Province, known to travelers as Vietnams "Inland Ha Long Bay". Tam Coc stream is the national key tourist spot in Vietnam, recognized as a World Heritage by UNESCO. This area includes a system of limestone caves and historical relics related to Trans Dynasty. This will be an exciting day highlighted by a two-hour boat ride in Tam Coc Stream. You will enjoy spectacular scenery while gliding along the river among rice paddies and ranges of limestone mountain peaks. Tam Coc means three grottos: Ca grotto, Hai grotto and Ba grotto. When the boat comes into three grottos, tourists will feel cool. Stalactites from the ceiling like iridescent pearls. This grotto is adorned with beautiful stalactites and stalagmites of different shapes and colours that sparkle like gemstones. After enjoying a lunch of local food served at a riverside restaurant, we will take a short trip down a peaceful country road to Hoa Lu, Vietnams ancient capital of the 10th and 11th century visiting two temples dedicated to King Dinh and King Le. You will also visit Bich Dong Pagoda, which was built in the style of "three" in Han scripts, consisting of three unconnected buildings, based on the mountain position from low to high forming three separate temples, hidden under the green canopy of ancient trees surrounded by stone. Overnight in Ha Noi.`
+            },
+            {
+                day: 12,
+                title: 'Ha Noi - Free Day (B)',
+                description: 'Free time all day to explore Ha Noi on your own or take an optional tour with Hoi An Express. Overnight in Ha Noi.'
+            },
+            {
+                day: 13,
+                title: 'Ha Noi - Departure (B)',
+                description: 'Have breakfast at the hotel and relax until the time of transfer to Noi Bai International airport for your departure flight.'
+            }
+            
+        ],
+        images: [
+            "/UGCImages/vietnam/HORIZONTAL/1.png",
+            "/UGCImages/vietnam/HORIZONTAL/2.png",
+            "/UGCImages/vietnam/HORIZONTAL/3.png",
+            "/UGCImages/vietnam/HORIZONTAL/4.png",
+            "/UGCImages/vietnam/HORIZONTAL/5.png",
+            "/UGCImages/vietnam/HORIZONTAL/6.png",
+            
+        ],
+        sightseeingSpots: [
+            {
+                name: "Tanah Lot Temple",
+                description: "Ancient Hindu shrine perched on a rocky outcrop, offering stunning sunset views and cultural performances",
+                image: "/UGCImages/vietnam/extra/Tanah Lot Temple.jpg"
+            },
+            {
+                name: "Tegalalang Rice Terraces",
+                description: "Spectacular terraced rice fields showcasing traditional vietnamnese irrigation system (subak)",
+                image: "/UGCImages/vietnam/extra/Tegalalang Rice Terraces.jpg"
+            },
+            {
+                name: "Sacred Monkey Forest",
+                description: "Ancient forest temple complex home to hundreds of playful monkeys and stunning architecture",
+                image: "/UGCImages/vietnam/extra/monkeyForest.jpg"
+            },
+            {
+                name: "Mount Batur",
+                description: "Active volcano offering sunrise trekking experiences and breathtaking caldera views",
+                image: "/UGCImages/vietnam/extra/mountBatur.jpg"
+            },
+            {
+                name: "Uluwatu Temple",
+                description: "Clifftop temple famous for traditional Kecak fire dance performances at sunset",
+                image: "/UGCImages/vietnam/extra/Uluwatu.jpg"
+            }
+        ],
+        localFood: [
+            {
+                name: "Nasi Goreng",
+                description: "Indonesian fried rice with vegetables, chicken or seafood, topped with a fried egg",
+                image: "/UGCImages/vietnam/cuisine/Nasi Goreng.jpg",
+                where: "Warung Made, Kuta"
+            },
+            {
+                name: "Babi Guling",
+                description: "Traditional vietnamnese-style roasted pig served with rice and local spices",
+                image: "/UGCImages/vietnam/cuisine/Babi Guling.png",
+                where: "Warung Ibu Oka, Ubud"
+            },
+            {
+                name: "Bebek Betutu",
+                description: "Slow-cooked duck with vietnamnese spices, served with plecing kangkung",
+                image: "/UGCImages/vietnam/cuisine/Bebek Betutu.png",
+                where: "Bebek Tepi Sawah, Ubud"
+            },
+            {
+                name: "Sambal Matah",
+                description: "Raw spicy vietnamnese relish made with shallots, lemongrass, and chili",
+                image: "/UGCImages/vietnam/cuisine/Sambal Matah.jpg",
+                where: "Merah Putih Restaurant, Seminyak"
+            },
+        ],
+        culture: [
+            {
+                title: "Legong Dance",
+                description: "Graceful traditional dance performed by young girls in elaborate costumes, telling stories of ancient kingdoms",
+                image: "/UGCImages/vietnam/culture/dance.jpg"
+            },
+            {
+                title: "Temple Ceremonies",
+                description: "Vibrant religious ceremonies with offerings, traditional music, and elaborate decorations",
+                image: "/UGCImages/vietnam/culture/vietnamTemple.jpg"
+            },
+            {
+                title: "Traditional Crafts",
+                description: "Ancient art of wood carving, silver smithing, and batik making passed down through generations",
+                image: "/UGCImages/vietnam/culture/craft.jpg"
+            },
+            {
+                title: "Galungan Festival",
+                description: "Major vietnamnese holiday celebrating the victory of dharma over adharma, marked by decorated bamboo poles",
+                image: "/UGCImages/vietnam/culture/festival.png"
+            },
+            {
+                title: "Traditional Markets",
+                description: "Bustling local markets selling fresh produce, spices, crafts, and traditional offerings",
+                image: "/UGCImages/vietnam/culture/market.png"
+            }
+        ],
+        additionalInfo: {
+            highlights: [
+                "Visit to iconic Tanah Lot Temple",
+                "Traditional Kecak Fire Dance show",
+                "Nusa Penida Island exploration",
+                "Water sports activities package",
+                "Scenic Tegalalang Rice Terraces"
+            ],
+            bestTimeToVisit: "April to October (Dry Season)",
+            cuisine: [
+                "Traditional vietnamnese dishes",
+                "Fresh seafood specialties",
+                "Local fruit varieties",
+                "Indonesian street food"
+            ],
+            accommodation: {
+                type: "4-Star Premium Hotels",
+                amenities: [
+                    "Swimming pool",
+                    "Spa facilities",
+                    "Restaurant & bar",
+                    "Free Wi-Fi",
+                    "Room service"
+                ]
+            },
+            transportation: {
+                type: "Private AC Vehicle",
+                features: [
+                    "Professional driver",
+                    "Comfortable seating",
+                    "Air conditioning",
+                    "Tourist permit"
+                ]
+            },
+            visaInfo: {
+                requirement: "Visa on Arrival",
+                duration: "30 days",
+                cost: "USD 35",
+                documents: [
+                    "Valid passport (minimum 6 months)",
+                    "Return flight tickets",
+                    "Hotel booking confirmation",
+                    "Sufficient funds proof"
+                ]
+            }
+        },
+        departureDates: [
+            { date: "2, 9, 16, 23 Mar 2025" },
+            { date: "6, 13, 20, 27 Apr 2025" },
+            { date: "4, 11, 18, 25 May 2025" },
+            { date: "1, 8, 15, 22, 29 Jun 2025" },
+        ]
+    },
+    vietnamGolfTrails: {
+        id: "13-days-golf-trails-vietnam",
+        packageName: "13 days golf trails Vietnam",
+        days: 13,
+        nights: 12,
+        amount: 280000,
+        dateStart: "01 March 2025",
+        dateEnd: "27 Jun 2025",
+        description: "Enjoy the 13 days golf trails in Vietnam. This premium golf tour combines world-class golf courses with cultural exploration across Vietnam's most beautiful destinations, from Ho Chi Minh City to Hanoi.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Double Sharing",
+            arrivalDate: "Contact Us",
+            duration: "13 days Vietnam Fixed Departure",
+            costBasis: "Double sharing basis"
+        },
+        hotelDetails: [
+            {
+                city: "Ho Chi Minh City",
+                hotel: "3 star SEN VIET HOTEL",
+                roomType: "Deluxe"
+            },
+            {
+                city: "Ho Chi Minh City",
+                hotel: "4 star HARMONY SAI GON HOTEL",
+                roomType: "Deluxe"
+            },
+            {
+                city: "Ho Chi Minh City",
+                hotel: "5 star EASTIN GRAND HOTEL ",
+                roomType: "Superior"
+            },
+            {
+                city: "Mui Ne",
+                hotel: "3 star TIEN DAT RESORT",
+                roomType: "Deluxe Sea View-Hill Side"
+            },
+            {
+                city: "Mui Ne",
+                hotel: "4 star LOTUS MUI NE RESORT",
+                roomType: "Deluxe Garden"
+            },
+            {
+                city: "Mui Ne",
+                hotel: "5 star SEALINKS BEACH HOTEL",
+                roomType: "Superior Pool View"
+            },
+            {
+                city: "Quy Nhon",
+                hotel: "3 star SEA HARMONY HOTEL",
+                roomType: "Superior"
+            },
+            {
+                city: "Quy Nhon",
+                hotel: "4 star HUONG VIET HOTEL",
+                roomType: "Deluxe"
+            },
+            {
+                city: "Quy Nhon",
+                hotel: "5 star FLC LUXURY RESORT QUY NHON",
+                roomType: "Deluxe"
+            },
+            {
+                city: "Nha Trang",
+                hotel: "3 star AARON HOTEL",
+                roomType: "Superior"
+            },
+            {
+                city: "Nha Trang",
+                hotel: "4 star LIBERTY CENTRAL NHA TRANG",
+                roomType: "Deluxe"
+            },
+            {
+                city: "Nha Trang",
+                hotel: "5 star SUNRISE NHA TRANG",
+                roomType: "Superior"
+            },
+            {
+                city: "Hoi An",
+                hotel: "3 star SUNSHINE HOI AN HOTEL",
+                roomType: "Superior"
+            },
+            {
+                city: "Hoi An",
+                hotel: "4 star EMM HOTEL HOI AN",
+                roomType: "Superior"
+            },
+            {
+                city: "Hoi An",
+                hotel: "5 star ALMANITY HOI AN RESORT & SPA",
+                roomType: "Loft Deluxe"
+            },
+            {
+                city: "Ha Noi",
+                hotel: "3 star ANISE HOTEL & SPA",
+                roomType: "ROH"
+            },
+            {
+                city: "Ha Noi",
+                hotel: "4 star FLOWER GARDEN HOTEL",
+                roomType: "Deluxe"
+            },
+            {
+                city: "Ha Noi",
+                hotel: "5 star GRAND VISTA HA NOI HOTEL",
+                roomType: "Deluxe"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Ho Chi Minh City - Arrival",
+            "Day 2: Vietnam Golf and Country Club (B)",
+            "Day 3: Ho Chi Minh City Tour in the morning - Mui Ne (B/L)",
+            "Day 4: Sea Links Golf and Country Club (B)",
+            "Day 5: Mui Ne - Nha Trang - City Tour in the afternoon (B)",
+            "Day 6: Diamond Bay Golf Club (B)",
+            "Day 7: Nha Trang - Quy Nhon (B)",
+            "Day 8: FLC Quy Nhon Golf Links (B)",
+            "Day 9: Quy Nhon - Hoi An - Free tailor made item of clothing at Ann Tailor (B)",
+            "Day 10: Marble Mountains & Linh Ung Pagoda in the morning (B)",
+            "Day 11: Montgomerie Link Vietnam Golf Club - Ha Noi (B)",
+            "Day 12: Chi Linh Star Golf Club (B)",
+            "Day 13: Ha Noi City Tour in the morning - Departure (B)",
+        ],
+        inclusions: [
+            "Hotel transfers for arrival and departure",
+            "Transportation with air-conditioning",
+            "Entrance fees",
+            "Accommodation twin/double/triple sharing; Check-in time: 14:00, Check-out time: 12:00",
+            "Mineral water on day tours",
+            "Meals as specified in the itinerary (12 breakfasts, 1 lunches)",
+            "English speaking guides (other languages available upon request with surcharge)",
+            "Green fees and caddie fees",
+            "Domestic flight ticket (Da Nang - Ha Noi), 20 kg checked baggage, 7 kg hand baggage"
+        ],
+        exclusions: [
+            "Visa fees",
+            "Travel insurance",
+            "Tips and gratuities",
+            "Personal expenses such as: shopping, telephone, beverage, etc.",
+            "International or domestic air tickets not mentioned above",
+            "Golf cart and club rentals",
+            "Caddie tips"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Ho Chi Minh City - Arrival",
+                description: `Pick-up at Tan Son Nhat International airport. Transfer to your hotel. Overnight in Ho Chi Minh City.`
+            },
+            {
+                day: 2,
+                title: "Vietnam Golf & Country Club (B)",
+                description: `Enjoy a half-day golfing at one of the best golf courses in Vietnam. Now, Vietnam boasts some of the finest golf courses not only in Asia but also worldwide. Only 20 kilometers away from the center of Ho Chi Minh City, Vietnam Golf And Country Club is a unique 36-hole golf course that consists of two fantastic 18-hole courses with total area of about 300 hectares. The courses here are unique in that the West course favors the Asian tradition of narrow tree-lined fairways and fast smooth greens, while the East course offers long, wide fairways with well-placed bunkers and water hazards in addition to challenging and undulating greens. The exceptional settings will allow you to exercise in the fresh air and enjoy the natural beauty of the land, serenity; avoid the noisy and busy atmosphere of the city. The staff will provide you with professional advice and will meet your needs. Taking photos of the whole view of golf course is a popular activity for tourists. Hopefully, this trip will contribute into your experiences once setting foot on this land. Overnight in Ho Chi Minh City.`
+            },
+            {
+                day: 3,
+                title: "Ho Chi Minh City Tour in the morning - Mui Ne (B/L)",
+                description: `Ho Chi Minh City is the largest, busiest and most exciting city in Vietnam. It is also filled with intrigue and culture. Ho Chi Minh City is considered as a "blending mixture" city in Vietnam. You can discover a lot of interesting things through people's daily life. Founded and developed over 300 years, today, Ho Chi Minh City is a fascinating tourist spot with various cultural and historical features. We will visit some of the most interesting sights that Ho Chi Minh City has to offer, such as The War Remnants Museum: a lively display of the futility of the war; The Reunification Palace: beautifully preserved palace - the residence of the President of the Republic of Vietnam during the 1960-1970s; Notre Dame Cathedral - built in 1880 and the Old Post Office - built between 1886 - 1891; Thien Hau Pagoda in Cho Lon - a Chinese-style temple located on Nguyen Trai Street in Cho Lon (China Town) - District 5, dedicated to Thien Hau, the Lady of the Sea, also known as "Mazu" ("Tian Hou" in Chinese). Our last stop is Vietnamese lacquerware factory where you can observe the process of making these traditional Vietnamese products.
+Have lunch at a local restaurant before departing for Mui Ne. Overnight in Mui Ne.`
+            },
+            {
+                day: 4,
+                title: "Sea Links Golf and Country Club (B)",
+                description: `Sea Links lies in the heart of a simply breathtaking area of the countryside. Nearby attractions include Lau Ong Hoang, Poshanu Tower, Ong Dia Stone, Ham Tien and Hon Rom. Sea Links Golf Club is built on an area of 160 hectares on a cliff with wild and beautiful sand dunes. The golf course is practically at sea level, just a few minutes from Full Moon Beach and with amazing views of the ocean below. The courses designers, Ronald Fream and Golfplan Company, highlight that the course retains much of the original terrain of white sand dunes. Overnight in Mui Ne.`
+            },
+            {
+                day: 5,
+                title: "Mui Ne - Nha Trang - City Tour in the afternoon (B)",
+                description: `Have breakfast. Check out. Drive to Nha Trang by car. Upon arrival in Nha Trang, check in. 
+
+In the afternoon, The tour will begin with a visit Alexandre Yersin Museum, and Long Son Pagoda, which was founded in the 19th century and is a beautiful example of classic Buddhist architecture. The 14-meter-high Buddha statue that sits atop this site is visible from afar as one enters the city, and has great views of the city and surrounding countryside.
+The next stop is Dam Market - Nha Trang's oldest and largest market. The final leg of our tour will take you to view some ancient Cham architecture at the Cham Ponagar temple complex. Locally referred to as Thap Ba, this set of ancient Cham temples is beautifully located on a hill just outside the city, and is reached by crossing the Cai River. Learn about the fascinating ancient civilization of the Hindu-worshipping Cham people as you wander around the fabulous temple grounds. Overnight in Nha Trang.`
+            },
+            {
+                day: 6,
+                title: "Diamond Bay Golf Club (B)",
+                description: `Your day will be spent the same way, playing golf in a stunning location alongside one of the most beautiful bays in the world! Diamond Bay Golf & Villas is a 7744 yard championship layout golf course designed by American golf course developer and architecture Andy Dye. Diamond Bay has a natural habitat playing along the Nha Trang Beach on one of Vietnam's best beaches. Each hole is a unique challenge creating unmatched satisfaction and a memorable experience for the golfer. Overnight in Nha Trang.`
+            },
+            {
+                day: 7,
+                title: "Nha Trang - Quy Nhon (B)",
+                description: `Have breakfast at the hotel. Depart for Quy Nhon, check in at the hotel. Overnight in Quy Nhon.`
+            },
+            {
+                day: 8,
+                title: "FLC Quy Nhon Golf Links (B)",
+                description: `Spend your day playing golf at FLC Quy Nhon Golf Links. The 18-hole golf course is a harmonious combination of unique design and picturesque scenery of Nhon Ly Beach with the highlight of Eo Gio - the most spectacular place to watch the sunrise in Vietnam. Building on large sand dunes beside an evergreen pine hill, you are challenged to conquer golf holes. Back to your hotel and relax. Overnight in Quy Nhon.`
+            },
+            {
+                day: 9,
+                title: "Quy Nhon - Hoi An - Free tailor made item of clothing at Ann Tailor (B)",
+                description: `Have breakfast at the hotel. Depart for Hoi An, Contact Ann Tailor to have a free tailor made item of clothing. Check in at the hotel. Overnight in Hoi An.`
+            },
+            {
+                day: 10,
+                title: "Marble Mountains & Linh Ung Pagoda in the morning (B)",
+                description: `The Marble Mountains (Vietnamese: Ngu Hanh Son; literally "five elements mountains") is a popular sightseeing location in Da Nang because of its alluring beauty. Stone steps carved into the mountain lead to a Buddhist Pagoda. There are plenty of exercises going up with many steps for a beautiful view from the top of the mountain. We will then visit the stone village where the skilled local sculptors create many marble products. Then, you will go to Am Phu Cave where there is a replica of "Heaven and Hell", eerie underground tunnels while listening to the clapping of bats' wings in the cave. Before getting back to the hotel, we head to Son Tra Linh Ung Pagoda. Built under the reign of King Minh Mang in the Nguyen Dynasty (the 19th century), legend has it a Buddhist statue drifted downstream to the area and got anchored at a sandy embankment. The local villagers thought it was a good sign, so they built up a small pagoda to worship the statue. From that day, they said, the whole coastal region has been granted with good weather, no big storms or rough sea waves, while local fishermen harvesting good fishing. Overnight in Hoi An.`
+            },
+            {
+                day: 11,
+                title: "Montgomerie Link Vietnam Golf Club - Ha Noi (B)",
+                description: `Enjoy a half-day experience golfing at one of the top-rated golf courses in Hoi An. Only a few kilometers from Hoi An City, the Montgomerie Links Vietnam Golf welcomes you with two magnificent 18-hole courses. Created by golfing legend Colin Montgomerie, Montgomerie Links Golf Course is truly an international 5-star championship links style course that tees up challenging and enjoyable play for all levels of golfers from around the world. The over-arching philosophy behind all of Colin Montgomerie's designs is to work closely with natural characteristics of each site. Montgomerie Links Vietnam has many truly outstanding natural features. Transfer to Da Nang airport for flight to Ha Noi. Overnight in Ha Noi.`
+            },
+            {
+                day: 12,
+                title: "Chi Linh Star Golf Club (B)",
+                description: `Chi Linh Star Golf And Country Club, only 68 kilometers to the East of Ha Noi, was built with 36-hole international AAA standard. The golf course has been built with a slogan "The best place to play golf". Mostly, the most advanced technologies, top-popular building materials are used for this construction. This golf court is deemed as the golf court for stars in Vietnam and here many international ranked golfers set foot. Overnight in Ha Noi.`
+            },
+            {
+                day: 13,
+                title: "Ha Noi City Tour in the morning - Departure (B)",
+                description: `With ochre-colored colonial buildings, tree-lined boulevards and scenic lakes, Ha Noi is full of charms. Visit some of Ha Noi's heritage sites such as Van Mieu - Quoc Tu Giam (Temple of Literature), the first Imperial school in Vietnam, built in 1070 during the dynasty of King Ly. We will also visit Hoan Kiem Lake, Ngoc Son Temple (Jade Mountain Temple), But Tower (Pen Shaped Tower), Dai Nghien (Inkstone Stand) and The Huc Bridge (Wooden Bridge painted in red). Then, we will take a cyclo (pedicab) ride around "the 36 meandering streets" of Ha Noi's historic Old Quarter to enjoy the bustling local life. The history of Ha Noi dated back for over one thousand years, and Ha Noi has different cultural characteristics compared to other areas in Vietnam. The lifestyle, cuisine, fashion… of Ha Noi folks bear special features and through this journey, we can perceive these. It is very interesting to discover Ha Noi in the morning, when the life has just started and we can enjoy the busy atmosphere. Hanoians are very friendly and hospitable. Hopefully, this is the most remarkable memory of your trip to Vietnam. Relax until the time of transfer to Noi Bai International airport for your departure flight.`
+            }
+        ],
+        images: [
+            "/UGCImages/vietnam/HORIZONTAL/1.png",
+            "/UGCImages/vietnam/HORIZONTAL/2.png",
+            "/UGCImages/vietnam/HORIZONTAL/3.png",
+            "/UGCImages/vietnam/HORIZONTAL/4.png",
+            "/UGCImages/vietnam/HORIZONTAL/5.png",
+            "/UGCImages/vietnam/HORIZONTAL/6.png",
+        ],
+        sightseeingSpots: [
+            {
+                name: "Vietnam Golf & Country Club",
+                description: "Premier 36-hole golf course near Ho Chi Minh City featuring both traditional Asian-style and modern Western-style courses",
+                image: "/UGCImages/vietnam/extra/VietnamGolfCountryClub.jpg"
+            },
+            {
+                name: "Sea Links Golf Club",
+                description: "Spectacular clifftop course in Mui Ne with stunning ocean views and challenging sand dune terrain",
+                image: "/UGCImages/vietnam/extra/SeaLinksGolf.jpg"
+            },
+            {
+                name: "Diamond Bay Golf Club",
+                description: "Championship course in Nha Trang designed by Andy Dye, featuring natural coastal habitat and beach views",
+                image: "/UGCImages/vietnam/extra/DiamondBayGolf.jpg"
+            },
+            {
+                name: "FLC Quy Nhon Golf Links",
+                description: "Breathtaking links-style course built on sand dunes with views of Nhon Ly Beach and Eo Gio",
+                image: "/UGCImages/vietnam/extra/FLCQuyNhon.jpg"
+            },
+            {
+                name: "Montgomerie Links Vietnam",
+                description: "5-star championship course near Hoi An designed by golf legend Colin Montgomerie",
+                image: "/UGCImages/vietnam/extra/MontgomerieLinks.jpg"
+            }
+        ],
+        localFood: [
+            {
+                name: "Pho",
+                description: "Vietnam's iconic rice noodle soup with beef or chicken, fresh herbs, and aromatic broth",
+                image: "/UGCImages/vietnam/cuisine/Pho.jpg",
+                where: "Pho Hoa, Ho Chi Minh City"
+            },
+            {
+                name: "Banh Mi",
+                description: "Crispy Vietnamese baguette sandwich filled with meats, pâté, vegetables and herbs",
+                image: "/UGCImages/vietnam/cuisine/BanhMi.jpg",
+                where: "Banh Mi Phuong, Hoi An"
+            },
+            {
+                name: "Cao Lau",
+                description: "Hoi An specialty with thick rice noodles, pork, and local greens in a light broth",
+                image: "/UGCImages/vietnam/cuisine/CaoLau.jpg",
+                where: "Market stalls in Hoi An Ancient Town"
+            },
+            {
+                name: "Bun Cha",
+                description: "Hanoi specialty of grilled pork served with rice noodles, herbs and dipping sauce",
+                image: "/UGCImages/vietnam/cuisine/BunCha.jpg",
+                where: "Bun Cha Huong Lien, Hanoi"
+            },
+        ],
+        culture: [
+            {
+                title: "Traditional Ao Dai",
+                description: "Vietnam's elegant national costume worn by women, featuring a long tunic over pants",
+                image: "/UGCImages/vietnam/culture/AoDai.jpg"
+            },
+            {
+                title: "Water Puppet Theatre",
+                description: "Ancient Vietnamese art form where puppets perform on water, telling folk tales and legends",
+                image: "/UGCImages/vietnam/culture/WaterPuppet.jpg"
+            },
+            {
+                title: "Cham Architecture",
+                description: "Ancient Hindu-influenced temples and towers built by the Champa civilization",
+                image: "/UGCImages/vietnam/culture/ChamTowers.jpg"
+            },
+            {
+                title: "Vietnamese Coffee Culture",
+                description: "Unique coffee preparation with condensed milk, often enjoyed at street-side cafes",
+                image: "/UGCImages/vietnam/culture/VietCoffee.jpg"
+            },
+            {
+                title: "Traditional Crafts",
+                description: "Skilled artisans creating lacquerware, silk products, and marble sculptures",
+                image: "/UGCImages/vietnam/culture/VietnamCrafts.jpg"
+            }
+        ],
+        additionalInfo: {
+            highlights: [
+                "Play at 5 world-class golf courses across Vietnam",
+                "Experience diverse landscapes from coastal links to mountain courses",
+                "Cultural exploration of Vietnam's major cities and heritage sites",
+                "Custom tailoring experience in Hoi An",
+                "Luxury accommodations throughout the journey"
+            ],
+            bestTimeToVisit: "October to April (Dry Season)",
+            cuisine: [
+                "Regional Vietnamese specialties",
+                "Fresh seafood along coastal destinations",
+                "International dining options at golf clubs",
+                "Street food experiences in major cities"
+            ],
+            accommodation: {
+                type: "4-5 Star Premium Hotels",
+                amenities: [
+                    "Swimming pools",
+                    "Spa facilities",
+                    "Restaurants & bars",
+                    "Free Wi-Fi",
+                    "Golf course proximity"
+                ]
+            },
+            transportation: {
+                type: "Private AC Vehicle",
+                features: [
+                    "Professional driver",
+                    "Comfortable seating",
+                    "Air conditioning",
+                    "Golf equipment storage"
+                ]
+            },
+            visaInfo: {
+                requirement: "Visa on Arrival or E-Visa",
+                duration: "30 days",
+                cost: "USD 25-50 depending on type",
+                documents: [
+                    "Valid passport (minimum 6 months)",
+                    "Return flight tickets",
+                    "Hotel booking confirmation",
+                    "Visa approval letter (if applicable)"
+                ]
+            }
+        },
+        departureDates: [
+            { date: "5, 12, 19, 26 Mar 2025" },
+            { date: "2, 9, 16 Apr 2025" },
+            { date: "7, 14, 21, 28 May 2025" },
+            { date: "4, 11, 18, 25 Jun 2025" },
         ]
     },
 }; 

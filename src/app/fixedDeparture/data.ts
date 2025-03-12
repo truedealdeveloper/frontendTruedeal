@@ -232,7 +232,7 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         groupDetails: {
             pax: "Group Departure",
             rooms: "Twin Sharing Basis",
-            arrivalDate: "Available Dates: Jan 23 | Feb 9,16,23 | Mar 2,7,14,21 | Apr 4,11,18,25 | May 2,9,16,23,30",
+            arrivalDate: "Available Dates: Mar 2,7,14,21 | Apr 4,11,18,25 | May 2,9,16,23,30",
             duration: "7N8D Vietnam",
             costBasis: "Cost Based On Double Sharing"
         },
@@ -338,116 +338,7 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
             "/UGCImages/images5/VIETNAM/HORIZONTAL/5.webp",
         ]
     },
-    turkey: {
-        id: "turkey-9-days-discovery-tour",
-        country: "Turkey",
-        days: 9,
-        nights: 8,
-        amount: 122400,
-        dateStart: "27 May 2025",
-        dateEnd: "4 June 2025",
-        flightFrom: "Multiple",
-        description: "Embark on an unforgettable 8-night, 9-day adventure across Turkey, exploring the stunning cities of Istanbul, Cappadocia, and Antalya. From ancient landmarks to breathtaking landscapes, luxurious stays, and authentic local experiences—this fixed departure package is crafted for ultimate comfort and discovery!",
-        groupDetails: {
-            pax: "Group Departure",
-            rooms: "Twin Sharing Basis",
-            arrivalDate: "27th May 2025",
-            duration: "8N9D Turkey",
-            costBasis: "Cost Based On Room Type"
-        },
-        hotelDetails: [
-            {
-                city: "Istanbul",
-                hotel: "Avantgarde Hotel",
-                roomType: "4 Star or similar"
-            },
-            {
-                city: "Cappadocia",
-                hotel: "MDC Cave Hotel",
-                roomType: "4 Star or similar"
-            },
-            {
-                city: "Antalya",
-                hotel: "Best Western Khan Hotel",
-                roomType: "4 Star or similar"
-            }
-        ],
-        tourSummary: [
-            "Day 1-3: Istanbul - Blue Mosque, Topkapi Palace, Grand Bazaar & Bosphorus Dinner Cruise",
-            "Day 4-6: Cappadocia - Surreal landscapes, Hot Air Balloon Ride (Optional), Devrent & Pasabag Valleys, Goreme Open-Air Museum",
-            "Day 7-9: Antalya - Duden Waterfalls, Old City Marina, Hadrian's Gate, and Pamukkale excursion"
-        ],
-        inclusions: [
-            "8 Nights' accommodation in premium hotels",
-            "Daily Breakfast, 5 Lunches & 5 Dinners",
-            "Airport Transfers & Private Sightseeing Tours",
-            "All entrance tickets as per itinerary",
-            "English-speaking professional tour guide",
-            "Air-conditioned private vehicle for all sightseeing"
-        ],
-        exclusions: [
-            "International & Domestic Flights",
-            "Visa Charges & Travel Insurance",
-            "Personal expenses & optional activities (e.g., Hot Air Balloon Ride – €195 PP)",
-            "Meals not mentioned in the itinerary"
-        ],
-        itinerary: [
-            {
-                day: 1,
-                title: "Arrival in Istanbul",
-                description: "Welcome to Turkey! Arrive in Istanbul and transfer to your hotel. Rest of the day at leisure to explore the vibrant city."
-            },
-            {
-                day: 2,
-                title: "Istanbul City Tour",
-                description: "Visit the iconic Blue Mosque, Topkapi Palace, and explore the Grand Bazaar. Evening Bosphorus Dinner Cruise."
-            },
-            {
-                day: 3,
-                title: "Istanbul Exploration",
-                description: "Continue exploring Istanbul's historic sites and cultural attractions."
-            },
-            {
-                day: 4,
-                title: "Istanbul to Cappadocia",
-                description: "Transfer to Cappadocia. Begin exploring the unique landscape and cave formations."
-            },
-            {
-                day: 5,
-                title: "Cappadocia Adventures",
-                description: "Optional Hot Air Balloon Ride. Visit Devrent & Pasabag Valleys, and Goreme Open-Air Museum."
-            },
-            {
-                day: 6,
-                title: "Cappadocia Exploration",
-                description: "Continue discovering Cappadocia's unique attractions and underground cities."
-            },
-            {
-                day: 7,
-                title: "Cappadocia to Antalya",
-                description: "Transfer to Antalya. Visit Duden Waterfalls and the Old City Marina."
-            },
-            {
-                day: 8,
-                title: "Pamukkale Excursion",
-                description: "Full-day excursion to the stunning white travertine terraces of Pamukkale."
-            },
-            {
-                day: 9,
-                title: "Departure",
-                description: "Transfer to the airport for your departure flight."
-            }
-        ],
-        images: [
-            "/UGCImages/turkey/1.webp",
-            "/UGCImages/turkey/2.webp",
-            "/UGCImages/turkey/3.webp",
-            "/UGCImages/turkey/4.webp",
-            "/UGCImages/turkey/5.webp",
-            "/UGCImages/turkey/6.webp",
-            
-        ]
-    },
+    
     euroQuest: {
         id: "euro-quest-15-days-grand-tour",
         country: "Euro Quest",
@@ -456,14 +347,14 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         amount: 336000,
         dateStart: "7, 21 May 2025",
         dateEnd: "4 June 2025",
-        flightFrom: "Multiple",
+        flightFrom: "Mumbai",
         description: "Experience Europe Like Never Before with TrueDeal! Our exclusive 14 Nights / 15 Days group departure tour blends Europe's iconic landmarks with hidden gems—from the Eiffel Tower in Paris to the breathtaking Swiss Alps and the charm of the Italian Riviera. Features centrally located accommodations, pure Jain food with a dedicated kitchen caravan, unique & relaxed itinerary, and 24/7 assistance & support.",
         groupDetails: {
             pax: "Group Departure",
             rooms: "Double/Twin Sharing",
             arrivalDate: "Departure 1: May 7, 2025 – May 21, 2025\nDeparture 2: May 21, 2025 – June 4, 2025",
             duration: "14N15D Euro Quest",
-            costBasis: "Cost Based On Double Sharing (Special Discount: Save up to INR 10,000 if booked by February 28, 2025)"
+            costBasis: "Cost Based On Double Sharing."
         },
         hotelDetails: [
             {
@@ -1741,13 +1632,13 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         days: 5,
         nights: 4,
         amount: 35000,
-        dateStart: "Feb 2025",
+        dateStart: "Mar 2025",
         dateEnd: "April 2025",
         description: "Experience the vibrant city of Dubai with our 4-night, 5-day all-inclusive tour package, carefully curated for an unforgettable adventure. Perfect for travelers seeking fixed departure convenience, this tour covers Dubai's iconic landmarks, desert adventures, and cultural experiences.",
         groupDetails: {
             pax: "Group Tour (20-30 pax)",
             rooms: "10-15 Rooms on Twin Sharing Basis",
-            arrivalDate: "Multiple dates in Feb 2025 / March 2025 / April 2025",
+            arrivalDate: "Multiple dates in Mar 2025 / April 2025",
             duration: "4N5D Dubai",
             costBasis: "Cost Based On Group Size (20-30 pax)"
         },
@@ -1929,13 +1820,13 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         days: 4,
         nights: 3,
         amount: 20000,
-        dateStart: "1 Feb 2025",
+        dateStart: "1 Mar 2025",
         dateEnd: "1 April 2025",
         description: "Embark on an unforgettable journey to Malaysia with our exclusive 4-day fixed departure package. Explore iconic landmarks, enjoy thrilling experiences, and immerse yourself in the vibrant culture of Kuala Lumpur and Genting Highlands.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Twin Sharing Basis",
-            arrivalDate: "Multiple dates between Feb-April 2025",
+            arrivalDate: "Multiple dates between Mar-April 2025",
             duration: "3N4D Kuala Lumpur & Genting",
             costBasis: "Cost Based On Double Sharing"
         },
@@ -2105,13 +1996,13 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         country: "Bhutan",
         days: 7,
         nights: 6,
-        dateStart: "23 Feb 2025",
-        dateEnd: "10 August 2025",
+        dateStart: "23 Mar 2025",
+        dateEnd: "10 Aug 2025",
         description: "Join our expertly guided tour and explore Bhutan's finest destinations in one immersive trip. The itinerary includes a blend of cultural immersion, scenic drives, and visits to iconic landmarks, ensuring you experience the best Bhutan has to offer.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Twin Sharing Basis",
-            arrivalDate: "Multiple dates: 23 Feb, 16 & 30 March, 6,13,20,27 April, 4,11,18,25 May, 1,8,15,22 June, 20 July, 10 Aug",
+            arrivalDate: "Multiple dates: 23 Mar, 16 & 30 April, 6,13,20,27 May, 1,8,15,22 June, 20 July, 10 Aug",
             duration: "6N7D Bhutan",
             costBasis: "Cost Based On Double Sharing"
         },
@@ -2199,8 +2090,8 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         days: 6,
         nights: 5,
         amount: 28000,
-        dateStart: "1 Feb",
-        dateEnd: "31 March",
+        dateStart: "1 Apr 2025",
+        dateEnd: "19 May 2025",
         description: "Experience the world's largest trade fair with our comprehensive Canton Fair package. Perfect for business travelers and trade professionals looking to explore global manufacturing and trade opportunities in Guangzhou, China.",
         groupDetails: {
             pax: "Business Group Tour",
@@ -2699,7 +2590,115 @@ Overnight in Basel
         visaRequired: true,
         minGroupSize: 20
     },
-    
+    turkey: {
+        id: "turkey-9-days-discovery-tour",
+        country: "Turkey",
+        days: 9,
+        nights: 8,
+        amount: 122400,
+        dateStart: "27 May 2025",
+        dateEnd: "4 June 2025",
+        description: "Embark on an unforgettable 8-night, 9-day adventure across Turkey, exploring the stunning cities of Istanbul, Cappadocia, and Antalya. From ancient landmarks to breathtaking landscapes, luxurious stays, and authentic local experiences—this fixed departure package is crafted for ultimate comfort and discovery!",
+        groupDetails: {
+            pax: "Group Departure",
+            rooms: "Twin Sharing Basis",
+            arrivalDate: "27th May 2025",
+            duration: "8N9D Turkey",
+            costBasis: "Cost Based On Room Type"
+        },
+        hotelDetails: [
+            {
+                city: "Istanbul",
+                hotel: "Avantgarde Hotel",
+                roomType: "4 Star or similar"
+            },
+            {
+                city: "Cappadocia",
+                hotel: "MDC Cave Hotel",
+                roomType: "4 Star or similar"
+            },
+            {
+                city: "Antalya",
+                hotel: "Best Western Khan Hotel",
+                roomType: "4 Star or similar"
+            }
+        ],
+        tourSummary: [
+            "Day 1-3: Istanbul - Blue Mosque, Topkapi Palace, Grand Bazaar & Bosphorus Dinner Cruise",
+            "Day 4-6: Cappadocia - Surreal landscapes, Hot Air Balloon Ride (Optional), Devrent & Pasabag Valleys, Goreme Open-Air Museum",
+            "Day 7-9: Antalya - Duden Waterfalls, Old City Marina, Hadrian's Gate, and Pamukkale excursion"
+        ],
+        inclusions: [
+            "8 Nights' accommodation in premium hotels",
+            "Daily Breakfast, 5 Lunches & 5 Dinners",
+            "Airport Transfers & Private Sightseeing Tours",
+            "All entrance tickets as per itinerary",
+            "English-speaking professional tour guide",
+            "Air-conditioned private vehicle for all sightseeing"
+        ],
+        exclusions: [
+            "International & Domestic Flights",
+            "Visa Charges & Travel Insurance",
+            "Personal expenses & optional activities (e.g., Hot Air Balloon Ride – €195 PP)",
+            "Meals not mentioned in the itinerary"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Istanbul",
+                description: "Welcome to Turkey! Arrive in Istanbul and transfer to your hotel. Rest of the day at leisure to explore the vibrant city."
+            },
+            {
+                day: 2,
+                title: "Istanbul City Tour",
+                description: "Visit the iconic Blue Mosque, Topkapi Palace, and explore the Grand Bazaar. Evening Bosphorus Dinner Cruise."
+            },
+            {
+                day: 3,
+                title: "Istanbul Exploration",
+                description: "Continue exploring Istanbul's historic sites and cultural attractions."
+            },
+            {
+                day: 4,
+                title: "Istanbul to Cappadocia",
+                description: "Transfer to Cappadocia. Begin exploring the unique landscape and cave formations."
+            },
+            {
+                day: 5,
+                title: "Cappadocia Adventures",
+                description: "Optional Hot Air Balloon Ride. Visit Devrent & Pasabag Valleys, and Goreme Open-Air Museum."
+            },
+            {
+                day: 6,
+                title: "Cappadocia Exploration",
+                description: "Continue discovering Cappadocia's unique attractions and underground cities."
+            },
+            {
+                day: 7,
+                title: "Cappadocia to Antalya",
+                description: "Transfer to Antalya. Visit Duden Waterfalls and the Old City Marina."
+            },
+            {
+                day: 8,
+                title: "Pamukkale Excursion",
+                description: "Full-day excursion to the stunning white travertine terraces of Pamukkale."
+            },
+            {
+                day: 9,
+                title: "Departure",
+                description: "Transfer to the airport for your departure flight."
+            }
+        ],
+        images: [
+            "/UGCImages/turkey/1.webp",
+            "/UGCImages/turkey/2.webp",
+            "/UGCImages/turkey/3.webp",
+            "/UGCImages/turkey/4.webp",
+            "/UGCImages/turkey/5.webp",
+            "/UGCImages/turkey/6.webp",
+            
+        ]
+    },
 };
 
 export function isFixedDeparture(destination: FixedDeparture | DestinationWithoutFlight): destination is FixedDeparture {
@@ -2737,7 +2736,8 @@ export const destinationGroups = [
     {
         
         europeMiceZurich: destinationsWithoutFlight.europeMiceZurich,
-        russiaFixedDeparture: destinationsWithoutFlight.russiaFixedDeparture
+        russiaFixedDeparture: destinationsWithoutFlight.russiaFixedDeparture,
+        turkey: destinationsWithoutFlight.turkey
     },
 ]; 
 

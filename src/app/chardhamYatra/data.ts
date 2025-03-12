@@ -47,6 +47,7 @@ export const chardhamData: Record<string, ChardhamPackage> = {
         days: 6,
         nights: 5,
         amount: 230000,
+        flightFrom: "Dehradun",
         dateStart: "01 May",
         dateEnd: "30 June",
         description: "Embark on a once-in-a-lifetime spiritual journey with our Fixed Departure Chardham Yatra by helicopter. Our meticulously planned itinerary ensures a seamless, comfortable, and spiritually enriching experience, covering all four sacred shrines—Yamunotri, Gangotri, Kedarnath, and Badrinath.",
