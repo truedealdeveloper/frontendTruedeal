@@ -237,7 +237,7 @@ export default function BlogPost() {
                   />
                 </div>
                 <h3 className="font-semibold text-gray-900 group-hover:text-gray-600">
-                  {relatedPost.title}
+                  {relatedPost.title} 
                 </h3>
               </Link>
             ))}
