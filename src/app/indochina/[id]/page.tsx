@@ -11,7 +11,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion, useScroll, AnimatePresence } from "framer-motion";
 import { Poppins } from 'next/font/google';
 import Image from 'next/image';
-import IndochinaPackages from '../page';
+// import IndochinaPackages from '../page';
 // import IndochinaBanner from '@/app/components/homepage/IndochinaBanner';
 
 interface PageProps {
