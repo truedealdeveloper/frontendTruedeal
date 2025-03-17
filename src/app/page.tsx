@@ -22,6 +22,7 @@ import SriLanka from './sriLanka/page';
 import TripPlanRequest from "../components/TripPlanRequest";
 import BaliBanner from "./components/homepage/BaliBanner";
 import VietnamBanner from "./components/homepage/VietnamBanner";
+import LaosCambodiaBanner from "./components/homepage/LaosCambodia";
 
 export default function Home() {
   return (
@@ -35,6 +36,7 @@ export default function Home() {
             <SriLanka />  
             <BaliBanner />
             <VietnamBanner />
+            <LaosCambodiaBanner />
         <Destination />
       <Domestic />
       <Trending />

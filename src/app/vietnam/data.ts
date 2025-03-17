@@ -414,12 +414,12 @@ your departure flight.`
             
         ],
         images: [
-            "/UGCImages/vietnam/HORIZONTAL/1.png",
-            "/UGCImages/vietnam/HORIZONTAL/2.png",
-            "/UGCImages/vietnam/HORIZONTAL/3.png",
-            "/UGCImages/vietnam/HORIZONTAL/4.png",
-            "/UGCImages/vietnam/HORIZONTAL/5.png",
-            "/UGCImages/vietnam/HORIZONTAL/6.png",
+            "/UGCImages/vietnam/vietnam/hoi an/1.webp",
+            "/UGCImages/vietnam/vietnam/hoi an/2.webp",
+            "/UGCImages/vietnam/vietnam/hoi an/3.webp",
+            "/UGCImages/vietnam/vietnam/hoi an/4.webp",
+            "/UGCImages/vietnam/vietnam/hoi an/5.webp",
+            
             
         ],
         sightseeingSpots: [
@@ -658,12 +658,11 @@ your departure flight.`
             
         ],
         images: [
-            "/UGCImages/vietnam/HORIZONTAL/1.png",
-            "/UGCImages/vietnam/HORIZONTAL/2.png",
-            "/UGCImages/vietnam/HORIZONTAL/3.png",
-            "/UGCImages/vietnam/HORIZONTAL/4.png",
-            "/UGCImages/vietnam/HORIZONTAL/5.png",
-            "/UGCImages/vietnam/HORIZONTAL/6.png",
+            "/UGCImages/vietnam/vietnam/hoi an/2.webp",
+            "/UGCImages/vietnam/vietnam/hoi an/3.webp",
+            "/UGCImages/vietnam/vietnam/hoi an/4.webp",
+            "/UGCImages/vietnam/vietnam/hoi an/5.webp",
+
             
         ],
         sightseeingSpots: [
@@ -903,12 +902,11 @@ your departure flight.`
             
         ],
         images: [
-            "/UGCImages/vietnam/HORIZONTAL/1.png",
-            "/UGCImages/vietnam/HORIZONTAL/2.png",
-            "/UGCImages/vietnam/HORIZONTAL/3.png",
-            "/UGCImages/vietnam/HORIZONTAL/4.png",
-            "/UGCImages/vietnam/HORIZONTAL/5.png",
-            "/UGCImages/vietnam/HORIZONTAL/6.png",
+            
+            "/UGCImages/vietnam/vietnam/hoi an/6.webp",
+            "/UGCImages/vietnam/vietnam/hoi an/7.webp",
+            "/UGCImages/vietnam/vietnam/hoi an/8.webp",
+            "/UGCImages/vietnam/vietnam/hoi an/9.webp",
             
         ],
         sightseeingSpots: [
@@ -1176,13 +1174,13 @@ your departure flight.`
             }
         ],
         images: [
-            "/UGCImages/vietnam/HORIZONTAL/1.png",
-            "/UGCImages/vietnam/HORIZONTAL/2.png",
-            "/UGCImages/vietnam/HORIZONTAL/3.png",
-            "/UGCImages/vietnam/HORIZONTAL/4.png",
-            "/UGCImages/vietnam/HORIZONTAL/5.png",
-            "/UGCImages/vietnam/HORIZONTAL/6.png",
             
+            "/UGCImages/vietnam/vietnam/hoi an/10.webp",
+            "/UGCImages/vietnam/vietnam/hoi an/11.webp",
+            "/UGCImages/vietnam/vietnam/hoi an/12.webp",
+            "/UGCImages/vietnam/vietnam/hoi an/13.webp",
+            
+
         ],
         sightseeingSpots: [
             {
@@ -1440,12 +1438,12 @@ In the afternoon, transfer to Da Nang airport to go to Ho Chi Minh City. Upon ar
             }
         ],
         images: [
-            "/UGCImages/vietnam/HORIZONTAL/1.png",
-            "/UGCImages/vietnam/HORIZONTAL/2.png",
-            "/UGCImages/vietnam/HORIZONTAL/3.png",
-            "/UGCImages/vietnam/HORIZONTAL/4.png",
-            "/UGCImages/vietnam/HORIZONTAL/5.png",
-            "/UGCImages/vietnam/HORIZONTAL/6.png",
+            "/UGCImages/vietnam/vietnam/hoi an/13.webp",
+            "/UGCImages/vietnam/vietnam/hoi an/14.webp",
+            "/UGCImages/vietnam/vietnam/hoi an/15.webp",
+            "/UGCImages/vietnam/vietnam/hoi an/16.webp",
+            
+
             
         ],
         sightseeingSpots: [
@@ -1718,13 +1716,13 @@ In the afternoon, transfer to Da Nang airport to go to Ho Chi Minh City. Upon ar
             }
         ],
         images: [
-            "/UGCImages/vietnam/HORIZONTAL/1.png",
-            "/UGCImages/vietnam/HORIZONTAL/2.png",
-            "/UGCImages/vietnam/HORIZONTAL/3.png",
-            "/UGCImages/vietnam/HORIZONTAL/4.png",
-            "/UGCImages/vietnam/HORIZONTAL/5.png",
-            "/UGCImages/vietnam/HORIZONTAL/6.png",
             
+            "/UGCImages/vietnam/vietnam/hoi an/17.webp",
+            "/UGCImages/vietnam/vietnam/hoi an/18.webp",
+            "/UGCImages/vietnam/vietnam/hoi an/19.webp"
+            
+            
+
         ],
         sightseeingSpots: [
             {
@@ -2028,12 +2026,9 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
 
         ],
         images: [
-            "/UGCImages/vietnam/HORIZONTAL/1.png",
-            "/UGCImages/vietnam/HORIZONTAL/2.png",
-            "/UGCImages/vietnam/HORIZONTAL/3.png",
-            "/UGCImages/vietnam/HORIZONTAL/4.png",
-            "/UGCImages/vietnam/HORIZONTAL/5.png",
-            "/UGCImages/vietnam/HORIZONTAL/6.png",
+            "/UGCImages/vietnam/vietnam/hoi an/20.webp",
+            "/UGCImages/vietnam/vietnam/hoi an/21.webp",
+            "/UGCImages/vietnam/vietnam/hoi an/22.webp",
             
         ],
         sightseeingSpots: [
@@ -2331,13 +2326,12 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
             }
         ],
         images: [
-            "/UGCImages/vietnam/HORIZONTAL/1.png",
-            "/UGCImages/vietnam/HORIZONTAL/2.png",
-            "/UGCImages/vietnam/HORIZONTAL/3.png",
-            "/UGCImages/vietnam/HORIZONTAL/4.png",
-            "/UGCImages/vietnam/HORIZONTAL/5.png",
-            "/UGCImages/vietnam/HORIZONTAL/6.png",
             
+            "/UGCImages/vietnam/vietnam/hoi an/24.webp",
+            "/UGCImages/vietnam/vietnam/hoi an/25.webp",
+            "/UGCImages/vietnam/vietnam/hoi an/26.webp",
+            
+
         ],
         sightseeingSpots: [
             {
@@ -2648,13 +2642,13 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
             }
         ],
         images: [
-            "/UGCImages/vietnam/HORIZONTAL/1.png",
-            "/UGCImages/vietnam/HORIZONTAL/2.png",
-            "/UGCImages/vietnam/HORIZONTAL/3.png",
-            "/UGCImages/vietnam/HORIZONTAL/4.png",
-            "/UGCImages/vietnam/HORIZONTAL/5.png",
-            "/UGCImages/vietnam/HORIZONTAL/6.png",
+            "/UGCImages/vietnam/vietnam/hoi an/26.webp",
+            "/UGCImages/vietnam/vietnam/hoi an/27.webp",
+            "/UGCImages/vietnam/vietnam/hoi an/28.webp",
+            "/UGCImages/vietnam/vietnam/da nang 1/9.webp",
+            "/UGCImages/vietnam/vietnam/da nang 1/10.webp",
             
+
         ],
         sightseeingSpots: [
             {
@@ -2960,13 +2954,11 @@ We will begin our evening with a dinner at a lovely local restaurant. After dinn
             
         ],
         images: [
-            "/UGCImages/vietnam/HORIZONTAL/1.png",
-            "/UGCImages/vietnam/HORIZONTAL/2.png",
-            "/UGCImages/vietnam/HORIZONTAL/3.png",
-            "/UGCImages/vietnam/HORIZONTAL/4.png",
-            "/UGCImages/vietnam/HORIZONTAL/5.png",
-            "/UGCImages/vietnam/HORIZONTAL/6.png",
-            
+            "/UGCImages/vietnam/vietnam/da nang 1/1.webp",
+            "/UGCImages/vietnam/vietnam/da nang 1/2.webp",
+            "/UGCImages/vietnam/vietnam/da nang 1/3.webp",
+            "/UGCImages/vietnam/vietnam/da nang 1/4.webp",
+
         ],
         sightseeingSpots: [
             {
@@ -3316,12 +3308,10 @@ The next stop is Dam Market - Nha Trang's oldest and largest market. The final l
             }
         ],
         images: [
-            "/UGCImages/vietnam/HORIZONTAL/1.png",
-            "/UGCImages/vietnam/HORIZONTAL/2.png",
-            "/UGCImages/vietnam/HORIZONTAL/3.png",
-            "/UGCImages/vietnam/HORIZONTAL/4.png",
-            "/UGCImages/vietnam/HORIZONTAL/5.png",
-            "/UGCImages/vietnam/HORIZONTAL/6.png",
+            "/UGCImages/vietnam/vietnam/da nang 1/5.webp",
+            "/UGCImages/vietnam/vietnam/da nang 1/6.webp",
+            "/UGCImages/vietnam/vietnam/da nang 1/7.webp",
+            "/UGCImages/vietnam/vietnam/da nang 1/8.webp",
         ],
         sightseeingSpots: [
             {
