@@ -251,10 +251,10 @@ export default function Navbar() {
                                 <div className="flex items-center hover:scale-105 transition-transform duration-300">
                                     <Phone className="h-4 w-4 text-gray-500 flex-shrink-0" />
                                     <a
-                                        href="tel:+919911179796"
+                                        href="tel:+919310271488"
                                         className="bg-gradient-to-r from-[#343232] to-[#000000] text-transparent bg-clip-text font-poppins text-[10px] sm:text-xs md:text-sm font-semibold ml-1 whitespace-nowrap"
                                     >
-                                        +91 9911179796
+                                        +91 9310271488
                                     </a>
                                 </div>
 
@@ -280,10 +280,10 @@ export default function Navbar() {
                             <div className="hidden md:flex items-center hover:scale-105 transition-transform duration-300">
                                 <Phone className="h-4 w-4 text-gray-500" />
                                 <a
-                                    href="tel:+919911179796"
+                                    href="tel:+919310271488"
                                     className="bg-gradient-to-r from-[#3f3e3e] to-[#4f4e4e] text-transparent bg-clip-text font-poppins text-xs md:text-sm font-semibold ml-1"
                                 >
-                                    +91 9911179796
+                                    +91 9310271488
                                 </a>
                             </div>
 

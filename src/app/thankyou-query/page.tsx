@@ -59,7 +59,7 @@ function ThankYouContent() {
                     We have successfully received your query and our travel expert will get in touch with you shortly to plan your next memorable trip!��
                 </p>
                 <p className="text-gray-600 mb-6">
-                    You can contact us at <a href="tel:+918447498498" className="text-[#017ae3] font-semibold">+91 8447498498</a>
+                    You can contact us at <a href="tel:+919310271488" className="text-[#017ae3] font-semibold">+91 9310271488</a>
                 </p>
 
                 <div className="space-y-4">

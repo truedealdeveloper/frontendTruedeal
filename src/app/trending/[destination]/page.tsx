@@ -442,7 +442,7 @@ export default function TrendingDestinationDetails() {
                             </div>
                             <div className="flex items-center justify-center gap-2 text-[#017ae3] font-medium">
                                 <Phone className="w-4 h-4" />
-                                +91 8447498498
+                                +91 9310271488
                             </div>
                         </div>
                     </div>

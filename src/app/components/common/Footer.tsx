@@ -46,7 +46,7 @@ export default function Component() {
                             </div>
                             <div>
                                 <h3 className="text-lg font-semibold text-gray-800">Call Us</h3>
-                                <p className="text-gray-600">+91 8447498498</p>
+                                <p className="text-gray-600">+91 9310271488</p>
                             </div>
                         </div>
                         <div className="flex items-center bg-white rounded-lg shadow-md p-6">
