@@ -166,7 +166,10 @@ export const almatyPackages: Record<string, AlmatyPackage> = {
             }
         ],
         images: [
-            "/UGCImages/almaty/HORIZONTAL/1.jpg"
+            "/UGCImages/Images4/almaty/almaty/1.webp",
+            "/UGCImages/Images4/almaty/almaty/2.webp",
+            "/UGCImages/Images4/almaty/almaty/3.webp",
+            "/UGCImages/Images4/almaty/almaty/4.webp",
         ],
         sightseeingSpots: [
             {
@@ -284,7 +287,10 @@ export const almatyPackages: Record<string, AlmatyPackage> = {
             },
         ],
         images: [
-            "/UGCImages/almaty/HORIZONTAL/1.jpg"
+            "/UGCImages/Images4/almaty/almaty/5.webp",
+            "/UGCImages/Images4/almaty/almaty/6.webp",
+            "/UGCImages/Images4/almaty/almaty/7.webp",
+            "/UGCImages/Images4/almaty/almaty/8.webp",
         ],
         sightseeingSpots: [
             {
@@ -420,7 +426,12 @@ export const almatyPackages: Record<string, AlmatyPackage> = {
             }
         ],
         images: [
-            "/UGCImages/almaty/HORIZONTAL/1.jpg"
+            "/UGCImages/Images4/almaty/almaty/9.webp",
+            "/UGCImages/Images4/almaty/almaty/10.webp",
+            "/UGCImages/Images4/almaty/almaty/11.webp",
+            "/UGCImages/Images4/almaty/almaty/12.webp",
+            "/UGCImages/Images4/almaty/almaty/13.webp",
+            
         ],
         sightseeingSpots: [
             {

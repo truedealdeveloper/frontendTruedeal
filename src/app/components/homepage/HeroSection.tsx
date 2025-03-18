@@ -82,6 +82,16 @@ const fixedDepartureDestinations = [
         tag: { label: "FIXED DEPARTURE", color: "blue" },
         fixedDepartureId: "china-6-days-canton-fair-tour"
     },
+    {
+        name: "Russia Trip - 8 Days",
+        tag: { label: "FIXED DEPARTURE", color: "blue" },
+        fixedDepartureId: "russia-8-days-aurora-moscow-tour"
+    },
+    {
+        name: "Russia Trip - 6 Days",
+        tag: { label: "FIXED DEPARTURE", color: "blue" },
+        fixedDepartureId: "russia-fixed-departure-tour"
+    },
     
 
 ]
