@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
-import { fixedDeparturesData } from './data'; // Import the data
+
+// const handleClick = (fixedDeparturesData: String) => {
+//     console
 
 export const metadata: Metadata = {
     title: 'Fixed Departure Tours 2024-25 | Group Tours | TrueDeal Travel',
@@ -57,13 +59,8 @@ export default function FixedDepartureLayout({
 }: {
     children: React.ReactNode;
 }) {
-    // Select an image from the fixedDeparturesData
-    const imageUrl = fixedDeparturesData.europe.images ? fixedDeparturesData.europe.images[0] : '';
-
     return (
         <>
-            {/* Display the image */}
-            {imageUrl && <img src={imageUrl} alt="Fixed Departure" style={{ width: '100%', height: 'auto' }} />}
             {children}
         </>
     );
