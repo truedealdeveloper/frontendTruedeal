@@ -450,7 +450,7 @@ export default function AlmatyPackages() {
                 </h2>
                 <div className="text-gray-600 space-y-4">
                     <p>
-                        Almaty, Kazakhstan's largest city, is a vibrant metropolis nestled against the majestic Tian Shan mountains, offering a unique blend of modern urban life and natural beauty.
+                        Almaty, Kazakhstans largest city, is a vibrant metropolis nestled against the majestic Tian Shan mountains, offering a unique blend of modern urban life and natural beauty.
                     </p>
                     <p>
                         Our Almaty tour packages include visits to iconic locations like Medeu Ice Rink, Big Almaty Lake, and Shymbulak Ski Resort, combining outdoor adventures with cultural experiences.

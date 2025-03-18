@@ -145,32 +145,32 @@ export default function IndochinaPackages() {
     const indochinaHighlights = [
         {
             title: "Culture & Traditions",
-            image: "/UGCImages/vietnam/vietnamHomepage/vietnamCulture.jpg",
+            image: "/UGCImages/indochina/sightseeing/culture.jpg",
             description: "Experience traditional vietnamnese ceremonies, dance performances, and local customs"
-        },
+        },  
         {
             title: "Cuisine & Dining",
-            image: "/UGCImages/vietnam/vietnamHomepage/cuisine.png",
+            image: "/UGCImages/indochina/sightseeing/food.jpg",
             description: "Savor authentic Indonesian dishes, fresh seafood, and local delicacies"
         },
         {
             title: "Sacred Temples",
-            image: "/UGCImages/vietnam/vietnamHomepage/landscape.jpg",
+            image: "/UGCImages/indochina/sightseeing/temples.jpg",
             description: "Visit ancient temples like Tanah Lot, Uluwatu, and Ulun Danu Beratan"
         },
         {
             title: "Nature & Landscapes",
-            image: "/UGCImages/vietnam/vietnamHomepage/nature.jpg",
+            image: "/UGCImages/indochina/sightseeing/nature.jpg",
             description: "Explore stunning rice terraces, volcanoes, and tropical forests"
         },
         {
             title: "Beach Paradise",
-            image: "/UGCImages/vietnam/vietnamHomepage/beach.jpg",
+            image: "/UGCImages/indochina/sightseeing/beach.jpg",
             description: "Relax on pristine beaches and enjoy world-class water sports"
         },
         {
             title: "Wellness & Spa",
-            image: "/UGCImages/vietnam/vietnamHomepage/spa.jpg",
+            image: "/UGCImages/indochina/sightseeing/spa.jpg",
             description: "Indulge in traditional vietnamnese spa treatments and yoga retreats"
         }
     ];

@@ -192,13 +192,10 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
             }
         ],
         images: [
-            "/UGCImages/vietnam/HORIZONTAL/1.png",
-            "/UGCImages/vietnam/HORIZONTAL/2.png",
-            "/UGCImages/vietnam/HORIZONTAL/3.png",
-            "/UGCImages/vietnam/HORIZONTAL/4.png",
-            "/UGCImages/vietnam/HORIZONTAL/5.png",
-            "/UGCImages/vietnam/HORIZONTAL/6.png",
-            
+            "/UGCImages/indochina/laos/1.webp",
+            "/UGCImages/indochina/laos/2.webp",
+            "/UGCImages/indochina/laos/3.webp",
+            "/UGCImages/indochina/laos/4.webp",
         ],
         sightseeingSpots: [
             {
@@ -549,12 +546,10 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
             }
         ],
         images: [
-            "/UGCImages/vietnam/HORIZONTAL/1.png",
-            "/UGCImages/vietnam/HORIZONTAL/2.png",
-            "/UGCImages/vietnam/HORIZONTAL/3.png",
-            "/UGCImages/vietnam/HORIZONTAL/4.png",
-            "/UGCImages/vietnam/HORIZONTAL/5.png",
-            "/UGCImages/vietnam/HORIZONTAL/6.png",
+            "/UGCImages/indochina/laos/5.webp",
+            "/UGCImages/indochina/laos/6.webp",
+            "/UGCImages/indochina/laos/7.webp",
+            "/UGCImages/indochina/laos/8.webp",
             
         ],
         sightseeingSpots: [
@@ -797,12 +792,10 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
             }
         ],
         images: [
-            "/UGCImages/vietnam/HORIZONTAL/1.png",
-            "/UGCImages/vietnam/HORIZONTAL/2.png",
-            "/UGCImages/vietnam/HORIZONTAL/3.png",
-            "/UGCImages/vietnam/HORIZONTAL/4.png",
-            "/UGCImages/vietnam/HORIZONTAL/5.png",
-            "/UGCImages/vietnam/HORIZONTAL/6.png",
+            "/UGCImages/indochina/laos/9.webp",
+            "/UGCImages/indochina/laos/10.webp",
+            "/UGCImages/indochina/laos/11.webp",
+            "/UGCImages/indochina/laos/12.webp",
             
         ],
         sightseeingSpots: [
@@ -1113,12 +1106,12 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
             }
         ],
         images: [
-            "/UGCImages/vietnam/HORIZONTAL/1.png",
-            "/UGCImages/vietnam/HORIZONTAL/2.png",
-            "/UGCImages/vietnam/HORIZONTAL/3.png",
-            "/UGCImages/vietnam/HORIZONTAL/4.png",
-            "/UGCImages/vietnam/HORIZONTAL/5.png",
-            "/UGCImages/vietnam/HORIZONTAL/6.png",
+            "/UGCImages/indochina/laos/13.webp",
+            "/UGCImages/indochina/laos/14.webp",
+            "/UGCImages/indochina/laos/15.webp",
+            "/UGCImages/indochina/laos/16.webp",
+            
+            
             
         ],
         sightseeingSpots: [
@@ -1400,12 +1393,11 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
             }
         ],
         images: [
-            "/UGCImages/vietnam/HORIZONTAL/1.png",
-            "/UGCImages/vietnam/HORIZONTAL/2.png",
-            "/UGCImages/vietnam/HORIZONTAL/3.png",
-            "/UGCImages/vietnam/HORIZONTAL/4.png",
-            "/UGCImages/vietnam/HORIZONTAL/5.png",
-            "/UGCImages/vietnam/HORIZONTAL/6.png",
+           
+            "/UGCImages/indochina/laos/17.webp",
+            "/UGCImages/indochina/laos/18.webp",
+            "/UGCImages/indochina/laos/19.webp",
+            "/UGCImages/indochina/laos/20.webp",
             
         ],
         sightseeingSpots: [
@@ -1724,12 +1716,9 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
             }
         ],
         images: [
-            "/UGCImages/vietnam/HORIZONTAL/1.png",
-            "/UGCImages/vietnam/HORIZONTAL/2.png",
-            "/UGCImages/vietnam/HORIZONTAL/3.png",
-            "/UGCImages/vietnam/HORIZONTAL/4.png",
-            "/UGCImages/vietnam/HORIZONTAL/5.png",
-            "/UGCImages/vietnam/HORIZONTAL/6.png",
+            "/UGCImages/indochina/laos/21.webp",
+            "/UGCImages/indochina/laos/22.webp",
+            "/UGCImages/indochina/laos/23.webp",
             
         ],
         sightseeingSpots: [
@@ -2169,12 +2158,14 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
             }
         ],
         images: [
-            "/UGCImages/indochina/HORIZONTAL/1.png",
-            "/UGCImages/indochina/HORIZONTAL/2.png",
-            "/UGCImages/indochina/HORIZONTAL/3.png",
-            "/UGCImages/indochina/HORIZONTAL/4.png",
-            "/UGCImages/indochina/HORIZONTAL/5.png",
-            "/UGCImages/indochina/HORIZONTAL/6.png",
+            
+            "/UGCImages/indochina/combodia/1.webp",
+            "/UGCImages/indochina/combodia/2.webp",
+            "/UGCImages/indochina/combodia/3.webp",
+            "/UGCImages/indochina/combodia/4.webp",
+            "/UGCImages/indochina/combodia/5.webp",
+            "/UGCImages/indochina/combodia/6.webp",
+            
         ],
         sightseeingSpots: [
             {

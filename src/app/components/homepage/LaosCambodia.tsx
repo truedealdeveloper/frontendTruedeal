@@ -10,26 +10,26 @@ const bannerImages = [
     {
         desktop: "/UGCImages/indochina/desktop/laos.png",
         mobile: "/UGCImages/indochina/mobile/1.png",
-        message: "Experience Paradise in Bali",
-        subtext: "Where Dreams Meet Paradise"
+        message: "Experience Paradise in Laos",
+        subtext: "Places in the world that are worth visiting"
     },
     {
-        desktop: "/UGCImages/bali/Bali Banner/baliDesktop/baliBanner2.webp",
-        mobile: "/UGCImages/bali/Bali Banner/baliMobile/baliBanner2-Mobile.webp",
-        message: "Discover Bali's Magic",
-        subtext: "Culture, Beauty & Adventure Awaits"
+        desktop: "/UGCImages/indochina/desktop/1.png",
+        mobile: "/UGCImages/indochina/mobile/2.png",
+        message: "Discover Laos' Magic",
+        subtext: "Places in the world that are worth visiting"
     },
     {
-        desktop: "/UGCImages/bali/Bali Banner/baliDesktop/baliBanner3.webp",
-        mobile: "/UGCImages/bali/Bali Banner/baliMobile/baliBanner3-Mobile.webp",
-        message: "Escape to Serenity",
-        subtext: "Your Perfect Balinese Gateway"
+        desktop: "/UGCImages/indochina/desktop/2.png",
+        mobile: "/UGCImages/indochina/mobile/3.png",
+        message: "Nature's Beauty",
+        subtext: "A Journey of Culture and Adventure"
     },
     {
-        desktop: "/UGCImages/bali/Bali Banner/baliDesktop/baliBanner4.webp",
-        mobile: "/UGCImages/bali/Bali Banner/baliMobile/baliBanner4-Mobile.webp",
-        message: "Embrace the Island Life",
-        subtext: "Create Memories That Last Forever"
+        desktop: "/UGCImages/indochina/desktop/3.png",
+        mobile: "/UGCImages/indochina/mobile/4.png",
+        message: "Live life in Cambodia and Laos",
+        subtext: "Life is short, and the world is wide"
     }
 ];
 
@@ -62,7 +62,7 @@ export default function LaosCambodiaBanner() {
                     />
                     <div className="relative">
                         <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff] block mb-1">
-                            Explore Laos & Cambodia
+                            Explore Indochina
                         </span>
                         <div className="mt-[-12px] transform -rotate-2">
                             <p className={`text-2xl md:text-3xl text-[#017ae3] ${dancingScript.className}`}>
