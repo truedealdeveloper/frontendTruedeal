@@ -214,7 +214,13 @@ export function Chatbot() {
                                         onClick={handleWhatsAppRedirect}
                                         className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white flex items-center justify-center gap-2"
                                     >
-                                       
+                                        <Image
+                                            src="/Assets/whatsapp.png"
+                                            alt="WhatsApp"
+                                            width={24}
+                                            height={24}
+                                            className="rounded-full"
+                                        />
                                         Connect on WhatsApp
                                     </Button>
                                 ) : (
