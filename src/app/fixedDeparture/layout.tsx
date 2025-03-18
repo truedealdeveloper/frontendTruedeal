@@ -1,7 +1,5 @@
 import { Metadata } from 'next';
 
-// const handleClick = (fixedDeparturesData: String) => {
-//     console
 
 export const metadata: Metadata = {
     title: 'Fixed Departure Tours 2024-25 | Group Tours | TrueDeal Travel',
@@ -12,7 +10,7 @@ export const metadata: Metadata = {
         description: 'Join our guaranteed departure group tours to popular destinations worldwide. All-inclusive packages with flights, accommodation, and guided tours.',
         images: [
             {
-                url: 'https://www.truedeal4u.com/UGCImages/fixedDeparture/banner.jpg',
+                url: 'https://www.truedeal4u.com/UGCImages/Images4/spain/horizontal/6.webp',
                 width: 1200,
                 height: 630,
                 alt: 'Fixed Departure Tours',
@@ -27,7 +25,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'Fixed Departure Tours 2024-25 | Group Tours | TrueDeal Travel',
         description: 'Book guaranteed fixed departure group tours with TrueDeal Travel. International & domestic packages with best prices guaranteed.',
-        images: ['https://www.truedeal4u.com/UGCImages/fixedDeparture/banner.jpg'],
+        images: ['https://www.truedeal4u.com/UGCImages/Images4/spain/horizontal/6.webp'],
         site: '@truedeal4u',
     },
     alternates: {
