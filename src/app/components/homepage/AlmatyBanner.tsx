@@ -7,45 +7,46 @@ import { Dancing_Script } from 'next/font/google';
 
 const dancingScript = Dancing_Script({ subsets: ['latin'] });
 
+
 const AlmatyBanner = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const almatyPackages = [
     {
-      id: 'almaty-3days',
-      title: '3 Days in Almaty',
+      id: '4-days-almaty-winter',
+      title: '4 Days in Almaty',
       images: [
         '/UGCImages/Images4/almaty/vertical/1.webp',
         '/UGCImages/Images4/almaty/vertical/2.webp',
         '/UGCImages/Images4/almaty/vertical/3.webp',
         '/UGCImages/Images4/almaty/vertical/al/4.png',
       ],
-      date: 'March 15-17, 2025',
-      price: '599'
+      date: '01 March 2025 - 26 July 2025',
+      price: '48,000'
     },
     {
-      id: 'almaty-4days',               
-      title: '4 Days Almaty Adventure',
+      id: '5-days-almaty-discovery',               
+      title: '5 Days in Almaty',
       images: [
         '/UGCImages/Images4/almaty/vertical/4.webp',
         '/UGCImages/Images4/almaty/vertical/5.webp',
         '/UGCImages/Images4/almaty/vertical/6.webp',
         '/UGCImages/Images4/almaty/vertical/al/3.png',
       ],
-      date: 'March 20-23, 2025',
-      price: '799'
+      date: '01 March 2025 - 26 July 2025',
+      price: '70,000'
     },
     {
-      id: 'almaty-5days',
-      title: '5 Days Almaty Explorer',
+      id: '6-days-almaty-explore',
+      title: '6 Days Almaty Explorer',
       images: [
         '/UGCImages/Images4/almaty/vertical/al/1.png',
         '/UGCImages/Images4/almaty/vertical/al/2.png',
         '/UGCImages/Images4/almaty/vertical/al/3.png',
         '/UGCImages/Images4/almaty/vertical/al/4.png',
       ],
-      date: 'March 25-29, 2025',
-      price: '999'
+      date: '01 March 2025 - 26 July 2025',
+      price: '80,000'
     }
   ];
 
@@ -171,7 +172,7 @@ const AlmatyBanner = () => {
               <h3 className="text-lg sm:text-xl font-medium mb-2">{pkg.title}</h3>
               <p className="text-sm sm:text-base text-gray-600 mb-1">{pkg.date}</p>
               <p className="text-sm sm:text-base text-green-600 font-medium">
-                From ${pkg.price}
+                From ₹{pkg.price}
               </p>
             </Link>
           ))}

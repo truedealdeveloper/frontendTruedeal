@@ -136,32 +136,32 @@ export default function AlmatyPackages() {
     const almatyHighlights = [
         {
             title: "Culture & Heritage",
-            image: "/UGCImages/almaty/almatyHomepage/culture.jpg",
+            image: "/UGCImages/almaty/culture.png",
             description: "Experience Kazakh traditions, music, and local customs"
         },
         {
             title: "Mountain Adventures",
-            image: "/UGCImages/almaty/almatyHomepage/mountains.jpg",
+            image: "/UGCImages/almaty/mountains.png",
             description: "Explore the majestic Tian Shan mountains and scenic hiking trails"
         },
         {
             title: "Modern City Life",
-            image: "/UGCImages/almaty/almatyHomepage/city.jpg",
+            image: "/UGCImages/almaty/city.png",
             description: "Discover the blend of Soviet architecture and modern developments"
         },
         {
             title: "Natural Wonders",
-            image: "/UGCImages/almaty/almatyHomepage/nature.jpg",
+            image: "/UGCImages/almaty/wonders.png",
             description: "Visit Big Almaty Lake and Charyn Canyon"
         },
         {
             title: "Winter Sports",
-            image: "/UGCImages/almaty/almatyHomepage/winter.jpg",
+            image: "/UGCImages/almaty/sport.png",
             description: "Enjoy skiing and ice skating at world-class facilities"
         },
         {
             title: "Local Cuisine",
-            image: "/UGCImages/almaty/almatyHomepage/food.jpg",
+            image: "/UGCImages/almaty/cuisine.png",
             description: "Savor traditional Kazakh dishes and local delicacies"
         }
     ];
@@ -219,7 +219,7 @@ export default function AlmatyPackages() {
                     playsInline
                     className="absolute inset-0 w-full h-full object-cover"
                 >
-                    <source src="/UGCImages/almaty/almaty.mp4" type="video/mp4" />
+                    <source src="/UGCImages/almaty/almatybg.mp4" type="video/mp4" />
                     <Image
                         src="/UGCImages/almaty/almaty.jpg"
                         alt="Almaty"

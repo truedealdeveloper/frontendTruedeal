@@ -31,8 +31,6 @@ export default function Home() {
       <HeroSection />
       {/* <BannerCarousel />   */}
       <FixedDepartures />
-
-      
       {/* <ChardhamYatra /> */}
             <SriLanka />  
             <BaliBanner />
