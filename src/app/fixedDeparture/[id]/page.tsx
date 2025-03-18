@@ -182,17 +182,6 @@ export default function FixedDeparturePage({ params }: PageProps) {
                 </div>
             </div>
 
-            {/* Add an image from the destination data */}
-            <div className="container mx-auto mt-8">
-                <Image
-                    src={destination?.images?.[0] || '/UGCImages/indochina/sightseeing/nature.jpg'}
-                    alt={`${destination.country} tour image`}
-                    width={1200}
-                    height={630}
-                    className="rounded-lg shadow-lg"
-                />
-            </div>
-
             {/* Fixed Tabs Navigation */}
             <div
                 ref={tabsRef}
