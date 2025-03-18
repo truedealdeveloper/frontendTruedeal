@@ -1,5 +1,8 @@
 import { Metadata } from 'next';
+import { fixedDeparturesData } from './data';
 
+// Get a default image from one of the destinations
+const defaultImage = Object.values(fixedDeparturesData)[0]?.images?.[0] || '/UGCImages/Images4/spain/horizontal/6.webp';
 
 export const metadata: Metadata = {
     title: 'Fixed Departure Tours 2024-25 | Group Tours | TrueDeal Travel',
@@ -10,7 +13,7 @@ export const metadata: Metadata = {
         description: 'Join our guaranteed departure group tours to popular destinations worldwide. All-inclusive packages with flights, accommodation, and guided tours.',
         images: [
             {
-                url: 'https://www.truedeal4u.com/UGCImages/Images4/spain/horizontal/6.webp',
+                url: defaultImage,
                 width: 1200,
                 height: 630,
                 alt: 'Fixed Departure Tours',
@@ -25,7 +28,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'Fixed Departure Tours 2024-25 | Group Tours | TrueDeal Travel',
         description: 'Book guaranteed fixed departure group tours with TrueDeal Travel. International & domestic packages with best prices guaranteed.',
-        images: ['https://www.truedeal4u.com/UGCImages/Images4/spain/horizontal/6.webp'],
+        images: [defaultImage],
         site: '@truedeal4u',
     },
     alternates: {
