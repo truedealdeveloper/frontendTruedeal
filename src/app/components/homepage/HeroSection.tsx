@@ -58,11 +58,6 @@ const fixedDepartureDestinations = [
         fixedDepartureId: "dubai-5-days-desert-adventure"
     },
     {
-        name: "Russia Trip",
-        tag: { label: "FIXED DEPARTURE", color: "blue" },
-        fixedDepartureId: "russia-8-days-moscow-stpetersburg"
-    },
-    {
         name: "Kashmir Trip",
         tag: { label: "FIXED DEPARTURE", color: "blue" },
         fixedDepartureId: "kashmir-6-days-paradise-tour"

@@ -129,7 +129,7 @@ export default function BaliPackages() {
     const baliHighlights = [
         {
             title: "Culture & Traditions",
-            image: "/UGCImages/bali/baliHomepage/baliCulture.jpg",
+            image: "/UGCImages/bali/Bali Banner/baliHomepage/1.png",
             description: "Experience traditional Balinese ceremonies, dance performances, and local customs"
         },
         {
