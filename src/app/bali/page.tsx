@@ -129,32 +129,32 @@ export default function BaliPackages() {
     const baliHighlights = [
         {
             title: "Culture & Traditions",
-            image: "/UGCImages/bali/Bali Banner/baliHomepage/1.png",
+            image: "/UGCImages/bali/Bali Banner/baliHome/1.png",
             description: "Experience traditional Balinese ceremonies, dance performances, and local customs"
         },
         {
             title: "Cuisine & Dining",
-            image: "/UGCImages/bali/baliHomepage/cuisine.png",
+            image: "/UGCImages/bali/Bali Banner/baliHome/2.png",
             description: "Savor authentic Indonesian dishes, fresh seafood, and local delicacies"
         },
         {
             title: "Sacred Temples",
-            image: "/UGCImages/bali/baliHomepage/landscape.jpg",
+            image: "/UGCImages/bali/Bali Banner/baliHome/3.png",
             description: "Visit ancient temples like Tanah Lot, Uluwatu, and Ulun Danu Beratan"
         },
         {
             title: "Nature & Landscapes",
-            image: "/UGCImages/bali/baliHomepage/nature.jpg",
+            image: "/UGCImages/bali/Bali Banner/baliHome/4.png",
             description: "Explore stunning rice terraces, volcanoes, and tropical forests"
         },
         {
             title: "Beach Paradise",
-            image: "/UGCImages/bali/baliHomepage/beach.jpg",
+            image: "/UGCImages/bali/Bali Banner/baliHome/5.png",
             description: "Relax on pristine beaches and enjoy world-class water sports"
         },
         {
             title: "Wellness & Spa",
-            image: "/UGCImages/bali/baliHomepage/spa.jpg",
+            image: "/UGCImages/bali/Bali Banner/baliHome/6.png",
             description: "Indulge in traditional Balinese spa treatments and yoga retreats"
         }
     ];
