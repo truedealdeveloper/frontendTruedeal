@@ -8,6 +8,85 @@ import { blogPosts } from "../blogData"
 import type { BlogPost } from "../blogData"
 import { FaTwitter, FaFacebook, FaLinkedin, FaBookmark } from "react-icons/fa"
 
+const formatContent = (content: string) => {
+  const lines = content.split('\n')
+  let formattedContent = []
+  
+  // Helper function to format text with bold, italic, and links
+  const formatText = (text: string, lineIndex: number) => {
+    // First handle links - matches [text](url) pattern
+    const parts = text.split(/(\[.*?\]\(.*?\))/)
+    return parts.map((part, partIndex) => {
+      const linkMatch = part.match(/\[(.*?)\]\((.*?)\)/)
+      if (linkMatch) {
+        const [_, linkText, url] = linkMatch
+        return (
+          <a
+            key={`link-${lineIndex}-${partIndex}`}
+            href={url}
+            className="text-blue-600 hover:text-blue-800 underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {linkText}
+          </a>
+        )
+      }
+      
+      // Then handle bold and italic
+      return part.split('**').map((boldPart, boldIndex) => {
+        if (boldIndex % 2 === 0) {
+          return boldPart.split('_').map((italicPart, italicIndex) => {
+            const key = `text-${lineIndex}-${partIndex}-${boldIndex}-${italicIndex}`
+            return italicIndex % 2 === 0 ? 
+              <span key={key}>{italicPart}</span> : 
+              <em key={key} className="italic">{italicPart}</em>
+          })
+        } else {
+          return <strong key={`bold-${lineIndex}-${partIndex}-${boldIndex}`}>{boldPart}</strong>
+        }
+      })
+    })
+  }
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i]
+    if (line.startsWith('# ')) {
+      formattedContent.push(
+        <h1 key={`heading1-${i}`} className="text-4xl font-bold text-gray-900 mb-6 mt-8">
+          {formatText(line.replace('# ', ''), i)}
+        </h1>
+      )
+    } else if (line.startsWith('## ')) {
+      formattedContent.push(
+        <h2 key={`heading2-${i}`} className="text-3xl font-bold text-gray-900 mb-4 mt-8">
+          {formatText(line.replace('## ', ''), i)}
+        </h2>
+      )
+    } else if (line.startsWith('### ')) {
+      formattedContent.push(
+        <h3 key={`heading3-${i}`} className="text-2xl font-semibold text-gray-800 mb-3 mt-6">
+          {formatText(line.replace('### ', ''), i)}
+        </h3>
+      )
+    } else if (line.startsWith('- ')) {
+      formattedContent.push(
+        <li key={`list-${i}`} className="ml-6 mb-2 text-gray-700">
+          {formatText(line.replace('- ', ''), i)}
+        </li>
+      )
+    } else if (line.trim() !== '') {
+      formattedContent.push(
+        <p key={`paragraph-${i}`} className="mb-4 text-gray-700 leading-relaxed">
+          {formatText(line, i)}
+        </p>
+      )
+    }
+  }
+  
+  return formattedContent
+}
+
 export default function BlogPost() {
   const { slug } = useParams()
   const post = blogPosts.find((p: BlogPost) => p.slug === slug) as BlogPost | undefined
@@ -137,27 +216,7 @@ export default function BlogPost() {
 
           {/* Article Content */}
           <div className="prose prose-lg max-w-none">
-            {post.content.split("\n\n").map((paragraph, index) => {
-              if (paragraph.startsWith("# ")) {
-                return (
-                  <h2 key={index} className="text-2xl font-bold text-gray-900 mt-8 mb-4">
-                    {paragraph.substring(2)}
-                  </h2>
-                )
-              }
-              if (paragraph.startsWith("## ")) {
-                return (
-                  <h3 key={index} className="text-xl font-bold text-gray-900 mt-6 mb-3">
-                    {paragraph.substring(3)}
-                  </h3>
-                )
-              }
-              return (
-                <p key={index} className="mb-6 text-gray-700 leading-relaxed">
-                  {paragraph}
-                </p>
-              )
-            })}
+            {formatContent(post.content)}
           </div>
 
           {/* Tags */}
