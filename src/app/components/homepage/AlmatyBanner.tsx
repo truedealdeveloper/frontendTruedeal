@@ -62,59 +62,6 @@ const AlmatyBanner = () => {
 
   return (
     <div className="w-full py-8 md:py-12 relative">
-      {/* Left decorative icons */}
-      <div className="absolute left-0 top-0 h-full w-24 opacity-20">
-        <div className="relative h-full w-full">
-          <Image
-            src="/UGCImages/Images4/almaty/vertical/mountains.png"
-            alt="Mountain decoration"
-            width={220}
-            height={220}
-            className="absolute top-1/4 left-4 transform -rotate-12"
-          />
-          <Image
-            src="/UGCImages/Images4/almaty/vertical/burj-khalifa.png"
-            alt="Yurt decoration"
-            width={60}
-            height={60}
-            className="absolute top-1/2 left-8"
-          />
-          <Image
-            src="/UGCImages/Images4/almaty/vertical/cathedral.png"
-            alt="Horse decoration"
-            width={70}
-            height={70}
-            className="absolute bottom-1/4 left-2 transform rotate-12"
-          />
-        </div>
-      </div>
-
-      {/* Right decorative icons */}
-      <div className="absolute right-0 top-0 h-full w-24 opacity-20">
-        <div className="relative h-full w-full">
-          <Image
-            src="/UGCImages/Images4/almaty/vertical/cath.png"
-            alt="Camel decoration"
-            width={80}
-            height={80}
-            className="absolute top-1/3 right-4 transform rotate-12"
-          />
-          <Image
-            src="/UGCImages/Images4/almaty/vertical/bg.png"
-            alt="Mosque decoration"
-            width={60}
-            height={60}
-            className="absolute top-2/3 right-8"
-          />
-          <Image
-            src="/UGCImages/Images4/almaty/vertical/bgg.png"
-            alt="Eagle decoration"
-            width={70}
-            height={70}
-            className="absolute bottom-1/4 right-2 transform -rotate-12"
-          />
-        </div>
-      </div>
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Title section */}
