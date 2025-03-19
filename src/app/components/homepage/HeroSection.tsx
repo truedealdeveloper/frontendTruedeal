@@ -92,6 +92,11 @@ const fixedDepartureDestinations = [
         tag: { label: "FIXED DEPARTURE", color: "blue" },
         fixedDepartureId: "russia-fixed-departure-tour"
     },
+    {
+        name: "Vietnam Trips",
+        tag: { label: "FIXED DEPARTURE", color: "blue" },
+        fixedDepartureId: "/vietnam"
+    },
     
 
 ]
@@ -100,7 +105,11 @@ const destinations: Destination[] = [
     // { name: "Maldives", tag: { label: "HONEYMOON", color: "pink" } },
     // { name: "Dubai", tag: { label: "IN SEASON", color: "green" } },
     // { name: "Singapore" },
-    // { name: "Bali", tag: { label: "POPULAR", color: "rose" } },
+    { name: "Bali", tag: { label: "POPULAR", color: "rose" } },
+    { name: "Vietnam", tag: { label: "TRENDING", color: "green" } },
+    { name: "Indochina", tag: { label: "TRENDING", color: "green" } },
+    { name: "Laos", tag: { label: "Family", color: "yellow" } },
+    { name: "Combodia", tag: { label: "Family", color: "pink" } },
     // { name: "Indonesia" },
     // { name: "Japan" },
     // { name: "Hongkong" },
@@ -141,6 +150,10 @@ export default function HeroSection() {
             setIsSearchModalOpen(false)
             if (destination.name.toLowerCase() === "bali") {
                 router.push("/bali")
+            } else if (destination.name.toLowerCase() === "vietnam") {
+                router.push("/vietnam")
+            } else if (["indochina", "laos", "combodia"].includes(destination.name.toLowerCase())) {
+                router.push("/indochina")
             } else if (destination.isTrending) {
                 router.push(`/trending/${destination.name.toLowerCase()}`)
             } else if (destination.tag?.label === "FIXED DEPARTURE" && destination.fixedDepartureId) {
