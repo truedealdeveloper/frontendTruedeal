@@ -38,14 +38,14 @@ export default function Home() {
             <LaosCambodiaBanner />
             <AlmatyBanner />
             
-        <Destination />
-      <Domestic />
-      <Trending />
+        {/* <Destination /> */}
+      {/* <Domestic /> */}
+      {/* <Trending /> */}
       {/* <Exclusive /> */}
       {/* <AnimatedListDemo /> */}
-      <ExoticDestinations />
+      {/* <ExoticDestinations /> */}
       <NoCostEMIPage />
-      <Europe />
+      {/* <Europe /> */}
       {/* <Indonesia /> */}
       <Ad />
       {/* <HappyCustomers /> */}

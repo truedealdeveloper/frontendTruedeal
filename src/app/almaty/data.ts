@@ -90,7 +90,7 @@ export const almatyPackages: Record<string, AlmatyPackage> = {
         packageName: "5 Days Almaty Discovery",
         days: 5,
         nights: 4,
-        amount: 70000,
+        amount: 50000,
         dateStart: "01 March 2025",
         dateEnd: "26 July 2025",
         description: "Explore the highlights of Almaty with our 5-day tour covering the city's most iconic locations, natural wonders, and cultural sites.",
@@ -136,7 +136,6 @@ export const almatyPackages: Record<string, AlmatyPackage> = {
             "Visa fees",
             "Travel insurance",
             "Personal expenses",
-            "International flights"
         ],
         itinerary: [
             {
@@ -217,7 +216,7 @@ export const almatyPackages: Record<string, AlmatyPackage> = {
         packageName: "4 Days Almaty Winter",
         days: 4,
         nights: 3,
-        amount: 48000,
+        amount: 60000,
         dateStart: "01 March 2025",
         dateEnd: "26 July 2025",
         description: "Explore the highlights of Almaty with our 4-day tour covering the city's most iconic locations, natural wonders, and cultural sites.",
@@ -262,8 +261,7 @@ export const almatyPackages: Record<string, AlmatyPackage> = {
             "Visa fees",
             "Travel insurance",
             "Personal expenses",
-            "International flights"
-        ],
+            ],
         itinerary: [
             {
                 day: 1,
@@ -338,7 +336,7 @@ export const almatyPackages: Record<string, AlmatyPackage> = {
         packageName: "6 Days Almaty Explore",
         days: 6,
         nights: 5,
-        amount: 80000,
+        amount: 70000,
         dateStart: "01 March 2025",
         dateEnd: "26 July 2025",
         description: "Explore the highlights of Almaty with our 6-day tour covering the city's most iconic locations, natural wonders, and cultural sites.",
@@ -390,7 +388,6 @@ export const almatyPackages: Record<string, AlmatyPackage> = {
             "Visa fees",
             "Travel insurance",
             "Personal expenses",
-            "International flights"
         ],
         itinerary: [
             {

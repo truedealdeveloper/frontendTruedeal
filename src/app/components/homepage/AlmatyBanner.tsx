@@ -22,7 +22,7 @@ const AlmatyBanner = () => {
         '/UGCImages/Images4/almaty/vertical/al/4.png',
       ],
       date: '01 March 2025 - 26 July 2025',
-      price: '48,000'
+      price: '50,000'
     },
     {
       id: '5-days-almaty-discovery',               
@@ -34,7 +34,7 @@ const AlmatyBanner = () => {
         '/UGCImages/Images4/almaty/vertical/al/3.png',
       ],
       date: '01 March 2025 - 26 July 2025',
-      price: '70,000'
+        price: '60,000'
     },
     {
       id: '6-days-almaty-explore',
@@ -46,7 +46,7 @@ const AlmatyBanner = () => {
         '/UGCImages/Images4/almaty/vertical/al/4.png',
       ],
       date: '01 March 2025 - 26 July 2025',
-      price: '80,000'
+      price: '70,000'
     }
   ];
 

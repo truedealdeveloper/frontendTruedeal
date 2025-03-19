@@ -10,7 +10,7 @@ import { FaTwitter, FaFacebook, FaLinkedin, FaBookmark } from "react-icons/fa"
 
 const formatContent = (content: string) => {
   const lines = content.split('\n')
-  let formattedContent = []
+  const formattedContent = []
   
   // Helper function to format text with bold, italic, and links
   const formatText = (text: string, lineIndex: number) => {
@@ -19,7 +19,7 @@ const formatContent = (content: string) => {
     return parts.map((part, partIndex) => {
       const linkMatch = part.match(/\[(.*?)\]\((.*?)\)/)
       if (linkMatch) {
-        const [_, linkText, url] = linkMatch
+        const [, linkText, url] = linkMatch
         return (
           <a
             key={`link-${lineIndex}-${partIndex}`}
