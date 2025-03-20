@@ -480,5 +480,405 @@ Meals: Breakfast at the hotel
                 ]
             }
         }
+    },
+    malaysiaTour: {
+        id: "4-days-malaysia-tour",
+        packageName: "4 Days Malaysia Tour",
+        days: 4,
+        nights: 3,
+        amount: 35000,
+        dateStart: "01 March 2025",
+        dateEnd: "26 July 2025",
+        description: "Experience the vibrant city life of Malaysia with our 4-day tour covering iconic attractions, cultural sites, and modern marvels.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Double Sharing",
+            arrivalDate: "Contact Us",
+            duration: "4D3N Malaysia Fixed Departure",
+            costBasis: "Cost Based On 2 pax travelling together"
+        },
+        hotelDetails: [
+            {
+                city: "Malaysia",
+                hotel: "3 Ramada Encore / Similar",
+                roomType: "Deluxe Room"
+            },
+            {
+                city: "Malaysia",
+                hotel: "4 Vivatel KL or Similar ",
+                roomType: "Deluxe Room"
+            },
+        ],
+        tourSummary: [
+            "Day 01: Day 01: Arrive at Kuala Lumpur (En-Route Putrajaya 20Mins Photo-Stop) – PVT",
+            "Day 02: Day 02: Genting Day Trip (En-Route Batu Caves 20Mins Photo-Stop) + Two Way Cable Car – PVT",
+            "Day 03: KLCC Aquarium + KL Half day city Tour + KL Tower (Observation Deck) – PVT",
+            "Day 04: Kuala Lumpur - Departure"
+        ],
+        inclusions: [
+            "3Night Accommodation in above mentioned hotel with Breakfast",
+            "Breakfast at the hotel",
+            "Airport Arrival and Departure on PVT Transfers",
+            "All tour transfers on SIC Basis",
+            "Genting Highlands Day Trip",
+            "KLCC Aquarium",
+            "KL Tower (Observation Deck)",
+            "Kuala Lumpur City Tour"
+        ],
+        exclusions: [
+            "Airfare",
+            "Personal expenses",
+            "Optional tours",
+            "Travel insurance"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrive at Kuala Lumpur (En-Route Putrajaya 20Mins Photo-Stop) – PVT",
+                description:`Welcome to Malaysia's capital city - Kuala Lumpur!
+Upon arrival at Kuala Lumpur, pick up from airport. Enroute stop by at Putrajaya for 20 min photo stop only.
+Check in hotel (Standard Check in time 1400hrs)
+Overnight Stay at Kuala Lumpur Hotel
+
+
+`
+            },
+            {
+                day: 2,
+                title: "Genting Day Trip (En-Route Batu Caves 20Mins Photo-Stop) + Two Way Cable Car – PVT",
+                description: `Post breakfast, set out to explore Genting Highlands (PVT). It is an hours drive from Kuala Lumpur. With the landscape beautifully dotted with mountain peaks, Genting Highlands is also known as RWG (Resorts World Genting).
+It is fashioned on Las Vegas- Asian style. The highlands include luxury hotels, casinos, and exciting shopping malls. It has a theme park in Pahang which is at a staggering height of 1800 meters on the peak of Gunung Ulu Kali. There is a lot more than the highlands offer.
+BATU CAVES: Batu Caves, one of Kuala Lumpurs most frequented tourist attractions, is a limestone hill comprising three major caves and a number of smaller ones. Located approximately 11 kilometers to the north of Kuala Lumpur, this 100-year-old temple features idols and statues erected inside the main caves and around it. Incorporated with interior limestone formations said to be around 400 million years old, the temple is considered an important religious landmark by Hindus. Cathedral Cave – the largest and most popular cavern in Batu Caves – houses several Hindu shrines beneath its 
+
+
+100-metre-high arched ceiling. At the foot of Batu Hill are two other cave temples – the Art Gallery Cave and Museum Cave – which houses numerous Hindu statues and paintings. 
+Overnight Stay at Kuala Lumpur Hotel
+
+
+
+`
+            },
+            {
+                day: 3,
+                title: "KLCC Aquarium + KL Half day city Tour + KL Tower (Observation Deck) – PVT",
+                description: `Enjoy Breakfast in Hotel. 
+Proceed for KLCC Aquarium (PVT)
+Aquaria KLCC is a State of the art. Aquarium located in the heart of the city, beneath the Kuala Lumpur Convention center. From the evolution zone to the Living Ocean, take the longest underwater tunnel in Malaysia that showcases some iconic Malaysian species.
+Enjoy an exciting KL Half day City Tour (PVT). This in an interesting tour, which unveils the beauty & charm of old & new Kuala Lumpur. Visit includes Kings Place, National Monument, Independence Square, Beryls Chocolate Factory and a photo stop at magnificent PETRONAS Twin Towers.  
+Includes:
+KL Tower Entrance 
+Overnight stay at Kuala Lumpur hotel
+
+
+`
+            },
+            {
+                day: 4,
+                title: "Kuala Lumpur - Departure",
+                description: `Morning after breakfast; you will be transferred to the airport for your flight back home to India 
+Meals: Breakfast at the hotel 
+
+
+`
+            },    
+        ],
+        images: [
+            "/UGCImages/Images4/singapore/singapore/1.webp",
+            "/UGCImages/Images4/singapore/singapore/2.webp",
+            "/UGCImages/Images4/singapore/singapore/3.webp",
+            "/UGCImages/Images4/singapore/singapore/4.webp"
+        ],
+        sightseeingSpots: [
+            {
+                name: "Gardens by the Bay",
+                description: "Iconic nature park with Supertree Grove",
+                image: "/UGCImages/singapore/gardens.png"
+            },
+            {
+                name: "Marina Bay Sands",
+                description: "Luxury integrated resort with infinity pool",
+                image: "/UGCImages/singapore/mbs.png"
+            },
+            {
+                name: "Batu Caves",
+                description: "World-class theme park with exciting rides",
+                image: "/UGCImages/singapore/uss.png"
+            }
+        ],
+        localFood: [
+            {
+                name: "Chili Crab",
+                description: "Singapore's national dish",
+                image: "/UGCImages/singapore/food1.png",
+                where: "JUMBO Seafood, Clarke Quay"
+            },
+            {
+                name: "Hainanese Chicken Rice",
+                description: "Popular local delicacy",
+                image: "/UGCImages/singapore/food2.png",
+                where: "Tian Tian Chicken Rice, Maxwell Food Centre"
+            }
+        ],
+        culture: [
+            {
+                title: "Modern Architecture",
+                description: "Singapore's stunning skyline and architectural marvels",
+                image: "/UGCImages/singapore/architecture.png"
+            },
+            {
+                title: "Cultural Heritage",
+                description: "Diverse mix of Chinese, Malay, and Indian influences",
+                image: "/UGCImages/singapore/culture.png"
+            }
+        ],
+        departureDates: [
+            { date: "Mar 2025 - July 2025" }
+        ],
+        additionalInfo: {
+            highlights: [
+                "Universal Studios Singapore",
+                "Gardens by the Bay",
+                "Marina Bay Sands",
+                "Sentosa Island",
+                "Shopping at Orchard Road"
+            ],
+            bestTimeToVisit: "February to April (Dry season)",
+            cuisine: [
+                "Chili Crab",
+                "Hainanese Chicken Rice",
+                "Laksa",
+                "Satay"
+            ],
+            accommodation: {
+                type: "4-star hotel",
+                amenities: [
+                    "Free Wi-Fi",
+                    "Swimming pool",
+                    "Restaurant",
+                    "Fitness center"
+                ]
+            },
+            transportation: {
+                type: "Air-conditioned coach",
+                features: [
+                    "Modern fleet",
+                    "Professional driver",
+                    "Tour guide"
+                ]
+            },
+            visaInfo: {
+                requirement: "Tourist visa required",
+                duration: "30 days",
+                cost: "₹2,500",
+                documents: [
+                    "Valid passport",
+                    "Photographs",
+                    "Bank statements",
+                    "Flight tickets"
+                ]
+            }
+        }
+    },
+    langkawiTour: {
+        id: "5-days-wonderful-langkawi",
+        packageName: "5 Days Wonderful Langkawi",
+        days: 5,
+        nights: 4,
+        amount: 25000,
+        dateStart: "01 March 2025",
+        dateEnd: "26 July 2025",
+        description: "Experience the vibrant city life of Langkawi with our 5-day tour covering iconic attractions, cultural sites, and modern marvels.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Double Sharing",
+            arrivalDate: "Contact Us",
+            duration: "5D4N Langkawi Fixed Departure",
+            costBasis: "Cost Based On 2 pax travelling together"
+        },
+        hotelDetails: [
+            {
+                city: "Langkawi",
+                hotel: "3 Hotel Grand Continental / Similar",
+                roomType: "Deluxe Room"
+            },
+            {
+                city: "Langkawi",
+                hotel: "4 Century Langkasuka Resort Langkawi / Similar",
+                roomType: "Deluxe Room"
+            },
+        ],
+        tourSummary: [
+            "Day 01: Arrive at Langkawi – PVT",
+            "Day 02: Island hopping tour – SIC",
+            "Day 03: Sunset Dinner – SIC + Transfers – PVT",
+            "Day 04: Leisure Day",
+            "Day 05: Langkawi - Departure - PVT"
+        ],
+        inclusions: [
+            "4 Night Accommodation in above mentioned hotel with Breakfast",
+            "Breakfast at the hotel",
+            "Airport Arrival and Departure on PVT Transfers",
+            "All tour transfers on SIC Basis",
+            "Island hopping tour",
+            "Sunset Dinner",
+            "Leisure Day"
+        ],
+        exclusions: [
+            "Airfare",
+            "Personal expenses",
+            "Optional tours",
+            "Travel insurance"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrive at Langkawi – PVT",
+                description:`Welcome to Langkawi!
+Upon arrival at Langkawi, pick up from airport.
+Check in hotel (Standard Check in time 1400hrs)
+Overnight Stay at Langkawi Hotel
+
+
+`
+            },
+            {
+                day: 2,
+                title: "Island hopping tour – SIC",
+                description: `Enjoy Breakfast in Hotel. Proceed for island hopping tour.
+Enjoy Langkawi Island Hopping Tour (4 hrs.) (SIC)Taking the trip by long boat, you will visit several famous islands such as the legendary TasikDayang Bunting (Pregnant Maiden Lake), go eagle watching at a nearby island and make a visit to PulauBerasBasah (Wet Rice Island). The last stop will be at a white sandy beach for you to relax and soak up the sun or splash around in the turquoise-blue waters off PulauBerasBasah. This is a perfect location to enjoy a relaxing picnic in the shade of the casaurina trees lining the beach.  (Notes: Bring along swim wear and towel)
+Overnight accommodation @ Hotel, Langkawi
+
+
+
+
+
+`
+            },
+            {
+                day: 3,
+                title: "Sunset Dinner – SIC + Transfers – PVT",
+                description: `Enjoy Breakfast in Hotel. 
+Sunset Dinner (4hrs) (SIC), the perfect gateway to finish the day and start the evening. Take a pleasant trip across the sea and you might witness the spectacular sight of the tropical sun cutting through the horizon into the sea. What better way to wind down by treating yourself to a dinner on a yacht and salt water Jacuzzi is quite an experience as well. The cruise includes an open bar and a BBQ dinner on board. Romantic sunset, Eagle watching, free flow bar, BBQ buffet Dinner / Cocktail.
+Overnight accommodation @ Hotel, Langkawi
+
+
+
+`
+            },
+            {
+                day: 4,
+                title: "Leisure Day",
+                description: `Enjoy Breakfast in Hotel. 
+Have a Leisure day and stay at Hotel.
+`
+            },    
+            {
+                day: 5,
+                title: "Langkawi - Departure - PVT",
+                description: `Morning after breakfast; you will be transferred to the airport for your flight back home to India 
+Meals: Breakfast at the hotel 
+Standard Check out time1200hrs
+(Note: You can leave luggage at hotel concierge and return to hotel for the departure transfer)
+Check out and meet driver at hotel lobby for transfer to LGK Airport for departure
+
+`
+            },    
+        ],
+        images: [
+            "/UGCImages/Images4/singapore/singapore/1.webp",
+            "/UGCImages/Images4/singapore/singapore/2.webp",
+            "/UGCImages/Images4/singapore/singapore/3.webp",
+            "/UGCImages/Images4/singapore/singapore/4.webp"
+        ],
+        sightseeingSpots: [
+            {
+                name: "Gardens by the Bay",
+                description: "Iconic nature park with Supertree Grove",
+                image: "/UGCImages/singapore/gardens.png"
+            },
+            {
+                name: "Marina Bay Sands",
+                description: "Luxury integrated resort with infinity pool",
+                image: "/UGCImages/singapore/mbs.png"
+            },
+            {
+                name: "Batu Caves",
+                description: "World-class theme park with exciting rides",
+                image: "/UGCImages/singapore/uss.png"
+            }
+        ],
+        localFood: [
+            {
+                name: "Chili Crab",
+                description: "Singapore's national dish",
+                image: "/UGCImages/singapore/food1.png",
+                where: "JUMBO Seafood, Clarke Quay"
+            },
+            {
+                name: "Hainanese Chicken Rice",
+                description: "Popular local delicacy",
+                image: "/UGCImages/singapore/food2.png",
+                where: "Tian Tian Chicken Rice, Maxwell Food Centre"
+            }
+        ],
+        culture: [
+            {
+                title: "Modern Architecture",
+                description: "Singapore's stunning skyline and architectural marvels",
+                image: "/UGCImages/singapore/architecture.png"
+            },
+            {
+                title: "Cultural Heritage",
+                description: "Diverse mix of Chinese, Malay, and Indian influences",
+                image: "/UGCImages/singapore/culture.png"
+            }
+        ],
+        departureDates: [
+            { date: "Mar 2025 - July 2025" }
+        ],
+        additionalInfo: {
+            highlights: [
+                "Universal Studios Singapore",
+                "Gardens by the Bay",
+                "Marina Bay Sands",
+                "Sentosa Island",
+                "Shopping at Orchard Road"
+            ],
+            bestTimeToVisit: "February to April (Dry season)",
+            cuisine: [
+                "Chili Crab",
+                "Hainanese Chicken Rice",
+                "Laksa",
+                "Satay"
+            ],
+            accommodation: {
+                type: "4-star hotel",
+                amenities: [
+                    "Free Wi-Fi",
+                    "Swimming pool",
+                    "Restaurant",
+                    "Fitness center"
+                ]
+            },
+            transportation: {
+                type: "Air-conditioned coach",
+                features: [
+                    "Modern fleet",
+                    "Professional driver",
+                    "Tour guide"
+                ]
+            },
+            visaInfo: {
+                requirement: "Tourist visa required",
+                duration: "30 days",
+                cost: "₹2,500",
+                documents: [
+                    "Valid passport",
+                    "Photographs",
+                    "Bank statements",
+                    "Flight tickets"
+                ]
+            }
+        }
     }
 }; 

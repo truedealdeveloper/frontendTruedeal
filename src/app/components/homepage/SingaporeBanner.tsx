@@ -35,7 +35,7 @@ const SingaporeBanner = () => {
       price: '59,000'
     },
     {
-      id: '4-days-wonderful-malaysia',
+      id: '4-days-malaysia-tour',
       title: '4 Days Malaysia',
       images: [
         '/UGCImages/singapore/banner/7.png',
