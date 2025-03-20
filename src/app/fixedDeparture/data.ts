@@ -2090,8 +2090,8 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         days: 6,
         nights: 5,
         amount: 28000,
-        dateStart: "1 Apr 2025",
-        dateEnd: "19 May 2025",
+        dateStart: "1st Apr 2025",
+        dateEnd: "5th May 2025",
         description: "Experience the world's largest trade fair with our comprehensive Canton Fair package. Perfect for business travelers and trade professionals looking to explore global manufacturing and trade opportunities in Guangzhou, China.",
         groupDetails: {
             pax: "Business Group Tour",
@@ -2103,21 +2103,22 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         hotelDetails: [
             {
                 city: "Guangzhou",
-                hotel: "Standard Category Hotel",
+                hotel: "Holiday Inn Guangzhou Panyu",
                 roomType: "Standard Room"
             }
         ],
         tourSummary: [
             "Day 1: Arrival in Guangzhou",
-            "Day 2-5: Canton Fair Visits by Shuttle",
+            "Day 2: Canton Fair Visits by Shuttle",
+            "Day 3: Canton Fair Visits by Shuttle",
+            "Day 4: Canton Fair Visits by Shuttle",
+            "Day 5: Canton Fair Visits by Shuttle",
             "Day 6: Departure"
         ],
         inclusions: [
             "5 Nights Hotel Accommodation (Standard Category)",
             "Daily Shuttle Service to and from the Canton Fair",
             "Daily Breakfast at the Hotel",
-            "Guided city tour and evening activities",
-            "Local Transportation"
         ],
         exclusions: [
             "International flights",
@@ -2130,32 +2131,32 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
             {
                 day: 1,
                 title: "Arrival in Guangzhou",
-                description: "Arrival at Guangzhou International Airport. A private transfer will take you to your hotel. Check-in and settle in. Evening free time to explore nearby areas or enjoy Cantonese cuisine at a local restaurant."
+                description: "Arrival at Guangzhou International Airport. A private transfer will take you to your hotel. Check-in and settle in."
             },
             {
                 day: 2,
-                title: "Canton Fair Visit Day 1",
-                description: "Morning & Afternoon: Shuttle transport to the Canton Fair Complex. Explore the various pavilions, network, attend meetings, and discover the latest industry trends. Evening: Return to hotel. Optional activities include visiting Beijing Road Pedestrian Street or Pearl River cruise."
+                title: "Canton Fair Visit Day 1 with hotel shuttle",
+                description: "Morning & Afternoon: Shuttle transport to the Canton Fair Complex. Explore the various pavilions, network, attend meetings, and discover the latest industry trends."
             },
             {
                 day: 3,
-                title: "Canton Fair Visit Day 2",
-                description: "Morning & Afternoon: Continue exploring the Canton Fair Complex. Evening: Free time for local exploration or business networking."
+                title: "Canton Fair Visit Day 2 with hotel shuttle",
+                description: "Morning & Afternoon: Continue exploring the Canton Fair Complex."
             },
             {
                 day: 4,
-                title: "Canton Fair Visit Day 3",
-                description: "Morning & Afternoon: Further exploration of the Canton Fair Complex. Evening: Free time for local activities or business meetings."
+                title: "Canton Fair Visit Day 3 with hotel shuttle",
+                description: "Morning & Afternoon: Further exploration of the Canton Fair Complex."
             },
             {
                 day: 5,
-                title: "Canton Fair Visit Day 4",
-                description: "Morning & Afternoon: Final day at the Canton Fair Complex. Evening: Free time for last-minute local exploration or business networking."
+                title: "Canton Fair Visit Day 4 with hotel shuttle",
+                description: "Morning & Afternoon: Final day at the Canton Fair Complex."
             },
             {
                 day: 6,
                 title: "Departure",
-                description: "Morning: Check-out and transfer to Guangzhou International Airport. Depart with invaluable insights and new business connections."
+                description: "Morning: Check-out and transfer to Guangzhou International Airport."
             }
         ],
         images: [

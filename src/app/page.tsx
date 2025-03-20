@@ -24,6 +24,7 @@ import BaliBanner from "./components/homepage/BaliBanner";
 import VietnamBanner from "./components/homepage/VietnamBanner";
 import LaosCambodiaBanner from "./components/homepage/LaosCambodia";
 import AlmatyBanner from './components/homepage/AlmatyBanner';
+import SingaporeBanner from "./components/homepage/SingaporeBanner";
 
 export default function Home() {
   return (
@@ -37,7 +38,7 @@ export default function Home() {
             <VietnamBanner />
             <LaosCambodiaBanner />
             <AlmatyBanner />
-            
+            <SingaporeBanner />
         {/* <Destination /> */}
       {/* <Domestic /> */}
       {/* <Trending /> */}
