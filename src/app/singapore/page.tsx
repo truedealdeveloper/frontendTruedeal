@@ -456,7 +456,7 @@ export default function SingaporePackages() {
                         Our Singapore tour packages include visits to iconic locations like Gardens by the Bay, Universal Studios Singapore, and Marina Bay Sands, combining entertainment with cultural experiences.
                     </p>
                     <p>
-                        Experience the rich multicultural heritage through visits to Little India, Chinatown, and Arab Street, while enjoying the city's famous hawker centers and modern shopping districts.
+                        Experience the rich multicultural heritage through visits to Little India, Chinatown, and Arab Street, while enjoying the citys famous hawker centers and modern shopping districts.
                     </p>
                 </div>
             </div>
