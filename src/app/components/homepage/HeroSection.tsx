@@ -102,6 +102,16 @@ const fixedDepartureDestinations = [
         tag: { label: "FIXED DEPARTURE", color: "blue" },
         fixedDepartureId: "kenya-10-days-discovery-tour"
     },
+    {
+        name: "Baku Trip",
+        tag: { label: "FIXED DEPARTURE", color: "blue" },
+        fixedDepartureId: "baku-5-days-discovery-tour"
+    },
+    {
+        name: "Japan Trip",
+        tag: { label: "FIXED DEPARTURE", color: "green" },
+        fixedDepartureId: "japan-10-days-cultural-tour"
+    },
     
 
 ]

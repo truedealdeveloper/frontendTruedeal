@@ -2851,6 +2851,142 @@ Overnight in Basel
             "/UGCImages/kenya/4.png",
         ]
     },
+    baku: {
+        id: "baku-5-days-discovery-tour",
+        country: "Baku",
+        days: 5,
+        nights: 4,
+        amount: 40500,
+        dateStart: "27 March 2025",
+        dateEnd: "31 July 2025",
+        description: "Experience the best of Baku with our specially curated 5-night itinerary, covering iconic destinations across Azerbaijan. Perfectly planned for travelers who seek an effortless, all-inclusive journey with fixed departures.",
+        groupDetails: {
+            pax: "Group Tour (10-40 pax)",
+            rooms: "Twin Sharing Basis",
+            arrivalDate: "Multiple dates available between Mar 27 - Jul 31",
+            duration: "5N4D Baku",
+            costBasis: "Cost based on per person (Double Sharing)"
+        },
+        hotelDetails: [
+            {
+                city: "Baku",
+                hotel: "4 star Parkside Hotel",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Gabala",
+                hotel: "5 star Gabala Garden Hotel",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Parkside Hotel",
+                hotel: "4 star",
+                roomType: "Standard Room"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Baku International Airport to baku Hotel - Arrival in Baku",
+            "Day 2: Daily Quba & Shahdag Tour",
+            "Day 3: BAKU to Gabala - Gabala city tour",
+            "Day 4: Baku Transfer & Gobustan Mud Volcanoes",
+            "Day 5: Baku to Baku International Airport - Departure",
+        ],
+        inclusions: [
+            "Airport transfers",
+            "Hotel Accommodation",
+            "Buffet breakfast",
+            "Private vehicle sedan car",
+            "All Sightseeings as per Itinerary",
+            "VISA",
+            "Air Ticket"
+        ],
+        exclusions: [
+            "Driver tips",
+            "Balloon safari",
+            "Flight Tickets",
+            "NOTE: Anything not in inclusions is excluded"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Baku",
+                description: `Airport Transfer: Meet and greet at the airport with a private transfer to your hotel in Baku.
+Panoramic Tour of Baku: Begin with a panoramic tour to get a feel of Baku's vibrant skyline
+and iconic architecture. Highlights: Highland Park: View the city and the Caspian Sea from
+this elevated spot. Flame Towers: Capture photos of Baku&apos;s modern architectural marvel.
+Baku Boulevard: Stroll along the seaside boulevard for a relaxed evening. Overnight: Baku
+hotel.
+
+Baku City Tour: Explore the highlights of Baku, including:
+
+Highland Park for panoramic views of the city and Caspian Sea
+
+Flame Towers and Baku Boulevard
+
+Old City (Icherisheher): Maiden Tower, Shirvanshahs' Palace, and medieval market
+squares
+
+Nizami Street for shopping and cafes
+
+Evening: Free time to explore the city or relax at the hotel.
+
+`
+            },
+            {
+                day: 2,
+                title: "Daily Quba & Shahdag Tour",
+                description: `Full-Day Excursion:
+
+Travel to Quba, a picturesque region known for its scenic beauty and apple orchards.
+
+Explore the Jewish Red Settlement, the only all-Jewish town outside Israel and the USA.
+
+Continue to Shahdag Mountain Resort, offering breathtaking landscapes and optional
+adventure activities like hiking or skiing (seasonal).
+
+Lunch at a local restaurant (optional).
+
+Evening: Return to Baku.
+
+Overnight: Stay in Baku.
+
+`,
+            },
+            {
+                day: 3,
+                title: "Baku to Gabala - Gabala city tour",
+                description: `Morning Transfer to Gabala: Drive from Baku to Gabala
+
+Gabala city tour
+
+Discover Gabala&apos;s charm with a visit to Tufandag Mountain Resort for scenic views or cable
+car rides. Explore Nohur Lake, known for its tranquil beauty, and visit the ancient Gabala
+Archaeological Center. Enjoy fun activities at Gabaland Amusement Park and experience
+the natural wonders of Yeddi Gozel Waterfall. Wrap up with local cuisine at a traditional
+restaurant.`,
+            },
+            {
+                day: 4,
+                title: "Baku Transfer & Gobustan Mud Volcanoes",
+                description: `This morning, transfer back to Baku, and in the afternoon, embark on a fascinating tour to
+Gobustan National Park, home to the famous Gobustan Mud Volcanoes and ancient
+petroglyphs. The mud volcanoes are a unique geological feature, and the area is a UNESCO
+World Heritage site. Afterward, enjoy the rest of the day at leisure in Baku.`
+            },
+            {
+                day: 5,
+                title: "Baku to Baku International Airport - Departure",
+                description: "Have breakfast. Check out from the hotel and transfer to the airport for departure."
+            },
+
+        ],
+        images: [
+            "/UGCImages/baku/1.png",
+            "/UGCImages/baku/2.png",
+            "/UGCImages/baku/3.png",
+            "/UGCImages/baku/4.png",
+        ]
+    },
 };
 
 export function isFixedDeparture(destination: FixedDeparture | DestinationWithoutFlight): destination is FixedDeparture {

@@ -180,39 +180,39 @@ Meals: Breakfast at the hotel
             }
         ],
         images: [
-            "/UGCImages/Images4/singapore/singapore/1.webp",
-            "/UGCImages/Images4/singapore/singapore/2.webp",
-            "/UGCImages/Images4/singapore/singapore/3.webp",
-            "/UGCImages/Images4/singapore/singapore/4.webp"
+            "/UGCImages/singapore/singapore/1.webp",
+            "/UGCImages/singapore/singapore/2.webp",
+            "/UGCImages/singapore/singapore/3.webp",
+            "/UGCImages/singapore/singapore/4.webp"
         ],
         sightseeingSpots: [
             {
                 name: "Gardens by the Bay",
                 description: "Iconic nature park with Supertree Grove",
-                image: "/UGCImages/singapore/gardens.png"
+                image: "/UGCImages/singapore/sightseeings/1.png"
             },
             {
                 name: "Marina Bay Sands",
                 description: "Luxury integrated resort with infinity pool",
-                image: "/UGCImages/singapore/mbs.png"
+                image: "/UGCImages/singapore/sightseeings/3.png"
             },
             {
                 name: "Universal Studios",
                 description: "World-class theme park with exciting rides",
-                image: "/UGCImages/singapore/uss.png"
+                image: "/UGCImages/singapore/sightseeings/2.png"
             }
         ],
         localFood: [
             {
                 name: "Chili Crab",
                 description: "Singapore's national dish",
-                image: "/UGCImages/singapore/food1.png",
+                image: "/UGCImages/singapore/sightseeings/food/1.png",
                 where: "JUMBO Seafood, Clarke Quay"
             },
             {
                 name: "Hainanese Chicken Rice",
                 description: "Popular local delicacy",
-                image: "/UGCImages/singapore/food2.png",
+                image: "/UGCImages/singapore/sightseeings/food/2.png",
                 where: "Tian Tian Chicken Rice, Maxwell Food Centre"
             }
         ],
@@ -385,10 +385,10 @@ Meals: Breakfast at the hotel
             }       
         ],
         images: [
-            "/UGCImages/Images4/singapore/singapore/1.webp",
-            "/UGCImages/Images4/singapore/singapore/2.webp",
-            "/UGCImages/Images4/singapore/singapore/3.webp",
-            "/UGCImages/Images4/singapore/singapore/4.webp"
+            "/UGCImages/singapore/singapore/5.webp",
+            "/UGCImages/singapore/singapore/6.webp",
+            "/UGCImages/singapore/singapore/7.webp",
+            "/UGCImages/singapore/singapore/8.webp"
         ],
         sightseeingSpots: [
             {
@@ -583,10 +583,10 @@ Meals: Breakfast at the hotel
             },    
         ],
         images: [
-            "/UGCImages/Images4/singapore/singapore/1.webp",
-            "/UGCImages/Images4/singapore/singapore/2.webp",
-            "/UGCImages/Images4/singapore/singapore/3.webp",
-            "/UGCImages/Images4/singapore/singapore/4.webp"
+            "/UGCImages/singapore/Malaysia/1.webp",
+            "/UGCImages/singapore/Malaysia/2.webp",
+            "/UGCImages/singapore/Malaysia/3.webp",
+            "/UGCImages/singapore/Malaysia/4.webp"
         ],
         sightseeingSpots: [
             {
@@ -785,9 +785,12 @@ Check out and meet driver at hotel lobby for transfer to LGK Airport for departu
             },    
         ],
         images: [
-            "/UGCImages/singapore/langkawi/bannerSize/1.png",
-            "/UGCImages/singapore/langkawi/bannerSize/2.png",
-            "/UGCImages/singapore/langkawi/bannerSize/3.png",
+            "/UGCImages/singapore/Malaysia/5.webp",
+            "/UGCImages/singapore/Malaysia/6.webp",
+            "/UGCImages/singapore/Malaysia/7.webp",
+            "/UGCImages/singapore/Malaysia/8.webp",
+            
+            
             
         ],
         sightseeingSpots: [
