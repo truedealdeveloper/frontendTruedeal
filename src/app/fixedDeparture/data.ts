@@ -2726,6 +2726,131 @@ Overnight in Basel
             
         ]
     },
+    kenya: {
+        id: "kenya-10-days-discovery-tour",
+        country: "Kenya",
+        days: 10,
+        nights: 9,
+        amount: 215600,
+        dateStart: "5 March 2025",
+        dateEnd: "14 August 2025",
+        description: "Experience the best of Kenya with our specially curated 10-night itinerary, covering iconic destinations across Kenya. Perfectly planned for travelers who seek an effortless, all-inclusive journey with fixed departures.",
+        groupDetails: {
+            pax: "Group Tour (10-40 pax)",
+            rooms: "Twin Sharing Basis",
+            arrivalDate: "Multiple dates available between Mar 5 - Aug 14",
+            duration: "10N9D Kenya (Nairobi, Lake Nakuru, Masai Mara, Amboseli, Lake Naivasha, Lake Elementaita, Lake Bogoria, Lake Baringo, Lake Nakuru, Lake Naivasha, Lake Elementaita, Lake Bogoria, Lake Baringo)",
+            costBasis: "Cost based on per person (Double Sharing)"
+        },
+        hotelDetails: [
+            {
+                city: "Nairobi",
+                hotel: "3 star",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Lake Nakuru",
+                hotel: "4 star",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Masai Mara",
+                hotel: "5 star",
+                roomType: "Standard Room"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Arrival - Nairobi",
+            "Day 2: Nairobi – Maasai Mara",
+            "Day 3: Maasai Mara Full Day",
+            "Day 4: Maasai Mara – Lake Naivasha",
+            "Day 5: Lake Naivasha – Lake Nakuru Day Trip",
+            "Day 6: Lake Naivasha – Amboseli",
+            "Day 7: Amboseli Full Day",
+            "Day 8: Amboseli Full Day",
+            "Day 9: Amboseli-Nairobi",
+            "Day 10: Nairobi - Departure",
+        ],
+        inclusions: [
+            "All park entrance fees",
+            "Accommodation at all Lodges and Tented Camps on full board. Bed and breakfast in Nairobi",
+            "Drinking water station in your vehicle, please bring a reusable water bottle to be refilled as needed.",
+            "Services of an English-Speaking driver/guide",
+            "Transport in a 4 x 4 Safari Land cruiser with a pop-up roof for easier game viewing and photography. Exclusive use of safari vehicle throughout the duration of the trip",
+            "Meals as in the itinerary",
+            "All government taxes and levies",
+            "Airport transfers in Nairobi",
+            "Safari accessories (First Aid kit, cool box, and fire extinguisher) Emergency number 24 hours. All safari vehicles are equipped with RF radio."
+        ],
+        exclusions: [
+            "Expenses of personal nature, such as visas, souvenirs",
+            "Soft and alcoholic drinks in the dining halls",
+            "Driver tips",
+            "Balloon safari",
+            "Masai village visit",
+            "Flight Tickets",
+            "NOTE: Anything not in inclusions is excluded"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Nairobi",
+                description: "Pick up at the airport and drive to the Royal Tulip Hotel for rest and overnight",
+            },
+            {
+                day: 2,
+                title: "Nairobi – Maasai Mara",
+                description: "Pick up after breakfast and drive to Masai Mara arriving in time for lunch. Afternoon game drive. Dinner and overnight at Mara Simba Lodge. (Lunch, Dinner)"
+            },
+            {
+                day: 3,
+                title: "Maasai Mara Full Day",
+                description: "Have breakfast. Pick packed lunch and proceed on a full day game drive with a lunch stop over at a picnic site before continuing on an afternoon game drive. In the late afternoon, transfer back to Mara Simba Lodge for dinner and overnight. (Breakfast, Lunch, Dinner)"
+            },
+            {
+                day: 4,
+                title: "Maasai Mara – Lake Naivasha",
+                description: "Have breakfast. Pick packed lunch and proceed on a full day game drive with a lunch stop over at a picnic site before continuing on an afternoon game drive. In the late afternoon, transfer back to Mara Simba Lodge for dinner and overnight. (Breakfast, Lunch, Dinner)"
+            },
+            {
+                day: 5,
+                title: "Lake Naivasha – Lake Nakuru Day Trip",
+                description: "Have breakfast. Pick packed lunch and proceed on a full day game drive with a lunch stop over at a picnic site before continuing on an afternoon game drive. In the late afternoon, transfer back to Mara Simba Lodge for dinner and overnight. (Breakfast, Lunch, Dinner)"
+            },
+            {
+                day: 6,
+                title: "Lake Naivasha – Amboseli",
+                description: "Have breakfast and depart for Amboseli arriving for lunch. You shall have an afternoon game drive before dinner and overnight at Amboseli Kibo Safari Camp. (Breakfast, Lunch, Dinner)"
+            },
+            {
+                day: 7,
+                title: "Amboseli Full Day",
+                description: "Full days in Amboseli with a spectacular view of Mount Kilimanjaro. You shall have a full day game drives with packed lunch at Observation Hill. All meals and overnight at Kibo Safari Camp. (Breakfast, Lunch, Dinner)"
+            },
+            {
+                day: 8,
+                title: "Amboseli Full Day",
+                description: "Full days in Amboseli with a spectacular view of Mount Kilimanjaro. You shall have a full day game drives with packed lunch at Observation Hill. All meals and overnight at Kibo Safari Camp. (Breakfast, Lunch, Dinner)"
+            },
+            {
+                day: 9,
+                title: "Amboseli-Nairobi",
+                description: "Have breakfast and a morning game drive then transfer back to Nairobi by road, arriving in the afternoon. Drop off at the Royal Tulip Hotel for rest and overnight."
+            },
+            {
+                day: 10,
+                title: "Nairobi - Departure",
+                description: "Have breakfast and check out. Transfer to the airport for departure."
+            }
+
+        ],
+        images: [
+            "/UGCImages/kenya/1.png",
+            "/UGCImages/kenya/2.png",
+            "/UGCImages/kenya/3.png",
+            "/UGCImages/kenya/4.png",
+        ]
+    },
 };
 
 export function isFixedDeparture(destination: FixedDeparture | DestinationWithoutFlight): destination is FixedDeparture {
@@ -2764,7 +2889,8 @@ export const destinationGroups = [
         
         europeMiceZurich: destinationsWithoutFlight.europeMiceZurich,
         russiaFixedDeparture: destinationsWithoutFlight.russiaFixedDeparture,
-        turkey: destinationsWithoutFlight.turkey
+        turkey: destinationsWithoutFlight.turkey,
+        kenya: destinationsWithoutFlight.kenya
     },
 ]; 
 

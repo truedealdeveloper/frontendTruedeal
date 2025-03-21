@@ -97,6 +97,11 @@ const fixedDepartureDestinations = [
         tag: { label: "FIXED DEPARTURE", color: "blue" },
         fixedDepartureId: "/vietnam"
     },
+    {
+        name: "Kenya Trip",
+        tag: { label: "FIXED DEPARTURE", color: "blue" },
+        fixedDepartureId: "kenya-10-days-discovery-tour"
+    },
     
 
 ]
