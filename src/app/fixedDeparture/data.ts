@@ -1996,6 +1996,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         country: "Bhutan",
         days: 7,
         nights: 6,
+        amount: 51000,
         dateStart: "23 Mar 2025",
         dateEnd: "10 Aug 2025",
         description: "Join our expertly guided tour and explore Bhutan's finest destinations in one immersive trip. The itinerary includes a blend of cultural immersion, scenic drives, and visits to iconic landmarks, ensuring you experience the best Bhutan has to offer.",
@@ -2008,10 +2009,21 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         },
         hotelDetails: [
             {
-                city: "Phuentsholing, Thimphu, Paro",
-                hotel: "3-Star Hotels",
-                roomType: "Standard Room"
+                city: "Phuentsholing",
+                hotel: "3-Star Meto Pema",
+                roomType: "Budget Room"
+            },
+            {
+                city: "Thimphu",
+                hotel: "3-Star Druk Noryang/Zirikha",
+                roomType: "Budget Room"
+            },
+            {
+                city: "Paro",
+                hotel: "3-Star Ratna Vara",
+                roomType: "Budget Room"
             }
+                
         ],
         tourSummary: [
             "Day 1: Arrival at Bagdogra - Transfer to Phuentsholing",
@@ -2023,54 +2035,68 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
             "Day 7: Departure from Bagdogra"
         ],
         inclusions: [
-            "6 nights' accommodation in 3-star hotels",
-            "Daily meals",
-            "Guided sightseeing",
-            "All transfers",
-            "Professional tour guide services"
+            "06 nights Accommodation on twin sharing basis.",
+            "Tourist permits for Bhutan.",
+            "Pick up/drop from Bagdogra Airport in Breeza or Sedan AC car",
+            "Daily 2 meals (Breakfast & Dinner) at hotel.",
+            "A qualified & Licensed English-speaking guide.",
+            "Sustainable Development Fee (SDF) for total nights of stay.", 
+            "All sightseeing as per itinerary.",
+            "Bottled mineral water daily.",
+            "All sightseeing & transfers on private basis.",
+            "Full service & assistance before, during and after your Bhutan trip."
         ],
         exclusions: [
-            "Sustainable Development Fee (SDF) for permits",
-            "Airfare or train to Bagdogra",
-            "Lunch and beverages",
-            "Personal expenses and tips",
-            "Entrance fees to monuments and sacred sites (approx. INR 1000-4000)"
+            "Lunch, approx. 600 per meal.", 
+            "Any beverages (hot or cold ordered during Breakfast, lunch or dinner)",
+            "Any other cost arising due to medical situations, political unrest or any weather-related conditions beyond our control",
+            "Expenditure of personal nature",
+            "Phuntsholing Pedestrian Terminal entry fee (Rs.10/- pp)—to be paid at the point of entry on day 1.",
+            "Monuments and scared sites entrance fee.Approx 1000 to 4000 depending upon no of visits during whole tour.",
+            "Tips for the guide and driver",
+            "Travel Insurance ( not compulsory)",
+
         ],
         itinerary: [
             {
                 day: 1,
                 title: "Arrival at Bagdogra - Transfer to Phuentsholing",
-                description: "Arrive at Bagdogra Airport (between 9 AM to 11 AM) and transfer to Phuentsholing, Bhutan."
+                description: "Arrive at Bagdogra Airport. Our representative will meet and greet you and then complete with the Pre-registration formalities of the individual at Immigration counter. After that transfer to hotel. Check into the hotel and relax. Overnight stay at hotel."
             },
             {
                 day: 2,
                 title: "Thimphu Sightseeing",
-                description: "Travel to Thimphu and explore the city's famous landmarks including Buddha Point and King's Memorial Chorten."
+                description: "Later drive to Thimphu .Enroute stop at Chuzom, the confluence of Thimphu and Paro rivers. Three different style of stupas; Tibetan, Nepalese and Bhutanese adorn this confluence. On arrival in Thimphu, check into the hotel. Afternoon sightseeing in Thimphu valley including visit to the following: Buddha Point (Kuensel Phodrang). Located at a short drive from Thimphu city centre, visitors can get a good overview of the Thimphu valley from the Buddha point (KuenselPhodrang). You can pay your obeisance and offer prayers to the Buddha, the largest statue in the country and then walk around and take a glimpse of the valley. King's Memorial Chorten continuously circumambulated by people, murmuring mantras and spinning their prayer wheels. Construction of this landmark was the idea of Bhutan&apos;s third king, His Majesty Jigme Dorji Wangchuk (“the father of modern Bhutan”) who has wished to erect monument to world peace and prosperity. Completed in 1974 after his untimely death, it serves both as a memorial to the Late King and as a monument to peace. The National Library, housing an extensive collection of priceless Buddhist manuscripts; the Institute for Zorig Chusum (commonly known as the Painting School) where students undergo a 6-year training course in Bhutan&apos;s 13 traditional arts and crafts. Later visit Textile Museum, which provides insight into Bhutan&apos;s one of the most distinct art form. Also visit Simply Bhutan, a living museum and studio encapsulating the cultural heritage of the Bhutanese people. Overnight at the hotel in Thimphu."
             },
             {
                 day: 3,
                 title: "Wangdi and Punakha Excursion",
-                description: "Visit the scenic Dochula Pass and Punakha Dzong during an excursion to Wangdi and Punakha."
+                description: "After breakfast drive to Wangdi (Wangdiphodrang) Wangdi is the last town on the highway before entering Central Bhutan. The drive is over Dochu La pass (3080Mts / 10102Fts) which is very scenic with fascinating view of mountains of Bhutan. At Punakha visit Punakha Dzong, Chimi Lhakhang (Monastery), Evening you drive back to Thimphu. The Dochu La is a mountain pass in the snow covered Himalayas within Bhutan on the road from Thimphu to Punakha where 108 memorial chortens or stupas known as Druk Wangyal Chortens have been built by Ashi Dorji Wangmo Wangchuk, the eldest Queen Mother. Completed in 1974 after his untimely death, it serves both as a memorial to the Late King and as a monument to peace. The National Library, housing an extensive collection of priceless Buddhist manuscripts; the Institute for Zorig Chusum (commonly known as the Painting School) where students undergo a 6-year training course in Bhutan's 13 traditional arts and crafts. Later visit Textile Museum, which provides insight into Bhutan's one of the most distinct art form. Also visit Simply Bhutan, a living museum and studio encapsulating the cultural heritage of the Bhutanese people. Overnight at the hotel in Thimphu."
             },
             {
                 day: 4,
                 title: "Paro Tour",
-                description: "Visit Paro, explore the Paro Dzong, and tour the National Museum."
+                description: "After breakfast, check-out from the hotel. Later drive to to Paro .On arrival in Paro, check into the hotel. After lunch, proceed to visit Ta Dzong, originally built as Watchtower, which now houses National Museum. The extensive collection includes antique Thangkha paintings, textiles, weapons &armour, household objects and a rich assortment of natural and historic artefacts. Ta Dzong visit immediately followed by a short walk down the trail to visit Rinpung Dzong (ParoDzong), meaning (“fortress of the heap of jewels”), which has a long and fascinating history. Along the wooden galleries lining the inner courtyard are fine wall paintings illustrating Buddhist lore such as four friends, the old man of long life, the wheel of life, scenes from the life of Milarepa, Mount. Sumeru and other cosmic Mandala. Overnight at the hotel in Paro."
             },
             {
                 day: 5,
                 title: "Tiger's Nest Trek or Haa Valley",
-                description: "Choose between a trek to the famous Tiger's Nest Monastery (Taktsang) or an excursion to the Haa Valley."
+                description: `After breakfast excursion to Taktsang Monastery or Tiger&apos;s Nest (approx. 5 hours walk):
+It is one of the most famous of Bhutan&apos;s monasteries, perched on the side of a cliff 900m above the Paro valley floor. It is said that Guru Rinpoche arrived here on the back of a tigress and meditated at this monastery and hence it is called Tiger&apos;s Nest. This site has been recognised as a most sacred place and visited by Shabdrung Ngawang Namgyal in 1646 and now visited by all Bhutanese at least once in their lifetime. On 19 April, 1998, a fire severely damaged the main structure of building but now this Bhutanese jewel has been restored to its original splendour.
+Afternoon drive to Drukgyel Dzong, a ruined fortress where Bhutanese warriors fought Tibetan invaders centuries ago. The snowy dome of sacred Chomolhari, &quot;mountain of goddess&quot; can be seen in all her glory from the approach road to the Dzong.
+Evening, visit the 7th century Kyichu Lhakhang, one of the 108 temples built in the Himalayas by Tibetan King, Songtsen Gampo. The building of this temple marks the introduction of Buddhism in Bhutan.
+Overnight at the hotel in Paro.
+`
             },
             {
                 day: 6,
                 title: "Return to Phuentsholing",
-                description: "Journey back to Phuentsholing."
+                description: "Today we head back to Phuentsholing after your breakfast. On the way back, Overnight at Phuentsholing"
             },
             {
                 day: 7,
                 title: "Departure",
-                description: "Transfer to Bagdogra Airport for departure (after 3 PM)."
+                description: "After Breakfast & with packed bags, its time to bid goodbye to a wonderful week in Bhutan. After that we head back to Phuentsholing Terminal and exit and continue to Bagdogra for your flight. The trip ends here. "
             }
         ],
         images: [

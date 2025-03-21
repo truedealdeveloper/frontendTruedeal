@@ -785,10 +785,10 @@ Check out and meet driver at hotel lobby for transfer to LGK Airport for departu
             },    
         ],
         images: [
-            "/UGCImages/Images4/singapore/singapore/1.webp",
-            "/UGCImages/Images4/singapore/singapore/2.webp",
-            "/UGCImages/Images4/singapore/singapore/3.webp",
-            "/UGCImages/Images4/singapore/singapore/4.webp"
+            "/UGCImages/singapore/langkawi/bannerSize/1.png",
+            "/UGCImages/singapore/langkawi/bannerSize/2.png",
+            "/UGCImages/singapore/langkawi/bannerSize/3.png",
+            
         ],
         sightseeingSpots: [
             {
