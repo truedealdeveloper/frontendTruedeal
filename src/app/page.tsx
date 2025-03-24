@@ -31,17 +31,19 @@ export default function Home() {
     <main className="min-h-screen">
       <HeroSection />
       {/* <BannerCarousel />   */}
-      <section id="fixedDeparture">
+      <section id="fixedDeparture" className="relative z-10 bg-white py-12 mt-8">
         <FixedDepartures />
       </section>
-      {/* <ChardhamYatra /> */}
-            <SriLanka />  
-            <BaliBanner />
-            <VietnamBanner />
-            <LaosCambodiaBanner />
-            <AlmatyBanner />
-            <SingaporeBanner />
-        {/* <Destination /> */}
+      <div className="mt-12">
+        {/* <ChardhamYatra /> */}
+        <SriLanka />  
+        <BaliBanner />
+        <VietnamBanner />
+        <LaosCambodiaBanner />
+        <AlmatyBanner />
+        <SingaporeBanner />
+      </div>
+      {/* <Destination /> */}
       {/* <Domestic /> */}
       {/* <Trending /> */}
       {/* <Exclusive /> */}

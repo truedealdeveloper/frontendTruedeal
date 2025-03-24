@@ -296,19 +296,19 @@ export default function Navbar() {
 
     return (
         <nav className="fixed top-0 left-0 right-0 z-50">
-            {/* Gradient background for top nav */}
+            {/* Gradient background for top nav - reduced height from h-20 to h-16 */}
             <div className="bg-gradient-to-r from-white via-[#f0fdff] to-white shadow-md">
                 <div className="max-w-7xl mx-auto px-4">
-                    <div className="flex items-center justify-between h-20 relative">
-                        {/* Logo with hover effect */}
+                    <div className="flex items-center justify-between h-16 relative">
+                        {/* Logo - adjusted size */}
                         <Link href="/" className="flex-shrink-0 relative group">
                             <div className="absolute inset-0 bg-[#00f6ff]/10 blur-xl group-hover:blur-2xl transition-all duration-300 rounded-full opacity-0 group-hover:opacity-100" />
                             <Image
                                 src="/Assets/NavbarImages/logo.png"
                                 alt="Logo"
-                                width={140}
-                                height={50}
-                                className="w-[100px] sm:w-[140px] h-auto object-contain relative z-10"
+                                width={120}
+                                height={40}
+                                className="w-[90px] sm:w-[120px] h-auto object-contain relative z-10"
                                 priority
                             />
                         </Link>
@@ -389,11 +389,11 @@ export default function Navbar() {
                 </div>
             </div>
 
-            {/* Bottom Menu Bar - Only show on home page */}
+            {/* Bottom Menu Bar - reduced padding and gap */}
             {isHomePage && (
                 <div className="bg-[#00DEF7]">
                     <div className="max-w-7xl mx-auto">
-                        <div className="hidden md:flex items-center justify-center gap-20 px-4">
+                        <div className="hidden md:flex items-center justify-center gap-12 px-4">
                             {menuItems.map((item) => {
                                 const menuId = item.href.replace('/', '');
                                 return (
@@ -405,11 +405,11 @@ export default function Navbar() {
                                     >
                                         <Link
                                             href={item.href}
-                                            className="relative group py-3 px-3 block whitespace-nowrap"
+                                            className="relative group py-2 px-2 block whitespace-nowrap"
                                         >
-                                            <span className="relative z-10 text-white text-[15px] font-normal group-hover:text-white/90 transition-colors flex items-center gap-1.5">
+                                            <span className="relative z-10 text-white text-[14px] font-normal group-hover:text-white/90 transition-colors flex items-center gap-1">
                                                 {item.label}
-                                                <ChevronDown className="h-3.5 w-3.5 opacity-80" />
+                                                <ChevronDown className="h-3 w-3 opacity-80" />
                                             </span>
                                         </Link>
                                         {dropdownMenus[menuId as keyof typeof dropdownMenus] && (
