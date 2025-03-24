@@ -3,10 +3,8 @@
 import { useState, useEffect, useCallback, useMemo, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { MoreVertical, X, ChevronDown, Phone, Search, Globe, MapPin } from 'lucide-react'
-import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
+import { X, ChevronDown, Phone, Search, Globe, MapPin, Menu } from 'lucide-react'
 import { usePathname, useRouter } from 'next/navigation'
-import { groupToursList } from "@/data/groupTours"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { motion } from "framer-motion"
@@ -44,6 +42,131 @@ const destinations = [
     { name: "Phillipines" },
     { name: "Abu Dhabi", tag: { label: "POPULAR", color: "violet" } },
 ]
+
+// Top navigation items
+const topNavItems = [
+    { href: "/#fixedDeparture", label: "Upcoming Trips" },
+    { href: "/blogs", label: "Blogs" },
+    { href: "/about-us", label: "About Us" },
+    { href: "/payment", label: "Payments" },
+]
+
+// Bottom menu items
+const menuItems = [
+    { href: "/international-packages", label: "International Packages" },
+    { href: "/india-packages", label: "India Packages" },
+    { href: "/group-tours", label: "Group Tours" },
+    { href: "/honeymoon-packages", label: "Honeymoon Packages" },
+]
+
+// First, let's add the dropdown data at the top of the file
+const dropdownMenus = {
+    "international-packages": [
+        // Southeast Asia
+        { name: "Bali", href: "/bali" },
+        { name: "Vietnam", href: "/vietnam" },
+        { name: "Thailand", href: "/destinations/thailand" },
+        { name: "Singapore", href: "/destinations/singapore" },
+        { name: "Malaysia", href: "/destinations/malaysia" },
+        { name: "Japan", href: "/destinations/japan" },
+        // Middle East & Central Asia
+        { name: "Dubai", href: "/destinations/dubai" },
+        { name: "Turkey", href: "/destinations/turkey" },
+        { name: "Georgia", href: "/destinations/georgia" },
+        { name: "Almaty", href: "/almaty" },
+        { name: "Sri Lanka", href: "/destinations/sri-lanka" },
+        { name: "Bhutan", href: "/destinations/bhutan" },
+        // Rest of World
+        { name: "Maldives", href: "/destinations/maldives" },
+        { name: "Mauritius", href: "/destinations/mauritius" },
+        { name: "Australia", href: "/destinations/australia" },
+        { name: "South Africa", href: "/destinations/south-africa" },
+        { name: "New Zealand", href: "/destinations/new-zealand" },
+        { name: "Switzerland", href: "/destinations/switzerland" },
+        { name: "Kenya", href: "/destinations/kenya" },
+        { name: "France", href: "/destinations/france" },
+    ],
+    "india-packages": [
+        { name: "Kashmir Paradise Tour (6 Days)", href: "/fixedDeparture/kashmir-6-days-paradise-tour" },
+        { name: "Srinagar Paradise Tour (6 Days)", href: "/fixedDeparture/srinagar-6-days-paradise-tour" },
+        { name: "Manali Volvo Tour (5 Days)", href: "/fixedDeparture/manali-5-days-volvo-tour" },
+    ],
+    "group-tours": [
+        { name: "Bali Group Tour", href: "/bali" },
+        { name: "Vietnam Group Tour", href: "/vietnam" },
+        { name: "Indochina Group Tour", href: "/indochina" },
+    ],
+    "honeymoon-packages": [
+        { name: "Bali", href: "/bali" },
+    ],
+}
+
+// Update the DropdownMenu component with new hover effects
+const DropdownMenu = ({ items, isOpen }: { items: { name: string; href: string }[]; isOpen: boolean }) => {
+    if (!isOpen) return null;
+    
+    const isInternational = items.length > 10;
+    
+    const linkStyles = "block px-4 py-2 text-[15px] text-gray-600 hover:text-[#00DEF7] hover:bg-[#00DEF7]/5 rounded-lg transition-all duration-200 ease-in-out";
+    const headerStyles = "font-medium text-[#00DEF7] text-xs uppercase mb-2 tracking-wider";
+    
+    return (
+        <div className={`absolute top-full left-0 right-0 mx-auto ${isInternational ? 'w-[800px]' : 'w-[500px]'} bg-white shadow-xl rounded-lg overflow-hidden py-4 px-6 z-50`}>
+            <div className={`grid ${isInternational ? 'grid-cols-3' : 'grid-cols-2'} gap-2`}>
+                {isInternational ? (
+                    <>
+                        <div className="col-span-1">
+                            <h3 className={headerStyles}>Southeast Asia</h3>
+                            {items.slice(0, 6).map((item) => (
+                                <Link
+                                    key={item.name}
+                                    href={item.href}
+                                    className={linkStyles}
+                                >
+                                    {item.name}
+                                </Link>
+                            ))}
+                        </div>
+                        <div className="col-span-1">
+                            <h3 className={headerStyles}>Middle East & Central Asia</h3>
+                            {items.slice(6, 12).map((item) => (
+                                <Link
+                                    key={item.name}
+                                    href={item.href}
+                                    className={linkStyles}
+                                >
+                                    {item.name}
+                                </Link>
+                            ))}
+                        </div>
+                        <div className="col-span-1">
+                            <h3 className={headerStyles}>Rest of World</h3>
+                            {items.slice(12).map((item) => (
+                                <Link
+                                    key={item.name}
+                                    href={item.href}
+                                    className={linkStyles}
+                                >
+                                    {item.name}
+                                </Link>
+                            ))}
+                        </div>
+                    </>
+                ) : (
+                    items.map((item) => (
+                        <Link
+                            key={item.name}
+                            href={item.href}
+                            className={linkStyles}
+                        >
+                            {item.name}
+                        </Link>
+                    ))
+                )}
+            </div>
+        </div>
+    );
+};
 
 // SearchModal Component
 function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
@@ -143,245 +266,202 @@ function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
     )
 }
 
+// Add scroll behavior for hash links
+const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('/#')) {
+        e.preventDefault();
+        const elementId = href.replace('/#', '');
+        const element = document.getElementById(elementId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+};
+
 // Main Navbar Component
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
-    const pathname = usePathname()
     const [isSearchModalOpen, setIsSearchModalOpen] = useState(false)
+    const pathname = usePathname()
+    const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+    const isHomePage = pathname === '/';
 
-    const navItems = [
-        { href: "/", label: "Home" },
-        { href: "/destinationpackage", label: "International" },
-        { href: "/chardhamYatra", label: "Chardham" },
-        // Group Tours is handled separately now
-    ]
+    const handleMouseEnter = (menuId: string) => {
+        setActiveDropdown(menuId);
+    };
 
+    const handleMouseLeave = () => {
+        setActiveDropdown(null);
+    };
 
     return (
-        <nav className="relative">
-            {/* Holi-themed background decorations */}
-            <div className="absolute inset-0 bg-gradient-to-r from-pink-100/40 via-purple-100/40 to-yellow-100/40 animate-pulse"></div>
-            <div className="absolute inset-0">
-                <div className="absolute top-0 left-1/4 w-24 h-24 bg-pink-200/20 rounded-full blur-3xl"></div>
-                <div className="absolute top-0 right-1/4 w-24 h-24 bg-purple-200/20 rounded-full blur-3xl"></div>
-                <div className="absolute top-0 left-1/2 w-24 h-24 bg-yellow-200/20 rounded-full blur-3xl"></div>
-            </div>
-            
-            <div className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm w-full">
-                <div className="max-w-7xl mx-auto px-1 sm:px-4 lg:px-6">
-                    <div className="flex items-center justify-between py-1 sm:py-2 border-b-2 border-gray-200 relative">
-                        <div className="flex items-center relative">
-                            {/* Holi color effect behind logo */}
-                            <div className="absolute -inset-4 bg-gradient-to-r from-pink-200/50 via-purple-200/50 to-yellow-200/50 blur-lg rounded-full"></div>
-                            <Link href="/" className="flex-shrink-0 relative">
-                                <Image
-                                    src="/Assets/NavbarImages/logo.png"
-                                    alt="Truedeal Logo"
-                                    width={200}
-                                    height={80}
-                                    className="w-[100px] sm:w-[140px] md:w-[180px] h-[40px] sm:h-[45px] md:h-[60px] object-contain relative z-10"
-                                    quality={100}
-                                    priority
+        <nav className="fixed top-0 left-0 right-0 z-50">
+            {/* Gradient background for top nav */}
+            <div className="bg-gradient-to-r from-white via-[#f0fdff] to-white shadow-md">
+                <div className="max-w-7xl mx-auto px-4">
+                    <div className="flex items-center justify-between h-20 relative">
+                        {/* Logo with hover effect */}
+                        <Link href="/" className="flex-shrink-0 relative group">
+                            <div className="absolute inset-0 bg-[#00f6ff]/10 blur-xl group-hover:blur-2xl transition-all duration-300 rounded-full opacity-0 group-hover:opacity-100" />
+                            <Image
+                                src="/Assets/NavbarImages/logo.png"
+                                alt="Logo"
+                                width={140}
+                                height={50}
+                                className="w-[100px] sm:w-[140px] h-auto object-contain relative z-10"
+                                priority
+                            />
+                        </Link>
+
+                        {/* Search Bar with new design */}
+                        <div className="hidden md:block flex-1 max-w-xl mx-8">
+                            <div 
+                                onClick={() => setIsSearchModalOpen(true)}
+                                className="relative cursor-pointer group bg-white/50 backdrop-blur-sm hover:bg-white/80 transition-all duration-300 rounded-xl border border-gray-100 shadow-sm"
+                            >
+                                <Input
+                                    type="text"
+                                    placeholder="Discover your next adventure..."
+                                    className="w-full h-12 pl-14 pr-4 rounded-xl border-0 bg-transparent focus:ring-0 focus:border-0"
+                                    readOnly
                                 />
-                            </Link>
+                                <div className="absolute left-4 top-1/2 -translate-y-1/2 flex items-center gap-2 text-gray-400">
+                                    <Search className="h-5 w-5 group-hover:text-[#00f6ff] transition-colors" />
+                                </div>
+                            </div>
                         </div>
 
-                        <div className="hidden md:flex space-x-8 font-semibold">
-                            {navItems.map((item) => (
+                        {/* Desktop Navigation with new styling */}
+                        <div className="hidden md:flex items-center gap-8">
+                            {topNavItems.map((item) => (
                                 <Link
                                     key={item.label}
                                     href={item.href}
-                                    className={`transition-colors duration-300 ${pathname === item.href
-                                        ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
-                                        : 'text-gray-500 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
-                                        }`}
+                                    onClick={(e) => handleNavClick(e, item.href)}
+                                    className={`relative text-sm font-medium group ${
+                                        pathname === item.href ? 'text-[#00f6ff]' : 'text-gray-600'
+                                    }`}
                                 >
                                     {item.label}
+                                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#00f6ff] group-hover:w-full transition-all duration-300" />
                                 </Link>
                             ))}
-
-                            {/* Group Tours Dropdown - Desktop */}
+                            
+                            {/* Phone number with new design */}
                             <div className="relative group">
-                                <Link
-                                    href="/group-tours"
-                                    className={`flex items-center gap-1 transition-colors duration-300 ${pathname.startsWith('/group-tours')
-                                        ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
-                                        : 'text-gray-500 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
-                                        }`}
+                                <div className="absolute inset-0 bg-[#00f6ff]/20 blur group-hover:blur-md transition-all duration-300 rounded-xl" />
+                                <a 
+                                    href="tel:+919310271488" 
+                                    className="relative flex items-center gap-2 px-4 py-2 rounded-xl bg-white/50 backdrop-blur-sm border border-[#00f6ff]/20 hover:border-[#00f6ff]/40 transition-all duration-300"
                                 >
-                                    Group Tours
-                                    <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
-                                </Link>
-
-                                {/* Dropdown Menu - Shows on hover */}
-                                <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
-                                    <div className="py-2">
-                                        {groupToursList.map((tour) => (
-                                            <Link
-                                                key={tour.id}
-                                                href={`/group-tours/${tour.id}`}
-                                                className="flex items-center px-4 py-2 hover:bg-gray-50 transition-colors duration-300"
-                                            >
-                                                <div className="w-8 h-8 rounded-full overflow-hidden mr-3 flex-shrink-0">
-                                                    <Image
-                                                        src={tour.image}
-                                                        alt={tour.name}
-                                                        width={32}
-                                                        height={32}
-                                                        className="object-cover w-full h-full"
-                                                    />
-                                                </div>
-                                                <div>
-                                                    <div className="text-sm font-medium text-gray-900">
-                                                        {tour.name.split(':')[0]}
-                                                    </div>
-                                                    <div className="text-xs text-gray-500">
-                                                        {tour.duration.days} Days | ₹{tour.price.toLocaleString()}
-                                                    </div>
-                                                </div>
-                                            </Link>
-                                        ))}
-                                    </div>
-                                </div>
+                                    <Phone className="h-4 w-4 text-[#00f6ff]" />
+                                    <span className="text-sm font-medium text-gray-700">+91-9310271488</span>
+                                </a>
                             </div>
                         </div>
 
-                        <div className="flex items-center gap-1 sm:gap-2 shrink-0">
-                            <div className="flex items-center md:hidden">
-                                <div className="flex items-center hover:scale-105 transition-transform duration-300">
-                                    <Phone className="h-4 w-4 text-gray-500 flex-shrink-0" />
-                                    <a
-                                        href="tel:+919310271488"
-                                        className="bg-gradient-to-r from-[#343232] to-[#000000] text-transparent bg-clip-text font-poppins text-[10px] sm:text-xs md:text-sm font-semibold ml-1 whitespace-nowrap"
-                                    >
-                                        +91 9310271488
-                                    </a>
-                                </div>
-
-                                <button
-                                    className="text-gray-500 focus:outline-none ml-2 sm:ml-4"
-                                    onClick={() => setIsSearchModalOpen(true)}
-                                >
-                                    <Search className="h-4 w-4 sm:h-5 sm:w-5" />
-                                </button>
-
-                                <button
-                                    className="text-gray-500 focus:outline-none ml-2 sm:ml-4"
-                                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                >
-                                    {isMenuOpen ? (
-                                        <X className="h-4 w-4 sm:h-5 sm:w-5" />
-                                    ) : (
-                                        <MoreVertical className="h-4 w-4 sm:h-5 sm:w-5" />
-                                    )}
-                                </button>
-                            </div>
-
-                            <div className="hidden md:flex items-center hover:scale-105 transition-transform duration-300">
-                                <Phone className="h-4 w-4 text-gray-500" />
-                                <a
-                                    href="tel:+919310271488"
-                                    className="bg-gradient-to-r from-[#3f3e3e] to-[#4f4e4e] text-transparent bg-clip-text font-poppins text-xs md:text-sm font-semibold ml-1"
-                                >
-                                    +91 9310271488
-                                </a>
-                            </div>
-
-                            <SignedOut>
-                                <div className="hidden sm:flex gap-2 shrink-0">
-                                    <Link
-                                        href="/sign-in"
-                                        className="px-2 py-1 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-medium bg-white relative group hover:scale-105 transition-transform duration-300"
-                                    >
-                                        <span className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent relative font-bold">
-                                            Sign In
-                                        </span>
-                                        <span
-                                            className="absolute inset-0 rounded-full border-2 border-transparent"
-                                            style={{
-                                                background: 'linear-gradient(to right, #017ae3, #00f6ff) border-box',
-                                                WebkitMask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)',
-                                                WebkitMaskComposite: 'xor',
-                                                maskComposite: 'exclude',
-                                            }}
-                                        />
-                                    </Link>
-                                    <Link
-                                        href="/sign-up"
-                                        className="px-2 py-1 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-bold text-white bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:scale-105 transition-transform duration-300"
-                                    >
-                                        Sign Up
-                                    </Link>
-                                </div>
-                            </SignedOut>
-
-                            <SignedIn>
-                                <UserButton
-                                    appearance={{
-                                        elements: {
-                                            avatarBox: "w-8 h-8 md:w-10 md:h-10"
-                                        }
-                                    }}
-                                />
-                            </SignedIn>
+                        {/* Mobile controls with new styling */}
+                        <div className="flex md:hidden items-center gap-4">
+                            <button 
+                                onClick={() => setIsSearchModalOpen(true)}
+                                className="p-2 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors"
+                            >
+                                <Search className="h-5 w-5 text-gray-600" />
+                            </button>
+                            <a 
+                                href="tel:+919310271488"
+                                className="p-2 rounded-lg bg-[#00f6ff]/10 hover:bg-[#00f6ff]/20 transition-colors"
+                            >
+                                <Phone className="h-5 w-5 text-[#00f6ff]" />
+                            </a>
+                            <button
+                                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                                className="p-2 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors"
+                            >
+                                {isMenuOpen ? (
+                                    <X className="h-5 w-5 text-gray-600" />
+                                ) : (
+                                    <Menu className="h-5 w-5 text-gray-600" />
+                                )}
+                            </button>
                         </div>
                     </div>
                 </div>
-
-               
             </div>
 
-            {isMenuOpen && (
-                <div className="sm:hidden bg-white shadow-lg animate-slideDown w-full">
-                    {navItems.map((item) => (
-                        <Link
-                            key={item.label}
-                            href={item.href}
-                            className={`block py-3 px-4 ${pathname === item.href
-                                ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#017ae3] to-[#00f6ff]'
-                                : 'text-gray-500'
-                                }`}
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            {item.label}
-                        </Link>
-                    ))}
-
-                    {/* Group Tours in Mobile Menu */}
-                    <div className="border-t border-gray-100">
-                        <div className="px-4 py-3 font-semibold text-gray-900">Group Tours</div>
-                        {groupToursList.map((tour) => (
-                            <Link
-                                key={tour.id}
-                                href={`/group-tours/${tour.id}`}
-                                className="flex items-center px-4 py-2 hover:bg-gray-50"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                <div className="w-8 h-8 rounded-full overflow-hidden mr-3">
-                                    <Image
-                                        src={tour.image}
-                                        alt={tour.name}
-                                        width={32}
-                                        height={32}
-                                        className="object-cover w-full h-full"
-                                    />
-                                </div>
-                                <div>
-                                    <div className="text-sm font-medium text-gray-900">
-                                        {tour.name.split(':')[0]}
+            {/* Bottom Menu Bar - Only show on home page */}
+            {isHomePage && (
+                <div className="bg-[#00DEF7]">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="hidden md:flex items-center justify-center gap-20 px-4">
+                            {menuItems.map((item) => {
+                                const menuId = item.href.replace('/', '');
+                                return (
+                                    <div
+                                        key={item.label}
+                                        className="relative group"
+                                        onMouseEnter={() => handleMouseEnter(menuId)}
+                                        onMouseLeave={handleMouseLeave}
+                                    >
+                                        <Link
+                                            href={item.href}
+                                            className="relative group py-3 px-3 block whitespace-nowrap"
+                                        >
+                                            <span className="relative z-10 text-white text-[15px] font-normal group-hover:text-white/90 transition-colors flex items-center gap-1.5">
+                                                {item.label}
+                                                <ChevronDown className="h-3.5 w-3.5 opacity-80" />
+                                            </span>
+                                        </Link>
+                                        {dropdownMenus[menuId as keyof typeof dropdownMenus] && (
+                                            <DropdownMenu
+                                                items={dropdownMenus[menuId as keyof typeof dropdownMenus]}
+                                                isOpen={activeDropdown === menuId}
+                                            />
+                                        )}
                                     </div>
-                                    <div className="text-xs text-gray-500">
-                                        {tour.duration.days} Days | ₹{tour.price.toLocaleString()}
-                                    </div>
-                                </div>
-                            </Link>
-                        ))}
+                                );
+                            })}
+                        </div>
                     </div>
-
-                    {/* SignedOut section for mobile remains the same */}
                 </div>
             )}
 
+            {/* Mobile Menu with new styling */}
+            {isMenuOpen && (
+                <div className="md:hidden bg-white/95 backdrop-blur-sm border-t border-gray-100 shadow-lg animate-slideDown">
+                    <div className="divide-y divide-gray-100">
+                        <div className="p-4 space-y-3">
+                            {topNavItems.map((item) => (
+                                <Link
+                                    key={item.label}
+                                    href={item.href}
+                                    onClick={(e) => {
+                                        handleNavClick(e, item.href);
+                                        setIsMenuOpen(false);
+                                    }}
+                                    className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-50"
+                                >
+                                    <span className="text-gray-600">{item.label}</span>
+                                </Link>
+                            ))}
+                        </div>
+                        <div className="p-4 space-y-3 bg-gray-50">
+                            {menuItems.map((item) => (
+                                <Link
+                                    key={item.label}
+                                    href={item.href}
+                                    className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/80"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    <span className="text-gray-600">{item.label}</span>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Keep the existing SearchModal component */}
             <SearchModal 
                 isOpen={isSearchModalOpen} 
                 onClose={() => setIsSearchModalOpen(false)} 

@@ -31,7 +31,9 @@ export default function Home() {
     <main className="min-h-screen">
       <HeroSection />
       {/* <BannerCarousel />   */}
-      <FixedDepartures />
+      <section id="fixedDeparture">
+        <FixedDepartures />
+      </section>
       {/* <ChardhamYatra /> */}
             <SriLanka />  
             <BaliBanner />
