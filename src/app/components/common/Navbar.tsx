@@ -8,40 +8,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { motion } from "framer-motion"
-
-// First, let's define an interface for the destination type
-interface Destination {
-    name: string;
-    tag?: {
-        label: string;
-        color: string;
-    };
-    isTrending?: boolean;
-}
-
-// Replace the hardcoded destinations with the full list from HeroSection
-const destinations = [
-    { name: "Maldives", tag: { label: "HONEYMOON", color: "pink" } },
-    { name: "Dubai", tag: { label: "IN SEASON", color: "green" } },
-    { name: "Singapore" },
-    { name: "Bali", tag: { label: "POPULAR", color: "rose" } },
-    { name: "Indonesia" },
-    { name: "Japan" },
-    { name: "Hongkong" },
-    { name: "China" },
-    { name: "Almaty", isTrending: true },
-    { name: "Baku", isTrending: true },
-    { name: "Vietnam", isTrending: true },
-    { name: "Shimla", isTrending: true },
-    { name: "Thailand", tag: { label: "BUDGET", color: "amber" } },
-    { name: "SriLanka" },
-    { name: "Bhutan" },
-    { name: "Finland" },
-    { name: "Kenya" },
-    { name: "Malaysia" },
-    { name: "Phillipines" },
-    { name: "Abu Dhabi", tag: { label: "POPULAR", color: "violet" } },
-]
+import { Destination, destinations } from "@/app/config/destinations"
 
 // Top navigation items
 const topNavItems = [
@@ -169,7 +136,7 @@ const DropdownMenu = ({ items, isOpen }: { items: { name: string; href: string }
     );
 };
 
-// SearchModal Component
+// Update the SearchModal component to handle fixed departures
 function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
     const [searchTerm, setSearchTerm] = useState("")
     const router = useRouter()
@@ -186,12 +153,36 @@ function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
         onClose()
         if (destination.name.toLowerCase() === "bali") {
             router.push("/bali")
+        } else if (destination.name.toLowerCase() === "vietnam") {
+            router.push("/vietnam")
+        } else if (["indochina", "laos", "combodia"].includes(destination.name.toLowerCase())) {
+            router.push("/indochina")
         } else if (destination.isTrending) {
             router.push(`/trending/${destination.name.toLowerCase()}`)
+        } else if (destination.tag?.label === "FIXED DEPARTURE" && destination.fixedDepartureId) {
+            router.push(`/fixedDeparture/${destination.fixedDepartureId}`)
         } else {
             router.push(`/destinations/${destination.name.toLowerCase()}`)
         }
     }, [router, onClose])
+
+    const highlightMatch = useCallback((text: string, highlight: string) => {
+        if (!highlight) return text
+        const parts = text.split(new RegExp(`(${highlight})`, "gi"))
+        return (
+            <span>
+                {parts.map((part, index) =>
+                    part.toLowerCase() === highlight.toLowerCase() ? (
+                        <span key={index} className="bg-yellow-200 text-gray-800">
+                            {part}
+                        </span>
+                    ) : (
+                        part
+                    ),
+                )}
+            </span>
+        )
+    }, [])
 
     useEffect(() => {
         if (isOpen && inputRef.current) {
@@ -246,9 +237,20 @@ function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
                                                 <MapPin className="h-5 w-5 text-gray-400" />
                                             )}
                                         </span>
-                                        <span className="flex-grow font-medium">{dest.name}</span>
+                                        <span className="flex-grow font-medium">
+                                            {highlightMatch(dest.name, searchTerm)}
+                                        </span>
                                         {dest.tag && (
-                                            <span className={`px-2 py-1 text-xs font-medium rounded-full bg-${dest.tag.color}-100 text-${dest.tag.color}-700`}>
+                                            <span className={`px-2 py-1 text-xs font-medium rounded-full
+                                                ${dest.tag.label === "Family"
+                                                    ? "bg-pink-100 text-pink-700"
+                                                    : dest.tag.label === "POPULAR"
+                                                        ? "bg-rose-100 text-rose-700"
+                                                        : dest.tag.label === "BUDGET"
+                                                            ? "bg-amber-100 text-amber-700"
+                                                            : `bg-${dest.tag.color}-100 text-${dest.tag.color}-700`
+                                                }`}
+                                            >
                                                 {dest.tag.label}
                                             </span>
                                         )}

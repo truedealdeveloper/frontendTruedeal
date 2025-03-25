@@ -2987,6 +2987,161 @@ World Heritage site. Afterward, enjoy the rest of the day at leisure in Baku.`
             "/UGCImages/baku/4.png",
         ]
     },
+    lehLadakh: {
+        id: "leh-ladakh-7-days-discovery-tour-for-women",
+        country: "Leh Ladakh",
+        days: 7,
+        nights: 6,
+        amount: 28499,
+        dateStart: "10 May - 16 May 2025",
+        dateEnd: "19 June - 25 June 2025",
+        description: "Experience the best of Leh Ladakh with our specially curated 6-night itinerary, covering iconic destinations across Ladakh. Perfectly planned for women who seek an adventure, all-inclusive journey with fixed departures.",
+        groupDetails: {
+            pax: "Group Tour (10-40 pax)",
+            rooms: "Twin Sharing Basis",
+            arrivalDate: "Multiple dates available between May 10 - Jun 19",
+            duration: "7N6D Leh Ladakh",
+            costBasis: "Cost based on per person (Double Sharing)"
+        },
+        hotelDetails: [
+            {
+                city: "Leh",
+                hotel: "Hotel Grand Yasmin, Shambhala Resort or similar",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Nubra Valley",
+                hotel: "Imperial Eco Cottage, Nubra Ethnic Resort or similar",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Pangong Lake",
+                hotel: "Royal Foster Cottage, Triratna Cottage or similar",
+                roomType: "Standard Room"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Arrival in Leh",
+            "Day 2: Sangam Sightseeing",
+            "Day 3: Leh to Nubra Valley",
+            "Day 4: Nubra Turtuk Nubra Valley",
+            "Day 5: Nubra Valley to Pangong Lake",
+            "Day 6: Pangong Lake to Leh",
+            "Day 7: Leh to Leh International Airport - Departure",
+        ],
+        inclusions: [
+            "Accommodation in Hotel on Double/ Twin  sharing basis.",
+            "Ladakh Inner Line Permit.",
+            "Wildlife Fees.",
+            "Sightseeing in a sharing vehicle.",
+            "All Arrival or Departure transfer as mentioned in the itinerary.",
+            "All Road Taxes Included.",
+            "Vehicle Parking fees included.",
+            "Driver allowances included.",
+            "First Aid Medical kit in Cab",
+            "The vehicle is meant only for sightseeing and is on a non-disposable basis.",
+            "On Ground 24* 7 Service Available in the care taking of Owner Himself",
+            "One Oxygen cylinder from Day 3rd till Day 6th.,",
+            "Cultural show and Bonfire with evening snacks on day 3",
+            "Breakfast , Lunch and Dinner for 6 Nights",
+            "Female Guide for the complete tour ( Day 2 to 6 )",
+        ],
+        exclusions: [
+            "Any Kind of Personal Expenses or Optional Tours / Extra Meals",
+            "Anything not specifically mentioned under the head “Package Inclusions”",
+            "Tips, Insurance, Laundry, Phone Calls",
+            "The Services of Vehicle is not included on leisure days & after finishing the sightseeing tour as  per the Itinerary"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Leh",
+                description: `Enjoy the flight into Leh, the capital of Ladakh, on your arrival at the Kushok 
+Bakula Rimpochhe Airport, Leh (11562 ft) - the land of brave hearts; you will be 
+greeted by our representative who will guide you to your transfer to your hotel for 
+check in. Due to sudden arrival at high altitude of Leh you are advised to rest in 
+order to acclimatize with the conditions. In the evening Get ready for an 
+informative orientation process and tour briefing, setting the stage for the 
+adventures ahead. Enjoy your Dinner and Overnight stay at Hotel .  `
+            },
+            {
+                day: 2,
+                title: "Sangam/Zanskar Sightseeing",
+                description: `After breakfast you drive downstream along the River Indus on Leh – Kargil 
+Highway. Enjoy sightseeing with Hall of Fame (Museum Constructed by India Army) 
+near Leh is worth a visit for every Indian, and proceed further to 
+GurudwaraPatthar Sahib Nestled deep in the Himalayas, A drive of another 4 km 
+took us to Magnetic Hill which defies the law of gravity & further Driving through 
+a picturesque landscape we reached the Confluence Of The Indus And Zanskar 
+River. After visiting above places we drive back to Leh enroute visiting Spituk 
+Monastery ends up with Kali Mata Mandir . Visit Shanti Stupa and Leh Palace 
+.Driver will drop you to ur hotel/hostel.
+
+`,
+            },
+            {
+                day: 3,
+                title: "Leh to Nubra Valley (120 km / 5 hours)",
+                description: `Post breakfast we drive to Nubra Valley. The road journey from Leh to Nubra 
+Valley passes over Khardung La (The Highest Motorable Road In The World) at 
+5,602 Mtrs / 18,390 Ft, around 39 km from Leh. From the pass, one can see all the 
+way south over the Indus valley to seemingly endless peaks and ridges of the 
+Zanskar range, and north to the giants of the Saser massif.Nubra Valley is 
+situated to the North of Ladakh between the Karakoram range and Ladakh range 
+of the Himalayas. On the way visit DiskitMonastery . Evening visit the Sand Dunes. 
+Here you can enjoy a camel ride on the Bactrian camel which is known for its double 
+hump (at own cost ) and ATV Ride ( at own cost ) . Return back to the camp / Hotel 
+for dinner.`,
+            },
+            {
+                day: 4,
+                title: "Nubra Turtuk Nubra Valley",
+                description: `After moning breakfast proceed for turtuk . Turtuk falls in Baltistan- the place 
+was under Pakistani control till 1971, so it is predominantly Muslim. Don't miss the 
+chance to interact with the locals and their friendly behaviour - the whole feel is 
+like being in Pakistan.  Just 7kms away from PoK, this is a beautiful little place 
+offering raw beauty. You can try delicious apricots here which are major source of 
+income for the locals. Visit Turtuk Waterfall and Turtuk Museum later on Enjoy 
+the magnificent view of K2 peak while walking around. In the evening back to 
+hunder for your Overnight stay at same.  `
+            },
+            {
+                day: 5,
+                title: "Nubra Valley to Pangong Lake",
+                description: `Leave early Morning towards Pangong Lake via Shyok valley and  River. Pangong 
+Lake is situated at 14,000 feet (4,267 m) is a long narrow basin of inland drainage, 
+hardly 6to 7 kilometers at its widest point and over 130km in length. It is bisected 
+by the international border between India and China. Enjoy the beauty of the lake 
+lies in rich deep blue colour of its water and one rarely feels so close to nature and 
+environment and the scenery is unforgettable trip. It attracted people from all 
+over the country and beyond. During winter the lake freezes completely, despite 
+being saline water. Enjoy your dinner and overnight stay at Camp / Cottage . `
+            },
+            {
+                day: 6,
+                title: "Pangong Lake – Leh + City Tour ( 145kms / 5 hrs) ",
+                description: `Wake up to a beautiful morning by the lake exploring the beauty of the lake after 
+breakfast. Later you drive back to Leh via Chang La, a mountain pass situated at an 
+altitude of 17,590 feet (5360 meters). Back to Leh enroute visit Thikshey 
+Monastery , 3 Idiot Rancho School  and Shey Palace . Enjoy your dinner at the 
+hotel.`
+            },
+            {
+                day: 7,
+                title: "Leh to Leh International Airport - Departure",
+                description: `Your last morning in Leh,  enjoy your breakfast and proceed to Leh airport to 
+board flight back to destination. Journey ends with exotic memories and stories to 
+be related once back home.`
+            }
+
+        ],
+        images: [
+            "/UGCImages/leh/1-min.png",
+            "/UGCImages/leh/2-min.png",
+            "/UGCImages/leh/3-min.png",
+            "/UGCImages/leh/4-min.png",
+        ]
+    },
 };
 
 export function isFixedDeparture(destination: FixedDeparture | DestinationWithoutFlight): destination is FixedDeparture {
@@ -3028,6 +3183,10 @@ export const destinationGroups = [
         turkey: destinationsWithoutFlight.turkey,
         kenya: destinationsWithoutFlight.kenya
     },
+    {
+        lehLadakh: destinationsWithoutFlight.lehLadakh,
+        baku: destinationsWithoutFlight.baku,
+    }
 ]; 
 
 export const getTotalPages = (): number => destinationGroups.length;
