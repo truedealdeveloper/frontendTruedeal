@@ -69,20 +69,28 @@ const dropdownMenus = {
         { name: "Thailand 11 Days Tour", href: "/fixedDeparture/thailand-11-days-deluxe-tour" },
         { name: "Thailand 8 Days Tour", href: "/fixedDeparture/thailand-8-days-adventure-tour" },
         { name: "Singapore", href: "/singapore" },
-        { name: "Malaysia", href: "/malaysia" },
+        { name: "Malaysia", href: "/singapore/4-days-malaysia-tour" },
         { name: "Japan", href: "/fixedDeparture/japan-10-days-cultural-tour" },
-        // Middle East & Central Asia
+        // Middle East & East Asia
+        { name: "Dubai Desert Adventure", href: "/fixedDeparture/dubai-5-days-desert-adventure" },
+        { name: "Hong Kong & Macau Combo", href: "/fixedDeparture/hongkong-macau-5-days-combo-tour" },
+        { name: "Korea Discovery Tour", href: "/fixedDeparture/korea-7-days-discovery-tour" },
+        { name: "China Canton Fair Tour", href: "/fixedDeparture/china-6-days-canton-fair-tour" },
+        { name: "Bhutan Happiness Tour", href: "/fixedDeparture/bhutan-7-days-happiness-tour" },
         { name: "Almaty", href: "/almaty" },
         // Rest of World
-       
+        { name: "Langkawi", href: "/singapore/5-days-wonderful-langkawi" },
         { name: "Kenya", href: "/fixedDeparture/kenya-10-days-discovery-tour" },
         { name: "Europe Tour 12 Days", href: "/fixedDeparture/europe-12-days-grand-tour" },
         { name: "Europe Tour 15 Days", href: "/fixedDeparture/euro-quest-15-days-grand-tour" },
+        { name: "Russia 8 Days Tour", href: "/fixedDeparture/russia-8-days-aurora-moscow-tour" },
+        { name: "Russia 12 Days Tour", href: "/fixedDeparture/russia-fixed-departure-tour" },
     ],
     "india-packages": [
         { name: "Kashmir Paradise Tour (6 Days)", href: "/fixedDeparture/kashmir-6-days-paradise-tour" },
         { name: "Srinagar Paradise Tour (6 Days)", href: "/fixedDeparture/srinagar-6-days-paradise-tour" },
         { name: "Manali Volvo Tour (5 Days)", href: "/fixedDeparture/manali-5-days-volvo-tour" },
+        {name: "Chardham Yatra", href: "/chardham"}
     ],
     "group-tours": [
         { name: "Bali Group Tour", href: "/bali" },
