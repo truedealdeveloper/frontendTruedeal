@@ -35,7 +35,7 @@ export default function Home() {
         <FixedDepartures />
       </section>
       <div className="mt-12">
-        {/* <ChardhamYatra /> */}
+        {/* <ChardhamYatra /> */} 
         <SriLanka />  
         <BaliBanner />
         <VietnamBanner />
