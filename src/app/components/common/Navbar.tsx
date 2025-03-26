@@ -57,7 +57,7 @@ const dropdownMenus = {
         { name: "Kashmir Paradise Tour (6 Days)", href: "/fixedDeparture/kashmir-6-days-paradise-tour" },
         { name: "Srinagar Paradise Tour (6 Days)", href: "/fixedDeparture/srinagar-6-days-paradise-tour" },
         { name: "Manali Volvo Tour (5 Days)", href: "/fixedDeparture/manali-5-days-volvo-tour" },
-        {name: "Chardham Yatra", href: "/chardham"}
+        {name: "Chardham Yatra", href: "/chardhamYatra"}
     ],
     "group-tours": [
         { name: "Bali Group Tour", href: "/bali" },
