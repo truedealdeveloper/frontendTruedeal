@@ -90,7 +90,7 @@ export const destinations: Destination[] = [
         fixedDepartureId: "kenya-10-days-discovery-tour"
     },
     {
-        name: "Baku Trip",
+        name: "Baku Trip - 5 Days",
         tag: { label: "FIXED DEPARTURE", color: "blue" },
         fixedDepartureId: "baku-5-days-discovery-tour"
     },
@@ -103,5 +103,16 @@ export const destinations: Destination[] = [
         name: "Leh Ladakh Trip",
         tag: { label: "FIXED DEPARTURE", color: "blue" },
         fixedDepartureId: "leh-ladakh-7-days-discovery-tour-for-women"
-    }
+    },
+    {
+        name: "New Zealand Trip",
+        tag: { label: "FIXED DEPARTURE", color: "pink" },
+        fixedDepartureId: "new-zealand-13-days-discovery-tour"
+    },
+    {
+        name: "Baku Trip - 7 Days",
+        tag: { label: "FIXED DEPARTURE", color: "green" },
+        fixedDepartureId: "baku-7-days-discovery-tour"
+    },
+    
 ] 

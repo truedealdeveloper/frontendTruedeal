@@ -338,7 +338,6 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
             "/UGCImages/images5/VIETNAM/HORIZONTAL/5.webp",
         ]
     },
-    
     euroQuest: {
         id: "euro-quest-15-days-grand-tour",
         country: "Euro Quest",
@@ -1432,6 +1431,367 @@ Entry Included: Metro
             "/UGCImages/web/russia/10.webp",
             "/UGCImages/web/russia/11.webp",
             "/UGCImages/web/russia/9.webp",
+        ],
+    },
+    newZealandFixedDeparture: {
+        id: "new-zealand-13-days-discovery-tour",
+        country: "New Zealand",
+        days: 13,
+        nights: 12,
+        amount: 539000,
+        flightFrom: "Mumbai",
+        dateStart: "4th May 2025",
+        dateEnd: "16th May 2025",
+        description: `Enjoy the best of New Zealand with our fixed departure tour. From the Red Square to the Kremlin, this tour offers a comprehensive and all-inclusive experience of the country's highlights.`,
+        groupDetails: {
+            pax: "Group Tour Fixed Departure",
+            rooms: "Double/Single Sharing Available",
+            arrivalDate: "4th May 2025",
+            duration: "13D12N New Zealand",
+            costBasis: "Double sharing basis"
+        },
+        tourSummary: [
+            "4th May: Departure to Christchurch on Singapore Airline",
+            "5th May: Singapore City Tour, Indian Lunch & Jewel Changi",
+            "6th May: Christchurch Tram City Tour & Punting",
+            "7th May: Breakfast - Helicopter Ride",
+            "8th May: Breakfastt - Star Gazing with Hot Pool",
+            "9th May: Wanaka Lake, Puzzling World",
+            "10th May: Glenorchy, Kjet Boat, Gondola Ride",
+            "11th May: Milford Sound Coach Tour",
+            "12th May: Leisure for Adventure Activities",
+            "13th May: Flight to Auckland - Redwood Forest Walk",
+            "14th May: Volcano Air, Te Puia Visit",
+            "15th May: Transfer to Auckland - Waitomo Caves Tour",
+            "16th May: Sky Tower, City Tour - Fly Back",
+        ],
+        hotelDetails: [
+            {
+                city: "Christchurch",
+                hotel: "Doubletree by Hilton",
+                roomType: "Guest Room"
+            },
+            {
+                city: "Mt. Cook",
+                hotel: "Mount Cook Lodge (Heritage)",
+                roomType: "Village view Lodge Room"
+            },
+            {
+                city: "Queenstown",
+                hotel: "Novotel Queenstown Lakeside",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Rotorua",
+                hotel: "Novotel Rotorua Lakeside",
+                roomType: "City view twin Room"
+            },
+            {
+                city: "Auckland",
+                hotel: "Sky City Auckland",
+                roomType: "Premium King Room"
+            }
+        ],
+        inclusions: [
+            "Insurance",
+            "Visa Fees",
+            "Airfare by Singapore Airlines",
+            "Coach Services",
+            "Continental breakfast at the hotel on all days (Except Day 1).",
+            "Lunch at an Indian restaurant on all days (Except Day 7).",
+            "Dinner at an Indian restaurant on all days (Except Day 11).",
+            "Boxed lunch on Day 8.",
+            "The menu matrix may change to offer more variety. All meals will bе 100% pure vegetarian",
+
+        ],
+        exclusions: [
+            "GST & TCS Subject to Government Policy",
+            "Cost of Any personal Exp. like shopping, alcohol etc",
+            "Surcharge if any applicable",
+            "Guide Tips and Portages",
+            "Optional Activities",
+            "Usage of Mini bar",
+            "Any other item except 'Package rates Includes'",
+            "Any increase in government tax, fuel Charges, Service tax or any other tax",
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Departure to Christchurch",
+                description: `Departure to Christchurch on Singapore Airline
+Free time for leisure
+`
+            },
+            {
+                day: 2,
+                title: "Singapore City Tour, Indian Lunch & Jewel Changi",
+                description:  `Arrive at Singapore Airport and embark on a complimentary Singapore City Tour* offered
+by Singapore Airlines (subject to approval). After the tour, enjoy a delicious Indian lunch
+before exploring the exciting attractions at Jewel Changi Airport. Later,
+board your flight to Christchurch.
+
+
+
+`
+            },
+            {
+                day: 3,
+                title: "Christchurch Tram City Tour & Punting",
+                description: `Upon arrival in Christchurch, check in at DoubleTree by Hilton Christchurch. Enjoy a buffet
+lunch before setting off on a scenic Tram City Tour, followed by a relaxing Punting
+experience. End the day with a delightful dinner and leisure time.
+
+
+
+
+
+`
+            },
+            {
+                day: 4,
+                title: "Breakfast - Helicopter Ride",
+                description: `After breakfast at your hotel, transfer to your next destination. Enjoy a delightful lunch
+before taking a breathtaking 20-25 minute helicopter ride offering stunning aerial views.
+Upon arrival at Mount Cook, check in at The Hermitage Hotel. In the evening, savor a
+delicious dinner at the hotel, and unwind with an overnight stay at this charming
+property.
+
+
+`
+            },
+            {
+                day: 5,
+                title: "Star Gazing with Hot Pool",
+                description: `After Breakfast, check-out from Hermitage Hotel and transfer to your next destination.
+Enjoy a delightful lunch upon arrival. Check-in at Peppers Bluewater Resort. In the
+evening, savor a delicious dinner, followed by a magical star gazing experience with hot
+Pool.
+
+
+
+`
+            },
+            {
+                day: 6,
+                title: "Wanaka Lake, Puzzling World",
+                description: `After breakfast, transfer to Wanaka Lake and explore Puzzling World. Enjoy lunch at
+Wanaka, followed by a visit to the historic Arrowtown. Afterward, check-in at Novotel
+Queenstown Lakeside and enjoy dinner.
+`
+            },
+            {
+                day: 7,
+                title: "Glenorchy, Kjet Boat, Gondola Ride",
+                description: `After breakfast, transfer to Glenorchy and explore the scenic beauty of the area. Enjoy lunch at
+Glenorchy, followed by a visit to the historic Arrowtown. Afterward, check-in at Novotel
+Queenstown Lakeside and enjoy dinner.
+`
+            },
+            {
+                day: 8,
+                title: "Milford Sound Coach Tour",
+                description: `After breakfast, transfer to Milford Sound and explore the scenic beauty of the area. Enjoy lunch at
+Milford Sound, followed by a visit to the historic Arrowtown. Afterward, check-in at Novotel
+Queenstown Lakeside and enjoy dinner.
+`
+            },
+            {
+                day: 9,
+                title: "Leisure for Adventure Activities",
+                description: `After breakfast, transfer to Milford Sound and explore the scenic beauty of the area. Enjoy lunch at
+`
+            },
+            {
+                day: 10,
+                title: "Flight to Auckland - Redwood Forest Walk",
+                description: `After breakfast, transfer to Milford Sound and explore the scenic beauty of the area. Enjoy lunch at
+`
+            },
+            {
+                day: 11,
+                title: "Volcano Air, Te Puia Visit",
+                description: `After breakfast, transfer to Milford Sound and explore the scenic beauty of the area. Enjoy lunch at
+`
+            },
+            {
+                day: 12,
+                title: "Transfer to Auckland - Waitomo Caves Tour",
+                description: `After breakfast, transfer to Milford Sound and explore the scenic beauty of the area. Enjoy lunch at
+`
+            },
+            {
+                day: 13,
+                title: "Sky Tower, City Tour - Fly Back",
+                description: `After breakfast, transfer to Milford Sound and explore the scenic beauty of the area. Enjoy lunch at
+`
+            }
+        ],
+        images: [
+            "/UGCImages/newZealand/1.png",
+            "/UGCImages/newZealand/2.png",
+            "/UGCImages/newZealand/3.png",
+            "/UGCImages/newZealand/4.png",
+        ],
+    },
+    bakuFixedDeparture: {
+        id: "baku-7-days-discovery-tour",
+        country: "Azerbaijan",
+        days: 7,
+        nights: 6,
+        amount: 539000,
+        flightFrom: "Mumbai",
+        dateStart: "10th May 2025",
+        dateEnd: "16th May 2025",
+        description: `Discover the rich history and culture of Azerbaijan with our fixed departure tour. From the historic Maiden Tower to the stunning Shahdag Mountain, this tour offers a comprehensive and all-inclusive experience of the country's highlights.`,
+        groupDetails: {
+            pax: "Group Tour Fixed Departure",
+            rooms: "Double/Single Sharing Available",
+            arrivalDate: "10th May 2025",
+            duration: "7D6N Azerbaijan",
+            costBasis: "Double sharing basis"
+        },
+        tourSummary: [
+            "Day 1: (10th May): Arrival in Baku",
+            "Day 2: (11th May): Gabala City Tour",
+            "Day 3: (12th May): Baku City Tour",
+            "Day 4: (13th May): Maiden Tower, Shirvanshah Palace, Icherisheher",
+            "Day 5: (14th May): Shahdag",
+            "Day 6: (15th May): Zip Lining, Hiking, Spa",
+            "Day 7: (16th May): Transfer to Baku Airport",
+
+        ],
+        hotelDetails: [
+            {
+                city: "Gabala",
+                hotel: "Gabala Garden",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Baku",
+                hotel: "Boulevard by Marriott",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Shahdag",
+                hotel: "Shahdag Hotel & Spa",
+                roomType: "Double Room"
+            },
+            
+            
+        ],
+        inclusions: [
+            "Pure Veg. Indian Foop",
+            "eneks Bett Travel wi Luxury Coach",
+            "Tour Manager",
+            "Flight",
+            "Luxury Hotels",
+            "Visa",
+            "Continental breakfast at the hotel.",
+            "7 Lunches at Indian Restaurants",
+            "6 Dinners at Indian Restaurants",
+            "2 bottles of water per person per day",
+            "The menu matrix may change to offer more variety. All meals will be 100% pure vegetarian only",
+
+        ],
+        exclusions: [
+            "GST & TCS Subject to Government Policy",
+            "Cost of Any personal Exp. like shopping, alcohol etc",
+            "Surcharge if any applicable",
+            "Guide Tips and Portages",
+            "Optional Activities",
+            "Usage of Mini bar",
+            "Any other item except 'Package rates Includes'",
+            "Any increase in government tax, fuel Charges, Service tax or any other tax",
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Baku",
+                description: `Your journey begins with a warm meet and greet at the airport upon arrival. Enjoy a
+delicious breakfast to start your day, then head to Gabala City. After checking in to
+your hotel, you'll visit the serene "Nohur" Lake. This picturesque lake, surrounded by
+lush greenery and the stunning backdrop of the Caucasus Mountains, offers a
+perfect opportunity to relax and immerse yourself in nature. In the evening, enjoy a
+delightful dinner and return to your hotel to unwind and prepare for the adventures
+ahead. Overnight stay in Gabala.`
+            },
+            {
+                day: 2,
+                title: "Gabala City Tour",
+                description: `Start your day with a hearty breakfast before heading out to explore Gabala City, a
+region known for its natural beauty and cultural heritage. During the tour, visit the
+stunning Gozel Waterfall, the scenic Tufandag Mountain Resort, and enjoy a thrilling
+ride on the Cable Car. Take some time to savor a delicious lunch amidst the city's
+tranquil ambiance. The afternoon offers leisure time to explore the area further or
+simply relax. Conclude your day with a dinner before retiring to your hotel. Overnight
+stay in Gabala.`
+            },
+            {
+                day: 3,
+                title: "Baku City Tour",
+                description: `Start your day with a hearty breakfast, then check out of your hotel and bid farewell
+to Gabala as you head back to the vibrant Baku City. Upon arrival, check in to your
+hotel and enjoy a delicious lunch. Afterward, embark on a panoramic tour of the city,
+which includes highlights such as the iconic Heydar Aliyev Cultural Center, Baku
+Boulevard and Highland Park. End your day with a delightful dinner before settling
+in for the night. Overnight stay in Baku.
+
+`
+            },
+            {
+                day: 4,
+                title: "Maiden Tower, Shirvanshah Palace, Icherisheher",
+                description: `After breakfast, start with a Baku City tour, visiting the Maiden Tower, Shirvanshah
+Palace, and Icherisheher (Old City), a UNESCO World Heritage Site. Explore
+landmarks like the Museum of Miniature Books, Quadrangular Tower, Vahid
+Monument, Bukhara Caravanserai, Bartholomew Church, and Gosha Gala Tower.
+After lunch, continue with a tour of the Absheron Peninsula, visiting the Fire Temple
+(Ateshgah) and Burning Mountain (Yanar Dag). Immerse in the region's history and
+traditions. Enjoy dinner before retiring to your hotel. Overnight stay in Baku.`
+            },
+            {
+                day: 5,
+                title: "Shahdag",
+                description: `Enjoy breakfast and then check out from your hotel as you transfer to Shahdag, a
+popular destination nestled in the Greater Caucasus Mountains. The scenic drive
+offers breathtaking views of the region's majestic peaks and lush landscapes. After
+arriving in Shahdag, settle into your accommodation and enjoy a leisurely lunch.
+Spend the rest of the day at your own pace, exploring the serene surroundings or
+relaxing at the resort. Conclude the day with a delicious dinner. Overnight stay in
+Shahdag.
+
+`
+            },
+            {
+                day: 6,
+                title: "Zip Lining, Hiking, Spa",
+                description: `Start your day with breakfast, followed by an exciting day filled with activities in
+Shahdag. Whether you enjoy adventurous options like zip-lining, hiking, or prefer
+a more laid-back experience with spa treatments or nature walks, Shahdag offers
+something for everyone. After a fulfilling morning, savor a delectable lunch and
+enjoy the rest of the day exploring or relaxing. End the day with a delightful dinner
+and a peaceful stay at your hotel. Overnight stay in Shahdag.
+
+`
+            },
+            {
+                day: 7,
+                title: "Transfer to Baku Airport",
+                description: `After breakfast, check out from your hotel and travel back to Baku City. On the way,
+embark on an exciting tour of Gobustan, famous for its ancient rock carvings, mud
+volcanoes, and archeological sites. Explore the fascinating Petroglyphs Museum and
+marvel at the natural wonders of the mud volcanoes. Afterward, enjoy lunch and
+prepare for your departure. Conclude your journey with a transfer to the airport,
+taking home wonderful memories of your Azerbaijani adventure.
+
+`
+            }
+        ],
+        images: [
+            "/UGCImages/baku/1.png",
+            "/UGCImages/baku/2.png",
+            "/UGCImages/baku/3.png",
+            "/UGCImages/baku/4.png",
         ],
     },
 };
@@ -3142,6 +3502,7 @@ be related once back home.`
             "/UGCImages/leh/4-min.png",
         ]
     },
+    
 };
 
 export function isFixedDeparture(destination: FixedDeparture | DestinationWithoutFlight): destination is FixedDeparture {
