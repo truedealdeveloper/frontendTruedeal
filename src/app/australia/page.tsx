@@ -98,6 +98,63 @@ export default function AustraliaPackages() {
         }
     ];
 
+    const PackageCard = ({ 
+        package: pkg
+    }: { 
+        package: AustraliaPackage;
+    }) => {
+        return (
+            <div className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0">
+                <Image 
+                    src={pkg.images[0]} 
+                    alt={pkg.packageName}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                />
+                
+                <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/50 to-black" />
+                
+                <div className="absolute top-3 left-0 z-10">
+                    <div className="bg-yellow-400 px-4 py-1.5 rounded-full shadow-lg">
+                        <span className="line-through text-sm mr-2">
+                            ₹{(pkg.amount * 1.2).toLocaleString('en-IN')}/-
+                        </span>
+                        <span className="font-bold">
+                            ₹{pkg.amount.toLocaleString('en-IN')}/-
+                        </span>
+                        <span className="text-sm ml-1">onwards</span>
+                    </div>
+                </div>
+
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <h3 className="text-2xl font-bold mb-2">
+                        {pkg.packageName}
+                    </h3>
+                    <div className="grid grid-cols-2 gap-y-2 text-sm mb-4">
+                        <div className="flex items-center gap-2">
+                            <FaClock className="text-yellow-400" />
+                            <span>{pkg.days}D/{pkg.nights}N</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <IoLocationSharp className="text-yellow-400" />
+                            <span>{pkg.hotelDetails[0].city}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <FaCalendarAlt className="text-yellow-400" />
+                            <span>{pkg.dateStart}</span>
+                        </div>
+                    </div>
+                    <Link href={`/australia/${pkg.id}`}>
+                        <Button className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all duration-500">
+                            View Details
+                        </Button>
+                    </Link>
+                </div>
+            </div>
+        );
+    };
+
     return (
         <div className="min-h-screen">
             {/* Hero Section with Video */}
@@ -242,54 +299,7 @@ export default function AustraliaPackages() {
                                     {packages
                                         .slice(currentPage * 3, (currentPage * 3) + 3)
                                         .map((australiaPkg) => (
-                                            <div key={australiaPkg.id} className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0">
-                                                <Image 
-                                                    src={australiaPkg.images[0]} 
-                                                    alt={australiaPkg.packageName}
-                                                    fill
-                                                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                                                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                                                />
-                                                
-                                                <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/50 to-black" />
-                                                
-                                                <div className="absolute top-3 left-0 z-10">
-                                                    <div className="bg-yellow-400 px-4 py-1.5 rounded-full shadow-lg">
-                                                        <span className="line-through text-sm mr-2">
-                                                            ₹{(australiaPkg.amount * 1.2).toLocaleString('en-IN')}/-
-                                                        </span>
-                                                        <span className="font-bold">
-                                                            ₹{australiaPkg.amount.toLocaleString('en-IN')}/-
-                                                        </span>
-                                                        <span className="text-sm ml-1">onwards</span>
-                                                    </div>
-                                                </div>
-
-                                                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                                    <h3 className="text-2xl font-bold mb-2">
-                                                        {australiaPkg.packageName}
-                                                    </h3>
-                                                    <div className="grid grid-cols-2 gap-y-2 text-sm mb-4">
-                                                        <div className="flex items-center gap-2">
-                                                            <FaClock className="text-yellow-400" />
-                                                            <span>{australiaPkg.days}D/{australiaPkg.nights}N</span>
-                                                        </div>
-                                                        <div className="flex items-center gap-2">
-                                                            <IoLocationSharp className="text-yellow-400" />
-                                                            <span>{australiaPkg.hotelDetails[0].city}</span>
-                                                        </div>
-                                                        <div className="flex items-center gap-2">
-                                                            <FaCalendarAlt className="text-yellow-400" />
-                                                            <span>{australiaPkg.dateStart}</span>
-                                                        </div>
-                                                    </div>
-                                                    <Link href={`/australia/${australiaPkg.id}`}>
-                                                        <Button className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all duration-500">
-                                                            View Details
-                                                        </Button>
-                                                    </Link>
-                                                </div>
-                                            </div>
+                                            <PackageCard key={australiaPkg.id} package={australiaPkg} />
                                         ))}
                                 </div>
                             </div>

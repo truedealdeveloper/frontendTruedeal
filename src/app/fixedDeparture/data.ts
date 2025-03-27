@@ -1638,7 +1638,7 @@ Queenstown Lakeside and enjoy dinner.
         country: "Azerbaijan",
         days: 7,
         nights: 6,
-        amount: 539000,
+        amount: 166999,
         flightFrom: "Mumbai",
         dateStart: "10th May 2025",
         dateEnd: "16th May 2025",
@@ -1728,7 +1728,7 @@ stay in Gabala.`
             },
             {
                 day: 3,
-                title: "Baku City Tour",
+                title: "Baku City: Panoramic Tour",
                 description: `Start your day with a hearty breakfast, then check out of your hotel and bid farewell
 to Gabala as you head back to the vibrant Baku City. Upon arrival, check in to your
 hotel and enjoy a delicious lunch. Afterward, embark on a panoramic tour of the city,
@@ -1740,7 +1740,7 @@ in for the night. Overnight stay in Baku.
             },
             {
                 day: 4,
-                title: "Maiden Tower, Shirvanshah Palace, Icherisheher",
+                title: "Shahdag City Tour",
                 description: `After breakfast, start with a Baku City tour, visiting the Maiden Tower, Shirvanshah
 Palace, and Icherisheher (Old City), a UNESCO World Heritage Site. Explore
 landmarks like the Museum of Miniature Books, Quadrangular Tower, Vahid
@@ -1792,7 +1792,7 @@ taking home wonderful memories of your Azerbaijani adventure.
             "/UGCImages/baku/2.png",
             "/UGCImages/baku/3.png",
             "/UGCImages/baku/4.png",
-        ],
+        ], 
     },
 };
 
