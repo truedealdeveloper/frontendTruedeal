@@ -177,92 +177,6 @@ export default function HeroSection() {
         [searchTerm, filteredDestinations, handleDestinationSelect, highlightMatch],
     )
 
-    const StatsSection = () => (
-        <div className="z-[2] md:block hidden ">
-            <div className="container mx-auto px-4 relative top-[60px]">
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-12 max-w-3xl mx-auto">
-                    {/* MICE Services */}
-                    <div className="flex flex-col items-center text-white">
-                        <div className="mb-2">
-                            <Briefcase className="w-8 h-8 text-blue-400" />
-                        </div>
-                        <div className="text-center">
-                            <p className="font-bold text-sm">MICE</p>
-                            <p className="text-xs">Specialists</p>
-                        </div>
-                    </div>
-
-                    {/* Experience */}
-                    <div className="flex flex-col items-center text-white">
-                        <div className="mb-2">
-                            <Award className="w-8 h-8 text-yellow-400" />
-                        </div>
-                        <div className="text-center">
-                            <p className="font-bold text-sm">10+ Years</p>
-                            <p className="text-xs">Experience</p>
-                        </div>
-                    </div>
-
-
-                    {/* EMI */}
-                    <div className="flex flex-col items-center text-white">
-                        <div className="mb-2">
-                            <CreditCard className="w-8 h-8 text-purple-400" />
-                        </div>
-                        <div className="text-center">
-                            <p className="font-bold text-sm">No Cost</p>
-                            <p className="text-xs">EMI Available</p>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-    )
-
-    // Mobile stats section
-    const MobileStatsSection = () => (
-        <div className="md:hidden block">
-            <div className="container mx-auto px-4">
-                <div className="grid grid-cols-3 gap-2 max-w-sm mx-auto">
-                    {/* MICE Services */}
-                    {/* <div className="flex flex-col items-center text-white">
-                        <div className="mb-1">
-                            <Briefcase className="w-4 h-4 text-blue-400" />
-                        </div>
-                        <div className="text-center">
-                            <p className="font-semibold text-[11px] leading-tight">MICE</p>
-                            <p className="text-[9px] leading-tight">Specialists</p>
-                        </div>
-                    </div> */}
-
-                    {/* Experience */}
-                    {/* <div className="flex flex-col items-center text-white">
-                        <div className="mb-1">
-                            <Award className="w-4 h-4 text-yellow-400" />
-                        </div>
-                        <div className="text-center">
-                            <p className="font-semibold text-[11px] leading-tight">10+ Years</p>
-                            <p className="text-[9px] leading-tight">Experience</p>
-                        </div>
-                    </div> */}
-
-                    {/* EMI */}
-                    {/* <div className="flex flex-col items-center text-white">
-                        <div className="mb-1">
-                            <CreditCard className="w-4 h-4 text-purple-400" />
-                        </div>
-                        <div className="text-center">
-                            <p className="font-semibold text-[11px] leading-tight">No Cost</p>
-                            <p className="text-[9px] leading-tight">EMI Available</p>
-                        </div>
-                    </div> */}
-                </div>
-            </div>
-        </div>
-    )
-
     return (
         <>
             <div className="relative min-h-[65svh] md:min-h-[85vh] overflow-hidden">
@@ -286,42 +200,79 @@ export default function HeroSection() {
                 </div>
 
                 {/* Content */}
-                <div className="relative z-[2] flex flex-col items-center justify-start md:justify-center min-h-[65svh] md:min-h-[85vh] text-white px-4 sm:px-6 lg:px-8 pt-32 md:pt-0 md:py-0">
-                    <h1 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl mb-2 text-center mt-0 md:mt-8">
-                        <span className="font-poppins font-semibold">Discover Your Dream Vacation with</span>{" "}
-                        <span className="font-poppins font-bold">Truedeal</span>
-                    </h1>
-                    <p className="text-xs sm:text-sm md:text-sm mb-2 md:mb-4 text-center font-poppins font-semibold">
-                        GET READY FOR TAKE OFF
-                    </p>
-                    <h2 className="text-1xl sm:text-2xl md:text-3xl lg:text-4xl mb-6 md:mb-8 text-center font-poppins font-bold text-yellow-500">
-                        <TypingAnimation>Search your holiday</TypingAnimation>
-                    </h2>
+                <div className="relative z-[2] flex flex-col items-center min-h-[65svh] md:min-h-[85vh] text-white px-4 sm:px-6 lg:px-8 pt-0 md:pt-0 pb-8">
+                    {/* Main content - centered vertically */}
+                    <div className="flex flex-col items-center justify-center max-w-4xl w-full mx-auto min-h-[50vh] md:min-h-0 md:mt-32">
+                        <h1 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl mb-4 text-center font-poppins">
+                            <span className="font-semibold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Discover Your Dream Vacation with</span>{" "}
+                            <span className="font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Truedeal</span>
+                        </h1>
+                        <p className="text-xs sm:text-sm md:text-sm mb-2 md:mb-4 text-center font-poppins font-semibold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                            GET READY FOR TAKE OFF
+                        </p>
+                        <h2 className="text-1xl sm:text-2xl md:text-3xl lg:text-4xl mb-6 md:mb-8 text-center font-poppins font-bold text-yellow-500 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                            <TypingAnimation>Search your holiday</TypingAnimation>
+                        </h2>
 
-                    <div className="w-full max-w-xl mx-auto font-poppins px-4">
-                        <button
-                            onClick={() => setIsSearchModalOpen(true)}
-                            className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white border-0 rounded-full h-12 px-6 shadow-lg hover:opacity-90 transition-all duration-300 flex items-center justify-between"
-                        >
-                            <span className="text-white/75 truncate">
-                                {placeholderText ? `Search ${placeholderText}...` : "Search countries, cities..."}
-                            </span>
-                            <Search className="h-5 w-5 text-white flex-shrink-0 ml-2" />
-                        </button>
+                        <div className="w-full max-w-xl mx-auto font-poppins px-4 mb-4 md:mb-8">
+                            <button
+                                onClick={() => setIsSearchModalOpen(true)}
+                                className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white border-0 rounded-full h-12 px-6 shadow-lg hover:opacity-90 transition-all duration-300 flex items-center justify-between"
+                            >
+                                <span className="text-white/75 truncate">
+                                    {placeholderText ? `Search ${placeholderText}...` : "Search countries, cities..."}
+                                </span>
+                                <Search className="h-5 w-5 text-white flex-shrink-0 ml-2" />
+                            </button>
 
-                        {/* Search Modal */}
-                        <Dialog open={isSearchModalOpen} onOpenChange={setIsSearchModalOpen}>
-                            <DialogContent className="sm:max-w-[90vw] md:max-w-[70vw] lg:max-w-[50vw] xl:max-w-[40vw] bg-white border-gray-800 w-[90vw] h-[80vh] max-h-[600px] overflow-hidden flex flex-col">
-                                <DialogTitle className="sr-only">Search Destinations</DialogTitle>
-                                <SearchContent />
-                            </DialogContent>
-                        </Dialog>
+                            {/* Search Modal */}
+                            <Dialog open={isSearchModalOpen} onOpenChange={setIsSearchModalOpen}>
+                                <DialogContent className="sm:max-w-[90vw] md:max-w-[70vw] lg:max-w-[50vw] xl:max-w-[40vw] bg-white border-gray-800 w-[90vw] h-[80vh] max-h-[600px] overflow-hidden flex flex-col">
+                                    <DialogTitle className="sr-only">Search Destinations</DialogTitle>
+                                    <SearchContent />
+                                </DialogContent>
+                            </Dialog>
+                        </div>
                     </div>
+                    
+                    {/* Stats Section - fixed at bottom */}
+                    <div className="w-full mt-auto">
+                        <div className="container mx-auto px-4">
+                            <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-3xl mx-auto rounded-xl p-4">
+                                {/* MICE Services */}
+                                <div className="flex flex-col items-center text-white">
+                                    <div className="mb-1 md:mb-2">
+                                        <Briefcase className="w-6 h-6 md:w-8 md:h-8 text-blue-400" />
+                                    </div>
+                                    <div className="text-center">
+                                        <p className="font-bold text-xs md:text-sm">MICE</p>
+                                        <p className="text-[10px] md:text-xs">Specialists</p>
+                                    </div>
+                                </div>
 
-                    {/* Move stats sections here, right after the search bar */}
-                    <div className="mt-10">
-                        <MobileStatsSection />
-                        <StatsSection />
+                                {/* Experience */}
+                                <div className="flex flex-col items-center text-white">
+                                    <div className="mb-1 md:mb-2">
+                                        <Award className="w-6 h-6 md:w-8 md:h-8 text-yellow-400" />
+                                    </div>
+                                    <div className="text-center">
+                                        <p className="font-bold text-xs md:text-sm">10+ Years</p>
+                                        <p className="text-[10px] md:text-xs">Experience</p>
+                                    </div>
+                                </div>
+
+                                {/* EMI */}
+                                <div className="flex flex-col items-center text-white">
+                                    <div className="mb-1 md:mb-2">
+                                        <CreditCard className="w-6 h-6 md:w-8 md:h-8 text-purple-400" />
+                                    </div>
+                                    <div className="text-center">
+                                        <p className="font-bold text-xs md:text-sm">No Cost</p>
+                                        <p className="text-[10px] md:text-xs">EMI Available</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

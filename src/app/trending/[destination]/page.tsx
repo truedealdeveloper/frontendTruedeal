@@ -18,7 +18,7 @@ import CurrencyExchange from '@/app/components/forex/ForexLive';
 import Sponsors from '@/app/components/Ad/Sponsers';
 import ReviewsGlimpse from '@/app/components/homepage/ReviewsGlimpse';
 import Indonesia from '@/app/indonesia/page';
-import BannerCarousel from '@/app/components/valentine/page';
+// import BannerCarousel from '@/app/components/valentine/page';
 import FixedDepartures from '@/app/fixedDeparture/page';
 // import ChardhamYatra from '@/app/chardhamYatra/page';
 
@@ -544,7 +544,7 @@ export default function TrendingDestinationDetails() {
             </main>
             <Destinations />
                 <Trending />
-            <BannerCarousel />      
+            {/* <BannerCarousel />       */}
             <FixedDepartures />
             {/* <ChardhamYatra /> */}
             <Indonesia />
