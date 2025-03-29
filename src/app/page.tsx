@@ -25,17 +25,17 @@ import VietnamBanner from "./components/homepage/VietnamBanner";
 import LaosCambodiaBanner from "./components/homepage/LaosCambodia";
 import AlmatyBanner from './components/homepage/AlmatyBanner';
 import SingaporeBanner from "./components/homepage/SingaporeBanner";
-import AustraliaBanner from "./components/homepage/AustraliaBanner";
+// import AustraliaBanner from "./components/homepage/AustraliaBanner";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <HeroSection />
       {/* <BannerCarousel />   */}
-      <section id="fixedDeparture" className="relative z-10 bg-white py-12 mt-8">
+      <section id="fixedDeparture" className="mt-6">
         <FixedDepartures />
       </section>
-      <div className="mt-12">
+      <div className="">
         {/* <ChardhamYatra /> */} 
         <SriLanka />  
         <BaliBanner />
@@ -45,7 +45,7 @@ export default function Home() {
         <SingaporeBanner />
       <NoCostEMIPage />
 
-        <AustraliaBanner />
+        {/* <AustraliaBanner /> */}
       </div>
       {/* <Destination /> */}
       {/* <Domestic /> */}

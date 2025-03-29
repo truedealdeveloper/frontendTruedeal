@@ -1,29 +1,43 @@
 'use client';
 
 import { Suspense } from 'react';
+import { motion } from 'framer-motion';
+import { AuroraText } from "../../../components/magicui/aurora-text";
 
 function FirstTimeTravelMessageContent() {
     return (
-        <div className="relative w-full min-h-[150px] px-2 py-6 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-cyan-500/10 animate-pulse" />
-            <div className="container mx-auto">
-                <div className="relative flex flex-col items-center justify-center gap-4 backdrop-blur-sm p-3 rounded-lg">
-                    <h3 className="text-center text-2xl font-bold font-poppins tracking-tight text-foreground sm:text-3xl">
-                        Are you a first time traveller?
-                    </h3>
-                    <p className="text-center text-base sm:text-lg text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+        <div className="relative w-full overflow-hidden -mt-1 mb-0">
+            <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+                className="w-full py-4 px-6 shadow-sm bg-gradient-to-r from-blue-50 via-cyan-50 to-blue-50"
+            >
+                <div className="max-w-3xl mx-auto flex flex-col items-center text-center">
+                    <motion.h3 
+                        className="text-xl font-bold font-poppins tracking-tight text-gray-800 sm:text-2xl mb-2"
+                        animate={{ scale: [1, 1.02, 1] }}
+                        transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+                    >
+                        Are you a first time <AuroraText>traveller</AuroraText>?
+                    </motion.h3>
+                    
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-1 max-w-2xl">
                         We are on a mission to make travel more accessible and enjoyable for everyone and let upcoming generations experience the world.
                     </p>
-                    <div className="w-full max-w-lg h-[1px] bg-gradient-to-r from-transparent via-foreground/20 to-transparent" />
                 </div>
-            </div>
+            </motion.div>
         </div>
     );
 }
 
 export default function FirstTimeTravelMessageWrapper() {
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={
+            <div className="w-full -mt-1 py-4 bg-gradient-to-r from-blue-50 via-cyan-50 to-blue-50 flex justify-center items-center">
+                <div className="animate-pulse text-blue-500 text-sm">Loading...</div>
+            </div>
+        }>
             <FirstTimeTravelMessageContent />
         </Suspense>
     );
