@@ -19,7 +19,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import BannerCarousel from '@/app/components/valentine/page';
+// import BannerCarousel from '@/app/components/valentine/page';
 import Indonesia from '@/app/indonesia/page';
 import Domestic from '@/app/components/homepage/Domestic';
 import ExoticDestinations from '@/app/components/homepage/Exotic';
@@ -213,7 +213,7 @@ export default function GroupTourDetails() {
             <FixedDepartures />
             <Destinations />        
             <Trending />
-            <BannerCarousel />  
+            {/* <BannerCarousel />   */}
             <Indonesia />
             <Domestic />
             <ExoticDestinations />
