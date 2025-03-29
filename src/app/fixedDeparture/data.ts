@@ -1438,7 +1438,7 @@ Entry Included: Metro
         country: "New Zealand",
         days: 13,
         nights: 12,
-        amount: 539000,
+        amount: 439000,
         flightFrom: "Mumbai",
         dateStart: "4th May 2025",
         dateEnd: "16th May 2025",

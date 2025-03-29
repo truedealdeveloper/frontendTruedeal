@@ -43,6 +43,8 @@ export default function Home() {
         <LaosCambodiaBanner />
         <AlmatyBanner />
         <SingaporeBanner />
+      <NoCostEMIPage />
+
         <AustraliaBanner />
       </div>
       {/* <Destination /> */}
@@ -51,7 +53,6 @@ export default function Home() {
       {/* <Exclusive /> */}
       {/* <AnimatedListDemo /> */}
       {/* <ExoticDestinations /> */}
-      <NoCostEMIPage />
       {/* <Europe /> */}
       {/* <Indonesia /> */}
       <Ad />
