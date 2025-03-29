@@ -236,7 +236,7 @@ export default function HeroSection() {
                     </div>
                     
                     {/* Stats Section - fixed at bottom */}
-                    <div className="w-full mt-auto">
+                    <div className="w-full mt-auto hidden md:block">
                         <div className="container mx-auto px-4">
                             <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-3xl mx-auto rounded-xl p-4">
                                 {/* MICE Services */}

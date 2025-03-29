@@ -303,15 +303,14 @@ export default function Navbar() {
             <div className="bg-gradient-to-r from-white via-[#f0fdff] to-white shadow-md">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="flex items-center justify-between h-16 relative">
-                        {/* Logo - adjusted size */}
-                        <Link href="/" className="flex-shrink-0 relative group">
-                            <div className="absolute inset-0 bg-[#00f6ff]/10 blur-xl group-hover:blur-2xl transition-all duration-300 rounded-full opacity-0 group-hover:opacity-100" />
+                        {/* Logo - enhanced visibility */}
+                        <Link href="/" className="flex-shrink-0">
                             <Image
                                 src="/Assets/NavbarImages/logo.png"
                                 alt="Logo"
-                                width={120}
-                                height={40}
-                                className="w-[90px] sm:w-[120px] h-auto object-contain relative z-10"
+                                width={150}
+                                height={50}
+                                className="w-[100px] sm:w-[140px] h-auto object-contain drop-shadow-sm"
                                 priority
                             />
                         </Link>

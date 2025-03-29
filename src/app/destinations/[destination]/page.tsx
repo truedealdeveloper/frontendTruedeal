@@ -20,7 +20,7 @@ import Sponsors from "../../components/Ad/Sponsers";
 import ReviewsGlimpse from '@/app/components/homepage/ReviewsGlimpse';
 import FixedDepartures from '@/app/fixedDeparture/page';
 // import ChardhamYatra from '@/app/chardhamYatra/page';
-import BannerCarousel from '../../components/valentine/page';
+// import BannerCarousel from '../../components/valentine/page';
 import Indonesia from '@/app/indonesia/page';
 import { destinationData } from '../destinationData';
 import type { DestinationDetails } from '../destinationData';
@@ -684,7 +684,7 @@ export default function DestinationDetails() {
 
             <Destinations />
                 <Trending />
-            <BannerCarousel />  
+            {/* <BannerCarousel />   */}
             <FixedDepartures />
             {/* <ChardhamYatra /> */}
             <Indonesia />
@@ -933,7 +933,7 @@ export default function DestinationDetails() {
             <Indonesia />
             <Trending />
             <Destinations />
-            <BannerCarousel />  
+            {/* <BannerCarousel />   */}
             <FixedDepartures />
             {/* <ChardhamYatra /> */}
             <Domestic />
