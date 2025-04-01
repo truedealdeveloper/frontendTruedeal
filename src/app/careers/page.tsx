@@ -95,7 +95,7 @@ export default function CareersPage() {
                             <h4 className="font-medium text-gray-900 mb-2">Job Description:</h4>
                             <p className="text-gray-600 text-sm mb-3">
                                 We are looking for a dynamic Sales Executive to join our team and drive sales for our travel packages and services. 
-                                If you have a passion for travel, excellent communication skills, and a knack for sales, we'd love to hear from you!
+                                If you have a passion for travel, excellent communication skills, and a knack for sales, we&apos;d love to hear from you!
                             </p>
                         </div>
                         
@@ -113,7 +113,7 @@ export default function CareersPage() {
                         <div className="mb-4">
                             <h4 className="font-medium text-gray-900 mb-2">Qualifications:</h4>
                             <ul className="list-disc pl-5 text-gray-600 text-sm">
-                                <li>Bachelor's degree in Sales, Marketing, Business, Hospitality, or a related field.</li>
+                                <li>Bachelor&apos;s degree in Sales, Marketing, Business, Hospitality, or a related field.</li>
                                 <li>1-3 years of experience in travel sales, hospitality, or a customer-facing sales role.</li>
                                 <li>Excellent communication & negotiation skills.</li>
                                 <li>Ability to handle B2B & B2C sales effectively.</li>
