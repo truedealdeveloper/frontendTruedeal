@@ -86,14 +86,14 @@ export interface AustraliaPackage {
 
 export const australiaPackages: Record<string, AustraliaPackage> = {
     sydneyGoldCoast: {
-        id: "7-days-sydney-gold-coast",
-        packageName: "7 Days Sydney & Gold Coast",
-        days: 7,
-        nights: 6,
-        amount: 199000,
+        id: "the-best-of-australia",
+        packageName: "The best of Australia",
+        days: 13,
+        nights: 12,
+        amount: 495999,
         dateStart: "01 March 2025",
         dateEnd: "26 July 2025",
-        description: "Experience the best of Australia's east coast with our 7-day tour covering Sydney's iconic landmarks and Gold Coast's stunning beaches.",
+        description: "Experience the best of Australia's east coast with our 13-day tour covering Sydney's iconic landmarks and Gold Coast's stunning beaches.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
@@ -114,67 +114,101 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
             }
         ],
         tourSummary: [
-            "Day 1: Sydney - Arrival",
-            "Day 2: Sydney City Tour",
-            "Day 3: Blue Mountains Tour",
-            "Day 4: Gold Coast - Transfer",
-            "Day 5: Movie World",
-            "Day 6: Sea World",
-            "Day 7: Gold Coast - Departure"
+            "Day 1: Arrive in Melbourne",
+            "Day 2: Phillip Island Penguin Parade Small Group Eco Tour by Go West Tours",
+            "Day 3: Great Ocean Road Scenic Tour",
+            "Day 4: Depart from Melbourne",
+            "Day 5: Skyrail & Kuranda Scenic Railway",
+            "Day 6: Full Day Green Island Reef Cruise",
+            "Day 7: Depart from Cairns",
+            "Day 8: Best of Movie World",
+            "Day 9: Best of Sea World by Village Road Shows",
+            "Day 10: Depart from the Gold Coast",
+            "Day 11: Merlin Four Attraction Pass",
+            "Day 12: Taronga Zoo Express with Captain Cook Cruise",
+            "Day 13: Depart from the Gold Coast"
         ],
         inclusions: [
-            "Return airport transfers",
-            "Accommodation in 4-star hotels",
-            "Daily breakfast",
-            "Sydney Opera House guided tour",
-            "Blue Mountains day tour",
-            "Movie World and Sea World tickets",
-            "English-speaking guide",
-            "All taxes included"
+            "Hotel accommodation subject to availability",
+            "Hotel breakfast",
+            "Tours and transfers on SIC (subject to package)",
+            "Park entry and tour guides",
+            "Transfers to and from Airport (Extra 20 AUD charge PP for outer CBD drop)",
         ],
         exclusions: [
-            "Airfare",
-            "Visa fees",
+            "International and Domestic Air tickets",
+            "Australia Visa",
             "Travel insurance",
-            "Personal expenses",
-            "Optional activities"
+            "Meals, Laundry, telephone, optional excursions and other items of a personal nature.",
+            "Cost of foreign exchange for personal use.",
+            "Any items or services not mentioned in the itinerary section."
         ],
         itinerary: [
             {
                 day: 1,
-                title: "Sydney - Arrival",
-                description: "Arrive at Sydney International Airport. Transfer to your hotel. Evening at leisure to explore Darling Harbour."
+                title: "Arrive in Melbourne",
+                description: "Melbourne Cricket Ground MCG Tour Explore Melbourne sporting culture"
             },
             {
                 day: 2,
-                title: "Sydney City Tour",
-                description: "Full-day Sydney city tour including Opera House, Harbour Bridge, Bondi Beach, and The Rocks historic district."
+                title: "Phillip Island Penguin Parade Small Group Eco Tour by Go West Tours",
+                description: "Indulge in awe-inspiring wildlife encounters and breathtaking views, culminating in the renowned Penguin Parade."
             },
             {
                 day: 3,
-                title: "Blue Mountains Tour",
-                description: "Day trip to Blue Mountains. Visit Three Sisters, Scenic World, and Featherdale Wildlife Park."
+                title: "Great Ocean Road Scenic Tour",
+                description: "Experience the wonders of Victoria Surf Coast and nearby must-visit locations close to Melbourne."
             },
             {
                 day: 4,
-                title: "Gold Coast - Transfer",
-                description: "Morning flight to Gold Coast. Transfer to hotel. Evening free to explore Surfers Paradise."
+                title: "Depart from Melbourne",
+                description: "Shared transfer service from your Melbourne Central Business District hotel to Melbourne Airport."
             },
             {
                 day: 5,
-                title: "Movie World",
-                description: "Full day at Warner Bros. Movie World enjoying rides and shows."
+                title: "Skyrail & Kuranda Scenic Railway",
+                description: "Discover one of the worlds oldest and most fascinating botanical areas, untouched for 130 million years."
             },
             {
                 day: 6,
-                title: "Sea World",
-                description: "Full day at Sea World watching marine shows and enjoying attractions."
+                title: "Full Day Green Island Reef Cruise",
+                description: "Experience a delightful cruise to renowned Green Island, in a full-day excursion from Cairns."
             },
             {
                 day: 7,
-                title: "Gold Coast - Departure",
-                description: "Free morning for shopping. Transfer to airport for departure."
-            }
+                title: "Depart from Cairns",
+                description: "Shared transfer from your Cairns hotel to Cairns Airport"
+            },
+            {
+                day: 8,
+                title: "Depart from Cairns",
+                description: "Shared transfer from your Cairns hotel to Cairns Airport"
+            },
+            {
+                day: 9,
+                title: "Depart from Cairns",
+                description: "Shared transfer from your Cairns hotel to Cairns Airport"
+            },
+            {
+                day: 10,
+                title: "Depart from Cairns",
+                description: "Shared transfer from your Cairns hotel to Cairns Airport"
+            },
+            {
+                day: 11,
+                title: "Depart from Cairns",
+                description: "Shared transfer from your Cairns hotel to Cairns Airport"
+            },
+            {
+                day: 12,
+                title: "Depart from Cairns",
+                description: "Shared transfer from your Cairns hotel to Cairns Airport"
+            },
+            {
+                day: 13,
+                title: "Depart from Cairns",
+                description: "Shared transfer from your Cairns hotel to Cairns Airport"
+            },
         ],
         images: [
             "/UGCImages/Images4/australia/australia/1.webp",

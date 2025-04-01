@@ -26,7 +26,7 @@ export default function CareersPage() {
                 <div className="bg-white rounded-lg shadow-lg p-8 mb-10">
                     <h2 className="text-2xl font-semibold mb-6">Current Openings</h2>
                     
-                    <div className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+                    <div className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow mb-6">
                         <div className="flex justify-between items-start mb-4">
                             <h3 className="text-xl font-semibold text-gray-900">Travel Operations Manager</h3>
                             <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">5 Openings</span>
@@ -74,6 +74,69 @@ export default function CareersPage() {
                         
                         <a 
                             href="mailto:web@truedeal4u.com?subject=Application for Travel Operations Manager Position" 
+                            className="inline-block bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white py-2 px-6 rounded-md hover:opacity-90 transition-opacity flex items-center"
+                        >
+                            Apply Now <Briefcase className="w-4 h-4 ml-2" />
+                        </a>
+                    </div>
+                    
+                    <div className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+                        <div className="flex justify-between items-start mb-4">
+                            <h3 className="text-xl font-semibold text-gray-900">Sales Executive – Travel & Tourism</h3>
+                            <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Multiple Openings</span>
+                        </div>
+                        
+                        <div className="flex items-center text-gray-600 mb-4">
+                            <MapPin className="w-4 h-4 mr-1" />
+                            <span>Noida Sector 62, India</span>
+                        </div>
+                        
+                        <div className="mb-4">
+                            <h4 className="font-medium text-gray-900 mb-2">Job Description:</h4>
+                            <p className="text-gray-600 text-sm mb-3">
+                                We are looking for a dynamic Sales Executive to join our team and drive sales for our travel packages and services. 
+                                If you have a passion for travel, excellent communication skills, and a knack for sales, we'd love to hear from you!
+                            </p>
+                        </div>
+                        
+                        <div className="mb-4">
+                            <h4 className="font-medium text-gray-900 mb-2">Key Responsibilities:</h4>
+                            <ul className="list-disc pl-5 text-gray-600 text-sm">
+                                <li><strong>Sales & Lead Generation:</strong> Identify potential customers through cold calling, networking, and referrals. Sell domestic & international travel packages, forex, visa, and other travel-related services. Achieve and exceed sales targets by closing deals effectively.</li>
+                                <li><strong>Client Relationship Management:</strong> Build strong relationships with individual travelers, corporate clients, and travel agents. Provide personalized consultation to customers, understanding their travel needs. Handle inquiries and follow up on leads to convert them into bookings.</li>
+                                <li><strong>Negotiation & Upselling:</strong> Offer customized travel solutions and suggest upgrades/add-ons. Convince clients to opt for additional services like travel insurance, forex cards, and premium accommodations. Negotiate deals with vendors and partners to offer competitive pricing.</li>
+                                <li><strong>Market Research & Trend Analysis:</strong> Stay updated with the latest travel trends, airline fares, visa policies, and destination insights. Identify high-demand destinations and create sales strategies accordingly.</li>
+                                <li><strong>Customer Support & Problem Solving:</strong> Handle customer queries, concerns, and complaints professionally. Ensure smooth pre- and post-sales support, resolving issues proactively. Assist travelers in last-minute changes, cancellations, and modifications.</li>
+                            </ul>
+                        </div>
+                        
+                        <div className="mb-4">
+                            <h4 className="font-medium text-gray-900 mb-2">Qualifications:</h4>
+                            <ul className="list-disc pl-5 text-gray-600 text-sm">
+                                <li>Bachelor's degree in Sales, Marketing, Business, Hospitality, or a related field.</li>
+                                <li>1-3 years of experience in travel sales, hospitality, or a customer-facing sales role.</li>
+                                <li>Excellent communication & negotiation skills.</li>
+                                <li>Ability to handle B2B & B2C sales effectively.</li>
+                                <li>Strong knowledge of domestic & international destinations, visa processes, and forex services.</li>
+                                <li>Target-driven mindset with a passion for closing deals.</li>
+                                <li>Proficiency in CRM tools, MS Office, and online travel platforms.</li>
+                                <li>Ability to work under pressure and meet sales targets.</li>
+                            </ul>
+                        </div>
+                        
+                        <div className="mb-4">
+                            <h4 className="font-medium text-gray-900 mb-2">What We Offer:</h4>
+                            <ul className="list-disc pl-5 text-gray-600 text-sm">
+                                <li>Competitive salary + lucrative commission & incentives</li>
+                                <li>Opportunity to travel & explore destinations</li>
+                                <li>Training & career growth in the travel industry</li>
+                                <li>Vibrant & supportive work culture</li>
+                                <li>Performance-based bonuses and rewards</li>
+                            </ul>
+                        </div>
+                        
+                        <a 
+                            href="mailto:web@truedeal4u.com?subject=Application for Sales Executive Position" 
                             className="inline-block bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white py-2 px-6 rounded-md hover:opacity-90 transition-opacity flex items-center"
                         >
                             Apply Now <Briefcase className="w-4 h-4 ml-2" />
