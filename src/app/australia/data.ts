@@ -98,7 +98,7 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
             pax: "Group Tour",
             rooms: "Double Sharing",
             arrivalDate: "Contact Us",
-            duration: "7D6N Australia Fixed Departure",
+            duration: "13D12N Australia Fixed Departure",
             costBasis: "Cost Based On per person"
         },
         hotelDetails: [
@@ -129,25 +129,20 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
             "Day 13: Depart from the Gold Coast"
         ],
         inclusions: [
-            "Hotel accommodation subject to availability",
-            "Hotel breakfast",
-            "Tours and transfers on SIC (subject to package)",
-            "Park entry and tour guides",
+            "Hotel accommodation subject to availability | Hotel breakfast",
+            "Tours and transfers on SIC (subject to package), park entry and tour guides",
             "Transfers to and from Airport (Extra 20 AUD charge PP for outer CBD drop)",
         ],
         exclusions: [
-            "International and Domestic Air tickets",
-            "Australia Visa",
-            "Travel insurance",
-            "Meals, Laundry, telephone, optional excursions and other items of a personal nature.",
-            "Cost of foreign exchange for personal use.",
+            "International and Domestic Air tickets | Australia Visa. | Travel Insurance.",
+            "Meals, Laundry, telephone, optional excursions and other items of a personal nature. | Cost of foreign exchange for personal use.",
             "Any items or services not mentioned in the itinerary section."
         ],
         itinerary: [
             {
                 day: 1,
                 title: "Arrive in Melbourne",
-                description: "Melbourne Cricket Ground MCG Tour Explore Melbourne sporting culture"
+                description: "Melbourne Cricket Ground – MCG Tour Explore Melbourne's sporting culture"
             },
             {
                 day: 2,
@@ -157,17 +152,17 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
             {
                 day: 3,
                 title: "Great Ocean Road Scenic Tour",
-                description: "Experience the wonders of Victoria Surf Coast and nearby must-visit locations close to Melbourne."
+                description: "Experience the wonders of Victoria's Surf Coast and nearby must-visit locations close to Melbourne."
             },
             {
                 day: 4,
                 title: "Depart from Melbourne",
-                description: "Shared transfer service from your Melbourne Central Business District hotel to Melbourne Airport."
+                description: "Shared transfer service from your Melbourne's Central Business District hotel to Melbourne Airport."
             },
             {
                 day: 5,
-                title: "Skyrail & Kuranda Scenic Railway",
-                description: "Discover one of the worlds oldest and most fascinating botanical areas, untouched for 130 million years."
+                title: "Cairns: Skyrail & Kuranda Scenic Railway",
+                description: "Accommodation: Mercure Cairns. Discover one of the world's oldest and most fascinating botanical areas, untouched for 130 million years."
             },
             {
                 day: 6,
@@ -181,33 +176,33 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
             },
             {
                 day: 8,
-                title: "Depart from Cairns",
-                description: "Shared transfer from your Cairns hotel to Cairns Airport"
+                title: "Gold Coast: Best Of Both Worlds – Movie World & Sea World",
+                description: "Accommodation: Vibe Gold Coast. ROO Pass: Hassle-free return journey from Brisbane Airport to the Gold Coast's thrilling attractions and mesmerising scenery. Evening Rainforest Walk & Glow Worm Tours: Embark on an extraordinary nocturnal journey through the enchanting rainforest, illuminated by the gentle glow of torchlight."
             },
             {
                 day: 9,
-                title: "Depart from Cairns",
-                description: "Shared transfer from your Cairns hotel to Cairns Airport"
+                title: "Best Of Both Worlds – Movie World & Sea World by Village Road Shows",
+                description: "Experience the ultimate thrill with the Best of Both Worlds pass, granting access to both Movie World and Sea World. Hot Air Balloon Ride with Complimentary Arro Jet Experience! Embark on a picturesque hot air balloon adventure in the Gold Coast Hinterland…"
             },
             {
                 day: 10,
-                title: "Depart from Cairns",
-                description: "Shared transfer from your Cairns hotel to Cairns Airport"
+                title: "Depart from the Gold Coast",
+                description: "Shared transfer service from your Gold Coast hotel to Brisbane Airport"
             },
             {
                 day: 11,
-                title: "Depart from Cairns",
-                description: "Shared transfer from your Cairns hotel to Cairns Airport"
+                title: "Sydney: Merlin Four Attraction Pass",
+                description: "Accommodation: Furama Darling Harbour. Sydney Tower Eye: Immerse yourself in Sydney's skyline. WildLife Zoo: Embark on an incredible wildlife expedition. SeaLife Aquarium: One of the globe's most expansive aquatic habitats. Madame Tussauds: Interact with lifelike celebrity figures and engage with exciting new interactive elements. Sydney Opera House Tour: Unveil the legendary history and extraordinary secrets of the Sydney Opera House…"
             },
             {
                 day: 12,
-                title: "Depart from Cairns",
-                description: "Shared transfer from your Cairns hotel to Cairns Airport"
+                title: "Taronga Zoo Express with Captain Cook Cruise",
+                description: "Sydney's iconic wildlife sanctuary, conveniently located on the stunning Sydney Harbour. Sydney Harbour Heli Flight: Experience the breathtaking Sydney skyline on a thrilling 20-minute helicopter joy flight"
             },
             {
                 day: 13,
-                title: "Depart from Cairns",
-                description: "Shared transfer from your Cairns hotel to Cairns Airport"
+                title: "Depart from Sydney",
+                description: "It is the last day! Time to pack up and bring the sweet memories of Australia home. End of your journey"
             },
         ],
         images: [
