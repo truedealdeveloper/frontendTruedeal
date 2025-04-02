@@ -10,138 +10,363 @@ export async function GET() {
 
 <url>
   <loc>https://www.truedeal4u.com/</loc>
-  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://www.truedeal4u.com/destinationpackage</loc>
-  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.truedeal4u.com/trendingpackage</loc>
-  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.truedeal4u.com/group-tours</loc>
-  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.truedeal4u.com/group-tours/malaysia</loc>
-  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.truedeal4u.com/group-tours/uttrakhand</loc>
-  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.truedeal4u.com/group-tours/almaty</loc>
-  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.truedeal4u.com/trending/almaty</loc>
-  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.truedeal4u.com/trending/baku</loc>
-  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.truedeal4u.com/destinations/japan</loc>
-  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.truedeal4u.com/destinations/maldives</loc>
-  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.truedeal4u.com/destinations/finland</loc>
-  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.truedeal4u.com/destinations/kenya</loc>
-  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.truedeal4u.com/indonesia/bali-free-easy</loc>
-  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.truedeal4u.com/indonesia/bali-delight-3N4D</loc>
-  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.truedeal4u.com/indonesia/bali-dolphin-tour-3N4D</loc>
-  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.truedeal4u.com/indonesia/bali-west-penida-3N4D</loc>
-  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.truedeal4u.com/reviews</loc>
-  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://www.truedeal4u.com/blogs</loc>
-  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.truedeal4u.com/about</loc>
-  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.truedeal4u.com/exclusive</loc>
-  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.truedeal4u.com/contact-us</loc>
-  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.truedeal4u.com/careers</loc>
-  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.truedeal4u.com/terms&amp;conditions</loc>
-  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.truedeal4u.com/refund&amp;cancellation</loc>
-  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <loc>https://www.truedeal4u.com/about-us</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.truedeal4u.com/payment</loc>
-  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/group-tours</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/fixedDeparture/europe-12-days-grand-tour</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/fixedDeparture/vietnam-8-days-highlights-tour</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/fixedDeparture/euro-quest-15-days-grand-tour</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/fixedDeparture/europe-7-days-mini-europe-tour</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/fixedDeparture/almaty-5-days-kazakhstan-tour</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/fixedDeparture/dubai-5-days-desert-adventure</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/sriLanka/bentota-3d2n</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/sriLanka/colombo-bentota-2n</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/sriLanka/kandy-bentota-colombo-6d5n</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/sriLanka/kandy-bentota-4d3n</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/sriLanka/bentota-colombo-4d3n</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/sriLanka/kandy-colombo-3n4d</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/sriLanka/kandy-nuwara-eliya-bentota-colombo-6d5n</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/sriLanka/sri-lanka-fixed-departure-5n6d</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/sriLanka/dambulla-kandy-bentota-6d5n</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/sriLanka/dambulla-nuwara-eliya-colombo-6d5n</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/almaty/4-days-almaty-winter</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/almaty/5-days-almaty-discovery</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/almaty/6-days-almaty-explore</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/singapore/4-days-singapore-city</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/singapore/5-days-singapore-discovery</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/singapore/4-days-malaysia-tour</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/reviews</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/destinationpackage</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/trendingpackage</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/contact-us</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/careers</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/terms&amp;conditions</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/refund&amp;cancellation</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.truedeal4u.com/visaservices</loc>
-  <lastmod>2025-01-24T05:32:43+00:00</lastmod>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/fixedDeparture/turkey-9-days-discovery-tour</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/fixedDeparture/hongkong-macau-5-days-combo-tour</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/fixedDeparture/bhutan-7-days-happiness-tour</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/fixedDeparture/china-6-days-canton-fair-tour</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/fixedDeparture/kashmir-6-days-paradise-tour</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/fixedDeparture/srinagar-6-days-paradise-tour</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/fixedDeparture/manali-5-days-volvo-tour</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/blogs/7-reasons-visit-spiti-valley</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/blogs/explore-ladakh-february-winter-wonderland</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/blogs/best-time-visit-kashmir-seasonal-guide</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/blogs/kashmir-travel-guide-journey-paradise-earth</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/blogs/almaty-nightlife-explore-city-night</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/blogs/10-amazing-things-to-do-malaysia</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/blogs/ubud-art-market-bali-2025-guide</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/blogs/atal-tunnel-manali-guide-2025</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/blogs/best-time-visit-badrinath-complete-guide</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/blogs/eiffel-tower-iconic-jewel-paris</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/blogs/disneyland-paris-guide-magical-vacation</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/blogs/gulmarg-july-complete-travel-guide</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/blogs/10-must-visit-places-kenya</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/blogs/trump-gold-card-visa-eb5-replacement</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/blogs/almaty-march-complete-travel-guide</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/group-tours/malaysia</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/group-tours/uttrakhand</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/group-tours/almaty</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/chardhamYatra/CHARDHAM-5n6d</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/chardhamYatra/dodham-helicopter-tour-same-day</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/chardhamYatra/dodham-ex-sersi-helicopter-tour</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/chardhamYatra/dodham-4-days-helicopter-tour</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/chardhamYatra/ekdham-same-day-tour</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/destinations/maldives</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/destinations/finland</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/destinations/kenya</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/indonesia/bali-free-easy</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/indonesia/bali-delight-3N4D</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/indonesia/bali-dolphin-tour-3N4D</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.truedeal4u.com/indonesia/bali-west-penida-3N4D</loc>
+  <lastmod>2025-03-26T11:48:49+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 
 </urlset>`
