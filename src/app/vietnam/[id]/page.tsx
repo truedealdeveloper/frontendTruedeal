@@ -13,6 +13,7 @@ import { Poppins } from 'next/font/google';
 import Image from 'next/image';
 import VietnamPackages from '../page';
 import VietnamBanner from '@/app/components/homepage/VietnamBanner';
+import Head from 'next/head';
 
 interface PageProps {
     params: Promise<{ id: string; }>
@@ -125,7 +126,7 @@ export default function VietnamPackagePage({ params }: PageProps) {
 
     return (
         <div className={`min-h-screen bg-gray-50 ${poppins.className} relative`}>
-            {/* Hero Section */}
+            {/* Hero Section with Main Heading (h1) */}
             <div className="relative h-[70vh] md:h-[80vh] overflow-hidden">
                 <AnimatePresence mode='wait'>
                     <motion.img
@@ -214,18 +215,18 @@ export default function VietnamPackagePage({ params }: PageProps) {
 
             {/* Main Content */}
             <div className="container mx-auto px-4 py-8">
-                {/* Overview Section */}
+                {/* Overview Section - h2 heading */}
                 <div ref={overviewRef} className="scroll-mt-16">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-8">
                         <div className="lg:col-span-2 space-y-4">
                             <div className="bg-white rounded-lg shadow-sm p-6">
                                 <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-[#017ae3] border-b pb-4">
-                                    About This Package
+                                    Package Details
                                 </h2>
 
                                 <p className="text-gray-600 mb-6">{vietnamPkg.description}</p>
 
-                                {/* Tour Summary Box */}
+                                {/* Tour Summary Box - h3 heading */}
                                 <div className="bg-blue-50 rounded-lg p-4 mb-6">
                                     <h3 className="text-lg font-semibold mb-4">Tour Overview</h3>
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -238,7 +239,7 @@ export default function VietnamPackagePage({ params }: PageProps) {
                                     </div>
                                 </div>
 
-                                {/* Tour Details Grid */}
+                                {/* Tour Details Grid - h4 headings */}
                                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                                     {vietnamPkg.groupDetails && (
                                         <>
@@ -264,7 +265,7 @@ export default function VietnamPackagePage({ params }: PageProps) {
 
                                 {vietnamPkg.departureDates && (
                                     <div className="mt-6">
-                                        <h3 className="text-lg font-semibold mb-4">Departure Dates</h3>
+                                        <h3 className="text-lg font-semibold mb-4">Departure Schedules</h3>
                                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                                             {vietnamPkg.departureDates.map((departure, index) => (
                                                 <div key={index} className="bg-gray-50 p-4 rounded-lg">
@@ -310,10 +311,10 @@ export default function VietnamPackagePage({ params }: PageProps) {
                     </div>
                 </div>
 
-                {/* Itinerary Section */}
+                {/* Itinerary Section - h2 heading */}
                 <div ref={itineraryRef} className="scroll-mt-16 mt-8">
                     <div className="bg-white rounded-lg shadow-sm p-6">
-                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">Detailed Itinerary</h2>
+                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">Daily Itinerary Plan</h2>
                         <div className="space-y-6">
                             {vietnamPkg.itinerary.map((day, index) => (
                                 <div key={index} className="group">
@@ -359,10 +360,10 @@ export default function VietnamPackagePage({ params }: PageProps) {
                     </div>
                 </div>
 
-                {/* Inclusions Section */}
+                {/* Inclusions Section - h2 heading */}
                 <div ref={inclusionsRef} className="scroll-mt-16 mt-8">
                     <div className="bg-white rounded-lg shadow-sm p-6">
-                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">Tour Inclusions</h2>
+                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">What's Included</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {vietnamPkg.inclusions?.map((item, index) => (
                                 <div key={index} className="flex items-start gap-2 bg-gray-50 p-4 rounded-lg">
@@ -374,10 +375,10 @@ export default function VietnamPackagePage({ params }: PageProps) {
                     </div>
                 </div>
 
-                {/* Exclusions Section */}
+                {/* Exclusions Section - h2 heading */}
                 <div ref={exclusionsRef} className="scroll-mt-16 mt-8">
                     <div className="bg-white rounded-lg shadow-sm p-6">
-                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">Tour Exclusions</h2>
+                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">What's Not Included</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {vietnamPkg.exclusions?.map((item, index) => (
                                 <div key={index} className="flex items-start gap-2 bg-gray-50 p-4 rounded-lg">
@@ -389,16 +390,16 @@ export default function VietnamPackagePage({ params }: PageProps) {
                     </div>
                 </div>
 
-                {/* Other Information Section */}
+                {/* Other Information Section - h2 heading */}
                 <div ref={otherRef} className="scroll-mt-16 mt-8">
                     <div className="bg-white rounded-lg shadow-sm p-6">
-                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">Other Information</h2>
+                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">Additional Package Information</h2>
                         
                         {vietnamPkg.additionalInfo && (
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {/* Highlights */}
                                 <div className="space-y-4">
-                                    <h3 className="text-xl font-semibold">Highlights</h3>
+                                    <h3 className="text-xl font-semibold">Trip Highlights</h3>
                                     <div className="bg-gray-50 p-4 rounded-lg">
                                         <ul className="list-disc list-inside space-y-2">
                                             {vietnamPkg.additionalInfo.highlights.map((highlight, index) => (
@@ -410,7 +411,7 @@ export default function VietnamPackagePage({ params }: PageProps) {
 
                                 {/* Cuisine */}
                                 <div className="space-y-4">
-                                    <h3 className="text-xl font-semibold">Local Cuisine</h3>
+                                    <h3 className="text-xl font-semibold">Must-Try Local Dishes</h3>
                                     <div className="bg-gray-50 p-4 rounded-lg">
                                         <ul className="list-disc list-inside space-y-2">
                                             {vietnamPkg.additionalInfo.cuisine.map((item, index) => (
@@ -422,7 +423,7 @@ export default function VietnamPackagePage({ params }: PageProps) {
 
                                 {/* Hotels */}
                                 <div className="space-y-4">
-                                    <h3 className="text-xl font-semibold">Hotels</h3>
+                                    <h3 className="text-xl font-semibold">Accommodation Details</h3>
                                     <div className="space-y-4">
                                         {vietnamPkg.hotelDetails.map((hotel, index) => (
                                             <div key={index} className="bg-gray-50 p-4 rounded-lg">
@@ -436,12 +437,12 @@ export default function VietnamPackagePage({ params }: PageProps) {
 
                                 {/* Visa Information */}
                                 <div className="space-y-4">
-                                    <h3 className="text-xl font-semibold">Visa Information</h3>
+                                    <h3 className="text-xl font-semibold">Visa Requirements</h3>
                                     <div className="bg-gray-50 p-4 rounded-lg">
                                         <p className="text-gray-700 mb-2"><strong>Requirement:</strong> {vietnamPkg.additionalInfo.visaInfo.requirement}</p>
                                         <p className="text-gray-700 mb-2"><strong>Duration:</strong> {vietnamPkg.additionalInfo.visaInfo.duration}</p>
                                         <p className="text-gray-700 mb-2"><strong>Cost:</strong> {vietnamPkg.additionalInfo.visaInfo.cost}</p>
-                                        <h4 className="font-semibold mt-4 mb-2">Required Documents:</h4>
+                                        <h4 className="font-semibold mt-4 mb-2">Required Documentation:</h4>
                                         <ul className="list-disc list-inside space-y-1">
                                             {vietnamPkg.additionalInfo.visaInfo.documents.map((doc, index) => (
                                                 <li key={index} className="text-gray-700">{doc}</li>
@@ -454,10 +455,10 @@ export default function VietnamPackagePage({ params }: PageProps) {
                     </div>
                 </div>
 
-                {/* Sightseeing Activities Section */}
+                {/* Sightseeing Activities Section - h2 heading */}
                 <div className="mt-8">
                     <div className="bg-white rounded-lg shadow-sm p-6">
-                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">Popular Sightseeing Spots</h2>
+                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">Must-Visit Attractions</h2>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {vietnamPkg.sightseeingSpots?.map((spot, index) => (
                                 <div key={index} className="group relative overflow-hidden rounded-lg">
@@ -480,10 +481,10 @@ export default function VietnamPackagePage({ params }: PageProps) {
                     </div>
                 </div>
 
-                {/* Local Food & Restaurants Section */}
+                {/* Local Food & Restaurants Section - h2 heading */}
                 <div className="mt-8">
                     <div className="bg-white rounded-lg shadow-sm p-6">
-                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">Famous Local Cuisine</h2>
+                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">Culinary Experiences</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {vietnamPkg.localFood?.map((food, index) => (
                                 <div key={index} className="flex gap-4 items-center bg-gray-50 rounded-lg p-4">
@@ -510,10 +511,10 @@ export default function VietnamPackagePage({ params }: PageProps) {
                     </div>
                 </div>
 
-                {/* Culture & Traditions Section */}
+                {/* Culture & Traditions Section - h2 heading, with typo fixed */}
                 <div className="mt-8">
                     <div className="bg-white rounded-lg shadow-sm p-6">
-                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">vietnamnese Culture & Traditions</h2>
+                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">Vietnamese Cultural Heritage</h2>
                         <div 
                             ref={cultureScrollRef}
                             className="overflow-x-hidden relative"
@@ -537,6 +538,44 @@ export default function VietnamPackagePage({ params }: PageProps) {
                                     </div>
                                 ))}
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Related Vietnam Packages Section - New section */}
+                <div className="mt-8">
+                    <div className="bg-white rounded-lg shadow-sm p-6">
+                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">Explore More Vietnam Packages</h2>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                            {Object.values(vietnamPackages)
+                                .filter(pkg => pkg.id !== id)
+                                .slice(0, 3)
+                                .map((pkg, index) => (
+                                    <a 
+                                        href={`/vietnam/${pkg.id}`} 
+                                        key={index}
+                                        className="group block bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+                                    >
+                                        <div className="relative h-48 overflow-hidden">
+                                            <Image
+                                                src={pkg.images?.[0] || '/default-image.jpg'}
+                                                alt={pkg.packageName}
+                                                width={400}
+                                                height={300}
+                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                            />
+                                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                                                <p className="text-white font-semibold">{pkg.packageName}</p>
+                                            </div>
+                                        </div>
+                                        <div className="p-4">
+                                            <p className="text-[#017ae3] font-bold">
+                                                {pkg.amount && `₹${pkg.amount.toLocaleString('en-IN')}/-`}
+                                            </p>
+                                            <p className="text-gray-600 text-sm">{pkg.days}D/{pkg.nights}N</p>
+                                        </div>
+                                    </a>
+                                ))}
                         </div>
                     </div>
                 </div>
@@ -581,8 +620,8 @@ export default function VietnamPackagePage({ params }: PageProps) {
                 }
             `}</style>
             <VietnamBanner />  
-                <div className='mt-[50px]'>
-            <VietnamPackages />
+            <div className='mt-[50px]'>
+                <VietnamPackages />
             </div>
         </div>
     );

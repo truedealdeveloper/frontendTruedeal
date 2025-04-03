@@ -201,98 +201,97 @@ your departure flight.`
         ],
         sightseeingSpots: [
             {
-                name: "Tanah Lot Temple",
-                description: "Ancient Hindu shrine perched on a rocky outcrop, offering stunning sunset views and cultural performances",
-                image: "/UGCImages/vietnam/extra/Tanah Lot Temple.jpg"
+                name: "Cu Chi Tunnels",
+                description: "Historic underground network used during the Vietnam War, featuring trap doors, living areas, and command centers",
+                image: "/UGCImages/vietnam/extra/CuChiTunnels.jpg"
             },
             {
-                name: "Tegalalang Rice Terraces",
-                description: "Spectacular terraced rice fields showcasing traditional vietnamnese irrigation system (subak)",
-                image: "/UGCImages/vietnam/extra/Tegalalang Rice Terraces.jpg"
+                name: "Mekong Delta",
+                description: "Vast network of rivers and islands known as Vietnam's 'rice bowl', offering boat tours and floating markets",
+                image: "/UGCImages/vietnam/extra/MekongDelta.jpg"
             },
             {
-                name: "Sacred Monkey Forest",
-                description: "Ancient forest temple complex home to hundreds of playful monkeys and stunning architecture",
-                image: "/UGCImages/vietnam/extra/monkeyForest.jpg"
+                name: "Reunification Palace",
+                description: "Historic landmark that served as South Vietnam's presidential residence during the Vietnam War",
+                image: "/UGCImages/vietnam/extra/ReunificationPalace.jpg"
             },
             {
-                name: "Mount Batur",
-                description: "Active volcano offering sunrise trekking experiences and breathtaking caldera views",
-                image: "/UGCImages/vietnam/extra/mountBatur.jpg"
+                name: "War Remnants Museum",
+                description: "Powerful museum documenting the Vietnam War with exhibits of military equipment and photography",
+                image: "/UGCImages/vietnam/extra/WarRemnants.jpg"
             },
             {
-                name: "Uluwatu Temple",
-                description: "Clifftop temple famous for traditional Kecak fire dance performances at sunset",
-                image: "/UGCImages/vietnam/extra/Uluwatu.jpg"
+                name: "Notre Dame Cathedral",
+                description: "French colonial-era cathedral in the heart of Ho Chi Minh City with distinctive red brick facade",
+                image: "/UGCImages/vietnam/extra/NotreDame.jpg"
             }
         ],
         localFood: [
             {
-                name: "Nasi Goreng",
-                description: "Indonesian fried rice with vegetables, chicken or seafood, topped with a fried egg",
-                image: "/UGCImages/vietnam/cuisine/Nasi Goreng.jpg",
-                where: "Warung Made, Kuta"
+                name: "Pho",
+                description: "Vietnam's iconic rice noodle soup with beef or chicken, fresh herbs, and aromatic broth",
+                image: "/UGCImages/vietnam/cuisine/Pho.jpg",
+                where: "Pho Hoa, Ho Chi Minh City"
             },
             {
-                name: "Babi Guling",
-                description: "Traditional vietnamnese-style roasted pig served with rice and local spices",
-                image: "/UGCImages/vietnam/cuisine/Babi Guling.png",
-                where: "Warung Ibu Oka, Ubud"
+                name: "Banh Mi",
+                description: "Crispy Vietnamese baguette sandwich filled with meats, pâté, vegetables and herbs",
+                image: "/UGCImages/vietnam/cuisine/BanhMi.jpg",
+                where: "Banh Mi Huynh Hoa, Ho Chi Minh City"
             },
             {
-                name: "Bebek Betutu",
-                description: "Slow-cooked duck with vietnamnese spices, served with plecing kangkung",
-                image: "/UGCImages/vietnam/cuisine/Bebek Betutu.png",
-                where: "Bebek Tepi Sawah, Ubud"
+                name: "Com Tam",
+                description: "Broken rice dish served with grilled pork, egg, and fish sauce, a southern Vietnamese specialty",
+                image: "/UGCImages/vietnam/cuisine/ComTam.jpg",
+                where: "Com Tam Bui Saigon, Ho Chi Minh City"
             },
             {
-                name: "Sambal Matah",
-                description: "Raw spicy vietnamnese relish made with shallots, lemongrass, and chili",
-                image: "/UGCImages/vietnam/cuisine/Sambal Matah.jpg",
-                where: "Merah Putih Restaurant, Seminyak"
+                name: "Hu Tieu",
+                description: "Southern Vietnamese noodle soup with pork, seafood and fresh herbs in a clear broth",
+                image: "/UGCImages/vietnam/cuisine/HuTieu.jpg",
+                where: "Hu Tieu Nam Vang Nhan, Ho Chi Minh City"
             },
         ],
         culture: [
             {
-                title: "Legong Dance",
-                description: "Graceful traditional dance performed by young girls in elaborate costumes, telling stories of ancient kingdoms",
-                image: "/UGCImages/vietnam/culture/dance.jpg"
+                title: "Water Puppet Theatre",
+                description: "Traditional Vietnamese art form where puppets perform on water, telling folk tales and legends",
+                image: "/UGCImages/vietnam/culture/WaterPuppet.jpg"
             },
             {
-                title: "Temple Ceremonies",
-                description: "Vibrant religious ceremonies with offerings, traditional music, and elaborate decorations",
-                image: "/UGCImages/vietnam/culture/vietnamTemple.jpg"
+                title: "Ao Dai",
+                description: "Vietnam's elegant national costume featuring a long tunic worn over pants, seen during special occasions",
+                image: "/UGCImages/vietnam/culture/AoDai.jpg"
             },
             {
-                title: "Traditional Crafts",
-                description: "Ancient art of wood carving, silver smithing, and batik making passed down through generations",
-                image: "/UGCImages/vietnam/culture/craft.jpg"
+                title: "Vietnamese Coffee Culture",
+                description: "Unique coffee preparation with condensed milk, enjoyed at street-side cafes throughout the country",
+                image: "/UGCImages/vietnam/culture/VietCoffee.jpg"
             },
             {
-                title: "Galungan Festival",
-                description: "Major vietnamnese holiday celebrating the victory of dharma over adharma, marked by decorated bamboo poles",
-                image: "/UGCImages/vietnam/culture/festival.png"
+                title: "Tet Festival",
+                description: "Vietnamese Lunar New Year celebration with family gatherings, special foods, and colorful decorations",
+                image: "/UGCImages/vietnam/culture/Tet.jpg"
             },
             {
                 title: "Traditional Markets",
-                description: "Bustling local markets selling fresh produce, spices, crafts, and traditional offerings",
-                image: "/UGCImages/vietnam/culture/market.png"
+                description: "Bustling local markets selling fresh produce, street food, and everyday goods, central to Vietnamese daily life",
+                image: "/UGCImages/vietnam/culture/VietMarket.jpg"
             }
         ],
         additionalInfo: {
             highlights: [
-                "Visit to iconic Tanah Lot Temple",
-                "Traditional Kecak Fire Dance show",
-                "Nusa Penida Island exploration",
-                "Water sports activities package",
-                "Scenic Tegalalang Rice Terraces"
+                "Visit to the Cu Chi Tunnels",
+                "Mekong Delta Cruise",
+                "Ben Tre Coconut Village",
+                "Ho Chi Minh City Tour",
             ],
             bestTimeToVisit: "April to October (Dry Season)",
             cuisine: [
                 "Traditional vietnamnese dishes",
                 "Fresh seafood specialties",
                 "Local fruit varieties",
-                "Indonesian street food"
+                
             ],
             accommodation: {
                 type: "4-Star Premium Hotels",
@@ -424,91 +423,90 @@ your departure flight.`
         ],
         sightseeingSpots: [
             {
-                name: "Tanah Lot Temple",
-                description: "Ancient Hindu shrine perched on a rocky outcrop, offering stunning sunset views and cultural performances",
-                image: "/UGCImages/vietnam/extra/Tanah Lot Temple.jpg"
+                name: "Phu Quoc National Park",
+                description: "Vast protected rainforest covering more than half the island, home to diverse wildlife and hiking trails",
+                image: "/UGCImages/vietnam/extra/PhuQuocNationalPark.jpg"
             },
             {
-                name: "Tegalalang Rice Terraces",
-                description: "Spectacular terraced rice fields showcasing traditional vietnamnese irrigation system (subak)",
-                image: "/UGCImages/vietnam/extra/Tegalalang Rice Terraces.jpg"
+                name: "Sao Beach",
+                description: "Pristine white sand beach with crystal clear waters, often considered one of Vietnam's most beautiful beaches",
+                image: "/UGCImages/vietnam/extra/SaoBeach.jpg"
             },
             {
-                name: "Sacred Monkey Forest",
-                description: "Ancient forest temple complex home to hundreds of playful monkeys and stunning architecture",
-                image: "/UGCImages/vietnam/extra/monkeyForest.jpg"
+                name: "Dinh Cau Rock",
+                description: "Unique temple built on oddly-shaped natural rock formation, dedicated to the sea goddess",
+                image: "/UGCImages/vietnam/extra/DinhCau.jpg"
             },
             {
-                name: "Mount Batur",
-                description: "Active volcano offering sunrise trekking experiences and breathtaking caldera views",
-                image: "/UGCImages/vietnam/extra/mountBatur.jpg"
+                name: "Vinpearl Land",
+                description: "Modern amusement park with water slides, aquarium, and entertainment shows on Phu Quoc Island",
+                image: "/UGCImages/vietnam/extra/VinpearlLand.jpg"
             },
             {
-                name: "Uluwatu Temple",
-                description: "Clifftop temple famous for traditional Kecak fire dance performances at sunset",
-                image: "/UGCImages/vietnam/extra/Uluwatu.jpg"
+                name: "Ham Ninh Fishing Village",
+                description: "Traditional coastal village known for fresh seafood and views of Cambodia across the Gulf of Thailand",
+                image: "/UGCImages/vietnam/extra/HamNinh.jpg"
             }
         ],
         localFood: [
             {
-                name: "Nasi Goreng",
-                description: "Indonesian fried rice with vegetables, chicken or seafood, topped with a fried egg",
-                image: "/UGCImages/vietnam/cuisine/Nasi Goreng.jpg",
-                where: "Warung Made, Kuta"
+                name: "Phu Quoc Fish Sauce",
+                description: "World-renowned fish sauce produced on the island, known for its superior quality and distinct flavor",
+                image: "/UGCImages/vietnam/cuisine/FishSauce.jpg",
+                where: "Fish Sauce Factories, Duong Dong"
             },
             {
-                name: "Babi Guling",
-                description: "Traditional vietnamnese-style roasted pig served with rice and local spices",
-                image: "/UGCImages/vietnam/cuisine/Babi Guling.png",
-                where: "Warung Ibu Oka, Ubud"
+                name: "Herring Salad",
+                description: "Fresh herring fish mixed with coconut, vegetables and spices, a Phu Quoc specialty",
+                image: "/UGCImages/vietnam/cuisine/HerringSalad.jpg",
+                where: "Night Market, Duong Dong"
             },
             {
-                name: "Bebek Betutu",
-                description: "Slow-cooked duck with vietnamnese spices, served with plecing kangkung",
-                image: "/UGCImages/vietnam/cuisine/Bebek Betutu.png",
-                where: "Bebek Tepi Sawah, Ubud"
+                name: "Sea Urchin Soup",
+                description: "Delicate soup made with fresh sea urchins, a local delicacy in Phu Quoc",
+                image: "/UGCImages/vietnam/cuisine/SeaUrchinSoup.jpg",
+                where: "Ham Ninh Fishing Village"
             },
             {
-                name: "Sambal Matah",
-                description: "Raw spicy vietnamnese relish made with shallots, lemongrass, and chili",
-                image: "/UGCImages/vietnam/cuisine/Sambal Matah.jpg",
-                where: "Merah Putih Restaurant, Seminyak"
+                name: "Grilled Squid",
+                description: "Fresh squid grilled with chili and lime, popular street food on the island",
+                image: "/UGCImages/vietnam/cuisine/GrilledSquid.jpg",
+                where: "Dinh Cau Night Market"
             },
         ],
         culture: [
             {
-                title: "Legong Dance",
-                description: "Graceful traditional dance performed by young girls in elaborate costumes, telling stories of ancient kingdoms",
-                image: "/UGCImages/vietnam/culture/dance.jpg"
+                title: "Pearl Farming",
+                description: "Traditional pearl cultivation practiced on Phu Quoc, with farms open for visitors to learn about the process",
+                image: "/UGCImages/vietnam/culture/PearlFarm.jpg"
             },
             {
-                title: "Temple Ceremonies",
-                description: "Vibrant religious ceremonies with offerings, traditional music, and elaborate decorations",
-                image: "/UGCImages/vietnam/culture/vietnamTemple.jpg"
+                title: "Sim Wine Production",
+                description: "Local production of unique wine made from sim berries that grow wild on the island",
+                image: "/UGCImages/vietnam/culture/SimWine.jpg"
             },
             {
-                title: "Traditional Crafts",
-                description: "Ancient art of wood carving, silver smithing, and batik making passed down through generations",
-                image: "/UGCImages/vietnam/culture/craft.jpg"
+                title: "Pepper Plantations",
+                description: "Cultivation of Phu Quoc's famous black pepper, known for its strong aroma and flavor",
+                image: "/UGCImages/vietnam/culture/PepperFarm.jpg"
             },
             {
-                title: "Galungan Festival",
-                description: "Major vietnamnese holiday celebrating the victory of dharma over adharma, marked by decorated bamboo poles",
-                image: "/UGCImages/vietnam/culture/festival.png"
+                title: "Fishing Traditions",
+                description: "Traditional fishing methods still practiced by local fishermen, central to the island's economy and culture",
+                image: "/UGCImages/vietnam/culture/FishingBoats.jpg"
             },
             {
-                title: "Traditional Markets",
-                description: "Bustling local markets selling fresh produce, spices, crafts, and traditional offerings",
-                image: "/UGCImages/vietnam/culture/market.png"
+                title: "Island Lifestyle",
+                description: "Relaxed pace of life on Vietnam's largest island, blending traditional ways with modern tourism",
+                image: "/UGCImages/vietnam/culture/IslandLife.jpg"
             }
         ],
         additionalInfo: {
             highlights: [
-                "Visit to iconic Tanah Lot Temple",
-                "Traditional Kecak Fire Dance show",
-                "Nusa Penida Island exploration",
-                "Water sports activities package",
-                "Scenic Tegalalang Rice Terraces"
+                "East Island Discovery Tour",
+                "Vinpearl Land Amusement Park",
+                "Ham Ninh Fishing Village",
+                "Phu Quoc Pepper Farm Visit",
             ],
             bestTimeToVisit: "April to October (Dry Season)",
             cuisine: [
@@ -667,91 +665,90 @@ your departure flight.`
         ],
         sightseeingSpots: [
             {
-                name: "Tanah Lot Temple",
-                description: "Ancient Hindu shrine perched on a rocky outcrop, offering stunning sunset views and cultural performances",
-                image: "/UGCImages/vietnam/extra/Tanah Lot Temple.jpg"
+                name: "Halong Bay",
+                description: "UNESCO World Heritage site featuring thousands of limestone karsts and isles in various shapes and sizes",
+                image: "/UGCImages/vietnam/extra/HalongBay.jpg"
             },
             {
-                name: "Tegalalang Rice Terraces",
-                description: "Spectacular terraced rice fields showcasing traditional vietnamnese irrigation system (subak)",
-                image: "/UGCImages/vietnam/extra/Tegalalang Rice Terraces.jpg"
+                name: "Hoan Kiem Lake",
+                description: "Scenic lake in the heart of Hanoi with the iconic red Huc Bridge and Ngoc Son Temple",
+                image: "/UGCImages/vietnam/extra/HoanKiemLake.jpg"
             },
             {
-                name: "Sacred Monkey Forest",
-                description: "Ancient forest temple complex home to hundreds of playful monkeys and stunning architecture",
-                image: "/UGCImages/vietnam/extra/monkeyForest.jpg"
+                name: "Temple of Literature",
+                description: "Vietnam's first national university built in 1070, dedicated to Confucius and scholars",
+                image: "/UGCImages/vietnam/extra/TempleOfLiterature.jpg"
             },
             {
-                name: "Mount Batur",
-                description: "Active volcano offering sunrise trekking experiences and breathtaking caldera views",
-                image: "/UGCImages/vietnam/extra/mountBatur.jpg"
+                name: "Hanoi Old Quarter",
+                description: "Historic heart of Hanoi with narrow streets named after the goods once sold there",
+                image: "/UGCImages/vietnam/extra/HanoiOldQuarter.jpg"
             },
             {
-                name: "Uluwatu Temple",
-                description: "Clifftop temple famous for traditional Kecak fire dance performances at sunset",
-                image: "/UGCImages/vietnam/extra/Uluwatu.jpg"
+                name: "Thang Long Imperial Citadel",
+                description: "UNESCO World Heritage site that served as Vietnam's political center for 13 centuries",
+                image: "/UGCImages/vietnam/extra/ThangLongCitadel.jpg"
             }
         ],
         localFood: [
             {
-                name: "Nasi Goreng",
-                description: "Indonesian fried rice with vegetables, chicken or seafood, topped with a fried egg",
-                image: "/UGCImages/vietnam/cuisine/Nasi Goreng.jpg",
-                where: "Warung Made, Kuta"
+                name: "Bun Cha",
+                description: "Hanoi specialty of grilled pork served with rice noodles, herbs and dipping sauce",
+                image: "/UGCImages/vietnam/cuisine/BunCha.jpg",
+                where: "Bun Cha Huong Lien, Hanoi"
             },
             {
-                name: "Babi Guling",
-                description: "Traditional vietnamnese-style roasted pig served with rice and local spices",
-                image: "/UGCImages/vietnam/cuisine/Babi Guling.png",
-                where: "Warung Ibu Oka, Ubud"
+                name: "Cha Ca",
+                description: "Turmeric-marinated fish cooked tableside with dill and green onions, a Hanoi delicacy",
+                image: "/UGCImages/vietnam/cuisine/ChaCa.jpg",
+                where: "Cha Ca Thang Long, Hanoi"
             },
             {
-                name: "Bebek Betutu",
-                description: "Slow-cooked duck with vietnamnese spices, served with plecing kangkung",
-                image: "/UGCImages/vietnam/cuisine/Bebek Betutu.png",
-                where: "Bebek Tepi Sawah, Ubud"
+                name: "Pho Hanoi",
+                description: "Northern-style beef noodle soup with a clearer broth and fewer garnishes than southern versions",
+                image: "/UGCImages/vietnam/cuisine/PhoHanoi.jpg",
+                where: "Pho Gia Truyen, Hanoi"
             },
             {
-                name: "Sambal Matah",
-                description: "Raw spicy vietnamnese relish made with shallots, lemongrass, and chili",
-                image: "/UGCImages/vietnam/cuisine/Sambal Matah.jpg",
-                where: "Merah Putih Restaurant, Seminyak"
+                name: "Egg Coffee",
+                description: "Hanoi specialty coffee topped with a creamy, custard-like mixture of egg yolks and condensed milk",
+                image: "/UGCImages/vietnam/cuisine/EggCoffee.jpg",
+                where: "Cafe Giang, Hanoi"
             },
         ],
         culture: [
             {
-                title: "Legong Dance",
-                description: "Graceful traditional dance performed by young girls in elaborate costumes, telling stories of ancient kingdoms",
-                image: "/UGCImages/vietnam/culture/dance.jpg"
+                title: "Water Puppet Theatre",
+                description: "Traditional northern Vietnamese art form where puppets perform on water, telling folk tales and legends",
+                image: "/UGCImages/vietnam/culture/WaterPuppet.jpg"
             },
             {
-                title: "Temple Ceremonies",
-                description: "Vibrant religious ceremonies with offerings, traditional music, and elaborate decorations",
-                image: "/UGCImages/vietnam/culture/vietnamTemple.jpg"
+                title: "Hanoi's 36 Old Streets",
+                description: "Historic guild streets where each was named after the specific goods once traded there",
+                image: "/UGCImages/vietnam/culture/36Streets.jpg"
             },
             {
-                title: "Traditional Crafts",
-                description: "Ancient art of wood carving, silver smithing, and batik making passed down through generations",
-                image: "/UGCImages/vietnam/culture/craft.jpg"
+                title: "Traditional Hat Making",
+                description: "Craft of making non la (conical hats) from palm leaves, an iconic symbol of Vietnam",
+                image: "/UGCImages/vietnam/culture/ConicalHats.jpg"
             },
             {
-                title: "Galungan Festival",
-                description: "Major vietnamnese holiday celebrating the victory of dharma over adharma, marked by decorated bamboo poles",
-                image: "/UGCImages/vietnam/culture/festival.png"
+                title: "Ca Tru Singing",
+                description: "Ancient form of chamber music featuring female vocalists, recognized by UNESCO as cultural heritage",
+                image: "/UGCImages/vietnam/culture/CaTru.jpg"
             },
             {
-                title: "Traditional Markets",
-                description: "Bustling local markets selling fresh produce, spices, crafts, and traditional offerings",
-                image: "/UGCImages/vietnam/culture/market.png"
+                title: "Dong Ho Folk Paintings",
+                description: "Traditional woodblock prints made in Dong Ho village, featuring symbolic imagery and natural colors",
+                image: "/UGCImages/vietnam/culture/DongHoPainting.jpg"
             }
         ],
         additionalInfo: {
             highlights: [
-                "Visit to iconic Tanah Lot Temple",
-                "Traditional Kecak Fire Dance show",
-                "Nusa Penida Island exploration",
-                "Water sports activities package",
-                "Scenic Tegalalang Rice Terraces"
+                "Overnight Halong Bay Cruise",
+                "Hanoi Old Quarter Exploration",
+                "Temple of Literature Visit",
+                "Traditional Water Puppet Show",
             ],
             bestTimeToVisit: "April to October (Dry Season)",
             cuisine: [
@@ -911,91 +908,90 @@ your departure flight.`
         ],
         sightseeingSpots: [
             {
-                name: "Tanah Lot Temple",
-                description: "Ancient Hindu shrine perched on a rocky outcrop, offering stunning sunset views and cultural performances",
-                image: "/UGCImages/vietnam/extra/Tanah Lot Temple.jpg"
+                name: "Hoi An Ancient Town",
+                description: "UNESCO World Heritage site with well-preserved trading port architecture from the 15th to 19th centuries",
+                image: "/UGCImages/vietnam/extra/HoiAnTown.jpg"
             },
             {
-                name: "Tegalalang Rice Terraces",
-                description: "Spectacular terraced rice fields showcasing traditional vietnamnese irrigation system (subak)",
-                image: "/UGCImages/vietnam/extra/Tegalalang Rice Terraces.jpg"
+                name: "My Son Sanctuary",
+                description: "UNESCO-protected ruins of ancient Hindu temples built by the Champa civilization between the 4th and 14th centuries",
+                image: "/UGCImages/vietnam/extra/MySon.jpg"
             },
             {
-                name: "Sacred Monkey Forest",
-                description: "Ancient forest temple complex home to hundreds of playful monkeys and stunning architecture",
-                image: "/UGCImages/vietnam/extra/monkeyForest.jpg"
+                name: "Golden Bridge",
+                description: "Iconic pedestrian bridge held by giant stone hands, offering spectacular views of Ba Na Hills",
+                image: "/UGCImages/vietnam/extra/GoldenBridge.jpg"
             },
             {
-                name: "Mount Batur",
-                description: "Active volcano offering sunrise trekking experiences and breathtaking caldera views",
-                image: "/UGCImages/vietnam/extra/mountBatur.jpg"
+                name: "Marble Mountains",
+                description: "Five limestone and marble hills with caves, tunnels, Buddhist sanctuaries and panoramic views",
+                image: "/UGCImages/vietnam/extra/MarbleMountains.jpg"
             },
             {
-                name: "Uluwatu Temple",
-                description: "Clifftop temple famous for traditional Kecak fire dance performances at sunset",
-                image: "/UGCImages/vietnam/extra/Uluwatu.jpg"
+                name: "Dragon Bridge",
+                description: "Modern bridge across the Han River in Da Nang that breathes fire and water on weekend evenings",
+                image: "/UGCImages/vietnam/extra/DragonBridge.jpg"
             }
         ],
         localFood: [
             {
-                name: "Nasi Goreng",
-                description: "Indonesian fried rice with vegetables, chicken or seafood, topped with a fried egg",
-                image: "/UGCImages/vietnam/cuisine/Nasi Goreng.jpg",
-                where: "Warung Made, Kuta"
+                name: "Cao Lau",
+                description: "Hoi An specialty with thick rice noodles, pork, and local greens in a light broth",
+                image: "/UGCImages/vietnam/cuisine/CaoLau.jpg",
+                where: "Market stalls in Hoi An Ancient Town"
             },
             {
-                name: "Babi Guling",
-                description: "Traditional vietnamnese-style roasted pig served with rice and local spices",
-                image: "/UGCImages/vietnam/cuisine/Babi Guling.png",
-                where: "Warung Ibu Oka, Ubud"
+                name: "Mi Quang",
+                description: "Central Vietnamese turmeric-infused rice noodles with pork, shrimp, and herbs in minimal broth",
+                image: "/UGCImages/vietnam/cuisine/MiQuang.jpg",
+                where: "Ba Vi, Da Nang"
             },
             {
-                name: "Bebek Betutu",
-                description: "Slow-cooked duck with vietnamnese spices, served with plecing kangkung",
-                image: "/UGCImages/vietnam/cuisine/Bebek Betutu.png",
-                where: "Bebek Tepi Sawah, Ubud"
+                name: "Banh Xeo",
+                description: "Crispy savory pancakes filled with pork, shrimp, and bean sprouts, wrapped in rice paper with herbs",
+                image: "/UGCImages/vietnam/cuisine/BanhXeo.jpg",
+                where: "Banh Xeo Ba Duong, Hoi An"
             },
             {
-                name: "Sambal Matah",
-                description: "Raw spicy vietnamnese relish made with shallots, lemongrass, and chili",
-                image: "/UGCImages/vietnam/cuisine/Sambal Matah.jpg",
-                where: "Merah Putih Restaurant, Seminyak"
-            },
+                name: "White Rose Dumplings",
+                description: "Hoi An specialty of translucent shrimp dumplings shaped like flowers",
+                image: "/UGCImages/vietnam/cuisine/WhiteRose.jpg",
+                where: "White Rose Restaurant, Hoi An"
+            }
         ],
         culture: [
             {
-                title: "Legong Dance",
-                description: "Graceful traditional dance performed by young girls in elaborate costumes, telling stories of ancient kingdoms",
-                image: "/UGCImages/vietnam/culture/dance.jpg"
+                title: "Lantern Festival",
+                description: "Monthly celebration in Hoi An where the streets are illuminated with colorful lanterns",
+                image: "/UGCImages/vietnam/culture/LanternFestival.jpg"
             },
             {
-                title: "Temple Ceremonies",
-                description: "Vibrant religious ceremonies with offerings, traditional music, and elaborate decorations",
-                image: "/UGCImages/vietnam/culture/vietnamTemple.jpg"
+                title: "Traditional Tailoring",
+                description: "Centuries-old tradition of custom clothing making in Hoi An, where visitors can have garments made to measure",
+                image: "/UGCImages/vietnam/culture/Tailoring.jpg"
             },
             {
-                title: "Traditional Crafts",
-                description: "Ancient art of wood carving, silver smithing, and batik making passed down through generations",
-                image: "/UGCImages/vietnam/culture/craft.jpg"
+                title: "Champa Architecture",
+                description: "Ancient Hindu-influenced temples and towers built by the Champa civilization",
+                image: "/UGCImages/vietnam/culture/ChamTowers.jpg"
             },
             {
-                title: "Galungan Festival",
-                description: "Major vietnamnese holiday celebrating the victory of dharma over adharma, marked by decorated bamboo poles",
-                image: "/UGCImages/vietnam/culture/festival.png"
+                title: "Basket Boat Fishing",
+                description: "Traditional round bamboo boats used by fishermen along the central coast",
+                image: "/UGCImages/vietnam/culture/BasketBoats.jpg"
             },
             {
-                title: "Traditional Markets",
-                description: "Bustling local markets selling fresh produce, spices, crafts, and traditional offerings",
-                image: "/UGCImages/vietnam/culture/market.png"
+                title: "Tra Que Herb Village",
+                description: "Traditional organic farming community near Hoi An known for its aromatic herbs and vegetables",
+                image: "/UGCImages/vietnam/culture/TraQue.jpg"
             }
         ],
         additionalInfo: {
             highlights: [
-                "Visit to iconic Tanah Lot Temple",
-                "Traditional Kecak Fire Dance show",
-                "Nusa Penida Island exploration",
-                "Water sports activities package",
-                "Scenic Tegalalang Rice Terraces"
+                "Ba Na Hills and Golden Bridge",
+                "Hoi An Ancient Town",
+                "My Son Sanctuary UNESCO Site",
+                "Tra Que Vegetable Village",
             ],
             bestTimeToVisit: "April to October (Dry Season)",
             cuisine: [
@@ -1184,91 +1180,90 @@ your departure flight.`
         ],
         sightseeingSpots: [
             {
-                name: "Tanah Lot Temple",
-                description: "Ancient Hindu shrine perched on a rocky outcrop, offering stunning sunset views and cultural performances",
-                image: "/UGCImages/vietnam/extra/Tanah Lot Temple.jpg"
+                name: "Paradise Cave",
+                description: "Spectacular 31km-long cave system with stunning stalactite and stalagmite formations",
+                image: "/UGCImages/vietnam/extra/ParadiseCave.jpg"
             },
             {
-                name: "Tegalalang Rice Terraces",
-                description: "Spectacular terraced rice fields showcasing traditional vietnamnese irrigation system (subak)",
-                image: "/UGCImages/vietnam/extra/Tegalalang Rice Terraces.jpg"
+                name: "Hue Imperial City",
+                description: "UNESCO World Heritage site featuring the walled fortress and palace of the Nguyen Dynasty",
+                image: "/UGCImages/vietnam/extra/HueImperialCity.jpg"
             },
             {
-                name: "Sacred Monkey Forest",
-                description: "Ancient forest temple complex home to hundreds of playful monkeys and stunning architecture",
-                image: "/UGCImages/vietnam/extra/monkeyForest.jpg"
+                name: "Vinh Moc Tunnels",
+                description: "Historic tunnel complex where an entire village moved underground during the Vietnam War",
+                image: "/UGCImages/vietnam/extra/VinhMocTunnels.jpg"
             },
             {
-                name: "Mount Batur",
-                description: "Active volcano offering sunrise trekking experiences and breathtaking caldera views",
-                image: "/UGCImages/vietnam/extra/mountBatur.jpg"
+                name: "Thien Mu Pagoda",
+                description: "Historic seven-story pagoda overlooking the Perfume River in Hue",
+                image: "/UGCImages/vietnam/extra/ThienMuPagoda.jpg"
             },
             {
-                name: "Uluwatu Temple",
-                description: "Clifftop temple famous for traditional Kecak fire dance performances at sunset",
-                image: "/UGCImages/vietnam/extra/Uluwatu.jpg"
+                name: "Khai Dinh Tomb",
+                description: "Elaborate royal mausoleum blending Vietnamese and European Gothic design elements",
+                image: "/UGCImages/vietnam/extra/KhaiDinhTomb.jpg"
             }
         ],
         localFood: [
             {
-                name: "Nasi Goreng",
-                description: "Indonesian fried rice with vegetables, chicken or seafood, topped with a fried egg",
-                image: "/UGCImages/vietnam/cuisine/Nasi Goreng.jpg",
-                where: "Warung Made, Kuta"
+                name: "Bun Bo Hue",
+                description: "Spicy beef noodle soup originating from Hue, featuring lemongrass, fermented shrimp paste and congealed pig blood",
+                image: "/UGCImages/vietnam/cuisine/BunBoHue.jpg",
+                where: "Bun Bo Hue My Tam, Hue"
             },
             {
-                name: "Babi Guling",
-                description: "Traditional vietnamnese-style roasted pig served with rice and local spices",
-                image: "/UGCImages/vietnam/cuisine/Babi Guling.png",
-                where: "Warung Ibu Oka, Ubud"
+                name: "Banh Khoai",
+                description: "Hue-style crispy pancake filled with pork, shrimp and bean sprouts, served with peanut sauce",
+                image: "/UGCImages/vietnam/cuisine/BanhKhoai.jpg",
+                where: "Hanh Restaurant, Hue"
             },
             {
-                name: "Bebek Betutu",
-                description: "Slow-cooked duck with vietnamnese spices, served with plecing kangkung",
-                image: "/UGCImages/vietnam/cuisine/Bebek Betutu.png",
-                where: "Bebek Tepi Sawah, Ubud"
+                name: "Com Hen",
+                description: "Rice with baby clams, herbs, peanuts, crispy pork rinds and spicy fish sauce, a Hue specialty",
+                image: "/UGCImages/vietnam/cuisine/ComHen.jpg",
+                where: "Quan Com Hen, Hue"
             },
             {
-                name: "Sambal Matah",
-                description: "Raw spicy vietnamnese relish made with shallots, lemongrass, and chili",
-                image: "/UGCImages/vietnam/cuisine/Sambal Matah.jpg",
-                where: "Merah Putih Restaurant, Seminyak"
-            },
+                name: "Banh Beo",
+                description: "Steamed rice cakes topped with dried shrimp, crispy pork skin, and scallion oil, served in small dishes",
+                image: "/UGCImages/vietnam/cuisine/BanhBeo.jpg",
+                where: "Quan Hanh, Hue"
+            }
         ],
         culture: [
             {
-                title: "Legong Dance",
-                description: "Graceful traditional dance performed by young girls in elaborate costumes, telling stories of ancient kingdoms",
-                image: "/UGCImages/vietnam/culture/dance.jpg"
+                title: "Hue Royal Court Music",
+                description: "UNESCO-recognized traditional music performed at the imperial court of the Nguyen Dynasty",
+                image: "/UGCImages/vietnam/culture/HueMusic.jpg"
             },
             {
-                title: "Temple Ceremonies",
-                description: "Vibrant religious ceremonies with offerings, traditional music, and elaborate decorations",
-                image: "/UGCImages/vietnam/culture/vietnamTemple.jpg"
+                title: "Imperial Architecture",
+                description: "Distinctive royal architectural style of the Nguyen Dynasty featuring symmetry and feng shui principles",
+                image: "/UGCImages/vietnam/culture/ImperialArchitecture.jpg"
             },
             {
-                title: "Traditional Crafts",
-                description: "Ancient art of wood carving, silver smithing, and batik making passed down through generations",
-                image: "/UGCImages/vietnam/culture/craft.jpg"
+                title: "Conical Hat Making",
+                description: "Traditional craft of making Hue's famous painted conical hats with poetic verses visible when held against light",
+                image: "/UGCImages/vietnam/culture/PaintedHats.jpg"
             },
             {
-                title: "Galungan Festival",
-                description: "Major vietnamnese holiday celebrating the victory of dharma over adharma, marked by decorated bamboo poles",
-                image: "/UGCImages/vietnam/culture/festival.png"
+                title: "Perfume River Boats",
+                description: "Traditional dragon boats that cruise the Perfume River, often featuring live music performances",
+                image: "/UGCImages/vietnam/culture/PerfumeRiverBoats.jpg"
             },
             {
-                title: "Traditional Markets",
-                description: "Bustling local markets selling fresh produce, spices, crafts, and traditional offerings",
-                image: "/UGCImages/vietnam/culture/market.png"
+                title: "Royal Cuisine",
+                description: "Elaborate multi-course dining tradition developed for the Nguyen emperors, featuring intricate presentation",
+                image: "/UGCImages/vietnam/culture/RoyalCuisine.jpg"
             }
         ],
         additionalInfo: {
             highlights: [
-                "Visit to iconic Tanah Lot Temple",
-                "Traditional Kecak Fire Dance show",
-                "Nusa Penida Island exploration",
-                "Water sports activities package",
-                "Scenic Tegalalang Rice Terraces"
+                "Paradise Cave Exploration",
+                "Hue Imperial City Tour",
+                "Vinh Moc Tunnels Visit",
+                "Perfume River Boat Trip",
             ],
             bestTimeToVisit: "April to October (Dry Season)",
             cuisine: [
@@ -1448,91 +1443,90 @@ In the afternoon, transfer to Da Nang airport to go to Ho Chi Minh City. Upon ar
         ],
         sightseeingSpots: [
             {
-                name: "Tanah Lot Temple",
-                description: "Ancient Hindu shrine perched on a rocky outcrop, offering stunning sunset views and cultural performances",
-                image: "/UGCImages/vietnam/extra/Tanah Lot Temple.jpg"
+                name: "Ben Thanh Market",
+                description: "Iconic market in Ho Chi Minh City selling everything from local handicrafts to Vietnamese street food",
+                image: "/UGCImages/vietnam/extra/BenThanhMarket.jpg"
             },
             {
-                name: "Tegalalang Rice Terraces",
-                description: "Spectacular terraced rice fields showcasing traditional vietnamnese irrigation system (subak)",
-                image: "/UGCImages/vietnam/extra/Tegalalang Rice Terraces.jpg"
+                name: "Mekong Delta",
+                description: "Vast network of rivers and islands known as Vietnam's 'rice bowl', offering boat tours and floating markets",
+                image: "/UGCImages/vietnam/extra/MekongDelta.jpg"
             },
             {
-                name: "Sacred Monkey Forest",
-                description: "Ancient forest temple complex home to hundreds of playful monkeys and stunning architecture",
-                image: "/UGCImages/vietnam/extra/monkeyForest.jpg"
+                name: "Cu Chi Tunnels",
+                description: "Historic underground network used during the Vietnam War, featuring trap doors, living areas, and command centers",
+                image: "/UGCImages/vietnam/extra/CuChiTunnels.jpg"
             },
             {
-                name: "Mount Batur",
-                description: "Active volcano offering sunrise trekking experiences and breathtaking caldera views",
-                image: "/UGCImages/vietnam/extra/mountBatur.jpg"
+                name: "Hoi An Ancient Town",
+                description: "UNESCO World Heritage site with well-preserved trading port architecture from the 15th to 19th centuries",
+                image: "/UGCImages/vietnam/extra/HoiAnTown.jpg"
             },
             {
-                name: "Uluwatu Temple",
-                description: "Clifftop temple famous for traditional Kecak fire dance performances at sunset",
-                image: "/UGCImages/vietnam/extra/Uluwatu.jpg"
+                name: "Marble Mountains",
+                description: "Five limestone and marble hills with caves, tunnels, Buddhist sanctuaries and panoramic views",
+                image: "/UGCImages/vietnam/extra/MarbleMountains.jpg"
             }
         ],
         localFood: [
             {
-                name: "Nasi Goreng",
-                description: "Indonesian fried rice with vegetables, chicken or seafood, topped with a fried egg",
-                image: "/UGCImages/vietnam/cuisine/Nasi Goreng.jpg",
-                where: "Warung Made, Kuta"
+                name: "Banh Mi",
+                description: "Crispy Vietnamese baguette sandwich filled with meats, pâté, vegetables and herbs",
+                image: "/UGCImages/vietnam/cuisine/BanhMi.jpg",
+                where: "Banh Mi Huynh Hoa, Ho Chi Minh City"
             },
             {
-                name: "Babi Guling",
-                description: "Traditional vietnamnese-style roasted pig served with rice and local spices",
-                image: "/UGCImages/vietnam/cuisine/Babi Guling.png",
-                where: "Warung Ibu Oka, Ubud"
+                name: "Hu Tieu Nam Vang",
+                description: "Southern Vietnamese-Cambodian noodle soup with pork, shrimp and liver in a clear broth",
+                image: "/UGCImages/vietnam/cuisine/HuTieuNamVang.jpg",
+                where: "Hu Tieu Nam Vang Nhan, Ho Chi Minh City"
             },
             {
-                name: "Bebek Betutu",
-                description: "Slow-cooked duck with vietnamnese spices, served with plecing kangkung",
-                image: "/UGCImages/vietnam/cuisine/Bebek Betutu.png",
-                where: "Bebek Tepi Sawah, Ubud"
+                name: "Cao Lau",
+                description: "Hoi An specialty with thick rice noodles, pork, and local greens in a light broth",
+                image: "/UGCImages/vietnam/cuisine/CaoLau.jpg",
+                where: "Market stalls in Hoi An Ancient Town"
             },
             {
-                name: "Sambal Matah",
-                description: "Raw spicy vietnamnese relish made with shallots, lemongrass, and chili",
-                image: "/UGCImages/vietnam/cuisine/Sambal Matah.jpg",
-                where: "Merah Putih Restaurant, Seminyak"
-            },
+                name: "Banh Xeo",
+                description: "Crispy savory pancakes filled with pork, shrimp, and bean sprouts, wrapped in rice paper with herbs",
+                image: "/UGCImages/vietnam/cuisine/BanhXeo.jpg",
+                where: "Banh Xeo 46A, Ho Chi Minh City"
+            }
         ],
         culture: [
             {
-                title: "Legong Dance",
-                description: "Graceful traditional dance performed by young girls in elaborate costumes, telling stories of ancient kingdoms",
-                image: "/UGCImages/vietnam/culture/dance.jpg"
+                title: "Water Puppet Theatre",
+                description: "Traditional Vietnamese art form where puppets perform on water, telling folk tales and legends",
+                image: "/UGCImages/vietnam/culture/WaterPuppet.jpg"
             },
             {
-                title: "Temple Ceremonies",
-                description: "Vibrant religious ceremonies with offerings, traditional music, and elaborate decorations",
-                image: "/UGCImages/vietnam/culture/vietnamTemple.jpg"
+                title: "Ao Dai",
+                description: "Vietnam's elegant national costume featuring a long tunic worn over pants, seen during special occasions",
+                image: "/UGCImages/vietnam/culture/AoDai.jpg"
             },
             {
-                title: "Traditional Crafts",
-                description: "Ancient art of wood carving, silver smithing, and batik making passed down through generations",
-                image: "/UGCImages/vietnam/culture/craft.jpg"
+                title: "Vietnamese Coffee Culture",
+                description: "Unique coffee preparation with condensed milk, enjoyed at street-side cafes throughout the country",
+                image: "/UGCImages/vietnam/culture/VietCoffee.jpg"
             },
             {
-                title: "Galungan Festival",
-                description: "Major vietnamnese holiday celebrating the victory of dharma over adharma, marked by decorated bamboo poles",
-                image: "/UGCImages/vietnam/culture/festival.png"
+                title: "Cooking Classes",
+                description: "Interactive lessons in preparing traditional Vietnamese dishes, often including market visits",
+                image: "/UGCImages/vietnam/culture/CookingClass.jpg"
             },
             {
-                title: "Traditional Markets",
-                description: "Bustling local markets selling fresh produce, spices, crafts, and traditional offerings",
-                image: "/UGCImages/vietnam/culture/market.png"
+                title: "Lantern Making",
+                description: "Traditional craft of creating colorful silk lanterns, particularly associated with Hoi An",
+                image: "/UGCImages/vietnam/culture/LanternMaking.jpg"
             }
         ],
         additionalInfo: {
             highlights: [
-                "Visit to iconic Tanah Lot Temple",
-                "Traditional Kecak Fire Dance show",
-                "Nusa Penida Island exploration",
-                "Water sports activities package",
-                "Scenic Tegalalang Rice Terraces"
+                "Ho Chi Minh City Food Tour by Motorbike",
+                "Mekong Delta Exploration",
+                "Hoi An Cooking Class",
+                "Marble Mountains Visit",
             ],
             bestTimeToVisit: "April to October (Dry Season)",
             cuisine: [
@@ -1726,67 +1720,67 @@ In the afternoon, transfer to Da Nang airport to go to Ho Chi Minh City. Upon ar
         ],
         sightseeingSpots: [
             {
-                name: "Tanah Lot Temple",
-                description: "Ancient Hindu shrine perched on a rocky outcrop, offering stunning sunset views and cultural performances",
-                image: "/UGCImages/vietnam/extra/Tanah Lot Temple.jpg"
+                name: "Hoi An Ancient Town",
+                description: "UNESCO World Heritage site with well-preserved trading port architecture from the 15th to 19th centuries",
+                image: "/UGCImages/vietnam/extra/HoiAnTown.jpg"
             },
             {
-                name: "Tegalalang Rice Terraces",
-                description: "Spectacular terraced rice fields showcasing traditional vietnamnese irrigation system (subak)",
-                image: "/UGCImages/vietnam/extra/Tegalalang Rice Terraces.jpg"
+                name: "Marble Mountains",
+                description: "Marble Mountains are a group of five mountains in Vietnam, located in the southern part of the country. The mountains are known for their unique limestone formations and are considered sacred by the locals.",
+                image: "/UGCImages/vietnam/extra/MarbleMountains.jpg"
             },
             {
-                name: "Sacred Monkey Forest",
-                description: "Ancient forest temple complex home to hundreds of playful monkeys and stunning architecture",
-                image: "/UGCImages/vietnam/extra/monkeyForest.jpg"
+                name: "Cu Chi Tunnels",
+                description: "Historic underground network used during the Vietnam War, featuring trap doors, living areas, and command centers",
+                image: "/UGCImages/vietnam/extra/CuChiTunnels.jpg"
             },
             {
-                name: "Mount Batur",
-                description: "Active volcano offering sunrise trekking experiences and breathtaking caldera views",
-                image: "/UGCImages/vietnam/extra/mountBatur.jpg"
+                name: "Hoi An Ancient Town",
+                description: "UNESCO World Heritage site with well-preserved trading port architecture from the 15th to 19th centuries",
+                image: "/UGCImages/vietnam/extra/HoiAnTown.jpg"
             },
             {
-                name: "Uluwatu Temple",
-                description: "Clifftop temple famous for traditional Kecak fire dance performances at sunset",
-                image: "/UGCImages/vietnam/extra/Uluwatu.jpg"
+                name: "Hoi An Ancient Town",
+                description: "UNESCO World Heritage site with well-preserved trading port architecture from the 15th to 19th centuries",
+                image: "/UGCImages/vietnam/extra/HoiAnTown.jpg"
             }
         ],
         localFood: [
             {
-                name: "Nasi Goreng",
-                description: "Indonesian fried rice with vegetables, chicken or seafood, topped with a fried egg",
-                image: "/UGCImages/vietnam/cuisine/Nasi Goreng.jpg",
-                where: "Warung Made, Kuta"
+                name: "Bun Cha",
+                description: "Hanoi specialty of grilled pork served with rice noodles, herbs and dipping sauce",
+                image: "/UGCImages/vietnam/cuisine/BunCha.jpg",
+                where: "Bun Cha Huong Lien, Hanoi"
             },
             {
-                name: "Babi Guling",
-                description: "Traditional vietnamnese-style roasted pig served with rice and local spices",
-                image: "/UGCImages/vietnam/cuisine/Babi Guling.png",
-                where: "Warung Ibu Oka, Ubud"
+                name: "Bun Bo Hue",
+                description: "Spicy beef noodle soup originating from Hue, featuring lemongrass, fermented shrimp paste and congealed pig blood",
+                image: "/UGCImages/vietnam/cuisine/BunBoHue.jpg",
+                where: "Bun Bo Hue My Tam, Hue"
             },
             {
-                name: "Bebek Betutu",
-                description: "Slow-cooked duck with vietnamnese spices, served with plecing kangkung",
-                image: "/UGCImages/vietnam/cuisine/Bebek Betutu.png",
-                where: "Bebek Tepi Sawah, Ubud"
+                name: "Banh Xeo",
+                description: "Crispy savory pancakes filled with pork, shrimp, and bean sprouts, wrapped in rice paper with herbs",
+                image: "/UGCImages/vietnam/cuisine/BanhXeo.jpg",
+                where: "Banh Xeo 46A, Ho Chi Minh City"
             },
             {
-                name: "Sambal Matah",
-                description: "Raw spicy vietnamnese relish made with shallots, lemongrass, and chili",
-                image: "/UGCImages/vietnam/cuisine/Sambal Matah.jpg",
-                where: "Merah Putih Restaurant, Seminyak"
+                name: "Banh Cuon",
+                description: "Vietnamese steamed rice crepes filled with pork, shrimp, and bean sprouts, wrapped in rice paper with herbs",
+                image: "/UGCImages/vietnam/cuisine/BanhCuon.jpg",
+                where: "Banh Cuon 10, Ho Chi Minh City"
             },
         ],
         culture: [
             {
-                title: "Legong Dance",
-                description: "Graceful traditional dance performed by young girls in elaborate costumes, telling stories of ancient kingdoms",
-                image: "/UGCImages/vietnam/culture/dance.jpg"
+                title: "Water Puppet Show",
+                description: "Traditional puppet show performed by water puppets, telling stories of ancient kingdoms",
+                image: "/UGCImages/vietnam/culture/WaterPuppet.jpg"
             },
             {
-                title: "Temple Ceremonies",
-                description: "Vibrant religious ceremonies with offerings, traditional music, and elaborate decorations",
-                image: "/UGCImages/vietnam/culture/vietnamTemple.jpg"
+                title: "Temple of Literature",
+                description: "Temple dedicated to Confucius, featuring a library, pagodas, and a museum",
+                image: "/UGCImages/vietnam/culture/TempleOfLiterature.jpg"
             },
             {
                 title: "Traditional Crafts",
@@ -1796,7 +1790,7 @@ In the afternoon, transfer to Da Nang airport to go to Ho Chi Minh City. Upon ar
             {
                 title: "Galungan Festival",
                 description: "Major vietnamnese holiday celebrating the victory of dharma over adharma, marked by decorated bamboo poles",
-                image: "/UGCImages/vietnam/culture/festival.png"
+                image: "/UGCImages/vietnam/culture/GalunganFestival.jpg"
             },
             {
                 title: "Traditional Markets",
@@ -1806,11 +1800,10 @@ In the afternoon, transfer to Da Nang airport to go to Ho Chi Minh City. Upon ar
         ],
         additionalInfo: {
             highlights: [
-                "Visit to iconic Tanah Lot Temple",
-                "Traditional Kecak Fire Dance show",
-                "Nusa Penida Island exploration",
-                "Water sports activities package",
-                "Scenic Tegalalang Rice Terraces"
+                "Overnight Halong Bay Cruise",
+                "Hanoi Old Quarter Exploration",
+                "Temple of Literature Visit",
+                "Traditional Water Puppet Show",
             ],
             bestTimeToVisit: "April to October (Dry Season)",
             cuisine: [
@@ -2033,24 +2026,24 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
         ],
         sightseeingSpots: [
             {
-                name: "Tanah Lot Temple",
-                description: "Ancient Hindu shrine perched on a rocky outcrop, offering stunning sunset views and cultural performances",
-                image: "/UGCImages/vietnam/extra/Tanah Lot Temple.jpg"
+                name: "Hoi An Ancient Town",
+                description: "UNESCO World Heritage site with well-preserved trading port architecture from the 15th to 19th centuries",
+                image: "/UGCImages/vietnam/extra/HoiAnTown.jpg"
             },
             {
-                name: "Tegalalang Rice Terraces",
-                description: "Spectacular terraced rice fields showcasing traditional vietnamnese irrigation system (subak)",
-                image: "/UGCImages/vietnam/extra/Tegalalang Rice Terraces.jpg"
+                name: "Marble Mountains",
+                description: "Marble Mountains are a group of five mountains in Vietnam, located in the southern part of the country. The mountains are known for their unique limestone formations and are considered sacred by the locals.",
+                image: "/UGCImages/vietnam/extra/MarbleMountains.jpg"
             },
             {
-                name: "Sacred Monkey Forest",
-                description: "Ancient forest temple complex home to hundreds of playful monkeys and stunning architecture",
-                image: "/UGCImages/vietnam/extra/monkeyForest.jpg"
+                name: "Cu Chi Tunnels",
+                description: "Historic underground network used during the Vietnam War, featuring trap doors, living areas, and command centers",
+                image: "/UGCImages/vietnam/extra/CuChiTunnels.jpg"
             },
             {
                 name: "Mount Batur",
                 description: "Active volcano offering sunrise trekking experiences and breathtaking caldera views",
-                image: "/UGCImages/vietnam/extra/mountBatur.jpg"
+                image: "/UGCImages/vietnam/extra/MountBatur.jpg"
             },
             {
                 name: "Uluwatu Temple",
@@ -2335,65 +2328,65 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
         ],
         sightseeingSpots: [
             {
-                name: "Tanah Lot Temple",
-                description: "Ancient Hindu shrine perched on a rocky outcrop, offering stunning sunset views and cultural performances",
-                image: "/UGCImages/vietnam/extra/Tanah Lot Temple.jpg"
+                name: "Hoi An Ancient Town",
+                description: "UNESCO World Heritage site with well-preserved trading port architecture from the 15th to 19th centuries",
+                image: "/UGCImages/vietnam/extra/HoiAnTown.jpg"
             },
             {
-                name: "Tegalalang Rice Terraces",
-                description: "Spectacular terraced rice fields showcasing traditional vietnamnese irrigation system (subak)",
-                image: "/UGCImages/vietnam/extra/Tegalalang Rice Terraces.jpg"
+                name: "Marble Mountains",
+                description: "Marble Mountains are a group of five mountains in Vietnam, located in the southern part of the country. The mountains are known for their unique limestone formations and are considered sacred by the locals.",
+                image: "/UGCImages/vietnam/extra/MarbleMountains.jpg"
             },
             {
-                name: "Sacred Monkey Forest",
-                description: "Ancient forest temple complex home to hundreds of playful monkeys and stunning architecture",
-                image: "/UGCImages/vietnam/extra/monkeyForest.jpg"
+                name: "Cu Chi Tunnels",
+                description: "Historic underground network used during the Vietnam War, featuring trap doors, living areas, and command centers",
+                image: "/UGCImages/vietnam/extra/CuChiTunnels.jpg"
             },
             {
-                name: "Mount Batur",
+                name: "Bunny Cave",
                 description: "Active volcano offering sunrise trekking experiences and breathtaking caldera views",
-                image: "/UGCImages/vietnam/extra/mountBatur.jpg"
+                image: "/UGCImages/vietnam/extra/MountBatur.jpg"
             },
             {
-                name: "Uluwatu Temple",
+                name: "Nha Trang Beach",
                 description: "Clifftop temple famous for traditional Kecak fire dance performances at sunset",
-                image: "/UGCImages/vietnam/extra/Uluwatu.jpg"
+                image: "/UGCImages/vietnam/extra/NhaTrangBeach.jpg"
             }
         ],
         localFood: [
             {
-                name: "Nasi Goreng",
-                description: "Indonesian fried rice with vegetables, chicken or seafood, topped with a fried egg",
-                image: "/UGCImages/vietnam/cuisine/Nasi Goreng.jpg",
-                where: "Warung Made, Kuta"
+                name: "Cao Lau",
+                description: "Hoi An specialty composed of local noodles, pork, fresh vegetables and rice paper",
+                image: "/UGCImages/vietnam/cuisine/CaoLau.jpg",
+                where: "Hoi An"
             },
             {
-                name: "Babi Guling",
-                description: "Traditional vietnamnese-style roasted pig served with rice and local spices",
-                image: "/UGCImages/vietnam/cuisine/Babi Guling.png",
-                where: "Warung Ibu Oka, Ubud"
+                name: "Banh Xeo",
+                description: "Hoi An specialty composed of rice paper, shrimp, pork, bean sprouts, and onions",
+                image: "/UGCImages/vietnam/cuisine/BanhXeo.jpg",
+                where: "Hoi An"
             },
             {
-                name: "Bebek Betutu",
-                description: "Slow-cooked duck with vietnamnese spices, served with plecing kangkung",
-                image: "/UGCImages/vietnam/cuisine/Bebek Betutu.png",
-                where: "Bebek Tepi Sawah, Ubud"
+                name: "Banh Xeo Muc",
+                description: "Nha Trang specialty composed of rice paper, shrimp, pork, bean sprouts, and onions",
+                image: "/UGCImages/vietnam/cuisine/BanhXeoMuc.jpg",
+                where: "Nha Trang"
             },
             {
-                name: "Sambal Matah",
-                description: "Raw spicy vietnamnese relish made with shallots, lemongrass, and chili",
-                image: "/UGCImages/vietnam/cuisine/Sambal Matah.jpg",
-                where: "Merah Putih Restaurant, Seminyak"
+                name: "Lac Canh",
+                description: "Nha Trang specialty composed of grilled beef",
+                image: "/UGCImages/vietnam/cuisine/LacCanh.jpg",
+                where: "Nha Trang"
             },
         ],
         culture: [
             {
-                title: "Legong Dance",
-                description: "Graceful traditional dance performed by young girls in elaborate costumes, telling stories of ancient kingdoms",
+                title: "Kecak Fire Dance",
+                description: "Traditional dance performed by young girls in elaborate costumes, telling stories of ancient kingdoms",
                 image: "/UGCImages/vietnam/culture/dance.jpg"
             },
             {
-                title: "Temple Ceremonies",
+                title: "Temple of Cham",
                 description: "Vibrant religious ceremonies with offerings, traditional music, and elaborate decorations",
                 image: "/UGCImages/vietnam/culture/vietnamTemple.jpg"
             },
@@ -2652,65 +2645,65 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
         ],
         sightseeingSpots: [
             {
-                name: "Tanah Lot Temple",
+                name: "Cham Tower",
                 description: "Ancient Hindu shrine perched on a rocky outcrop, offering stunning sunset views and cultural performances",
-                image: "/UGCImages/vietnam/extra/Tanah Lot Temple.jpg"
+                image: "/UGCImages/vietnam/extra/ChamTower.jpg"
             },
             {
-                name: "Tegalalang Rice Terraces",
-                description: "Spectacular terraced rice fields showcasing traditional vietnamnese irrigation system (subak)",
-                image: "/UGCImages/vietnam/extra/Tegalalang Rice Terraces.jpg"
+                name: "Hoi An Ancient Town",
+                description: "Ancient Hindu shrine perched on a rocky outcrop, offering stunning sunset views and cultural performances",
+                image: "/UGCImages/vietnam/extra/HoiAnAncientTown.jpg"
             },
             {
-                name: "Sacred Monkey Forest",
+                name: "Cua Dai Beach",
                 description: "Ancient forest temple complex home to hundreds of playful monkeys and stunning architecture",
-                image: "/UGCImages/vietnam/extra/monkeyForest.jpg"
+                image: "/UGCImages/vietnam/extra/CuaDaiBeach.jpg"
             },
             {
-                name: "Mount Batur",
+                name: "Nha Trang Beach",
                 description: "Active volcano offering sunrise trekking experiences and breathtaking caldera views",
-                image: "/UGCImages/vietnam/extra/mountBatur.jpg"
+                image: "/UGCImages/vietnam/extra/NhaTrangBeach.jpg"
             },
             {
-                name: "Uluwatu Temple",
+                name: "Nha Trang Cathedral",
                 description: "Clifftop temple famous for traditional Kecak fire dance performances at sunset",
-                image: "/UGCImages/vietnam/extra/Uluwatu.jpg"
+                image: "/UGCImages/vietnam/extra/NhaTrangCathedral.jpg"
             }
         ],
         localFood: [
             {
-                name: "Nasi Goreng",
-                description: "Indonesian fried rice with vegetables, chicken or seafood, topped with a fried egg",
-                image: "/UGCImages/vietnam/cuisine/Nasi Goreng.jpg",
-                where: "Warung Made, Kuta"
+                name: "Cao Lau",
+                description: "Hoi An specialty composed of local noodles, pork, fresh vegetables and rice paper",
+                image: "/UGCImages/vietnam/cuisine/CaoLau.jpg",
+                where: "Hoi An"
             },
             {
-                name: "Babi Guling",
-                description: "Traditional vietnamnese-style roasted pig served with rice and local spices",
-                image: "/UGCImages/vietnam/cuisine/Babi Guling.png",
-                where: "Warung Ibu Oka, Ubud"
+                name: "Banh Xeo",
+                description: "Hoi An specialty composed of rice paper, shrimp, pork, bean sprouts, and onions",
+                image: "/UGCImages/vietnam/cuisine/BanhXeo.jpg",
+                where: "Hoi An"
             },
             {
-                name: "Bebek Betutu",
-                description: "Slow-cooked duck with vietnamnese spices, served with plecing kangkung",
-                image: "/UGCImages/vietnam/cuisine/Bebek Betutu.png",
-                where: "Bebek Tepi Sawah, Ubud"
+                name: "Lac Canh",
+                description: "Nha Trang specialty composed of grilled beef",
+                image: "/UGCImages/vietnam/cuisine/LacCanh.jpg",
+                where: "Nha Trang"
             },
             {
                 name: "Sambal Matah",
                 description: "Raw spicy vietnamnese relish made with shallots, lemongrass, and chili",
-                image: "/UGCImages/vietnam/cuisine/Sambal Matah.jpg",
-                where: "Merah Putih Restaurant, Seminyak"
+                image: "/UGCImages/vietnam/cuisine/SambalMatah.jpg",
+                where: "Nha Trang"
             },
         ],
         culture: [
             {
-                title: "Legong Dance",
-                description: "Graceful traditional dance performed by young girls in elaborate costumes, telling stories of ancient kingdoms",
+                title: "Kecak Fire Dance",
+                description: "Traditional dance performed by young girls in elaborate costumes, telling stories of ancient kingdoms",
                 image: "/UGCImages/vietnam/culture/dance.jpg"
             },
             {
-                title: "Temple Ceremonies",
+                title: "Temple of Cham",
                 description: "Vibrant religious ceremonies with offerings, traditional music, and elaborate decorations",
                 image: "/UGCImages/vietnam/culture/vietnamTemple.jpg"
             },
@@ -2962,65 +2955,65 @@ We will begin our evening with a dinner at a lovely local restaurant. After dinn
         ],
         sightseeingSpots: [
             {
-                name: "Tanah Lot Temple",
+                name: "Hoi An Ancient Town",
                 description: "Ancient Hindu shrine perched on a rocky outcrop, offering stunning sunset views and cultural performances",
-                image: "/UGCImages/vietnam/extra/Tanah Lot Temple.jpg"
+                image: "/UGCImages/vietnam/extra/HoiAnAncientTown.jpg"
             },
             {
-                name: "Tegalalang Rice Terraces",
-                description: "Spectacular terraced rice fields showcasing traditional vietnamnese irrigation system (subak)",
-                image: "/UGCImages/vietnam/extra/Tegalalang Rice Terraces.jpg"
-            },
-            {
-                name: "Sacred Monkey Forest",
+                name: "Cua Dai Beach",
                 description: "Ancient forest temple complex home to hundreds of playful monkeys and stunning architecture",
-                image: "/UGCImages/vietnam/extra/monkeyForest.jpg"
+                image: "/UGCImages/vietnam/extra/CuaDaiBeach.jpg"
             },
             {
-                name: "Mount Batur",
+                name: "Nha Trang Beach",
                 description: "Active volcano offering sunrise trekking experiences and breathtaking caldera views",
-                image: "/UGCImages/vietnam/extra/mountBatur.jpg"
+                image: "/UGCImages/vietnam/extra/NhaTrangBeach.jpg"
             },
             {
-                name: "Uluwatu Temple",
+                name: "Nha Trang Cathedral",
                 description: "Clifftop temple famous for traditional Kecak fire dance performances at sunset",
-                image: "/UGCImages/vietnam/extra/Uluwatu.jpg"
+                image: "/UGCImages/vietnam/extra/NhaTrangCathedral.jpg"
+            },
+            {
+                name: "Hoi An Ancient Town",
+                description: "Ancient Hindu shrine perched on a rocky outcrop, offering stunning sunset views and cultural performances",
+                image: "/UGCImages/vietnam/extra/HoiAnAncientTown.jpg"
             }
         ],
         localFood: [
             {
-                name: "Nasi Goreng",
-                description: "Indonesian fried rice with vegetables, chicken or seafood, topped with a fried egg",
-                image: "/UGCImages/vietnam/cuisine/Nasi Goreng.jpg",
-                where: "Warung Made, Kuta"
+                name: "Cao Lau",
+                description: "Hoi An specialty composed of local noodles, pork, fresh vegetables and rice paper",
+                image: "/UGCImages/vietnam/cuisine/CaoLau.jpg",
+                where: "Hoi An"
             },
             {
                 name: "Babi Guling",
                 description: "Traditional vietnamnese-style roasted pig served with rice and local spices",
-                image: "/UGCImages/vietnam/cuisine/Babi Guling.png",
-                where: "Warung Ibu Oka, Ubud"
+                image: "/UGCImages/vietnam/cuisine/BabiGuling.jpg",
+                where: "Hoi An"
             },
             {
                 name: "Bebek Betutu",
                 description: "Slow-cooked duck with vietnamnese spices, served with plecing kangkung",
-                image: "/UGCImages/vietnam/cuisine/Bebek Betutu.png",
-                where: "Bebek Tepi Sawah, Ubud"
+                image: "/UGCImages/vietnam/cuisine/BebekBetutu.jpg",
+                where: "Hoi An"
             },
             {
                 name: "Sambal Matah",
                 description: "Raw spicy vietnamnese relish made with shallots, lemongrass, and chili",
-                image: "/UGCImages/vietnam/cuisine/Sambal Matah.jpg",
-                where: "Merah Putih Restaurant, Seminyak"
+                image: "/UGCImages/vietnam/cuisine/SambalMatah.jpg",
+                where: "Hoi An"
             },
         ],
         culture: [
             {
-                title: "Legong Dance",
-                description: "Graceful traditional dance performed by young girls in elaborate costumes, telling stories of ancient kingdoms",
+                title: "Kecak Fire Dance",
+                description: "Traditional dance performed by young girls in elaborate costumes, telling stories of ancient kingdoms",
                 image: "/UGCImages/vietnam/culture/dance.jpg"
             },
             {
-                title: "Temple Ceremonies",
+                title: "Temple of Cham",
                 description: "Vibrant religious ceremonies with offerings, traditional music, and elaborate decorations",
                 image: "/UGCImages/vietnam/culture/vietnamTemple.jpg"
             },

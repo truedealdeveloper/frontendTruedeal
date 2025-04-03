@@ -13,8 +13,8 @@ const AustraliaBanner = () => {
 
   const australiaPackages = [
     {
-      id: '7-days-sydney-gold-coast',
-      title: '7 Days Sydney & Gold Coast',
+      id: 'the-best-of-australia',
+      title: 'The Best of Australia',
       images: [
         '/UGCImages/Images4/australia/vertical/1.webp',
         '/UGCImages/Images4/australia/vertical/2.webp',
