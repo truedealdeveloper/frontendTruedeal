@@ -13,7 +13,6 @@ import { Poppins } from 'next/font/google';
 import Image from 'next/image';
 import VietnamPackages from '../page';
 import VietnamBanner from '@/app/components/homepage/VietnamBanner';
-import Head from 'next/head';
 
 interface PageProps {
     params: Promise<{ id: string; }>
@@ -363,7 +362,7 @@ export default function VietnamPackagePage({ params }: PageProps) {
                 {/* Inclusions Section - h2 heading */}
                 <div ref={inclusionsRef} className="scroll-mt-16 mt-8">
                     <div className="bg-white rounded-lg shadow-sm p-6">
-                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">What's Included</h2>
+                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">What&apos;s Included</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {vietnamPkg.inclusions?.map((item, index) => (
                                 <div key={index} className="flex items-start gap-2 bg-gray-50 p-4 rounded-lg">
@@ -378,7 +377,7 @@ export default function VietnamPackagePage({ params }: PageProps) {
                 {/* Exclusions Section - h2 heading */}
                 <div ref={exclusionsRef} className="scroll-mt-16 mt-8">
                     <div className="bg-white rounded-lg shadow-sm p-6">
-                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">What's Not Included</h2>
+                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">What&apos;s Not Included</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {vietnamPkg.exclusions?.map((item, index) => (
                                 <div key={index} className="flex items-start gap-2 bg-gray-50 p-4 rounded-lg">
