@@ -90,7 +90,7 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
         packageName: "The best of Australia",
         days: 13,
         nights: 12,
-        amount: 495999,
+        amount: 490999,
         dateStart: "01 March 2025",
         dateEnd: "26 July 2025",
         description: "Experience the best of Australia's east coast with our 13-day tour covering Sydney's iconic landmarks and Gold Coast's stunning beaches.",
@@ -206,39 +206,40 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
             },
         ],
         images: [
-            "/UGCImages/Images4/australia/australia/1.webp",
-            "/UGCImages/Images4/australia/australia/2.webp",
-            "/UGCImages/Images4/australia/australia/3.webp",
-            "/UGCImages/Images4/australia/australia/4.webp",
+            "/UGCImages/australia/Best/1.png",
+            "/UGCImages/australia/Best/2.png",
+            "/UGCImages/australia/Best/3.png",
+            "/UGCImages/australia/Best/4.png",
+            
         ],
         sightseeingSpots: [
             {
                 name: "Sydney Opera House",
                 description: "Iconic performing arts venue and UNESCO World Heritage site",
-                image: "/UGCImages/australia/opera.png"
+                image: "/UGCImages/australia/Sightseeing/opera.jpg"
             },
             {
                 name: "Blue Mountains",
                 description: "World Heritage-listed mountain range with stunning views",
-                image: "/UGCImages/australia/mountains.png"
+                image: "/UGCImages/australia/Sightseeing/blue.jpg"
             },
             {
                 name: "Surfers Paradise",
                 description: "Famous beach and entertainment precinct on the Gold Coast",
-                image: "/UGCImages/australia/beach.png"
+                image: "/UGCImages/australia/Sightseeing/surfer.jpg"
             }
         ],
         localFood: [
             {
                 name: "Aussie BBQ",
                 description: "Traditional Australian barbecue with fresh seafood and meat",
-                image: "/UGCImages/australia/bbq.png",
+                image: "/UGCImages/australia/Cuisine/bbq.jpg",
                 where: "Various locations in Sydney"
             },
             {
                 name: "Fish & Chips",
                 description: "Fresh seafood served with crispy chips",
-                image: "/UGCImages/australia/fish.png",
+                image: "/UGCImages/australia/Cuisine/fish.jpg",
                 where: "Gold Coast beaches"
             }
         ],
@@ -246,17 +247,17 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
             {
                 title: "Aboriginal Culture",
                 description: "Experience indigenous Australian art and traditions",
-                image: "/UGCImages/australia/aboriginal.png"
+                image: "/UGCImages/australia/Culture/aboriginal.jpg"
             },
             {
                 title: "Beach Culture",
                 description: "Explore Australia's famous beach lifestyle",
-                image: "/UGCImages/australia/beachlife.png"
+                image: "/UGCImages/australia/Culture/beach.jpg"
             },
             {
                 title: "Wildlife",
                 description: "Meet Australia's unique native animals",
-                image: "/UGCImages/australia/wildlife.png"
+                image: "/UGCImages/australia/Culture/wildlife.jpg"
             }
         ],
         additionalInfo: {
@@ -308,5 +309,4 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
             { date: "Mar 2025 - July 2025" }
         ]
     },
-    // Add more packages here...
 }; 

@@ -22,7 +22,7 @@ const AustraliaBanner = () => {
         '/UGCImages/Images4/australia/vertical/4.webp',
       ],
       date: '01 March 2025 - 26 July 2025',
-      price: '199,000'
+      price: '490,999'
     },
     {
       id: '9-days-melbourne-sydney',

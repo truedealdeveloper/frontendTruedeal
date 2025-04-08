@@ -143,195 +143,247 @@ export default function AustraliaPackagePage({ params }: PageProps) {
                 </div>
             </div>
 
-            {/* Fixed Tabs Navigation */}
-            <div 
+            {/* Update Fixed Tabs Navigation */}
+            <div
                 ref={tabsRef}
-                className="sticky top-0 z-20 bg-white shadow-md"
+                className="sticky top-0 z-50 bg-white border-b shadow-lg mt-0"
             >
-                <div className="container mx-auto px-4">
-                    <Tabs value={activeTab} className="w-full">
-                        <TabsList className="flex w-full overflow-x-auto space-x-4 p-0">
-                            <TabsTrigger
-                                value="overview"
-                                onClick={() => scrollToSection(overviewRef, 'overview')}
-                                className={`flex-1 py-4 ${activeTab === 'overview' ? 'border-b-2 border-blue-500' : ''}`}
-                            >
-                                Overview
-                            </TabsTrigger>
-                            <TabsTrigger
-                                value="itinerary"
-                                onClick={() => scrollToSection(itineraryRef, 'itinerary')}
-                                className={`flex-1 py-4 ${activeTab === 'itinerary' ? 'border-b-2 border-blue-500' : ''}`}
-                            >
-                                Itinerary
-                            </TabsTrigger>
-                            <TabsTrigger
-                                value="inclusions"
-                                onClick={() => scrollToSection(inclusionsRef, 'inclusions')}
-                                className={`flex-1 py-4 ${activeTab === 'inclusions' ? 'border-b-2 border-blue-500' : ''}`}
-                            >
-                                Inclusions
-                            </TabsTrigger>
-                            <TabsTrigger
-                                value="exclusions"
-                                onClick={() => scrollToSection(exclusionsRef, 'exclusions')}
-                                className={`flex-1 py-4 ${activeTab === 'exclusions' ? 'border-b-2 border-blue-500' : ''}`}
-                            >
-                                Exclusions
-                            </TabsTrigger>
-                            <TabsTrigger
-                                value="other"
-                                onClick={() => scrollToSection(otherRef, 'other')}
-                                className={`flex-1 py-4 ${activeTab === 'other' ? 'border-b-2 border-blue-500' : ''}`}
-                            >
-                                Other Info
-                            </TabsTrigger>
-                        </TabsList>
-                    </Tabs>
+                <div className="container mx-auto">
+                    <div className="overflow-x-auto scrollbar-hide">
+                        <Tabs value={activeTab} className="w-full">
+                            <TabsList className="w-full h-14 flex space-x-4 md:space-x-8 min-w-max px-4">
+                                {[
+                                    { id: 'overview', label: 'Overview', ref: overviewRef },
+                                    { id: 'itinerary', label: 'Itinerary', ref: itineraryRef },
+                                    { id: 'inclusions', label: 'Inclusions', ref: inclusionsRef },
+                                    { id: 'exclusions', label: 'Exclusions', ref: exclusionsRef },
+                                    { id: 'other', label: 'Other Info', ref: otherRef }
+                                ].map(tab => (
+                                    <TabsTrigger
+                                        key={tab.id}
+                                        value={tab.id}
+                                        onClick={() => scrollToSection(tab.ref, tab.id)}
+                                        className={`px-4 py-2 text-sm md:text-base whitespace-nowrap border-b-2 transition-all duration-300 ${
+                                            activeTab === tab.id
+                                                ? 'border-[#017ae3] text-[#017ae3] font-semibold'
+                                                : 'border-transparent text-gray-600 hover:text-[#017ae3]'
+                                        }`}
+                                    >
+                                        {tab.label}
+                                    </TabsTrigger>
+                                ))}
+                            </TabsList>
+                        </Tabs>
+                    </div>
                 </div>
             </div>
 
             {/* Main Content */}
             <div className="container mx-auto px-4 py-8">
                 {/* Overview Section */}
-                <div ref={overviewRef} className="mb-12">
-                    <h2 className="text-2xl font-bold mb-6">Overview</h2>
-                    <p className="text-gray-700 mb-6">{australiaPkg.description}</p>
-                    
-                    {/* Group Details */}
-                    <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
-                        <h3 className="text-xl font-semibold mb-4">Group Details</h3>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <p className="text-gray-600">Group Size: {australiaPkg.groupDetails.pax}</p>
-                                <p className="text-gray-600">Room Type: {australiaPkg.groupDetails.rooms}</p>
+                <div ref={overviewRef} className="scroll-mt-16">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-8">
+                        <div className="lg:col-span-2 space-y-4">
+                            <div className="bg-white rounded-lg shadow-sm p-6">
+                                <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-[#017ae3] border-b pb-4">
+                                    About This Package
+                                </h2>
+
+                                <p className="text-gray-600 mb-6">{australiaPkg.description}</p>
+
+                                {/* Tour Summary Box */}
+                                <div className="bg-blue-50 rounded-lg p-4 mb-6">
+                                    <h3 className="text-lg font-semibold mb-4">Tour Overview</h3>
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        {australiaPkg.tourSummary?.map((day, index) => (
+                                            <div key={index} className="flex gap-2">
+                                                <span className="text-[#017ae3] font-medium whitespace-nowrap">Day {index + 1}:</span>
+                                                <span className="text-gray-600">{day.replace(/^Day \d+: /, '')}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Tour Details Grid */}
+                                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                                    {australiaPkg.groupDetails && (
+                                        <>
+                                            <div className="bg-gray-50 p-4 rounded-lg">
+                                                <h4 className="font-semibold mb-2">Duration</h4>
+                                                <p>{australiaPkg.groupDetails.duration}</p>
+                                            </div>
+                                            <div className="bg-gray-50 p-4 rounded-lg">
+                                                <h4 className="font-semibold mb-2">Accommodation</h4>
+                                                <p>{australiaPkg.groupDetails.rooms}</p>
+                                            </div>
+                                            <div className="bg-gray-50 p-4 rounded-lg">
+                                                <h4 className="font-semibold mb-2">Group Size</h4>
+                                                <p>{australiaPkg.groupDetails.pax}</p>
+                                            </div>
+                                            <div className="bg-gray-50 p-4 rounded-lg">
+                                                <h4 className="font-semibold mb-2">Cost Basis</h4>
+                                                <p>{australiaPkg.groupDetails.costBasis}</p>
+                                            </div>
+                                        </>
+                                    )}
+                                </div>
                             </div>
-                            <div>
-                                <p className="text-gray-600">Duration: {australiaPkg.groupDetails.duration}</p>
-                                <p className="text-gray-600">Cost Basis: {australiaPkg.groupDetails.costBasis}</p>
+                        </div>
+
+                        {/* Price Card in sidebar */}
+                        <div className="space-y-4">
+                            <div className="bg-white rounded-lg shadow-sm p-6 sticky top-20">
+                                <div className="text-center mb-4">
+                                    {australiaPkg.amount && (
+                                        <>
+                                            <p className="text-gray-500 line-through">₹{(australiaPkg.amount * 1.2).toLocaleString('en-IN')}/-</p>
+                                            <p className="text-3xl font-bold text-[#017ae3]">₹{australiaPkg.amount.toLocaleString('en-IN')}/-</p>
+                                        </>
+                                    )}
+                                    <p className="text-sm text-gray-500">per person</p>
+                                </div>
+                                <Button
+                                    className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white font-bold py-3 rounded-lg transition-all duration-300"
+                                    onClick={() => setIsBookingModalOpen(true)}
+                                >
+                                    Book Now
+                                </Button>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    {/* Hotels */}
+                {/* Update Itinerary Section */}
+                <div ref={itineraryRef} className="scroll-mt-16 mt-8">
                     <div className="bg-white rounded-lg shadow-sm p-6">
-                        <h3 className="text-xl font-semibold mb-4">Hotels</h3>
-                        <div className="grid gap-4">
-                            {australiaPkg.hotelDetails.map((hotel, index) => (
-                                <div key={index} className="border-b last:border-b-0 pb-4 last:pb-0">
-                                    <h4 className="font-semibold">{hotel.city}</h4>
-                                    <p className="text-gray-600">{hotel.hotel}</p>
-                                    <p className="text-gray-500 text-sm">{hotel.roomType}</p>
+                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">Detailed Itinerary</h2>
+                        <div className="space-y-6">
+                            {australiaPkg.itinerary.map((day, index) => (
+                                <div key={index} className="group">
+                                    <div
+                                        className="flex items-center gap-4 cursor-pointer bg-gradient-to-r from-[#017ae3]/5 to-[#00f6ff]/5 p-4 rounded-lg hover:from-[#017ae3]/10 hover:to-[#00f6ff]/10 transition-colors"
+                                        onClick={() => setOpenDay(openDay === index ? null : index)}
+                                    >
+                                        <div className="flex-shrink-0 w-24">
+                                            <div className="text-sm text-[#017ae3]">Day {day.day}</div>
+                                        </div>
+                                        <div className="flex-grow">
+                                            <h3 className="text-lg font-semibold text-gray-800">{day.title}</h3>
+                                        </div>
+                                        <div className="flex-shrink-0">
+                                            <svg
+                                                className={`w-6 h-6 text-[#017ae3] transform transition-transform duration-300 ${openDay === index ? 'rotate-180' : ''}`}
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <AnimatePresence>
+                                        {openDay === index && (
+                                            <motion.div
+                                                initial={{ height: 0, opacity: 0 }}
+                                                animate={{ height: "auto", opacity: 1 }}
+                                                exit={{ height: 0, opacity: 0 }}
+                                                transition={{ duration: 0.3 }}
+                                                className="overflow-hidden"
+                                            >
+                                                <div className="mt-2 pl-28 pr-4 py-4">
+                                                    <p className="text-gray-600">{day.description}</p>
+                                                </div>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
                                 </div>
                             ))}
                         </div>
                     </div>
                 </div>
 
-                {/* Itinerary Section */}
-                <div ref={itineraryRef} className="mb-12">
-                    <h2 className="text-2xl font-bold mb-6">Itinerary</h2>
-                    <div className="space-y-4">
-                        {australiaPkg.itinerary.map((day, index) => (
-                            <div
-                                key={index}
-                                className="bg-white rounded-lg shadow-sm overflow-hidden"
-                            >
-                                <button
-                                    className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50"
-                                    onClick={() => setOpenDay(openDay === index ? null : index)}
-                                >
-                                    <span className="font-medium">Day {day.day}: {day.title}</span>
-                                    {openDay === index ? (
-                                        <FaMinus className="flex-shrink-0 text-gray-400" />
-                                    ) : (
-                                        <FaPlus className="flex-shrink-0 text-gray-400" />
-                                    )}
-                                </button>
-                                {openDay === index && (
-                                    <div className="px-6 py-4 bg-gray-50">
-                                        <p className="text-gray-600">{day.description}</p>
-                                    </div>
-                                )}
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                {/* Inclusions Section */}
-                <div ref={inclusionsRef} className="mb-12">
-                    <h2 className="text-2xl font-bold mb-6">Inclusions</h2>
+                {/* Update Inclusions Section */}
+                <div ref={inclusionsRef} className="scroll-mt-16 mt-8">
                     <div className="bg-white rounded-lg shadow-sm p-6">
-                        <ul className="list-disc list-inside space-y-2">
-                            {australiaPkg.inclusions.map((inclusion, index) => (
-                                <li key={index} className="text-gray-700">{inclusion}</li>
+                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">Tour Inclusions</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            {australiaPkg.inclusions?.map((item, index) => (
+                                <div key={index} className="flex items-start gap-2 bg-gray-50 p-4 rounded-lg">
+                                    <span className="text-green-500 text-xl">✓</span>
+                                    <span className="text-gray-700">{item}</span>
+                                </div>
                             ))}
-                        </ul>
+                        </div>
                     </div>
                 </div>
 
                 {/* Exclusions Section */}
-                <div ref={exclusionsRef} className="mb-12">
-                    <h2 className="text-2xl font-bold mb-6">Exclusions</h2>
+                <div ref={exclusionsRef} className="scroll-mt-16 mt-8">
                     <div className="bg-white rounded-lg shadow-sm p-6">
-                        <ul className="list-disc list-inside space-y-2">
-                            {australiaPkg.exclusions.map((exclusion, index) => (
-                                <li key={index} className="text-gray-700">{exclusion}</li>
+                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">Exclusions</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            {australiaPkg.exclusions?.map((item, index) => (
+                                <div key={index} className="flex items-start gap-2 bg-gray-50 p-4 rounded-lg">
+                                    <span className="text-red-500 text-xl">✗</span>
+                                    <span className="text-gray-700">{item}</span>
+                                </div>
                             ))}
-                        </ul>
+                        </div>
                     </div>
                 </div>
 
                 {/* Other Information Section */}
-                <div ref={otherRef} className="mb-12">
-                    <h2 className="text-2xl font-bold mb-6">Other Information</h2>
-                    {australiaPkg.additionalInfo && (
-                        <div className="space-y-6">
-                            {/* Highlights */}
-                            <div className="bg-white rounded-lg shadow-sm p-6">
-                                <h3 className="text-xl font-semibold mb-4">Highlights</h3>
-                                <ul className="list-disc list-inside space-y-2">
-                                    {australiaPkg.additionalInfo.highlights.map((highlight, index) => (
-                                        <li key={index} className="text-gray-700">{highlight}</li>
-                                    ))}
-                                </ul>
-                            </div>
+                <div ref={otherRef} className="scroll-mt-16 mt-8">
+                    <div className="bg-white rounded-lg shadow-sm p-6">
+                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">Other Information</h2>
+                        {australiaPkg.additionalInfo && (
+                            <div className="space-y-6">
+                                {/* Highlights */}
+                                <div className="bg-white rounded-lg shadow-sm p-6">
+                                    <h3 className="text-xl font-semibold mb-4">Highlights</h3>
+                                    <ul className="list-disc list-inside space-y-2">
+                                        {australiaPkg.additionalInfo.highlights.map((highlight, index) => (
+                                            <li key={index} className="text-gray-700">{highlight}</li>
+                                        ))}
+                                    </ul>
+                                </div>
 
-                            {/* Best Time to Visit */}
-                            <div className="bg-white rounded-lg shadow-sm p-6">
-                                <h3 className="text-xl font-semibold mb-2">Best Time to Visit</h3>
-                                <p className="text-gray-700">{australiaPkg.additionalInfo.bestTimeToVisit}</p>
-                            </div>
+                                {/* Best Time to Visit */}
+                                <div className="bg-white rounded-lg shadow-sm p-6">
+                                    <h3 className="text-xl font-semibold mb-2">Best Time to Visit</h3>
+                                    <p className="text-gray-700">{australiaPkg.additionalInfo.bestTimeToVisit}</p>
+                                </div>
 
-                            {/* Cuisine */}
-                            <div className="bg-white rounded-lg shadow-sm p-6">
-                                <h3 className="text-xl font-semibold mb-4">Local Cuisine</h3>
-                                <ul className="list-disc list-inside space-y-2">
-                                    {australiaPkg.additionalInfo.cuisine.map((item, index) => (
-                                        <li key={index} className="text-gray-700">{item}</li>
-                                    ))}
-                                </ul>
-                            </div>
+                                {/* Cuisine */}
+                                <div className="bg-white rounded-lg shadow-sm p-6">
+                                    <h3 className="text-xl font-semibold mb-4">Local Cuisine</h3>
+                                    <ul className="list-disc list-inside space-y-2">
+                                        {australiaPkg.additionalInfo.cuisine.map((item, index) => (
+                                            <li key={index} className="text-gray-700">{item}</li>
+                                        ))}
+                                    </ul>
+                                </div>
 
-                            {/* Visa Information */}
-                            <div className="bg-white rounded-lg shadow-sm p-6">
-                                <h3 className="text-xl font-semibold mb-4">Visa Information</h3>
-                                <div className="space-y-2">
-                                    <p className="text-gray-700"><strong>Requirement:</strong> {australiaPkg.additionalInfo.visaInfo.requirement}</p>
-                                    <p className="text-gray-700"><strong>Processing Time:</strong> {australiaPkg.additionalInfo.visaInfo.duration}</p>
-                                    <p className="text-gray-700"><strong>Cost:</strong> {australiaPkg.additionalInfo.visaInfo.cost}</p>
-                                    <div className="mt-4">
-                                        <h4 className="font-semibold mb-2">Required Documents:</h4>
-                                        <ul className="list-disc list-inside space-y-1">
-                                            {australiaPkg.additionalInfo.visaInfo.documents.map((doc, index) => (
-                                                <li key={index} className="text-gray-700">{doc}</li>
-                                            ))}
-                                        </ul>
+                                {/* Visa Information */}
+                                <div className="bg-white rounded-lg shadow-sm p-6">
+                                    <h3 className="text-xl font-semibold mb-4">Visa Information</h3>
+                                    <div className="space-y-2">
+                                        <p className="text-gray-700"><strong>Requirement:</strong> {australiaPkg.additionalInfo.visaInfo.requirement}</p>
+                                        <p className="text-gray-700"><strong>Processing Time:</strong> {australiaPkg.additionalInfo.visaInfo.duration}</p>
+                                        <p className="text-gray-700"><strong>Cost:</strong> {australiaPkg.additionalInfo.visaInfo.cost}</p>
+                                        <div className="mt-4">
+                                            <h4 className="font-semibold mb-2">Required Documents:</h4>
+                                            <ul className="list-disc list-inside space-y-1">
+                                                {australiaPkg.additionalInfo.visaInfo.documents.map((doc, index) => (
+                                                    <li key={index} className="text-gray-700">{doc}</li>
+                                                ))}
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    )}
+                        )}
+                    </div>
                 </div>
 
                 {/* Sightseeing Activities Section */}
