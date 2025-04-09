@@ -49,32 +49,32 @@ export default function AustraliaPackages() {
     const australiaHighlights = [
         {
             title: "Natural Wonders",
-            image: "/UGCImages/australia/natural.png",
+            image: "/UGCImages/australia/Main/barrier.jpg",
             description: "Explore the Great Barrier Reef and Uluru"
         },
         {
             title: "Wildlife Adventures",
-            image: "/UGCImages/australia/wildlife.png",
+            image: "/UGCImages/australia/Main/funa.jpg",
             description: "Meet kangaroos, koalas, and unique Australian fauna"
         },
         {
             title: "City Life",
-            image: "/UGCImages/australia/city.png",
+            image: "/UGCImages/australia/Main/sydney.jpg",
             description: "Experience Sydney's harbor and Melbourne's culture"
         },
         {
             title: "Beach Paradise",
-            image: "/UGCImages/australia/beach.png",
+            image: "/UGCImages/australia/Main/beach.jpg",
             description: "Relax on world-famous beaches"
         },
         {
             title: "Outback Experience",
-            image: "/UGCImages/australia/outback.png",
+            image: "/UGCImages/australia/Main/outback.jpg",
             description: "Discover the rugged beauty of the Australian outback"
         },
         {
             title: "Food & Wine",
-            image: "/UGCImages/australia/food.png",
+            image: "/UGCImages/australia/Main/cuisine.jpg",
             description: "Savor Australian cuisine and world-class wines"
         }
     ];

@@ -14,7 +14,7 @@ const AustraliaBanner = () => {
   const australiaPackages = [
     {
       id: 'the-best-of-australia',
-      title: 'The Best of Australia',
+      title: 'The Best of Australia 13 Days',
       images: [
         '/UGCImages/Images4/australia/vertical/1.webp',
         '/UGCImages/Images4/australia/vertical/2.webp',
@@ -22,35 +22,33 @@ const AustraliaBanner = () => {
         '/UGCImages/Images4/australia/vertical/4.webp',
       ],
       date: '01 March 2025 - 26 July 2025',
-      price: '490,999'
+      price: '4,90,999'
     },
     {
-      id: '9-days-melbourne-sydney',
-      title: '9 Days Melbourne & Sydney',
+      id: 'incredible-australia',
+      title: 'Incredible Australia 10 Days',
       images: [
         '/UGCImages/Images4/australia/vertical/5.webp',
         '/UGCImages/Images4/australia/vertical/6.webp',
-        '/UGCImages/Images4/australia/vertical/7.webp',
-        '/UGCImages/Images4/australia/vertical/8.webp',
+        '/UGCImages/australia/Best/1.png',
       ],
       date: '01 March 2025 - 26 July 2025',
-      price: '249,000'
+      price: '3,54,999'
     },
     {
-      id: '12-days-australia-explorer',
-      title: '12 Days Australia Explorer',
+      id: 'whitsundays-delight',
+      title: 'Whitsundays Delight 10 Days',
       images: [
-        '/UGCImages/Images4/australia/vertical/9.webp',
-        '/UGCImages/Images4/australia/vertical/10.webp',
-        '/UGCImages/Images4/australia/vertical/11.webp',
-        '/UGCImages/Images4/australia/vertical/12.webp',
+        '/UGCImages/australia/Best/2.png',
+        '/UGCImages/australia/Best/3.png',
+        '/UGCImages/australia/Best/4.png',
       ],
       date: '01 March 2025 - 26 July 2025',
-      price: '299,000'
+      price: '3,64,999'
     },
     {
-      id: 'australia-package-4',
-      title: 'Australia Package 4',
+      id: 'east-coast-adventure',
+      title: 'East Coast Adventure 11 Days',
       images: [
         '/UGCImages/Images4/australia/vertical/13.webp',
         '/UGCImages/Images4/australia/vertical/14.webp',
@@ -58,11 +56,11 @@ const AustraliaBanner = () => {
         '/UGCImages/Images4/australia/vertical/16.webp',
       ],
       date: '01 March 2025 - 26 July 2025',
-      price: '229,000'
+      price: '3,44,999'
     },
     {
-      id: 'australia-package-5',
-      title: 'Australia Package 5',
+      id: 'hamilton-island',
+      title: 'Hamilton Island Honeymoon ',
       images: [
         '/UGCImages/Images4/australia/vertical/17.webp',
         '/UGCImages/Images4/australia/vertical/18.webp',
@@ -70,7 +68,7 @@ const AustraliaBanner = () => {
         '/UGCImages/Images4/australia/vertical/20.webp',
       ],
       date: '01 March 2025 - 26 July 2025',
-      price: '229,000'
+      price: '5,96,999'
     },
   ];
 
