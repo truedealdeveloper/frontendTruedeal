@@ -188,10 +188,10 @@ export default function FixedDepartures() {
                 <div className="text-center mb-8">
                     <h1 className="text-3xl font-bold relative inline-block">
                         <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
-                            Fixed Departures
+                            With Flights
                         </span>
                         <div className="mt-2 px-6 py-1 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] rounded-full">
-                            <p className="text-sm text-white font-medium">With Flights</p>
+                            <p className="text-sm text-white font-medium">Fixed Departures</p>
                         </div>
                     </h1>
                 </div>
@@ -225,10 +225,10 @@ export default function FixedDepartures() {
                 <div className="text-center mb-8">
                     <h2 className="text-3xl font-bold relative inline-block">
                         <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
-                            Fixed Departures
+                            Without Flights
                         </span>
                         <div className="mt-2 px-6 py-1 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] rounded-full">
-                            <p className="text-sm text-white font-medium">Without Flights</p>
+                            <p className="text-sm text-white font-medium">Fixed Departures</p>
                         </div>
                     </h2>
                 </div>
