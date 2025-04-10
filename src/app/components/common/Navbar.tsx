@@ -405,15 +405,12 @@ export default function Navbar() {
                                         onMouseEnter={() => handleMouseEnter(menuId)}
                                         onMouseLeave={handleMouseLeave}
                                     >
-                                        <Link
-                                            href={item.href}
-                                            className="relative group py-2 px-2 block whitespace-nowrap"
-                                        >
+                                        <div className="relative group py-2 px-2 block whitespace-nowrap cursor-default">
                                             <span className="relative z-10 text-white text-[14px] font-normal group-hover:text-white/90 transition-colors flex items-center gap-1">
                                                 {item.label}
                                                 <ChevronDown className="h-3 w-3 opacity-80" />
                                             </span>
-                                        </Link>
+                                        </div>
                                         {dropdownMenus[menuId as keyof typeof dropdownMenus] && (
                                             <DropdownMenu
                                                 items={dropdownMenus[menuId as keyof typeof dropdownMenus]}
