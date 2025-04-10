@@ -50,10 +50,10 @@ const AustraliaBanner = () => {
       id: 'east-coast-adventure',
       title: 'East Coast Adventure 11 Days',
       images: [
-        '/UGCImages/Images4/australia/vertical/13.webp',
-        '/UGCImages/Images4/australia/vertical/14.webp',
-        '/UGCImages/Images4/australia/vertical/15.webp',
-        '/UGCImages/Images4/australia/vertical/16.webp',
+        '/UGCImages/australia/banner2/1.png',
+        '/UGCImages/australia/banner2/2.png',
+        '/UGCImages/australia/banner2/3.png',
+        '/UGCImages/australia/banner2/4.png',
       ],
       date: '01 March 2025 - 26 July 2025',
       price: '3,44,999'
@@ -62,10 +62,9 @@ const AustraliaBanner = () => {
       id: 'hamilton-island',
       title: 'Hamilton Island Honeymoon ',
       images: [
-        '/UGCImages/Images4/australia/vertical/17.webp',
-        '/UGCImages/Images4/australia/vertical/18.webp',
-        '/UGCImages/Images4/australia/vertical/19.webp',
-        '/UGCImages/Images4/australia/vertical/20.webp',
+        '/UGCImages/australia/Banner/1.png',
+        '/UGCImages/australia/Banner/2.png',
+        '/UGCImages/australia/Banner/3.png',
       ],
       date: '01 March 2025 - 26 July 2025',
       price: '5,96,999'

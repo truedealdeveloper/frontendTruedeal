@@ -415,9 +415,9 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
             }
         ],
         images: [
-            "/UGCImages/australia/Incredible/1.png",
-            "/UGCImages/australia/Incredible/2.png",
-            "/UGCImages/australia/Incredible/3.png",
+            "/UGCImages/australia/images/1.webp",
+            "/UGCImages/australia/images/4.webp",
+            "/UGCImages/australia/images/3.webp",
         ],
         sightseeingSpots: [
             {
@@ -629,9 +629,11 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
             }
         ],
         images: [
-            "/UGCImages/australia/Best/1.png",
-            "/UGCImages/australia/Best/2.png",
-            "/UGCImages/australia/Best/3.png",
+            "/UGCImages/australia/images/12.png",
+            "/UGCImages/australia/images/20.webp",
+            "/UGCImages/australia/images/1.webp",
+            
+
         ],
         sightseeingSpots: [
             {
@@ -842,9 +844,10 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
             }
         ],
         images: [
-            "/UGCImages/australia/Best/1.png",
-            "/UGCImages/australia/Best/2.png",
-            "/UGCImages/australia/Best/3.png",
+            "/UGCImages/australia/images/13.png",
+            "/UGCImages/australia/images/14.webp",
+            "/UGCImages/australia/images/15.webp"
+            
         ],
         sightseeingSpots: [
             {
@@ -1074,9 +1077,12 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
             }
         ],
         images: [
-            "/UGCImages/australia/Best/1.png",
-            "/UGCImages/australia/Best/2.png",
-            "/UGCImages/australia/Best/3.png",
+            "/UGCImages/australia/hamilton/1.png",
+            "/UGCImages/australia/hamilton/2.png",
+            "/UGCImages/australia/hamilton/3.png",
+            "/UGCImages/australia/hamilton/4.png",
+            "/UGCImages/australia/hamilton/5.png",
+            
         ],
         sightseeingSpots: [
             {
