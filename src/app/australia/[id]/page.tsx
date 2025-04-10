@@ -3,7 +3,7 @@
 import { use, useState, useEffect, useRef } from 'react';
 import { australiaPackages } from '../data';
 import { notFound } from 'next/navigation';
-import { FaCalendarAlt, FaClock, FaMinus, FaPlus } from 'react-icons/fa';
+import { FaCalendarAlt, FaClock } from 'react-icons/fa';
 import { IoLocationSharp } from 'react-icons/io5';
 import { Button } from "@/components/ui/button";
 import { BookingFormModal } from '@/app/components/BookingFormModal';
