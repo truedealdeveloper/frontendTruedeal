@@ -4,7 +4,6 @@ import { InstagramIcon } from "../icons/social/Instagram"
 import { FacebookIcon } from "../icons/social/Facebook"
 import { TwitterIcon } from "../icons/social/Twitter"
 import { LinkedInIcon } from "../icons/social/LinkedIn"
-import { Phone, Mail, MapPin } from "lucide-react"
 import { YouTubeIcon } from "../icons/social/YouTube"
 
 // Update the fixedDepartureDestinations array to include a category
