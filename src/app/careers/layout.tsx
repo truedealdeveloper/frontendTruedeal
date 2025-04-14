@@ -1,9 +1,9 @@
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "Careers at TrueDeal4U - Join Our Team | TrueDeal4U Travel Agency",
-    description: "Join our dynamic team at TrueDeal4U. We're looking for passionate individuals who want to revolutionize the travel industry. Apply now and be part of our journey.",
-    keywords: "careers, jobs, employment, travel jobs, tourism careers, TrueDeal4U careers, job opportunities, travel industry jobs",
+    title: "Careers at TrueDeal4U | Join Our Team",
+    description: "Join TrueDeal4U's dynamic team and build your career in the travel industry. Explore current openings and opportunities with us.",
+    keywords: "travel industry jobs, truedeal4u careers, travel agency jobs, tourism careers",
     openGraph: {
         title: "Careers at TrueDeal4U - Join Our Team | TrueDeal4U Travel Agency",
         description: "Join our dynamic team at TrueDeal4U. We're looking for passionate individuals who want to revolutionize the travel industry. Apply now and be part of our journey.",

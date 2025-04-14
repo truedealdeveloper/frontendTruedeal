@@ -20,22 +20,41 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.truedeal4u.com'),
-  title: "TrueDeal | Best Tour & Travel Agency for Memorable Trips.",
-  description: "Plan your next adventure with TrueDeal4U, a trusted tour and travel agency. Explore custom packages, affordable deals, and expert guidance for a hassle-free journey.",
-  keywords: "tour, travel, agency, packages, deals, expert, guidance, hassle-free, memorable, trips, adventure, explore, custom, affordable, trusted, TrueDeal, tour packages, tours and packages, india tours, tours and travels, india tour packages from kerala, india tour trip, trip package, package travels, travel tours, tours to nepal, trips to ladakh, travel for solos, cheap tour packages, india tour packages, india travel packages, holiday packages in india, india trip packages, india travels, india travel agency delhi, tours and travels, india tour packages from kerala, india tour trip, trip package, package travels, travel tours, tours to nepal, trips to ladakh, travel for solos, cheap tour packages, india tour packages, india travel packages, holiday packages in india, india trip packages, india travels, india travel agency delhi, holiday trip in india, sri lanka tours, tour sri lanka, sri lanka trips, adventure travels, tours for families, agency travels, travelling package, ladakh trip, travel by tour, arunachal pradesh trip, arunachal tours, tour to arunachal pradesh, leh ladakh tour, cheap tourist packages, leh ladakh tour package, ladakh trip package, leh ladakh trip package, travel agency delhi, leh ladakh packages, maldives, Famous places in Baku, Cheapest flights, Flight for thailand, best destination for honeymoon, Group tour packages",
+  title: {
+    default: 'TrueDeal4U | Best Tour & Travel Agency',
+    template: '%s | TrueDeal4U'
+  },
+  description: "Plan your next adventure with TrueDeal4U. We offer custom travel packages, international tours, and expert guidance for memorable journeys.",
+  keywords: [
+    'international tours',
+    'holiday packages',
+    'travel agency',
+    'custom travel packages',
+    'group tours',
+    'luxury travel',
+    'adventure trips',
+    'honeymoon packages',
+    'family vacation',
+    'business travel',
+    'visa services',
+    'flight booking',
+    'hotel booking',
+    'travel insurance',
+    'destination guides'
+  ].join(', '),
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://www.truedeal4u.com',
-    siteName: 'TrueDeal',
-    title: "TrueDeal | Best Tour & Travel Agency for Memorable Trips",
-    description: "Plan your next adventure with TrueDeal, a trusted tour and travel agency. Explore custom packages, affordable deals, and expert guidance for a hassle-free journey.",
+    siteName: 'TrueDeal4U',
+    title: 'TrueDeal4U | Best Tour & Travel Agency',
+    description: "Plan your next adventure with TrueDeal4U. We offer custom travel packages, international tours, and expert guidance for memorable journeys.",
     images: [
       {
         url: 'https://www.truedeal4u.com/Assets/NavbarImages/logo.png',
         width: 1200,
         height: 630,
-        alt: 'TrueDeal Logo',
+        alt: 'TrueDeal4U Logo',
       }
     ],
   },
@@ -58,10 +77,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "TrueDeal | Best Tour & Travel Agency for Memorable Trips",
-    description: "Plan your next adventure with TrueDeal4U, a trusted tour and travel agency. Explore custom packages, affordable deals, and expert guidance for a hassle-free journey.",
-    site: '@truedeal4u', 
-    creator: '@truedeal4u', 
+    title: 'TrueDeal4U | Best Tour & Travel Agency',
+    description: "Plan your next adventure with TrueDeal4U. We offer custom travel packages, international tours, and expert guidance for memorable journeys.",
+    site: '@truedeal4u',
+    creator: '@truedeal4u',
     images: ['https://www.truedeal4u.com/Assets/NavbarImages/logo.png'],
   },
 };

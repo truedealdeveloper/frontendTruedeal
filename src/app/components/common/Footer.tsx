@@ -17,8 +17,6 @@ const fixedDepartureDestinations = {
         { name: "Mini Europe Trip", id: "europe-7-days-mini-europe-tour" },
         { name: "Almaty Trip", id: "almaty-5-days-kazakhstan-tour" },
         { name: "Dubai Trip", id: "dubai-5-days-desert-adventure" },
-        { name: "Bali Island Hopper Trip", id: "bali-7-days-island-hopper" },
-        { name: "Russia Trip", id: "russia-8-days-moscow-stpetersburg" },
         { name: "Bhutan Trip", id: "bhutan-7-days-happiness-tour" },
         { name: "China Canton Trip", id: "china-6-days-canton-fair-tour" },
     ],
@@ -34,7 +32,7 @@ export default function Component() {
     return (
         <>
             {/* Contact Info Section */}
-            <section className="py-12 px-4 bg-gradient-to-br from-[#017ae3] to-[#00f6ff]">
+            {/* <section className="py-12 px-4 bg-gradient-to-br from-[#017ae3] to-[#00f6ff]">
                 <div className="max-w-6xl mx-auto">
                     <h2 className="text-3xl font-bold text-center text-white mb-8">
                         Get in Touch
@@ -84,7 +82,7 @@ export default function Component() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
 
             <footer className="bg-gradient-to-b from-white via-gray-50 to-gray-100 py-12 px-4 border-t">
