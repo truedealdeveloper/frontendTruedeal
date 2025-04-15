@@ -10,11 +10,18 @@ import { Analytics } from "@vercel/analytics/react"
 import GoogleAnalytics from '../components/GoogleAnalytics';
 import { Poppins } from 'next/font/google';
 import { GoogleTagManager } from '@next/third-parties/google'
+import dynamic from 'next/dynamic';
 
-// Conditionally import Clerk only if the environment variable exists
-const ClerkProvider = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY 
-  ? require('@clerk/nextjs').ClerkProvider 
-  : ({ children }: { children: React.ReactNode }) => <>{children}</>;
+// Dynamically import ClerkProvider with fallback
+const ClerkProvider = dynamic(
+  () => {
+    if (process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY) {
+      return import('@clerk/nextjs').then((mod) => mod.ClerkProvider);
+    }
+    return Promise.resolve(({ children }: { children: React.ReactNode }) => <>{children}</>);
+  },
+  { ssr: true }
+);
 
 const poppins = Poppins({
     weight: ['400', '500', '600', '700'],
