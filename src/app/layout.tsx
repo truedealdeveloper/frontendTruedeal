@@ -21,10 +21,10 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.truedeal4u.com'),
   title: {
-    default: 'TrueDeal4U | Best Tour & Travel Agency',
-    template: '%s | TrueDeal4U'
+    default: 'TrueDeal | Best Tour & Travel Agency',
+    template: '%s | TrueDeal'
   },
-  description: "Plan your next adventure with TrueDeal4U. We offer custom travel packages, international tours, and expert guidance for memorable journeys.",
+  description: "Plan your next adventure with TrueDeal. We offer custom travel packages, international tours, and expert guidance for memorable journeys.",
   keywords: [
     'international tours',
     'holiday packages',
@@ -46,15 +46,15 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://www.truedeal4u.com',
-    siteName: 'TrueDeal4U',
-    title: 'TrueDeal4U | Best Tour & Travel Agency',
-    description: "Plan your next adventure with TrueDeal4U. We offer custom travel packages, international tours, and expert guidance for memorable journeys.",
+    siteName: 'TrueDeal',
+    title: 'TrueDeal | Best Tour & Travel Agency',
+    description: "Plan your next adventure with TrueDeal. We offer custom travel packages, international tours, and expert guidance for memorable journeys.",
     images: [
       {
         url: 'https://www.truedeal4u.com/Assets/NavbarImages/logo.png',
         width: 1200,
         height: 630,
-        alt: 'TrueDeal4U Logo',
+        alt: 'TrueDeal Logo',
       }
     ],
   },
@@ -77,8 +77,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TrueDeal4U | Best Tour & Travel Agency',
-    description: "Plan your next adventure with TrueDeal4U. We offer custom travel packages, international tours, and expert guidance for memorable journeys.",
+    title: 'TrueDeal | Best Tour & Travel Agency',
+    description: "Plan your next adventure with TrueDeal. We offer custom travel packages, international tours, and expert guidance for memorable journeys.",
     site: '@truedeal4u',
     creator: '@truedeal4u',
     images: ['https://www.truedeal4u.com/Assets/NavbarImages/logo.png'],

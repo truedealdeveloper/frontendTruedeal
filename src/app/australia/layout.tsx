@@ -11,7 +11,7 @@ export default function AustraliaLayout({
 }: {
   children: React.ReactNode
 }) {
-  return (
+  return (  
     <>
       {children}
     </>
