@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
-import { ClerkProvider } from "@clerk/nextjs";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Chatbot } from "./components/chatbot/Chatbot";
 // import Script from 'next/script'
@@ -11,6 +10,11 @@ import { Analytics } from "@vercel/analytics/react"
 import GoogleAnalytics from '../components/GoogleAnalytics';
 import { Poppins } from 'next/font/google';
 import { GoogleTagManager } from '@next/third-parties/google'
+
+// Conditionally import Clerk only if the environment variable exists
+const ClerkProvider = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY 
+  ? require('@clerk/nextjs').ClerkProvider 
+  : ({ children }: { children: React.ReactNode }) => <>{children}</>;
 
 const poppins = Poppins({
     weight: ['400', '500', '600', '700'],
