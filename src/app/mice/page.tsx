@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
@@ -90,17 +90,16 @@ export default function MICEPage() {
 
   return (
     <div className="min-h-screen pt-16 overflow-x-hidden w-full">
-      {/* Hero Section - Improve mobile spacing */}
+      {/* Hero Section with gradient background instead of image */}
       <section ref={heroRef} className="relative overflow-hidden w-full">
         <div className="absolute inset-0 z-0">
-          <Image
-            src="/UGCImages/Mice/Almaty.jpg"
-            alt="Corporate MICE Events and Services by Truedeal Travels"
-            fill
-            priority
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#017ae3]/90 to-[#00f6ff]/80"></div>
+          {/* Replace image with a more complex gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#017ae3] via-[#0162b7] to-[#00f6ff]">
+            <div className="absolute inset-0 opacity-20">
+              <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+              <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#00f6ff]/20 rounded-full filter blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
+            </div>
+          </div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10 py-16 md:py-24 lg:py-32 max-w-[100vw]">
@@ -259,24 +258,28 @@ export default function MICEPage() {
         </div>
       </section>
 
-      {/* About Section - Improve mobile layout */}
+      {/* About Section - Replace image with decorative elements */}
       <section id="about" className="py-16 sm:py-20 bg-white w-full">
         <div className="container mx-auto px-4 max-w-[100vw]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <motion.div
               initial={{ opacity: 1, x: 0 }}
-              className="relative order-2 lg:order-1 w-full"
+              className="relative order-2 lg:order-1 w-full h-[400px]"
             >
-              <div className="absolute -top-4 -left-4 w-24 h-24 bg-[#00f6ff] rounded-lg opacity-20"></div>
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#017ae3] rounded-lg opacity-20"></div>
-              <div className="relative rounded-2xl overflow-hidden shadow-xl">
-                <Image
-                  src="/UGCImages/Mice/Almaty.jpg"
-                  alt="Professional Corporate Event Planning and MICE Services"
-                  width={800}
-                  height={600}
-                  className="w-full h-auto"
-                />
+              {/* Replace image with decorative design */}
+              <div className="relative h-full rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-[#017ae3] to-[#00f6ff]">
+                <div className="absolute inset-0 opacity-20">
+                  <div className="absolute top-10 left-10 w-40 h-40 bg-white/20 rounded-full"></div>
+                  <div className="absolute bottom-10 right-10 w-60 h-60 bg-white/10 rounded-full"></div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-white/5 rounded-full"></div>
+                </div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-white text-center">
+                    <Users className="h-16 w-16 mb-4 mx-auto" />
+                    <h3 className="text-2xl font-bold">Creating Memorable Events</h3>
+                    <p className="text-white/80 mt-2">Bringing people together</p>
+                  </div>
+                </div>
               </div>
             </motion.div>
 
