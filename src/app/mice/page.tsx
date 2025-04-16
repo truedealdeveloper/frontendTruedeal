@@ -1,7 +1,6 @@
 "use client"
 
-import { useRef, useState } from "react"
-import Image from "next/image"
+import { useRef} from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import {NumberTicker} from "@/components/magicui/number-ticker"
