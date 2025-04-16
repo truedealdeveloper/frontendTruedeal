@@ -99,7 +99,13 @@ export default function MICEPage() {
       {/* Hero Section */}
       <section ref={heroRef} className="relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          
+          <Image
+            src="/UGCImages/mice/Almaty-3.jpeg"
+            alt="Corporate MICE Events and Services by Truedeal Travels"
+            fill
+            priority
+            className="object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-[#017ae3]/90 to-[#00f6ff]/80"></div>
         </div>
 
@@ -300,7 +306,7 @@ export default function MICEPage() {
               <div className="relative rounded-2xl overflow-hidden shadow-xl">
                 <Image
                   src="/UGCImages/mice/Almaty-3.jpeg"
-                  alt="Corporate Event Planning"
+                  alt="Professional Corporate Event Planning and MICE Services"
                   width={800}
                   height={600}
                   className="w-full h-auto"
