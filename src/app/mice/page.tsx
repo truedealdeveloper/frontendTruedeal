@@ -3,7 +3,7 @@
 import { useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { motion, useInView } from "framer-motion"
+import { motion } from "framer-motion"
 import {NumberTicker} from "@/components/magicui/number-ticker"
 
 import {
@@ -26,12 +26,6 @@ import {
 export default function MICEPage() {
   // Refs for scroll animations
   const heroRef = useRef(null)
-  const servicesRef = useRef(null)
-  const aboutRef = useRef(null)
-
-  const heroInView = useInView(heroRef, { once: true, amount: 0.3 })
-  const servicesInView = useInView(servicesRef, { once: true, amount: 0.3 })
-  const aboutInView = useInView(aboutRef, { once: true, amount: 0.3 })
 
   const services = [
     {
