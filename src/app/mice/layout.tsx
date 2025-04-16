@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     url: "https://truedeal.com/mice",
     siteName: "Truedeal Travels",
     images: [{
-      url: "/UGCImages/Mice/Almaty-3.jpeg",
+      url: "/UGCImages/Mice/Almaty.jpg",
       width: 1200,
       height: 630,
       alt: "Corporate Event Planning by Truedeal Travels",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: "MICE Services | Corporate Events & Conferences | Truedeal Travels",
     description: "Specialized MICE services for corporate meetings, incentives, conferences, and events across India. Create memorable experiences that drive business results.",
     images: {
-      url: "/UGCImages/Mice/Almaty-3.jpeg",
+      url: "/UGCImages/Mice/Almaty.jpg",
       alt: "Corporate Event Planning by Truedeal Travels",
     },
   },
