@@ -3754,6 +3754,105 @@ be related once back home.`
             
         ]
     }, 
+    unitedArabEmirates: {
+        id: "uae-5n6d-summer-deal",
+        country: "United Arab Emirates",
+        days: 6,
+        nights: 5,
+        amount: 38499, 
+        dateStart: "April 2025", 
+        dateEnd: "June 2025",
+        groupDetails: {
+            pax: "2 Adults – Anniversary Trip",
+            rooms: "1 Room on Double Sharing",
+            arrivalDate: "14th April 2025",
+            duration: "5N6D UAE",
+            costBasis: "Cost Based On Double Sharing"
+        },
+        description: "Explore Dubai and Abu Dhabi with this amazing 5 Nights 6 Days summer deal including premium desert safari, Burj Khalifa visit, city tours, and more — all while staying at a 4-star hotel.",
+        hotelDetails: [
+            {
+                city: "Dubai",
+                hotel: "4 Star Hotel",
+                roomType: "Standard Room"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Arrival in Dubai – Meet & Greet at Dubai Airport – Hotel Check-in",
+            "Day 2: Scenic Half-Day Dubai City Tour + Monorail Ride",
+            "Day 3: Premium Desert Safari with Dinner",
+            "Day 4: Abu Dhabi City Tour – BAPS Temple – Grand Mosque",
+            "Day 5: Visit Burj Khalifa 124th Floor (Non-Prime Hours) + Dubai Mall",
+            "Day 6: Hotel Check-out – Return Transfer to DXB Airport"
+        ],
+        inclusions: [
+            "5 Nights Stay at 4 Star Hotel",
+            "Daily Buffet Breakfast",
+            "Meet & Greet at Dubai Airport",
+            "Scenic Half Day Dubai City Tour",
+            "Monorail Ticket",
+            "Premium Desert Safari with Dinner",
+            "Tour Dubai Dhow Cruise Marina",
+            "Access to Burj Khalifa 124th Floor (Non-Prime Hours)",
+            "Dubai Mall Visit",
+            "Abu Dhabi City Tour with BAPS Temple & Grand Mosque",
+            "3 Dinners at Indian Restaurant",
+            "Return DXB Airport Transfers",
+            "Tourism Dirham",
+            "5% VAT Inclusive",
+            "All Transfers, Excursions & Tours on Seat In Coach Basis"
+        ],
+        exclusions: [
+            "Flights (International Airfare Not Included)",
+            "Lunches (Unless Otherwise Specified)",
+            "Personal Expenses (shopping, tips, etc.)",
+            "Travel Insurance",
+            "Any item not specifically mentioned under inclusions"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Dubai",
+                description: "Meet & Greet at Dubai Airport and transfer to hotel. Check-in and leisure time."
+            },
+            {
+                day: 2,
+                title: "Dubai City Tour",
+                description: "Enjoy a scenic half-day city tour including a Monorail ride and other major landmarks."
+            },
+            {
+                day: 3,
+                title: "Premium Desert Safari",
+                description: "Experience a thrilling Premium Desert Safari followed by a BBQ dinner."
+            },
+            {
+                day: 4,
+                title: "Abu Dhabi City Tour",
+                description: "Visit iconic sites like the Grand Mosque and BAPS Temple in Abu Dhabi."
+            },
+            {
+                day: 5,
+                title: "Burj Khalifa Visit & Dubai Mall",
+                description: "Visit the Burj Khalifa 124th floor during non-prime hours and explore Dubai Mall."
+            },
+            {
+                day: 6,
+                title: "Departure",
+                description: "Check-out and transfer to Dubai International Airport for your return flight."
+            }
+        ],
+        images: [
+            "/UGCImages/dubai/1.png",
+            "/UGCImages/dubai/2.png",
+            "/UGCImages/dubai/3.png",
+            "/UGCImages/dubai/4.png",
+            "/UGCImages/dubai/5.png",
+            "/UGCImages/dubai/6.png",
+            "/UGCImages/dubai/7.png",
+            
+        ]
+    }
+    
 
     
     
@@ -3804,7 +3903,8 @@ export const destinationGroups = [
         switzerlandSwissPass: destinationsWithoutFlight.switzerlandSwissPass
     },
     {
-        turkeyAnniversary: destinationsWithoutFlight.turkeyAnniversary
+        turkeyAnniversary: destinationsWithoutFlight.turkeyAnniversary,
+        unitedArabEmirates: destinationsWithoutFlight.unitedArabEmirates
     }
 ]; 
 
