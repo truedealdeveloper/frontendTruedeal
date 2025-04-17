@@ -46,10 +46,6 @@ export interface DestinationWithoutFlight extends BaseDestination {
     minGroupSize?: number;
 }
 
-export const fixedDepartures: FixedDeparture[] = [
-    // Your Vietnam departure data here
-];
-
 export const fixedDeparturesData: Record<string, FixedDeparture> = {
     europe: {
         id: "europe-12-days-grand-tour",
@@ -1794,6 +1790,7 @@ taking home wonderful memories of your Azerbaijani adventure.
             "/UGCImages/baku/4.png",
         ], 
     },
+    
 };
 
 export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight> = {
@@ -3011,9 +3008,15 @@ Overnight in Basel
             }
         ],
         tourSummary: [
-            "Day 1-3: Istanbul - Blue Mosque, Topkapi Palace, Grand Bazaar & Bosphorus Dinner Cruise",
-            "Day 4-6: Cappadocia - Surreal landscapes, Hot Air Balloon Ride (Optional), Devrent & Pasabag Valleys, Goreme Open-Air Museum",
-            "Day 7-9: Antalya - Duden Waterfalls, Old City Marina, Hadrian's Gate, and Pamukkale excursion"
+            "Day 1: Istanbul - Blue Mosque, Topkapi Palace, Grand Bazaar & Bosphorus Dinner Cruise",
+            "Day 2: Istanbul - Blue Mosque, Topkapi Palace, Grand Bazaar & Bosphorus Dinner Cruise",
+            "Day 3: Istanbul - Blue Mosque, Topkapi Palace, Grand Bazaar & Bosphorus Dinner Cruise",
+            "Day 4: Istanbul to Cappadocia",
+            "Day 5: Cappadocia - Surreal landscapes, Hot Air Balloon Ride (Optional), Devrent & Pasabag Valleys, Goreme Open-Air Museum",
+            "Day 6: Cappadocia - Surreal landscapes, Hot Air Balloon Ride (Optional), Devrent & Pasabag Valleys, Goreme Open-Air Museum",
+            "Day 7: Cappadocia to Antalya",
+            "Day 8: Antalya - Duden Waterfalls, Old City Marina, Hadrian's Gate, and Pamukkale excursion",
+            "Day 9: Antalya - Departure"
         ],
         inclusions: [
             "8 Nights' accommodation in premium hotels",
@@ -3502,6 +3505,257 @@ be related once back home.`
             "/UGCImages/leh/4-min.png",
         ]
     },
+    switzerlandSwissPass: {
+        id: "swiss-6-days-june2025",
+        country: "Switzerland",
+        days: 6,
+        nights: 5,
+        amount: 149999, 
+        dateStart: "15 June 2025",
+        dateEnd: "20 June 2025",
+        groupDetails: {
+            pax: "2 Pax – Custom Package",
+            rooms: "1 Room on Double Sharing",
+            arrivalDate: "15th June 2025",
+            duration: "5N6D Switzerland",
+            costBasis: "Cost Based On Double Sharing"
+        },
+        description: "Explore the beauty of Switzerland with this 6-day tour covering Interlaken, Lucerne, and Zurich. Enjoy breathtaking mountain excursions, serene lakes, and iconic Swiss experiences including Mt. Jungfraujoch, Mt. Titlis, Rhine Falls and more, all with the convenience of a Swiss Travel Pass.",
+        hotelDetails: [
+            {
+                city: "Interlaken",
+                hotel: "Metropole Swiss Quality Interlaken Hotel or similar",
+                roomType: "Double Room - Bed & Breakfast"
+            },
+            {
+                city: "Lucerne",
+                hotel: "Monopol Hotel or similar",
+                roomType: "Double Room - Bed & Breakfast"
+            },
+            {
+                city: "Zurich",
+                hotel: "Ibis Styles Zurich City Center or similar",
+                roomType: "Standard Room - Bed & Breakfast"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Arrive Zurich – Transfer to Interlaken via Swiss Pass",
+            "Day 2: Mt. Jungfraujoch Excursion",
+            "Day 3: Transfer to Lucerne – Evening Lake Lucerne Cruise",
+            "Day 4: Mt. Titlis with Ice Flyer Adventure",
+            "Day 5: Transfer to Zurich – Visit Lindt Chocolate Factory and Rhine Falls",
+            "Day 6: Departure from Zurich Airport"
+        ],
+        inclusions: [
+            "Accommodation in 3/4 star hotels on double sharing with breakfast",
+            "6 Days Swiss Pass – 2nd Class Consecutive",
+            "Mt. Jungfraujoch Excursion via Swiss Pass",
+            "Mt. Titlis with Ice Flyer, Cliff Walk, Glacier Cave, and Snow Park",
+            "Lake Lucerne Cruise via Swiss Pass",
+            "Rhine Falls and Lindt Chocolate Factory Entry via Swiss Pass",
+            "All SIC Transfers from Pickup Points",
+            "All Train Tickets Covered Under Swiss Pass"
+        ],
+        exclusions: [
+            "Airfare (International & Domestic)",
+            "Visa, GST, and TCS",
+            "City Tax Payable Directly at Hotels",
+            "Night Transfer Supplements",
+            "Porterage, Travel Insurance",
+            "Personal Expenses, Tips (Driver/Guide)",
+            "Water Bottles in Coaches",
+            "Any services not mentioned in inclusions"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Zurich – Transfer to Interlaken",
+                description: "Arrive at Zurich Airport and travel to Interlaken using your Swiss Pass. Check-in to the hotel and relax or explore the nearby areas."
+            },
+            {
+                day: 2,
+                title: "Mt. Jungfraujoch Excursion",
+                description: "Embark on a full-day trip to Mt. Jungfraujoch via Swiss Pass. Enjoy Alpine Sensation, the Ice Palace, Observation Deck, and the Snow Fun Park."
+            },
+            {
+                day: 3,
+                title: "Interlaken to Lucerne – Lake Lucerne Cruise",
+                description: "Travel to Lucerne by train using Swiss Pass. Later in the evening, enjoy a serene Lake Lucerne cruise included with your pass."
+            },
+            {
+                day: 4,
+                title: "Mt. Titlis Adventure",
+                description: "Full-day excursion to Mt. Titlis via Engelberg. Includes Rotair Cable Car, Glacier Cave, Cliff Walk, Ice Flyer Chairlift, and snow tubing (weather permitting)."
+            },
+            {
+                day: 5,
+                title: "Lucerne to Zurich – Lindt Chocolate and Rhine Falls",
+                description: "Travel to Zurich using your Swiss Pass. Visit the Lindt Chocolate Factory and witness the magnificent Rhine Falls."
+            },
+            {
+                day: 6,
+                title: "Zurich Departure",
+                description: "Use your Swiss Pass to reach Zurich Airport for your return flight."
+            }
+        ],
+        images: [
+            "/UGCImages/switzerland/1.png",
+            "/UGCImages/switzerland/2.png",
+            "/UGCImages/switzerland/3.png",
+            "/UGCImages/switzerland/4.png",
+            "/UGCImages/switzerland/5.png",
+            "/UGCImages/switzerland/6.png",
+            
+        ]
+    }, 
+    turkeyAnniversary: {
+        id: "turkey-11-days-anniversary-trip",
+        country: "Turkey",
+        days: 11,
+        nights: 10,
+        amount: 139999,
+        dateStart: "April 2025",
+        dateEnd: "July 2025",
+        groupDetails: {
+            pax: "2 Adults – Anniversary Trip",
+            rooms: "1 Room on Double Sharing",
+            arrivalDate: "14th November 2024",
+            duration: "10N11D Turkey",
+            costBasis: "Cost Based On Double Sharing – Bed & Breakfast"
+        },
+        description: "Celebrate your anniversary with an enchanting 11-day journey through Turkey. Discover the timeless charm of Istanbul, the ruins of Ephesus, the white travertines of Pamukkale, the serene coastline of Antalya, and the surreal landscapes of Cappadocia.",
+        hotelDetails: [
+            {
+                city: "Istanbul (3 Nights)",
+                hotel: "4* Parma Downtown or similar",
+                roomType: "Double Room - Bed & Breakfast"
+            },
+            {
+                city: "Kusadasi (2 Nights)",
+                hotel: "4* Ilayda Avantgarde or Efe Boutique",
+                roomType: "Double Room - Bed & Breakfast"
+            },
+            {
+                city: "Antalya (2 Nights)",
+                hotel: "4* Afflon Hotel or Tuvana Hotel",
+                roomType: "Double Room - Bed & Breakfast"
+            },
+            {
+                city: "Cappadocia (2 Nights)",
+                hotel: "Göreme Inn or Cave Hotel (Romantic/Sunak/Kismet Cave)",
+                roomType: "Cave Room - Bed & Breakfast"
+            },
+            {
+                city: "Istanbul (1 Night)",
+                hotel: "4* Parma Downtown or similar",
+                roomType: "Double Room - Bed & Breakfast"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Arrival in Istanbul – Transfer to Hotel",
+            "Day 2: Full Day Old City Tour with Lunch – Evening Bosphorus Dinner Cruise",
+            "Day 3: Full Day Bursa Cable Car & Shopping Tour with Lunch",
+            "Day 4: Fly to Izmir – Transfer to Kusadasi",
+            "Day 5: Full Day Ephesus Tour with Lunch",
+            "Day 6: Full Day Pamukkale Tour with Lunch – Transfer to Antalya",
+            "Day 7: Antalya City Tour & Waterfalls with Lunch",
+            "Day 8: Fly to Cappadocia – Transfer to Hotel",
+            "Day 9: Full Day South Cappadocia Tour with Lunch",
+            "Day 10: Fly to Istanbul – Transfer to Hotel",
+            "Day 11: Departure Transfer to IST/SAW Airport"
+        ],
+        inclusions: [
+            "10 Nights Accommodation in 4* or Boutique Hotels (Double Sharing, BB Basis)",
+            "All mentioned sightseeing tours (SIC basis) with entrance fees and guide",
+            "All intercity and airport transfers by private vehicle",
+            `Domestic Flights: 
+            IST – ADB: Istanbul Airport – Izmir Adnan Menderes Airport
+            AYT – ASR: Antalya Airport – Kayseri Erkilet Airport (Cappadocia)
+            ASR – IST: Kayseri Erkilet Airport (Cappadocia) – Istanbul Airport (15+7kg Luggage included)`,
+            "Meals as per itinerary (Lunch during tours)",
+            "Evening Bosphorus Dinner Cruise",
+            "Professional English-speaking guide during tours",
+            "All local taxes and service charges"
+        ],
+        exclusions: [
+            "International Airfare",
+            "Turkey Visa",
+            "Travel Insurance",
+            "Tips to guides and drivers",
+            "Personal expenses (shopping, laundry, minibar, etc.)",
+            "Any services not mentioned in inclusions",
+            "City Taxes (to be paid directly at hotels)"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Istanbul",
+                description: "Welcome to Turkey! On arrival at Istanbul Airport, you'll be transferred to your hotel. Check-in and relax."
+            },
+            {
+                day: 2,
+                title: "Old City Tour & Bosphorus Cruise",
+                description: "Full day guided tour of historic Istanbul including Blue Mosque, Hagia Sophia, Hippodrome, Topkapi Palace. In the evening, enjoy a romantic Bosphorus Dinner Cruise."
+            },
+            {
+                day: 3,
+                title: "Bursa Day Tour",
+                description: "Explore Bursa with its famous Grand Mosque, Green Tomb, Silk Bazaar and enjoy a ride on the cable car. Includes shopping stops and lunch."
+            },
+            {
+                day: 4,
+                title: "Flight to Izmir – Transfer to Kusadasi",
+                description: "Transfer to Istanbul Airport and fly to Izmir. On arrival, you'll be transferred to your hotel in the coastal town of Kusadasi."
+            },
+            {
+                day: 5,
+                title: "Ephesus Full Day Tour",
+                description: "Visit the ancient ruins of Ephesus including Temple of Artemis, House of Virgin Mary, and more. Lunch included."
+            },
+            {
+                day: 6,
+                title: "Pamukkale Tour – Transfer to Antalya",
+                description: "Enjoy a guided tour to Pamukkale’s white terraces and Hierapolis ruins. Post tour, transfer to Antalya by private vehicle."
+            },
+            {
+                day: 7,
+                title: "Antalya City & Waterfalls Tour",
+                description: "Discover the old town of Antalya and visit scenic waterfalls like Duden and Kursunlu. Lunch included."
+            },
+            {
+                day: 8,
+                title: "Fly to Cappadocia",
+                description: "Transfer to airport and take a flight to Cappadocia. Upon arrival, transfer to your romantic cave hotel and rest."
+            },
+            {
+                day: 9,
+                title: "South Cappadocia Tour",
+                description: "Enjoy the natural wonders of Cappadocia including Pigeon Valley, Uchisar Castle, Underground Cities, and more."
+            },
+            {
+                day: 10,
+                title: "Fly Back to Istanbul",
+                description: "After breakfast, transfer to the airport and fly back to Istanbul. Rest of the day at leisure."
+            },
+            {
+                day: 11,
+                title: "Departure from Istanbul",
+                description: "After breakfast, check-out and transfer to IST/SAW Airport for your homebound flight. Trip ends with happy memories!"
+            }
+        ],
+        images: [
+            "/UGCImages/turkey/turkey-horizontal/1.png",
+            "/UGCImages/turkey/turkey-horizontal/2.png",
+            "/UGCImages/turkey/turkey-horizontal/3.png",
+            "/UGCImages/turkey/turkey-horizontal/4.png",
+            "/UGCImages/turkey/turkey-horizontal/5.png",
+            "/UGCImages/turkey/turkey-horizontal/6.png",
+            "/UGCImages/turkey/turkey-horizontal/7.png",
+            
+        ]
+    }, 
+
+    
     
 };
 
@@ -3547,6 +3801,10 @@ export const destinationGroups = [
     {
         lehLadakh: destinationsWithoutFlight.lehLadakh,
         baku: destinationsWithoutFlight.baku,
+        switzerlandSwissPass: destinationsWithoutFlight.switzerlandSwissPass
+    },
+    {
+        turkeyAnniversary: destinationsWithoutFlight.turkeyAnniversary
     }
 ]; 
 
