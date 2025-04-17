@@ -114,5 +114,36 @@ export const destinations: Destination[] = [
         tag: { label: "FIXED DEPARTURE", color: "green" },
         fixedDepartureId: "baku-7-days-discovery-tour"
     },
+    {
+        name: "United Arab Emirates Trip",
+        tag: { label: "FIXED DEPARTURE", color: "green" },
+        fixedDepartureId: "united-arab-emirates-5-days-discovery-tour"
+    },
+    {
+        name: "Turkey Anniversary Trip",
+        tag: { label: "FIXED DEPARTURE", color: "green" },
+        fixedDepartureId: "turkey-11-days-anniversary-trip"
+    },
+    {
+        name: "Switzerland Trip",
+        tag: { label: "FIXED DEPARTURE", color: "green" },
+        fixedDepartureId: "swiss-6-days-june2025"
+    },
+    {
+        name: "Thailand Trip",
+        tag: { label: "FIXED DEPARTURE", color: "green" },
+        fixedDepartureId: "thailand-8-days-adventure-tour"
+    },
+    {
+        name: "Thailand 11 Days Trip",
+        tag: { label: "FIXED DEPARTURE", color: "green" },
+        fixedDepartureId: "thailand-11-days-deluxe-tour"
+    },
+    {
+        name: "Thailand 8 Days Trip",
+        tag: { label: "FIXED DEPARTURE", color: "green" },
+        fixedDepartureId: "thailand-8-days-speedboat-tour"
+    },
+   
     
 ] 
