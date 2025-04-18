@@ -3853,9 +3853,6 @@ be related once back home.`
         ]
     }
     
-
-    
-    
 };
 
 export function isFixedDeparture(destination: FixedDeparture | DestinationWithoutFlight): destination is FixedDeparture {

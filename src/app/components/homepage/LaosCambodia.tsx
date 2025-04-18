@@ -52,30 +52,30 @@ export default function LaosCambodiaBanner() {
     return (
         <div className="container mx-auto px-4">
             <div className="text-center mb-8">
-                <h1 className="text-3xl font-bold relative inline-flex items-center gap-4">
+                <h1 className="text-xl md:text-2xl font-bold relative inline-flex items-center gap-2">
                     <Image 
                         src="/Assets/chatbot/building.png"
                         alt="Building icon"
                         width={40}
                         height={40}
                         className="object-contain"
+                        priority
                     />
-                    <div className="relative">
-                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff] block mb-1">
+                    <div className="flex flex-col items-center relative top-[12px]">
+                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
                             Explore Indochina
                         </span>
-                        <div className="mt-[-12px] transform -rotate-2">
-                            <p className={`text-2xl md:text-3xl text-[#017ae3] ${dancingScript.className}`}>
-                                A Journey of Culture and Adventure
-                            </p>
-                        </div>
+                        <p className={`text-2xl md:text-3xl text-[#017ae3] ${dancingScript.className} transform -rotate-2 -mt-1`}>
+                            Land of Culture
+                        </p>
                     </div>
                     <Image 
                         src="/Assets/chatbot/bali.png"
-                        alt="Bali icon"
+                        alt="Indochina icon"
                         width={40}
                         height={40}
                         className="object-contain"
+                        priority
                     />
                 </h1>
             </div>
@@ -138,6 +138,7 @@ export default function LaosCambodiaBanner() {
                     ))}
                 </div>
             </div>
+            
         </div>
     );
 }

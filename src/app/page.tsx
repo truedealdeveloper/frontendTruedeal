@@ -38,13 +38,14 @@ export default function Home() {
       <div className="">
         {/* <ChardhamYatra /> */} 
         <SriLanka />  
+        <AustraliaBanner />
         <BaliBanner />
         <VietnamBanner />
         <LaosCambodiaBanner />
         <AlmatyBanner />
         <SingaporeBanner />
       <NoCostEMIPage />
-        <AustraliaBanner />
+        {/* <AustraliaBanner /> */}
       </div>
       {/* <Destination /> */}
       {/* <Domestic /> */}

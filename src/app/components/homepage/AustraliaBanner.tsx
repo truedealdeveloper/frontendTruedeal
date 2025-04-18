@@ -3,73 +3,103 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { Dancing_Script } from 'next/font/google';
-
-const dancingScript = Dancing_Script({ subsets: ['latin'] });
+import { FaCalendarAlt, FaClock, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { IoLocationSharp } from 'react-icons/io5';
+import { Button } from "@/components/ui/button";
 
 const AustraliaBanner = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [startIndex, setStartIndex] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
 
   const australiaPackages = [
     {
       id: 'the-best-of-australia',
-      title: 'The Best of Australia 13 Days',
+      title: 'The Best of Australia',
+      days: 13,
+      nights: 12,
       images: [
         '/UGCImages/Images4/australia/vertical/1.webp',
         '/UGCImages/Images4/australia/vertical/2.webp',
         '/UGCImages/Images4/australia/vertical/3.webp',
         '/UGCImages/Images4/australia/vertical/4.webp',
       ],
-      date: '01 March 2025 - 26 July 2025',
-      price: '4,90,999'
+      cities: ['Sydney', 'Melbourne', 'Gold Coast', 'Cairns'],
+      startCity: 'Sydney',
+      dateStart: '01 March 2025',
+      amount: 490999
     },
     {
       id: 'incredible-australia',
-      title: 'Incredible Australia 10 Days',
+      title: 'Incredible Australia',
+      days: 10,
+      nights: 9,
       images: [
         '/UGCImages/Images4/australia/vertical/5.webp',
         '/UGCImages/Images4/australia/vertical/6.webp',
         '/UGCImages/australia/Best/1.png',
       ],
-      date: '01 March 2025 - 26 July 2025',
-      price: '3,54,999'
+      cities: ['Melbourne', 'Gold Coast', 'Brisbane'],
+      startCity: 'Melbourne',
+      dateStart: '15 March 2025',
+      amount: 354999
     },
     {
       id: 'whitsundays-delight',
-      title: 'Whitsundays Delight 10 Days',
+      title: 'Whitsundays Delight',
+      days: 10,
+      nights: 9,
       images: [
         '/UGCImages/australia/Best/2.png',
         '/UGCImages/australia/Best/3.png',
         '/UGCImages/australia/Best/4.png',
       ],
-      date: '01 March 2025 - 26 July 2025',
-      price: '3,64,999'
+      cities: ['Hamilton Island', 'Whitsundays', 'Gold Coast'],
+      startCity: 'Hamilton Island',
+      dateStart: '01 April 2025',
+      amount: 364999
     },
     {
       id: 'east-coast-adventure',
-      title: 'East Coast Adventure 11 Days',
+      title: 'East Coast Adventure',
+      days: 11,
+      nights: 10,
       images: [
         '/UGCImages/australia/banner2/1.png',
         '/UGCImages/australia/banner2/2.png',
         '/UGCImages/australia/banner2/3.png',
         '/UGCImages/australia/banner2/4.png',
       ],
-      date: '01 March 2025 - 26 July 2025',
-      price: '3,44,999'
+      cities: ['Sydney', 'Brisbane', 'Gold Coast'],
+      startCity: 'Sydney',
+      dateStart: '01 March 2025',
+      amount: 344999
     },
     {
       id: 'hamilton-island',
-      title: 'Hamilton Island Honeymoon ',
+      title: 'Hamilton Island Honeymoon',
+      days: 8,
+      nights: 7,
       images: [
         '/UGCImages/australia/Banner/1.png',
         '/UGCImages/australia/Banner/2.png',
         '/UGCImages/australia/Banner/3.png',
       ],
-      date: '01 March 2025 - 26 July 2025',
-      price: '5,96,999'
-    },
+      cities: ['Hamilton Island', 'Whitsundays'],
+      startCity: 'Hamilton Island',
+      dateStart: '01 March 2025',
+      amount: 596999
+    }
   ];
+
+  const totalPages = Math.ceil(australiaPackages.length / 3);
+
+  const handlePrevPage = () => {
+    setCurrentPage(prev => prev > 0 ? prev - 1 : prev);
+  };
+
+  const handleNextPage = () => {
+    setCurrentPage(prev => prev < totalPages - 1 ? prev + 1 : prev);
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -81,178 +111,160 @@ const AustraliaBanner = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const handleNext = () => {
-    setStartIndex((prev) => 
-      prev + 3 >= australiaPackages.length ? 0 : prev + 1
-    );
-  };
-
-  const handlePrev = () => {
-    setStartIndex((prev) => 
-      prev === 0 ? australiaPackages.length - 3 : prev - 1
-    );
-  };
-
-  const visiblePackages = australiaPackages.slice(startIndex, startIndex + 3);
-  if (visiblePackages.length < 3) {
-    visiblePackages.push(...australiaPackages.slice(0, 3 - visiblePackages.length));
-  }
-
   return (
-    <div className="w-full min-h-[600px] relative">
-      <div className="container mx-auto px-4 py-8 md:py-12 relative z-10">
+    <div className="w-full bg-white mb-6">
+      <div className="container mx-auto px-4">
         {/* Title section */}
-        <div className="text-center mb-8 md:mb-12">
-          <h1 className="text-lg md:text-2xl font-bold relative flex flex-col md:flex-row items-center justify-center gap-2">
-            <Image 
-              src="/UGCImages/australia/gold-coast.png"
-              alt="Australia icon"
-              width={40}
-              height={40}
-              className="object-contain w-8 h-8 md:w-10 md:h-10"
-              priority
-            />
-            <div className="relative mt-2 md:mt-0">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff] block mb-1 text-xl md:text-2xl">
-                Discover Australia
-              </span>
-              <div className="mt-[-8px] md:mt-[-12px] transform -rotate-2">
-                <p className={`text-xl md:text-3xl text-[#017ae3] ${dancingScript.className}`}>
-                  The Land of Kangaroos
-                </p>
-              </div>
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold relative inline-block">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
+              Discover Australia
+            </span>
+            <div className="mt-2 px-6 py-1 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] rounded-full">
+              <p className="text-sm text-white font-medium">The Land of Kangaroos</p>
             </div>
-            <Image 
-              src="/UGCImages/australia/kangaroo.png"
-              alt="Australia culture icon"
-              width={40}
-              height={40}
-              className="object-contain w-8 h-8 md:w-10 md:h-10"
-              priority
-            />
-          </h1>
+          </h2>
         </div>
 
-        {/* Packages grid with navigation */}
-        <div className="relative max-w-6xl mx-auto mb-8 md:mb-12">
-          {/* Previous button - Hidden on mobile, shown on larger screens */}
-          <button 
-            onClick={handlePrev}
-            className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12
-              bg-black/50 hover:bg-black/70 text-white p-3 rounded-full
-              transition-all duration-300 backdrop-blur-sm z-20"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-            </svg>
-          </button>
-
-          {/* Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
-            {visiblePackages.map((pkg) => (
-              <Link href={`/australia/${pkg.id}`} key={pkg.id} 
-                className="text-center group hover:-translate-y-1 transition-all duration-300"
-              >
-                {/* Image Container */}
-                <div className="relative w-[220px] h-[220px] sm:w-[280px] sm:h-[280px] md:w-[200px] md:h-[200px] lg:w-[220px] lg:h-[220px] mb-4 mx-auto">
-                  {/* Glow effect */}
-                  <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-xl group-hover:bg-blue-500/30 transition-all duration-300" />
-                  
-                  {/* Image wrapper */}
-                  <div className="absolute inset-0 rounded-full overflow-hidden 
-                    shadow-[0_0_20px_rgba(0,0,0,0.3)] 
-                    group-hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] 
-                    transition-all duration-300 
-                    border-2 border-white/20 group-hover:border-white/40"
-                  >
-                    {pkg.images.map((image, index) => (
-                      <Image
-                        key={image}
-                        src={image}
-                        alt={`${pkg.title} - Image ${index + 1}`}
-                        fill
-                        className={`object-cover transition-all duration-1000 scale-105 group-hover:scale-110 ${
-                          index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-                        }`}
-                        sizes="(max-width: 640px) 220px, (max-width: 768px) 280px, (max-width: 1024px) 200px, 220px"
-                      />
-                    ))}
-                  </div>
-                </div>
-
-                {/* Content Card */}
-                <div className="bg-black/75 backdrop-blur-md rounded-xl p-4 md:p-5 
-                  transition-all duration-300 
-                  group-hover:bg-black/85
-                  border border-white/10 group-hover:border-white/20
-                  shadow-[0_4px_20px_rgba(0,0,0,0.25)]
-                  max-w-[280px] mx-auto md:max-w-none"
-                >
-                  <h3 className="text-lg sm:text-xl font-bold mb-2 md:mb-2.5 text-white drop-shadow-lg">
-                    {pkg.title}
-                  </h3>
-                  <p className="text-sm sm:text-base text-blue-100 mb-2 md:mb-2.5 font-medium tracking-wide drop-shadow">
-                    {pkg.date}
-                  </p>
-                  <p className="inline-block text-base sm:text-lg font-bold 
-                    bg-gradient-to-r from-emerald-300 to-green-300 
-                    text-transparent bg-clip-text 
-                    drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]"
-                  >
-                    From ₹{pkg.price}
-                  </p>
-                </div>
-              </Link>
-            ))}
+        {/* Horizontal Line */}
+        <div className="relative max-w-xl mx-auto mb-12">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-gray-300"></div>
           </div>
-
-          {/* Next button - Hidden on mobile, shown on larger screens */}
-          <button 
-            onClick={handleNext}
-            className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-12
-              bg-black/50 hover:bg-black/70 text-white p-3 rounded-full
-              transition-all duration-300 backdrop-blur-sm z-20"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-            </svg>
-          </button>
-
-          {/* Mobile navigation dots */}
-          <div className="flex justify-center gap-2 mt-4 md:hidden">
-            {Array.from({ length: australiaPackages.length }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setStartIndex(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  Math.floor(startIndex) === index 
-                    ? 'bg-blue-500 w-4' 
-                    : 'bg-gray-400'
-                }`}
+          <div className="relative flex justify-center">
+            <span className="bg-gray-50 px-4">
+              <Image 
+                src="/UGCImages/australia/kangaroo.png"
+                alt="Australia icon"
+                width={40}
+                height={40}
+                className="object-contain w-8 h-8"
               />
-            ))}
+            </span>
           </div>
         </div>
-      </div>
 
-      {/* Video Background - You may need to create an Australia-specific video */}
-      <div className="absolute inset-0 w-full h-full -z-10">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source src="/UGCImages/australia/australiaBG.mp4" type="video/mp4" />
-          <Image
-            src="/UGCImages/Images4/australia/vertical/1.webp"
-            alt="Australia Background"
-            fill
-            className="object-cover"
-            priority
-          />
-        </video>
+        {/* Cards Grid with Navigation */}
+        <div className="relative">
+          {/* Navigation Controls */}
+          <div className="absolute top-1/2 -translate-y-1/2 left-0 z-10 hidden md:block">
+            <Button 
+              onClick={handlePrevPage} 
+              disabled={currentPage === 0}
+              variant="outline"
+              className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -ml-5 shadow-lg"
+              aria-label="Previous page"
+            >
+              <FaChevronLeft className="w-4 h-4" />
+            </Button>
+          </div>
+
+          <div className="absolute top-1/2 -translate-y-1/2 right-0 z-10 hidden md:block">
+            <Button 
+              onClick={handleNextPage} 
+              disabled={currentPage === totalPages - 1}
+              variant="outline"
+              className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -mr-5 shadow-lg"
+              aria-label="Next page"
+            >
+              <FaChevronRight className="w-4 h-4" />
+            </Button>
+          </div>
+
+          {/* Packages Grid */}
+          <div className="overflow-x-auto -mx-4 px-4">
+            <div className="flex md:grid md:grid-cols-3 gap-6 min-w-min md:min-w-0">
+              {australiaPackages
+                .slice(currentPage * 3, (currentPage * 3) + 3)
+                .map((pkg) => (
+                  <Link 
+                    href={`/australia/${pkg.id}`}
+                    key={pkg.id}
+                    className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0"
+                  >
+                    {/* Background Image */}
+                    <Image 
+                      src={pkg.images[currentImageIndex]}
+                      alt={pkg.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                    />
+                    
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+
+                    {/* Price Tag */}
+                    <div className="absolute top-4 left-0 z-10">
+                      <div className="bg-yellow-400/90 backdrop-blur-sm px-4 py-2 rounded-r-full shadow-lg">
+                        <span className="line-through text-sm mr-2 text-black/75">
+                          ₹{(pkg.amount * 1.2).toLocaleString('en-IN')}/-
+                        </span>
+                        <span className="font-bold text-black">
+                          ₹{pkg.amount.toLocaleString('en-IN')}/-
+                        </span>
+                        <span className="text-sm ml-1 text-black/75">onwards</span>
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                      <h2 className="text-3xl font-bold mb-4">
+                        {pkg.title}
+                      </h2>
+
+                      <div className="flex items-center gap-x-6 text-lg">
+                        <div className="flex items-center gap-2">
+                          <FaClock className="text-yellow-400" />
+                          <span>{pkg.days}D/{pkg.nights}N</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <IoLocationSharp className="text-yellow-400" />
+                          <span>{pkg.startCity}</span>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-2 mt-2 text-lg">
+                        <FaCalendarAlt className="text-yellow-400" />
+                        <span>{pkg.dateStart}</span>
+                      </div>
+
+                      <div className="mt-6">
+                        <Button
+                          className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all text-lg py-6 rounded-lg transition-all duration-300"
+                        >
+                          View Details
+                        </Button>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+            </div>
+          </div>
+
+          {/* Mobile Navigation */}
+          <div className="mt-6 flex justify-center items-center gap-2 md:hidden">
+            <Button 
+              onClick={handlePrevPage} 
+              disabled={currentPage === 0}
+              variant="outline"
+              className="rounded-full w-8 h-8 p-0"
+            >
+              <FaChevronLeft className="w-3 h-3" />
+            </Button>
+            <span className="text-sm text-gray-500">
+              {currentPage + 1} / {totalPages}
+            </span>
+            <Button 
+              onClick={handleNextPage} 
+              disabled={currentPage === totalPages - 1}
+              variant="outline"
+              className="rounded-full w-8 h-8 p-0"
+            >
+              <FaChevronRight className="w-3 h-3" />
+            </Button>
+          </div>
+        </div>
       </div>
     </div>
   );
