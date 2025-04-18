@@ -166,7 +166,7 @@ export default function AustraliaPackages() {
                     autoPlay
                     className="hidden"
                 >
-                    <source src="/UGCImages/australia/audio/australia.mp3" type="audio/mp3" />
+                    <source src="/UGCImages/australia/australiaAudio.mp3" type="audio/mp3" />
                 </audio>
 
                 <button
@@ -189,7 +189,7 @@ export default function AustraliaPackages() {
                     playsInline
                     className="absolute inset-0 w-full h-full object-cover"
                 >
-                    <source src="/UGCImages/australia/australiabg.mp4" type="video/mp4" />
+                    <source src="/UGCImages/australia/australiaBG.mp4" type="video/mp4" />
                     <Image
                         src="/UGCImages/australia/australia.jpg"
                         alt="Australia"
