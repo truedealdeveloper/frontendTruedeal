@@ -200,10 +200,10 @@ export default function HeroSection() {
                 </div>
 
                 {/* Content */}
-                <div className="relative z-[2] flex flex-col items-center min-h-[65svh] md:min-h-[85vh] text-white px-4 sm:px-6 lg:px-8 pt-0 md:pt-0 pb-8">
-                    {/* Main content - centered vertically */}
-                    <div className="flex flex-col items-center justify-center max-w-4xl w-full mx-auto min-h-[50vh] md:min-h-0 md:mt-32">
-                        <h1 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl mb-4 text-center font-poppins">
+                <div className="relative z-[2] flex flex-col items-center min-h-[65svh] md:min-h-[85vh] text-white px-4 sm:px-6 lg:px-8 pt-20 md:pt-0 pb-8">
+                    {/* Main content - adjusted padding and centering for mobile */}
+                    <div className="flex flex-col items-center justify-center max-w-4xl w-full mx-auto min-h-[40vh] md:min-h-0 md:mt-32">
+                        <h1 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl mb-4 text-center font-poppins mt-8 md:mt-0">
                             <span className="font-semibold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Discover Your Dream Vacation with</span>{" "}
                             <span className="font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Truedeal</span>
                         </h1>

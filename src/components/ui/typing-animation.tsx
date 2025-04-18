@@ -6,7 +6,7 @@ const phrases = [
   'Search your holiday',
   'Search your next adventure',
   'Search your happiness',
-  'Search your ultimate destination'
+  'Search your destination'
 ];
 
 export default function TypingAnimation({ }: { children: React.ReactNode }) {
