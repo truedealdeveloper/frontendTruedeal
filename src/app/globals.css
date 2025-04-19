@@ -201,14 +201,14 @@ select::-webkit-listbox {
   transition: opacity 0.3s, transform 0.3s;
 }
 
-/* Add these styles to hide scrollbar but maintain functionality */
+/* Add these styles to hide scrollbar but keep scrolling functionality */
 .scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none;
+  display: none;  /* Chrome, Safari and Opera */
 }
 
 @keyframes slideDown {
