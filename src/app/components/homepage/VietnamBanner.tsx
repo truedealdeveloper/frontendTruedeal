@@ -124,17 +124,21 @@ export default function BaliBanner() {
                     {bannerImages.map((_, index) => (
                         <button
                             key={index}
-                            className={`w-2 h-2 rounded-full transition-all ${
-                                currentImage === index 
-                                    ? 'bg-white w-4' 
-                                    : 'bg-white/50'
-                            }`}
+                            className={`p-2 relative transition-all`}
                             onClick={(e) => {
                                 e.stopPropagation();
                                 setCurrentImage(index);
                             }}
                             aria-label={`Go to slide ${index + 1}`}
-                        />
+                        >
+                            <span 
+                                className={`block w-2 h-2 rounded-full transition-all ${
+                                    currentImage === index 
+                                        ? 'bg-white w-3' 
+                                        : 'bg-white/50'
+                                }`}
+                            />
+                        </button>
                     ))}
                 </div>
             </div>

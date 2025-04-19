@@ -92,7 +92,7 @@ const SingaporeBanner = () => {
       <div className="container mx-auto px-4 py-8 md:py-12 relative z-10">
         {/* Title section */}
         <div className="text-center mb-8 md:mb-12">
-          <h1 className="text-lg md:text-2xl font-bold relative flex flex-col md:flex-row items-center justify-center gap-2">
+          <h2 className="text-lg md:text-2xl font-bold relative flex flex-col md:flex-row items-center justify-center gap-2">
             <Image 
               src="/UGCImages/singapore/icons/merlion.png"
               alt="Singapore icon"
@@ -119,7 +119,7 @@ const SingaporeBanner = () => {
               className="object-contain w-8 h-8 md:w-10 md:h-10"
               priority
             />
-          </h1>
+          </h2>
         </div>
 
         {/* Packages grid with navigation */}

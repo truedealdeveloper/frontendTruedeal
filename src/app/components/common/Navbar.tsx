@@ -345,6 +345,7 @@ export default function Navbar() {
                                     className={`relative text-sm font-medium group ${
                                         pathname === item.href ? 'text-[#00f6ff]' : 'text-gray-600'
                                     }`}
+                                    aria-label={item.label}
                                 >
                                     {item.label}
                                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#00f6ff] group-hover:w-full transition-all duration-300" />
@@ -357,6 +358,7 @@ export default function Navbar() {
                                 <a 
                                     href="tel:+919310271488" 
                                     className="relative flex items-center gap-2 px-4 py-2 rounded-xl bg-white/50 backdrop-blur-sm border border-[#00f6ff]/20 hover:border-[#00f6ff]/40 transition-all duration-300"
+                                    aria-label="Call us at +91-9310271488"
                                 >
                                     <Phone className="h-4 w-4 text-[#00f6ff]" />
                                     <span className="text-sm font-medium text-gray-700">+91-9310271488</span>
@@ -369,18 +371,23 @@ export default function Navbar() {
                             <button 
                                 onClick={() => setIsSearchModalOpen(true)}
                                 className="p-2 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors"
+                                aria-label="Open search"
                             >
                                 <Search className="h-5 w-5 text-gray-600" />
                             </button>
                             <a 
                                 href="tel:+919310271488"
                                 className="p-2 rounded-lg bg-[#00f6ff]/10 hover:bg-[#00f6ff]/20 transition-colors"
+                                aria-label="Call us at +91-9310271488"
                             >
                                 <Phone className="h-5 w-5 text-[#00f6ff]" />
+                                <span className="sr-only">Call +91-9310271488</span>
                             </a>
                             <button
                                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                                 className="p-2 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors"
+                                aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                                aria-expanded={isMenuOpen}
                             >
                                 {isMenuOpen ? (
                                     <X className="h-5 w-5 text-gray-600" />

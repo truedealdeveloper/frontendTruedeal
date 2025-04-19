@@ -103,7 +103,7 @@ const TripPlanRequest = () => {
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm text-gray-600 mb-1">
+                <label htmlFor="name" className="block text-sm text-gray-600 mb-1">
                   Name <span className="text-red-500">*</span>
                 </label>
                 <div className="relative">
@@ -113,6 +113,7 @@ const TripPlanRequest = () => {
                     </svg>
                   </span>
                   <input
+                    id="name"
                     type="text"
                     name="name"
                     value={formData.name}
@@ -125,7 +126,7 @@ const TripPlanRequest = () => {
               </div>
 
               <div>
-                <label className="block text-sm text-gray-600 mb-1">
+                <label htmlFor="phone_number" className="block text-sm text-gray-600 mb-1">
                   Phone Number <span className="text-red-500">*</span>
                 </label>
                 <div className="relative">
@@ -135,6 +136,7 @@ const TripPlanRequest = () => {
                     </svg>
                   </span>
                   <input
+                    id="phone_number"
                     type="tel"
                     name="phone_number"
                     value={formData.phone_number}
@@ -147,7 +149,7 @@ const TripPlanRequest = () => {
               </div>
 
               <div>
-                <label className="block text-sm text-gray-600 mb-1">
+                <label htmlFor="start_date" className="block text-sm text-gray-600 mb-1">
                   Start Date <span className="text-red-500">*</span>
                 </label>
                 <div className="relative">
@@ -157,6 +159,7 @@ const TripPlanRequest = () => {
                     </svg>
                   </span>
                   <input
+                    id="start_date"
                     type="date"
                     name="start_date"
                     value={formData.start_date}
@@ -168,7 +171,7 @@ const TripPlanRequest = () => {
               </div>
 
               <div>
-                <label className="block text-sm text-gray-600 mb-1">
+                <label htmlFor="destination" className="block text-sm text-gray-600 mb-1">
                   Destination <span className="text-red-500">*</span>
                 </label>
                 <div className="relative">
@@ -179,6 +182,7 @@ const TripPlanRequest = () => {
                     </svg>
                   </span>
                   <input
+                    id="destination"
                     type="text"
                     name="destination"
                     value={formData.destination}
@@ -192,10 +196,11 @@ const TripPlanRequest = () => {
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm text-gray-600 mb-1">
+                  <label htmlFor="no_of_days" className="block text-sm text-gray-600 mb-1">
                     Days <span className="text-red-500">*</span>
                   </label>
                   <input
+                    id="no_of_days"
                     type="number"
                     name="no_of_days"
                     value={formData.no_of_days}
@@ -208,10 +213,11 @@ const TripPlanRequest = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm text-gray-600 mb-1">
+                  <label htmlFor="no_of_adults" className="block text-sm text-gray-600 mb-1">
                     Adults <span className="text-red-500">*</span>
                   </label>
                   <input
+                    id="no_of_adults"
                     type="number"
                     name="no_of_adults"
                     value={formData.no_of_adults}
