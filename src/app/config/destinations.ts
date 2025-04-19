@@ -6,6 +6,7 @@ export interface Destination {
     };
     isTrending?: boolean;
     fixedDepartureId?: string;
+    route?: string;
 }
 
 export const destinations: Destination[] = [
@@ -14,6 +15,11 @@ export const destinations: Destination[] = [
     { name: "Indochina", tag: { label: "TRENDING", color: "green" } },
     { name: "Laos", tag: { label: "Family", color: "yellow" } },
     { name: "Combodia", tag: { label: "Family", color: "pink" } },
+    {
+        name: "Australia Packages",
+        tag: { label: "Solo", color: "green" },
+        route: "/australiaPackages"
+    },
     {
         name: "Europe Trip",
         tag: { label: "FIXED DEPARTURE", color: "blue" },
