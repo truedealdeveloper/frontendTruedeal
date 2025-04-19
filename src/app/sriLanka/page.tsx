@@ -134,17 +134,19 @@ export default function SriLanka() {
                     disabled={currentPage === 0}
                     variant="outline"
                     className="rounded-full w-8 h-8 p-0"
+                    aria-label="Previous page"
                 >
                     <FaChevronLeft className="w-3 h-3" />
                 </Button>
-                <span className="text-sm text-gray-500">
-                    {currentPage + 1} / {totalPages}
+                <span className="text-sm text-gray-500" aria-live="polite">
+                    Page {currentPage + 1} of {totalPages}
                 </span>
                 <Button
                     onClick={onNext}
                     disabled={currentPage === totalPages - 1}
                     variant="outline"
                     className="rounded-full w-8 h-8 p-0"
+                    aria-label="Next page"
                 >
                     <FaChevronRight className="w-3 h-3" />
                 </Button>
