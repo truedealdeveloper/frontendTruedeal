@@ -7,6 +7,7 @@ import { FaPlane, FaCalendarAlt, FaClock, FaChevronLeft, FaChevronRight } from '
 import { IoLocationSharp } from 'react-icons/io5';
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
+import React from 'react';
 
 export default function FixedDepartures() {
     const [currentWithoutFlightPage, setCurrentWithoutFlightPage] = useState(0);
@@ -34,14 +35,16 @@ export default function FixedDepartures() {
         }
     };
 
-    const DestinationCard = ({ destination, type }: { destination: FixedDeparture | DestinationWithoutFlight, type: 'withFlight' | 'withoutFlight' }) => {
+    const MemoizedDestinationCard = React.memo(({ destination, type }: { 
+        destination: FixedDeparture | DestinationWithoutFlight, 
+        type: 'withFlight' | 'withoutFlight' 
+    }) => {
         if (!destination) return null;
 
+        const citiesList = destination?.hotelDetails?.map(hotel => hotel.city).join(' • ');
+
         return (
-            <div 
-                className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0"
-            >
-                {/* Background Image */}
+            <div className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0">
                 <Image 
                     src={destination?.images?.[0] || '/default-destination-image.jpg'} 
                     alt={destination?.country || 'Destination'}
@@ -50,74 +53,56 @@ export default function FixedDepartures() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                 />
                 
-                {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/50 to-black" />
 
-                {/* Price Tag */}
                 {destination?.amount && (
                     <div className="absolute top-3 left-0 z-10">
                         <div className="bg-yellow-400 px-4 py-1.5 rounded-full shadow-lg">
                             <span className="line-through text-sm mr-2">
-                                ₹{destination.amount * 1.2 >= 1000 ? (destination.amount * 1.2).toLocaleString('en-IN') : destination.amount * 1.2}/-
+                                ₹{(destination.amount * 1.2).toLocaleString('en-IN')}/-
                             </span>
                             <span className="font-bold">
-                                ₹{destination.amount >= 1000 ? destination.amount.toLocaleString('en-IN') : destination.amount}/-
+                                ₹{destination.amount.toLocaleString('en-IN')}/-
                             </span>
                             <span className="text-sm ml-1">onwards</span>
                         </div>
                     </div>
                 )}
 
-                {/* Content */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                     <h2 className="text-2xl font-bold mb-2">
                         {destination?.days} Days {destination?.country} Tour Package
                     </h2>
 
-                    {/* Cities List */}
-                    <div className="flex flex-wrap gap-x-2 text-sm mb-4">
-                        {destination?.hotelDetails?.map((hotel, idx) => (
-                            <span key={idx} className="text-gray-200">
-                                {hotel.city}
-                                {idx < (destination?.hotelDetails?.length || 0) - 1 && ' •'}
-                            </span>
-                        ))}
-                    </div>
+                    {citiesList && (
+                        <p className="text-sm mb-4 text-gray-200">{citiesList}</p>
+                    )}
 
-                    {/* Details Grid */}
                     <div className="grid grid-cols-2 gap-y-2 text-sm mb-4">
-                        <div className="flex items-center gap-2">
-                            <FaClock className="text-yellow-400" />
-                            <span>{destination?.days}D/{destination?.nights}N</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <IoLocationSharp className="text-yellow-400" />
-                            <span>{destination?.hotelDetails?.[0]?.city}</span>
-                        </div>
+                        <DetailItem icon={<FaClock />} text={`${destination?.days}D/${destination?.nights}N`} />
+                        <DetailItem icon={<IoLocationSharp />} text={destination?.hotelDetails?.[0]?.city} />
                         {type === 'withFlight' && 'flightFrom' in destination && (
-                            <div className="flex items-center gap-2">
-                                <FaPlane className="text-yellow-400" />
-                                <span>{destination.flightFrom}</span>
-                            </div>
+                            <DetailItem icon={<FaPlane />} text={destination.flightFrom} />
                         )}
-                        <div className="flex items-center gap-2">
-                            <FaCalendarAlt className="text-yellow-400" />
-                            <span>{destination?.dateStart}</span>
-                        </div>
+                        <DetailItem icon={<FaCalendarAlt />} text={destination?.dateStart} />
                     </div>
 
-                    {/* View Details Button */}
                     <Link href={`/fixedDeparture/${destination.id}`}>
-                        <Button
-                            className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all duration-500"
-                        >
+                        <Button className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all duration-500">
                             View Details
                         </Button>
                     </Link>
                 </div>
             </div>
         );
-    };
+    });
+
+    const DetailItem = ({ icon, text }: { icon: React.ReactNode; text?: string }) => (
+        <div className="flex items-center gap-2">
+            <span className="text-yellow-400">{icon}</span>
+            <span>{text}</span>
+        </div>
+    );
 
     const NavigationControls = ({ 
         currentPage, 
@@ -211,7 +196,7 @@ export default function FixedDepartures() {
                             {withFlightDestinations
                                 .slice(currentWithFlightPage * 3, (currentWithFlightPage * 3) + 3)
                                 .map((destination) => (
-                                    <DestinationCard 
+                                    <MemoizedDestinationCard 
                                         key={destination.id} 
                                         destination={destination} 
                                         type="withFlight"
@@ -249,7 +234,7 @@ export default function FixedDepartures() {
                                 Object.entries(destinationGroups[currentWithoutFlightPage])
                                     .filter(([]) => true)
                                     .map(([key, destination]) => (
-                                        <DestinationCard 
+                                        <MemoizedDestinationCard 
                                             key={key} 
                                             destination={destination} 
                                             type="withoutFlight"

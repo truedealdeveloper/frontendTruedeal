@@ -99,7 +99,7 @@ const SingaporeBanner = () => {
               width={40}
               height={40}
               className="object-contain w-8 h-8 md:w-10 md:h-10"
-              priority
+              loading="lazy"
             />
             <div className="relative mt-2 md:mt-0">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff] block mb-1 text-xl md:text-2xl">
@@ -138,7 +138,7 @@ const SingaporeBanner = () => {
 
           {/* Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
-            {visiblePackages.map((pkg) => (
+            {visiblePackages.map((pkg, index) => (
               <Link href={`/singapore/${pkg.id}`} key={pkg.id} 
                 className="text-center group hover:-translate-y-1 transition-all duration-300"
               >
@@ -154,16 +154,17 @@ const SingaporeBanner = () => {
                     transition-all duration-300 
                     border-2 border-white/20 group-hover:border-white/40"
                   >
-                    {pkg.images.map((image, index) => (
+                    {pkg.images.map((image, imgIndex) => (
                       <Image
                         key={image}
                         src={image}
-                        alt={`${pkg.title} - Image ${index + 1}`}
+                        alt={`${pkg.title} - Image ${imgIndex + 1}`}
                         fill
-                        className={`object-cover transition-all duration-1000 scale-105 group-hover:scale-110 ${
-                          index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                        className={`object-cover transition-all duration-1000 ${
+                          imgIndex === currentImageIndex ? 'opacity-100' : 'opacity-0'
                         }`}
                         sizes="(max-width: 640px) 220px, (max-width: 768px) 280px, (max-width: 1024px) 200px, 220px"
+                        loading={index === 0 && imgIndex === 0 ? 'eager' : 'lazy'}
                       />
                     ))}
                   </div>
@@ -224,7 +225,7 @@ const SingaporeBanner = () => {
         </div>
       </div>
 
-      {/* Video Background - Moved to bottom */}
+      {/* Video Background */}
       <div className="absolute inset-0 w-full h-full -z-10">
         <video
           autoPlay
@@ -232,6 +233,7 @@ const SingaporeBanner = () => {
           muted
           playsInline
           className="w-full h-full object-cover"
+          preload="none"
         >
           <source src="/UGCImages/singapore/singaporeBG.mp4" type="video/mp4" />
           <Image
@@ -239,7 +241,7 @@ const SingaporeBanner = () => {
             alt="Singapore Background"
             fill
             className="object-cover"
-            priority
+            loading="lazy"
           />
         </video>
       </div>

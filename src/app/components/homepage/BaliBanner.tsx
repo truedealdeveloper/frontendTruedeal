@@ -59,6 +59,7 @@ export default function BaliBanner() {
                         width={40}
                         height={40}
                         className="object-contain"
+                        loading="lazy"
                     />
                     <div className="relative">
                         <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff] block mb-1">
@@ -98,6 +99,7 @@ export default function BaliBanner() {
                             className="object-cover hidden md:block"
                             sizes="1280px"
                             priority={index === 0}
+                            loading={index === 0 ? 'eager' : 'lazy'}
                         />
                         <Image 
                             src={image.mobile}
@@ -106,6 +108,7 @@ export default function BaliBanner() {
                             className="object-cover md:hidden w-full h-full"
                             sizes="640px"
                             priority={index === 0}
+                            loading={index === 0 ? 'eager' : 'lazy'}
                         />
                         {/* Enhanced Message Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/60 flex flex-col items-center justify-center text-white">
