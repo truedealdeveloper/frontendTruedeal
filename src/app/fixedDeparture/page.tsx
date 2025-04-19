@@ -35,10 +35,18 @@ export default function FixedDepartures() {
         }
     };
 
-    const MemoizedDestinationCard = React.memo(({ destination, type }: { 
+    const DetailItem = ({ icon, text }: { icon: React.ReactNode; text?: string }) => (
+        <div className="flex items-center gap-2">
+            <span className="text-yellow-400">{icon}</span>
+            <span>{text}</span>
+        </div>
+    );
+    DetailItem.displayName = 'DetailItem';
+
+    const DestinationCard = React.memo(function DestinationCard({ destination, type }: { 
         destination: FixedDeparture | DestinationWithoutFlight, 
         type: 'withFlight' | 'withoutFlight' 
-    }) => {
+    }) {
         if (!destination) return null;
 
         const citiesList = destination?.hotelDetails?.map(hotel => hotel.city).join(' • ');
@@ -96,13 +104,6 @@ export default function FixedDepartures() {
             </div>
         );
     });
-
-    const DetailItem = ({ icon, text }: { icon: React.ReactNode; text?: string }) => (
-        <div className="flex items-center gap-2">
-            <span className="text-yellow-400">{icon}</span>
-            <span>{text}</span>
-        </div>
-    );
 
     const NavigationControls = ({ 
         currentPage, 
@@ -196,7 +197,7 @@ export default function FixedDepartures() {
                             {withFlightDestinations
                                 .slice(currentWithFlightPage * 3, (currentWithFlightPage * 3) + 3)
                                 .map((destination) => (
-                                    <MemoizedDestinationCard 
+                                    <DestinationCard 
                                         key={destination.id} 
                                         destination={destination} 
                                         type="withFlight"
@@ -234,7 +235,7 @@ export default function FixedDepartures() {
                                 Object.entries(destinationGroups[currentWithoutFlightPage])
                                     .filter(([]) => true)
                                     .map(([key, destination]) => (
-                                        <MemoizedDestinationCard 
+                                        <DestinationCard 
                                             key={key} 
                                             destination={destination} 
                                             type="withoutFlight"
