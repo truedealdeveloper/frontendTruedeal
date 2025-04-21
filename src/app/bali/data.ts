@@ -77,7 +77,6 @@ export interface BaliPackage {
     culture: CultureItem[];
     departureCities?: {
         city: string;
-        flightDetails: string;
         price: number;
     }[];
 }
@@ -102,17 +101,14 @@ export const baliPackages: Record<string, BaliPackage> = {
         departureCities: [
             {
                 city: "New Delhi",
-                flightDetails: "Direct flight",
                 price: 75999
             },
             {
                 city: "Ahmedabad",
-                flightDetails: "Direct flight",
                 price: 78999
             },
             {
                 city: "Mumbai",
-                flightDetails: "Direct flight",
                 price: 79999
             }
         ],
