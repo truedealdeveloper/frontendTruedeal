@@ -276,8 +276,29 @@ export default function BaliPackagePage({ params }: PageProps) {
                                     )}
                                     <p className="text-sm text-gray-500">per person</p>
                                 </div>
+                                
+                                {/* Add departure cities section */}
+                                {baliPkg.departureCities && (
+                                    <div className="mt-4 border-t pt-4">
+                                        <h3 className="text-lg font-semibold mb-3">Available Departures From:</h3>
+                                        <div className="space-y-3">
+                                            {baliPkg.departureCities.map((departure, index) => (
+                                                <div key={index} className="flex justify-between items-center p-2 bg-gray-50 rounded">
+                                                    <div>
+                                                        <p className="font-medium text-gray-800">{departure.city}</p>
+                                                        <p className="text-sm text-gray-500">{departure.flightDetails}</p>
+                                                    </div>
+                                                    <p className="font-semibold text-[#017ae3]">
+                                                        ₹{departure.price.toLocaleString('en-IN')}
+                                                    </p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+
                                 <Button
-                                    className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white font-bold py-3 rounded-lg transition-all duration-300"
+                                    className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white font-bold py-3 rounded-lg transition-all duration-300 mt-4"
                                     onClick={() => setIsBookingModalOpen(true)}
                                 >
                                     Book Now

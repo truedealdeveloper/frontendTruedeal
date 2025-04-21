@@ -75,6 +75,11 @@ export interface BaliPackage {
     sightseeingSpots: SightseeingSpot[];
     localFood: LocalFood[];
     culture: CultureItem[];
+    departureCities?: {
+        city: string;
+        flightDetails: string;
+        price: number;
+    }[];
 }
 
 export const baliPackages: Record<string, BaliPackage> = {
@@ -83,7 +88,7 @@ export const baliPackages: Record<string, BaliPackage> = {
         packageName: "Bali Fixed Departure Package",
         days: 7,
         nights: 6,
-        amount: 55999,
+        amount: 75999,
         dateStart: "11 May 2025",
         dateEnd: "17 May 2025",
         description: "Experience the ultimate Bali adventure with our comprehensive 7-day tour covering Ubud, Kintamani, and Ubud. From pristine beaches to cultural landmarks, this tour offers the perfect blend of relaxation, adventure, and urban exploration.",
@@ -94,6 +99,23 @@ export const baliPackages: Record<string, BaliPackage> = {
             duration: "6N7D Bali Fixed Departure",
             costBasis: "Cost Based On Double Sharing"
         },
+        departureCities: [
+            {
+                city: "New Delhi",
+                flightDetails: "Direct flight",
+                price: 75999
+            },
+            {
+                city: "Ahmedabad",
+                flightDetails: "Direct flight",
+                price: 78999
+            },
+            {
+                city: "Mumbai",
+                flightDetails: "Direct flight",
+                price: 79999
+            }
+        ],
         hotelDetails: [
             {
                 city: "Ubud",
@@ -109,30 +131,32 @@ export const baliPackages: Record<string, BaliPackage> = {
                 city: "Ubud",
                 hotel: "4 Star Premium Hotel",
                 roomType: "Standard Room"
+            },
+            {
+                city: "Kuta",
+                hotel: "4 Star Cross Vibe Paasha Atelier Bali Kuta",
+                roomType: "Standard Room"
             }
         ],
         tourSummary: [
-            "Day 1: Arrival in Bali (11-05-2025)",
-            "Day 2: Water Sport – Uluwatu Temple with Kecak Dance (12-05-2025)",
-            "Day 3: Nusa Penida Island Tour (13-05-2025)",
-            "Day 4: Ulundanu – Git Git Waterfall – Handara Gate (14-05-2025)",
-            "Day 5: Inter Hotel Transfer – Kintamani & Ubud Village Tour – Monkey Forest – Tegenungan Waterfall (15-05-2025)",
-            "Day 6: Bali Swing – Ubud Palace – Ubud Market Shopping Tour (16-05-2025)",
-            "Day 7: Departure (17-05-2025)"
+            "Day 1: Arrival in Bali",
+            "Day 2: Full Day Ubud Village, Tegalalang Rice Terraces with Bali Swing and Teggunangan Waterfalls",
+            "Day 3: Water Sports Half Day - Half Day Tanah Lot",
+            "Day 4: Nusa Penida Island Day Trip",
+            "Day 5: Half Day Ubud Palace and Ubud Market Tour",
+            "Day 6: Bali - Day at leisure",
+            "Day 7: Departure from Bali"
         ],
         inclusions: [
-            "Round-trip flight from Mumbai (20+7 KG baggage)",
             "6 Nights accommodation in 4-star hotels (3N Ubud, 2N Kintamani, 1N Ubud)",
+            "Private Transfer from Airport to Hotel - Kuta, Legian, Tuban Kuta",
             "Daily buffet breakfast at hotels",
-            "1 dinner and 5 lunches included",
-            "Water Sport – Uluwatu Temple with Kecak Dance",
-            "Nusa Penida Island Tour",
-            "Ulundanu – Git Git Waterfall – Handara Gate",
-            "Inter Hotel Transfer – Kintamani & Ubud Village Tour – Monkey Forest – Tegenungan Waterfall",
-            "Bali Swing – Ubud Palace – Ubud Market Shopping Tour",
-            "English-speaking guide",
-                    "All transportation by AC VIP coach/van",
-            "Daily dinner transfer service (fixed time)"
+            "Full Day Ubud Village + Tegalalang Rice Terraces + Teggunangan Waterfalls + Bali Swing (Aloha) - Private",
+            "Water Sports - Banana Boat Ride + Jet Ski + Parasailing Adventure (Private Transfers)",
+            "Half Day Tanah Lot Tour - Private",
+            "Full Day Nusa Penida Island Trip with Local Lunch - (West Tour) Private Transfers to the Pier (Shared Fastboat)",
+            "Full Day Ubud Palace and Ubud Market Tour - Private",
+            "Private Transfer from Hotel to Airport - Kuta, Legian, Tuban Kuta"
         ],
         exclusions: [
             "Visa fees",
@@ -140,48 +164,85 @@ export const baliPackages: Record<string, BaliPackage> = {
             "Tips and personal expenses",
             "Optional activities entrance fees",
             "Travel insurance",
-            "GST & TCS charges"
+            "GST & TCS charges",
+            "Guaranteed early check in or late check out. This is completely at the discretion of the hotel and we can only put in a request for the same.",
+            "Meals other than that what is mentioned in itinerary.",
+            "Any expenses of personal nature",
+            "Any services not mentioned in the inclusions list"
         ],
         itinerary: [
             {
                 day: 1,
-                    title: "Arrival in Bali (11-05-2025)",
-                    description: "Upon arrival at Ngurah Rai Airport, meet and greet with our representative. Transfer to the hotel for check-in. Lunch & Dinner in an Indian restaurant. Overnight stay at the hotel."
+                    title: "Arrival in Bali",
+                    description: "Upon your arrival at Ngurah Rai Airport in Denpasar, Bali, our representative will meet and welcome you. You will then be taken to the hotel for your refreshment"
                 },
             {
                 day: 2,
-                title: "Water Sport – Uluwatu Temple with Kecak Dance (12-05-2025)",
-                description: "Breakfast at the hotel. Enjoy watersport activities including 1X Round Banana Boat, 1X Round Jetski, 1X Round Parasailing Adventure. Lunch in an Indian restaurant. Later, visit Uluwatu Temple and witness the Kecak Dance, followed by dinner at an Indian restaurant."
+                title: "Full Day Ubud Village, Tegalalang Rice Terraces with Bali Swing and Teggunangan Waterfalls",
+                description: `Proceed for a full day tour of Ubud. Visit Celuk the center of gold and silver works,
+Mas the center of woodcarvings, Ubud the center of Balinese paintings. In the
+surrounding area, numerous villages are scattered across a landscape of rice
+terraces, lush valleys and forests. At the iconic Tegalalang Rice Terraces, we can
+photograph the emerald rice fields that cascade down the mountain sides. Next stop,
+get your cameras and phones ready for some highly Instagram-worthy pictures at
+Aloha swing at Tegalalang, with spectacular rice paddies view, agriculture activities,
+coffee Luwak plantation and shop. It is one of the hottest Instagram spots in Bali!
+You can experience incredible views and an exciting adventure at Aloha Swing. As we
+walk down the many stairs to the temple, we can enjoy the views of the terraced rice
+fields. We will end the tour with a visit to Teggunagan Waterfalls. (Breakfast)`
             },
             {
                 day: 3,
-                title: "Nusa Penida Island Tour (13-05-2025)",
-                description: "Breakfast at the hotel. Pick-up at 7 AM for transfer to Sanur Jetty. Speedboat transfer to Nusa Penida Island. Tour includes visits to Kelingking Beach, Broken Beach, Angel Billabong. Local lunch at a restaurant. Return to the hotel and later pick-up for dinner at an Indian restaurant."
+                title: "Water Sports Half Day - Half Day Tanah Lot",
+                description: `Get ready for an unforgettable day on the water with our exciting Water Sports
+package! Experience the thrill of a Banana Boat Ride, where you'll bounce across the
+waves with friends and family. Feel the adrenaline rush as you take control of a Jet
+Ski, speeding through the ocean and enjoying the wind in your hair. Cap off your
+adventure with a breathtaking Parasailing Adventure, soaring high above the
+coastline and taking in stunning panoramic views. With private transfers included,
+your journey to adventure is smooth and hassle-free. Whether you're seeking
+excitement or unforgettable memories, this package has it all! Visit a spectacular
+Tanah Lot Temple which stands proudly on the rock inside the ocean. Shopping time
+is available on this visit for any kind of Balinese handicraft products good for
+souvenirs and or for collection. (Breakfast)`
             },
             {
                 day: 4,
-                title: "Ulundanu – Git Git Waterfall – Handara Gate (14-05-2025)",
-                description: "Breakfast at the hotel. Visit Ulundanu Temple & Bratan Lake, the most iconic temple in Bali. Visit Git Git Waterfall followed by lunch at an Indian restaurant. Later, visit Handara Gate followed by dinner at an Indian restaurant."
+                title: "Nusa Penida Island Day Trip",
+                description: `Experience the magic of Nusa Penida Island on our Full Day West Penida Tour. Begin
+your day with convenient private transfers to the pier, where you'll board a shared
+fastboat to this enchanting destination. Explore the island's breathtaking landscapes,
+including the iconic Broken Beach and the majestic Kelingking Cliff. Swim in crystalclear waters and relax on pristine beaches, immersing yourself in the natural beauty
+that surrounds you. Indulge in a delicious local lunch, savoring the unique flavors of
+the island. With knowledgeable guides ensuring a seamless experience, this tour
+offers the perfect mix of adventure and leisure in one of Bali's hidden gems If you
+decide to take snorkelling (at extra cost), you will not be able to go for Crystal bay
+because of lack of time Local Lunch is Served and options and quantity is limited.
+(Breakfast & Lunch)`
             },
             {
                 day: 5,
-                title: "Inter Hotel Transfer – Kintamani & Ubud Village Tour – Monkey Forest – Tegenungan Waterfall (15-05-2025)",
-                description: "Breakfast at the hotel & checkout. Proceed for Kintamani – Ubud Village Tour, including visits to Celuk & Mas Silver and Gold Smith Village, Batik Factory, Tegalalang Rice Terrace, Kintamani Viewing Point to see Mt. Batur from distance. Lunch at an Indian restaurant. Visit Coffee Plantation, Monkey Forest, & Tegenungan Waterfall. Dinner at an Indian restaurant."
+                title: "Half Day Ubud Palace and Ubud Market Tour",
+                description: `Visit Puri Saren Ubud Palace, the home of the local royal family. It stands in the heart
+of the town and is built in the style of a traditional family compound. Take a walk
+through the nearby Ubud Market among the colourful stalls of wood carvings, textiles
+and souvenirs. After lunch, continue to Puri Lukisan Museum the oldest art museum
+in Bali. Here you can admire an array of contemporary paintings and wood carvings
+from prominent Balinese artists. (Breakfast)`
             },
             {
                 day: 6,
-                    title: "Bali Swing – Ubud Palace – Ubud Market Shopping Tour (16-05-2025)",
-                    description: "Breakfast at the villa. Proceed for Bali Swing Pioneer Package including 2 Single Swings, 1X Romantic Swing, 1X Bed Swing, 1X Bird Nest, 1X Sky Bed, 1X Sky. Lunch at an Indian restaurant, followed by visits to Ubud Palace and Ubud Market for shopping. Dinner at an Indian restaurant."
+                    title: "Bali - Day at leisure",
+                    description: "Today you are free to explore on your own. (Breakfast). Explore the beautiful city of Ubud at your own pace. You can visit the Ubud Palace, the Ubud Market, or take a walk through the nearby Ubud Market among the colourful stalls of wood carvings, textiles and souvenirs. (Breakfast)"
                     },
                 {
                 day: 7,
-                title: "Departure from Bali (17-05-2025)",
-                description: "Floating breakfast at the villa. Pickup and transfers to the airport for the return flight."
+                title: "Departure from Bali",
+                description: "After a hearty breakfast you are transferred in time to the airport to board your flight.(Breakfast)"
             }
             ],
         images: [
             "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/1.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/2.webp",
             "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/3.webp",
             "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/4.webp",
             "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/5.webp",

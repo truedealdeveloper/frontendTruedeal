@@ -33,7 +33,7 @@ const bannerImages = [
     }
 ];
 
-export default function BaliBanner() {
+export default function VietnamBanner() {
     const [currentImage, setCurrentImage] = useState(0);
     const router = useRouter();
 
