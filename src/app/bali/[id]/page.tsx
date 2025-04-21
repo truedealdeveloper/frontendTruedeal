@@ -286,7 +286,6 @@ export default function BaliPackagePage({ params }: PageProps) {
                                                 <div key={index} className="flex justify-between items-center p-2 bg-gray-50 rounded">
                                                     <div>
                                                         <p className="font-medium text-gray-800">{departure.city}</p>
-                                                        <p className="text-sm text-gray-500">{departure.flightDetails}</p>
                                                     </div>
                                                     <p className="font-semibold text-[#017ae3]">
                                                         ₹{departure.price.toLocaleString('en-IN')}
