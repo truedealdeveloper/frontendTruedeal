@@ -178,7 +178,7 @@ const AustraliaBanner = () => {
                 .slice(currentPage * 3, (currentPage * 3) + 3)
                 .map((pkg) => (
                   <Link 
-                    href={`/australia/${pkg.id}`}
+                    href={`/australiaPackages/${pkg.id}`}
                     key={pkg.id}
                     className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0"
                   >

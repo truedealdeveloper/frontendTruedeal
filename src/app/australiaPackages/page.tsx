@@ -145,7 +145,7 @@ export default function AustraliaPackages() {
                             <span>{pkg.dateStart}</span>
                         </div>
                     </div>
-                    <Link href={`/australia/${pkg.id}`}>
+                    <Link href={`/australiaPackages/${pkg.id}`}>
                         <Button className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all duration-500">
                             View Details
                         </Button>
