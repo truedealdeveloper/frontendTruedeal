@@ -45,7 +45,7 @@ export default function Home() {
         <AlmatyBanner />
         <SingaporeBanner />
       <NoCostEMIPage />
-        <AustraliaBanner />
+        {/* <AustraliaBanner /> */}
       </div>
       {/* <Destination /> */}
       {/* <Domestic /> */}
