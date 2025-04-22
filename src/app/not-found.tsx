@@ -27,7 +27,7 @@ export default function NotFound() {
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-gray-900">Destination not found</h1>
 
             <p className="text-lg md:text-xl text-gray-600 max-w-md">
-              The page you're looking for seems to have wandered off the map. Let's help you find your way back.
+              The page you&apos;re looking for seems to have wandered off the map. Let&apos;s help you find your way back.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

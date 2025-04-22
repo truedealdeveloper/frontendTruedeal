@@ -97,7 +97,7 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
             }
         ],
         tourSummary: [
-            "Day 1: Raipur – Delhi – Paris",
+            "Day 1: Delhi – Paris",
             "Day 2: Paris City Tour",
             "Day 3: Full Day Disneyland Paris",
             "Day 4: Paris to Lausanne via Geneva",
@@ -146,7 +146,7 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         itinerary: [
             {
                 day: 1,
-                title: "Raipur – Delhi – Paris",
+                title: "Delhi – Paris",
                 description: "Departure from Raipur in the morning and arrival in Paris via Delhi. Arrival Paris at 1940 Hrs. Complete immigration formalities and proceed for dinner. Transfer to hotel for check-in."
             },
             {

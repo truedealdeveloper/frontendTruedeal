@@ -1,8 +1,28 @@
-import React from 'react';
+"use client";
+
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const USA = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  const images = [
+    '/UGCImages/usa/1.png',
+    '/UGCImages/usa/2.png',
+    '/UGCImages/usa/3.png',
+    '/UGCImages/usa/4.png',
+    '/UGCImages/usa/5.png'
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="w-full py-8 px-4 md:px-8">
       <div className="flex flex-col lg:flex-row gap-8 items-center">
@@ -38,20 +58,38 @@ const USA = () => {
           </Link>
         </div>
 
-        {/* Right side image for larger screens, bottom image for mobile */}
+        {/* Updated right side with image carousel */}
         <div className="w-full lg:w-1/2 rounded-2xl overflow-hidden">
           <div className="relative aspect-[4/3] w-full">
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
-            <Image
-              src="/images/usa-placeholder.jpg" // Make sure to add your USA image
-              alt="United States"
-              fill
-              className="object-cover"
-              priority
-            />
+            {images.map((src, index) => (
+              <Image
+                key={src}
+                src={src}
+                alt={`United States ${index + 1}`}
+                fill
+                className={`object-cover transition-opacity duration-500 ${
+                  currentImageIndex === index ? 'opacity-100' : 'opacity-0'
+                }`}
+                priority={index === 0}
+              />
+            ))}
             <h2 className="absolute bottom-6 left-6 text-white text-3xl font-bold z-20">
               USA
             </h2>
+            
+            {/* Image indicators */}
+            <div className="absolute bottom-4 right-4 flex gap-2 z-20">
+              {images.map((_, index) => (
+                <button
+                  key={index}
+                  className={`w-2 h-2 rounded-full transition-all ${
+                    currentImageIndex === index ? 'bg-white w-4' : 'bg-white/50'
+                  }`}
+                  onClick={() => setCurrentImageIndex(index)}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
