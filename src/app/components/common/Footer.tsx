@@ -84,7 +84,12 @@ export default function Component() {
             </section> */}
 
 
-            <footer className="bg-gradient-to-b from-white via-gray-50 to-gray-100 py-12 px-4 border-t">
+            <footer 
+                className="bg-gradient-to-b from-white via-gray-50 to-gray-100 py-12 px-4 border-t"
+                itemScope 
+                itemType="http://schema.org/WPFooter"
+                aria-label="Site footer"
+            >
                 <div className="max-w-7xl mx-auto">
                     {/* Blog Promotion Section with enhanced styling */}
                     <div className="mb-12 flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-[#017ae3] to-[#00f6ff] p-8 rounded-2xl transform transition-all duration-300 hover:scale-[1.01] hover:shadow-xl">
@@ -119,7 +124,13 @@ export default function Component() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
                         {/* Company Info with enhanced styling */}
-                        <div className="transform transition-all duration-300 hover:translate-y-[-5px]">
+                        <div 
+                            className="transform transition-all duration-300 hover:translate-y-[-5px]"
+                            itemScope 
+                            itemType="http://schema.org/Organization"
+                            data-nosnippet
+                        >
+                            <meta itemProp="name" content="TRUEDEAL TRAVELS PRIVATE LIMITED" />
                             <div className="relative group">
                                 <Image
                                     src="/Assets/NavbarImages/logo.png"
@@ -132,7 +143,7 @@ export default function Component() {
                             <h1 className="font-bold font-poppins mb-2 text-[#017ae3] transition-colors duration-300 hover:text-[#00f6ff]">
                                 TRUEDEAL TRAVELS PRIVATE LIMITED
                             </h1>
-                            <p className="text-gray-700 text-sm mb-4 leading-relaxed">
+                            <p className="text-gray-700 text-sm mb-4 leading-relaxed" itemProp="description">
                                 Truedeal is your trusted partner for seamless travel experiences, forex solutions, and comprehensive travel services since 2014.
                             </p>
                             <div className="flex gap-4">
@@ -160,7 +171,11 @@ export default function Component() {
                         </div>
 
                         {/* Quick Links with enhanced styling */}
-                        <div className="transform transition-all duration-300 hover:translate-y-[-5px]">
+                        <nav 
+                            className="transform transition-all duration-300 hover:translate-y-[-5px]"
+                            aria-label="Footer navigation"
+                            data-nosnippet
+                        >
                             <h3 className="font-bold text-[#017ae3] mb-4 text-lg relative after:content-[''] after:block after:w-0 after:h-0.5 after:bg-[#00f6ff] after:transition-all after:duration-300 hover:after:w-full">
                                 Quick Links
                             </h3>
@@ -186,10 +201,14 @@ export default function Component() {
                                     </li>
                                 ))}
                             </ul>
-                        </div>
+                        </nav>
 
                         {/* Our Services with enhanced styling */}
-                        <div className="transform transition-all duration-300 hover:translate-y-[-5px]">
+                        <nav 
+                            className="transform transition-all duration-300 hover:translate-y-[-5px]"
+                            aria-label="Services navigation"
+                            data-nosnippet
+                        >
                             <h3 className="font-bold text-[#017ae3] mb-4 text-lg relative after:content-[''] after:block after:w-0 after:h-0.5 after:bg-[#00f6ff] after:transition-all after:duration-300 hover:after:w-full">
                                 Our Services
                             </h3>
@@ -209,10 +228,14 @@ export default function Component() {
                                     </li>
                                 ))}
                             </ul>
-                        </div>
+                        </nav>
 
                         {/* Fixed Departures section */}
-                        <div className="transform transition-all duration-300 hover:translate-y-[-5px]">
+                        <nav 
+                            className="transform transition-all duration-300 hover:translate-y-[-5px]"
+                            aria-label="Fixed departures navigation"
+                            data-nosnippet
+                        >
                             <h3 className="font-bold text-[#017ae3] mb-4 text-lg relative after:content-[''] after:block after:w-0 after:h-0.5 after:bg-[#00f6ff] after:transition-all after:duration-300 hover:after:w-full">
                                 Fixed Departures
                             </h3>
@@ -250,7 +273,7 @@ export default function Component() {
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </nav>
                     </div>
                 </div>
 

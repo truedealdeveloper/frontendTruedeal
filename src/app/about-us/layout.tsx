@@ -1,10 +1,15 @@
 import React from 'react';
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'About Us | TrueDeal4U - Your Trusted Travel Partner',
-  description: 'Learn about TrueDeal4U - a leading travel agency dedicated to creating unforgettable travel experiences with personalized service and expert guidance.',
-  keywords: 'about truedeal4u, travel agency about us, travel company history, trusted travel partner'
+  description: 'TrueDeal4U is a leading travel company specializing in customized tour packages worldwide. With years of experience, we create unforgettable travel experiences with personalized service and expert guidance.',
+  keywords: 'about truedeal4u, travel agency, tour operator, travel company, trusted travel partner',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false
+  }
 };
 
 export default function AboutUsLayout({

@@ -30,6 +30,11 @@ export async function generateMetadata({ params }: { params: { slug?: string } }
           canonical: `https://www.truedeal4u.com/blogs/${post.slug}`,
         },
         keywords: post.tags?.join(', '),
+        formatDetection: {
+          email: false,
+          address: false,
+          telephone: false
+        }
       }
     }
   }
@@ -67,6 +72,11 @@ export async function generateMetadata({ params }: { params: { slug?: string } }
     verification: {
       google: 'google-site-verification=2wyPdrWOgtbDk0m_GbZfczCwx6g46vqbXpbP-INhwy0',
     },
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: false
+    }
   }
 }
 

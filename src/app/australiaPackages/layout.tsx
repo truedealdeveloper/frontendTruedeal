@@ -2,8 +2,13 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Australia Tour Packages | TrueDeal4U',
-  description: 'Book your dream Australian vacation with TrueDeal4U. Explore Sydney, Melbourne, Gold Coast and more with our tailored Australia tour packages.',
-  keywords: 'australia tour packages, australia holidays, australian vacation packages'
+  description: 'Discover Australia\'s iconic destinations with our curated tour packages. Experience the Sydney Opera House, Great Barrier Reef, Melbourne\'s culture, and stunning beaches. Customized Australian adventures for unforgettable memories.',
+  keywords: 'australia tour packages, sydney tours, melbourne tours, great barrier reef, australian holidays',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false
+  }
 }
 
 export default function AustraliaLayout({

@@ -2,8 +2,13 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Vietnam Tour Packages | TrueDeal4U',
-  description: 'Experience the best of Vietnam with TrueDeal4U\'s curated tour packages. Visit Hanoi, Ha Long Bay, Ho Chi Minh City, and more with our expert guides.',
-  keywords: 'vietnam tours, vietnam holiday packages, vietnam travel packages'
+  description: 'Explore Vietnam\'s stunning landscapes, rich culture and delicious cuisine. Visit Hanoi, Ha Long Bay, Ho Chi Minh City with our expertly crafted Vietnam tour packages. Experience authentic Vietnamese hospitality and adventures.',
+  keywords: 'vietnam tours, vietnam holiday packages, vietnam travel packages, hanoi tours, ha long bay, ho chi minh city',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false
+  }
 }
 
 export default function VietnamLayout({
