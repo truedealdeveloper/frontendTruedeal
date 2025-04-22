@@ -26,7 +26,7 @@ import LaosCambodiaBanner from "./components/homepage/LaosCambodia";
 import AlmatyBanner from './components/homepage/AlmatyBanner';
 import SingaporeBanner from "./components/homepage/SingaporeBanner";
 import AustraliaBanner from "./components/homepage/AustraliaBanner";
-import USA from "./components/homepage/USA";
+// import USA from "./components/homepage/USA";
 
 export default function Home() {
   return (
@@ -45,7 +45,7 @@ export default function Home() {
         <LaosCambodiaBanner />
         <AlmatyBanner />
         <SingaporeBanner />
-        <USA />
+        {/* <USA /> */}
       <NoCostEMIPage />
         {/* <AustraliaBanner /> */}
       </div>
