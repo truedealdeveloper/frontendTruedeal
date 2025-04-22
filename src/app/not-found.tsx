@@ -13,7 +13,6 @@ import { Destination, destinations } from "@/app/config/destinations"
 
 export default function NotFound() {
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false)
-  const router = useRouter()
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-50 to-white flex flex-col">
