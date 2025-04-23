@@ -5,11 +5,11 @@ import { fixedDeparturesData } from './data';
 const defaultImage = Object.values(fixedDeparturesData)[0]?.images?.[0] || '/UGCImages/Images4/spain/horizontal/6.webp';
 
 export const metadata: Metadata = {
-    title: 'Fixed Departure Tours 2024-25 | Group Tours | TrueDeal Travel',
-    description: 'Book guaranteed fixed departure group tours for 2024-25. International & domestic tour packages with flights, hotels, and sightseeing included. Best prices guaranteed.',
+    title: 'Fixed Departure Tours 2025 | Group Tours | TrueDeal Travel',
+    description: 'Book guaranteed fixed departure group tours for 2025. International & domestic tour packages with flights, hotels, and sightseeing included. Best prices guaranteed.',
     keywords: 'fixed departure tours, group tours, international tours, domestic tours, holiday packages, tour packages with flights, guaranteed departures, TrueDeal Travel',
     openGraph: {
-        title: 'Fixed Departure Tours 2024-25 | Group Tours | TrueDeal Travel',
+        title: 'Fixed Departure Tours 2025 | Group Tours | TrueDeal Travel',
         description: 'Join our guaranteed departure group tours to popular destinations worldwide. All-inclusive packages with flights, accommodation, and guided tours.',
         images: [
             {

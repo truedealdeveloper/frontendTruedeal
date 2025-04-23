@@ -49,32 +49,32 @@ export default function USAPackages() {
     const usaHighlights = [
         {
             title: "City Experiences",
-            image: "/UGCImages/usa/Main/cities.jpg",
+            image: "/UGCImages/usa/americanos/1.jpg",
             description: "Explore vibrant cities like New York, LA, and Chicago"
         },
         {
             title: "National Parks",
-            image: "/UGCImages/usa/Main/parks.jpg",
+            image: "/UGCImages/usa/americanos/2.jpg",
             description: "Discover America's stunning natural wonders"
         },
         {
             title: "Cultural Diversity",
-            image: "/UGCImages/usa/Main/culture.jpg",
+            image: "/UGCImages/usa/americanos/3.jpg",
             description: "Experience the melting pot of American cultures"
         },
         {
             title: "Entertainment",
-            image: "/UGCImages/usa/Main/entertainment.jpg",
+            image: "/UGCImages/usa/americanos/4.jpg",
             description: "Enjoy world-class shows, theme parks, and attractions"
         },
         {
             title: "Historic Sites",
-            image: "/UGCImages/usa/Main/history.jpg",
+            image: "/UGCImages/usa/americanos/5.png",
             description: "Visit landmarks from America's rich history"
         },
         {
             title: "Food & Dining",
-            image: "/UGCImages/usa/Main/food.jpg",
+            image: "/UGCImages/usa/americanos/6.png",
             description: "Savor diverse American cuisine from coast to coast"
         }
     ];
@@ -219,7 +219,7 @@ export default function USAPackages() {
                     autoPlay
                     className="hidden"
                 >
-                    <source src="/UGCImages/usa/usaAudio.mp3" type="audio/mp3" />
+                    <source src="/UGCImages/usa/usa.mp3" type="audio/mp3" />
                 </audio>
 
                 <button
@@ -242,7 +242,7 @@ export default function USAPackages() {
                     playsInline
                     className="absolute inset-0 w-full h-full object-cover"
                 >
-                    <source src="/UGCImages/usa/usaBG.mp4" type="video/mp4" />
+                    <source src="/UGCImages/usa/usa.mp4" type="video/mp4" />
                     <Image
                         src="/UGCImages/usa/usa.jpg"
                         alt="USA"
@@ -263,7 +263,7 @@ export default function USAPackages() {
                             <span className={`block font-dancing-script text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] mb-2 ${dancingScript.className}`}>
                                 Discover the Magic of 
                             </span>
-                            <span className={`block text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-[#d10023] to-[#2a4bfd] bg-clip-text text-transparent mt-2 ${playfair.className}`}>
+                            <span className={`block text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-[#ffffff] to-[#00ffff] text-transparent mt-2 ${playfair.className}`}>
                                 United States of America
                             </span>
                         </motion.h1>

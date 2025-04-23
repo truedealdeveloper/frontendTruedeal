@@ -12,9 +12,6 @@ import { motion, useScroll, AnimatePresence } from "framer-motion";
 import { Poppins } from 'next/font/google';
 import Image from 'next/image';
 import USAPackages from '../page';
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
-import { Fragment } from "react";
 
 interface PageProps {
     params: Promise<{ id: string; }>
