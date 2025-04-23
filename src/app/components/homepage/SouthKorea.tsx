@@ -20,13 +20,13 @@ const SouthKorea = () => {
     }, 3000); // Change image every 3 seconds
 
     return () => clearInterval(timer);
-  }, []);
+  }, [images.length]);
 
   return (
     <div className="w-full py-12 px-4 md:px-8 max-w-7xl mx-auto">
       <div className="flex flex-col lg:flex-row gap-12 items-center">
         {/* Left side with image carousel */}
-        <div className="w-full lg:w-1/2 rounded-2xl overflow-hidden shadow-lg order-last lg:order-first">
+        <div className="w-full lg:w-1/2 rounded-2xl overflow-hidden shadow-lg order-first lg:order-first">
           <div className="relative aspect-[4/3] w-full">
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
             {images.map((src, index) => (
@@ -61,7 +61,7 @@ const SouthKorea = () => {
         </div>
 
         {/* Right side content */}
-        <div className="w-full lg:w-1/2 space-y-6 order-first lg:order-last">
+        <div className="w-full lg:w-1/2 space-y-6 order-last lg:order-last">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900">South Korea</h2>
           <p className="text-gray-600 text-base md:text-lg">
             Discover a perfect blend of ancient traditions and modern innovations, from tranquil temples to vibrant cities and stunning landscapes.

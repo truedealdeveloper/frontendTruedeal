@@ -56,7 +56,7 @@ const USA = () => {
       <div className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-12 items-center">
           {/* Left side content */}
-          <div className="w-full lg:w-1/2 space-y-6">
+          <div className="w-full lg:w-1/2 space-y-6 order-last lg:order-first">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">United States</h2>
             <p className="text-gray-600 text-base md:text-lg">
               Experience diverse landscapes from bustling cities to stunning national parks, rich culture, and unforgettable adventures.
@@ -88,7 +88,7 @@ const USA = () => {
           </div>
 
           {/* Right side with image carousel */}
-          <div className="w-full lg:w-1/2 rounded-2xl overflow-hidden shadow-lg">
+          <div className="w-full lg:w-1/2 rounded-2xl overflow-hidden shadow-lg order-first lg:order-last">
             <div className="relative aspect-[4/3] w-full">
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
               {images.map((src, index) => (
