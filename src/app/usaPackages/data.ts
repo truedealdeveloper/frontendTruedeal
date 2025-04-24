@@ -90,7 +90,7 @@ export const usaPackages: Record<string, USAPackage> = {
         packageName: "East & West Coast With Orlando",
         days: 16,
         nights: 15,
-        amount: 325999,
+        amount: 325201,
         dateStart: "15 April 2025",
         dateEnd: "16 October 2025",
         description: `Experience the best of America's East Coast with our 10-day tour covering New York, Washington DC, and Boston's iconic landmarks. This package includes a visit to the Statue of Liberty, the White House, the Smithsonian National 
@@ -603,5 +603,917 @@ Evening dinner at the restaurant and overnight in Orlando (B, D)
             { date: "18 Sep 2025", availability: "Available", price: 349999 },
             { date: "16 Oct 2025", availability: "Available", price: 349999 },
         ]
-    }
+    },
+    usaEasternExplorer: {
+        id: "usa-eastern-explorer",
+        packageName: "USA Eastern Explorer",
+        days: 7,
+        nights: 6,
+        amount: 175407,
+        dateStart: "17 April 2025",
+        dateEnd: "23 April 2025",
+        description: `Experience the best of America's East Coast with our 7-day tour covering New York, Washington DC, and Boston's iconic landmarks. This package includes a visit to the Statue of Liberty, the White House, the Smithsonian National 
+        Air and Space Museum, and the Golden Gate Bridge. America is a land of dreams and adventures, and this tour is designed to take you on a journey of discovery and excitement.`,
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Double Sharing",
+            arrivalDate: "Contact Us",
+            duration: "7D6N USA Fixed Departure",
+            costBasis: "Cost Based On 2 Adults"
+        },
+        hotelDetails: [
+            {
+                city: "New York",
+                hotel: "Springhill suites Manhattan/ Doubletree by Hilton or similar",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Washington ",
+                hotel: "Springhill Suites Gaithersburg/Wyndham College Park or similar",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Niagara",
+                hotel: "Wyndham Garden Niagara Falls/Holiday Inn or similar",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Las Vegas",
+                hotel: "LUXOR / EXCALIBUR or similar",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Los Angeles",
+                hotel: "Four Points by Sheraton LAX airport or similar",
+                roomType: "Standard Room"
+            },
+            {
+                city: "San Francisco",
+                hotel: "CROWNE PLAZA Union city / Fremont MARRIOTT or similar",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Orlando",
+                hotel: "Wyndham Celebration area/ Courtyard by Marriott or similar",
+                roomType: "Standard Room"
+            }
+        ],
+        tourSummary: [
+            "Day 1: ARRIVE IN NEW YORK – CHECK-IN AT HOTEL",
+            "Day 2: NEW YORK CITY TOUR WITH STATUE OF LIBERTY & SUMMIT ONE VANDERBILT",
+            "Day 3: NEW YORK – WASHINGTON",
+            "Day 4: WASHINGTON – Guided City Tour & Visit Smithsonian National Air and Space Museum",
+            "Day 5: Washington DC to NIAGARA Falls (US SIDE) Via Hershey",
+            "Day 6: MAID OF THE MIST & CAVE OF THE WINDS",
+            "Day 7: DEPARTURE FROM NIAGARA",
+        ],
+        inclusions: [
+            "Arrival/Departure airport transfer.",
+            "6 night's accommodation with breakfast.",
+            "6 dinners @ Indian Restaurants (set menu)",
+            "New York Hotel",
+            "Springhill suites Manhattan/Doubletree by Hilton or similar",
+            "Washington Hotel",
+            "Springhill Suites Gaithersburg or similar",
+            "Niagara Falls Hotel",
+            "Wyndham Garden Niagara Falls/Holiday Inn or similar",
+            "City tour: New York, Philadelphia & Washington, DC.",
+            "Entrance tickets: Statue of Liberty, Summit one Vanderbilt, Capitol Wheel, Smithsonian Air and space museum, Capitol Building from outside, Union Station, Hershey’s Chocolate Factory, Maid of the mist, & Cave of the winds.",
+        ],
+        exclusions: [
+            "International airfare",
+            "Cruise fare",
+            "Cruise port transfers / Miami Transfer",
+            "Meals except those indicated above.",
+            "No vehicle at disposal in Niagara as all attractions are walking distance.",
+            "Domestic air tickets & baggage charges",
+            "Porterage, tip to drivers and waiters",
+            "Personal expense of any nature like laundry, shopping, incidentals at hotels etc.",
+            "Any tours, transfers or event tickets are not mentioned in package inclusions.",
+            "Incidental Charges must be paid by clients.",
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrive at New York",
+                description: `Upon arrival at the airport, the driver will meet you and transfer you to the hotel. Airport
+transfers from JFK will be from 11 am to 2 pm. Should you arrive after this time you can
+take a taxi to the hotel or please see the optional section for rates for transfers.<br /><br />
+
+After arrival at the hotel, check in, take some time to freshen up and meet in the hotel
+lobby for transfer to dinner (approximately 7.30 pm), following which we will head to
+Times Square.<br /><br />
+
+Known as "The Crossroads of the World" and "The Great White Way," Times
+Square NYC is one of the most popular commercial intersections in the world. Located
+in central Manhattan at the junction of Broadway and Seventh Avenue, it is home to
+top destinations such as ABC's Times Square Studios, and Planet Hollywood. More than
+300,000 people pass through iconic Times Square NYC every day.<br /><br />
+
+Free Time at Times square. You can opt to see Madame Tussauds wax museum in Times
+square or go to see Broadway Show are the theatrical performances presented in the
+41 professional theaters, each with 500 or more seats, located in the Theater District and
+the Lincoln Center along Broadway, in Midtown Manhattan, New York City (Refer to
+optional section for details and pricing)<br /><br />
+
+Dinner at restaurant & transfer to hotel for overnight stay. (D)`
+            },
+            {
+                day: 2,
+                title: "New York city tour with Statue of Liberty & Summit One Vanderbilt",
+                description: `
+                After breakfast, we proceed for a Full day city tour of New York.
+First, we will head to Battery Park for a 15 min ferry ride to see USA's
+famous landmark, “Statue of Liberty”. This is one of the most
+recognized symbols of freedom and democracy in the World. The
+Statue was a gift from France to USA in 1885. Tour the grounds and
+take pictures with Lady Liberty. <br /><br />
+We will proceed back to Battery Park to continue with our guided city tour with our tour
+guide. We will make a photo stop at iconic Wall Street bull. This is a 7001-pound
+structure at the financial district in Manhattan, depicting a charging bull, the symbol
+of aggressive financial optimism and prosperity. <br /><br />
+Later we drive through Rockefeller Center, Ground Zero, United Nations and Trump
+tower. <br /><br />
+
+We will then proceed to visit SUMMIT One Vanderbilt. Explore three levels of mind-
+bending multi-sensory immersive experiences set atop the tallest commercial skyscraper
+
+in Midtown Manhattan. It offers three levels of multi-sensory immersive experiences.
+Here, you can enjoy panoramic views, marvel at mirrored rooms and art installations.
+Transfer to restaurant for dinner.
+After dinner transfer to the hotel for an overnight stay. (B, D)
+                `
+            },
+            {
+                day: 3,
+                title: "New York to Washington",
+                description: `After breakfast, we check out of the hotel and drive towards Washington DC
+(approximately 5-hour drive) <br /><br />
+On the way, the Philadelphia orientation city tour explores the highlights of the city. Visit
+all the must-see spots, like Independence Hall and the Liberty Bell Exhibit, the South 9th
+Street Italian Market, Philadelphia City Hall, Love Park, the Rocky steps at the entrance
+to the Philadelphia Museum of Art and much more. <br /><br />
+
+Proceed to Washington DC, On arrival proceed to dinner before checking into the
+hotel. (B, D)
+`
+            },
+            {
+                day: 4,
+                title: "Washington DC Guided City Tour & Visit Smithsonian National Air and Space Museum",
+                description: `
+                After breakfast, Proceed to Guided city tour of the
+capital of USA. you will be met by an experienced
+tour guide for a 3-hour guided city tour. Washington
+DC is the capital city of the United States of America.
+It is a city of monuments, memorials, historic
+neighborhoods, and museums. We will take photo
+stops at the White House, the home of the President of
+
+the USA. <br /><br />
+
+After the city tour, we will visit the Smithsonian Air and Space Museum. The Smithsonian
+National Air and Space Museum maintains the largest collection of historic air and
+spacecraft in the world. The museum features 22 exhibition galleries, displaying
+hundreds of artifacts including the original Wright 1903 Flyer, the "Spirit of St. Louis," and
+the Apollo 11 command module. The National Air and Space Museum is a must-see for
+visitors to Washington, DC. It is the most visited museum in the world and appeals to all
+ages. <br /><br />
+
+Proceed to experience The Capital Wheel - Soar 180
+feet above the Potomac River and marvel at truly
+breathtaking views. With 42 climate-controlled
+gondolas, The Capital Wheel is open all year long.
+Sights visible from The Capital Wheel include
+National Harbor, the Washington Monument, City of
+Alexandria, Masonic Temple, Georgetown and
+
+more throughout the DC-Maryland-Virginia region.
+                
+                `
+            },
+            {
+                day: 5,
+                title: "Washington DC to Niagara Falls (US Side) via Hershey",
+                description: `After breakfast, we check out of the hotel and drive towards Harrisburg, where we will
+visit the Hershey's Chocolate Factory (approximately 2.5 hours drive)
+Hershey is the largest manufacturer of chocolate in the world.
+Discover all things chocolatey and fun at Hershey's Chocolate
+World Attraction! Embark on a journey to learn and see how
+chocolate is made on a tour ride, and shop for one-of-a-kind
+souvenirs and gifts, and have a chocolate inspired adventure.
+After visit to Hershey Chocolate factory, we will drive to
+Niagara Falls, NY (5.5hrs Drive). <br /><br />
+Proceed to dinner before checking into the hotel. overnight at Niagara Hotel. (B, D)`
+            },
+            {
+                day: 6,
+                title: "Maid of the Mist & Cave of the Winds",
+                description: `After breakfast we will be walking to board the famous boat, “Maid of the mist”. This
+boat ride takes close and around the American and Horseshoe Falls.
+<br /><br />
+Later, proceed to The Cave of the Winds, which takes you
+closer to the waters of Niagara Falls than you thought
+possible. You will ride an elevator 175 feet (53 meters) deep
+into the Niagara Gorge. Then, clad in a bright yellow poncho
+and wearing the special footwear provided, you will walk
+over a series of wooden walkways to the famous "Hurricane
+Deck". As you stand at the railing, you are a mere 20 feet (6
+meters) from the billowing torrents of the Bridal Veil Falls.
+<br /><br />
+Free time at the Falls on your own. <br /><br />
+Walk to dinner, After dinner you can opt to walk to the falls to watch the Niagara
+Illumination. Walk back to hotel. Overnight in Niagara. (B, D)`
+            },
+            {
+                day: 7,
+                title: "Departure from Niagara ",
+                description: `After breakfast proceed to Buffalo airport for your flight to the next destination/home.`
+            },
+        ],
+        images: [
+            "/UGCImages/usa/eastern/1.png",
+            "/UGCImages/usa/eastern/2.png",
+            "/UGCImages/usa/eastern/3.png",
+            "/UGCImages/usa/eastern/4.png",
+        ],
+        sightseeingSpots: [
+            {
+                name: "Statue of Liberty",
+                description: "Iconic symbol of freedom and the United States",
+                image: "/UGCImages/usa/sightseeing/1.png"
+            },
+            {
+                name: "Washington Monument",
+                description: "Striking obelisk honoring George Washington",
+                image: "/UGCImages/usa/sightseeing/2.png"
+            },
+            {
+                name: "Harvard University",
+                description: "Prestigious Ivy League university in Cambridge",
+                image: "/UGCImages/usa/sightseeing/3.png"
+            }
+        ],
+        localFood: [
+            {
+                name: "New York Pizza",
+                description: "Iconic thin-crust pizza, a New York culinary institution",
+                image: "/UGCImages/usa/cuisine/1.png",
+                where: "Joe's Pizza, New York"
+            },
+            {
+                name: "Lobster Roll",
+                description: "New England specialty with fresh lobster meat",
+                image: "/UGCImages/usa/cuisine/2.png",
+                where: "Legal Sea Foods, Boston"
+            }
+        ],
+        culture: [
+            {
+                title: "Broadway Theater",
+                description: "World-class theatrical performances in New York City",
+                image: "/UGCImages/usa/culture/1.png"
+            },
+            {
+                title: "American History",
+                description: "Rich heritage preserved in museums and historic sites",
+                image: "/UGCImages/usa/culture/2.png"
+            },
+            {
+                title: "Urban Diversity",
+                description: "Experience America's melting pot of cultures",
+                image: "/UGCImages/usa/culture/3.png"
+            }
+        ],
+        additionalInfo: {
+            highlights: [
+                "Empire State Building observation deck",
+                "Statue of Liberty up-close",
+                "Washington DC monuments",
+                "Smithsonian museums",
+                "Boston's Freedom Trail",
+                "Harbor cruises"
+            ],
+            bestTimeToVisit: "April to June or September to October",
+            cuisine: [
+                "New York pizza",
+                "New England seafood",
+                "Washington DC international cuisine",
+                "Boston cream pie"
+            ],
+            accommodation: {
+                type: "4-star hotels",
+                amenities: [
+                    "Wi-Fi",
+                    "Breakfast",
+                    "Fitness center",
+                    "Central locations"
+                ]
+            },
+            transportation: {
+                type: "Train and private transport",
+                features: [
+                    "Airport transfers",
+                    "Intercity Amtrak trains",
+                    "City tour buses",
+                    "Walking tours"
+                ]
+            },
+            visaInfo: {
+                requirement: "B1/B2 tourist visa required",
+                duration: "4-6 weeks processing",
+                cost: "USD 160",
+                documents: [
+                    "Valid passport",
+                    "DS-160 confirmation",
+                    "Appointment confirmation",
+                    "2x2 inch photograph",
+                    "Financial documents"
+                ]
+            }
+        },
+        departureDates: [
+            { date: "17 Apr 2025", availability: "Available", price: 325999 },
+            { date: "1 May 2025", availability: "Available", price: 329999 },
+            { date: "15 May 2025", availability: "Available", price: 325999 },
+            { date: "29 May 2025", availability: "Available", price: 325999 },
+            { date: "12 Jun 2025", availability: "Available", price: 339999 },
+            { date: "19 Jun 2025", availability: "Available", price: 342999 },
+            { date: "17 Jul 2025", availability: "Available", price: 349999 },
+            { date: "14 Aug 2025", availability: "Available", price: 345999 },
+            { date: "18 Sep 2025", availability: "Available", price: 349999 },
+            { date: "16 Oct 2025", availability: "Available", price: 349999 },
+        ]
+    },
+    orlandoAddOn: {
+        id: "orlando-add-on",
+        packageName: "Amazing Orlando",
+        days: 4,
+        nights: 3,
+        amount: 70981,
+        dateStart: "23rd April 2025",
+        dateEnd: "26th October 2025",
+        description: `Experience the best of America's Orlando 4-day tour covering Orlando's iconic landmarks. This package includes a visit to the Statue of Liberty, the White House, the Smithsonian National 
+        Air and Space Museum, and the Golden Gate Bridge. America is a land of dreams and adventures, and this tour is designed to take you on a journey of discovery and excitement.`,
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Double Sharing",
+            arrivalDate: "Contact Us",
+            duration: "4D3N USA Fixed Departure",
+            costBasis: "Cost Based On 2 Adults"
+        },
+        hotelDetails: [
+            {
+                city: "Orlando",
+                hotel: "Wyndham Celebration area/ Courtyard by Marriott or similar",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Orlando",
+                hotel: "Wyndham Celebration area/ Courtyard by Marriott or similar",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Orlando",
+                hotel: "Wyndham Celebration area/ Courtyard by Marriott or similar",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Los Angeles",
+                hotel: "Four Points by Sheraton LAX airport or similar",
+                roomType: "Standard Room"
+            },
+            {
+                city: "San Francisco",
+                hotel: "CROWNE PLAZA Union city / Fremont MARRIOTT or similar",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Orlando",
+                hotel: "Wyndham Celebration area/ Courtyard by Marriott or similar",
+                roomType: "Standard Room"
+            }
+        ],
+        tourSummary: [
+            "Day 1: ARRIVE IN ORLANDO – CHECK-IN ",
+            "Day 2: WALT DISNEY WORLD/Orlando FL - MAGIC KINGDOM",
+            "Day 3: WALT DISNEY WORLD/ORLANDO FL - EPCOT CENTER",
+            "Day 4: DEPARTURE FROM ORLANDO",
+        ],
+        inclusions: [
+            "Arrival/Departure airport transfer.",
+            "3 night's accommodation with breakfast.",
+            "3 dinners @ Indian Restaurants (set menu)",
+            "Orlando Hotel",
+            "Wyndham Celebration area/ Courtyard by Marriott or similar",
+            "Entrance tickets to Magic Kingdom, & Epcot with transfers",
+        ],
+        exclusions: [
+            "International airfare",
+            "Cruise fare",
+            "Cruise port transfers",
+            "Meals except those indicated above.",
+            "Domestic air tickets & baggage charges",
+            "Porterage, tip to drivers and waiters",
+            "Personal expense of any nature like laundry, shopping, incidentals at hotels etc.",
+            "Any tours, transfers or event tickets are not mentioned in package inclusions.",
+            "Incidental Charges must be paid by clients.",
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrive at Orlando",
+                description: `Arrive into Orlando, you will be transferred to a hotel. Take some time to freshen up and
+then head for dinner. (B, D)
+Overnight in Orlando`
+            },
+            {
+                day: 2,
+                title: "Walt Disney World/Orlando FL - Magic Kingdom",
+                description: `
+               
+After breakfast wait for the hotel shuttle to take
+you to WALT DISNEY WORLD/Orlando FL -
+MAGIC KINGDOM <br /><br />
+The most magical place on Earth, concentrates
+all its beauty and splendor in one place: Main
+Street, USA in WALT DISNEY WORLD/Orlando FL -
+MAGIC KINGDOM. Town Square introduces itself
+as the grandiose appetizer to all Main Street. <br /><br />
+Enjoy a full day at Magic Kingdom. In the
+evening board the shuttle for transfer back to the hotel. Dinner at a restaurant.
+Overnight in Orlando (B, D)
+                `
+            },
+            {
+                day: 3,
+                title: "Walt Disney World/Orlando FL - Epcot Center",
+                description: `
+                After Breakfast, head to WALT DISNEY
+WORLD/ORLANDO FL - EPCOT CENTER where
+you can touch the future and travel the world
+with an amazing array of attractions and live
+performances. This is an area of 260 acres
+devoted to past achievements and the future of
+technology. World showcase offers a kind of
+permanent World Fair, with pavilions devoted to
+eleven countries. Transfer back to hotel via hotel
+shuttle. Walk to restaurant for dinner.
+Overnight in Orlando (B, D)
+`
+            },
+            {
+                day: 4,
+                title: "DEPARTURE FROM ORLANDO",
+                description: `
+                
+                After breakfast check out of the hotel for transfer to airport for flight home or next
+destination.
+                `
+            },
+            
+        ],
+        images: [
+            "/UGCImages/usa/orlandoImages/4.png",
+            "/UGCImages/usa/orlandoImages/2.png",
+            "/UGCImages/usa/orlandoImages/5.png",
+            "/UGCImages/usa/orlandoImages/3.png",
+            "/UGCImages/usa/orlandoImages/1.png",
+        ],
+        sightseeingSpots: [
+            {
+                name: "Statue of Liberty",
+                description: "Iconic symbol of freedom and the United States",
+                image: "/UGCImages/usa/sightseeing/1.png"
+            },
+            {
+                name: "Washington Monument",
+                description: "Striking obelisk honoring George Washington",
+                image: "/UGCImages/usa/sightseeing/2.png"
+            },
+            {
+                name: "Harvard University",
+                description: "Prestigious Ivy League university in Cambridge",
+                image: "/UGCImages/usa/sightseeing/3.png"
+            }
+        ],
+        localFood: [
+            {
+                name: "New York Pizza",
+                description: "Iconic thin-crust pizza, a New York culinary institution",
+                image: "/UGCImages/usa/cuisine/1.png",
+                where: "Joe's Pizza, New York"
+            },
+            {
+                name: "Lobster Roll",
+                description: "New England specialty with fresh lobster meat",
+                image: "/UGCImages/usa/cuisine/2.png",
+                where: "Legal Sea Foods, Boston"
+            }
+        ],
+        culture: [
+            {
+                title: "Broadway Theater",
+                description: "World-class theatrical performances in New York City",
+                image: "/UGCImages/usa/culture/1.png"
+            },
+            {
+                title: "American History",
+                description: "Rich heritage preserved in museums and historic sites",
+                image: "/UGCImages/usa/culture/2.png"
+            },
+            {
+                title: "Urban Diversity",
+                description: "Experience America's melting pot of cultures",
+                image: "/UGCImages/usa/culture/3.png"
+            }
+        ],
+        additionalInfo: {
+            highlights: [
+                "Empire State Building observation deck",
+                "Statue of Liberty up-close",
+                "Washington DC monuments",
+                "Smithsonian museums",
+                "Boston's Freedom Trail",
+                "Harbor cruises"
+            ],
+            bestTimeToVisit: "April to June or September to October",
+            cuisine: [
+                "New York pizza",
+                "New England seafood",
+                "Washington DC international cuisine",
+                "Boston cream pie"
+            ],
+            accommodation: {
+                type: "4-star hotels",
+                amenities: [
+                    "Wi-Fi",
+                    "Breakfast",
+                    "Fitness center",
+                    "Central locations"
+                ]
+            },
+            transportation: {
+                type: "Train and private transport",
+                features: [
+                    "Airport transfers",
+                    "Intercity Amtrak trains",
+                    "City tour buses",
+                    "Walking tours"
+                ]
+            },
+            visaInfo: {
+                requirement: "B1/B2 tourist visa required",
+                duration: "4-6 weeks processing",
+                cost: "USD 160",
+                documents: [
+                    "Valid passport",
+                    "DS-160 confirmation",
+                    "Appointment confirmation",
+                    "2x2 inch photograph",
+                    "Financial documents"
+                ]
+            }
+        },
+        departureDates: [
+            { date: "23 Apr 2025", availability: "Available", price: 325999 },
+            { date: "30 Apr 2025", availability: "Available", price: 325999 },
+            { date: "7 May 2025", availability: "Available", price: 329999 },
+            { date: "21 May 2025", availability: "Available", price: 325999 },
+            { date: "4 Jun 2025", availability: "Available", price: 339999 },
+            { date: "18 Jun 2025", availability: "Available", price: 339999 },
+            { date: "25 Jun 2025", availability: "Available", price: 342999 },
+            { date: "23 Jul 2025", availability: "Available", price: 349999 },
+            { date: "20 Aug 2025", availability: "Available", price: 345999 },
+            { date: "24 Sep 2025", availability: "Available", price: 349999 },
+            { date: "22 Oct 2025", availability: "Available", price: 349999 },
+        ]
+    },
+    westenWonderer: {
+        id: "westen-wonderer",
+        packageName: "Western Wonderer",
+        days: 7,
+        nights: 6,
+        amount: 150140,
+        dateStart: "23 April 2025",
+        dateEnd: "22 October 2025",
+        description: `Experience the best of America's West Coast with our 7-day tour covering San Francisco, Los Angeles, and Las Vegas's iconic landmarks. This package includes a visit to the Statue of Liberty, the White House, the Smithsonian National 
+        Air and Space Museum, and the Golden Gate Bridge. America is a land of dreams and adventures, and this tour is designed to take you on a journey of discovery and excitement.`,
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Double Sharing",
+            arrivalDate: "Contact Us",
+            duration: "7D6N USA Fixed Departure",
+            costBasis: "Cost Based On 2 Adults"
+        },
+        hotelDetails: [
+            {
+                city: "New York",
+                hotel: "Springhill suites Manhattan/ Doubletree by Hilton or similar",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Washington ",
+                hotel: "Springhill Suites Gaithersburg/Wyndham College Park or similar",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Niagara",
+                hotel: "Wyndham Garden Niagara Falls/Holiday Inn or similar",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Las Vegas",
+                hotel: "LUXOR / EXCALIBUR or similar",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Los Angeles",
+                hotel: "Four Points by Sheraton LAX airport or similar",
+                roomType: "Standard Room"
+            },
+            {
+                city: "San Francisco",
+                hotel: "CROWNE PLAZA Union city / Fremont MARRIOTT or similar",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Orlando",
+                hotel: "Wyndham Celebration area/ Courtyard by Marriott or similar",
+                roomType: "Standard Room"
+            }
+        ],
+        tourSummary: [
+            "Day 1: ARRIVE AT LAS VEGAS",
+            "Day 2: DAY AT LEISURE",
+            "Day 3: LAS VEGAS TO LOS ANGELES",
+            "Day 4: UNIVERSAL STUDIOS",
+            "Day 5: LOS ANGELES –TO SAN FRANCISCO VIA MONTEREY",
+            "Day 6: SAN FRANCISCO CITY TOUR WITH BAY CRUISE",
+            "Day 7: DEPARTURE FROM SAN FRANCISCO",
+        ],
+        inclusions: [
+            "Arrival / Departure airport transfer.",
+            "6 night's accommodation with breakfast",
+            "6 dinners @ Indian Restaurants (set menu)",
+            "Las Vegas Hotel",
+            "LUXOR / EXCALIBUR or similar (Breakfast @ Indian Restaurant or gift card)- Resort fee included.",
+            "Los Angeles Hotel",
+            "Holiday Inn / Four-point LAX airport or similar",
+            "San Francisco Hotel",
+            "CROWNE PLAZA Union city or similar",
+            "City tour: Las Vegas, Los Angeles & San Francisco",
+            "Entrance Tickets: Universal Studios, 17 miles, Golden gate Bay cruise.",
+        ],
+        exclusions: [
+            "International airfare",
+            "Meals except those indicated above.",
+            "Domestic air tickets & baggage charges.",
+            "Porterage, tips to drivers and waiters.",
+            "Personal expenses of any nature like laundry, shopping, incidentals at hotels etc.",
+            "Any tours, transfers or event tickets are not mentioned in the package inclusions.",
+            "Incidental Charges must be paid by clients.",
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrive at Las Vegas",
+                description: `Arrive in Las Vegas - 'The Sin City', as it is often called. You will
+be met by the driver at the airport and transferred to a hotel.
+Arrival transfers will be between 11 am and 1 pm. Should you
+arrive after this time you can take a taxi to the hotel or please
+see the optional section for rates for transfers. <br /><br />
+We will proceed for a tour of Las Vegas Strip after dinner. You
+will get a view of Las Vegas glitz and glamour. We will visit the famous “Welcome to
+Fabulous Las Vegas” sign for a Photo op and stop by the famous dancing fountains of
+Bellagio. <br /><br />
+Next on the list of will be Freemont Street, which will wow you with 12 million LEDs
+flashing under a four-block-long canopy, complete with zip liners flying overhead. You will
+see the gleaming exteriors of the Venetian, Caesars Palace, Mandalay Bay, Mirage,
+Aria, Wynn and Paris Las Vegas. <br /><br />
+Transfer back to hotel, overnight in Las Vegas (D)`
+            },
+            {
+                day: 2,
+                title: "Day at Leisure",
+                description: `
+                The day is at leisure for you to spend how you wish.
+Explore the entertainment capital of the world by
+visiting the many casinos or strolling along the strip
+shopping at the many designer shops. <br /><br />
+You can also take optional tours to the Grand
+Canyon West Rim, which is about 4 hours away, or
+Red Rock Canyon which is less than an hour away
+from Las Vegas. Please refer to the optional tours
+section for tour descriptions and pricing. <br /><br />
+
+In the evening, you can opt to see one of the Vegas signatures shows, either V – The
+Ultimate Show or 'O' Show. Refer to the optional tours section for pricing. <br /><br />
+                `
+            },
+            {
+                day: 3,
+                title: "New York to Washington",
+                description: `After breakfast, we check out of the hotel and drive towards Washington DC
+(approximately 5-hour drive) <br /><br />
+On the way, the Philadelphia orientation city tour explores the highlights of the city. Visit
+all the must-see spots, like Independence Hall and the Liberty Bell Exhibit, the South 9th
+Street Italian Market, Philadelphia City Hall, Love Park, the Rocky steps at the entrance
+to the Philadelphia Museum of Art and much more. <br /><br />
+
+Proceed to Washington DC, On arrival proceed to dinner before checking into the
+hotel. (B, D)
+`
+            },
+            {
+                day: 4,
+                title: "Washington DC Guided City Tour & Visit Smithsonian National Air and Space Museum",
+                description: `
+                After breakfast, Proceed to Guided city tour of the
+capital of USA. you will be met by an experienced
+tour guide for a 3-hour guided city tour. Washington
+DC is the capital city of the United States of America.
+It is a city of monuments, memorials, historic
+neighborhoods, and museums. We will take photo
+stops at the White House, the home of the President of
+
+the USA. <br /><br />
+
+After the city tour, we will visit the Smithsonian Air and Space Museum. The Smithsonian
+National Air and Space Museum maintains the largest collection of historic air and
+spacecraft in the world. The museum features 22 exhibition galleries, displaying
+hundreds of artifacts including the original Wright 1903 Flyer, the "Spirit of St. Louis," and
+the Apollo 11 command module. The National Air and Space Museum is a must-see for
+visitors to Washington, DC. It is the most visited museum in the world and appeals to all
+ages. <br /><br />
+
+Proceed to experience The Capital Wheel - Soar 180
+feet above the Potomac River and marvel at truly
+breathtaking views. With 42 climate-controlled
+gondolas, The Capital Wheel is open all year long.
+Sights visible from The Capital Wheel include
+National Harbor, the Washington Monument, City of
+Alexandria, Masonic Temple, Georgetown and
+
+more throughout the DC-Maryland-Virginia region.
+                
+                `
+            },
+            {
+                day: 5,
+                title: "Washington DC to Niagara Falls (US Side) via Hershey",
+                description: `After breakfast, we check out of the hotel and drive towards Harrisburg, where we will
+visit the Hershey's Chocolate Factory (approximately 2.5 hours drive)
+Hershey is the largest manufacturer of chocolate in the world.
+Discover all things chocolatey and fun at Hershey's Chocolate
+World Attraction! Embark on a journey to learn and see how
+chocolate is made on a tour ride, and shop for one-of-a-kind
+souvenirs and gifts, and have a chocolate inspired adventure.
+After visit to Hershey Chocolate factory, we will drive to
+Niagara Falls, NY (5.5hrs Drive). <br /><br />
+Proceed to dinner before checking into the hotel. overnight at Niagara Hotel. (B, D)`
+            },
+            {
+                day: 6,
+                title: "Maid of the Mist & Cave of the Winds",
+                description: `After breakfast we will be walking to board the famous boat, “Maid of the mist”. This
+boat ride takes close and around the American and Horseshoe Falls.
+<br /><br />
+Later, proceed to The Cave of the Winds, which takes you
+closer to the waters of Niagara Falls than you thought
+possible. You will ride an elevator 175 feet (53 meters) deep
+into the Niagara Gorge. Then, clad in a bright yellow poncho
+and wearing the special footwear provided, you will walk
+over a series of wooden walkways to the famous "Hurricane
+Deck". As you stand at the railing, you are a mere 20 feet (6
+meters) from the billowing torrents of the Bridal Veil Falls.
+<br /><br />
+Free time at the Falls on your own. <br /><br />
+Walk to dinner, After dinner you can opt to walk to the falls to watch the Niagara
+Illumination. Walk back to hotel. Overnight in Niagara. (B, D)`
+            },
+            {
+                day: 7,
+                title: "Departure from Niagara ",
+                description: `After breakfast proceed to Buffalo airport for your flight to the next destination/home.`
+            },
+        ],
+        images: [
+            "/UGCImages/usa/west/1.png",
+            "/UGCImages/usa/west/2.png",
+            "/UGCImages/usa/west/3.png",
+            "/UGCImages/usa/west/4.png",
+            "/UGCImages/usa/west/5.png",
+            "/UGCImages/usa/west/6.png",
+            "/UGCImages/usa/west/7.png",
+            "/UGCImages/usa/west/8.png",
+        ],
+        sightseeingSpots: [
+            {
+                name: "Statue of Liberty",
+                description: "Iconic symbol of freedom and the United States",
+                image: "/UGCImages/usa/sightseeing/1.png"
+            },
+            {
+                name: "Washington Monument",
+                description: "Striking obelisk honoring George Washington",
+                image: "/UGCImages/usa/sightseeing/2.png"
+            },
+            {
+                name: "Harvard University",
+                description: "Prestigious Ivy League university in Cambridge",
+                image: "/UGCImages/usa/sightseeing/3.png"
+            }
+        ],
+        localFood: [
+            {
+                name: "New York Pizza",
+                description: "Iconic thin-crust pizza, a New York culinary institution",
+                image: "/UGCImages/usa/cuisine/1.png",
+                where: "Joe's Pizza, New York"
+            },
+            {
+                name: "Lobster Roll",
+                description: "New England specialty with fresh lobster meat",
+                image: "/UGCImages/usa/cuisine/2.png",
+                where: "Legal Sea Foods, Boston"
+            }
+        ],
+        culture: [
+            {
+                title: "Broadway Theater",
+                description: "World-class theatrical performances in New York City",
+                image: "/UGCImages/usa/culture/1.png"
+            },
+            {
+                title: "American History",
+                description: "Rich heritage preserved in museums and historic sites",
+                image: "/UGCImages/usa/culture/2.png"
+            },
+            {
+                title: "Urban Diversity",
+                description: "Experience America's melting pot of cultures",
+                image: "/UGCImages/usa/culture/3.png"
+            }
+        ],
+        additionalInfo: {
+            highlights: [
+                "Empire State Building observation deck",
+                "Statue of Liberty up-close",
+                "Washington DC monuments",
+                "Smithsonian museums",
+                "Boston's Freedom Trail",
+                "Harbor cruises"
+            ],
+            bestTimeToVisit: "April to June or September to October",
+            cuisine: [
+                "New York pizza",
+                "New England seafood",
+                "Washington DC international cuisine",
+                "Boston cream pie"
+            ],
+            accommodation: {
+                type: "4-star hotels",
+                amenities: [
+                    "Wi-Fi",
+                    "Breakfast",
+                    "Fitness center",
+                    "Central locations"
+                ]
+            },
+            transportation: {
+                type: "Train and private transport",
+                features: [
+                    "Airport transfers",
+                    "Intercity Amtrak trains",
+                    "City tour buses",
+                    "Walking tours"
+                ]
+            },
+            visaInfo: {
+                requirement: "B1/B2 tourist visa required",
+                duration: "4-6 weeks processing",
+                cost: "USD 160",
+                documents: [
+                    "Valid passport",
+                    "DS-160 confirmation",
+                    "Appointment confirmation",
+                    "2x2 inch photograph",
+                    "Financial documents"
+                ]
+            }
+        },
+        departureDates: [
+            { date: "23 Apr 2025", availability: "Available", price: 325999 },
+            { date: "7 May 2025", availability: "Available", price: 329999 },
+            { date: "21 May 2025", availability: "Available", price: 325999 },
+            { date: "4 Jun 2025", availability: "Available", price: 339999 },
+            { date: "18 Jun 2025", availability: "Available", price: 342999 },
+            { date: "25 Jun 2025", availability: "Available", price: 349999 },
+            { date: "23 Jul 2025", availability: "Available", price: 349999 },
+            { date: "20 Aug 2025", availability: "Available", price: 345999 },
+            { date: "24 Sep 2025", availability: "Available", price: 349999 },
+            { date: "22 Oct 2025", availability: "Available", price: 349999 },
+        ]
+    },
 }; 

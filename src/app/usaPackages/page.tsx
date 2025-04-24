@@ -199,7 +199,7 @@ export default function USAPackages() {
                     )}
 
                     <Link href={`/usaPackages/${pkg.id}`}>
-                        <Button className="w-full bg-gradient-to-r from-[#d10023] to-[#2a4bfd] hover:from-[#2a4bfd] hover:to-[#d10023] text-white transition-all duration-500">
+                        <Button className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all duration-500">
                             View Details
                         </Button>
                     </Link>
@@ -317,7 +317,7 @@ export default function USAPackages() {
             <div className="bg-gray-50 py-16">
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl font-bold text-center mb-12">
-                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#d10023] to-[#2a4bfd]">
+                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
                             Our USA Packages
                         </span>
                     </h2>
@@ -395,7 +395,7 @@ export default function USAPackages() {
                         className="max-w-7xl mx-auto"
                     >
                         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#d10023] to-[#2a4bfd]">
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
                                 Experience the Beauty of America
                             </span>
                         </h2>
@@ -433,7 +433,7 @@ export default function USAPackages() {
             {/* FAQ Section */}
             <div className="max-w-3xl mx-auto mt-16">
                 <h2 className="text-3xl font-bold text-center mb-8">
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#d10023] to-[#2a4bfd]">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
                         Frequently Asked Questions
                     </span>
                 </h2>
@@ -467,7 +467,7 @@ export default function USAPackages() {
             {/* Additional Information */}
             <div className="max-w-4xl mx-auto mt-16 prose prose-lg">
                 <h2 className="text-3xl font-bold text-center mb-8">
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#d10023] to-[#2a4bfd]">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
                         Discover America
                     </span>
                 </h2>

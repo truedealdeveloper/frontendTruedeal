@@ -135,7 +135,7 @@ export default function USAPackagePage({ params }: PageProps) {
                             
                             <Button
                                 onClick={() => setIsBookingModalOpen(true)}
-                                className="bg-gradient-to-r from-[#d10023] to-[#2a4bfd] hover:from-[#2a4bfd] hover:to-[#d10023] text-white px-6 py-3 md:px-8 md:py-6 text-lg rounded-lg shadow-lg transform transition hover:scale-105"
+                                className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white px-6 py-3 md:px-8 md:py-6 text-lg rounded-lg shadow-lg transform transition hover:scale-105"
                             >
                                 Book Now
                             </Button>
@@ -166,8 +166,8 @@ export default function USAPackagePage({ params }: PageProps) {
                                         onClick={() => scrollToSection(tab.ref, tab.id)}
                                         className={`px-4 py-2 text-sm md:text-base whitespace-nowrap border-b-2 transition-all duration-300 ${
                                             activeTab === tab.id
-                                                ? 'border-[#d10023] text-[#d10023] font-semibold'
-                                                : 'border-transparent text-gray-600 hover:text-[#d10023]'
+                                                ? 'border-[#017ae3] text-[#017ae3] font-semibold'
+                                                : 'border-transparent text-gray-600 hover:text-[#017ae3]'
                                         }`}
                                     >
                                         {tab.label}
@@ -186,7 +186,7 @@ export default function USAPackagePage({ params }: PageProps) {
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-8">
                         <div className="lg:col-span-2 space-y-4">
                             <div className="bg-white rounded-lg shadow-sm p-6">
-                                <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-[#d10023] border-b pb-4">
+                                <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-[#017ae3] border-b pb-4">
                                     About This Package
                                 </h2>
 
@@ -198,7 +198,7 @@ export default function USAPackagePage({ params }: PageProps) {
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                         {usaPkg.tourSummary?.map((day, index) => (
                                             <div key={index} className="flex gap-2">
-                                                <span className="text-[#d10023] font-medium whitespace-nowrap">Day {index + 1}:</span>
+                                                <span className="text-[#017ae3] font-medium whitespace-nowrap">Day {index + 1}:</span>
                                                 <span className="text-gray-600">{day.replace(/^Day \d+: /, '')}</span>
                                             </div>
                                         ))}
@@ -261,13 +261,13 @@ export default function USAPackagePage({ params }: PageProps) {
                                     {usaPkg.amount && (
                                         <>
                                             <p className="text-gray-500 line-through">₹{(usaPkg.amount * 1.2).toLocaleString('en-IN')}/-</p>
-                                            <p className="text-3xl font-bold text-[#d10023]">₹{usaPkg.amount.toLocaleString('en-IN')}/-</p>
+                                            <p className="text-3xl font-bold text-[#017ae3]">₹{usaPkg.amount.toLocaleString('en-IN')}/-</p>
                                         </>
                                     )}
-                                    <p className="text-sm text-gray-500">per person</p>
+                                    <p className="text-sm text-gray-500">per person based on double sharing</p>
                                 </div>
                                 <Button
-                                    className="w-full bg-gradient-to-r from-[#d10023] to-[#2a4bfd] hover:from-[#2a4bfd] hover:to-[#d10023] text-white font-bold py-3 rounded-lg transition-all duration-300"
+                                    className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white font-bold py-3 rounded-lg transition-all duration-300"
                                     onClick={() => setIsBookingModalOpen(true)}
                                 >
                                     Book Now
@@ -280,23 +280,23 @@ export default function USAPackagePage({ params }: PageProps) {
                 {/* Itinerary Section */}
                 <div ref={itineraryRef} className="scroll-mt-16 mt-8">
                     <div className="bg-white rounded-lg shadow-sm p-6">
-                        <h2 className="text-2xl font-bold mb-6 text-[#d10023] border-b pb-4">Detailed Itinerary</h2>
+                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">Detailed Itinerary</h2>
                         <div className="space-y-6">
                             {usaPkg.itinerary.map((day, index) => (
                                 <div key={index} className="group">
                                     <div
-                                        className="flex items-center gap-4 cursor-pointer bg-gradient-to-r from-[#d10023]/5 to-[#2a4bfd]/5 p-4 rounded-lg hover:from-[#d10023]/10 hover:to-[#2a4bfd]/10 transition-colors"
+                                        className="flex items-center gap-4 cursor-pointer bg-gradient-to-r from-[#017ae3]/5 to-[#00f6ff]/5 p-4 rounded-lg hover:from-[#017ae3]/10 hover:to-[#00f6ff]/10 transition-colors"
                                         onClick={() => setOpenDay(openDay === index ? null : index)}
                                     >
                                         <div className="flex-shrink-0 w-24">
-                                            <div className="text-sm text-[#d10023]">Day {day.day}</div>
+                                            <div className="text-sm text-[#017ae3]">Day {day.day}</div>
                                         </div>
                                         <div className="flex-grow">
                                             <h3 className="text-lg font-semibold text-gray-800">{day.title}</h3>
                                         </div>
                                         <div className="flex-shrink-0">
                                             <svg
-                                                className={`w-6 h-6 text-[#d10023] transform transition-transform duration-300 ${openDay === index ? 'rotate-180' : ''}`}
+                                                className={`w-6 h-6 text-[#017ae3] transform transition-transform duration-300 ${openDay === index ? 'rotate-180' : ''}`}
                                                 fill="none"
                                                 stroke="currentColor"
                                                 viewBox="0 0 24 24"
@@ -331,7 +331,7 @@ export default function USAPackagePage({ params }: PageProps) {
                 {/* Inclusions Section */}
                 <div ref={inclusionsRef} className="scroll-mt-16 mt-8">
                     <div className="bg-white rounded-lg shadow-sm p-6">
-                        <h2 className="text-2xl font-bold mb-6 text-[#d10023] border-b pb-4">Tour Inclusions</h2>
+                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">Tour Inclusions</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {usaPkg.inclusions?.map((item, index) => (
                                 <div key={index} className="flex items-start gap-2 bg-gray-50 p-4 rounded-lg">
@@ -346,7 +346,7 @@ export default function USAPackagePage({ params }: PageProps) {
                 {/* Exclusions Section */}
                 <div ref={exclusionsRef} className="scroll-mt-16 mt-8">
                     <div className="bg-white rounded-lg shadow-sm p-6">
-                        <h2 className="text-2xl font-bold mb-6 text-[#d10023] border-b pb-4">Exclusions</h2>
+                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">Exclusions</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {usaPkg.exclusions?.map((item, index) => (
                                 <div key={index} className="flex items-start gap-2 bg-gray-50 p-4 rounded-lg">
@@ -361,7 +361,7 @@ export default function USAPackagePage({ params }: PageProps) {
                 {/* Other Information Section */}
                 <div ref={otherRef} className="scroll-mt-16 mt-8">
                     <div className="bg-white rounded-lg shadow-sm p-6">
-                        <h2 className="text-2xl font-bold mb-6 text-[#d10023] border-b pb-4">Other Information</h2>
+                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">Other Information</h2>
                         {usaPkg.additionalInfo && (
                             <div className="space-y-6">
                                 {/* Highlights */}
@@ -415,7 +415,7 @@ export default function USAPackagePage({ params }: PageProps) {
                 {/* Sightseeing Activities Section */}
                 <div className="mt-8">
                     <div className="bg-white rounded-lg shadow-sm p-6">
-                        <h2 className="text-2xl font-bold mb-6 text-[#d10023] border-b pb-4">Popular Sightseeing Spots</h2>
+                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">Popular Sightseeing Spots</h2>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {usaPkg.sightseeingSpots?.map((spot, index) => (
                                 <div key={index} className="group relative overflow-hidden rounded-lg">
@@ -441,7 +441,7 @@ export default function USAPackagePage({ params }: PageProps) {
                 {/* Local Food & Restaurants Section */}
                 <div className="mt-8">
                     <div className="bg-white rounded-lg shadow-sm p-6">
-                        <h2 className="text-2xl font-bold mb-6 text-[#d10023] border-b pb-4">Famous Local Cuisine</h2>
+                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">Famous Local Cuisine</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {usaPkg.localFood?.map((food, index) => (
                                 <div key={index} className="flex gap-4 items-center bg-gray-50 rounded-lg p-4">
@@ -456,7 +456,7 @@ export default function USAPackagePage({ params }: PageProps) {
                                         <h3 className="text-lg font-semibold mb-2">{food.name}</h3>
                                         <p className="text-gray-600 text-sm">{food.description}</p>
                                         {food.where && (
-                                            <p className="text-sm text-[#d10023] mt-2">
+                                            <p className="text-sm text-[#017ae3] mt-2">
                                                 <IoLocationSharp className="inline mr-1" />
                                                 {food.where}
                                             </p>
@@ -471,7 +471,7 @@ export default function USAPackagePage({ params }: PageProps) {
                 {/* Culture & Traditions Section */}
                 <div className="mt-8">
                     <div className="bg-white rounded-lg shadow-sm p-6">
-                        <h2 className="text-2xl font-bold mb-6 text-[#d10023] border-b pb-4">American Culture & Traditions</h2>
+                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">American Culture & Traditions</h2>
                         <div 
                             ref={cultureScrollRef}
                             className="overflow-x-hidden relative"
@@ -523,7 +523,7 @@ export default function USAPackagePage({ params }: PageProps) {
                     >
                         <Button
                             onClick={() => setIsBookingModalOpen(true)}
-                            className="bg-gradient-to-r from-[#d10023] to-[#2a4bfd] text-white px-6 py-3 rounded-full shadow-lg"
+                            className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-6 py-3 rounded-full shadow-lg"
                         >
                             Book Now
                         </Button>
