@@ -91,7 +91,7 @@ export const usaPackages: Record<string, USAPackage> = {
         days: 16,
         nights: 15,
         amount: 325201,
-        dateStart: "15 April 2025",
+        dateStart: "15 May 2025",
         dateEnd: "16 October 2025",
         description: `Experience the best of America's East Coast with our 10-day tour covering New York, Washington DC, and Boston's iconic landmarks. This package includes a visit to the Statue of Liberty, the White House, the Smithsonian National 
         Air and Space Museum, and the Golden Gate Bridge. America is a land of dreams and adventures, and this tour is designed to take you on a journey of discovery and excitement.`,
@@ -553,7 +553,7 @@ Evening dinner at the restaurant and overnight in Orlando (B, D)
                 "Boston's Freedom Trail",
                 "Harbor cruises"
             ],
-            bestTimeToVisit: "April to June or September to October",
+            bestTimeToVisit: "May to June or September to October",
             cuisine: [
                 "New York pizza",
                 "New England seafood",
@@ -610,8 +610,8 @@ Evening dinner at the restaurant and overnight in Orlando (B, D)
         days: 7,
         nights: 6,
         amount: 175407,
-        dateStart: "17 April 2025",
-        dateEnd: "23 April 2025",
+        dateStart: "17 May 2025",
+        dateEnd: "23 May 2025",
         description: `Experience the best of America's East Coast with our 7-day tour covering New York, Washington DC, and Boston's iconic landmarks. This package includes a visit to the Statue of Liberty, the White House, the Smithsonian National 
         Air and Space Museum, and the Golden Gate Bridge. America is a land of dreams and adventures, and this tour is designed to take you on a journey of discovery and excitement.`,
         groupDetails: {
@@ -894,7 +894,7 @@ Illumination. Walk back to hotel. Overnight in Niagara. (B, D)`
                 "Boston's Freedom Trail",
                 "Harbor cruises"
             ],
-            bestTimeToVisit: "April to June or September to October",
+            bestTimeToVisit: "May to June or September to October",
             cuisine: [
                 "New York pizza",
                 "New England seafood",
@@ -951,7 +951,7 @@ Illumination. Walk back to hotel. Overnight in Niagara. (B, D)`
         days: 4,
         nights: 3,
         amount: 70981,
-        dateStart: "23rd April 2025",
+        dateStart: "23rd May 2025",
         dateEnd: "26th October 2025",
         description: `Experience the best of America's Orlando 4-day tour covering Orlando's iconic landmarks. This package includes a visit to the Statue of Liberty, the White House, the Smithsonian National 
         Air and Space Museum, and the Golden Gate Bridge. America is a land of dreams and adventures, and this tour is designed to take you on a journey of discovery and excitement.`,
@@ -1137,7 +1137,7 @@ destination.
                 "Boston's Freedom Trail",
                 "Harbor cruises"
             ],
-            bestTimeToVisit: "April to June or September to October",
+            bestTimeToVisit: "May to June or September to October",
             cuisine: [
                 "New York pizza",
                 "New England seafood",
@@ -1195,7 +1195,7 @@ destination.
         days: 7,
         nights: 6,
         amount: 150140,
-        dateStart: "23 April 2025",
+        dateStart: "23 May 2025",
         dateEnd: "22 October 2025",
         description: `Experience the best of America's West Coast with our 7-day tour covering San Francisco, Los Angeles, and Las Vegas's iconic landmarks. This package includes a visit to the Statue of Liberty, the White House, the Smithsonian National 
         Air and Space Museum, and the Golden Gate Bridge. America is a land of dreams and adventures, and this tour is designed to take you on a journey of discovery and excitement.`,
@@ -1465,7 +1465,7 @@ Illumination. Walk back to hotel. Overnight in Niagara. (B, D)`
                 "Boston's Freedom Trail",
                 "Harbor cruises"
             ],
-            bestTimeToVisit: "April to June or September to October",
+            bestTimeToVisit: "May to June or September to October",
             cuisine: [
                 "New York pizza",
                 "New England seafood",

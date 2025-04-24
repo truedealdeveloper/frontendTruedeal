@@ -91,8 +91,8 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
         days: 6,
         nights: 5,
         amount: 59500,
-        dateStart: "02 March 2025",
-        dateEnd: "29 Jun 2025",
+        dateStart: "02 May 2025",
+        dateEnd: "29 June 2025",
         description: "Explore the highlights of Cambodia with our 6-day tour.",
         groupDetails: {
             pax: "Group Tour",
@@ -285,7 +285,7 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
                 "Water sports activities package",
                 "Scenic Tegalalang Rice Terraces"
             ],
-            bestTimeToVisit: "April to October (Dry Season)",
+            bestTimeToVisit: "May to October (Dry Season)",
             cuisine: [
                 "Traditional vietnamnese dishes",
                 "Fresh seafood specialties",
@@ -336,7 +336,7 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
         days: 14,
         nights: 13,
         amount: 140000,
-        dateStart: "07 March 2025",
+        dateStart: "07 May 2025",
         dateEnd: "27 June 2025",
         description: "Explore the highlights of Vietnam and Cambodia with our comprehensive 14-day tour.",
         groupDetails: {
@@ -640,7 +640,7 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
                 "Water sports activities package",
                 "Scenic Tegalalang Rice Terraces"
             ],
-            bestTimeToVisit: "April to October (Dry Season)",
+            bestTimeToVisit: "May to October (Dry Season)",
             cuisine: [
                 "Traditional vietnamnese dishes",
                 "Fresh seafood specialties",
@@ -691,7 +691,7 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
         days: 6,
         nights: 5,
         amount: 56000,
-        dateStart: "02 March 2025",
+        dateStart: "02 May 2025",
         dateEnd: "27 June 2025",
         description: "Discover the charm and beauty of Laos with our 6-day tour through Luang Prabang and Vientiane.",
         groupDetails: {
@@ -886,7 +886,7 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
                 "Water sports activities package",
                 "Scenic Tegalalang Rice Terraces"
             ],
-            bestTimeToVisit: "April to October (Dry Season)",
+            bestTimeToVisit: "May to October (Dry Season)",
             cuisine: [
                 "Traditional vietnamnese dishes",
                 "Fresh seafood specialties",
@@ -937,7 +937,7 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
         days: 12,
         nights: 11,
         amount: 135300,
-        dateStart: "04 March 2025",
+        dateStart: "04 May 2025",
         dateEnd: "27 June 2025",
         description: "Experience the best of Laos and Vietnam with our comprehensive 12-day tour through Luang Prabang, Ha Noi, Ha Long Bay, and Hoi An.",
         groupDetails: {
@@ -1202,7 +1202,7 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
                 "Water sports activities package",
                 "Scenic Tegalalang Rice Terraces"
             ],
-            bestTimeToVisit: "April to October (Dry Season)",
+            bestTimeToVisit: "May to October (Dry Season)",
             cuisine: [
                 "Traditional vietnamnese dishes",
                 "Fresh seafood specialties",
@@ -1253,7 +1253,7 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
         days: 10,
         nights: 9,
         amount: 118000,
-        dateStart: "07 March 2025",
+        dateStart: "07 May 2025",
         dateEnd: "27 June 2025",
         description: "Experience the diverse beauty of Indochina with our 10-day journey through Vietnam, Cambodia, and Laos.",
         groupDetails: {
@@ -1488,7 +1488,7 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
                 "Water sports activities package",
                 "Scenic Tegalalang Rice Terraces"
             ],
-            bestTimeToVisit: "April to October (Dry Season)",
+            bestTimeToVisit: "May to October (Dry Season)",
             cuisine: [
                 "Traditional vietnamnese dishes",
                 "Fresh seafood specialties",
@@ -1539,7 +1539,7 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
         days: 11,
         nights: 10,
         amount: 123000, 
-        dateStart: "04 March 2025",
+        dateStart: "04 May 2025",
         dateEnd: "27 June 2025",
         description: "Experience the diverse beauty of Indochina with our 11-day journey through Vietnam and Thailand.",
         groupDetails: {
@@ -1809,7 +1809,7 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
                 "Water sports activities package",
                 "Scenic Tegalalang Rice Terraces"
             ],
-            bestTimeToVisit: "April to October (Dry Season)",
+            bestTimeToVisit: "May to October (Dry Season)",
             cuisine: [
                 "Traditional vietnamnese dishes",
                 "Fresh seafood specialties",
@@ -1860,7 +1860,7 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
         days: 21,
         nights: 20,
         amount: 268700,
-        dateStart: "07 March 2025",
+        dateStart: "07 May 2025",
         dateEnd: "27 June 2025",
         description: "Experience the ultimate Indochina journey with our comprehensive 21-day tour through Thailand, Laos, Vietnam, and Cambodia.",
         groupDetails: {

@@ -91,8 +91,8 @@ export const almatyPackages: Record<string, AlmatyPackage> = {
         days: 5,
         nights: 4,
         amount: 59000,
-        dateStart: "01 March 2025",
-        dateEnd: "26 July 2025",
+        dateStart: "01 May 2025",
+        dateEnd: "05 October 2025",
         description: "Explore the highlights of Almaty with our 5-day tour covering the city's most iconic locations, natural wonders, and cultural sites.",
         groupDetails: {
             pax: "Group Tour",
@@ -217,8 +217,8 @@ export const almatyPackages: Record<string, AlmatyPackage> = {
         days: 4,
         nights: 3,
         amount: 49000,
-        dateStart: "01 March 2025",
-        dateEnd: "26 July 2025",
+        dateStart: "01 May 2025",
+        dateEnd: "05 October 2025",
         description: "Explore the highlights of Almaty with our 4-day tour covering the city's most iconic locations, natural wonders, and cultural sites.",
         groupDetails: {
             pax: "Group Tour",
@@ -337,8 +337,8 @@ export const almatyPackages: Record<string, AlmatyPackage> = {
         days: 6,
         nights: 5,
         amount: 69000,
-        dateStart: "01 March 2025",
-        dateEnd: "26 July 2025",
+        dateStart: "01 May 2025",
+        dateEnd: "05 October 2025",
         description: "Explore the highlights of Almaty with our 6-day tour covering the city's most iconic locations, natural wonders, and cultural sites.",
         groupDetails: {
             pax: "Group Tour",

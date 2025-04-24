@@ -51,7 +51,7 @@ export const testimonials = [
         avatar: "/IMAGES/Baku/1/1.webp",
         fullReview: "I've been coordinating travel for our entire marketing team, and this service has made my job so much easier. The booking process is incredibly streamlined, and their customer support is always ready to help. It's refreshing to work with a company that truly understands the needs of business travelers.",
         destination: "London",
-        travelDate: "April 2024",
+        travelDate: "May 2024",
         images: [
             "/IMAGES/Baku/1/1.webp",
             "/IMAGES/Baku/1/2.webp",
@@ -127,7 +127,7 @@ export const testimonials = [
         avatar: "/Assets/UserImages/rashid.jpg",
         fullReview: "I've been using this service for all my business trips, and I'm thoroughly impressed. The in-house operations ensure a seamless experience from start to finish. No third parties mean no unexpected surprises or hidden fees. Highly recommended for any business traveler!",
         destination: "Singapore",
-        travelDate: "March 2024",
+        travelDate: "May 2024",
         images: [
             "/Assets/ReviewImages/rashid1.jpg",
             "/Assets/ReviewImages/rashid2.jpg",
@@ -142,7 +142,7 @@ export const testimonials = [
         avatar: "/Assets/UserImages/rashid.jpg",
         fullReview: "I've been using this service for all my business trips, and I'm thoroughly impressed. The in-house operations ensure a seamless experience from start to finish. No third parties mean no unexpected surprises or hidden fees. Highly recommended for any business traveler!",
         destination: "Singapore",
-        travelDate: "March 2024",
+        travelDate: "May 2024",
         images: [
             "/Assets/ReviewImages/rashid1.jpg",
             "/Assets/ReviewImages/rashid2.jpg",
@@ -157,7 +157,7 @@ export const testimonials = [
         avatar: "/Assets/UserImages/rashid.jpg",
         fullReview: "I've been using this service for all my business trips, and I'm thoroughly impressed. The in-house operations ensure a seamless experience from start to finish. No third parties mean no unexpected surprises or hidden fees. Highly recommended for any business traveler!",
         destination: "Singapore",
-        travelDate: "March 2024",
+        travelDate: "May 2025",
         images: [
             "/Assets/ReviewImages/rashid1.jpg",
             "/Assets/ReviewImages/rashid2.jpg",

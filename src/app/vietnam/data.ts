@@ -91,7 +91,7 @@ export const vietnamPackages: Record<string, vietnamPackage> = {
         days: 4,
         nights: 3,
         amount: 30799,
-        dateStart: "01 March 2025",
+        dateStart: "01 May 2025",
         dateEnd: "26 Jun 2025",
         description: "Explore the highlights of Vietnam's south with our 4-day tour covering Ho Chi Minh City, Mekong Delta, and Cu Chi Tunnels. From bustling markets to historical sites, this tour offers a perfect blend of culture, adventure, and relaxation.",
         groupDetails: {
@@ -286,7 +286,7 @@ your departure flight.`
                 "Ben Tre Coconut Village",
                 "Ho Chi Minh City Tour",
             ],
-            bestTimeToVisit: "April to October (Dry Season)",
+            bestTimeToVisit: "May to October (Dry Season)",
             cuisine: [
                 "Traditional vietnamnese dishes",
                 "Fresh seafood specialties",
@@ -337,7 +337,7 @@ your departure flight.`
         days: 4,
         nights: 3,
         amount: 39000,
-        dateStart: "01 March 2025",
+        dateStart: "01 May 2025",
         dateEnd: "30 Jun 2025",
         description: "Experience the Phu Quoc Island with our 4-day tour covering Phu Quoc Island. From pristine beaches to cultural landmarks, this tour offers a perfect blend of relaxation, adventure, and urban exploration.",
         groupDetails: {
@@ -508,7 +508,7 @@ your departure flight.`
                 "Ham Ninh Fishing Village",
                 "Phu Quoc Pepper Farm Visit",
             ],
-            bestTimeToVisit: "April to October (Dry Season)",
+            bestTimeToVisit: "May to October (Dry Season)",
             cuisine: [
                 "Traditional vietnamnese dishes",
                 "Fresh seafood specialties",
@@ -560,7 +560,7 @@ your departure flight.`
         days: 5,
         nights: 4,
         amount: 39000,
-        dateStart: "01 March 2025",
+        dateStart: "01 May 2025",
         dateEnd: "27 Jun 2025",
         description: "Discover the highlights of Vietnam's north with our 5-day tour covering Hanoi, Halong Bay. From ancient temples to stunning landscapes, this tour offers a perfect blend of culture, adventure, and relaxation.",
         groupDetails: {
@@ -750,7 +750,7 @@ your departure flight.`
                 "Temple of Literature Visit",
                 "Traditional Water Puppet Show",
             ],
-            bestTimeToVisit: "April to October (Dry Season)",
+            bestTimeToVisit: "May to October (Dry Season)",
             cuisine: [
                 "Traditional vietnamnese dishes",
                 "Fresh seafood specialties",
@@ -801,7 +801,7 @@ your departure flight.`
         days: 5,
         nights: 4,
         amount: 32900,
-        dateStart: "01 March 2025",
+        dateStart: "01 May 2025",
         dateEnd: "30 Jun 2025",
         description: "Discover the highlights of Vietnam's central with our 5-day tour covering Hoi An, Danang, Hue, and Ho Chi Minh City. From ancient temples to stunning landscapes, this tour offers a perfect blend of culture, adventure, and relaxation.",
         groupDetails: {
@@ -993,7 +993,7 @@ your departure flight.`
                 "My Son Sanctuary UNESCO Site",
                 "Tra Que Vegetable Village",
             ],
-            bestTimeToVisit: "April to October (Dry Season)",
+            bestTimeToVisit: "May to October (Dry Season)",
             cuisine: [
                 "Traditional vietnamnese dishes",
                 "Fresh seafood specialties",
@@ -1045,7 +1045,7 @@ your departure flight.`
         days: 7,
         nights: 6,
         amount: 69000,
-        dateStart: "01 March 2025",
+        dateStart: "01 May 2025",
         dateEnd: "28 Jun 2025",
         description: "Discover the highlights of Vietnam's central region, from the ancient capital of Hue to the charming Hoi An, with visits to historical sites, natural wonders, and culinary delights.",
         groupDetails: {
@@ -1265,7 +1265,7 @@ your departure flight.`
                 "Vinh Moc Tunnels Visit",
                 "Perfume River Boat Trip",
             ],
-            bestTimeToVisit: "April to October (Dry Season)",
+            bestTimeToVisit: "May to October (Dry Season)",
             cuisine: [
                 "Traditional vietnamnese dishes",
                 "Fresh seafood specialties",
@@ -1316,7 +1316,7 @@ your departure flight.`
         days: 7,
         nights: 6,
         amount: 69500,
-        dateStart: "01 March 2025",
+        dateStart: "01 May 2025",
         dateEnd: "28 Jun 2025",
         description: "Discover the highlights of Vietnam's central region, from the ancient capital of Hue to the charming Hoi An, with visits to historical sites, natural wonders, and culinary delights.",
         groupDetails: {
@@ -1528,7 +1528,7 @@ In the afternoon, transfer to Da Nang airport to go to Ho Chi Minh City. Upon ar
                 "Hoi An Cooking Class",
                 "Marble Mountains Visit",
             ],
-            bestTimeToVisit: "April to October (Dry Season)",
+            bestTimeToVisit: "May to October (Dry Season)",
             cuisine: [
                 "Traditional vietnamnese dishes",
                 "Fresh seafood specialties",
@@ -1579,7 +1579,7 @@ In the afternoon, transfer to Da Nang airport to go to Ho Chi Minh City. Upon ar
         days: 8,
         nights: 7,
         amount: 65500,
-        dateStart: "01 March 2025",
+        dateStart: "01 May 2025",
         dateEnd: "27 Jun 2025",
         description: "Discover the highlights of Vietnam's central region, from the ancient capital of Hue to the charming Hoi An, with visits to historical sites, natural wonders, and culinary delights.",
         groupDetails: {
@@ -1805,7 +1805,7 @@ In the afternoon, transfer to Da Nang airport to go to Ho Chi Minh City. Upon ar
                 "Temple of Literature Visit",
                 "Traditional Water Puppet Show",
             ],
-            bestTimeToVisit: "April to October (Dry Season)",
+            bestTimeToVisit: "May to October (Dry Season)",
             cuisine: [
                 "Traditional vietnamnese dishes",
                 "Fresh seafood specialties",
@@ -1856,7 +1856,7 @@ In the afternoon, transfer to Da Nang airport to go to Ho Chi Minh City. Upon ar
         days: 10,
         nights: 9,
         amount: 105000,
-        dateStart: "01 March 2025",
+        dateStart: "01 May 2025",
         dateEnd: "27 Jun 2025",
         description: "Discover the highlights of Vietnam's central region, from the ancient capital of Hue to the charming Hoi An, with visits to historical sites, natural wonders, and culinary delights.",
         groupDetails: {
@@ -2112,7 +2112,7 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
                 "Water sports activities package",
                 "Scenic Tegalalang Rice Terraces"
             ],
-            bestTimeToVisit: "April to October (Dry Season)",
+            bestTimeToVisit: "May to October (Dry Season)",
             cuisine: [
                 "Traditional vietnamnese dishes",
                 "Fresh seafood specialties",
@@ -2163,7 +2163,7 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
         days: 10,
         nights: 9,
         amount: 84000,
-        dateStart: "01 March 2025",
+        dateStart: "01 May 2025",
         dateEnd: "27 Jun 25",
         description: "Discover the highlights of Vietnam's central region, from the ancient capital of Hue to the charming Hoi An, with visits to historical sites, natural wonders, and culinary delights.",
         groupDetails: {
@@ -2414,7 +2414,7 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
                 "Water sports activities package",
                 "Scenic Tegalalang Rice Terraces"
             ],
-            bestTimeToVisit: "April to October (Dry Season)",
+            bestTimeToVisit: "May to October (Dry Season)",
             cuisine: [
                 "Traditional vietnamnese dishes",
                 "Fresh seafood specialties",
@@ -2465,7 +2465,7 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
         days: 11,
         nights: 10,
         amount: 107000,
-        dateStart: "01 March 2025",
+        dateStart: "01 May 2025",
         dateEnd: "27 Jun 25",
         description: "Discover the highlights of Vietnam's central region, from the ancient capital of Hue to the charming Hoi An, with visits to historical sites, natural wonders, and culinary delights.",
         groupDetails: {
@@ -2731,7 +2731,7 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
                 "Water sports activities package",
                 "Scenic Tegalalang Rice Terraces"
             ],
-            bestTimeToVisit: "April to October (Dry Season)",
+            bestTimeToVisit: "May to October (Dry Season)",
             cuisine: [
                 "Traditional vietnamnese dishes",
                 "Fresh seafood specialties",
@@ -2782,7 +2782,7 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
         days: 13,
         nights: 12,
         amount: 141000,
-        dateStart: "01 March 2025",
+        dateStart: "01 May 2025",
         dateEnd: "27 Jun 2025",
         description: "Enjoy the 13 days authentic Vietnam plus golden bridge tour with us. This tour covers the highlights of Vietnam, from the ancient capital of Hue to the charming Hoi An, with visits to historical sites, natural wonders, and culinary delights.",
         groupDetails: {
@@ -3041,7 +3041,7 @@ We will begin our evening with a dinner at a lovely local restaurant. After dinn
                 "Water sports activities package",
                 "Scenic Tegalalang Rice Terraces"
             ],
-            bestTimeToVisit: "April to October (Dry Season)",
+            bestTimeToVisit: "May to October (Dry Season)",
             cuisine: [
                 "Traditional vietnamnese dishes",
                 "Fresh seafood specialties",
@@ -3092,7 +3092,7 @@ We will begin our evening with a dinner at a lovely local restaurant. After dinn
         days: 13,
         nights: 12,
         amount: 280000,
-        dateStart: "01 March 2025",
+        dateStart: "01 May 2025",
         dateEnd: "27 Jun 2025",
         description: "Enjoy the 13 days golf trails in Vietnam. This premium golf tour combines world-class golf courses with cultural exploration across Vietnam's most beautiful destinations, from Ho Chi Minh City to Hanoi.",
         groupDetails: {
@@ -3394,7 +3394,7 @@ The next stop is Dam Market - Nha Trang's oldest and largest market. The final l
                 "Custom tailoring experience in Hoi An",
                 "Luxury accommodations throughout the journey"
             ],
-            bestTimeToVisit: "October to April (Dry Season)",
+            bestTimeToVisit: "October to May (Dry Season)",
             cuisine: [
                 "Regional Vietnamese specialties",
                 "Fresh seafood along coastal destinations",

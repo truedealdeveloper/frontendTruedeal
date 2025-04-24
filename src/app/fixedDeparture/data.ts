@@ -1208,14 +1208,14 @@ Bid farewell to an unforgettable Thailand experience
         days: 7,
         nights: 6,
         amount: 79999,
-        dateStart: "31 March 2025",
-        dateEnd: "6 April 2025",
+        dateStart: "31 May 2025",
+        dateEnd: "06 June 2025",
         flightFrom: "Delhi",
         description: "Experience the stunning beauty of Kazakhstan with our luxury Almaty tour package. From scenic mountain resorts to historical sites and natural wonders, this comprehensive tour offers the perfect blend of adventure, culture, and relaxation.",
         groupDetails: {
             pax: "Group Tour (13 adults)",
             rooms: "Double Sharing",
-            arrivalDate: "31st March 2025",
+            arrivalDate: "31 May 2025",
             duration: "6N7D Almaty",
             costBasis: "Cost Based On Double Sharing"
         },
@@ -1309,13 +1309,13 @@ Bid farewell to an unforgettable Thailand experience
         nights: 5,
         amount: 105000,
         flightFrom: "Delhi",
-        dateStart: "17 April 2025",
-        dateEnd: "22 April 2025",
+        dateStart: "17 May 2025",
+        dateEnd: "22 May 2025",
         description: `Enjoy the best of Russia with our fixed departure tour. From the Red Square to the Kremlin, this tour offers a comprehensive and all-inclusive experience of the country's highlights.`,
         groupDetails: {
             pax: "Group Tour Saint Petersburg - Moscow",
             rooms: "Double/Single Sharing Available",
-            arrivalDate: "17 April 2025",
+            arrivalDate: "17 May 2025",
             duration: "5N6D Russia",
             costBasis: "Double sharing basis"
         },
@@ -1331,7 +1331,7 @@ Bid farewell to an unforgettable Thailand experience
             {
                 city: "Saint Petersburg",
                 hotel: "Cosmos Saint-Petersburg Pribaltiyskaya Hotel, a member of Radisson Individuals 4*",
-                roomType: "Standard Room (Check In: 17 April / 22 May / 29 May / 26 June)"
+                roomType: "Standard Room (Check In: 17 May / 22 May / 29 May / 26 June)"
             },
             {
                 city: "Saint Petersburg",
@@ -1800,8 +1800,8 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         days: 7,
         nights: 6,
         amount: 99000,
-        dateStart: "25 April, 24 Oct",
-        dateEnd: "25 March, 25 Sep",
+        dateStart: "25 May, 24 Oct",
+        dateEnd: "25 May, 25 Sep",
         description: "Experience the best of Europe with our specially curated 6-night itinerary, covering iconic destinations across Italy, Switzerland, and France. Perfectly planned for travelers who seek an effortless, all-inclusive journey with fixed departures.",
         groupDetails: {
             pax: "Group Tour (10-40 pax)",
@@ -1990,12 +1990,12 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         nights: 4,
         amount: 35000,
         dateStart: "Mar 2025",
-        dateEnd: "April 2025",
+        dateEnd: "May 2025",
         description: "Experience the vibrant city of Dubai with our 4-night, 5-day all-inclusive tour package, carefully curated for an unforgettable adventure. Perfect for travelers seeking fixed departure convenience, this tour covers Dubai's iconic landmarks, desert adventures, and cultural experiences.",
         groupDetails: {
             pax: "Group Tour (20-30 pax)",
             rooms: "10-15 Rooms on Twin Sharing Basis",
-            arrivalDate: "Multiple dates in Mar 2025 / April 2025",
+            arrivalDate: "Multiple dates in Mar 2025 / May 2025",
             duration: "4N5D Dubai",
             costBasis: "Cost Based On Group Size (20-30 pax)"
         },
@@ -2178,12 +2178,12 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         nights: 3,
         amount: 20000,
         dateStart: "1 Mar 2025",
-        dateEnd: "1 April 2025",
+        dateEnd: "1 May 2025",
         description: "Embark on an unforgettable journey to Malaysia with our exclusive 4-day fixed departure package. Explore iconic landmarks, enjoy thrilling experiences, and immerse yourself in the vibrant culture of Kuala Lumpur and Genting Highlands.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Twin Sharing Basis",
-            arrivalDate: "Multiple dates between Mar-April 2025",
+            arrivalDate: "Multiple dates between Mar-May 2025",
             duration: "3N4D Kuala Lumpur & Genting",
             costBasis: "Cost Based On Double Sharing"
         },
@@ -2251,16 +2251,16 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
     southKorea: {
         id: "korea-7-days-discovery-tour",
         country: "South Korea",
-        days: 7,
+        days: 7,    
         nights: 6,
         amount: 90000,
-        dateStart: "Contact for dates",
-        dateEnd: "Contact for dates",
+        dateStart: "May 2025",
+        dateEnd: "June 2025",
         description: "Embark on a captivating journey through South Korea with this 7-day tour showcasing the perfect blend of history, culture, and modernity.",
         groupDetails: {
             pax: "2-6 Pax Groups",
             rooms: "Twin Sharing Basis",
-            arrivalDate: "Contact for available dates",
+            arrivalDate: "May 2025",
             duration: "6N7D South Korea",
             costBasis: "Cost Based On Group Size and Hotel Category"
         },
@@ -2360,7 +2360,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         groupDetails: {
             pax: "Group Tour",
             rooms: "Twin Sharing Basis",
-            arrivalDate: "Multiple dates: 23 Mar, 16 & 30 April, 6,13,20,27 May, 1,8,15,22 June, 20 July, 10 Aug",
+            arrivalDate: "Multiple dates: 23 Mar, 16 & 30 May, 6,13,20,27 May, 1,8,15,22 June, 20 July, 10 Aug",
             duration: "6N7D Bhutan",
             costBasis: "Cost Based On Double Sharing"
         },
@@ -2439,7 +2439,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
                 day: 5,
                 title: "Tiger's Nest Trek or Haa Valley",
                 description: `After breakfast excursion to Taktsang Monastery or Tiger&apos;s Nest (approx. 5 hours walk):
-It is one of the most famous of Bhutan&apos;s monasteries, perched on the side of a cliff 900m above the Paro valley floor. It is said that Guru Rinpoche arrived here on the back of a tigress and meditated at this monastery and hence it is called Tiger&apos;s Nest. This site has been recognised as a most sacred place and visited by Shabdrung Ngawang Namgyal in 1646 and now visited by all Bhutanese at least once in their lifetime. On 19 April, 1998, a fire severely damaged the main structure of building but now this Bhutanese jewel has been restored to its original splendour.
+It is one of the most famous of Bhutan&apos;s monasteries, perched on the side of a cliff 900m above the Paro valley floor. It is said that Guru Rinpoche arrived here on the back of a tigress and meditated at this monastery and hence it is called Tiger&apos;s Nest. This site has been recognised as a most sacred place and visited by Shabdrung Ngawang Namgyal in 1646 and now visited by all Bhutanese at least once in their lifetime. On 19 May, 1998, a fire severely damaged the main structure of building but now this Bhutanese jewel has been restored to its original splendour.
 Afternoon drive to Drukgyel Dzong, a ruined fortress where Bhutanese warriors fought Tibetan invaders centuries ago. The snowy dome of sacred Chomolhari, &quot;mountain of goddess&quot; can be seen in all her glory from the approach road to the Dzong.
 Evening, visit the 7th century Kyichu Lhakhang, one of the 108 temples built in the Himalayas by Tibetan King, Songtsen Gampo. The building of this temple marks the introduction of Buddhism in Bhutan.
 Overnight at the hotel in Paro.
@@ -2557,12 +2557,12 @@ Overnight at the hotel in Paro.
         nights: 5,
         amount: 19000,
         dateStart: "Multiple dates",
-        dateEnd: "March 2025",
+        dateEnd: "May 2025",
         description: "Experience the paradise on Earth with our comprehensive Kashmir tour package. From the stunning Dal Lake to the meadows of Gulmarg and Sonamarg, immerse yourself in Kashmir's breathtaking landscapes and rich culture.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Twin Sharing Basis",
-            arrivalDate: "Multiple dates available",
+            arrivalDate: "May 2025",
             duration: "5N6D Kashmir",
             costBasis: "Cost Based On Double Sharing"
         },
@@ -2661,7 +2661,7 @@ Overnight at the hotel in Paro.
         nights: 5,
         amount: 19999,
         dateStart: "Multiple dates",
-        dateEnd: "March 2025",
+        dateEnd: "May 2025",
         description: "Experience the magical charm of Kashmir with a blend of adventure, history, and breathtaking landscapes. From serene lakes to snow-capped peaks, every moment of this journey promises unforgettable memories.",
         groupDetails: {
             pax: "Group Tour",
@@ -2762,7 +2762,7 @@ Overnight at the hotel in Paro.
         nights: 4,
         amount: 9999,
         dateStart: "Multiple dates",
-        dateEnd: "March 2025",
+        dateEnd: "May 2025",
         description: "Experience the serene beauty of Manali with our perfectly curated 5-day Volvo package. From ancient temples to adventure activities in Solang Valley, this tour offers the perfect blend of relaxation and excitement.",
         groupDetails: {
             pax: "Group Tour",
@@ -3095,7 +3095,7 @@ Overnight in Basel
         days: 10,
         nights: 9,
         amount: 215600,
-        dateStart: "5 March 2025",
+        dateStart: "5 May 2025",
         dateEnd: "14 August 2025",
         description: "Experience the best of Kenya with our specially curated 10-night itinerary, covering iconic destinations across Kenya. Perfectly planned for travelers who seek an effortless, all-inclusive journey with fixed departures.",
         groupDetails: {
@@ -3220,7 +3220,7 @@ Overnight in Basel
         days: 5,
         nights: 4,
         amount: 40500,
-        dateStart: "27 March 2025",
+        dateStart: "27 May 2025",
         dateEnd: "31 July 2025",
         description: "Experience the best of Baku with our specially curated 5-night itinerary, covering iconic destinations across Azerbaijan. Perfectly planned for travelers who seek an effortless, all-inclusive journey with fixed departures.",
         groupDetails: {
@@ -3614,12 +3614,12 @@ be related once back home.`
         days: 11,
         nights: 10,
         amount: 139999,
-        dateStart: "April 2025",
+        dateStart: "May 2025",
         dateEnd: "July 2025",
         groupDetails: {
             pax: "2 Adults – Anniversary Trip",
             rooms: "1 Room on Double Sharing",
-            arrivalDate: "14th November 2024",
+                arrivalDate: "14th May 2025",
             duration: "10N11D Turkey",
             costBasis: "Cost Based On Double Sharing – Bed & Breakfast"
         },
@@ -3760,12 +3760,12 @@ be related once back home.`
         days: 6,
         nights: 5,
         amount: 38499, 
-        dateStart: "April 2025", 
+        dateStart: "May 2025", 
         dateEnd: "June 2025",
         groupDetails: {
             pax: "2 Adults – Anniversary Trip",
             rooms: "1 Room on Double Sharing",
-            arrivalDate: "14th April 2025",
+            arrivalDate: "14th May 2025",
             duration: "5N6D UAE",
             costBasis: "Cost Based On Double Sharing"
         },

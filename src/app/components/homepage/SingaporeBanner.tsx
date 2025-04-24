@@ -20,7 +20,7 @@ const SingaporeBanner = () => {
         '/UGCImages/singapore/banner/2.png',
         '/UGCImages/singapore/banner/3.png',
       ],
-      date: '01 March 2025 - 26 July 2025',
+      date: 'May-October 2025',
       price: '44,500'
     },
     {
@@ -31,7 +31,7 @@ const SingaporeBanner = () => {
         '/UGCImages/singapore/banner/5.png',
         '/UGCImages/singapore/banner/6.png',
       ],
-      date: '01 March 2025 - 26 July 2025',
+      date: 'May-October 2025',
       price: '59,000'
     },
     {
@@ -43,7 +43,7 @@ const SingaporeBanner = () => {
         '/UGCImages/singapore/banner/9.png',
         '/UGCImages/singapore/banner/10.png',
       ],
-      date: '01 March 2025 - 26 July 2025',
+      date: 'May-October 2025',
       price: '35,000'
     },
     {
@@ -54,7 +54,7 @@ const SingaporeBanner = () => {
           '/UGCImages/singapore/langkawi/2.png',
           '/UGCImages/singapore/langkawi/3.png',
         ],
-        date: '01 March 2025 - 26 July 2025',
+        date: 'May-October 2025',
         price: '25,000'
       }
     

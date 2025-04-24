@@ -289,7 +289,7 @@ export async function GET() {
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.truedeal4u.com/blogs/almaty-march-complete-travel-guide</loc>
+  <loc>https://www.truedeal4u.com/blogs/almaty-May-complete-travel-guide</loc>
   <lastmod>2025-03-26T11:48:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>

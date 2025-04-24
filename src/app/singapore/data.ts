@@ -91,7 +91,7 @@ export const singaporePackages: Record<string, SingaporePackage> = {
         days: 4,
         nights: 3,
         amount: 44500,
-        dateStart: "01 March 2025",
+        dateStart: "01 May 2025",
         dateEnd: "26 July 2025",
         description: "Experience the vibrant city life of Singapore with our 4-day tour covering iconic attractions, cultural sites, and modern marvels.",
         groupDetails: {
@@ -239,7 +239,7 @@ Meals: Breakfast at the hotel
                 "Sentosa Island",
                 "Shopping at Orchard Road"
             ],
-            bestTimeToVisit: "February to April (Dry season)",
+            bestTimeToVisit: "February to May (Dry season)",
             cuisine: [
                 "Chili Crab",
                 "Hainanese Chicken Rice",
@@ -282,7 +282,7 @@ Meals: Breakfast at the hotel
         days: 5,
         nights: 4,
         amount: 59000,
-        dateStart: "01 March 2025",
+        dateStart: "01 May 2025",
         dateEnd: "26 July 2025",
         description: "Experience the vibrant city life of Singapore with our 5-day tour covering iconic attractions, cultural sites, and modern marvels.",
         groupDetails: {
@@ -444,7 +444,7 @@ Meals: Breakfast at the hotel
                 "Sentosa Island",
                 "Shopping at Orchard Road"
             ],
-            bestTimeToVisit: "February to April (Dry season)",
+            bestTimeToVisit: "February to May (Dry season)",
             cuisine: [
                 "Chili Crab",
                 "Hainanese Chicken Rice",
@@ -487,7 +487,7 @@ Meals: Breakfast at the hotel
         days: 4,
         nights: 3,
         amount: 35000,
-        dateStart: "01 March 2025",
+        dateStart: "01 May 2025",
         dateEnd: "26 July 2025",
         description: "Experience the vibrant city life of Malaysia with our 4-day tour covering iconic attractions, cultural sites, and modern marvels.",
         groupDetails: {
@@ -642,7 +642,7 @@ Meals: Breakfast at the hotel
                 "Sentosa Island",
                 "Shopping at Orchard Road"
             ],
-            bestTimeToVisit: "February to April (Dry season)",
+            bestTimeToVisit: "February to May (Dry season)",
             cuisine: [
                 "Chili Crab",
                 "Hainanese Chicken Rice",
@@ -685,7 +685,7 @@ Meals: Breakfast at the hotel
         days: 5,
         nights: 4,
         amount: 25000,
-        dateStart: "01 March 2025",
+        dateStart: "01 May 2025",
         dateEnd: "26 July 2025",
         description: "Experience the vibrant city life of Langkawi with our 5-day tour covering iconic attractions, cultural sites, and modern marvels.",
         groupDetails: {
@@ -847,7 +847,7 @@ Check out and meet driver at hotel lobby for transfer to LGK Airport for departu
                 "Sentosa Island",
                 "Shopping at Orchard Road"
             ],
-            bestTimeToVisit: "February to April (Dry season)",
+            bestTimeToVisit: "February to May (Dry season)",
             cuisine: [
                 "Chili Crab",
                 "Hainanese Chicken Rice",

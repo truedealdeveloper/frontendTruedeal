@@ -91,8 +91,8 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
         days: 13,
         nights: 12,
         amount: 490999,
-        dateStart: "01 March 2025",
-        dateEnd: "26 July 2025",
+        dateStart: "01 May 2025",
+        dateEnd: "05 October 2025",
         description: "Experience the best of Australia's east coast with our 13-day tour covering Sydney's iconic landmarks and Gold Coast's stunning beaches.",
         groupDetails: {
             pax: "Group Tour",
@@ -266,7 +266,7 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
                 "Coastal sightseeing",
                 "Wildlife encounters"
             ],
-            bestTimeToVisit: "September to November or March to May",
+            bestTimeToVisit: "September to November or May to October",
             cuisine: [
                 "Fresh seafood",
                 "Australian BBQ",
@@ -313,8 +313,8 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
         days: 10,
         nights: 9,
         amount: 354999,
-        dateStart: "01 March 2025",
-        dateEnd: "26 July 2025",
+        dateStart: "01 May 2025",
+        dateEnd: "05 October 2025",
         description: "Experience the best of Australia's east coast with our 10-day tour covering Melbourne, Gold Coast, and Sydney.",
         groupDetails: {
             pax: "Group Tour",
@@ -476,7 +476,7 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
                 "Sydney attractions (Tower Eye, Wildlife, SeaLife, Tussauds)",
                 "Blue Mountains tour"
             ],
-            bestTimeToVisit: "September to November or March to May",
+                bestTimeToVisit: "September to November or May to October",
             cuisine: [
                 "Fresh seafood",
                 "Australian BBQ",
@@ -522,8 +522,8 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
         days: 10,
         nights: 9,
         amount: 364999,
-        dateStart: "01 March 2025",
-        dateEnd: "26 July 2025",
+        dateStart: "01 May 2025",
+        dateEnd: "05 October 2025",
         description: "Discover Australia's diverse beauty: Melbourne's charm, Whitsundays' paradise, Brisbane's wildlife, and Sydney's icons.",
         groupDetails: {
             pax: "Group Tour",
@@ -691,7 +691,7 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
                 "Coastal sightseeing",
                 "Wildlife encounters"
             ],
-            bestTimeToVisit: "September to November or March to May",
+                bestTimeToVisit: "September to November or May to October",
             cuisine: [
                 "Fresh seafood",
                 "Australian BBQ",
@@ -738,8 +738,8 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
         days: 11,
         nights: 10,
         amount: 344999,
-        dateStart: "01 March 2025",
-        dateEnd: "26 July 2025",
+        dateStart: "01 May 2025",
+        dateEnd: "05 October 2025",
         description: "Discover Australia's diverse beauty: Melbourne's charm, Whitsundays' paradise, Brisbane's wildlife, and Sydney's icons.",
         groupDetails: {
             pax: "Group Tour",
@@ -905,7 +905,7 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
                 "Coastal sightseeing",
                 "Wildlife encounters"
             ],
-            bestTimeToVisit: "September to November or March to May",
+            bestTimeToVisit: "September to November or May to October",
             cuisine: [
                 "Fresh seafood",
                 "Australian BBQ",
@@ -952,8 +952,8 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
         days: 13,
         nights: 12,
         amount: 596999,
-        dateStart: "01 March 2025",
-        dateEnd: "26 July 2025",
+        dateStart: "01 May 2025",
+        dateEnd: "05 October 2025",
         description: "Discover the best of Hamilton Island with this 13-day honeymoon tour. From the stunning beaches to the lush rainforests, this tour has everything you need to make your honeymoon unforgettable.",
         groupDetails: {
             pax: "Group Tour",
@@ -1140,7 +1140,7 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
                 "Coastal sightseeing",
                 "Wildlife encounters"
             ],
-            bestTimeToVisit: "September to November or March to May",
+            bestTimeToVisit: "September to November or May to October",
             cuisine: [
                 "Fresh seafood",
                 "Australian BBQ",
