@@ -74,7 +74,7 @@ const TripPlanRequest = () => {
   };
 
   return (
-    <div className="min-h-screen relative bg-gray-50">
+    <div className="min-h-screen relative">
       {/* Background Image Container */}
       <div className="container mx-auto px-4 py-8 min-h-screen flex flex-col lg:flex-row items-center gap-8">
         {/* Image Section */}
@@ -240,7 +240,7 @@ const TripPlanRequest = () => {
             </form>
 
             <p className="mt-6 text-sm text-gray-500 text-center">
-              Trusted by thousands of happy travelers
+              Trusted by thousands of happy travelers and counting :)
             </p>
           </div>
         </div>

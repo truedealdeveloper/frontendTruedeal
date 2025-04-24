@@ -48,12 +48,12 @@ const USA = () => {
           <p className="text-gray-600 md:text-lg max-w-2xl mx-auto">
             From the adventure of America to the delicious food of Korea to hot air balloons of Turkey, we offer unforgettable experiences in destinations worldwide
           </p>
-          <div className="h-1 w-16 bg-[#6366f1] mx-auto mt-6 rounded-full"></div>
+          <div className="h-1 w-16 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] mx-auto mt-1 rounded-full"></div>
         </motion.div>
       </div>
 
       {/* USA Content Section */}
-      <div className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
+      <div className="py-12 px-4 md:px-8 max-w-7xl mx-auto mb-10">
         <div className="flex flex-col lg:flex-row gap-12 items-center">
           {/* Left side content */}
           <div className="w-full lg:w-1/2 space-y-6 order-last lg:order-first">
@@ -80,7 +80,7 @@ const USA = () => {
               </div>
             </div>
 
-            <Link href="/usa" className="mt-4 inline-block">
+            <Link href="/usaPackages" className="mt-4 inline-block">
               <button className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-8 py-3 rounded-lg hover:shadow-lg transition-all duration-300 font-medium">
                 Explore USA & Modernity
               </button>
