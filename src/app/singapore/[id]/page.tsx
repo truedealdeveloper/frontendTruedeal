@@ -288,7 +288,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                 <h2 className="text-2xl font-bold mb-6">Package Highlights</h2>
                                                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                                                     {[
-                                                        { icon: "🏙️", title: "City Exploration", desc: "Visit Singapore's iconic attractions" },
+                                                        { icon: "🏙️", title: "City Exploration", desc: "Visit Singapore&apos;s iconic attractions" },
                                                         { icon: "🍲", title: "Local Cuisine", desc: "Experience Singapore&apos;s food culture" },
                                                         { icon: "🏨", title: "Quality Hotels", desc: `${singaporePkg.nights} nights accommodation` },
                                                         { icon: "🚕", title: "Airport Transfers", desc: "Convenient transport included" },
