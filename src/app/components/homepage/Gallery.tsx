@@ -102,8 +102,8 @@ export default function CurvedGallery() {
     }
 
     return (
-        <div className="w-full min-h-[50vh] md:min-h-screen bg-gradient-to-b from-gray-10 to-gray-10 py-6 md:py-12">
-            <h1 className="text-center text-2xl md:text-3xl font-semibold mb-6 md:mb-12 text-gray-800 px-4">
+        <div className="w-full min-h-[50vh] md:min-h-screen bg-white py-6 md:py-12">
+            <h1 className="text-center text-2xl md:text-3xl font-semibold mb-6 md:mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff] px-4">
                 Pictures Perfect Moments
             </h1>
 

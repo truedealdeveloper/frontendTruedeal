@@ -85,7 +85,7 @@ export default function Component() {
 
 
             <footer 
-                className="bg-gradient-to-b from-white via-gray-50 to-gray-100 py-12 px-4 border-t"
+                className="bg-white py-12 px-4 border-t"
                 itemScope 
                 itemType="http://schema.org/WPFooter"
                 aria-label="Site footer"
