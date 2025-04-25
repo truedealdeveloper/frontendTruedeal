@@ -16,6 +16,7 @@ export interface ItineraryDay {
     day: number;
     title: string;
     description: string;
+    image: string;
 }
 
 export interface SightseeingSpot {
@@ -41,6 +42,37 @@ export interface DepartureDate {
     date: string;
     availability?: string;
     price?: number;
+}
+
+export interface Experience {
+    title: string;
+    image: string;
+}
+
+interface BatchInfo {
+    month: string;
+    dates: string[];
+    availableSeats: number;
+}
+
+interface BatchDetails {
+    currentBatch: string;
+    remainingSlots: number;
+    monthlyBatches: BatchInfo[];
+}
+
+interface FlightInfo {
+    name: string;
+    departureCity: string;
+    arrivalCity: string;
+    flightNumber: string;
+    departureTime: string;
+    arrivalTime: string;
+    duration: string;
+}
+
+interface FlightDetails {
+    airlines: FlightInfo[];
 }
 
 export interface SingaporePackage {
@@ -82,6 +114,9 @@ export interface SingaporePackage {
     localFood: LocalFood[];
     culture: CultureItem[];
     departureDates?: DepartureDate[];
+    experiences: Experience[];
+    batchDetails?: BatchDetails;
+    flightDetails?: FlightDetails;
 }
 
 export const singaporePackages: Record<string, SingaporePackage> = {
@@ -149,18 +184,20 @@ Upon arrival our representative assist you, pick up and transfer to your hotel. 
 Visit the Marina Bay Sands hotel (SIC)
 Enjoy panoramic view of the city from MBS Sky Park. Take a walk from MBS to Gardens by the Bay. Then visit Gardens by the Bay – Flower Dome and Cloud Forest Observation Deck. Enter the flower Dome, the largest glass greenhouse in the world. It replicates a mild, dry climate and features plants found in the Mediterranean and other semi-arid tropical regions. Admire a forest that boasts one of the world's largest indoor waterfalls at 35 meters tall. Step into a landscape of dramatic greenery, featuring vegetation that is typically native to habitats 2,000 meters above sea level.
 Overnight stay at Singapore
-`
+`,
+                image: "/UGCImages/singapore/dayWise/1.png"
             },
             {
                 day: 2,
                 title: "Universal Studios + Sea Aquarium – SIC (closed on Tuesday)",
                 description: `Enjoy Breakfast in Hotel.
 Visit the SEA Aquarium (SIC)
-Enter and explore the marine realm of S.E.A. Aquarium, home to more than 100,000 marine animals of over 1,000 species, across 45 different habitats, each one as fascinating as the next. It's a marine life experience you won’t forget.
+Enter and explore the marine realm of S.E.A. Aquarium, home to more than 100,000 marine animals of over 1,000 species, across 45 different habitats, each one as fascinating as the next. It's a marine life experience you won't forget.
 Later, visit the Universal Studios
 Start your journey to Hollywood movie theme park - Universal Studios™ forms part of Resorts World™ Sentosa. Among the park's many rides and exciting attractions are Battle star Galactica, the world's tallest pair of dueling roller coasters and Far Away Castle™, the first castle from the world of Shrek where you can experience the amazing Shrek 4-D™ attraction. One of the biggest spectacles in live entertainment is based on the movie Water world™. The action comes gushing to life in a tidal wave of death-defying stunts, explosions and thrilling action. Enjoy Jurassic Park Rapids Adventure™, Madagascar: A Crate Adventure™ and Revenge of the Mummy™, TRANSFORMERS The Ride and many more.
 Overnight stay at Singapore	
-`
+`,
+                image: "/UGCImages/singapore/dayWise/2.png"
             },
             {
                 day: 3,
@@ -169,50 +206,52 @@ Overnight stay at Singapore
 Today enjoy full day at the Sentosa Island (SIC). Sentosa is an island resort off Singapore&apos;s southern coast, connected to the city by road, cable car, pedestrian boardwalk and monorail.
 Enjoy the cable car ride and experience Madame Tussauds 4 in 1 along with. Finish your day on Sentosa Island on a spectacular note with the award-winning Wings of Time show.
 Overnight stay at Singapore
-`
+`,
+                image: "/UGCImages/singapore/dayWise/3.png"
             },
             {
                 day: 4,
                 title: "Singapore - Departure",
                 description: `Morning after breakfast; you will be transferred to the airport for your flight back home to India 
 Meals: Breakfast at the hotel 
-`
+`,
+                image: "/UGCImages/singapore/dayWise/4.png"
             }
         ],
         images: [
+            "/UGCImages/singapore/singapore/4.webp",
+            "/UGCImages/singapore/singapore/3.webp",
             "/UGCImages/singapore/singapore/1.webp",
             "/UGCImages/singapore/singapore/2.webp",
-            "/UGCImages/singapore/singapore/3.webp",
-            "/UGCImages/singapore/singapore/4.webp"
         ],
         sightseeingSpots: [
             {
                 name: "Gardens by the Bay",
                 description: "Iconic nature park with Supertree Grove",
-                image: "/UGCImages/singapore/sightseeings/1.png"
+                image: "/UGCImages/singapore/spots/gardens.webp"
             },
             {
                 name: "Marina Bay Sands",
                 description: "Luxury integrated resort with infinity pool",
-                image: "/UGCImages/singapore/sightseeings/3.png"
+                image: "/UGCImages/singapore/spots/mbs.webp"
             },
             {
                 name: "Universal Studios",
                 description: "World-class theme park with exciting rides",
-                image: "/UGCImages/singapore/sightseeings/2.png"
+                image: "/UGCImages/singapore/spots/uss.webp"
             }
         ],
         localFood: [
             {
                 name: "Chili Crab",
                 description: "Singapore's national dish",
-                image: "/UGCImages/singapore/sightseeings/food/1.png",
+                image: "/UGCImages/singapore/food/chili-crab.webp",
                 where: "JUMBO Seafood, Clarke Quay"
             },
             {
                 name: "Hainanese Chicken Rice",
                 description: "Popular local delicacy",
-                image: "/UGCImages/singapore/sightseeings/food/2.png",
+                image: "/UGCImages/singapore/food/chicken-rice.webp",
                 where: "Tian Tian Chicken Rice, Maxwell Food Centre"
             }
         ],
@@ -220,12 +259,12 @@ Meals: Breakfast at the hotel
             {
                 title: "Modern Architecture",
                 description: "Singapore's stunning skyline and architectural marvels",
-                image: "/UGCImages/singapore/architecture.png"
+                image: "/UGCImages/singapore/culture/architecture.webp"
             },
             {
                 title: "Cultural Heritage",
                 description: "Diverse mix of Chinese, Malay, and Indian influences",
-                image: "/UGCImages/singapore/culture.png"
+                image: "/UGCImages/singapore/culture/heritage.webp"
             }
         ],
         departureDates: [
@@ -274,7 +313,25 @@ Meals: Breakfast at the hotel
                     "Flight tickets"
                 ]
             }
-        }
+        },
+        experiences: [
+            {
+                title: "Marina Bay Sands",
+                image: "/UGCImages/singapore/experience/1.png"
+            },
+            {
+                title: "Gardens By The Bay",
+                image: "/UGCImages/singapore/experience/2.png"
+            },
+            {
+                title: "Sentosa Island",
+                image: "/UGCImages/singapore/experience/3.png"
+            },
+            {
+                title: "Night Safari",
+                image: "/UGCImages/singapore/experience/4.png"
+            }
+        ]
     },
     singaporeDiscovery: {
         id: "5-days-singapore-discovery",
@@ -342,7 +399,8 @@ Upon arrival our representative assist you, pick up and transfer to your hotel. 
 Later we visit the Marina Bay Sands hotel (SIC) to enjoy panoramic view of the city from MBS Sky Park. Take a walk from MBS to Gardens by the Bay. We then visit Gardens by the Bay – Flower Dome and Super Tree Observation Deck. Enter the flower Dome, the largest glass greenhouse in the world. It replicates a mild, dry climate and features plants found in the Mediterranean and other semi-arid tropical regions. Admire a forest that boasts one of the world's largest indoor waterfalls at 35 meters tall. Step into a landscape of dramatic greenery, featuring vegetation that is typically native to habitats 2,000 meters above sea level.
 Overnight stay at Singapore
 
-`
+`,
+                image: "/UGCImages/singapore/itinerary/day1.webp"
             },
             {
                 day: 2,
@@ -354,7 +412,8 @@ Later, visit the Universal Studios (closed on Tuesday)
 Start your journey to Hollywood movie theme park - Universal Studios™ forms part of Resorts World™ Sentosa. Among the park's many rides and exciting attractions are Battlestar Galactica™, the world's tallest pair of duelling roller coasters and Far Away Castle™, the first castle from the world of Shrek where you can experience the amazing Shrek 4-D™ attraction. One of the biggest spectacles in live entertainment is based on the movie Waterworld™. The action comes gushing to life in a tidal wave of death-defying stunts, explosions and thrilling action. Enjoy Jurassic Park Rapids Adventure™, Madagascar: A Crate Adventure™ and Revenge of the Mummy™, TRANSFORMERS The Ride and many more.
 Overnight stay at Singapore
 
-`
+`,
+                image: "/UGCImages/singapore/itinerary/day2.webp"
             },
             {
                 day: 3,
@@ -364,31 +423,34 @@ Today enjoy Half day at the Sentosa Island (SIC). Sentosa is an island resort of
 Enjoy the cable car ride and experience Madame Tussauds 4 in 1 along with. Finish your day on Sentosa Island on a spectacular note with the award-winning Wings of Time show.
 Overnight stay at Singapore
 
-`
+`,
+                image: "/UGCImages/singapore/itinerary/day3.webp"
             },
             {
                 day: 4,
                 title: "Bird Paradise + Night Safari (Admission + Tram Ride) – SIC",
                 description: `Enjoy Breakfast in Hotel. 
 Discover the enchanting Bird Paradise (SIC) nestled in Singapore, where nature aficionados and bird enthusiasts are treated to an immersive journey
-Explore the Night Safari for an off-hour wildlife adventure to observe the Zoo’s nocturnal fauna
+Explore the Night Safari for an off-hour wildlife adventure to observe the Zoo's nocturnal fauna
 Overnight stay at Singapore
 
-`
+`,
+                image: "/UGCImages/singapore/itinerary/day4.webp"
             },
             {
                 day: 5,
                 title: "Singapore - Departure",
                 description: `Morning after breakfast; you will be transferred to the airport for your flight back home to India 
 Meals: Breakfast at the hotel 
-`
+`,
+                image: "/UGCImages/singapore/itinerary/day5.webp"
             }       
         ],
         images: [
-            "/UGCImages/singapore/singapore/5.webp",
-            "/UGCImages/singapore/singapore/6.webp",
-            "/UGCImages/singapore/singapore/7.webp",
-            "/UGCImages/singapore/singapore/8.webp"
+            "/UGCImages/singapore/hero/5.webp",
+            "/UGCImages/singapore/hero/6.webp",
+            "/UGCImages/singapore/hero/7.webp",
+            "/UGCImages/singapore/hero/8.webp"
         ],
         sightseeingSpots: [
             {
@@ -479,7 +541,25 @@ Meals: Breakfast at the hotel
                     "Flight tickets"
                 ]
             }
-        }
+        },
+        experiences: [
+            {
+                title: "Marina Bay Sands",
+                image: "/UGCImages/singapore/experiences/mbs.webp"
+            },
+            {
+                title: "Gardens By The Bay",
+                image: "/UGCImages/singapore/experiences/gardens.webp"
+            },
+            {
+                title: "Sentosa Island",
+                image: "/UGCImages/singapore/experiences/sentosa.webp"
+            },
+            {
+                title: "Night Safari",
+                image: "/UGCImages/singapore/experiences/safari.webp"
+            }
+        ]
     },
     malaysiaTour: {
         id: "4-days-malaysia-tour",
@@ -541,7 +621,8 @@ Check in hotel (Standard Check in time 1400hrs)
 Overnight Stay at Kuala Lumpur Hotel
 
 
-`
+`,
+                image: "/UGCImages/singapore/itinerary/day1.webp"
             },
             {
                 day: 2,
@@ -556,7 +637,8 @@ Overnight Stay at Kuala Lumpur Hotel
 
 
 
-`
+`,
+                image: "/UGCImages/singapore/itinerary/day2.webp"
             },
             {
                 day: 3,
@@ -570,7 +652,8 @@ KL Tower Entrance
 Overnight stay at Kuala Lumpur hotel
 
 
-`
+`,
+                image: "/UGCImages/singapore/itinerary/day3.webp"
             },
             {
                 day: 4,
@@ -579,7 +662,8 @@ Overnight stay at Kuala Lumpur hotel
 Meals: Breakfast at the hotel 
 
 
-`
+`,
+                image: "/UGCImages/singapore/itinerary/day4.webp"
             },    
         ],
         images: [
@@ -677,7 +761,8 @@ Meals: Breakfast at the hotel
                     "Flight tickets"
                 ]
             }
-        }
+        },
+        experiences: []
     },
     langkawiTour: {
         id: "5-days-wonderful-langkawi",
@@ -739,7 +824,8 @@ Check in hotel (Standard Check in time 1400hrs)
 Overnight Stay at Langkawi Hotel
 
 
-`
+`,
+                image: "/UGCImages/singapore/itinerary/day1.webp"
             },
             {
                 day: 2,
@@ -752,7 +838,8 @@ Overnight accommodation @ Hotel, Langkawi
 
 
 
-`
+`,
+                image: "/UGCImages/singapore/itinerary/day2.webp"
             },
             {
                 day: 3,
@@ -763,14 +850,16 @@ Overnight accommodation @ Hotel, Langkawi
 
 
 
-`
+`,
+                image: "/UGCImages/singapore/itinerary/day3.webp"
             },
             {
                 day: 4,
                 title: "Leisure Day",
                 description: `Enjoy Breakfast in Hotel. 
 Have a Leisure day and stay at Hotel.
-`
+`,
+                image: "/UGCImages/singapore/itinerary/day4.webp"
             },    
             {
                 day: 5,
@@ -781,7 +870,8 @@ Standard Check out time1200hrs
 (Note: You can leave luggage at hotel concierge and return to hotel for the departure transfer)
 Check out and meet driver at hotel lobby for transfer to LGK Airport for departure
 
-`
+`,
+                image: "/UGCImages/singapore/itinerary/day5.webp"
             },    
         ],
         images: [
@@ -882,6 +972,322 @@ Check out and meet driver at hotel lobby for transfer to LGK Airport for departu
                     "Flight tickets"
                 ]
             }
+        },
+        experiences: []
+    },
+    singaporeMalaysia: {
+        id: "7-days-singapore-malaysia",
+        packageName: "7 Days Singapore Malaysia",
+        days: 7,
+        nights: 6,
+        amount: 109100,
+        dateStart: "09 May 2025",
+        dateEnd: "12 October 2025",
+        description: "We're excited to announce that our Singapore and Malaysia group tour is filling up fast! This is truly the best time to explore the vibrant streets of Singapore and the diverse culture of Malaysia—plus, the weather and festivities make it extra special.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Double Sharing",
+            arrivalDate: "Contact Us",
+            duration: "7D6N Singapore Malaysia Fixed Departure",
+            costBasis: "Cost Based On 2 pax travelling together"
+        },
+        hotelDetails: [
+            {
+                city: "Singapore",
+                hotel: "3 Chancellor @ Orchard / Similar",
+                roomType: "Deluxe Room"
+            },
+            {
+                city: "Singapore",
+                hotel: "4 Hotel Boss / Similar",
+                roomType: "Deluxe Room"
+            },
+            {
+                city: "Singapore",
+                hotel: "5 Star Grand Copthorne Waterfront Hotel / Similar",
+                roomType: "Superior Room"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Arrive Singapore + Marina Bay Sands (Observation Deck) + Gardens by the Bay (Flower Dome + Cloud Forest) – SIC",
+            "Day 2: Universal Studios + Sea Aquarium – SIC (closed on Tuesday)",
+            "Day 3: Sentosa Island (One Way Cable Car, Madame Tussauds 4 in 1, Wings of Time) – SIC",
+            "Day 4: Singapore - Departure",
+            "Day 5: Arrive Kuala Lumpur + Genting Highlands + Batu Caves",
+            "Day 6: Kuala Lumpur City Tour",
+            "Day 7: Kuala Lumpur - Departure"
+        ],
+        inclusions: [
+            "SINGAPORE INCLUSIONS",
+            "Daily breakfast at hotel",
+            "Universal Studio",
+            "Marina Bay Sand Observation Deck + Garden by the Bay (Flower Dome + Cloud Forest) (2 Way Transfer)",
+            "(5 Hrs Local Guide)",
+            "Singapore City Tour",
+            "Half Day Sentosa | 2 Way Cable Car",
+            "Beach Visit by Term Ride",
+            "Image of Singapore",
+            "Boat Ride | Ultimate Film Star",
+            "Madame Tussaud | Wing of Time",
+            
+            "MALAYSIA INCLUSIONS",
+            "Daily breakfast at hotel",
+            "Genting Trip",
+            "01 Way Cable Car",
+            "Enroute Batu Caves",
+            "KUL City Tour 3 Hrs",
+            "KL Tower Observation Deck",
+            "Petronas Tower Photo Shoot"
+        ],
+        exclusions: [
+            "Personal expenses",
+            "Optional tours",
+            "Travel insurance"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Singapore",
+                description: `Welcome to Singapore! Upon arrival at Changi Airport, our representative will assist you with the transfer to your hotel. After check-in (standard check-in time 1400/1500 hrs), enjoy the rest of the day at leisure to explore the surrounding area.
+
+Evening visit to Marina Bay Sands Observation Deck for panoramic city views, followed by the spectacular Gardens by the Bay. Experience the Flower Dome and Cloud Forest, featuring one of the world's largest indoor waterfalls.
+
+Overnight stay in Singapore.`,
+                image: "/UGCImages/singapore/dayWise/1.png"
+            },
+            {
+                day: 2,
+                title: "Universal Studios Singapore",
+                description: `After breakfast, spend an exciting day at Universal Studios Singapore. Experience thrilling rides and attractions including Battlestar Galactica, Far Far Away Castle, and Transformers The Ride. Enjoy live shows and entertainment throughout the day.
+
+Later, visit the S.E.A. Aquarium, home to more than 100,000 marine animals across 45 different habitats.
+
+Overnight stay in Singapore.`,
+                image: "/UGCImages/singapore/singaMal/universal.png"
+            },
+            {
+                day: 3,
+                title: "Sentosa Island Experience",
+                description: `Post breakfast, enjoy a full day at Sentosa Island. Take the scenic cable car ride to the island. Visit Madame Tussauds and experience the 4-in-1 combo. End your day with the mesmerizing Wings of Time show.
+
+Overnight stay in Singapore.`,
+                image: "/UGCImages/singapore/singaMal/1.png"
+            },
+            {
+                day: 4,
+                title: "Singapore to Kuala Lumpur",
+                description: `After breakfast, check out and transfer to Kuala Lumpur. En route, visit Putrajaya, Malaysia's administrative capital, for a photo stop.
+
+Evening arrival in Kuala Lumpur, check-in to your hotel and enjoy the rest of the day at leisure.
+
+Overnight stay in Kuala Lumpur.`,
+                image: "/UGCImages/singapore/singaMal/2.png"
+            },
+            {
+                day: 5,
+                title: "Genting Highlands & Batu Caves",
+                description: `After breakfast, proceed to Genting Highlands. En route, visit the famous Batu Caves, a limestone hill comprising three major caves and several smaller ones.
+
+Enjoy the scenic cable car ride to Genting Highlands and spend time at leisure exploring the entertainment options and shopping.
+
+Return to Kuala Lumpur for overnight stay.`,
+                image: "/UGCImages/singapore/singaMal/3.png"
+            },
+            {
+                day: 6,
+                title: "Kuala Lumpur City Tour",
+                description: `Post breakfast, enjoy a comprehensive city tour of Kuala Lumpur. Visit key attractions including:
+- KLCC Aquarium
+- Kings Palace (photo stop)
+- National Monument
+- Independence Square
+- Petronas Twin Towers (photo stop)
+- KL Tower Observation Deck
+
+Evening at leisure for shopping and personal activities.
+Overnight stay in Kuala Lumpur.`,
+                image: "/UGCImages/singapore/singaMal/4.png"
+            },
+            {
+                day: 7,
+                title: "Departure",
+                description: `After breakfast, check out from the hotel (standard check-out time: 1200 hrs) and transfer to the airport for your return flight.
+
+End of tour with memories to cherish forever!`,
+                image: "/UGCImages/singapore/singaMal/5.png"
+            }
+        ],
+        images: [
+            "/UGCImages/singapore/singapore/4.webp",
+            "/UGCImages/singapore/singapore/3.webp",
+            "/UGCImages/singapore/singapore/1.webp",
+            "/UGCImages/singapore/singapore/2.webp",
+        ],
+        sightseeingSpots: [
+            {
+                name: "Gardens by the Bay",
+                description: "Iconic nature park with Supertree Grove",
+                image: "/UGCImages/singapore/spots/gardens.webp"
+            },
+            {
+                name: "Marina Bay Sands",
+                description: "Luxury integrated resort with infinity pool",
+                image: "/UGCImages/singapore/spots/mbs.webp"
+            },
+            {
+                name: "Universal Studios",
+                description: "World-class theme park with exciting rides",
+                image: "/UGCImages/singapore/spots/uss.webp"
+            }
+        ],
+        localFood: [
+            {
+                name: "Chili Crab",
+                description: "Singapore's national dish",
+                image: "/UGCImages/singapore/food/chili-crab.webp",
+                where: "JUMBO Seafood, Clarke Quay"
+            },
+            {
+                name: "Hainanese Chicken Rice",
+                description: "Popular local delicacy",
+                image: "/UGCImages/singapore/food/chicken-rice.webp",
+                where: "Tian Tian Chicken Rice, Maxwell Food Centre"
+            }
+        ],
+        culture: [
+            {
+                title: "Modern Architecture",
+                description: "Singapore's stunning skyline and architectural marvels",
+                image: "/UGCImages/singapore/culture/architecture.webp"
+            },
+            {
+                title: "Cultural Heritage",
+                description: "Diverse mix of Chinese, Malay, and Indian influences",
+                image: "/UGCImages/singapore/culture/heritage.webp"
+            }
+        ],
+        departureDates: [
+            { date: "Mar 2025 - July 2025" }
+        ],
+        additionalInfo: {
+            highlights: [
+                "Universal Studios Singapore",
+                "Gardens by the Bay",
+                "Marina Bay Sands",
+                "Sentosa Island",
+                "Shopping at Orchard Road"
+            ],
+            bestTimeToVisit: "February to May (Dry season)",
+            cuisine: [
+                "Chili Crab",
+                "Hainanese Chicken Rice",
+                "Laksa",
+                "Satay"
+            ],
+            accommodation: {
+                type: "4-star hotel",
+                amenities: [
+                    "Free Wi-Fi",
+                    "Swimming pool",
+                    "Restaurant",
+                    "Fitness center"
+                ]
+            },
+            transportation: {
+                type: "Air-conditioned coach",
+                features: [
+                    "Modern fleet",
+                    "Professional driver",
+                    "Tour guide"
+                ]
+            },
+            visaInfo: {
+                requirement: "Tourist visa required",
+                duration: "30 days",
+                cost: "₹2,500",
+                documents: [
+                    "Valid passport",
+                    "Photographs",
+                    "Bank statements",
+                    "Flight tickets"
+                ]
+            }
+        },
+        experiences: [
+            {
+                title: "Marina Bay Sands",
+                image: "/UGCImages/singapore/experience/1.png"
+            },
+            {
+                title: "Gardens By The Bay",
+                image: "/UGCImages/singapore/experience/2.png"
+            },
+            {
+                title: "Sentosa Island",
+                image: "/UGCImages/singapore/experience/3.png"
+            },
+            {
+                title: "Night Safari",
+                image: "/UGCImages/singapore/experience/4.png"
+            }
+        ],
+        batchDetails: {
+            currentBatch: "May",
+            remainingSlots: 11,
+            monthlyBatches: [
+                {
+                    month: "May",
+                    dates: ["9th", "10th", "11th"],
+                    availableSeats: 11
+                },
+                {
+                    month: "June",
+                    dates: ["13th", "14th", "15th"],
+                    availableSeats: 20
+                },
+                {
+                    month: "July",
+                    dates: ["11th", "12th", "13th"],
+                    availableSeats: 20
+                },
+                {
+                    month: "August",
+                    dates: ["8th", "9th", "10th"],
+                    availableSeats: 20
+                },
+                {
+                    month: "September",
+                    dates: ["12th", "13th", "14th"],
+                    availableSeats: 20
+                },
+                {
+                    month: "October",
+                    dates: ["10th", "11th", "12th"],
+                    availableSeats: 20
+                }
+            ]
+        },
+        flightDetails: {
+            airlines: [
+                {
+                    name: "Singapore Airlines",
+                    departureCity: "Delhi",
+                    arrivalCity: "Singapore",
+                    flightNumber: "SQ403",
+                    departureTime: "09:55",
+                    arrivalTime: "18:30",
+                    duration: "8h 35m"
+                },
+                {
+                    name: "Malaysia Airlines",
+                    departureCity: "Singapore",
+                    arrivalCity: "Kuala Lumpur",
+                    flightNumber: "MH606",
+                    departureTime: "10:25",
+                    arrivalTime: "11:35",
+                    duration: "1h 10m"
+                }
+            ]
         }
-    }
+    },
 }; 

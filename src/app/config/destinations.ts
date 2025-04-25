@@ -21,6 +21,11 @@ export const destinations: Destination[] = [
         route: "/australiaPackages"
     },
     {
+        name: "United States",
+        tag: { label: "FIXED DEPARTURE", color: "blue" },
+        route: "/usaPackages"
+    },
+    {
         name: "Europe Trip",
         tag: { label: "FIXED DEPARTURE", color: "blue" },
         fixedDepartureId: "europe-12-days-grand-tour"
