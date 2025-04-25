@@ -13,6 +13,17 @@ const SingaporeBanner = () => {
 
   const singaporePackages = [
     {
+      id: '7-days-singapore-malaysia',
+      title: '7 Days Singapore Malaysia',
+      images: [
+        '/UGCImages/singapore/singaMal/1.png',
+        '/UGCImages/singapore/singaMal/2.png',
+        '/UGCImages/singapore/singaMal/3.png',
+      ],
+      date: 'May-October 2025',
+      price: '109,100'
+    },
+    {
       id: '4-days-singapore-city',
       title: '4 Days Singapore',
       images: [
@@ -56,7 +67,8 @@ const SingaporeBanner = () => {
         ],
         date: 'May-October 2025',
         price: '25,000'
-      }
+      },
+      
     
   ];
 
