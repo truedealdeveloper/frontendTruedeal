@@ -88,10 +88,6 @@ export default function SingaporePackagePage({ params }: PageProps) {
         return () => clearInterval(timer);
     }, [singaporePkg?.images?.length]);
 
-    const scrollToSection = (sectionRef: React.RefObject<HTMLDivElement>, tabId: string) => {
-        sectionRef.current?.scrollIntoView({ behavior: 'smooth' });
-    };
-
     const useAutoScroll = (scrollRef: React.RefObject<HTMLDivElement>, duration: number = 40000) => {
         useEffect(() => {
             if (!scrollRef.current) return;
@@ -130,15 +126,6 @@ export default function SingaporePackagePage({ params }: PageProps) {
     const truncatedDescription = description.length > 300 
         ? `${description.substring(0, 300)}...` 
         : description;
-
-    // Organize itinerary data
-    const itinerary = singaporePkg.itinerary.map(day => ({
-        day: day.day,
-        title: day.title,
-        description: day.description,
-        image: day.image,
-        activities: day.title.split(' • ') // Creating example activities from title
-    }));
 
     // Function to toggle mute/unmute
     const toggleMute = () => {
@@ -302,7 +289,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                                                     {[
                                                         { icon: "🏙️", title: "City Exploration", desc: "Visit Singapore's iconic attractions" },
-                                                        { icon: "🍲", title: "Local Cuisine", desc: "Experience Singapore's food culture" },
+                                                        { icon: "🍲", title: "Local Cuisine", desc: "Experience Singapore&apos;s food culture" },
                                                         { icon: "🏨", title: "Quality Hotels", desc: `${singaporePkg.nights} nights accommodation` },
                                                         { icon: "🚕", title: "Airport Transfers", desc: "Convenient transport included" },
                                                         { icon: "🏝️", title: "Island Visits", desc: "Explore Sentosa and more" },
@@ -434,7 +421,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
 
                                             {/* Experiences You'll Love */}
                                             <div className="mb-10">
-                                                <h2 className="text-2xl font-bold mb-6">Experiences You'll Love</h2>
+                                                <h2 className="text-2xl font-bold mb-6">Experiences You&apos;ll Love</h2>
                                                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                                                     {singaporePkg.experiences.map((experience, index) => (
                                                         <div key={index} className="bg-white rounded-3xl overflow-hidden shadow-sm">
