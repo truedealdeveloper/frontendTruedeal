@@ -136,32 +136,32 @@ export default function SingaporePackages() {
     const singaporeHighlights = [
         {
             title: "Modern City",
-            image: "/UGCImages/singapore/city.png",
+            image: "/UGCImages/singapore/banner/1.png",
             description: "Experience the ultra-modern cityscape and architecture"
         },
         {
             title: "Theme Parks",
-            image: "/UGCImages/singapore/themepark.png",
+            image: "/UGCImages/singapore/banner/2.png",
             description: "Enjoy Universal Studios and other attractions"
         },
         {
             title: "Cultural Heritage",
-            image: "/UGCImages/singapore/heritage.png",
+            image: "/UGCImages/singapore/banner/3.png",
             description: "Explore diverse cultural neighborhoods"
         },
         {
             title: "Shopping Paradise",
-            image: "/UGCImages/singapore/shopping.png",
+            image: "/UGCImages/singapore/banner/4.png",
             description: "World-class shopping on Orchard Road"
         },
         {
             title: "Gardens & Nature",
-            image: "/UGCImages/singapore/gardens.png",
+            image: "/UGCImages/singapore/banner/5.png",
             description: "Visit Gardens by the Bay and nature parks"
         },
         {
             title: "Culinary Delights",
-            image: "/UGCImages/singapore/food.png",
+            image: "/UGCImages/singapore/banner/6.png",
             description: "Savor local cuisine at hawker centers"
         }
     ];
