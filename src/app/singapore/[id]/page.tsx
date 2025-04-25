@@ -500,7 +500,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
 
                                             {/* What's Included */}
                                             <div className="mb-10">
-                                                <h2 className="text-2xl font-bold mb-6">What's Included</h2>
+                                                <h2 className="text-2xl font-bold mb-6">What&apos;s Included</h2>
                                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                                     <div>
                                                         <h3 className="text-lg font-medium mb-4 flex items-center">
