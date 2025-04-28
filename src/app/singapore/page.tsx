@@ -218,16 +218,27 @@ export default function SingaporePackages() {
                     muted 
                     playsInline
                     className="absolute inset-0 w-full h-full object-cover"
+                    poster="/UGCImages/singapore/singapore/6.webp"
+                    onError={(e) => {
+                        const fallbackImage = e.currentTarget.parentElement?.querySelector('img');
+                        if (fallbackImage) {
+                            fallbackImage.style.display = 'block';
+                        }
+                        e.currentTarget.style.display = 'none';
+                    }}
                 >
                     <source src="/UGCImages/singapore/singaporebg.mp4" type="video/mp4" />
-                    <Image
-                        src="/UGCImages/singapore/singapore.jpg"
-                        alt="Singapore"
-                        fill
-                        className="object-cover"
-                        priority
-                    />
+                    <source src="/UGCImages/singapore/singaporebg.webm" type="video/webm" />
+                    <source src="/UGCImages/singapore/singaporebg.ogg" type="video/ogg" />
+                    Your browser does not support the video tag.
                 </video>
+                <Image
+                    src="/UGCImages/singapore/singapore/6.webp"
+                    alt="Singapore"
+                    fill
+                    className="object-cover hidden"
+                    priority
+                />
                 <div className="absolute inset-0 bg-black/40" />
                 <div className="absolute inset-0 flex items-center justify-center text-center">
                     <div className="max-w-4xl px-4">
