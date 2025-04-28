@@ -19,24 +19,6 @@ export interface ItineraryDay {
     image: string;
 }
 
-export interface SightseeingSpot {
-    name: string;
-    description: string;
-    image: string;
-}
-
-export interface LocalFood {
-    name: string;
-    description: string;
-    image: string;
-    where?: string;
-}
-
-export interface CultureItem {
-    title: string;
-    description: string;
-    image: string;
-}
 
 export interface DepartureDate {
     date: string;
@@ -110,9 +92,7 @@ export interface SingaporePackage {
             documents: string[];
         };
     };
-    sightseeingSpots: SightseeingSpot[];
-    localFood: LocalFood[];
-    culture: CultureItem[];
+   
     departureDates?: DepartureDate[];
     experiences: Experience[];
     batchDetails?: BatchDetails;
@@ -224,49 +204,6 @@ Meals: Breakfast at the hotel
             "/UGCImages/singapore/singapore/1.webp",
             "/UGCImages/singapore/singapore/2.webp",
         ],
-        sightseeingSpots: [
-            {
-                name: "Gardens by the Bay",
-                description: "Iconic nature park with Supertree Grove",
-                image: "/UGCImages/singapore/spots/gardens.webp"
-            },
-            {
-                name: "Marina Bay Sands",
-                description: "Luxury integrated resort with infinity pool",
-                image: "/UGCImages/singapore/spots/mbs.webp"
-            },
-            {
-                name: "Universal Studios",
-                description: "World-class theme park with exciting rides",
-                image: "/UGCImages/singapore/spots/uss.webp"
-            }
-        ],
-        localFood: [
-            {
-                name: "Chili Crab",
-                description: "Singapore's national dish",
-                image: "/UGCImages/singapore/food/chili-crab.webp",
-                where: "JUMBO Seafood, Clarke Quay"
-            },
-            {
-                name: "Hainanese Chicken Rice",
-                description: "Popular local delicacy",
-                image: "/UGCImages/singapore/food/chicken-rice.webp",
-                where: "Tian Tian Chicken Rice, Maxwell Food Centre"
-            }
-        ],
-        culture: [
-            {
-                title: "Modern Architecture",
-                description: "Singapore's stunning skyline and architectural marvels",
-                image: "/UGCImages/singapore/culture/architecture.webp"
-            },
-            {
-                title: "Cultural Heritage",
-                description: "Diverse mix of Chinese, Malay, and Indian influences",
-                image: "/UGCImages/singapore/culture/heritage.webp"
-            }
-        ],
         departureDates: [
             { date: "Mar 2025 - July 2025" }
         ],
@@ -346,7 +283,7 @@ Meals: Breakfast at the hotel
             pax: "Group Tour",
             rooms: "Double Sharing",
             arrivalDate: "Contact Us",
-            duration: "4D3N Singapore Fixed Departure",
+            duration: "5D4N Singapore Fixed Departure",
             costBasis: "Cost Based On 2 pax travelling together"
         },
         hotelDetails: [
@@ -374,7 +311,7 @@ Meals: Breakfast at the hotel
             "Day 05: Singapore - Departure"
         ],
         inclusions: [
-            "4Night Accommodation in above mentioned hotel with Breakfast",
+            "5Night Accommodation in above mentioned hotel with Breakfast",
             "Breakfast at the hotel",
             "Airport Arrival and Departure on PVT Transfers",
             "All tour transfers on SIC Basis",
@@ -400,7 +337,7 @@ Later we visit the Marina Bay Sands hotel (SIC) to enjoy panoramic view of the c
 Overnight stay at Singapore
 
 `,
-                image: "/UGCImages/singapore/itinerary/day1.webp"
+                image: "/UGCImages/singapore/itinerary/1.png"
             },
             {
                 day: 2,
@@ -413,7 +350,7 @@ Start your journey to Hollywood movie theme park - Universal Studios™ forms pa
 Overnight stay at Singapore
 
 `,
-                image: "/UGCImages/singapore/itinerary/day2.webp"
+                image: "/UGCImages/singapore/itinerary/2.png"
             },
             {
                 day: 3,
@@ -424,7 +361,7 @@ Enjoy the cable car ride and experience Madame Tussauds 4 in 1 along with. Finis
 Overnight stay at Singapore
 
 `,
-                image: "/UGCImages/singapore/itinerary/day3.webp"
+                image: "/UGCImages/singapore/itinerary/3.png"
             },
             {
                 day: 4,
@@ -435,7 +372,7 @@ Explore the Night Safari for an off-hour wildlife adventure to observe the Zoo's
 Overnight stay at Singapore
 
 `,
-                image: "/UGCImages/singapore/itinerary/day4.webp"
+                image: "/UGCImages/singapore/itinerary/4.png"
             },
             {
                 day: 5,
@@ -443,58 +380,16 @@ Overnight stay at Singapore
                 description: `Morning after breakfast; you will be transferred to the airport for your flight back home to India 
 Meals: Breakfast at the hotel 
 `,
-                image: "/UGCImages/singapore/itinerary/day5.webp"
+                image: "/UGCImages/singapore/itinerary/5.png"
             }       
         ],
         images: [
-            "/UGCImages/singapore/hero/5.webp",
-            "/UGCImages/singapore/hero/6.webp",
-            "/UGCImages/singapore/hero/7.webp",
-            "/UGCImages/singapore/hero/8.webp"
+            "/UGCImages/singapore/package2/1.png",
+            "/UGCImages/singapore/package2/2.png",
+            "/UGCImages/singapore/package2/3.png",
+            "/UGCImages/singapore/package2/4.png",
         ],
-        sightseeingSpots: [
-            {
-                name: "Gardens by the Bay",
-                description: "Iconic nature park with Supertree Grove",
-                image: "/UGCImages/singapore/gardens.png"
-            },
-            {
-                name: "Marina Bay Sands",
-                description: "Luxury integrated resort with infinity pool",
-                image: "/UGCImages/singapore/mbs.png"
-            },
-            {
-                name: "Universal Studios",
-                description: "World-class theme park with exciting rides",
-                image: "/UGCImages/singapore/uss.png"
-            }
-        ],
-        localFood: [
-            {
-                name: "Chili Crab",
-                description: "Singapore's national dish",
-                image: "/UGCImages/singapore/food1.png",
-                where: "JUMBO Seafood, Clarke Quay"
-            },
-            {
-                name: "Hainanese Chicken Rice",
-                description: "Popular local delicacy",
-                image: "/UGCImages/singapore/food2.png",
-                where: "Tian Tian Chicken Rice, Maxwell Food Centre"
-            }
-        ],
-        culture: [
-            {
-                title: "Modern Architecture",
-                description: "Singapore's stunning skyline and architectural marvels",
-                image: "/UGCImages/singapore/architecture.png"
-            },
-            {
-                title: "Cultural Heritage",
-                description: "Diverse mix of Chinese, Malay, and Indian influences",
-                image: "/UGCImages/singapore/culture.png"
-            }
-        ],
+       
         departureDates: [
             { date: "Mar 2025 - July 2025" }
         ],
@@ -545,19 +440,19 @@ Meals: Breakfast at the hotel
         experiences: [
             {
                 title: "Marina Bay Sands",
-                image: "/UGCImages/singapore/experiences/mbs.webp"
+                image: "/UGCImages/singapore/experience/1.png"
             },
             {
                 title: "Gardens By The Bay",
-                image: "/UGCImages/singapore/experiences/gardens.webp"
+                image: "/UGCImages/singapore/experience/2.png"
             },
             {
                 title: "Sentosa Island",
-                image: "/UGCImages/singapore/experiences/sentosa.webp"
+                image: "/UGCImages/singapore/experience/3.png"
             },
             {
                 title: "Night Safari",
-                image: "/UGCImages/singapore/experiences/safari.webp"
+                image: "/UGCImages/singapore/experience/4.png"
             }
         ]
     },
@@ -622,7 +517,7 @@ Overnight Stay at Kuala Lumpur Hotel
 
 
 `,
-                image: "/UGCImages/singapore/itinerary/day1.webp"
+                image: "/UGCImages/singapore/klcc/1.png"
             },
             {
                 day: 2,
@@ -638,7 +533,7 @@ Overnight Stay at Kuala Lumpur Hotel
 
 
 `,
-                image: "/UGCImages/singapore/itinerary/day2.webp"
+                image: "/UGCImages/singapore/klcc/2.png"
             },
             {
                 day: 3,
@@ -653,7 +548,7 @@ Overnight stay at Kuala Lumpur hotel
 
 
 `,
-                image: "/UGCImages/singapore/itinerary/day3.webp"
+                image: "/UGCImages/singapore/klcc/3.png"
             },
             {
                 day: 4,
@@ -663,58 +558,16 @@ Meals: Breakfast at the hotel
 
 
 `,
-                image: "/UGCImages/singapore/itinerary/day4.webp"
+                image: "/UGCImages/singapore/klcc/4.png"
             },    
         ],
         images: [
-            "/UGCImages/singapore/Malaysia/1.webp",
-            "/UGCImages/singapore/Malaysia/2.webp",
-            "/UGCImages/singapore/Malaysia/3.webp",
-            "/UGCImages/singapore/Malaysia/4.webp"
+            "/UGCImages/singapore/Malaysia/1.png",
+            "/UGCImages/singapore/Malaysia/2.png",
+            "/UGCImages/singapore/Malaysia/3.png",
+            "/UGCImages/singapore/Malaysia/4.png"
         ],
-        sightseeingSpots: [
-            {
-                name: "Gardens by the Bay",
-                description: "Iconic nature park with Supertree Grove",
-                image: "/UGCImages/singapore/gardens.png"
-            },
-            {
-                name: "Marina Bay Sands",
-                description: "Luxury integrated resort with infinity pool",
-                image: "/UGCImages/singapore/mbs.png"
-            },
-            {
-                name: "Batu Caves",
-                description: "World-class theme park with exciting rides",
-                image: "/UGCImages/singapore/uss.png"
-            }
-        ],
-        localFood: [
-            {
-                name: "Chili Crab",
-                description: "Singapore's national dish",
-                image: "/UGCImages/singapore/food1.png",
-                where: "JUMBO Seafood, Clarke Quay"
-            },
-            {
-                name: "Hainanese Chicken Rice",
-                description: "Popular local delicacy",
-                image: "/UGCImages/singapore/food2.png",
-                where: "Tian Tian Chicken Rice, Maxwell Food Centre"
-            }
-        ],
-        culture: [
-            {
-                title: "Modern Architecture",
-                description: "Singapore's stunning skyline and architectural marvels",
-                image: "/UGCImages/singapore/architecture.png"
-            },
-            {
-                title: "Cultural Heritage",
-                description: "Diverse mix of Chinese, Malay, and Indian influences",
-                image: "/UGCImages/singapore/culture.png"
-            }
-        ],
+        
         departureDates: [
             { date: "Mar 2025 - July 2025" }
         ],
@@ -825,7 +678,7 @@ Overnight Stay at Langkawi Hotel
 
 
 `,
-                image: "/UGCImages/singapore/itinerary/day1.webp"
+                image: "/UGCImages/singapore/lan/1.png"
             },
             {
                 day: 2,
@@ -839,7 +692,7 @@ Overnight accommodation @ Hotel, Langkawi
 
 
 `,
-                image: "/UGCImages/singapore/itinerary/day2.webp"
+                image: "/UGCImages/singapore/lan/2.png"
             },
             {
                 day: 3,
@@ -851,7 +704,7 @@ Overnight accommodation @ Hotel, Langkawi
 
 
 `,
-                image: "/UGCImages/singapore/itinerary/day3.webp"
+                image: "/UGCImages/singapore/lan/3.png"
             },
             {
                 day: 4,
@@ -859,7 +712,7 @@ Overnight accommodation @ Hotel, Langkawi
                 description: `Enjoy Breakfast in Hotel. 
 Have a Leisure day and stay at Hotel.
 `,
-                image: "/UGCImages/singapore/itinerary/day4.webp"
+                image: "/UGCImages/singapore/lan/4.png"
             },    
             {
                 day: 5,
@@ -871,61 +724,17 @@ Standard Check out time1200hrs
 Check out and meet driver at hotel lobby for transfer to LGK Airport for departure
 
 `,
-                image: "/UGCImages/singapore/itinerary/day5.webp"
+                image: "/UGCImages/singapore/lan/5.png"
             },    
         ],
         images: [
-            "/UGCImages/singapore/Malaysia/5.webp",
-            "/UGCImages/singapore/Malaysia/6.webp",
-            "/UGCImages/singapore/Malaysia/7.webp",
-            "/UGCImages/singapore/Malaysia/8.webp",
-            
-            
-            
+            "/UGCImages/singapore/lan/1.png",
+            "/UGCImages/singapore/lan/2.png",
+            "/UGCImages/singapore/lan/3.png",
+            "/UGCImages/singapore/lan/4.png",
+            "/UGCImages/singapore/lan/5.png"
         ],
-        sightseeingSpots: [
-            {
-                name: "Gardens by the Bay",
-                description: "Iconic nature park with Supertree Grove",
-                image: "/UGCImages/singapore/gardens.png"
-            },
-            {
-                name: "Marina Bay Sands",
-                description: "Luxury integrated resort with infinity pool",
-                image: "/UGCImages/singapore/mbs.png"
-            },
-            {
-                name: "Batu Caves",
-                description: "World-class theme park with exciting rides",
-                image: "/UGCImages/singapore/uss.png"
-            }
-        ],
-        localFood: [
-            {
-                name: "Chili Crab",
-                description: "Singapore's national dish",
-                image: "/UGCImages/singapore/food1.png",
-                where: "JUMBO Seafood, Clarke Quay"
-            },
-            {
-                name: "Hainanese Chicken Rice",
-                description: "Popular local delicacy",
-                image: "/UGCImages/singapore/food2.png",
-                where: "Tian Tian Chicken Rice, Maxwell Food Centre"
-            }
-        ],
-        culture: [
-            {
-                title: "Modern Architecture",
-                description: "Singapore's stunning skyline and architectural marvels",
-                image: "/UGCImages/singapore/architecture.png"
-            },
-            {
-                title: "Cultural Heritage",
-                description: "Diverse mix of Chinese, Malay, and Indian influences",
-                image: "/UGCImages/singapore/culture.png"
-            }
-        ],
+        
         departureDates: [
             { date: "Mar 2025 - July 2025" }
         ],
@@ -1123,49 +932,7 @@ End of tour with memories to cherish forever!`,
             "/UGCImages/singapore/singapore/1.webp",
             "/UGCImages/singapore/singapore/2.webp",
         ],
-        sightseeingSpots: [
-            {
-                name: "Gardens by the Bay",
-                description: "Iconic nature park with Supertree Grove",
-                image: "/UGCImages/singapore/spots/gardens.webp"
-            },
-            {
-                name: "Marina Bay Sands",
-                description: "Luxury integrated resort with infinity pool",
-                image: "/UGCImages/singapore/spots/mbs.webp"
-            },
-            {
-                name: "Universal Studios",
-                description: "World-class theme park with exciting rides",
-                image: "/UGCImages/singapore/spots/uss.webp"
-            }
-        ],
-        localFood: [
-            {
-                name: "Chili Crab",
-                description: "Singapore's national dish",
-                image: "/UGCImages/singapore/food/chili-crab.webp",
-                where: "JUMBO Seafood, Clarke Quay"
-            },
-            {
-                name: "Hainanese Chicken Rice",
-                description: "Popular local delicacy",
-                image: "/UGCImages/singapore/food/chicken-rice.webp",
-                where: "Tian Tian Chicken Rice, Maxwell Food Centre"
-            }
-        ],
-        culture: [
-            {
-                title: "Modern Architecture",
-                description: "Singapore's stunning skyline and architectural marvels",
-                image: "/UGCImages/singapore/culture/architecture.webp"
-            },
-            {
-                title: "Cultural Heritage",
-                description: "Diverse mix of Chinese, Malay, and Indian influences",
-                image: "/UGCImages/singapore/culture/heritage.webp"
-            }
-        ],
+       
         departureDates: [
             { date: "Mar 2025 - July 2025" }
         ],

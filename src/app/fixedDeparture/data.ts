@@ -221,14 +221,14 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         days: 8,
         nights: 7,
         amount: 89999,
-        dateStart: "Multiple",
-        dateEnd: "May 2025",
+        dateStart: "May, June",
+        dateEnd: "July",
         flightFrom: "DEL/BOM/KOL",
         description: "Experience the best of Vietnam in 8 days covering Hanoi, Danang, and Ho Chi Minh. Explore natural beauty including Ha Long Bay, cultural treasures like ancient temples, and historic sites across Vietnam's most vibrant cities.",
         groupDetails: {
             pax: "Group Departure",
             rooms: "Twin Sharing Basis",
-            arrivalDate: "Available Dates: Mar 2,7,14,21 | Apr 4,11,18,25 | May 2,9,16,23,30",
+            arrivalDate: "Available Dates:  2,| 2, 9, 16, 23, 30 May | 6, 13, 20, 27 Jun ",
             duration: "7N8D Vietnam",
             costBasis: "Cost Based On Double Sharing"
         },
@@ -269,7 +269,6 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
             "Accommodation in comfortable hotels (twin sharing)",
             "All Meals – Breakfast, Lunch, Dinner as per itinerary",
             "Internal airfare",
-            "GST & TCS"
         ],
         exclusions: [
             "Travel Insurance",

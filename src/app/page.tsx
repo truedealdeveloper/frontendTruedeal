@@ -40,8 +40,8 @@ export default function Home() {
       </section>
       <div className="">
         {/* <ChardhamYatra /> */} 
-        <SriLanka />  
         <AustraliaBanner />
+        <SriLanka />  
         <BaliBanner />
         <VietnamBanner />
         <LaosCambodiaBanner />

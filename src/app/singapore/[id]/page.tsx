@@ -800,7 +800,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
 
                 {/* Mobile Booking Bar */}
                 {isMobile && (
-                    <div className="fixed bottom-0 left-0 right-0 bg-white border-t p-4 flex items-center justify-between z-50">
+                    <div className="fixed bottom-0 left-0 right-0 bg-white border-t p-4 flex items-center justify-between z-[9999]">
                         <div>
                             <div className="text-sm">Per Person</div>
                             <div className="font-bold text-xl">₹{singaporePkg?.amount?.toLocaleString('en-IN')}</div>
