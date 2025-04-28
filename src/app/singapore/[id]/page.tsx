@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { singaporePackages } from '../data';
 import { notFound } from 'next/navigation';
 import { 
-  Calendar, Check,  MapPin, Star, Users, X, Play 
+  Calendar, Check, MapPin, Star, Users, X, Play, Camera 
 } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -41,9 +41,9 @@ export default function SingaporePackagePage({ params }: PageProps) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [selectedDay, setSelectedDay] = useState(1);
     const [showFullDescription, setShowFullDescription] = useState(false);
-    const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-    const [isMuted, setIsMuted] = useState(true);
     const [expandedDays, setExpandedDays] = useState<number[]>([1]);
+    const [isGalleryModalOpen, setIsGalleryModalOpen] = useState(false);
+    const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
 
     const overviewRef = useRef<HTMLDivElement>(null);
     const itineraryRef = useRef<HTMLDivElement>(null);
@@ -127,26 +127,32 @@ export default function SingaporePackagePage({ params }: PageProps) {
         ? `${description.substring(0, 300)}...` 
         : description;
 
-    // Function to toggle mute/unmute
-    const toggleMute = () => {
-        setIsMuted(!isMuted);
-        const audioElement = document.getElementById('packageAudio') as HTMLAudioElement;
-        const videoElement = document.getElementById('packageVideo') as HTMLVideoElement;
-        
-        if (audioElement) {
-            audioElement.muted = !isMuted;
-        }
-        if (videoElement) {
-            videoElement.muted = !isMuted;
-        }
-    };
-
-    // Toggle day expansion function
+    // Function to toggle day expansion
     const toggleDayExpansion = (dayNumber: number) => {
         setExpandedDays(prev => 
             prev.includes(dayNumber) 
                 ? prev.filter(d => d !== dayNumber) 
                 : [...prev, dayNumber]
+        );
+    };
+
+    // Add this new function to get all images from itinerary
+    const getAllImages = () => {
+        const itineraryImages = singaporePkg.itinerary.map(day => day.image);
+        const packageImages = singaporePkg.images || [];
+        return [...new Set([...packageImages, ...itineraryImages])];
+    };
+
+    // Add these gallery navigation functions
+    const nextImage = () => {
+        setCurrentGalleryIndex((prev) => 
+            prev === getAllImages().length - 1 ? 0 : prev + 1
+        );
+    };
+
+    const previousImage = () => {
+        setCurrentGalleryIndex((prev) => 
+            prev === 0 ? getAllImages().length - 1 : prev - 1
         );
     };
 
@@ -196,9 +202,9 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                         size="lg"
                                         variant="outline"
                                         className="bg-white/10 backdrop-blur-sm border-white/20 text-white rounded-full px-8"
-                                        onClick={() => setIsVideoModalOpen(true)}
+                                        onClick={() => setIsGalleryModalOpen(true)}
                                     >
-                                        <Play className="h-4 w-4 mr-2" /> Watch Video
+                                        <Camera className="h-4 w-4 mr-2" /> View All Photos
                                     </Button>
                                 )}
                             </div>
@@ -823,57 +829,55 @@ export default function SingaporePackagePage({ params }: PageProps) {
                     dates={`${singaporePkg?.dateStart} - ${singaporePkg?.dateEnd}`}
                 />
 
-                {/* Video Modal */}
-                {isVideoModalOpen && (
+                {/* Gallery Modal */}
+                {isGalleryModalOpen && (
                     <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4">
-                        <div className="relative w-full max-w-5xl rounded-lg overflow-hidden">
-                            <audio
-                                id="packageAudio"
-                                loop
-                                muted={isMuted}
-                                autoPlay
-                                className="hidden"
-                            >
-                                <source src="/UGCImages/singapore/audio/singapore.mp3" type="audio/mp3" />
-                            </audio>
-
+                        <div className="relative w-full max-w-[90vh] mx-auto">
                             <button 
-                                onClick={() => setIsVideoModalOpen(false)}
+                                onClick={() => setIsGalleryModalOpen(false)}
                                 className="absolute top-4 right-4 z-10 text-white/80 hover:text-white bg-black/30 hover:bg-black/50 p-2 rounded-full transition-all"
-                                aria-label="Close video"
+                                aria-label="Close gallery"
                             >
                                 <X className="h-6 w-6" />
                             </button>
                             
-                            <button
-                                onClick={toggleMute}
-                                className="absolute bottom-4 right-4 z-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm p-3 rounded-full transition-all duration-300 text-white shadow-lg"
-                                aria-label={isMuted ? "Unmute audio" : "Mute audio"}
-                            >
-                                {isMuted ? (
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
-                                    </svg>
-                                ) : (
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-                                    </svg>
-                                )}
-                            </button>
+                            <div className="relative aspect-square w-full">
+                                <Image
+                                    src={getAllImages()[currentGalleryIndex]}
+                                    alt={`Gallery image ${currentGalleryIndex + 1}`}
+                                    fill
+                                    className="object-contain"
+                                    priority
+                                    sizes="(max-width: 768px) 100vw, 80vw"
+                                />
+                            </div>
                             
-                            <div className="relative w-full">
-                                <video 
-                                    id="packageVideo"
-                                    autoPlay 
-                                    loop 
-                                    muted={isMuted}
-                                    playsInline
-                                    className="w-full h-full object-cover"
+                            <div className="absolute inset-y-0 left-0 flex items-center">
+                                <button
+                                    onClick={previousImage}
+                                    className="bg-black/30 hover:bg-black/50 p-2 rounded-full ml-2 md:ml-4 text-white transition-all"
+                                    aria-label="Previous image"
                                 >
-                                    <source src="/UGCImages/singapore/singaporebg.mp4" type="video/mp4" />
-                                    Your browser does not support the video tag.
-                                </video>
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                                    </svg>
+                                </button>
+                            </div>
+                            
+                            <div className="absolute inset-y-0 right-0 flex items-center">
+                                <button
+                                    onClick={nextImage}
+                                    className="bg-black/30 hover:bg-black/50 p-2 rounded-full mr-2 md:mr-4 text-white transition-all"
+                                    aria-label="Next image"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </button>
+                            </div>
+                            
+                            <div className="absolute bottom-4 left-0 right-0 text-center text-white text-sm md:text-base">
+                                {currentGalleryIndex + 1} / {getAllImages().length}
                             </div>
                         </div>
                     </div>
