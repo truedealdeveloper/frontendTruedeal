@@ -41,12 +41,12 @@ export default function Home() {
       <div className="">
         {/* <ChardhamYatra /> */} 
         <AustraliaBanner />
+        <SingaporeBanner />
         <SriLanka />  
         <BaliBanner />
         <VietnamBanner />
         <LaosCambodiaBanner />
         <AlmatyBanner />
-        <SingaporeBanner />
         <USA />
         <SouthKorea />
         <Turkey />
