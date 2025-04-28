@@ -14,6 +14,8 @@ import { Dancing_Script, Playfair_Display } from 'next/font/google';
 const dancingScript = Dancing_Script({ subsets: ['latin'] });
 const playfair = Playfair_Display({ subsets: ['latin'] });
 
+const BLOB_URL = process.env.NEXT_PUBLIC_BLOB_URL;
+
 export default function SingaporePackages() {
     const [currentPage, setCurrentPage] = useState(0);
     const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -215,26 +217,29 @@ export default function SingaporePackages() {
                     id="singaporeVideo"
                     autoPlay 
                     loop 
-                    muted 
+                    muted={isMuted}
                     playsInline
                     className="absolute inset-0 w-full h-full object-cover"
                     poster="/UGCImages/singapore/singapore/6.webp"
+                    preload="metadata"
                     onError={(e) => {
                         const fallbackImage = e.currentTarget.parentElement?.querySelector('img');
                         if (fallbackImage) {
                             fallbackImage.style.display = 'block';
                         }
-                        e.currentTarget.style.display = 'none';
                     }}
                 >
-                    <source src="/UGCImages/singapore/singaporebg.mp4" type="video/mp4" />
-                    <source src="/UGCImages/singapore/singaporebg.webm" type="video/webm" />
-                    <source src="/UGCImages/singapore/singaporebg.ogg" type="video/ogg" />
+                    <source 
+                        src={`${BLOB_URL}/singaporeBG-y961zYwC9Ky6O3X7VxBc9WcCiJRUeb.mp4`} 
+                        type="video/mp4" 
+                    />
                     Your browser does not support the video tag.
                 </video>
+                
+                {/* Fallback image */}
                 <Image
                     src="/UGCImages/singapore/singapore/6.webp"
-                    alt="Singapore"
+                    alt="Singapore Background"
                     fill
                     className="object-cover hidden"
                     priority
