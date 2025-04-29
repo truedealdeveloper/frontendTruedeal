@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { singaporePackages } from '../data';
 import { notFound } from 'next/navigation';
 import { 
-  Calendar, Check, MapPin, Star, Users, X, Play, Camera 
+  Calendar, Check, MapPin, Star, Users, X, Camera 
 } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
