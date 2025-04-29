@@ -49,14 +49,15 @@ function ThankYouContent() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2 }}
             >
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">Thank You!</h1>
+                <h1 className="text-3xl font-bold text-gray-900 mb-2">Thank You 😊</h1>
                 {packageName && (
                     <h2 className="text-xl text-[#017ae3] font-semibold mb-4">
                         {decodeURIComponent(packageName)}
                     </h2>
                 )}
                 <p className="text-gray-600 mb-6">
-                    We have successfully received your query and our travel expert will get in touch with you shortly to plan your next memorable trip!��
+                    We have successfully received your query and our travel expert will get in touch with you shortly to plan your next memorable trip!
+                    ❤️
                 </p>
                 <p className="text-gray-600 mb-6">
                     You can contact us at <a href="tel:+919310271488" className="text-[#017ae3] font-semibold">+91 9310271488</a>

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { singaporePackages } from '../data';
 import { notFound } from 'next/navigation';
 import { 
-  Calendar, Check, MapPin, Star, Users, X, Camera 
+  Calendar, Check, MapPin, Star, Users, X, Camera, Phone 
 } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -759,19 +759,19 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                             Book Now
                                         </Button>
 
-                                        <div className="mt-4 bg-blue-50 p-4 rounded-md">
-                                            <div className="flex items-center">
-                                                <div className="text-blue-500 mr-3">
-                                                    <Users className="h-5 w-5" />
-                                                </div>
-                                                <div>
-                                                    <div className="font-medium text-blue-800">Need help?</div>
-                                                    <div className="text-sm text-blue-600">
-                                                        Call us at +91 9919111911 for assistance with booking.
-                                                    </div>
+                                        <a 
+                                            href="tel:+919919111911" 
+                                            className="mt-4 bg-blue-50 hover:bg-blue-100 transition-colors p-4 rounded-md flex items-center cursor-pointer no-underline"
+                                        >
+                                            <Phone className="h-5 w-5 text-blue-600 mr-3 flex-shrink-0" />
+                                            <div>
+                                                <div className="font-medium text-blue-800">Need assistance with booking?</div>
+                                                <div className="flex items-center text-blue-600">
+                                                    <span className="font-semibold">+91 9919 111 911</span>
+                                                    <span className="ml-2 text-xs bg-blue-600 text-white px-2 py-0.5 rounded-full">Tap to call</span>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
                                 </Card>
                                 
