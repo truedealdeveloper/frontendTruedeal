@@ -467,10 +467,10 @@ export default function TurkeyPackages() {
                         Turkey, a captivating country where East meets West, offers visitors an unforgettable blend of ancient history, rich cultural experiences, stunning landscapes, and delicious cuisine.
                     </p>
                     <p>
-                        Our Turkey tour packages include visits to iconic locations like Istanbul's Hagia Sophia and Blue Mosque, the otherworldly landscapes of Cappadocia, the ancient ruins of Ephesus, and the stunning beaches of the Turkish Riviera.
+                        Our Turkey tour packages include visits to iconic locations like Istanbul&apos;s Hagia Sophia and Blue Mosque, the otherworldly landscapes of Cappadocia, the ancient ruins of Ephesus, and the stunning beaches of the Turkish Riviera.
                     </p>
                     <p>
-                        Experience the rich cultural heritage through Turkish hammams, traditional tea houses, and vibrant bazaars, while enjoying the country's famous kebabs, mezes, baklava, and authentic Turkish hospitality.
+                        Experience the rich cultural heritage through Turkish hammams, traditional tea houses, and vibrant bazaars, while enjoying the country&apos;s famous kebabs, mezes, baklava, and authentic Turkish hospitality.
                     </p>
                 </div>
             </div>

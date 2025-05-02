@@ -63,7 +63,7 @@ export default function Home() {
       {/* <Indonesia /> */}
       <Ad />
       {/* <HappyCustomers /> */}
-      <CurrencyExchange />
+      {/* <CurrencyExchange /> */}
 
       <Gallery />
       

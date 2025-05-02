@@ -14,7 +14,7 @@ import Domestic from '@/app/components/homepage/Domestic';
 import ExoticDestinations from '@/app/components/homepage/Exotic';
 import Europe from '@/app/components/homepage/Europe';
 import Gallery from '@/app/components/homepage/Gallery';
-import CurrencyExchange from '@/app/components/forex/ForexLive';
+// import CurrencyExchange from '@/app/components/forex/ForexLive';
 import Sponsors from '@/app/components/Ad/Sponsers';
 import ReviewsGlimpse from '@/app/components/homepage/ReviewsGlimpse';
 import Indonesia from '@/app/indonesia/page';
@@ -552,7 +552,7 @@ export default function TrendingDestinationDetails() {
             <ExoticDestinations />
             <Europe />
             {/* <HappyCustomers /> */}
-            <CurrencyExchange />
+            {/* <CurrencyExchange /> */}
             <Gallery />
             {/* <WallOfLove /> */}
             <Sponsors />

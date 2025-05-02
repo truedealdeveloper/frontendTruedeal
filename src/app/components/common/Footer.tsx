@@ -122,7 +122,7 @@ export default function Component() {
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
                         {/* Company Info with enhanced styling */}
                         <div 
                             className="transform transition-all duration-300 hover:translate-y-[-5px]"
@@ -197,33 +197,6 @@ export default function Component() {
                                             className="group text-gray-700 hover:text-[#017ae3] text-sm transition-colors duration-200 flex items-center gap-2">
                                             <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-200">→</span>
                                             {link.name}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </nav>
-
-                        {/* Our Services with enhanced styling */}
-                        <nav 
-                            className="transform transition-all duration-300 hover:translate-y-[-5px]"
-                            aria-label="Services navigation"
-                            data-nosnippet
-                        >
-                            <h3 className="font-bold text-[#017ae3] mb-4 text-lg relative after:content-[''] after:block after:w-0 after:h-0.5 after:bg-[#00f6ff] after:transition-all after:duration-300 hover:after:w-full">
-                                Our Services
-                            </h3>
-                            <ul className="space-y-2">
-                                {[
-                                    { name: "Foreign Currency", path: "/#forex" },
-                                    { name: "Exchange Forex Card", path: "/#forex" },
-                                    { name: "Remittance", path: "/#forex" },
-                                    { name: "VISA Services", path: "/visaservices" },
-                                ].map((service) => (
-                                    <li key={service.name} className="transform transition-all duration-200 hover:translate-x-2">
-                                        <Link href={service.path} 
-                                            className="group text-gray-700 hover:text-[#017ae3] text-sm transition-colors duration-200 flex items-center gap-2">
-                                            <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-200">→</span>
-                                            {service.name}
                                         </Link>
                                     </li>
                                 ))}

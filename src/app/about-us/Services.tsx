@@ -1,18 +1,6 @@
 export default function Services() {
     const services = [
         {
-            title: "Foreign Currency Exchange",
-            icon: "💱"
-        },
-        {
-            title: "Remittance",
-            icon: "📤"
-        },
-        {
-            title: "Forex Card",
-            icon: "💳"
-        },
-        {
             title: "Visa",
             icon: "🛂"
         },

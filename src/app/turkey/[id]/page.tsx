@@ -436,7 +436,7 @@ export default function TurkeyPackagePage({ params }: PageProps) {
 
                                             {/* Experiences You'll Love */}
                                             <div className="mb-10">
-                                                <h2 className="text-2xl font-bold mb-6">Experiences You'll Love</h2>
+                                                <h2 className="text-2xl font-bold mb-6">Experiences You&apos;ll Love</h2>
                                                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                                                     {turkeyPkg.experiences.map((experience, index) => (
                                                         <div key={index} className="bg-white rounded-xl overflow-hidden shadow-sm group">
@@ -529,9 +529,9 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                                 </div>
                                             </div>
 
-                                            {/* What's Included */}
+                                            {/* What&apos;s Included */}
                                             <div className="mb-10">
-                                                <h2 className="text-2xl font-bold mb-6">What's Included</h2>
+                                                <h2 className="text-2xl font-bold mb-6">What&apos;s Included</h2>
                                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                                     <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                                                         <h3 className="text-lg font-medium mb-4 flex items-center text-green-600">
