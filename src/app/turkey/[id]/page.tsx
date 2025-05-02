@@ -231,7 +231,7 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                             </div>
                             <div>
                                 <div className="text-sm opacity-80">Location</div>
-                                <div className="font-medium text-sm md:text-base">Turkey</div>
+                                <div className="font-medium text-sm md:text-base">Entire Turkey</div>
                             </div>
                         </div>
                         
@@ -273,6 +273,7 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                             >
                                                 Overview
                                             </TabsTrigger>
+                                            
                                             <TabsTrigger 
                                                 value="itinerary"
                                                 className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white  flex-shrink-0"
@@ -294,7 +295,7 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                                 <h2 className="text-2xl font-bold mb-6">Package Highlights</h2>
                                                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                                                     {[
-                                                        { icon: "/icons/city-skyline.webp", title: "City Exploration", desc: "Visit Turkey's iconic attractions" },
+                                                        { icon: "/icons/city-skyline.webp", title: "Complete Turkey", desc: "Experience the entire country" },
                                                         { icon: "/icons/local-cuisine.webp", title: "Local Cuisine", desc: "Experience Turkey's food culture" },
                                                         { icon: "/icons/luxury-hotel.webp", title: "Quality Hotels", desc: `${turkeyPkg.nights} nights accommodation` },
                                                         { icon: "/icons/airport-transfer.webp", title: "Airport Transfers", desc: "Convenient transport included" },
@@ -320,7 +321,7 @@ export default function TurkeyPackagePage({ params }: PageProps) {
 
                                             {/* About This Package */}
                                             <div className="mb-10">
-                                                <h2 className="text-2xl font-bold mb-6">About This Package</h2>
+                                                <h2 className="text-2xl font-bold mb-6">Discover Entire Turkey</h2>
                                                 <div className="bg-white rounded-3xl shadow-sm overflow-hidden">
                                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                                         <div className="p-6">

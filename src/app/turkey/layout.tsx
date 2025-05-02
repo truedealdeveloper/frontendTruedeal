@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Turkey Tour Packages | TrueDeal4U',
+    title: 'Turkey Tour Packages | TrueDeal',
     description: 'Experience the best of Turkey with our comprehensive tour packages. Visit Gardens by the Bay, Universal Studios, Marina Bay Sands, and enjoy world-class shopping.',
     images: ['/UGCImages/turkey/dayWise/1.png']
   }

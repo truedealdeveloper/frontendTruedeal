@@ -135,53 +135,53 @@ export default function TurkeyPackages() {
 
     const turkeyHighlights = [
         {
-            title: "Modern City",
+            title: "Istanbul",
             image: "/UGCImages/turkey/turkey/img/1.png",
-            description: "Experience the ultra-modern cityscape and architecture"
+            description: "Experience the historic city where East meets West"
         },
         {
-            title: "Theme Parks",
+            title: "Cappadocia",
             image: "/UGCImages/turkey/turkey/img/2.png",
-            description: "Enjoy Universal Studios and other attractions"
+            description: "Enjoy hot air balloon rides over unique rock formations"
         },
         {
-            title: "Cultural Heritage",
+            title: "Pamukkale",
             image: "/UGCImages/turkey/turkey/img/3.png",
-            description: "Explore diverse cultural neighborhoods"
+            description: "Explore the stunning white travertine terraces"
         },
         {
-            title: "Shopping Paradise",
+            title: "Turkish Bazaars",
             image: "/UGCImages/turkey/turkey/img/4.png",
-            description: "World-class shopping on Orchard Road"
+            description: "World-class shopping at the Grand Bazaar and Spice Market"
         },
         {
-            title: "Gardens & Nature",
+            title: "Mediterranean Coast",
             image: "/UGCImages/turkey/turkey/img/5.png",
-            description: "Visit Gardens by the Bay and nature parks"
+            description: "Visit beautiful beaches and ancient ruins along the Turquoise Coast"
         },
         {
-            title: "Culinary Delights",
+            title: "Turkish Cuisine",
             image: "/UGCImages/turkey/turkey/img/6.png",
-            description: "Savor local cuisine at hawker centers"
+            description: "Savor kebabs, baklava, and authentic Turkish delight"
         }
     ];
 
     const faqs = [
         {
             question: "What is the best time to visit Turkey?",
-            answer: "Turkey is a year-round destination. However, July to September typically has the best weather with less rainfall."
+            answer: "The best time to visit Turkey is during spring (April to May) and autumn (September to November) when the weather is pleasant and crowds are smaller. Summer (June to August) is peak tourist season but can be very hot."
         },
         {
             question: "Do Indians need a visa for Turkey?",
-            answer: "Yes, Indian citizens need a visa to enter Turkey. The process is relatively straightforward and can be done online."
+            answer: "Yes, Indian citizens need a visa to enter Turkey. You can apply for an e-Visa online before your trip, which is relatively quick and straightforward."
         },
         {
-            question: "What are the must-visit attractions?",
-            answer: "Popular attractions include Gardens by the Bay, Universal Studios, Marina Bay Sands, Sentosa Island, and Turkey Zoo."
+            question: "What are the must-visit attractions in Turkey?",
+            answer: "Popular attractions include Hagia Sophia and Blue Mosque in Istanbul, the fairy chimneys of Cappadocia, the ancient city of Ephesus, Pamukkale's white terraces, and the beautiful beaches of Antalya."
         },
         {
             question: "Is Turkey expensive to visit?",
-            answer: "Turkey can be relatively expensive, but there are options for all budgets, especially for food at hawker centers."
+            answer: "Turkey can be relatively affordable compared to many European destinations. There are options for all budgets, from luxury resorts to budget accommodations, and street food to fine dining."
         }
     ] as const;
 
@@ -271,7 +271,7 @@ export default function TurkeyPackages() {
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 1, duration: 0.8 }}
                             >
-                                Where tradition meets tomorrow
+                                Where East meets West
                             </motion.p>
                             <div className="flex justify-center gap-4 text-lg md:text-xl">
                                 <motion.span
@@ -280,7 +280,7 @@ export default function TurkeyPackages() {
                                     transition={{ delay: 1.5, duration: 0.5 }}
                                     className="text-yellow-300"
                                 >
-                                    Modern City
+                                    Ancient History
                                 </motion.span>
                                 <motion.span
                                     initial={{ opacity: 0, y: 20 }}
@@ -464,13 +464,13 @@ export default function TurkeyPackages() {
                 </h2>
                 <div className="text-gray-600 space-y-4">
                     <p>
-                        Turkey, a dynamic country where tradition meets modernity, offers visitors an unforgettable blend of cultural experiences, world-class attractions, and culinary delights.
+                        Turkey, a captivating country where East meets West, offers visitors an unforgettable blend of ancient history, rich cultural experiences, stunning landscapes, and delicious cuisine.
                     </p>
                     <p>
-                        Our Turkey tour packages include visits to iconic locations like Gardens by the Bay, Universal Studios Turkey, and Marina Bay Sands, combining entertainment with cultural experiences.
+                        Our Turkey tour packages include visits to iconic locations like Istanbul's Hagia Sophia and Blue Mosque, the otherworldly landscapes of Cappadocia, the ancient ruins of Ephesus, and the stunning beaches of the Turkish Riviera.
                     </p>
                     <p>
-                            Experience the rich multicultural heritage through visits to Little India, Chinatown, and Arab Street, while enjoying the citys famous hawker centers and modern shopping districts.
+                        Experience the rich cultural heritage through Turkish hammams, traditional tea houses, and vibrant bazaars, while enjoying the country's famous kebabs, mezes, baklava, and authentic Turkish hospitality.
                     </p>
                 </div>
             </div>
