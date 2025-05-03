@@ -3,9 +3,25 @@
 import { use, useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { turkeyPackages } from '../data';
-import { notFound } from 'next/navigation';
+import { notFound, usePathname } from 'next/navigation';
 import { 
-  Calendar, MapPin, Star, Users, X, Camera 
+  Calendar, MapPin, Star, Users, X, Camera,
+  Phone,
+  Check,
+  ChevronUp,
+  ChevronDown,
+  Building2,
+  Utensils,
+  Hotel,
+  Plane,
+  Palmtree,
+  Landmark,
+  Sun,
+  Sunset,
+  Droplets,
+  Wind,
+  Share2,
+  ImageIcon
 } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -32,6 +48,7 @@ export default function TurkeyPackagePage({ params }: PageProps) {
     const { id } = use(params);
     const turkeyPkg = Object.values(turkeyPackages).find(p => p.id === id);
     const isMobile = useMobile();
+    const pathname = usePathname();
 
     if (!turkeyPkg) {
         notFound();
@@ -154,6 +171,34 @@ export default function TurkeyPackagePage({ params }: PageProps) {
         setCurrentGalleryIndex((prev) => 
             prev === 0 ? getAllImages().length - 1 : prev - 1
         );
+    };
+
+    // Add this function to handle Instagram story sharing
+    const handleShareToInstagram = () => {
+        // Get the full URL of the current page
+        const fullUrl = `${window.location.origin}${pathname}`;
+        
+        // Instagram story sharing URL with mention
+        const instagramUrl = `instagram://story-camera?text=${encodeURIComponent(fullUrl)}&hashtags=TurkeyJourney,TRExplorer&mention=itstruedeal`;
+        
+        // Fallback URL for desktop or if Instagram app is not installed
+        const webUrl = `https://www.instagram.com/itstruedeal`;
+        
+        try {
+            window.location.href = instagramUrl;
+            // If Instagram app is not installed, this will fail and catch block will execute
+            setTimeout(() => {
+                window.location.href = webUrl;
+            }, 2000);
+        } catch {
+            window.location.href = webUrl;
+        }
+    };
+
+    // Add this function to handle gallery view
+    const openGallery = (index: number = 0) => {
+        setCurrentGalleryIndex(index);
+        setIsGalleryModalOpen(true);
     };
 
     return (
@@ -295,22 +340,16 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                                 <h2 className="text-2xl font-bold mb-6">Package Highlights</h2>
                                                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                                                     {[
-                                                        { icon: "/icons/city-skyline.webp", title: "Complete Turkey", desc: "Experience the entire country" },
-                                                        { icon: "/icons/local-cuisine.webp", title: "Local Cuisine", desc: "Experience Turkey's food culture" },
-                                                        { icon: "/icons/luxury-hotel.webp", title: "Quality Hotels", desc: `${turkeyPkg.nights} nights accommodation` },
-                                                        { icon: "/icons/airport-transfer.webp", title: "Airport Transfers", desc: "Convenient transport included" },
-                                                        { icon: "/icons/island-beach.webp", title: "Island Visits", desc: "Explore beautiful beaches and more" },
-                                                        { icon: "/icons/night-safari.webp", title: "Cultural Tours", desc: "Unique historical experiences" },
+                                                        { icon: <Building2 className="h-6 w-6 text-blue-600" />, title: "Complete Turkey", desc: "Experience the entire country" },
+                                                        { icon: <Utensils className="h-6 w-6 text-blue-600" />, title: "Local Cuisine", desc: "Experience Turkey's food culture" },
+                                                        { icon: <Hotel className="h-6 w-6 text-blue-600" />, title: "Quality Hotels", desc: `${turkeyPkg.nights} nights accommodation` },
+                                                        { icon: <Plane className="h-6 w-6 text-blue-600" />, title: "Airport Transfers", desc: "Convenient transport included" },
+                                                        { icon: <Palmtree className="h-6 w-6 text-blue-600" />, title: "Island Visits", desc: "Explore beautiful beaches and more" },
+                                                        { icon: <Landmark className="h-6 w-6 text-blue-600" />, title: "Cultural Tours", desc: "Unique historical experiences" },
                                                     ].map((highlight, index) => (
                                                         <Card key={index} className="p-4 border border-gray-100 shadow-sm hover:shadow-md transition group">
-                                                            <div className="bg-blue-50 rounded-full w-14 h-14 flex items-center justify-center mb-3 group-hover:bg-blue-100 transition-colors overflow-hidden">
-                                                                <Image 
-                                                                    src={highlight.icon} 
-                                                                    alt={highlight.title}
-                                                                    width={32}
-                                                                    height={32}
-                                                                    className="object-cover"
-                                                                />
+                                                            <div className="bg-blue-50 rounded-full w-14 h-14 flex items-center justify-center mb-3 group-hover:bg-blue-100 transition-colors">
+                                                                {highlight.icon}
                                                             </div>
                                                             <h3 className="font-medium text-gray-900">{highlight.title}</h3>
                                                             <p className="text-sm text-gray-600 mt-1">{highlight.desc}</p>
@@ -401,30 +440,43 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                                             <h3 className="text-xl font-semibold mb-4">Flight Information</h3>
                                                             
                                                             {/* Delhi to Turkey */}
-                                                            <Card className="border border-gray-200">
-                                                                <div className="p-4">
-                                                                    <div className="flex items-center justify-between mb-4">
-                                                                        <div className="font-medium text-lg">Turkish Airlines</div>
-                                                                        <div className="text-sm text-gray-500">Flight SQ403</div>
+                                                            <Card className="overflow-hidden">
+                                                                <div className="bg-gradient-to-r from-[#017ae3]/10 to-[#00f6ff]/10 p-4">
+                                                                    <div className="flex items-center justify-between mb-2">
+                                                                        <h3 className="font-semibold text-lg">Direct Flight</h3>
+                                                                        <span className="text-sm text-gray-600">{turkeyPkg.flightDetails.airlines[0].duration}</span>
                                                                     </div>
+                                                                    <div className="text-sm text-gray-600">{turkeyPkg.flightDetails.airlines[0].name}</div>
+                                                                </div>
+                                                                <div className="p-6">
                                                                     <div className="flex items-center justify-between">
-                                                                        <div className="text-center">
-                                                                            <div className="text-2xl font-bold">09:55</div>
-                                                                            <div className="text-sm text-gray-500">Delhi</div>
+                                                                        <div className="text-center flex-1">
+                                                                            <div className="text-lg font-bold">{turkeyPkg.flightDetails.airlines[0].departureCity}</div>
+                                                                            <div className="text-sm text-gray-500">Departure</div>
                                                                         </div>
-                                                                        <div className="flex-1 px-4">
-                                                                            <div className="relative">
+                                                                        
+                                                                        <div className="flex-1 px-4 flex items-center justify-center">
+                                                                            <div className="w-full relative">
                                                                                 <div className="absolute w-full top-1/2 h-0.5 bg-gray-200"></div>
-                                                                                <div className="absolute w-full top-1/2 flex justify-center">
-                                                                                    <span className="bg-white px-2 text-sm text-gray-500 -mt-3">
-                                                                                        8h 35m
-                                                                                    </span>
-                                                                                </div>
+                                                                                <Plane className="h-5 w-5 text-blue-600 relative -top-[10px] animate-pulse" />
                                                                             </div>
                                                                         </div>
-                                                                        <div className="text-center">
-                                                                            <div className="text-2xl font-bold">18:30</div>
-                                                                            <div className="text-sm text-gray-500">Turkey</div>
+                                                                        
+                                                                        <div className="text-center flex-1">
+                                                                            <div className="text-lg font-bold">{turkeyPkg.flightDetails.airlines[0].arrivalCity}</div>
+                                                                            <div className="text-sm text-gray-500">Arrival</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                    <div className="mt-4 pt-4 border-t">
+                                                                        <div className="flex items-center justify-between text-sm text-gray-600">
+                                                                            <div className="flex items-center">
+                                                                                <div className="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
+                                                                                <span>Direct Flight Available</span>
+                                                                            </div>
+                                                                            <span className="bg-blue-50 text-blue-700 px-2 py-1 rounded-full text-xs">
+                                                                                {turkeyPkg.flightDetails.airlines[0].duration} Duration
+                                                                            </span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -468,33 +520,23 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                                                 Tag your photos with <span className="font-semibold text-[#017ae3]">#TurkeyJourney</span> or <span className="font-semibold text-[#017ae3]">#TRExplorer</span> on social media and join our travel community. Your photos might be featured on our social channels!
                                                             </p>
                                                             <div className="flex space-x-4">
-                                                                <Button className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition">
-                                                                    <Image 
-                                                                        src="/icons/camera-icon.webp" 
-                                                                        alt="Share"
-                                                                        width={16}
-                                                                        height={16}
-                                                                        className="mr-2"
-                                                                    />
+                                                                <Button className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition"
+                                                                    onClick={handleShareToInstagram}
+                                                                >
+                                                                    <Share2 className="h-4 w-4 mr-2" />
                                                                     Share Now
                                                                 </Button>
-                                                                <Button variant="outline">
-                                                                    <Image 
-                                                                        src="/icons/gallery-icon.webp" 
-                                                                        alt="Gallery"
-                                                                        width={16}
-                                                                        height={16}
-                                                                        className="mr-2"
-                                                                    />
+                                                                <Button variant="outline" onClick={() => openGallery(0)}>
+                                                                    <ImageIcon className="h-4 w-4 mr-2" />
                                                                     View Gallery
                                                                 </Button>
                                                             </div>
                                                         </div>
                                                         <div className="grid grid-cols-3 gap-2">
-                                                            {[5, 6, 7, 8, 9, 10].map((num) => (
+                                                            {[1,2,3,4,5].map((num) => (
                                                                 <div key={num} className="relative aspect-square rounded-lg overflow-hidden group">
                                                                     <Image
-                                                                        src={`/UGCImages/turkey/turkey/${num}.webp`}
+                                                                        src={`/UGCImages/turkey/turkey2/${num}.png`}
                                                                         alt={`User shared photo ${num}`}
                                                                         fill
                                                                         className="object-cover transition duration-300 group-hover:scale-110"
@@ -523,75 +565,170 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                                     ))}
                                                 </div>
                                                 <div className="mt-4 text-center">
-                                                    <Button variant="outline" className="text-sm">
+                                                    <Button 
+                                                        variant="outline" 
+                                                        className="text-sm"
+                                                        onClick={() => openGallery(0)}
+                                                    >
                                                         View All Photos ({turkeyPkg?.images?.length || 0})
                                                     </Button>
                                                 </div>
                                             </div>
 
-                                            {/* What&apos;s Included */}
+                                            {/* What's Included */}
                                             <div className="mb-10">
                                                 <h2 className="text-2xl font-bold mb-6">What&apos;s Included</h2>
                                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                                     <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                                                         <h3 className="text-lg font-medium mb-4 flex items-center text-green-600">
-                                                            <div className="w-6 h-6 mr-2 flex-shrink-0">
-                                                                <Image 
-                                                                    src="/icons/check-circle.webp" 
-                                                                    alt="Included"
-                                                                    width={24}
-                                                                    height={24}
-                                                                />
-                                                            </div>
+                                                            <Check className="h-6 w-6 mr-2 text-green-600" />
                                                             Included in Your Package
                                                         </h3>
                                                         <ul className="space-y-3">
                                                             {turkeyPkg.inclusions?.map((item, i) => (
                                                                 <li key={i} className="flex">
-                                                                    <div className="h-5 w-5 rounded-full bg-green-50 flex items-center justify-center mr-3 flex-shrink-0 overflow-hidden">
-                                                                        <Image 
-                                                                            src="/icons/check-small.webp" 
-                                                                            alt="Included"
-                                                                            width={12}
-                                                                            height={12}
-                                                                        />
+                                                                    <div className="h-5 w-5 rounded-full bg-green-50 flex items-center justify-center mr-3 flex-shrink-0">
+                                                                        <Check className="h-3 w-3 text-green-600" />
                                                                     </div>
                                                                     <span className="text-gray-700">{item}</span>
                                                                 </li>
                                                             ))}
                                                         </ul>
+                                                        
+                                                        {/* Added image for inclusions */}
+                                                        <div className="mt-6 relative h-40 rounded-lg overflow-hidden">
+                                                            <Image 
+                                                                src={turkeyPkg?.images?.[2] || '/default-image.jpg'}
+                                                                alt="Included services"
+                                                                fill
+                                                                className="object-cover"
+                                                            />
+                                                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                                            <div className="absolute bottom-0 left-0 right-0 p-4">
+                                                                <span className="text-white font-medium text-sm">All services included in your package</span>
+                                                            </div>
+                                                        </div>
                                                     </div>
 
                                                     <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                                                         <h3 className="text-lg font-medium mb-4 flex items-center text-red-600">
-                                                            <div className="w-6 h-6 mr-2 flex-shrink-0">
-                                                                <Image 
-                                                                    src="/icons/x-circle.webp" 
-                                                                    alt="Not Included"
-                                                                    width={24}
-                                                                    height={24}
-                                                                />
-                                                            </div>
+                                                            <X className="h-6 w-6 mr-2 text-red-600" />
                                                             Not Included
                                                         </h3>
                                                         <ul className="space-y-3">
                                                             {turkeyPkg.exclusions?.map((item, i) => (
                                                                 <li key={i} className="flex">
-                                                                    <div className="h-5 w-5 rounded-full bg-red-50 flex items-center justify-center mr-3 flex-shrink-0 overflow-hidden">
-                                                                        <Image 
-                                                                            src="/icons/x-small.webp" 
-                                                                            alt="Not Included"
-                                                                            width={12}
-                                                                            height={12}
-                                                                        />
+                                                                    <div className="h-5 w-5 rounded-full bg-red-50 flex items-center justify-center mr-3 flex-shrink-0">
+                                                                        <X className="h-3 w-3 text-red-600" />
                                                                     </div>
                                                                     <span className="text-gray-700">{item}</span>
                                                                 </li>
                                                             ))}
                                                         </ul>
+                                                        
+                                                        {/* Added image for exclusions */}
+                                                        <div className="mt-6 relative h-40 rounded-lg overflow-hidden">
+                                                            <Image 
+                                                                src={turkeyPkg?.images?.[3] || '/default-image.jpg'}
+                                                                alt="Additional expenses"
+                                                                fill
+                                                                className="object-cover"
+                                                            />
+                                                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                                            <div className="absolute bottom-0 left-0 right-0 p-4">
+                                                                <span className="text-white font-medium text-sm">Additional expenses to consider</span>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
+
+                                            {/* Flight Details Section */}
+                                            {turkeyPkg.flightDetails && (
+                                                <div className="mb-10">
+                                                    <h2 className="text-2xl font-bold mb-6">Flight Information</h2>
+                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                                        {turkeyPkg.flightDetails.airlines.map((flight, index) => (
+                                                            <Card key={index} className="overflow-hidden">
+                                                                <div className="bg-gradient-to-r from-[#017ae3]/10 to-[#00f6ff]/10 p-4">
+                                                                    <div className="flex items-center justify-between mb-2">
+                                                                        <h3 className="font-semibold text-lg">Direct Flight</h3>
+                                                                        <span className="text-sm text-gray-600">{flight.duration}</span>
+                                                                    </div>
+                                                                    <div className="text-sm text-gray-600">{flight.name}</div>
+                                                                </div>
+                                                                <div className="p-6">
+                                                                    <div className="flex items-center justify-between">
+                                                                        <div className="text-center flex-1">
+                                                                            <div className="text-lg font-bold">{flight.departureCity}</div>
+                                                                            <div className="text-sm text-gray-500">Departure</div>
+                                                                        </div>
+                                                                        
+                                                                        <div className="flex-1 px-4 flex items-center justify-center">
+                                                                            <div className="w-full relative">
+                                                                                <div className="absolute w-full top-1/2 h-0.5 bg-gray-200"></div>
+                                                                                <Plane className="h-5 w-5 text-blue-600 relative -top-[10px] animate-pulse" />
+                                                                            </div>
+                                                                        </div>
+                                                                        
+                                                                        <div className="text-center flex-1">
+                                                                            <div className="text-lg font-bold">{flight.arrivalCity}</div>
+                                                                            <div className="text-sm text-gray-500">Arrival</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                    <div className="mt-4 pt-4 border-t">
+                                                                        <div className="flex items-center justify-between text-sm text-gray-600">
+                                                                            <div className="flex items-center">
+                                                                                <div className="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
+                                                                                <span>Direct Flight Available</span>
+                                                                            </div>
+                                                                            <span className="bg-blue-50 text-blue-700 px-2 py-1 rounded-full text-xs">
+                                                                                {flight.duration} Duration
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </Card>
+                                                        ))}
+                                                    </div>
+                                                    
+                                                    {/* Additional Flight Information */}
+                                                    <div className="mt-6 bg-gray-50 rounded-xl p-6">
+                                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                                            <div className="flex items-start space-x-3">
+                                                                <div className="h-8 w-8 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                                                    <Check className="h-4 w-4 text-green-600" />
+                                                                </div>
+                                                                <div>
+                                                                    <h4 className="font-medium">Direct Flights</h4>
+                                                                    <p className="text-sm text-gray-600">No layovers, straight to your destination</p>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div className="flex items-start space-x-3">
+                                                                <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                                                                    <Plane className="h-4 w-4 text-blue-600" />
+                                                                </div>
+                                                                <div>
+                                                                    <h4 className="font-medium">Major Airlines</h4>
+                                                                    <p className="text-sm text-gray-600">Flying with trusted carriers</p>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div className="flex items-start space-x-3">
+                                                                <div className="h-8 w-8 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0">
+                                                                    <Calendar className="h-4 w-4 text-amber-600" />
+                                                                </div>
+                                                                <div>
+                                                                    <h4 className="font-medium">Flexible Dates</h4>
+                                                                    <p className="text-sm text-gray-600">Multiple departure options</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )}
                                         </TabsContent>
                                         
                                         <TabsContent value="itinerary" className="mt-0">
@@ -669,14 +806,11 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                                                                         toggleDayExpansion(day.day);
                                                                                     }}
                                                                                 >
-                                                                                    <div className="w-5 h-5 overflow-hidden">
-                                                                                        <Image 
-                                                                                            src={isExpanded ? "/icons/chevron-up.webp" : "/icons/chevron-down.webp"} 
-                                                                                            alt={isExpanded ? "Collapse" : "Expand"}
-                                                                                            width={20}
-                                                                                            height={20}
-                                                                                        />
-                                                                                    </div>
+                                                                                    {isExpanded ? (
+                                                                                        <ChevronUp className="h-5 w-5" />
+                                                                                    ) : (
+                                                                                        <ChevronDown className="h-5 w-5" />
+                                                                                    )}
                                                                                 </button>
                                                                             </div>
                                                                             
@@ -689,13 +823,8 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                                                                         <div className="space-y-2">
                                                                                             {day.title.split(' • ').map((activity, j) => (
                                                                                                 <div key={j} className="flex items-center">
-                                                                                                    <div className="h-5 w-5 rounded-full bg-[#e6f7ff] flex items-center justify-center mr-3 flex-shrink-0 overflow-hidden">
-                                                                                                        <Image 
-                                                                                                            src="/icons/check-blue.webp" 
-                                                                                                            alt="Activity"
-                                                                                                            width={12}
-                                                                                                            height={12}
-                                                                                                        />
+                                                                                                    <div className="h-5 w-5 rounded-full bg-[#e6f7ff] flex items-center justify-center mr-3 flex-shrink-0">
+                                                                                                        <Check className="h-3 w-3 text-blue-600" />
                                                                                                     </div>
                                                                                                     <span className="text-gray-700 text-sm">{activity}</span>
                                                                                                 </div>
@@ -822,13 +951,8 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                             href="tel:+919919111911" 
                                             className="mt-4 bg-blue-50 hover:bg-blue-100 transition-colors p-4 rounded-md flex items-center cursor-pointer no-underline"
                                         >
-                                            <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mr-3 flex-shrink-0 overflow-hidden">
-                                                <Image 
-                                                    src="/icons/phone.webp" 
-                                                    alt="Phone"
-                                                    width={20}
-                                                    height={20}
-                                                />
+                                            <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mr-3 flex-shrink-0">
+                                                <Phone className="h-5 w-5 text-blue-600" />
                                             </div>
                                             <div>
                                                 <div className="font-medium text-blue-800">Need assistance with booking?</div>
@@ -848,19 +972,27 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                     </div>
                                     <div className="p-6 grid grid-cols-2 gap-4">
                                         <div>
-                                            <div className="text-amber-500 mb-1">Sunrise</div>
+                                            <div className="text-amber-500 mb-1 flex items-center">
+                                                <Sun className="h-4 w-4 mr-1" /> Sunrise
+                                            </div>
                                             <div className="font-medium">6:15 AM</div>
                                         </div>
                                         <div>
-                                            <div className="text-amber-500 mb-1">Sunset</div>
+                                            <div className="text-amber-500 mb-1 flex items-center">
+                                                <Sunset className="h-4 w-4 mr-1" /> Sunset
+                                            </div>
                                             <div className="font-medium">6:30 PM</div>
                                         </div>
                                         <div>
-                                            <div className="text-blue-500 mb-1">Humidity</div>
+                                            <div className="text-blue-500 mb-1 flex items-center">
+                                                <Droplets className="h-4 w-4 mr-1" /> Humidity
+                                            </div>
                                             <div className="font-medium">75%</div>
                                         </div>
                                         <div>
-                                            <div className="text-blue-500 mb-1">Wind</div>
+                                            <div className="text-blue-500 mb-1 flex items-center">
+                                                <Wind className="h-4 w-4 mr-1" /> Wind
+                                            </div>
                                             <div className="font-medium">10 km/h</div>
                                         </div>
                                     </div>
@@ -899,6 +1031,7 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                 {isGalleryModalOpen && (
                     <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4">
                         <div className="relative w-full max-w-[90vh] mx-auto">
+                            {/* Close button */}
                             <button 
                                 onClick={() => setIsGalleryModalOpen(false)}
                                 className="absolute top-4 right-4 z-10 text-white/80 hover:text-white bg-black/30 hover:bg-black/50 p-2 rounded-full transition-all"
@@ -907,6 +1040,7 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                 <X className="h-6 w-6" />
                             </button>
                             
+                            {/* Main image */}
                             <div className="relative aspect-square w-full">
                                 <Image
                                     src={getAllImages()[currentGalleryIndex]}
@@ -918,6 +1052,7 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                 />
                             </div>
                             
+                            {/* Navigation buttons */}
                             <div className="absolute inset-y-0 left-0 flex items-center">
                                 <button
                                     onClick={previousImage}
@@ -942,8 +1077,31 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                 </button>
                             </div>
                             
+                            {/* Image counter */}
                             <div className="absolute bottom-4 left-0 right-0 text-center text-white text-sm md:text-base">
                                 {currentGalleryIndex + 1} / {getAllImages().length}
+                            </div>
+
+                            {/* Thumbnail strip */}
+                            <div className="absolute bottom-12 left-0 right-0">
+                                <div className="flex justify-center gap-2 overflow-x-auto px-4 no-scrollbar">
+                                    {getAllImages().map((img, idx) => (
+                                        <button
+                                            key={idx}
+                                            onClick={() => setCurrentGalleryIndex(idx)}
+                                            className={`relative w-16 h-16 rounded-lg overflow-hidden transition-all ${
+                                                currentGalleryIndex === idx ? 'ring-2 ring-white' : 'opacity-50'
+                                            }`}
+                                        >
+                                            <Image
+                                                src={img}
+                                                alt={`Thumbnail ${idx + 1}`}
+                                                fill
+                                                className="object-cover"
+                                            />
+                                        </button>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
