@@ -308,7 +308,7 @@ Return to Badrinath helipad for departure
         description: "Choose any one shrine from Kedarnath, Badrinath, Gangotri, or Yamunotri for a same-day helicopter tour from Dehradun.",
         tourSummary: [
             "Fixed Departures: Ekdham Package by Helicopter",
-            "Warm greetings from Himalayan Heli! With over two decades of dedicated service in pilgrimage tourism, we take immense pride in offering exclusive and comfortable helicopter tours. Our Ekdham Package allows pilgrims to visit one of the sacred Chardham shrines—Kedarnath Ji, Badrinath Ji, Gangotri, or Yamunotri—on a same-day heli-tour from Dehradun."
+            "With over two decades of dedicated service in pilgrimage tourism, we take immense pride in offering exclusive and comfortable helicopter tours. Our Ekdham Package allows pilgrims to visit one of the sacred Chardham shrines—Kedarnath Ji, Badrinath Ji, Gangotri, or Yamunotri—on a same-day heli-tour from Dehradun."
         ],
         itinerary: [
             {

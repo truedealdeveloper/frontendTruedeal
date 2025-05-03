@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback, useMemo, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { X, ChevronDown, Phone, Search, Globe, MapPin, Menu } from 'lucide-react'
+import { X, ChevronDown, Phone, Search, Globe, MapPin, Menu, MessageSquare } from 'lucide-react'
 import { usePathname, useRouter } from 'next/navigation'
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
@@ -289,6 +289,7 @@ export default function Navbar() {
     const [isSearchModalOpen, setIsSearchModalOpen] = useState(false)
     const pathname = usePathname()
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+    const [activeMobileDropdown, setActiveMobileDropdown] = useState<string | null>(null);
     const isHomePage = pathname === '/';
 
     const handleMouseEnter = (menuId: string) => {
@@ -297,6 +298,11 @@ export default function Navbar() {
 
     const handleMouseLeave = () => {
         setActiveDropdown(null);
+    };
+
+    // Add this function to handle mobile menu item clicks
+    const handleMobileMenuClick = (menuId: string) => {
+        setActiveMobileDropdown(activeMobileDropdown === menuId ? null : menuId);
     };
 
     return (
@@ -434,39 +440,248 @@ export default function Navbar() {
                 </div>
             )}
 
-            {/* Mobile Menu with new styling */}
+            {/* Mobile Menu - Side Drawer */}
             {isMenuOpen && (
-                <div className="md:hidden bg-white/95 backdrop-blur-sm border-t border-gray-100 shadow-lg animate-slideDown">
-                    <div className="divide-y divide-gray-100">
-                        <div className="p-4 space-y-3">
-                            {topNavItems.map((item) => (
-                                <Link
-                                    key={item.label}
-                                    href={item.href}
-                                    onClick={(e) => {
-                                        handleNavClick(e, item.href);
+                <>
+                    {/* Backdrop */}
+                    <div 
+                        className="md:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-40 transition-opacity duration-300"
+                        onClick={() => setIsMenuOpen(false)}
+                    />
+                    
+                    {/* Side Drawer */}
+                    <div className="md:hidden fixed top-0 right-0 h-full w-[80%] max-w-md bg-white z-50 shadow-xl animate-slideInRight">
+                        {/* Header */}
+                        <div className="flex items-center justify-between px-4 py-3 bg-[#00DEF7]">
+                            <div className="flex items-center gap-2">
+                                <Phone className="h-5 w-5 text-white" />
+                                <span className="text-white text-sm">+91-9310271488</span>
+                            </div>
+                            <div className="flex items-center gap-4">
+                                <Search 
+                                    className="h-5 w-5 text-white cursor-pointer" 
+                                    onClick={() => {
                                         setIsMenuOpen(false);
+                                        setIsSearchModalOpen(true);
                                     }}
-                                    className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-50"
-                                >
-                                    <span className="text-gray-600">{item.label}</span>
-                                </Link>
-                            ))}
-                        </div>
-                        <div className="p-4 space-y-3 bg-gray-50">
-                            {menuItems.map((item) => (
-                                <Link
-                                    key={item.label}
-                                    href={item.href}
-                                    className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/80"
+                                />
+                                <X 
+                                    className="h-6 w-6 text-white cursor-pointer" 
                                     onClick={() => setIsMenuOpen(false)}
+                                />
+                            </div>
+                        </div>
+
+                        {/* Menu Items Container */}
+                        <div className="overflow-y-auto h-[calc(100vh-56px)]">
+                            {/* Upcoming Community Trips */}
+                            <Link
+                                href="/#fixedDeparture"
+                                onClick={() => {
+                                    setIsMenuOpen(false);
+                                    setActiveMobileDropdown(null);
+                                }}
+                                className="flex items-center gap-2 px-4 py-3 text-[#00DEF7] border-b border-gray-100"
+                            >
+                                <span>Upcoming Community Trips</span>
+                                <span className="text-xs bg-[#00DEF7]/10 px-2 py-0.5 rounded">New</span>
+                            </Link>
+
+                            {/* Menu List */}
+                            <div className="py-2 space-y-1">
+                                {/* Main Menu Items with Dropdowns */}
+                                {menuItems.map((item) => {
+                                    const menuId = item.href.replace('/', '');
+                                    return (
+                                        <div key={item.label}>
+                                            <button
+                                                onClick={() => handleMobileMenuClick(menuId)}
+                                                className="flex items-center justify-between w-full px-4 py-2.5 text-gray-700"
+                                            >
+                                                <span>{item.label}</span>
+                                                <ChevronDown 
+                                                    className={`h-4 w-4 text-gray-500 transition-transform duration-300 ${
+                                                        activeMobileDropdown === menuId ? 'rotate-180' : ''
+                                                    }`}
+                                                />
+                                            </button>
+                                            
+                                            <div 
+                                                className={`transition-all duration-300 ease-in-out ${
+                                                    activeMobileDropdown === menuId 
+                                                        ? 'max-h-[70vh] opacity-100' 
+                                                        : 'max-h-0 opacity-0 overflow-hidden'
+                                                }`}
+                                            >
+                                                <div className="bg-gray-50 ml-4 mr-2 rounded-lg">
+                                                    {menuId === 'international-packages' ? (
+                                                        // Special handling for international packages
+                                                        <div className="py-2">
+                                                            <div className="px-3 py-2">
+                                                                <h3 className="text-xs font-medium text-[#00DEF7] uppercase mb-2">Southeast Asia</h3>
+                                                                {dropdownMenus[menuId].slice(0, 8).map((item) => (
+                                                                    <Link
+                                                                        key={item.name}
+                                                                        href={item.href}
+                                                                        onClick={() => {
+                                                                            setIsMenuOpen(false);
+                                                                            setActiveMobileDropdown(null);
+                                                                        }}
+                                                                        className="block px-3 py-2 text-sm text-gray-600 hover:text-[#00DEF7]"
+                                                                    >
+                                                                        {item.name}
+                                                                    </Link>
+                                                                ))}
+                                                            </div>
+                                                            <div className="px-3 py-2 border-t border-gray-100">
+                                                                <h3 className="text-xs font-medium text-[#00DEF7] uppercase mb-2">Middle East & Central Asia</h3>
+                                                                {dropdownMenus[menuId].slice(8, 14).map((item) => (
+                                                                    <Link
+                                                                        key={item.name}
+                                                                        href={item.href}
+                                                                        onClick={() => {
+                                                                            setIsMenuOpen(false);
+                                                                            setActiveMobileDropdown(null);
+                                                                        }}
+                                                                        className="block px-3 py-2 text-sm text-gray-600 hover:text-[#00DEF7]"
+                                                                    >
+                                                                        {item.name}
+                                                                    </Link>
+                                                                ))}
+                                                            </div>
+                                                            <div className="px-3 py-2 border-t border-gray-100">
+                                                                <h3 className="text-xs font-medium text-[#00DEF7] uppercase mb-2">Rest of World</h3>
+                                                                {dropdownMenus[menuId].slice(14).map((item) => (
+                                                                    <Link
+                                                                        key={item.name}
+                                                                        href={item.href}
+                                                                        onClick={() => {
+                                                                            setIsMenuOpen(false);
+                                                                            setActiveMobileDropdown(null);
+                                                                        }}
+                                                                        className="block px-3 py-2 text-sm text-gray-600 hover:text-[#00DEF7]"
+                                                                    >
+                                                                        {item.name}
+                                                                    </Link>
+                                                                ))}
+                                                            </div>
+                                                        </div>
+                                                    ) : (
+                                                        // Regular handling for other menus
+                                                        <div className="py-2">
+                                                            {dropdownMenus[menuId as keyof typeof dropdownMenus].map((item) => (
+                                                                <Link
+                                                                    key={item.name}
+                                                                    href={item.href}
+                                                                    onClick={() => {
+                                                                        setIsMenuOpen(false);
+                                                                        setActiveMobileDropdown(null);
+                                                                    }}
+                                                                    className="block px-4 py-2 text-sm text-gray-600 hover:text-[#00DEF7]"
+                                                                >
+                                                                    {item.name}
+                                                                </Link>
+                                                            ))}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+
+                                {/* Additional Links */}
+                                <Link 
+                                    href="/blogs" 
+                                    onClick={() => {
+                                        setIsMenuOpen(false);
+                                        setActiveMobileDropdown(null);
+                                    }}
+                                    className="block px-4 py-2.5 text-gray-700"
                                 >
-                                    <span className="text-gray-600">{item.label}</span>
+                                    Blogs
                                 </Link>
-                            ))}
+                                <Link 
+                                    href="/careers"
+                                    onClick={() => {
+                                        setIsMenuOpen(false);
+                                        setActiveMobileDropdown(null);
+                                    }}
+                                    className="block px-4 py-2.5 text-gray-700"
+                                >
+                                    Careers
+                                </Link>
+                                <Link 
+                                    href="/about-us"
+                                    onClick={() => {
+                                        setIsMenuOpen(false);
+                                        setActiveMobileDropdown(null);
+                                    }}
+                                    className="block px-4 py-2.5 text-gray-700"
+                                >
+                                    About Us
+                                </Link>
+                                <Link 
+                                    href="/payment"
+                                    onClick={() => {
+                                        setIsMenuOpen(false);
+                                        setActiveMobileDropdown(null);
+                                    }}
+                                    className="block px-4 py-2.5 text-gray-700"
+                                >
+                                    Payments
+                                </Link>
+                            </div>
+
+                            {/* Contact Us Button and Options */}
+                            <div className="p-4 mt-4">
+                                <button
+                                    onClick={() => setActiveMobileDropdown('contact')}
+                                    className="block w-full py-3 text-center bg-yellow-400 text-gray-900 font-medium rounded-lg hover:bg-yellow-500 transition-colors"
+                                >
+                                    Contact Us
+                                </button>
+
+                                {/* Contact Options Dropdown */}
+                                <div 
+                                    className={`transition-all duration-300 ease-in-out mt-2 ${
+                                        activeMobileDropdown === 'contact' 
+                                            ? 'max-h-[200px] opacity-100' 
+                                            : 'max-h-0 opacity-0 overflow-hidden'
+                                    }`}
+                                >
+                                    <div className="space-y-2">
+                                        {/* Call Button */}
+                                        <a
+                                            href="tel:+919310271488"
+                                            className="flex items-center justify-center gap-2 w-full py-3 bg-[#00DEF7] text-white font-medium rounded-lg hover:bg-[#00DEF7]/90 transition-colors"
+                                            onClick={() => {
+                                                setIsMenuOpen(false);
+                                                setActiveMobileDropdown(null);
+                                            }}
+                                        >
+                                            <Phone className="h-5 w-5" />
+                                            <span>Call Now</span>
+                                        </a>
+
+                                        {/* Raise Query Button */}
+                                        <Link
+                                            href="/contact-us"
+                                            className="flex items-center justify-center gap-2 w-full py-3 bg-white text-[#00DEF7] font-medium rounded-lg border-2 border-[#00DEF7] hover:bg-[#00DEF7]/5 transition-colors"
+                                            onClick={() => {
+                                                setIsMenuOpen(false);
+                                                setActiveMobileDropdown(null);
+                                            }}
+                                        >
+                                            <MessageSquare className="h-5 w-5" />
+                                            <span>Raise a Query</span>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </>
             )}
 
             {/* Keep the existing SearchModal component */}
