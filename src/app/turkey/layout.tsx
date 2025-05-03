@@ -2,8 +2,8 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Turkey Tour Packages | TrueDeal4U',
-  description: 'Experience the best of Turkey with our comprehensive tour packages. Visit Gardens by the Bay, Universal Studios, Marina Bay Sands, and enjoy world-class shopping. Perfect blend of modernity and tradition.',
-  keywords: 'turkey tours, turkey packages, marina bay sands, universal studios turkey, gardens by the bay',
+  description: 'Experience the magic of Turkey with our comprehensive tour packages. Visit Istanbul, Cappadocia, Pamukkale, and explore ancient ruins. Perfect blend of history, culture, and natural beauty.',
+  keywords: 'turkey tours, turkey packages, istanbul tours, cappadocia tours, pamukkale tours, turkish riviera, hagia sophia, blue mosque',
   formatDetection: {
     email: false,
     address: false,
@@ -11,22 +11,25 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Turkey Tour Packages',
-    description: 'Experience the best of Turkey with our comprehensive tour packages. Visit Gardens by the Bay, Universal Studios, Marina Bay Sands, and enjoy world-class shopping.',
+    description: 'Experience the magic of Turkey with our comprehensive tour packages. Visit Istanbul, Cappadocia, Pamukkale, and explore ancient ruins. Discover Turkish culture and hospitality.',
     images: [
       {
-        url: '/UGCImages/turkey/dayWise/1.png',
+        url: 'https://www.truedeal4u.com/UGCImages/turkey/turkey1/1.png',
         width: 1200,
-        height: 630,
+        height: 630,  
         alt: 'Turkey Tour Package'
       }
     ],
-    type: 'website'
+    siteName: 'TrueDeal4U',
+    locale: 'en_US',
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Turkey Tour Packages | TrueDeal',
-    description: 'Experience the best of Turkey with our comprehensive tour packages. Visit Gardens by the Bay, Universal Studios, Marina Bay Sands, and enjoy world-class shopping.',
-    images: ['/UGCImages/turkey/dayWise/1.png']
+    title: 'Turkey Tour Packages | TrueDeal4U',
+    description: 'Experience the magic of Turkey with our comprehensive tour packages. Visit Istanbul, Cappadocia, Pamukkale, and explore ancient ruins. Discover Turkish culture and hospitality.',
+    images: ['https://www.truedeal4u.com/UGCImages/turkey/turkey1/1.png'],
+    site: '@yourtwitterhandle',
   }
 }
 

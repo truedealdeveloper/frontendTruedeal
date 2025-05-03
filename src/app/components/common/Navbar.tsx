@@ -509,16 +509,16 @@ export default function Navbar() {
                                             <div 
                                                 className={`transition-all duration-300 ease-in-out ${
                                                     activeMobileDropdown === menuId 
-                                                        ? 'max-h-[70vh] opacity-100' 
+                                                        ? 'max-h-[60vh] opacity-100' 
                                                         : 'max-h-0 opacity-0 overflow-hidden'
                                                 }`}
                                             >
                                                 <div className="bg-gray-50 ml-4 mr-2 rounded-lg">
                                                     {menuId === 'international-packages' ? (
                                                         // Special handling for international packages
-                                                        <div className="py-2">
+                                                        <div className="py-2 max-h-[50vh] overflow-y-auto">
                                                             <div className="px-3 py-2">
-                                                                <h3 className="text-xs font-medium text-[#00DEF7] uppercase mb-2">Southeast Asia</h3>
+                                                                <h3 className="text-xs font-medium text-[#00DEF7] uppercase mb-2 sticky top-0 bg-gray-50 py-2">Southeast Asia</h3>
                                                                 {dropdownMenus[menuId].slice(0, 8).map((item) => (
                                                                     <Link
                                                                         key={item.name}
@@ -534,7 +534,7 @@ export default function Navbar() {
                                                                 ))}
                                                             </div>
                                                             <div className="px-3 py-2 border-t border-gray-100">
-                                                                <h3 className="text-xs font-medium text-[#00DEF7] uppercase mb-2">Middle East & Central Asia</h3>
+                                                                <h3 className="text-xs font-medium text-[#00DEF7] uppercase mb-2 sticky top-0 bg-gray-50 py-2">Middle East & Central Asia</h3>
                                                                 {dropdownMenus[menuId].slice(8, 14).map((item) => (
                                                                     <Link
                                                                         key={item.name}
@@ -550,7 +550,7 @@ export default function Navbar() {
                                                                 ))}
                                                             </div>
                                                             <div className="px-3 py-2 border-t border-gray-100">
-                                                                <h3 className="text-xs font-medium text-[#00DEF7] uppercase mb-2">Rest of World</h3>
+                                                                <h3 className="text-xs font-medium text-[#00DEF7] uppercase mb-2 sticky top-0 bg-gray-50 py-2">Rest of World</h3>
                                                                 {dropdownMenus[menuId].slice(14).map((item) => (
                                                                     <Link
                                                                         key={item.name}
