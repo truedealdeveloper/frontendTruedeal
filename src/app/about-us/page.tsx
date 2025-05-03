@@ -4,6 +4,7 @@ import { Target, Eye } from 'lucide-react'
 import Services from "./Services"
 import Founder from "../components/common/Founder";
 import NumberTicker from "../../components/ui/number-ticker"
+import { SmoothCursor } from "../../components/ui/smooth-cursor"
 
 const AboutPage: React.FC = () => {
     return (
@@ -142,6 +143,7 @@ const AboutPage: React.FC = () => {
             </div>
             <Services />
             <Founder />
+            <SmoothCursor />
         </div>
     );
 };
