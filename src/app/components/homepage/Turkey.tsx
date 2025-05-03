@@ -2,8 +2,10 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 const Turkey = () => {
+  const router = useRouter();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showComingSoon, setShowComingSoon] = useState(false);
   
@@ -36,21 +38,11 @@ const Turkey = () => {
           </div>
 
           <div className="mt-4 relative">
-            <button onClick={() => setShowComingSoon(!showComingSoon)}
+            <button 
+              onClick={() => router.push('/turkey')}
               className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-8 py-3 rounded-lg hover:shadow-lg transition-all duration-300 font-medium">
               Explore Turkey & Unique Cultural Blend
             </button>
-            
-            {showComingSoon && (
-              <div className="absolute top-full left-0 mt-3 p-4 bg-white rounded-lg shadow-xl z-10 w-64 border border-gray-100 animate-fade-in">
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] rounded-full animate-pulse"></div>
-                  <p className="font-medium text-gray-800">Coming Soon</p>
-                </div>
-                <p className="text-sm text-gray-600 mt-1">Our Turkey destinations are being prepared for your next adventure!</p>
-                <button onClick={() => setShowComingSoon(false)} className="absolute top-2 right-2 text-gray-400 hover:text-gray-600">✕</button>
-              </div>
-            )}
           </div>
         </div>
 

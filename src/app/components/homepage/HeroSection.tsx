@@ -37,6 +37,8 @@ export default function HeroSection() {
                 router.push("/vietnam")
             } else if (destination.name.toLowerCase() === "australia packages") {
                 router.push("/australiaPackages")
+            } else if (destination.name.toLowerCase() === "turkey") {
+                router.push("/turkey")
             } else if (["indochina", "laos", "combodia"].includes(destination.name.toLowerCase())) {
                 router.push("/indochina")
             } else if (destination.isTrending) {
