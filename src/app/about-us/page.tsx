@@ -1,47 +1,39 @@
 import React from 'react';
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Target, Eye } from 'lucide-react'
 import Services from "./Services"
 import Founder from "../components/common/Founder";
-// import NumberTicker from "@/components/magicui/number-ticker";
 import NumberTicker from "../../components/ui/number-ticker"
 
 const AboutPage: React.FC = () => {
     return (
-        <div>
-            <section className="relative h-96">
-                <Image
-                    src="/Assets/About/bannerFlight.webp"
-                    alt="Airplane flying above clouds"
-                    fill
-                    className="object-cover"
-                    priority
-                />
-                <div className="relative container mx-auto px-4 h-full flex items-center">
-                    <div className="max-w-2xl text-white">
-                        <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                            Discover Your Next Adventure
+        <div className="mt-20 min-h-screen">
+            <section className="relative h-[500px] bg-gradient-to-r from-[#017ae3] to-[#00f6ff] rounded-b-[50px] shadow-xl">
+                <div className="relative container mx-auto px-4 h-full flex items-center justify-center text-center">
+                    <div className="max-w-3xl space-y-6">
+                        <h2 className="text-5xl md:text-7xl font-bold text-white font-poppins leading-tight">
+                            Discover Your Next
+                            <span className="block mt-2">Adventure</span>
                         </h2>
-                        <p className="text-xl mb-8">
+                        <p className="text-xl md:text-2xl text-white/90 font-light max-w-2xl mx-auto">
                             Experience the ultimate travel journey with Truedeal
                         </p>
-                        <Button className="px-2 py-1 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-bold text-white bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
+                        <Button className="mt-8 px-8 py-6 rounded-full text-base font-semibold text-white bg-white/20 hover:bg-white/30 transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
                             Book Now
                         </Button>
                     </div>
                 </div>
             </section>
 
-            <div className="container mx-auto px-4 py-12">
-                <div className="grid lg:grid-cols-2 gap-8 items-center">
+            <div className="container mx-auto px-4 py-24">
+                <div className="grid lg:grid-cols-2 gap-16 items-center">
                     {/* Left Column */}
-                    <div className="space-y-6">
-                        <div className="max-w-[200px]">
-                            <h1 className="text-5xl font-bold tracking-tight font-poppins">TRUEDEAL</h1>
-                            <div className="h-1 w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff]" />
+                    <div className="space-y-8">
+                        <div className="max-w-[250px]">
+                            <h1 className="text-6xl font-bold tracking-tight font-poppins">TRUEDEAL</h1>
+                            <div className="h-1.5 w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] mt-4" />
                         </div>
-                        <p className="text-gray-600 leading-relaxed max-w-xl font-poppins">
+                        <p className="text-gray-600 leading-relaxed max-w-xl font-poppins text-lg">
                         Welcome to TrueDeal, your ultimate travel companion for 
                         unforgettable journeys and unbeatable deals. As a premier 
                         travel agency, we specialize in providing customized vacation 
@@ -54,7 +46,7 @@ const AboutPage: React.FC = () => {
                     </div>
 
                     {/* Right Column */}
-                    <div className="space-y-8">
+                    <div className="space-y-12">
                         <h2 className="text-4xl lg:text-5xl font-bold leading-tight font-poppins">
                             We Provide the{" "}
                             <span className="text-4xl lg:text-5xl bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-transparent bg-clip-text font-poppins font-bold">Best Deal</span> For Your{" "}
@@ -102,21 +94,21 @@ const AboutPage: React.FC = () => {
             </div>
 
             {/* Mission & Vision Section */}
-            <div className="bg-gradient-to-b from-blue-50 to-white">
-                <div className="container mx-auto px-4 py-16">
+            <div className="bg-gradient-to-b from-blue-50 to-white py-24">
+                <div className="container mx-auto px-4">
                     {/* Mission */}
-                    <div className="grid md:grid-cols-[200px,1fr] gap-8 items-center mb-16">
+                    <div className="grid md:grid-cols-[250px,1fr] gap-12 items-center mb-24">
                         <div className="flex justify-center">
-                            <div className="w-32 h-32 flex items-center justify-center rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
-                                <Target className="w-16 h-16 text-white" />
+                            <div className="w-40 h-40 flex items-center justify-center rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] shadow-lg transform hover:scale-105 transition-transform duration-300">
+                                <Target className="w-20 h-20 text-white" />
                             </div>
                         </div>
                         <div>
-                            <h2 className="text-3xl font-bold mb-4 font-poppins">
+                            <h2 className="text-4xl font-bold mb-6 font-poppins">
                                 OUR MISSION
-                                <div className="h-1 w-24 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] mt-2" />
+                                <div className="h-1.5 w-32 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] mt-4" />
                             </h2>
-                            <p className="text-gray-600 leading-relaxed font-poppins">
+                            <p className="text-gray-600 leading-relaxed font-poppins text-lg">
                             Our mission at TrueDeal is simple to provide 
                             you with affordable, hassle-free, and personalized 
                             travel experiences. We believe that travel should be 
@@ -130,18 +122,18 @@ const AboutPage: React.FC = () => {
                     </div>
 
                     {/* Vision */}
-                    <div className="grid md:grid-cols-[200px,1fr] gap-8 items-center">
+                    <div className="grid md:grid-cols-[250px,1fr] gap-12 items-center">
                         <div className="flex justify-center">
-                            <div className="w-32 h-32 flex items-center justify-center rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
-                                <Eye className="w-16 h-16 text-white" />
+                            <div className="w-40 h-40 flex items-center justify-center rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] shadow-lg transform hover:scale-105 transition-transform duration-300">
+                                <Eye className="w-20 h-20 text-white" />
                             </div>
                         </div>
                         <div>
-                            <h2 className="text-3xl font-bold mb-4 font-poppins">
+                            <h2 className="text-4xl font-bold mb-6 font-poppins">
                                 OUR VISION
-                                <div className="h-1 w-24 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] mt-2" />
+                                <div className="h-1.5 w-32 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] mt-4" />
                             </h2>
-                            <p className="text-gray-600 leading-relaxed font-poppins">
+                            <p className="text-gray-600 leading-relaxed font-poppins text-lg">
                             We are committed to delivering top-tier travel packages, hotels to excursions and local experiences, all while maintaining the highest level of customer satisfaction. With a strong focus on quality, reliability, and integrity, TrueDeal continues to grow as a leader in the travel industry, shaping the future of travel one experience at a time.
                             </p>
                         </div>
