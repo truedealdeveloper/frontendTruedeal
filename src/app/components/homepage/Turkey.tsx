@@ -7,7 +7,6 @@ import { useRouter } from 'next/navigation';
 const Turkey = () => {
   const router = useRouter();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [showComingSoon, setShowComingSoon] = useState(false);
   
   const images = ['/UGCImages/turkey/1.webp', '/UGCImages/turkey/2.webp', 
                  '/UGCImages/turkey/3.webp', '/UGCImages/turkey/4.webp'];
