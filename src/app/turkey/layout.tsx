@@ -2,8 +2,8 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Turkey Tour Packages | TrueDeal4U',
-  description: 'Experience the best of Turkey with our comprehensive tour packages. Visit Gardens by the Bay, Universal Studios, Marina Bay Sands, and enjoy world-class shopping. Perfect blend of modernity and tradition.',
-  keywords: 'turkey tours, turkey packages, marina bay sands, universal studios turkey, gardens by the bay',
+  description: 'Experience the best of Turkey with our comprehensive tour packages. Visit Istanbul, Cappadocia, Pamukkale, and explore ancient ruins. Perfect blend of history, culture and natural beauty.',
+  keywords: 'turkey tours, turkey packages, istanbul tours, cappadocia tours, pamukkale tours, turkish riviera, turkey holiday packages',
   formatDetection: {
     email: false,
     address: false,
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Turkey Tour Packages',
-    description: 'Experience the best of Turkey with our comprehensive tour packages. Visit Gardens by the Bay, Universal Studios, Marina Bay Sands, and enjoy world-class shopping.',
+    description: 'Experience the best of Turkey with our comprehensive tour packages. Visit Istanbul, Cappadocia, Pamukkale, and explore ancient ruins. Perfect blend of history, culture and natural beauty.',
     images: [
       {
         url: 'https://www.truedeal4u.com/UGCImages/turkey/turkey1/1.png',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Turkey Tour Packages | TrueDeal',
-    description: 'Experience the best of Turkey with our comprehensive tour packages. Visit Gardens by the Bay, Universal Studios, Marina Bay Sands, and enjoy world-class shopping.',
+    description: 'Experience the best of Turkey with our comprehensive tour packages. Visit Istanbul, Cappadocia, Pamukkale, and explore ancient ruins. Perfect blend of history, culture and natural beauty.',
     images: ['https://www.truedeal4u.com/UGCImages/turkey/turkey1/1.png'],
     site: '@yourtwitterhandle',
   }
