@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       {
         url: 'https://www.truedeal4u.com/UGCImages/turkey/turkey1/1.png',
         width: 1200,
-        height: 630,  
+        height: 630,
         alt: 'Turkey Tour Package'
       }
     ],
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: 'Turkey Tour Packages | TrueDeal',
     description: 'Experience the best of Turkey with our comprehensive tour packages. Visit Istanbul, Cappadocia, Pamukkale, and explore ancient ruins. Perfect blend of history, culture and natural beauty.',
     images: ['https://www.truedeal4u.com/UGCImages/turkey/turkey1/1.png'],
-    site: '@yourtwitterhandle',
+    site: '@truedeal4u',
   }
 }
 
