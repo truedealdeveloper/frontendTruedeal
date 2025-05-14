@@ -2,7 +2,7 @@
 
 import { use, useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { lehladakhPackages, LehladakhPackage } from '../data';
+import { lehladakhPackages } from '../data';
 import { notFound } from 'next/navigation';
 import { 
   Calendar, Check, MapPin, Star, Users, X, Camera, Phone 

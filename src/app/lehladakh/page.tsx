@@ -464,7 +464,7 @@ export default function LehladakhPackages() {
                 </h2>
                 <div className="text-gray-600 space-y-4">
                     <p>
-                        Leh Ladakh, often called the "Land of High Passes," is a region where ancient monasteries perch on rugged cliffs, crystal-clear lakes mirror snow-capped peaks, and the culture remains as pristine as its landscapes.
+                        Leh Ladakh, often called the Land of High Passes. It is a region where ancient monasteries perch on rugged cliffs, crystal-clear lakes mirror snow-capped peaks, and the culture remains as pristine as its landscapes.
                     </p>
                     <p>
                         Our Leh Ladakh tour packages include visits to iconic locations like Pangong Lake, Nubra Valley, and ancient monasteries, combining adventure with cultural experiences.
