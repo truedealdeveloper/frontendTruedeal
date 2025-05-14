@@ -2,7 +2,7 @@
 
 import { use, useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { singaporePackages } from '../data';
+import { lehladakhPackages, LehladakhPackage } from '../data';
 import { notFound } from 'next/navigation';
 import { 
   Calendar, Check, MapPin, Star, Users, X, Camera, Phone 
@@ -28,12 +28,12 @@ interface PageProps {
     params: Promise<{ id: string; }>
 }
 
-export default function SingaporePackagePage({ params }: PageProps) {
+export default function LehladakhPackagePage({ params }: PageProps) {
     const { id } = use(params);
-    const singaporePkg = Object.values(singaporePackages).find(p => p.id === id);
+    const lehladakhPkg = Object.values(lehladakhPackages).find(p => p.id === id);
     const isMobile = useMobile();
 
-    if (!singaporePkg) {
+    if (!lehladakhPkg) {
         notFound();
     }
 
@@ -81,12 +81,12 @@ export default function SingaporePackagePage({ params }: PageProps) {
     useEffect(() => {
         const timer = setInterval(() => {
             setCurrentImageIndex((prev) =>
-                prev === (singaporePkg?.images?.length || 1) - 1 ? 0 : prev + 1
+                prev === (lehladakhPkg?.images?.length || 1) - 1 ? 0 : prev + 1
             );
         }, 5000);
 
         return () => clearInterval(timer);
-    }, [singaporePkg?.images?.length]);
+    }, [lehladakhPkg?.images?.length]);
 
     const useAutoScroll = (scrollRef: React.RefObject<HTMLDivElement>, duration: number = 40000) => {
         useEffect(() => {
@@ -122,7 +122,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
     useAutoScroll(cultureScrollRef, 50000);
 
     // Calculate truncated description for "Read More" functionality
-    const description = singaporePkg.description || "";
+    const description = lehladakhPkg.description || "";
     const truncatedDescription = description.length > 300 
         ? `${description.substring(0, 300)}...` 
         : description;
@@ -138,8 +138,8 @@ export default function SingaporePackagePage({ params }: PageProps) {
 
     // Add this new function to get all images from itinerary
     const getAllImages = () => {
-        const itineraryImages = singaporePkg.itinerary.map(day => day.image);
-        const packageImages = singaporePkg.images || [];
+        const itineraryImages = lehladakhPkg.itinerary.map(day => day.image);
+        const packageImages = lehladakhPkg.images || [];
         return [...new Set([...packageImages, ...itineraryImages])];
     };
 
@@ -162,8 +162,8 @@ export default function SingaporePackagePage({ params }: PageProps) {
                 {/* Hero Section */}
                 <div className="relative h-[70vh] w-full">
                     <Image
-                        src={singaporePkg?.images?.[currentImageIndex] || '/default-image.jpg'}
-                        alt={singaporePkg.packageName}
+                        src={lehladakhPkg?.images?.[currentImageIndex] || '/default-image.jpg'}
+                        alt={lehladakhPkg.packageName}
                         fill
                         className="object-cover brightness-[0.85]"
                         priority
@@ -180,12 +180,12 @@ export default function SingaporePackagePage({ params }: PageProps) {
                             </div>
                             
                             {/* Package name */}
-                            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">{singaporePkg.packageName}</h1>
+                            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">{lehladakhPkg.packageName}</h1>
                             
                             {/* Location */}
                             <div className="flex items-center text-white mb-6">
                                 <MapPin className="h-5 w-5 mr-2" />
-                                <span className="text-lg">Singapore</span>
+                                <span className="text-lg">Leh Ladakh</span>
                             </div>
                             
                             {/* Action buttons */}
@@ -221,7 +221,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                             </div>
                             <div>
                                 <div className="text-sm opacity-80">Duration</div>
-                                <div className="font-medium text-sm md:text-base">{singaporePkg.days} days / {singaporePkg.nights} nights</div>
+                                <div className="font-medium text-sm md:text-base">{lehladakhPkg.days} days / {lehladakhPkg.nights} nights</div>
                             </div>
                         </div>
                         
@@ -231,7 +231,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                             </div>
                             <div>
                                 <div className="text-sm opacity-80">Location</div>
-                                <div className="font-medium text-sm md:text-base">Singapore</div>
+                                <div className="font-medium text-sm md:text-base">Leh Ladakh</div>
                             </div>
                         </div>
                         
@@ -294,11 +294,11 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                 <h2 className="text-2xl font-bold mb-6">Package Highlights</h2>
                                                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                                                     {[
-                                                        { icon: "🏙️", title: "City Exploration", desc: "Visit Singapore&apos;s iconic attractions" },
-                                                        { icon: "🍲", title: "Local Cuisine", desc: "Experience Singapore&apos;s food culture" },
-                                                        { icon: "🏨", title: "Quality Hotels", desc: `${singaporePkg.nights} nights accommodation` },
+                                                        { icon: "🏙️", title: "City Exploration", desc: "Visit Leh Ladakh&apos;s iconic attractions" },
+                                                        { icon: "🍲", title: "Local Cuisine", desc: "Experience Leh Ladakh&apos;s food culture" },
+                                                        { icon: "🏨", title: "Quality Hotels", desc: `${lehladakhPkg.nights} nights accommodation` },
                                                         { icon: "🚕", title: "Airport Transfers", desc: "Convenient transport included" },
-                                                        { icon: "🏝️", title: "Island Visits", desc: "Explore Sentosa and more" },
+                                                        { icon: "🏝️", title: "Island Visits", desc: "Explore Leh Ladakh and more" },
                                                         { icon: "🌃", title: "Night Safari", desc: "Unique wildlife experience" },
                                                     ].map((highlight, index) => (
                                                         <Card key={index} className="p-4 border border-gray-100 shadow-sm hover:shadow-md transition">
@@ -333,8 +333,8 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                         </div>
                                                         <div className="relative h-full min-h-[250px] md:min-h-0">
                                                             <Image
-                                                                src={singaporePkg?.images?.[1] || '/default-image.jpg'}
-                                                                alt="About Singapore"
+                                                                src={lehladakhPkg?.images?.[1] || '/default-image.jpg'}
+                                                                alt="About Leh Ladakh"
                                                                 fill
                                                                 className="object-cover"
                                                             />
@@ -344,7 +344,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                             </div>
 
                                             {/* Available Dates & Flights */}
-                                            {singaporePkg.batchDetails && (
+                                            {lehladakhPkg.batchDetails && (
                                                 <div className="mb-10">
                                                     <h2 className="text-2xl font-bold mb-6">Available Dates & Flights</h2>
                                                     
@@ -355,14 +355,14 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                                 <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                                                             </svg>
                                                             <span className="font-medium text-amber-800">
-                                                                Only {singaporePkg.batchDetails.remainingSlots} slots remaining for {singaporePkg.batchDetails.currentBatch} batch!
+                                                                Only {lehladakhPkg.batchDetails.remainingSlots} slots remaining for {lehladakhPkg.batchDetails.currentBatch} batch!
                                                             </span>
                                                         </div>
                                                     </div>
 
                                                     {/* Monthly Batches */}
                                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                                                        {singaporePkg.batchDetails.monthlyBatches.map((batch, index) => (
+                                                        {lehladakhPkg.batchDetails.monthlyBatches.map((batch, index) => (
                                                             <Card key={index} className="border border-gray-200">
                                                                 <div className="p-4">
                                                                     <div className="flex justify-between items-center mb-3">
@@ -387,16 +387,16 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                     </div>
 
                                                     {/* Flight Details */}
-                                                    {singaporePkg.flightDetails && (
+                                                    {lehladakhPkg.flightDetails && (
                                                         <div className="space-y-4">
                                                             <h3 className="text-xl font-semibold mb-4">Flight Information</h3>
                                                             
-                                                            {/* Delhi to Singapore */}
+                                                            {/* Delhi to Leh Ladakh */}
                                                             <Card className="border border-gray-200">
                                                                 <div className="p-4">
                                                                     <div className="flex items-center justify-between mb-4">
-                                                                        <div className="font-medium text-lg">Singapore Airlines</div>
-                                                                        <div className="text-sm text-gray-500">Flight SQ403</div>
+                                                                        <div className="font-medium text-lg">Air India</div>
+                                                                        <div className="text-sm text-gray-500">Flight AI101</div>
                                                                     </div>
                                                                     <div className="flex items-center justify-between">
                                                                         <div className="text-center">
@@ -415,7 +415,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                                         </div>
                                                                         <div className="text-center">
                                                                             <div className="text-2xl font-bold">18:30</div>
-                                                                            <div className="text-sm text-gray-500">Singapore</div>
+                                                                            <div className="text-sm text-gray-500">Leh Ladakh</div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -429,7 +429,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                             <div className="mb-10">
                                                 <h2 className="text-2xl font-bold mb-6">Experiences You&apos;ll Love</h2>
                                                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                                                    {singaporePkg.experiences.map((experience, index) => (
+                                                    {lehladakhPkg.experiences.map((experience, index) => (
                                                         <div key={index} className="bg-white rounded-3xl overflow-hidden shadow-sm">
                                                             <div className="relative h-48">
                                                                 <Image
@@ -455,7 +455,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                         <div>
                                                             <h3 className="text-xl font-bold mb-3">Create Memories Together</h3>
                                                             <p className="text-gray-600 mb-4">
-                                                                Tag your photos with #SingaporeJourney or #SGExplorer on social media and join our travel community. Your photos might be featured on our social channels!
+                                                                Tag your photos with #LehLadakhJourney or #SGExplorer on social media and join our travel community. Your photos might be featured on our social channels!
                                                             </p>
                                                             <div className="flex space-x-4">
                                                                 <Button className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition">
@@ -470,7 +470,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                             {[5, 6, 7, 8, 9, 10].map((num) => (
                                                                 <div key={num} className="relative aspect-square rounded-lg overflow-hidden">
                                                                     <Image
-                                                                        src={`/UGCImages/singapore/singapore/${num}.webp`}
+                                                                        src={`/UGCImages/lehladakh/lehladakh/${num}.webp`}
                                                                         alt={`User shared photo ${num}`}
                                                                         fill
                                                                         className="object-cover"
@@ -486,11 +486,11 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                             <div className="mb-10">
                                                 <h2 className="text-2xl font-bold mb-6">Gallery</h2>
                                                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                                                    {(singaporePkg?.images || []).slice(0, 6).map((img, i) => (
+                                                    {(lehladakhPkg?.images || []).slice(0, 6).map((img, i) => (
                                                         <div key={i} className="relative aspect-[4/3] overflow-hidden rounded-lg">
                                                             <Image
                                                                 src={img}
-                                                                alt={`Singapore destination image ${i + 1}`}
+                                                                alt={`Leh Ladakh destination image ${i + 1}`}
                                                                 fill
                                                                 className="object-cover hover:scale-105 transition duration-500"
                                                             />
@@ -499,7 +499,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                 </div>
                                                 <div className="mt-4 text-center">
                                                     <Button variant="outline" className="text-sm">
-                                                        View All Photos ({singaporePkg?.images?.length || 0})
+                                                        View All Photos ({lehladakhPkg?.images?.length || 0})
                                                     </Button>
                                                 </div>
                                             </div>
@@ -514,7 +514,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                             Included in Your Package
                                                         </h3>
                                                         <ul className="space-y-3">
-                                                            {singaporePkg.inclusions?.map((item, i) => (
+                                                            {lehladakhPkg.inclusions?.map((item, i) => (
                                                                 <li key={i} className="flex">
                                                                     <Check className="h-5 w-5 mr-3 text-green-500 flex-shrink-0" />
                                                                     <span>{item}</span>
@@ -529,7 +529,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                             Not Included
                                                         </h3>
                                                         <ul className="space-y-3">
-                                                            {singaporePkg.exclusions?.map((item, i) => (
+                                                            {lehladakhPkg.exclusions?.map((item, i) => (
                                                                 <li key={i} className="flex">
                                                                     <X className="h-5 w-5 mr-3 text-red-500 flex-shrink-0" />
                                                                     <span>{item}</span>
@@ -547,7 +547,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                 
                                                 {/* Day navigation buttons */}
                                                 <div className="flex overflow-x-auto space-x-2 mb-8 pb-2 no-scrollbar">
-                                                    {singaporePkg.itinerary.map((day, i) => (
+                                                    {lehladakhPkg.itinerary.map((day, i) => (
                                                         <button
                                                             key={i}
                                                             onClick={() => {
@@ -574,7 +574,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                     
                                                     {/* Timeline content */}
                                                     <div className="space-y-6">
-                                                        {singaporePkg.itinerary.map((day, i) => {
+                                                        {lehladakhPkg.itinerary.map((day, i) => {
                                                             const isExpanded = expandedDays.includes(day.day);
                                                             
                                                             return (
@@ -659,7 +659,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                             <div className="mb-10">
                                                 <h2 className="text-2xl font-bold mb-6">Your Accommodations</h2>
                                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                                    {singaporePkg.hotelDetails.map((hotel, index) => (
+                                                    {lehladakhPkg.hotelDetails.map((hotel, index) => (
                                                         <Card key={index} className="overflow-hidden border-0 shadow-md">
                                                             <div className="p-4">
                                                                 <h3 className="font-bold text-lg">{hotel.hotel}</h3>
@@ -723,9 +723,9 @@ export default function SingaporePackagePage({ params }: PageProps) {
                             <div className="sticky top-24">
                                 <Card className="border-0 shadow-lg overflow-hidden">
                                     <div className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] p-6 text-white">
-                                        <div className="text-3xl font-bold mb-1">₹{singaporePkg.amount?.toLocaleString('en-IN')}</div>
+                                        <div className="text-3xl font-bold mb-1">₹{lehladakhPkg.amount?.toLocaleString('en-IN')}</div>
                                         <div className="flex items-baseline">
-                                            <span className="text-xl line-through text-white/80">₹{Math.round(singaporePkg.amount * 1.3).toLocaleString('en-IN')}</span>
+                                            <span className="text-xl line-through text-white/80">₹{Math.round(lehladakhPkg.amount * 1.3).toLocaleString('en-IN')}</span>
                                             <span className="ml-2 bg-red-500 text-white text-sm px-2 py-1 rounded">Save 30%</span>
                                         </div>
                                         <div className="text-sm mt-1">per person, based on double occupancy</div>
@@ -734,7 +734,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                     <div className="p-6 space-y-4">
                                         <div className="flex justify-between border-b pb-3">
                                             <div className="font-medium">Duration:</div>
-                                            <div>{singaporePkg.nights} nights / {singaporePkg.days} days</div>
+                                            <div>{lehladakhPkg.nights} nights / {lehladakhPkg.days} days</div>
                                         </div>
                                         
                                         <div className="flex justify-between border-b pb-3">
@@ -778,7 +778,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                 {/* Weather Widget */}
                                 <Card className="border-0 shadow-lg mt-6 overflow-hidden">
                                     <div className="p-4 border-b">
-                                        <h3 className="font-bold text-lg">Weather in Singapore</h3>
+                                        <h3 className="font-bold text-lg">Weather in Leh Ladakh</h3>
                                     </div>
                                     <div className="p-6 grid grid-cols-2 gap-4">
                                         <div>
@@ -809,7 +809,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                     <div className="fixed bottom-0 left-0 right-0 bg-white border-t p-4 flex items-center justify-between z-[9999]">
                         <div>
                             <div className="text-sm">Per Person</div>
-                            <div className="font-bold text-xl">₹{singaporePkg?.amount?.toLocaleString('en-IN')}</div>
+                            <div className="font-bold text-xl">₹{lehladakhPkg?.amount?.toLocaleString('en-IN')}</div>
                         </div>
                         <Button 
                             className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition"
@@ -824,9 +824,9 @@ export default function SingaporePackagePage({ params }: PageProps) {
                 <BookingFormModal 
                     isOpen={isBookingModalOpen}
                     onClose={() => setIsBookingModalOpen(false)}
-                    destinationName={singaporePkg?.packageName}
-                    price={singaporePkg?.amount}
-                    dates={`${singaporePkg?.dateStart} - ${singaporePkg?.dateEnd}`}
+                    destinationName={lehladakhPkg?.packageName}
+                    price={lehladakhPkg?.amount}
+                    dates={`${lehladakhPkg?.dateStart} - ${lehladakhPkg?.dateEnd}`}
                 />
 
                 {/* Gallery Modal */}

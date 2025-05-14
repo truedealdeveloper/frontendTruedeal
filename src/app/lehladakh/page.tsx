@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { singaporePackages, SingaporePackage } from './data';
+import { lehladakhPackages, LehladakhPackage } from './data';
 import { FaCalendarAlt, FaClock, FaChevronLeft, FaChevronRight, FaPlus, FaMinus, FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 import { IoLocationSharp } from 'react-icons/io5';
 import { Button } from "@/components/ui/button";
@@ -14,12 +14,10 @@ import { Dancing_Script, Playfair_Display } from 'next/font/google';
 const dancingScript = Dancing_Script({ subsets: ['latin'] });
 const playfair = Playfair_Display({ subsets: ['latin'] });
 
-const BLOB_URL = process.env.NEXT_PUBLIC_BLOB_URL;
-
-export default function SingaporePackages() {
+export default function LehladakhPackages() {
     const [currentPage, setCurrentPage] = useState(0);
     const [openFaq, setOpenFaq] = useState<number | null>(null);
-    const packages = Object.values(singaporePackages);
+    const packages = Object.values(lehladakhPackages);
     const totalPages = Math.ceil(packages.length / 3);
     const [isMuted, setIsMuted] = useState(true);
 
@@ -32,8 +30,8 @@ export default function SingaporePackages() {
     };
 
     const toggleMute = () => {
-        const audio = document.getElementById('singaporeAudio') as HTMLAudioElement;
-        const video = document.getElementById('singaporeVideo') as HTMLVideoElement;
+        const audio = document.getElementById('lehladakhAudio') as HTMLAudioElement;
+        const video = document.getElementById('lehladakhVideo') as HTMLVideoElement;
         if (audio && video) {
             if (isMuted) {
                 audio.muted = false;
@@ -51,7 +49,7 @@ export default function SingaporePackages() {
     const PackageCard = ({ 
         package: pkg
     }: { 
-        package: SingaporePackage;
+        package: LehladakhPackage;
     }) => {
         const [showDates, setShowDates] = useState(false);
 
@@ -123,7 +121,7 @@ export default function SingaporePackages() {
                         </div>
                     )}
 
-                    <Link href={`/singapore/${pkg.id}`}>
+                    <Link href={`/lehladakh/${pkg.id}`}>
                         <Button
                             className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all duration-500"
                         >
@@ -135,55 +133,55 @@ export default function SingaporePackages() {
         );
     };
 
-    const singaporeHighlights = [
+    const lehladakhHighlights = [
         {
-            title: "Modern City",
-            image: "/UGCImages/singapore/banner/1.png",
-            description: "Experience the ultra-modern cityscape and architecture"
+            title: "Pangong Lake",
+            image: "/UGCImages/leh/banner/1.png",
+            description: "Visit the stunning blue waters of Pangong Lake"
         },
         {
-            title: "Theme Parks",
-            image: "/UGCImages/singapore/banner/2.png",
-            description: "Enjoy Universal Studios and other attractions"
+            title: "Monasteries",
+            image: "/UGCImages/leh/banner/2.png",
+            description: "Explore ancient Buddhist monasteries and culture"
         },
         {
-            title: "Cultural Heritage",
-            image: "/UGCImages/singapore/banner/3.png",
-            description: "Explore diverse cultural neighborhoods"
+            title: "Nubra Valley",
+            image: "/UGCImages/leh/banner/3.png",
+            description: "Experience the unique desert landscape and double-humped camels"
         },
         {
-            title: "Shopping Paradise",
-            image: "/UGCImages/singapore/banner/4.png",
-            description: "World-class shopping on Orchard Road"
+            title: "Khardung La",
+            image: "/UGCImages/leh/banner/4.png",
+            description: "Visit one of the world's highest motorable passes"
         },
         {
-            title: "Gardens & Nature",
-            image: "/UGCImages/singapore/banner/5.png",
-            description: "Visit Gardens by the Bay and nature parks"
+            title: "Local Culture",
+            image: "/UGCImages/leh/banner/5.png",
+            description: "Immerse yourself in Ladakhi culture and traditions"
         },
         {
-            title: "Culinary Delights",
-            image: "/UGCImages/singapore/banner/6.png",
-            description: "Savor local cuisine at hawker centers"
+            title: "Adventure Sports",
+            image: "/UGCImages/leh/banner/6.png",
+            description: "Experience river rafting and mountain biking"
         }
     ];
 
     const faqs = [
         {
-            question: "What is the best time to visit Singapore?",
-            answer: "Singapore is a year-round destination. However, July to September typically has the best weather with less rainfall."
+            question: "What is the best time to visit Leh Ladakh?",
+            answer: "The best time to visit Leh Ladakh is from June to September when the weather is most favorable and all passes are open."
         },
         {
-            question: "Do Indians need a visa for Singapore?",
-            answer: "Yes, Indian citizens need a visa to enter Singapore. The process is relatively straightforward and can be done online."
+            question: "Do I need special permits to visit Leh Ladakh?",
+            answer: "Yes, Indian tourists need Inner Line Permits for certain areas. Foreign tourists need Protected Area Permits (PAP) for restricted areas."
+        },
+        {
+            question: "How to deal with altitude sickness?",
+            answer: "Take 1-2 days to acclimatize, stay hydrated, avoid alcohol, and don't over-exert yourself in the first few days."
         },
         {
             question: "What are the must-visit attractions?",
-            answer: "Popular attractions include Gardens by the Bay, Universal Studios, Marina Bay Sands, Sentosa Island, and Singapore Zoo."
-        },
-        {
-            question: "Is Singapore expensive to visit?",
-            answer: "Singapore can be relatively expensive, but there are options for all budgets, especially for food at hawker centers."
+            answer: "Key attractions include Pangong Lake, Nubra Valley, Khardung La Pass, Shanti Stupa, and various monasteries like Thiksey and Hemis."
         }
     ] as const;
 
@@ -192,13 +190,13 @@ export default function SingaporePackages() {
             {/* Hero Section with Video */}
             <div className="relative h-[60vh] md:h-[100vh] w-full overflow-hidden">
                 <audio
-                    id="singaporeAudio"
+                    id="lehladakhAudio"
                     loop
                     muted
                     autoPlay
                     className="hidden"
                 >
-                    <source src="/UGCImages/singapore/audio/singapore.mp3" type="audio/mp3" />
+                    <source src="/UGCImages/leh/leh.mp3" type="audio/mp3" />
                 </audio>
 
                 <button
@@ -214,13 +212,13 @@ export default function SingaporePackages() {
                 </button>
 
                 <video 
-                    id="singaporeVideo"
+                    id="lehladakhVideo"
                     autoPlay 
                     loop 
                     muted={isMuted}
                     playsInline
                     className="absolute inset-0 w-full h-full object-cover"
-                    poster="/UGCImages/singapore/singapore/6.webp"
+                    poster="/UGCImages/leh/leh/6.webp"
                     preload="metadata"
                     onError={(e) => {
                         const fallbackImage = e.currentTarget.parentElement?.querySelector('img');
@@ -230,7 +228,7 @@ export default function SingaporePackages() {
                     }}
                 >
                     <source 
-                        src={`${BLOB_URL}/singaporeBG-y961zYwC9Ky6O3X7VxBc9WcCiJRUeb.mp4`} 
+                        src="/UGCImages/leh/leh.mp4"
                         type="video/mp4" 
                     />
                     Your browser does not support the video tag.
@@ -238,8 +236,8 @@ export default function SingaporePackages() {
                 
                 {/* Fallback image */}
                 <Image
-                    src="/UGCImages/singapore/singapore/6.webp"
-                    alt="Singapore Background"
+                    src="/UGCImages/leh/leh/6.webp"
+                    alt="Leh Ladakh Background"
                     fill
                     className="object-cover hidden"
                     priority
@@ -257,7 +255,7 @@ export default function SingaporePackages() {
                                 Welcome to
                             </span>
                             <span className={`block text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-rose-100 to-teal-100 bg-clip-text text-transparent mt-2 ${playfair.className}`}>
-                                Singapore
+                                Leh Ladakh
                             </span>
                         </motion.h1>
                         
@@ -273,7 +271,7 @@ export default function SingaporePackages() {
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 1, duration: 0.8 }}
                             >
-                                Where tradition meets tomorrow
+                                The Land of High Passes and Beautiful Mountains
                             </motion.p>
                             <div className="flex justify-center gap-4 text-lg md:text-xl">
                                 <motion.span
@@ -282,7 +280,7 @@ export default function SingaporePackages() {
                                     transition={{ delay: 1.5, duration: 0.5 }}
                                     className="text-yellow-300"
                                 >
-                                    Modern City
+                                    Mountains
                                 </motion.span>
                                 <motion.span
                                     initial={{ opacity: 0, y: 20 }}
@@ -290,7 +288,7 @@ export default function SingaporePackages() {
                                     transition={{ delay: 1.8, duration: 0.5 }}
                                     className="text-blue-300"
                                 >
-                                    Rich Culture
+                                    Rivers
                                 </motion.span>
                                 <motion.span
                                     initial={{ opacity: 0, x: 20 }}
@@ -298,7 +296,7 @@ export default function SingaporePackages() {
                                     transition={{ delay: 2.1, duration: 0.5 }}
                                     className="text-green-300"
                                 >
-                                    Amazing Food
+                                    Lakes
                                 </motion.span>
                             </div>
                         </motion.div>
@@ -306,12 +304,12 @@ export default function SingaporePackages() {
                 </div>
             </div>
 
-            {/* Singapore Packages Section */}
+            {/* Packages Section */}
             <div className="bg-gray-50 py-16">
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl font-bold text-center mb-12">
                         <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
-                            Our Singapore Packages
+                            Our Leh Ladakh Packages
                         </span>
                     </h2>
                     <div className="relative">
@@ -344,8 +342,8 @@ export default function SingaporePackages() {
                                 <div className="flex md:grid md:grid-cols-3 gap-6 min-w-min md:min-w-0">
                                     {packages
                                         .slice(currentPage * 3, (currentPage * 3) + 3)
-                                        .map((singaporePkg) => (
-                                            <PackageCard key={singaporePkg.id} package={singaporePkg} />
+                                        .map((lehladakhPkg) => (
+                                            <PackageCard key={lehladakhPkg.id} package={lehladakhPkg} />
                                         ))}
                                 </div>
                             </div>
@@ -377,7 +375,7 @@ export default function SingaporePackages() {
                 </div>
             </div>
 
-            {/* Singapore Highlights Section */}
+            {/* Highlights Section */}
             <div className="py-16 bg-white">
                 <div className="container mx-auto px-4">
                     <motion.div
@@ -389,12 +387,12 @@ export default function SingaporePackages() {
                     >
                         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
                             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
-                                Experience the Magic of Singapore
+                                Experience the Magic of Ladakh
                             </span>
                         </h2>
                         
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {singaporeHighlights.map((highlight, index) => (
+                            {lehladakhHighlights.map((highlight, index) => (
                                 <motion.div
                                     key={highlight.title}
                                     initial={{ opacity: 0, y: 20 }}
@@ -461,18 +459,18 @@ export default function SingaporePackages() {
             <div className="max-w-4xl mx-auto mt-16 prose prose-lg">
                 <h2 className="text-3xl font-bold text-center mb-8">
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
-                        Discover Singapore
+                        Discover Leh Ladakh
                     </span>
                 </h2>
                 <div className="text-gray-600 space-y-4">
                     <p>
-                        Singapore, a dynamic city-state where tradition meets modernity, offers visitors an unforgettable blend of cultural experiences, world-class attractions, and culinary delights.
+                        Leh Ladakh, often called the "Land of High Passes," is a region where ancient monasteries perch on rugged cliffs, crystal-clear lakes mirror snow-capped peaks, and the culture remains as pristine as its landscapes.
                     </p>
                     <p>
-                        Our Singapore tour packages include visits to iconic locations like Gardens by the Bay, Universal Studios Singapore, and Marina Bay Sands, combining entertainment with cultural experiences.
+                        Our Leh Ladakh tour packages include visits to iconic locations like Pangong Lake, Nubra Valley, and ancient monasteries, combining adventure with cultural experiences.
                     </p>
                     <p>
-                        Experience the rich multicultural heritage through visits to Little India, Chinatown, and Arab Street, while enjoying the citys famous hawker centers and modern shopping districts.
+                        Experience the rich Buddhist heritage, marvel at the dramatic landscapes, and interact with the warm-hearted Ladakhi people while enjoying local cuisine and traditional hospitality.
                     </p>
                 </div>
             </div>
