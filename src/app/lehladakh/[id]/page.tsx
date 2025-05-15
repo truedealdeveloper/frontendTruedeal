@@ -60,7 +60,7 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                 { id: 'overview', ref: overviewRef },
                 { id: 'itinerary', ref: itineraryRef },
                 { id: 'inclusions', ref: inclusionsRef },
-                { id: 'exclusions', ref: exclusionsRef },
+                { id: 'exclusions', ref: exclusionsRef },  
                 { id: 'other', ref: otherRef }
             ];
 
@@ -156,6 +156,18 @@ export default function LehladakhPackagePage({ params }: PageProps) {
         );
     };
 
+    // Add this function after the getAllImages function
+    const scrollToDay = (dayNumber: number) => {
+        const dayElement = document.getElementById(`day-${dayNumber}`);
+        if (dayElement) {
+            dayElement.scrollIntoView({ behavior: 'smooth' });
+            // Expand the day if it's not already expanded
+            if (!expandedDays.includes(dayNumber)) {
+                toggleDayExpansion(dayNumber);
+            }
+        }
+    };
+
     return (
         <PageWrapper>
             <div className={`relative ${poppins.className}`}>
@@ -241,7 +253,7 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                             </div>
                             <div>
                                 <div className="text-sm opacity-80">Group Size</div>
-                                <div className="font-medium text-sm md:text-base">Max 20 people</div>
+                                <div className="font-medium text-sm md:text-base">Max 12 people</div>
                             </div>
                         </div>
                         
@@ -552,9 +564,7 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                                             key={i}
                                                             onClick={() => {
                                                                 setSelectedDay(day.day);
-                                                                if (!expandedDays.includes(day.day)) {
-                                                                    toggleDayExpansion(day.day);
-                                                                }
+                                                                scrollToDay(day.day);
                                                             }}
                                                             className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                                                                 selectedDay === day.day
@@ -569,16 +579,18 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                                 
                                                 {/* Timeline view with collapsible content */}
                                                 <div className="relative pb-6">
-                                                    {/* Timeline vertical line */}
                                                     <div className="absolute left-4 md:left-[3.5rem] top-0 bottom-0 w-0.5 bg-[#017ae3]"></div>
                                                     
-                                                    {/* Timeline content */}
                                                     <div className="space-y-6">
                                                         {lehladakhPkg.itinerary.map((day, i) => {
                                                             const isExpanded = expandedDays.includes(day.day);
                                                             
                                                             return (
-                                                                <div key={i} className="relative pl-12 md:pl-20">
+                                                                <div 
+                                                                    key={i} 
+                                                                    id={`day-${day.day}`} 
+                                                                    className="relative pl-12 md:pl-20 scroll-mt-24"
+                                                                >
                                                                     {/* Day number marker */}
                                                                     <div 
                                                                         className="absolute left-0 top-2 w-8 h-8 rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] flex items-center justify-center text-white font-bold z-10 cursor-pointer"
@@ -651,6 +663,76 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                                             );
                                                         })}
                                                     </div>
+                                                </div>
+                                            </div>
+
+                                            {/* Add Flights Section */}
+                                            <div className="mb-10">
+                                                <h2 className="text-2xl font-bold mb-2">Available Flights</h2>
+                                                <p className="text-gray-500 mb-6 text-sm">Direct flights available from major cities</p>
+                                                
+                                                <div className="space-y-4">
+                                                    {[
+                                                        {
+                                                            from: "Delhi",
+                                                            duration: "1h 30m",
+                                                            frequency: "Multiple flights daily"
+                                                        },
+                                                        {
+                                                            from: "Mumbai",
+                                                            duration: "2h 30m",
+                                                            frequency: "Daily flights available"
+                                                        },
+                                                        {
+                                                            from: "Ahmedabad",
+                                                            duration: "2h 30m",
+                                                            frequency: "Regular flights available"
+                                                        }
+                                                    ].map((flight, index) => (
+                                                        <div 
+                                                            key={index} 
+                                                            className="bg-white rounded-lg border border-gray-100 hover:shadow-md transition-shadow duration-300"
+                                                        >
+                                                            <div className="p-4 md:p-6">
+                                                                <div className="flex items-center justify-between">
+                                                                    <div className="flex items-center space-x-4 flex-1">
+                                                                        <div className="min-w-[100px]">
+                                                                            <div className="text-lg font-semibold">From {flight.from}</div>
+                                                                        </div>
+                                                                        
+                                                                        <div className="flex-1 relative px-4">
+                                                                            <div className="absolute w-full top-1/2 h-0.5 bg-[#017ae3]/10"></div>
+                                                                            <div className="absolute w-full top-1/2 flex justify-center">
+                                                                                <span className="bg-white px-3 py-1 text-sm text-[#017ae3] font-medium">
+                                                                                    {flight.duration}
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                    <div className="flex items-center gap-4 ml-8">
+                                                                        <div className="text-sm text-gray-600 hidden md:block">
+                                                                            {flight.frequency}
+                                                                        </div>
+                                                                        <Button 
+                                                                            variant="outline"
+                                                                            className="text-[#017ae3] border-[#017ae3] hover:bg-[#017ae3] hover:text-white transition-colors duration-300"
+                                                                            onClick={() => setIsBookingModalOpen(true)}
+                                                                        >
+                                                                            Check
+                                                                        </Button>
+                                                                    </div>
+                                                                </div>
+                                                                <div className="text-sm text-gray-600 mt-3 md:hidden">
+                                                                    {flight.frequency}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                                
+                                                <div className="mt-4 text-center text-sm text-gray-500">
+                                                    * Flight schedules are subject to change
                                                 </div>
                                             </div>
                                         </TabsContent>

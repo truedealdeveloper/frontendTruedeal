@@ -932,7 +932,6 @@ End of tour with memories to cherish forever!`,
             "/UGCImages/singapore/singapore/1.webp",
             "/UGCImages/singapore/singapore/2.webp",
         ],
-       
         departureDates: [
             { date: "Mar 2025 - July 2025" }
         ],

@@ -156,6 +156,13 @@ export default function SingaporePackagePage({ params }: PageProps) {
         );
     };
 
+    // Update the location display to show the correct location based on package ID
+    const getPackageLocation = (packageId: string) => {
+        if (packageId.includes('malaysia')) return 'Malaysia';
+        if (packageId.includes('langkawi')) return 'Langkawi';
+        return 'Singapore';
+    };
+
     return (
         <PageWrapper>
             <div className={`relative ${poppins.className}`}>
@@ -182,10 +189,10 @@ export default function SingaporePackagePage({ params }: PageProps) {
                             {/* Package name */}
                             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">{singaporePkg.packageName}</h1>
                             
-                            {/* Location */}
+                            {/* Location - Updated to use dynamic location */}
                             <div className="flex items-center text-white mb-6">
                                 <MapPin className="h-5 w-5 mr-2" />
-                                <span className="text-lg">Singapore</span>
+                                <span className="text-lg">{getPackageLocation(id)}</span>
                             </div>
                             
                             {/* Action buttons */}
@@ -231,7 +238,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                             </div>
                             <div>
                                 <div className="text-sm opacity-80">Location</div>
-                                <div className="font-medium text-sm md:text-base">Singapore</div>
+                                <div className="font-medium text-sm md:text-base">{getPackageLocation(id)}</div>
                             </div>
                         </div>
                         
