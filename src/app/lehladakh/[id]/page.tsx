@@ -306,8 +306,8 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                                 <h2 className="text-2xl font-bold mb-6">Package Highlights</h2>
                                                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                                                     {[
-                                                        { icon: "🏙️", title: "City Exploration", desc: "Visit Leh Ladakh&apos;s iconic attractions" },
-                                                        { icon: "🍲", title: "Local Cuisine", desc: "Experience Leh Ladakh&apos;s food culture" },
+                                                        { icon: "🏙️", title: "City Exploration", desc: "Visit Leh Ladakh & its iconic attractions" },
+                                                        { icon: "🍲", title: "Local Cuisine", desc: "Experience Leh Ladakh's food culture" },
                                                         { icon: "🏨", title: "Quality Hotels", desc: `${lehladakhPkg.nights} nights accommodation` },
                                                         { icon: "🚕", title: "Airport Transfers", desc: "Convenient transport included" },
                                                         { icon: "🏝️", title: "Island Visits", desc: "Explore Leh Ladakh and more" },
@@ -467,7 +467,7 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                                         <div>
                                                             <h3 className="text-xl font-bold mb-3">Create Memories Together</h3>
                                                             <p className="text-gray-600 mb-4">
-                                                                Tag your photos with #LehLadakhJourney or #SGExplorer on social media and join our travel community. Your photos might be featured on our social channels!
+                                                                Tag your photos with #LehLadakhJourney on social media and join our travel community. Your photos might be featured on our social channels!
                                                             </p>
                                                             <div className="flex space-x-4">
                                                                 <Button className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition">
@@ -482,7 +482,7 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                                             {[5, 6, 7, 8, 9, 10].map((num) => (
                                                                 <div key={num} className="relative aspect-square rounded-lg overflow-hidden">
                                                                     <Image
-                                                                        src={`/UGCImages/lehladakh/lehladakh/${num}.webp`}
+                                                                        src={`/UGCImages/LADAKH/${num}.webp`}
                                                                         alt={`User shared photo ${num}`}
                                                                         fill
                                                                         className="object-cover"

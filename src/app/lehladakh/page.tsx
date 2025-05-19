@@ -136,32 +136,32 @@ export default function LehladakhPackages() {
     const lehladakhHighlights = [
         {
             title: "Pangong Lake",
-            image: "/UGCImages/leh/banner/1.png",
+            image: "/UGCImages/LADAKH/leh/1.png",
             description: "Visit the stunning blue waters of Pangong Lake"
         },
         {
             title: "Monasteries",
-            image: "/UGCImages/leh/banner/2.png",
+            image: "/UGCImages/LADAKH/leh/2.png",
             description: "Explore ancient Buddhist monasteries and culture"
         },
         {
             title: "Nubra Valley",
-            image: "/UGCImages/leh/banner/3.png",
+            image: "/UGCImages/LADAKH/leh/3.png",
             description: "Experience the unique desert landscape and double-humped camels"
         },
         {
             title: "Khardung La",
-            image: "/UGCImages/leh/banner/4.png",
+            image: "/UGCImages/LADAKH/leh/4.png",
             description: "Visit one of the world's highest motorable passes"
         },
         {
             title: "Local Culture",
-            image: "/UGCImages/leh/banner/5.png",
+            image: "/UGCImages/LADAKH/leh/5.png",
             description: "Immerse yourself in Ladakhi culture and traditions"
         },
         {
             title: "Adventure Sports",
-            image: "/UGCImages/leh/banner/6.png",
+            image: "/UGCImages/LADAKH/leh/6.png",
             description: "Experience river rafting and mountain biking"
         }
     ];

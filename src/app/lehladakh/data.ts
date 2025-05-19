@@ -166,13 +166,13 @@ export const lehladakhPackages: Record<string, LehladakhPackage> = {
                 day: 1,
                 title: "Arrive Leh",
                 description: "Arrival Leh by morning flight and transfer to the hotel. After welcome drink complete day at rest for acclimatization to the height altitude of Leh (3500 meters). Dinner and overnight in hotel.",
-                image: "/UGCImages/leh/itinerary/1.jpg"
+                image: "/UGCImages/LADAKH/1.webp"
             },
             {
                 day: 2,
                 title: "LEH - EXCURSION TO SHAM VALLEY (65 KMS / 04 HRS – ONE WAY)",
                 description: `After breakfast you drive downstream along the River Indus on Leh – Kargil Highway. And start our sightseeing with Hall Of Fame (Museum Constructed by India Army) near Leh is worth a visit for every Indian, and proceed further to Gurudwara Patthar Sahib at an altitude of 3600 Mtrs about 22 Kms from Leh was constructed in memory of Guru Nanak Dev ji Nestled deep in the Himalayas, A drive of another 4 km took us to Magnetic Hill which defies the law of gravity. As you move ahead from Magnetic Hills, just before Nimmu Village, there comes a famous Confluence Of Two Rivers Indus River coming from Tibet (left) and Zanskar River coming from Zanskar Valley (right). After visiting confluence we head to followed by a visit to Shanti Stupa Leh palace. Later we drive back to Leh. Dinner and overnight at Hotel in Leh.`,
-                image: "/UGCImages/leh/itinerary/2.jpg"
+                image: "/UGCImages/LADAKH/2.webp"
             },
             {
                 day: 3,
@@ -184,7 +184,7 @@ Saser massif. Nubra Valley is popularly known as Ldumra or the valley of flowers
 between the Karakoram and Ladakh ranges of the Himalayas. The average altitude of the valley is 10,000 Ft. above sea
 level. Upon arrival in Nubra we check in at our Camp / Hotel in Hunder for Overnight stay. In the evening you can walk
 around the tiny villages to see how the locals live in this part of the world. Overnight Stay at the Camp or Hotel.`,
-                image: "/UGCImages/leh/itinerary/3.jpg"
+                image: "/UGCImages/LADAKH/3.webp"
             },
             {
                 day: 4,
@@ -198,26 +198,26 @@ journey is very scenic!  Later after crossing this adventurous part we drive fu
 you pass through few small villages of Changthang and finally you can have a sudden view of the Pangong lake situated at
 14,000 feet (4,267 m). Upon arrival we check in at our Camp/Hotel Near Pangong lake Dinner; Overnight at the
 Hotel/Camp`,
-                image: "/UGCImages/leh/itinerary/4.jpg"
+                image: "/UGCImages/LADAKH/4.webp"
             },
             {
                 day: 5,
                 title: "Pangong - Lake",
                 description: "Early morning sunrise at Pangong. Drive back to Leh. Transfer to airport for departure.",
-                image: "/UGCImages/leh/itinerary/5.jpg"
+                image: "/UGCImages/LADAKH/5.webp"
             },
             {
                 day: 6,
                 title: "LEH - DEPARTURE",
                 description: "After breakfast check out from hotel and transfer to airport for departure.",
-                image: "/UGCImages/leh/itinerary/6.jpg"
+                image: "/UGCImages/LADAKH/6.webp"
             }
         ],
         images: [
-            "/UGCImages/leh/packages/basic/1.jpg",
-            "/UGCImages/leh/packages/basic/2.jpg",
-            "/UGCImages/leh/packages/basic/3.jpg",
-            "/UGCImages/leh/packages/basic/4.jpg"
+            "/UGCImages/LADAKH/7.webp",
+            "/UGCImages/LADAKH/8.webp", 
+            "/UGCImages/LADAKH/9.webp",
+            "/UGCImages/LADAKH/10.webp"
         ],
         departureDates: [
             { date: "May 2025 - June 2025" }
@@ -225,15 +225,15 @@ Hotel/Camp`,
         experiences: [
             {
                 title: "Monastery Visit",
-                image: "/UGCImages/leh/experiences/monastery.jpg"
+                image: "/UGCImages/LADAKH/18.webp"
             },
             {
                 title: "Pangong Lake",
-                image: "/UGCImages/leh/experiences/pangong.jpg"
+                image: "/UGCImages/LADAKH/10.webp"
             },
             {
                 title: "Camel Safari",
-                image: "/UGCImages/leh/experiences/camel.jpg"
+                image: "/UGCImages/LADAKH/camel safari/1.png"
             }
         ],
         additionalInfo: {
@@ -269,6 +269,192 @@ Hotel/Camp`,
                 ]
             }
         }
-    }
+    },
+    magicalLadakh: {
+        id: "magical-ladakh-6-Nights-7-Days",
+        packageName: "Magical Ladakh 6 Nights 7 Days",
+        days: 7,
+        nights: 6,  
+        amount: 36801,
+        dateStart: "May 2025",  
+        dateEnd: "30 June 2025",
+        description: "Experience the magic of Ladakh with our 7-day tour covering Leh, Sham Valley, Pangong Lake, Nubra Valley.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Double Sharing",
+            arrivalDate: "Contact Us",
+            duration: "7D6N Leh Fixed Departure",
+            costBasis: "Cost Based On 2 pax travelling together"
+        },
+        hotelDetails: [
+            {
+                city: "Leh",
+                hotel: "The Himalayan, Kangsing, Mahey Retreat",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Nubra Valley",
+                hotel: "Nubra Summer Camp, Nubra Delight Camp, Nubra Vista Camp or similar",
+                roomType: "Deluxe Tent"
+            },
+            {
+                city: "Pangong Lake",
+                hotel: "Pangong Delight Camp, P3 Camp, Tso Camp (lukung), Ladakh Summer Camp or similar",
+                roomType: "Deluxe Tent"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Arrive Leh",
+            "Day 2: LEH - EXCURSION TO SHAM VALLEY (65 KMS / 04 HRS – ONE WAY)",
+            "Day 3: LEH–NUBRA VALLEY VIA KHARDUNG LA 18,390 FT. (120 KMS / 4 – 5 HRS)",
+            "Day 4: IN NUBRA – EXCURSION TO TURTUK (0 POINT & THANG VILLAGE)",
+            "Day 5: NUBRA VALLEY TO PANGONG LAKE (150 KMS / 5 HRS)",
+            "Day 6: PANGONG LAKE TO LEH VIA CHANGLA (140 KMS / 6 HRS)",
+            "Day 7: LEH - DEPARTURE"
+        ],
+        inclusions: [
+            "Return flight tickets (in economy class)",
+            "Assistance upon arrival at Leh Hotel",
+            "Traditional welcome in the Hotel with Welcome Drink (Hot Tea / Coffee / Kahwa) on arrival",
+            "06 night accommodation twin/double/triple sharing basis as per the itinerary.",
+            "06 Breakfast + 06 Dinner",
+            "Return airport and round trip transfers along with all sightseeing tours by Non-Ac Innova / Tempo Traveler as per the itinerary",
+            "Wildlife fee & Red Cross fee",
+            "All toll taxes / parking fee / driver allowance",
+            "Ladakh Entry Fee",
+            "Ladakh Ecological Development Fee",
+            "One Mid-Sized Oxygen Cylinder during Nubra Valley and Pangong Lake visit"
+        ],
+        exclusions: [
+            "Any Kind of Personal Expenses or Optional Tours / Extra Meals Ordered",
+            "Anything not specifically mentioned under the head “Prices included”.",
+            "The Services of Vehicle is not included on leisure days & after finishing the sightseeing tour as per the Itinerary",
+            "Guide fee, Camera fee & any monument Entrances",
+            "Medical & Travel insurance",
+            "Any changes you may choose to make during your tour",
+            "Additional costs due to flight cancellation, road blocks etc"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrive Leh",
+                description: "Arrival Leh by morning flight and transfer to the hotel. After welcome drink complete day at rest for acclimatization to the height altitude of Leh (3500 meters). Dinner and overnight in hotel.",
+                image: "/UGCImages/LADAKH/1.webp"
+            },
+            {
+                day: 2,
+                title: "LEH - EXCURSION TO SHAM VALLEY (65 KMS / 04 HRS – ONE WAY)",
+                description: `After breakfast you drive downstream along the River Indus on Leh – Kargil Highway. And start our sightseeing with Hall Of Fame (Museum Constructed by India Army) near Leh is worth a visit for every Indian, and proceed further to Gurudwara Patthar Sahib at an altitude of 3600 Mtrs about 22 Kms from Leh was constructed in memory of Guru Nanak Dev ji Nestled deep in the Himalayas, A drive of another 4 km took us to Magnetic Hill which defies the law of gravity. As you move ahead from Magnetic Hills, just before Nimmu Village, there comes a famous Confluence Of Two Rivers Indus River coming from Tibet (left) and Zanskar River coming from Zanskar Valley (right). After visiting confluence we head to followed by a visit to Shanti Stupa Leh palace. Later we drive back to Leh. Dinner and overnight at Hotel in Leh.`,
+                image: "/UGCImages/LADAKH/14.webp"
+            },
+            {
+                day: 3,
+                title: "LEH–NUBRA VALLEY VIA KHARDUNG LA 18,390 FT. (120 KMS / 4 – 5 HRS)",
+                description: `Post breakfast we drive to Nubra Valley. The road journey from Leh to Nubra Valley passes over Khardung La (Second
+Highest Motorable Road In The World) at 5,602 Mtrs / 18,390 Ft, around 39 km from Leh. From the pass, one can see all the
+way south over the Indus valley to seemingly endless peaks and ridges of the Zanskar range, and north to the giants of the
+Saser massif. Nubra Valley is popularly known as Ldumra or the valley of flowers. It is situated in the north of Ladakh
+between the Karakoram and Ladakh ranges of the Himalayas. The average altitude of the valley is 10,000 Ft. above sea
+level. Upon arrival in Nubra we check in at our Camp / Hotel in Hunder for Overnight stay. In the evening you can walk
+around the tiny villages to see how the locals live in this part of the world. Overnight Stay at the Camp or Hotel.`,
+                image: "/UGCImages/LADAKH/15.webp"
+            },
+            {
+                day: 4,
+                title: "IN NUBRA – EXCURSION TO TURTUK (0 POINT & THANG VILLAGE)",
+                description: `After an early breakfast, proceed to Turtuk (A village that was won by India in the 1971 war with Pakistan) and extremely
+close to the border. Visit a 16th Century Mosque, (comprising of a touch of Turkish &amp; Iranian culture), ruined fort of Dhards
+and Monastery. Admire the magnificent view of the famous K2 peak (The second highest peak in the world after Mount
+Everest). Later back to hotel for overnight stay.`,
+                image: "/UGCImages/LADAKH/16.webp"
+            },
+            {
+                day: 5,
+                title: "NUBRA VALLEY TO PANGONG LAKE (150 KMS / 5 HRS)",
+                description: `After an early breakfast we check out from Camp or hotel and drive towards Hunder where you have opportunity to ride on a
+bacterian camel (double humped) amidst the sand dunes of this high altitude desert with snowcapped mountains on the
+horizon. On the return stop at Diskit which is the headquarter town of Nubra Valley. Stroll around the bazaar observing the
+shops and local people going about their daily chores. Later we drive towards Pangong Tso via Agham &amp; Shyok Valley.
+Some of the road patches in areas are extremely tough (towards nubra side) in terms of road conditions but no doubt the
+journey is very scenic!  Later after crossing this adventurous part we drive further towards Durbuk & Tangtse for Pangong
+you pass through few small villages of Changthang and finally you can have a sudden view of the Pangong lake situated at
+14,000 feet (4,267 m). Upon arrival we check in at our Camp/Hotel Near Pangong lake Dinner &amp; Overnight at the Hotel`,
+                image: "/UGCImages/LADAKH/17.webp"
+            },
+            {
+                day: 6,
+                title: "PANGONG LAKE TO LEH VIA CHANGLA (140 KMS / 6 HRS)",
+                description: `Morning at leisure to explore the beauty of lake and later we drive back to Leh via Changla Pass 5486 Mtrs en route visiting
+Hemis Gompa, the largest monastic foundation of Drukpa Kagyu Order of Tibetan Buddhism. And futher to Thiksey an
+impressive complex rising tier upon tier on a hill above the village and another 5 Kms driving through a picturesque
+landscape we reach to Shey Palace, The ancient capital of Ladakh &amp; 3 Idiots Rancho School. Drive further to Leh. Dinner
+&amp; Overnight at Hotel.`,
+                image: "/UGCImages/LADAKH/19.webp"
+            },
+            {
+                day: 7,
+                title: "LEH - DEPARTURE",
+                description: "After breakfast check out from hotel and transfer to airport for departure.",
+                image: "/UGCImages/LADAKH/20.webp"
+            }
+        ],
+        images: [
+            "/UGCImages/LADAKH/1.webp",
+            "/UGCImages/LADAKH/14.webp",
+            "/UGCImages/LADAKH/15.webp",
+            "/UGCImages/LADAKH/17.webp"
+        ],
+        departureDates: [
+            { date: "May 2025 - June 2025" }
+        ],
+        experiences: [
+            {
+                title: "Monastery Visit",
+                image: "/UGCImages/LADAKH/18.webp"
+            },
+            {
+                title: "Pangong Lake",
+                image: "/UGCImages/LADAKH/10.webp"
+            },
+            {
+                title: "Camel Safari",
+                image: "/UGCImages/LADAKH/camel safari/1.png"
+            }
+        ],
+        additionalInfo: {
+            highlights: [
+                "Khardung La Pass",
+                "Pangong Lake",
+                "Nubra Valley",
+                "Buddhist Monasteries",
+                "Camel Safari"
+            ],
+            bestTimeToVisit: "May to September",
+            cuisine: [
+                "Thukpa",
+                "Momos",
+                "Butter Tea",
+                "Ladakhi Pulao"
+            ],
+            accommodation: {
+                type: "3-star hotels and luxury camps",
+                amenities: [
+                    "Heating",
+                    "Hot water",
+                    "Restaurant",
+                    "Mountain views"
+                ]
+            },
+            transportation: {
+                type: "SUV/Tempo Traveller",
+                features: [
+                    "Experienced mountain drivers",
+                    "Oxygen cylinder",
+                    "First aid kit"
+                ]
+            }
+        }
+    },
+    
     // Add more packages as needed
 }; 
