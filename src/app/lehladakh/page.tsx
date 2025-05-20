@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { lehladakhPackages, LehladakhPackage } from './data';
+import { lehladakhPackages, withoutFlightPackages, LehladakhPackage } from './data';
 import { FaCalendarAlt, FaClock, FaChevronLeft, FaChevronRight, FaPlus, FaMinus, FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 import { IoLocationSharp } from 'react-icons/io5';
 import { Button } from "@/components/ui/button";
@@ -15,18 +15,30 @@ const dancingScript = Dancing_Script({ subsets: ['latin'] });
 const playfair = Playfair_Display({ subsets: ['latin'] });
 
 export default function LehladakhPackages() {
-    const [currentPage, setCurrentPage] = useState(0);
+    const [currentPageWithFlight, setCurrentPageWithFlight] = useState(0);
+    const [currentPageNoFlight, setCurrentPageNoFlight] = useState(0);
     const [openFaq, setOpenFaq] = useState<number | null>(null);
-    const packages = Object.values(lehladakhPackages);
-    const totalPages = Math.ceil(packages.length / 3);
     const [isMuted, setIsMuted] = useState(true);
+    const packagesWithFlight = Object.values(lehladakhPackages);
+    const packagesWithoutFlight = Object.values(withoutFlightPackages);
+    
+    const totalPagesWithFlight = Math.ceil(packagesWithFlight.length / 3);
+    const totalPagesNoFlight = Math.ceil(packagesWithoutFlight.length / 3);
 
-    const handlePrevPage = () => {
-        setCurrentPage(prev => prev > 0 ? prev - 1 : prev);
+    const handlePrevPageWithFlight = () => {
+        setCurrentPageWithFlight(prev => prev > 0 ? prev - 1 : prev);
     };
 
-    const handleNextPage = () => {
-        setCurrentPage(prev => prev < totalPages - 1 ? prev + 1 : prev);
+    const handleNextPageWithFlight = () => {
+        setCurrentPageWithFlight(prev => prev < totalPagesWithFlight - 1 ? prev + 1 : prev);
+    };
+
+    const handlePrevPageNoFlight = () => {
+        setCurrentPageNoFlight(prev => prev > 0 ? prev - 1 : prev);
+    };
+
+    const handleNextPageNoFlight = () => {
+        setCurrentPageNoFlight(prev => prev < totalPagesNoFlight - 1 ? prev + 1 : prev);
     };
 
     const toggleMute = () => {
@@ -47,9 +59,11 @@ export default function LehladakhPackages() {
     };
 
     const PackageCard = ({ 
-        package: pkg
+        package: pkg,
+        withFlight = true
     }: { 
         package: LehladakhPackage;
+        withFlight?: boolean;
     }) => {
         const [showDates, setShowDates] = useState(false);
 
@@ -75,6 +89,11 @@ export default function LehladakhPackages() {
                         </span>
                         <span className="text-sm ml-1">onwards</span>
                     </div>
+                    {!withFlight && (
+                        <div className="mt-2 bg-blue-500 text-white px-4 py-1.5 rounded-full shadow-lg text-sm">
+                            Without Flights
+                        </div>
+                    )}
                 </div>
 
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
@@ -112,7 +131,7 @@ export default function LehladakhPackages() {
                         >
                             <h3 className="text-yellow-400 font-semibold mb-2">Departure Dates</h3>
                             <div className="space-y-2">
-                                {pkg.departureDates.map((departure, index) => (
+                                {pkg.departureDates.map((departure: { date: string }, index: number) => (
                                     <div key={index} className="text-sm">
                                         {departure.date}
                                     </div>
@@ -304,7 +323,7 @@ export default function LehladakhPackages() {
                 </div>
             </div>
 
-            {/* Packages Section */}
+            {/* With Flights Section */}
             <div className="bg-gray-50 py-16">
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl font-bold text-center mb-12">
@@ -313,63 +332,138 @@ export default function LehladakhPackages() {
                         </span>
                     </h2>
                     <div className="relative">
-                        <div className="relative">
-                            {/* Navigation Controls */}
-                            <div className="absolute top-1/2 -translate-y-1/2 left-0 z-10 hidden md:block">
-                                <Button 
-                                    onClick={handlePrevPage} 
-                                    disabled={currentPage === 0}
-                                    variant="outline"
-                                    className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -ml-5 shadow-lg"
-                                >
-                                    <FaChevronLeft className="w-4 h-4" />
-                                </Button>
-                            </div>
+                        {/* Navigation Controls */}
+                        <div className="absolute top-1/2 -translate-y-1/2 left-0 z-10 hidden md:block">
+                            <Button 
+                                onClick={handlePrevPageWithFlight} 
+                                disabled={currentPageWithFlight === 0}
+                                variant="outline"
+                                className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -ml-5 shadow-lg"
+                            >
+                                <FaChevronLeft className="w-4 h-4" />
+                            </Button>
+                        </div>
 
-                            <div className="absolute top-1/2 -translate-y-1/2 right-0 z-10 hidden md:block">
-                                <Button 
-                                    onClick={handleNextPage} 
-                                    disabled={currentPage === totalPages - 1}
-                                    variant="outline"
-                                    className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -mr-5 shadow-lg"
-                                >
-                                    <FaChevronRight className="w-4 h-4" />
-                                </Button>
-                            </div>
+                        <div className="absolute top-1/2 -translate-y-1/2 right-0 z-10 hidden md:block">
+                            <Button 
+                                onClick={handleNextPageWithFlight} 
+                                disabled={currentPageWithFlight === totalPagesWithFlight - 1}
+                                variant="outline"
+                                className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -mr-5 shadow-lg"
+                            >
+                                <FaChevronRight className="w-4 h-4" />
+                            </Button>
+                        </div>
 
-                            {/* Packages Grid */}
-                            <div className="overflow-x-auto -mx-4 px-4">
-                                <div className="flex md:grid md:grid-cols-3 gap-6 min-w-min md:min-w-0">
-                                    {packages
-                                        .slice(currentPage * 3, (currentPage * 3) + 3)
-                                        .map((lehladakhPkg) => (
-                                            <PackageCard key={lehladakhPkg.id} package={lehladakhPkg} />
-                                        ))}
-                                </div>
+                        {/* Packages Grid */}
+                        <div className="overflow-x-auto -mx-4 px-4 md:overflow-x-visible">
+                            <div className="flex md:grid md:grid-cols-3 gap-6 min-w-min md:min-w-0">
+                                {packagesWithFlight
+                                    .slice(currentPageWithFlight * 3, (currentPageWithFlight * 3) + 3)
+                                    .map((pkg) => (
+                                        <PackageCard 
+                                            key={pkg.id} 
+                                            package={pkg}
+                                            withFlight={true}
+                                        />
+                                    ))}
                             </div>
+                        </div>
 
-                            {/* Mobile Navigation */}
-                            <div className="mt-3 flex justify-center items-center gap-2 md:hidden">
-                                <Button 
-                                    onClick={handlePrevPage} 
-                                    disabled={currentPage === 0}
-                                    variant="outline"
-                                    className="rounded-full w-8 h-8 p-0"
-                                >
-                                    <FaChevronLeft className="w-3 h-3" />
-                                </Button>
-                                <span className="text-sm text-gray-500">
-                                    {currentPage + 1} / {totalPages}
-                                </span>
-                                <Button 
-                                    onClick={handleNextPage} 
-                                    disabled={currentPage === totalPages - 1}
-                                    variant="outline"
-                                    className="rounded-full w-8 h-8 p-0"
-                                >
-                                    <FaChevronRight className="w-3 h-3" />
-                                </Button>
+                        {/* Mobile Navigation */}
+                        <div className="mt-6 flex justify-center items-center gap-2 md:hidden">
+                            <Button 
+                                onClick={handlePrevPageWithFlight} 
+                                disabled={currentPageWithFlight === 0}
+                                variant="outline"
+                                className="rounded-full w-8 h-8 p-0"
+                            >
+                                <FaChevronLeft className="w-3 h-3" />
+                            </Button>
+                            <span className="text-sm text-gray-500">
+                                {currentPageWithFlight + 1} / {totalPagesWithFlight}
+                            </span>
+                            <Button 
+                                onClick={handleNextPageWithFlight} 
+                                disabled={currentPageWithFlight === totalPagesWithFlight - 1}
+                                variant="outline"
+                                className="rounded-full w-8 h-8 p-0"
+                            >
+                                <FaChevronRight className="w-3 h-3" />
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Without Flights Section */}
+            <div className="bg-white py-16">
+                <div className="container mx-auto px-4">
+                    <h2 className="text-3xl font-bold text-center mb-12">
+                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
+                            Without Flights Fixed Departures
+                        </span>
+                    </h2>
+                    <div className="relative">
+                        {/* Navigation Controls */}
+                        <div className="absolute top-1/2 -translate-y-1/2 left-0 z-10 hidden md:block">
+                            <Button 
+                                onClick={handlePrevPageNoFlight} 
+                                disabled={currentPageNoFlight === 0}
+                                variant="outline"
+                                className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -ml-5 shadow-lg"
+                            >
+                                <FaChevronLeft className="w-4 h-4" />
+                            </Button>
+                        </div>
+
+                        <div className="absolute top-1/2 -translate-y-1/2 right-0 z-10 hidden md:block">
+                            <Button 
+                                onClick={handleNextPageNoFlight} 
+                                disabled={currentPageNoFlight === totalPagesNoFlight - 1}
+                                variant="outline"
+                                className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -mr-5 shadow-lg"
+                            >
+                                <FaChevronRight className="w-4 h-4" />
+                            </Button>
+                        </div>
+
+                        {/* Packages Grid */}
+                        <div className="overflow-x-auto -mx-4 px-4 md:overflow-x-visible">
+                            <div className="flex md:grid md:grid-cols-3 gap-6 min-w-min md:min-w-0">
+                                {packagesWithoutFlight
+                                    .slice(currentPageNoFlight * 3, (currentPageNoFlight * 3) + 3)
+                                    .map((pkg) => (
+                                        <PackageCard 
+                                            key={pkg.id} 
+                                            package={pkg}
+                                            withFlight={false}
+                                        />
+                                    ))}
                             </div>
+                        </div>
+
+                        {/* Mobile Navigation */}
+                        <div className="mt-6 flex justify-center items-center gap-2 md:hidden">
+                            <Button 
+                                onClick={handlePrevPageNoFlight} 
+                                disabled={currentPageNoFlight === 0}
+                                variant="outline"
+                                className="rounded-full w-8 h-8 p-0"
+                            >
+                                <FaChevronLeft className="w-3 h-3" />
+                            </Button>
+                            <span className="text-sm text-gray-500">
+                                {currentPageNoFlight + 1} / {totalPagesNoFlight}
+                            </span>
+                            <Button 
+                                onClick={handleNextPageNoFlight} 
+                                disabled={currentPageNoFlight === totalPagesNoFlight - 1}
+                                variant="outline"
+                                className="rounded-full w-8 h-8 p-0"
+                            >
+                                <FaChevronRight className="w-3 h-3" />
+                            </Button>
                         </div>
                     </div>
                 </div>

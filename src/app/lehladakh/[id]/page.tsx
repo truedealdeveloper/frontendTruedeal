@@ -2,7 +2,7 @@
 
 import { use, useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { lehladakhPackages } from '../data';
+import { lehladakhPackages, withoutFlightPackages } from '../data';
 import { notFound } from 'next/navigation';
 import { 
   Calendar, Check, MapPin, Star, Users, X, Camera, Phone 
@@ -12,11 +12,10 @@ import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BookingFormModal } from '@/app/components/BookingFormModal';
-import {  useScroll} from "framer-motion";
+import {useScroll} from "framer-motion";
 import { Poppins } from 'next/font/google';
 import {PageWrapper} from '@/components/page-wrapper';
 import { useMobile } from '@/hooks/use-mobile';
-import SingaporePackages from '../page';
 
 const poppins = Poppins({
     weight: ['400', '500', '600', '700'],
@@ -30,12 +29,19 @@ interface PageProps {
 
 export default function LehladakhPackagePage({ params }: PageProps) {
     const { id } = use(params);
-    const lehladakhPkg = Object.values(lehladakhPackages).find(p => p.id === id);
-    const isMobile = useMobile();
+    
+    // Check in both package collections
+    const lehladakhPkg = Object.values(lehladakhPackages).find(p => p.id === id) || 
+                        Object.values(withoutFlightPackages).find(p => p.id === id);
+
+    // Add this check to determine if it's a package with flights
+    const isPackageWithFlight = Object.values(lehladakhPackages).some(p => p.id === id);
 
     if (!lehladakhPkg) {
         notFound();
     }
+
+    const isMobile = useMobile();
 
     const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -356,7 +362,7 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                             </div>
 
                                             {/* Available Dates & Flights */}
-                                            {lehladakhPkg.batchDetails && (
+                                            {isPackageWithFlight && lehladakhPkg.batchDetails && (
                                                 <div className="mb-10">
                                                     <h2 className="text-2xl font-bold mb-6">Available Dates & Flights</h2>
                                                     
@@ -666,75 +672,77 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                                 </div>
                                             </div>
 
-                                            {/* Add Flights Section */}
-                                            <div className="mb-10">
-                                                <h2 className="text-2xl font-bold mb-2">Available Flights</h2>
-                                                <p className="text-gray-500 mb-6 text-sm">Direct flights available from major cities</p>
-                                                
-                                                <div className="space-y-4">
-                                                    {[
-                                                        {
-                                                            from: "Delhi",
-                                                            duration: "1h 30m",
-                                                            frequency: "Multiple flights daily"
-                                                        },
-                                                        {
-                                                            from: "Mumbai",
-                                                            duration: "2h 30m",
-                                                            frequency: "Daily flights available"
-                                                        },
-                                                        {
-                                                            from: "Ahmedabad",
-                                                            duration: "2h 30m",
-                                                            frequency: "Regular flights available"
-                                                        }
-                                                    ].map((flight, index) => (
-                                                        <div 
-                                                            key={index} 
-                                                            className="bg-white rounded-lg border border-gray-100 hover:shadow-md transition-shadow duration-300"
-                                                        >
-                                                            <div className="p-4 md:p-6">
-                                                                <div className="flex items-center justify-between">
-                                                                    <div className="flex items-center space-x-4 flex-1">
-                                                                        <div className="min-w-[100px]">
-                                                                            <div className="text-lg font-semibold">From {flight.from}</div>
-                                                                        </div>
-                                                                        
-                                                                        <div className="flex-1 relative px-4">
-                                                                            <div className="absolute w-full top-1/2 h-0.5 bg-[#017ae3]/10"></div>
-                                                                            <div className="absolute w-full top-1/2 flex justify-center">
-                                                                                <span className="bg-white px-3 py-1 text-sm text-[#017ae3] font-medium">
-                                                                                    {flight.duration}
-                                                                                </span>
+                                            {/* Add Flights Section - Only show for packages with flights */}
+                                            {isPackageWithFlight && (
+                                                <div className="mb-10">
+                                                    <h2 className="text-2xl font-bold mb-2">Available Flights</h2>
+                                                    <p className="text-gray-500 mb-6 text-sm">Direct flights available from major cities</p>
+                                                    
+                                                    <div className="space-y-4">
+                                                        {[
+                                                            {
+                                                                from: "Delhi",
+                                                                duration: "1h 30m",
+                                                                frequency: "Multiple flights daily"
+                                                            },
+                                                            {
+                                                                from: "Mumbai",
+                                                                duration: "2h 30m",
+                                                                frequency: "Daily flights available"
+                                                            },
+                                                            {
+                                                                from: "Ahmedabad",
+                                                                duration: "2h 30m",
+                                                                frequency: "Regular flights available"
+                                                            }
+                                                        ].map((flight, index) => (
+                                                            <div 
+                                                                key={index} 
+                                                                className="bg-white rounded-lg border border-gray-100 hover:shadow-md transition-shadow duration-300"
+                                                            >
+                                                                <div className="p-4 md:p-6">
+                                                                    <div className="flex items-center justify-between">
+                                                                        <div className="flex items-center space-x-4 flex-1">
+                                                                            <div className="min-w-[100px]">
+                                                                                <div className="text-lg font-semibold">From {flight.from}</div>
+                                                                            </div>
+                                                                            
+                                                                            <div className="flex-1 relative px-4">
+                                                                                <div className="absolute w-full top-1/2 h-0.5 bg-[#017ae3]/10"></div>
+                                                                                <div className="absolute w-full top-1/2 flex justify-center">
+                                                                                    <span className="bg-white px-3 py-1 text-sm text-[#017ae3] font-medium">
+                                                                                        {flight.duration}
+                                                                                    </span>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
-                                                                    
-                                                                    <div className="flex items-center gap-4 ml-8">
-                                                                        <div className="text-sm text-gray-600 hidden md:block">
-                                                                            {flight.frequency}
+                                                                        
+                                                                        <div className="flex items-center gap-4 ml-8">
+                                                                            <div className="text-sm text-gray-600 hidden md:block">
+                                                                                {flight.frequency}
+                                                                            </div>
+                                                                            <Button 
+                                                                                variant="outline"
+                                                                                className="text-[#017ae3] border-[#017ae3] hover:bg-[#017ae3] hover:text-white transition-colors duration-300"
+                                                                                onClick={() => setIsBookingModalOpen(true)}
+                                                                            >
+                                                                                Check
+                                                                            </Button>
                                                                         </div>
-                                                                        <Button 
-                                                                            variant="outline"
-                                                                            className="text-[#017ae3] border-[#017ae3] hover:bg-[#017ae3] hover:text-white transition-colors duration-300"
-                                                                            onClick={() => setIsBookingModalOpen(true)}
-                                                                        >
-                                                                            Check
-                                                                        </Button>
                                                                     </div>
-                                                                </div>
-                                                                <div className="text-sm text-gray-600 mt-3 md:hidden">
-                                                                    {flight.frequency}
+                                                                    <div className="text-sm text-gray-600 mt-3 md:hidden">
+                                                                        {flight.frequency}
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    ))}
+                                                        ))}
+                                                    </div>
+                                                    
+                                                    <div className="mt-4 text-center text-sm text-gray-500">
+                                                        * Flight schedules are subject to change
+                                                    </div>
                                                 </div>
-                                                
-                                                <div className="mt-4 text-center text-sm text-gray-500">
-                                                    * Flight schedules are subject to change
-                                                </div>
-                                            </div>
+                                            )}
                                         </TabsContent>
                                         
                                         <TabsContent value="accommodation" className="mt-0">
@@ -964,10 +972,6 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                         </div>
                     </div>
                 )}
-
-                <div className='mt-[50px]'>
-                    <SingaporePackages />
-                </div>
 
                 <style jsx global>{`
                     .no-scrollbar {
