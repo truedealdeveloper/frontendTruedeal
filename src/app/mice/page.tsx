@@ -246,7 +246,7 @@ export default function MICEPage() {
               { organization: "Gallant Cement", location: "GOA", image: "/UGCImages/gallantt/5.jpeg" },
               { organization: "A.T.C", location: "Malaysia", image: "/UGCImages/gallantt/3.jpeg" },
               { organization: "Gallant Cement", location: "Pattaya", image: "/UGCImages/gallantt/4.jpeg" },
-              { organization: "Gallant Espat LTD", location: "Singapore", image: "/UGCImages/gallantt/2.jpeg" }
+              { organization: "Gallant Ispat LTD", location: "Singapore", image: "/UGCImages/gallantt/2.jpeg" }
             ].map((event, index) => (
               <motion.div
                 key={index}
