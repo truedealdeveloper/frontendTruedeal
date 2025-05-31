@@ -2,6 +2,7 @@
 
 import { useRef} from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { motion } from "framer-motion"
 import {NumberTicker} from "@/components/magicui/number-ticker"
 
@@ -232,7 +233,7 @@ export default function MICEPage() {
               <span>Recent Success Stories</span>
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Events We've Organized
+              Events We&apos;ve Organized
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Trusted by leading organizations for their corporate events across India and international destinations.
@@ -253,10 +254,11 @@ export default function MICEPage() {
                 className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group border border-gray-100"
               >
                 <div className="relative h-48 overflow-hidden">
-                  <img 
+                  <Image 
                     src={event.image} 
                     alt={`${event.organization} event in ${event.location}`}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-green-100 flex items-center justify-center shadow-lg">
                     <CheckCircle2 className="h-4 w-4 text-green-600" />
