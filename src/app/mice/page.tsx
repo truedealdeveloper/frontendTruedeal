@@ -220,6 +220,81 @@ export default function MICEPage() {
         </div>
       </section>
 
+      {/* Recent Events Section */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white w-full">
+        <div className="container mx-auto px-4 max-w-[100vw]">
+          <motion.div
+            initial={{ opacity: 1, y: 0 }}
+            className="text-center mb-12 sm:mb-16"
+          >
+            <div className="inline-flex items-center px-4 py-2 bg-[#017ae3]/10 rounded-full text-[#017ae3] text-sm font-medium mb-4">
+              <Globe className="h-4 w-4 mr-2" />
+              <span>Recent Success Stories</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Events We've Organized
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Trusted by leading organizations for their corporate events across India and international destinations.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {[
+              { organization: "Rotary", location: "Phuket", image: "/UGCImages/gallantt/1.jpeg" },
+              { organization: "Gallant Cement", location: "GOA", image: "/UGCImages/gallantt/5.jpeg" },
+              { organization: "A.T.C", location: "Malaysia", image: "/UGCImages/gallantt/3.jpeg" },
+              { organization: "Gallant Cement", location: "Pattaya", image: "/UGCImages/gallantt/4.jpeg" },
+              { organization: "Gallant Espat LTD", location: "Singapore", image: "/UGCImages/gallantt/2.jpeg" }
+            ].map((event, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 1, y: 0 }}
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group border border-gray-100"
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={event.image} 
+                    alt={`${event.organization} event in ${event.location}`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-green-100 flex items-center justify-center shadow-lg">
+                    <CheckCircle2 className="h-4 w-4 text-green-600" />
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+                    <div className="flex items-center text-white">
+                      <Globe className="h-4 w-4 mr-2" />
+                      <span className="text-sm font-medium">{event.location}</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] flex items-center justify-center mr-3">
+                      <Briefcase className="h-5 w-5 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900">{event.organization}</h3>
+                  </div>
+                  <div className="border-t border-gray-100 pt-3">
+                    <span className="text-xs text-gray-500 uppercase tracking-wide">Successfully Executed</span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              href="/contact"
+              className="inline-flex items-center bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white font-medium px-6 py-3 rounded-full transition-all duration-300 shadow-lg shadow-[#017ae3]/20 hover:shadow-xl hover:shadow-[#017ae3]/30 group"
+            >
+              Plan Your Next Event
+              <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section - Improve initial load */}
       <section className="py-16 sm:py-20 bg-gray-50 w-full">
         <div className="container mx-auto px-4 max-w-[100vw]">
@@ -383,3 +458,4 @@ export default function MICEPage() {
     </div>
   )
 }
+
