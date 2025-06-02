@@ -91,8 +91,8 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
         days: 13,
         nights: 12,
         amount: 490999,
-        dateStart: "01 May 2025",
-        dateEnd: "05 October 2025",
+        dateStart: "1,8,15,22,29 June",
+        dateEnd: "5,12,19,26,30 July",
         description: "Experience the best of Australia's east coast with our 13-day tour covering Sydney's iconic landmarks and Gold Coast's stunning beaches.",
         groupDetails: {
             pax: "Group Tour",
@@ -304,7 +304,7 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
             }
         },
         departureDates: [
-            { date: "Mar 2025 - July 2025" }
+            { date: "1,8,15,22,29 June" }
         ]
     },
     incredibleAustralia: {
@@ -313,13 +313,13 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
         days: 10,
         nights: 9,
         amount: 354999,
-        dateStart: "01 May 2025",
-        dateEnd: "05 October 2025",
+        dateStart: "1,8,15,22,29 June",
+        dateEnd: "5,12,19,26,30 July",
         description: "Experience the best of Australia's east coast with our 10-day tour covering Melbourne, Gold Coast, and Sydney.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Contact Us",
+            arrivalDate: "Multiple dates in June 2025",
             duration: "10D9N Australia Fixed Departure",
             costBasis: "Cost Based On per person"
         },
@@ -522,13 +522,13 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
         days: 10,
         nights: 9,
         amount: 364999,
-        dateStart: "01 May 2025",
-        dateEnd: "05 October 2025",
+        dateStart: "1,8,15,22,29 June",
+        dateEnd: "5,12,19,26,30 July",
         description: "Discover Australia's diverse beauty: Melbourne's charm, Whitsundays' paradise, Brisbane's wildlife, and Sydney's icons.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Contact Us",
+            arrivalDate: "Multiple dates in June 2025",
             duration: "10D9N Australia Fixed Departure",
             costBasis: "Cost Based On per person"
         },
@@ -738,13 +738,13 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
         days: 11,
         nights: 10,
         amount: 344999,
-        dateStart: "01 May 2025",
-        dateEnd: "05 October 2025",
+        dateStart: "1,8,15,22,29 June",
+        dateEnd: "5,12,19,26,30 July",
         description: "Discover Australia's diverse beauty: Melbourne's charm, Whitsundays' paradise, Brisbane's wildlife, and Sydney's icons.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Contact Us",
+            arrivalDate: "Multiple dates in June 2025",
             duration: "11D10N Australia Fixed Departure",
             costBasis: "Cost Based On per person"
         },
@@ -952,13 +952,13 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
         days: 13,
         nights: 12,
         amount: 596999,
-        dateStart: "01 May 2025",
-        dateEnd: "05 October 2025",
+        dateStart: "1,8,15,22,29 June",
+        dateEnd: "5,12,19,26,30 July",
         description: "Discover the best of Hamilton Island with this 13-day honeymoon tour. From the stunning beaches to the lush rainforests, this tour has everything you need to make your honeymoon unforgettable.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Contact Us",
+            arrivalDate: "Multiple dates in June 2025",
             duration: "13D12N Australia Fixed Departure",
             costBasis: "Cost Based On per person"
         },

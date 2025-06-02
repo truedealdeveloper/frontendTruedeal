@@ -12,21 +12,21 @@ const AlmatyBanner = () => {
       id: '4-days-almaty-winter',
       title: '4 Days Almaty',
       image: '/UGCImages/Images4/almaty/vertical/1.webp',
-      date: '01 Mar - 26 Jul',
+      date: '01 Jun - 26 Jul',
       price: '49,000'
     },
     {
       id: '5-days-almaty-discovery',               
       title: '5 Days Almaty',
       image: '/UGCImages/Images4/almaty/vertical/4.webp',
-      date: '01 Mar - 26 Jul',
+      date: '01 Jun - 26 Jul',
       price: '59,000'
     },
     {
       id: '6-days-almaty-explore',
       title: '6 Days Almaty',
       image: '/UGCImages/Images4/almaty/vertical/al/1.png',
-      date: '01 Mar - 26 Jul',
+      date: '01 Jun - 26 Jul',
       price: '69,000'
     }
   ];

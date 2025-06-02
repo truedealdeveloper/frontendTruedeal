@@ -25,7 +25,7 @@ const AustraliaBanner = () => {
       ],
       cities: ['Sydney', 'Melbourne', 'Gold Coast', 'Cairns'],
       startCity: 'Sydney',
-      dateStart: '01 May 2025',
+      dateStart: '1,8,15,22,29 June',
       amount: 490999
     },
     {
@@ -40,7 +40,7 @@ const AustraliaBanner = () => {
       ],
       cities: ['Melbourne', 'Gold Coast', 'Brisbane'],
       startCity: 'Melbourne',
-      dateStart: '15 May 2025',
+      dateStart: '1,8,15,22,29 June',
       amount: 354999
     },
     {
@@ -55,7 +55,7 @@ const AustraliaBanner = () => {
       ],
       cities: ['Hamilton Island', 'Whitsundays', 'Gold Coast'],
       startCity: 'Hamilton Island',
-      dateStart: '01 May 2025',
+      dateStart: '1,8,15,22,29 June',
       amount: 364999
     },
     {
@@ -71,7 +71,7 @@ const AustraliaBanner = () => {
       ],
       cities: ['Sydney', 'Brisbane', 'Gold Coast'],
       startCity: 'Sydney',
-      dateStart: '01 May 2025',
+      dateStart: '1,8,15,22,29 June',
       amount: 344999
     },
     {
@@ -86,7 +86,7 @@ const AustraliaBanner = () => {
       ],
       cities: ['Hamilton Island', 'Whitsundays'],
       startCity: 'Hamilton Island',
-      dateStart: '01 May 2025',
+      dateStart: '1,8,15,22,29 June',
       amount: 596999
     }
   ];
