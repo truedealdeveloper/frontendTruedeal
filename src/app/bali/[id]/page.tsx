@@ -2,7 +2,7 @@
 
 import { use, useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { baliPackages, BaliPackage } from '../data';
+import { baliPackages } from '../data';
 import { notFound } from 'next/navigation';
 import { 
   Calendar, Check, MapPin, Star, Users, X, Camera, Phone 
@@ -44,12 +44,6 @@ export default function BaliPackagePage({ params }: PageProps) {
     const [expandedDays, setExpandedDays] = useState<number[]>([1]);
     const [isGalleryModalOpen, setIsGalleryModalOpen] = useState(false);
     const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
-
-    const overviewRef = useRef<HTMLDivElement>(null);
-    const itineraryRef = useRef<HTMLDivElement>(null);
-    const inclusionsRef = useRef<HTMLDivElement>(null);
-    const exclusionsRef = useRef<HTMLDivElement>(null);
-    const otherRef = useRef<HTMLDivElement>(null);
     const cultureScrollRef = useRef<HTMLDivElement>(null);
 
     useScroll();
