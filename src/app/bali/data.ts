@@ -16,6 +16,7 @@ export interface ItineraryDay {
     day: number;
     title: string;
     description: string;
+    image?: string;
 }
 
 export interface SightseeingSpot {
@@ -37,6 +38,11 @@ export interface CultureItem {
     image: string;
 }
 
+export interface Experience {
+    title: string;
+    image: string;
+}
+
 export interface BaliPackage {
     id: string;
     packageName: string;
@@ -53,6 +59,7 @@ export interface BaliPackage {
     exclusions: string[];
     itinerary: ItineraryDay[];
     images: string[];
+    experiences?: Experience[];
     additionalInfo?: {
         highlights: string[];
         bestTimeToVisit: string;
@@ -169,9 +176,10 @@ export const baliPackages: Record<string, BaliPackage> = {
         itinerary: [
             {
                 day: 1,
-                    title: "Arrival in Bali",
-                    description: "Upon your arrival at Ngurah Rai Airport in Denpasar, Bali, our representative will meet and welcome you. You will then be taken to the hotel for your refreshment"
-                },
+                title: "Arrival in Bali",
+                description: "Upon your arrival at Ngurah Rai Airport in Denpasar, Bali, our representative will meet and welcome you. You will then be taken to the hotel for your refreshment",
+                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/1.webp"
+            },
             {
                 day: 2,
                 title: "Full Day Ubud Village, Tegalalang Rice Terraces with Bali Swing and Teggunangan Waterfalls",
@@ -185,7 +193,8 @@ Aloha swing at Tegalalang, with spectacular rice paddies view, agriculture activ
 coffee Luwak plantation and shop. It is one of the hottest Instagram spots in Bali!
 You can experience incredible views and an exciting adventure at Aloha Swing. As we
 walk down the many stairs to the temple, we can enjoy the views of the terraced rice
-fields. We will end the tour with a visit to Teggunagan Waterfalls. (Breakfast)`
+fields. We will end the tour with a visit to Teggunagan Waterfalls. (Breakfast)`,
+                image: "/UGCImages/bali/extra/Tegalalang Rice Terraces.jpg"
             },
             {
                 day: 3,
@@ -200,7 +209,8 @@ your journey to adventure is smooth and hassle-free. Whether you're seeking
 excitement or unforgettable memories, this package has it all! Visit a spectacular
 Tanah Lot Temple which stands proudly on the rock inside the ocean. Shopping time
 is available on this visit for any kind of Balinese handicraft products good for
-souvenirs and or for collection. (Breakfast)`
+souvenirs and or for collection. (Breakfast)`,
+                image: "/UGCImages/bali/extra/Tanah Lot Temple.jpg"
             },
             {
                 day: 4,
@@ -214,7 +224,8 @@ the island. With knowledgeable guides ensuring a seamless experience, this tour
 offers the perfect mix of adventure and leisure in one of Bali's hidden gems If you
 decide to take snorkelling (at extra cost), you will not be able to go for Crystal bay
 because of lack of time Local Lunch is Served and options and quantity is limited.
-(Breakfast & Lunch)`
+(Breakfast & Lunch)`,
+                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/3.webp"
             },
             {
                 day: 5,
@@ -224,26 +235,46 @@ of the town and is built in the style of a traditional family compound. Take a w
 through the nearby Ubud Market among the colourful stalls of wood carvings, textiles
 and souvenirs. After lunch, continue to Puri Lukisan Museum the oldest art museum
 in Bali. Here you can admire an array of contemporary paintings and wood carvings
-from prominent Balinese artists. (Breakfast)`
+from prominent Balinese artists. (Breakfast)`,
+                image: "/UGCImages/bali/culture/market.png"
             },
             {
                 day: 6,
-                    title: "Bali - Day at leisure",
-                    description: "Today you are free to explore on your own. (Breakfast). Explore the beautiful city of Ubud at your own pace. You can visit the Ubud Palace, the Ubud Market, or take a walk through the nearby Ubud Market among the colourful stalls of wood carvings, textiles and souvenirs. (Breakfast)"
-                    },
-                {
+                title: "Bali - Day at leisure",
+                description: "Today you are free to explore on your own. (Breakfast). Explore the beautiful city of Ubud at your own pace. You can visit the Ubud Palace, the Ubud Market, or take a walk through the nearby Ubud Market among the colourful stalls of wood carvings, textiles and souvenirs. (Breakfast)",
+                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/5.webp"
+            },
+            {
                 day: 7,
                 title: "Departure from Bali",
-                description: "After a hearty breakfast you are transferred in time to the airport to board your flight.(Breakfast)"
+                description: "After a hearty breakfast you are transferred in time to the airport to board your flight.(Breakfast)",
+                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/6.webp"
             }
-            ],
+        ],
         images: [
             "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/1.webp",
             "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/3.webp",
             "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/4.webp",
             "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/5.webp",
             "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/6.webp",
-            
+        ],
+        experiences: [
+            {
+                title: "Temple Visits",
+                image: "/UGCImages/bali/extra/Tanah Lot Temple.jpg"
+            },
+            {
+                title: "Rice Terraces",
+                image: "/UGCImages/bali/extra/Tegalalang Rice Terraces.jpg"
+            },
+            {
+                title: "Water Sports",
+                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/3.webp"
+            },
+            {
+                title: "Cultural Experience",
+                image: "/UGCImages/bali/culture/dance.jpg"
+            }
         ],
         sightseeingSpots: [
             {
@@ -431,7 +462,8 @@ from prominent Balinese artists. (Breakfast)`
             {
                 day: 1,
                 title: "Arrival in Bali",
-                description: `After arrival at Bali International Airport, our driver will pick the guest from the airport, and drop them to there hotel, for check in at the hotel / villa.`
+                description: `After arrival at Bali International Airport, our driver will pick the guest from the airport, and drop them to there hotel, for check in at the hotel / villa.`,
+                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/4.webp"
             },
             {
                 day: 2,
@@ -452,20 +484,23 @@ Followed by Tanah Lot with a picturesque location and stunning ocean views, is e
 
 In the evening, after the tour is finished, we will continue to Tanah Lot, where you will be able to enjoy the beautiful Sunset by the sea.
 
-After the tour is finished, we will drop you back to the hotel for good rest.`
+After the tour is finished, we will drop you back to the hotel for good rest.`,
+                image: "/UGCImages/bali/extra/Tanah Lot Temple.jpg"
             },
             {
                 day: 3,
                 title: "Nusa Penida West tour (PRIVATE ) - 4 beaches - Kelingking Beach, Angel Bilabong, Broken Bay, Bubu Beach + Complimentary Snorkelling (If time permits)",
                 description: `Pick up at 0600 - 0700 hrs, in the morning depending on your hotel location.
 We will take you to Harbour, for boarding a Sharing Boat to Nusa Penida Island .
-In Nusa Penida, our tour driver, will provide the full day tour including Kelingking Beach, Angel Bilabong, Broken Bay, Bubu Beach sight seeing's. `
+In Nusa Penida, our tour driver, will provide the full day tour including Kelingking Beach, Angel Bilabong, Broken Bay, Bubu Beach sight seeing's. `,
+                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/2.webp"
             },
             {
                 day: 4,
                 title: "ATV / Quad Biking -- Double Sharing - 90 minutes || + Bali Jungle Swing || Unlimited Swings + Nest + COMPLIMENTARY Local Lunch @ Swing ",
                 description: `This ATV adventure will take you to the most authentic parts of the islands, through the daily live of the view of the rice field, through the daily live of the community in the most exciting way.
-Discover places where tradition ways of living still the same as before.`
+Discover places where tradition ways of living still the same as before.`,
+                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/3.webp"
             },
             {
                 day: 5,
@@ -480,14 +515,16 @@ Ubud Art Colonies is a  excellent place to find a variety of Art goods, includin
 
 Tegalallang Rice Terrace has the landscape featuring lush green rice paddies along the photogenic landscapes in Bali
 
-Later will will continue to Tegenungan Waterfall, known for the natural beauty of the area.`
+Later will will continue to Tegenungan Waterfall, known for the natural beauty of the area.`,
+                image: "/UGCImages/bali/extra/Tegalalang Rice Terraces.jpg"
             },
             {
                 day: 6,
                 title: "Check Out & Airport Drop / Departure from Bali ",
                 description: `Check out from the hotel maximum by 1200 hrs or as per the hotel policy.
 
-Depending on your flight timings, You will be transferred from Hotel to Bali International Airport, for your flight back to your home / Next Destination.`
+Depending on your flight timings, You will be transferred from Hotel to Bali International Airport, for your flight back to your home / Next Destination.`,
+                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/6.webp"
             },
         ],
         images: [
@@ -497,6 +534,24 @@ Depending on your flight timings, You will be transferred from Hotel to Bali Int
             "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/3.webp",
             "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/5.webp",
             "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/6.webp"
+        ],
+        experiences: [
+            {
+                title: "Romantic Temples",
+                image: "/UGCImages/bali/extra/Tanah Lot Temple.jpg"
+            },
+            {
+                title: "Island Adventure",
+                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/2.webp"
+            },
+            {
+                title: "ATV & Swing",
+                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/3.webp"
+            },
+            {
+                title: "Cultural Sites",
+                image: "/UGCImages/bali/culture/market.png"
+            }
         ],
         sightseeingSpots: [
             {
@@ -687,37 +742,44 @@ Depending on your flight timings, You will be transferred from Hotel to Bali Int
             {
                 day: 1,
                 title: "Arrival in Bali",
-                description: "Upon arrival at Bali International Airport, meet our representative and transfer to hotel for check-in. Note: Maximum waiting time is 2 hours after flight arrival."
+                description: "Upon arrival at Bali International Airport, meet our representative and transfer to hotel for check-in. Note: Maximum waiting time is 2 hours after flight arrival.",
+                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/1.webp"
             },
             {
                 day: 2,
                 title: "Water Sports & Uluwatu Sunset Tour",
-                description: "Morning water sports activities including Banana Boat (5 mins), Jet Ski (5 mins), and Parasailing (3 mins fly time). Visit to Padang Padang Beach followed by Uluwatu Temple sunset tour."
+                description: "Morning water sports activities including Banana Boat (5 mins), Jet Ski (5 mins), and Parasailing (3 mins fly time). Visit to Padang Padang Beach followed by Uluwatu Temple sunset tour.",
+                image: "/UGCImages/bali/extra/Uluwatu.jpg"
             },
             {
                 day: 3,
                 title: "Nusa Penida West Tour",
-                description: "Full-day private tour of Nusa Penida including visits to Kelingking Beach, Angel Billabong, Broken Bay, and Bubu Beach. Complimentary snorkeling if time permits."
+                description: "Full-day private tour of Nusa Penida including visits to Kelingking Beach, Angel Billabong, Broken Bay, and Bubu Beach. Complimentary snorkeling if time permits.",
+                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/3.webp"
             },
             {
                 day: 4,
                 title: "Cultural Tour",
-                description: "Visit to Handara Gate, Ulun Danu Temple at Lake Bratan, and sunset viewing at iconic Tanah Lot Temple."
+                description: "Visit to Handara Gate, Ulun Danu Temple at Lake Bratan, and sunset viewing at iconic Tanah Lot Temple.",
+                image: "/UGCImages/bali/extra/Tanah Lot Temple.jpg"
             },
             {
                 day: 5,
                 title: "Adventure Day",
-                description: "90-minute ATV/Quad biking experience (double sharing) followed by white water rafting adventure in Ubud. Complimentary local lunch included."
+                description: "90-minute ATV/Quad biking experience (double sharing) followed by white water rafting adventure in Ubud. Complimentary local lunch included.",
+                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/5.webp"
             },
             {
                 day: 6,
                 title: "Kintamani & Swing Experience",
-                description: "Visit Kintamani volcano viewpoint, coffee plantation, Tegenungan Waterfall, Tegalalang Rice Terrace, and enjoy unlimited access to Bali Jungle Swing with various photo opportunities."
+                description: "Visit Kintamani volcano viewpoint, coffee plantation, Tegenungan Waterfall, Tegalalang Rice Terrace, and enjoy unlimited access to Bali Jungle Swing with various photo opportunities.",
+                image: "/UGCImages/bali/extra/Tegalalang Rice Terraces.jpg"
             },
             {
                 day: 7,
                 title: "Departure",
-                description: "Check-out by 12:00 PM and transfer to Bali International Airport for departure."
+                description: "Check-out by 12:00 PM and transfer to Bali International Airport for departure.",
+                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/6.webp"
             }
         ],
         images: [
@@ -727,6 +789,24 @@ Depending on your flight timings, You will be transferred from Hotel to Bali Int
             "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/4.webp",
             "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/5.webp",
             "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/6.webp"
+        ],
+        experiences: [
+            {
+                title: "Luxury Water Sports",
+                image: "/UGCImages/bali/extra/Uluwatu.jpg"
+            },
+            {
+                title: "Island Exploration",
+                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/3.webp"
+            },
+            {
+                title: "Adventure Activities",
+                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/5.webp"
+            },
+            {
+                title: "Cultural Heritage",
+                image: "/UGCImages/bali/extra/Tanah Lot Temple.jpg"
+            }
         ],
         sightseeingSpots: [
             {
@@ -922,6 +1002,7 @@ Depending on your flight timings, You will be transferred from Hotel to Bali Int
                 day: 1,
                 title: "Arrival in Bali",
                 description: `After arrival at Bali International Airport, our driver will pick the guest from the airport, and drop them to there hotel, for check in at the hotel / villa.`,
+                image: "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/1.webp"
             },
             {
                 day: 2,
@@ -942,14 +1023,16 @@ International Buffet Dinner
 Live Music Entertainment
 Fire Dance
 Variety of Games
-DJ performance`
+DJ performance`,
+                image: "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/2.webp"
             },
             {
                 day: 3,
                 title: "Nusa Penida West tour (PRIVATE ) - 4 beaches - Kelingking Beach, Angel Bilabong, Broken Bay, Bubu Beach + Complimentary Snorkelling (If time permits)",
                 description: `Pick up at 0600 - 0700 hrs, in the morning depending on your hotel location.
 We will take you to Harbour, for boarding a Sharing Boat to Nusa Penida Island .
-In Nusa Penida, our tour driver, will provide the full day tour including Kelingking Beach, Angel Bilabong, Broken Bay, Bubu Beach sight seeing's. `
+In Nusa Penida, our tour driver, will provide the full day tour including Kelingking Beach, Angel Bilabong, Broken Bay, Bubu Beach sight seeing's. `,
+                image: "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/3.webp"
             },
             {
                 day: 4,
@@ -970,7 +1053,8 @@ Followed by Tanah Lot with a picturesque location and stunning ocean views, is e
 
 In the evening, after the tour is finished, we will continue to Tanah Lot, where you will be able to enjoy the beautiful Sunset by the sea.
 
-After the tour is finished, we will drop you back to the hotel for good rest.`
+After the tour is finished, we will drop you back to the hotel for good rest.`,
+                image: "/UGCImages/bali/extra/Tanah Lot Temple.jpg"
             },
             {
                 day: 5,
@@ -980,12 +1064,14 @@ We will continue to Padang Bai Harbour. It will take around 90 - 120 minutes to 
 
 The reporting time for the boat is 0800 hrs.
 
-The boat will leave the harbour around 0900 hrs. It will take around 2 hours for the boat to reach at Gili Trawangan Harbour.`
+The boat will leave the harbour around 0900 hrs. It will take around 2 hours for the boat to reach at Gili Trawangan Harbour.`,
+                image: "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/4.webp"
             },
             {
                 day: 6,
                 title: "Day free for Leisure",
-                description: `Day free for leisure. You can enjoy the hotel/ Villa amenities, also you can opt for optional tours in Bali, after discussion with our Bali team, or your driver`
+                description: `Day free for leisure. You can enjoy the hotel/ Villa amenities, also you can opt for optional tours in Bali, after discussion with our Bali team, or your driver`,
+                image: "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/5.webp"
             },
             {
                 day: 7,
@@ -996,7 +1082,8 @@ The Reporting Time / Last Check-in Time for the same is at 1000 hrs, at Gili Har
 
 The ticket for the return transfer, is provided by the fast boat company, during your onward transfers (Bali to Gili). So please remember to collect the same, along with onwards ticket.
 
-The boat will leave the harbour around 1100 hrs. It will take around 02 hours for the boat to reach at Padang Bai Harbour.`
+The boat will leave the harbour around 1100 hrs. It will take around 02 hours for the boat to reach at Padang Bai Harbour.`,
+                image: "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/4.webp"
             },
             {
                 day: 8,
@@ -1016,12 +1103,14 @@ Bali Jungle Swing:  Unlimited Swings - visitors can enjoy swings without a time 
 07 kinds of swing, consisting of 3 adult swings, 1 couple swing, 1 children's swing, 1 swing bed, and 1 swing circle. 
 Besides swing, there is also 5 kinds of nests/photo places. consisting of 01 circle nest, 02 bird nest, 01 lovely nest, 01 chicken nest.  
 There is also beautiful stone and 1 gate (heaven gate),
-And Local Lunch and drinks Balinese coffee, tea and water.`
+And Local Lunch and drinks Balinese coffee, tea and water.`,
+                image: "/UGCImages/bali/extra/Tegalalang Rice Terraces.jpg"
             },
             {
                 day: 9,
                 title: "Departure",
-                description: "Check-out by 12:00 PM and transfer to Bali International Airport for departure."
+                description: "Check-out by 12:00 PM and transfer to Bali International Airport for departure.",
+                image: "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/1.webp"
             }
         ],
         images: [
@@ -1030,7 +1119,24 @@ And Local Lunch and drinks Balinese coffee, tea and water.`
             "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/3.webp",
             "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/4.webp",
             "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/5.webp",
-            
+        ],
+        experiences: [
+            {
+                title: "Pirate Dinner Cruise",
+                image: "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/2.webp"
+            },
+            {
+                title: "Island Hopping",
+                image: "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/3.webp"
+            },
+            {
+                title: "Gili Trawangan",
+                image: "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/4.webp"
+            },
+            {
+                title: "Adventure Swing",
+                image: "/UGCImages/bali/extra/Tegalalang Rice Terraces.jpg"
+            }
         ],
         sightseeingSpots: [
             {
