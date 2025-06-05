@@ -153,8 +153,8 @@ export default function BaliPackagePage({ params }: PageProps) {
                         priority
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                    <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-12">
-                        <div className="max-w-7xl w-full pl-0 md:pl-12  relative top-12">
+                    <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-12">
+                        <div className="max-w-7xl w-full pl-0 md:pl-12 relative top-8 md:top-12">
                             {/* Rating display */}
                             <div className="flex items-center mb-4">
                                 {[...Array(5)].map((_, i) => (
@@ -245,10 +245,10 @@ export default function BaliPackagePage({ params }: PageProps) {
                 <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         {/* Left Column - Package Details with Tabs */}
-                        <div className="lg:col-span-2">
+                        <div className="lg:col-span-2 min-w-0">
                             {/* Make tabs sticky on scroll */}
-                            <div className="sticky top-16 z-30 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
-                                <div className="max-w-7xl mx-auto px-4">
+                            <div className="sticky top-16 z-30 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm -mx-4 px-4">
+                                <div className="max-w-full">
                                     <Tabs defaultValue="overview" className="w-full">
                                         <TabsList className="w-full bg-gray-100 p-0 my-4 rounded-lg overflow-x-auto flex no-scrollbar">
                                             <TabsTrigger 
@@ -356,7 +356,7 @@ export default function BaliPackagePage({ params }: PageProps) {
                                             {baliPkg.experiences && (
                                                 <div className="mb-10">
                                                     <h2 className="text-2xl font-bold mb-6">Experiences You&apos;ll Love</h2>
-                                                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                                                    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
                                                         {baliPkg.experiences.map((experience, index) => (
                                                             <div key={index} className="bg-white rounded-3xl overflow-hidden shadow-sm">
                                                                 <div className="relative h-48">
@@ -379,7 +379,7 @@ export default function BaliPackagePage({ params }: PageProps) {
                                             {/* Sightseeing Spots */}
                                             <div className="mb-10">
                                                 <h2 className="text-2xl font-bold mb-6">Popular Sightseeing Spots</h2>
-                                                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                                                     {baliPkg.sightseeingSpots?.map((spot, index) => (
                                                         <div key={index} className="group relative overflow-hidden rounded-lg">
                                                             <Image
@@ -405,13 +405,13 @@ export default function BaliPackagePage({ params }: PageProps) {
                                                 <h2 className="text-2xl font-bold mb-6">Balinese Culture & Traditions</h2>
                                                 <div 
                                                     ref={cultureScrollRef}
-                                                    className="overflow-x-hidden relative"
+                                                    className="overflow-x-hidden relative -mx-4 px-4"
                                                 >
-                                                    <div className="flex gap-6 animate-scroll">
+                                                    <div className="flex gap-4 md:gap-6 animate-scroll">
                                                         {[...baliPkg.culture, ...baliPkg.culture]?.map((item, index) => (
                                                             <div 
                                                                 key={index} 
-                                                                className="flex-none w-[300px] md:w-[400px]"
+                                                                className="flex-none w-[280px] md:w-[400px]"
                                                             >
                                                                 <div className="relative h-[250px] mb-4">
                                                                     <Image
@@ -432,7 +432,7 @@ export default function BaliPackagePage({ params }: PageProps) {
                                             {/* Gallery */}
                                             <div className="mb-10">
                                                 <h2 className="text-2xl font-bold mb-6">Gallery</h2>
-                                                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                                                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
                                                     {(baliPkg?.images || []).slice(0, 6).map((img, i) => (
                                                         <div key={i} className="relative aspect-[4/3] overflow-hidden rounded-lg">
                                                             <Image
@@ -861,6 +861,17 @@ export default function BaliPackagePage({ params }: PageProps) {
                 )}
 
                 <style jsx global>{`
+                    /* Prevent horizontal scroll */
+                    html, body {
+                        overflow-x: hidden;
+                        max-width: 100vw;
+                    }
+                    
+                    /* Container constraints */
+                    * {
+                        box-sizing: border-box;
+                    }
+                    
                     .no-scrollbar {
                         -ms-overflow-style: none;  /* IE and Edge */
                         scrollbar-width: none;  /* Firefox */
@@ -887,6 +898,15 @@ export default function BaliPackagePage({ params }: PageProps) {
                         -webkit-line-clamp: 3;
                         -webkit-box-orient: vertical;
                         overflow: hidden;
+                    }
+                    
+                    /* Mobile responsive containers */
+                    @media (max-width: 768px) {
+                        .container, .max-w-7xl {
+                            max-width: 100vw;
+                            padding-left: 1rem;
+                            padding-right: 1rem;
+                        }
                     }
                 `}</style>
             </div>

@@ -16,6 +16,7 @@ export interface ItineraryDay {
     day: number;
     title: string;
     description: string;
+    image?: string;
 }
 
 export interface SightseeingSpot {
@@ -34,6 +35,11 @@ export interface LocalFood {
 export interface CultureItem {
     title: string;
     description: string;
+    image: string;
+}
+
+export interface Experience {
+    title: string;
     image: string;
 }
 
@@ -59,6 +65,7 @@ export interface vietnamPackage {
     exclusions: string[];
     itinerary: ItineraryDay[];
     images: string[];
+    experiences?: Experience[];
     additionalInfo?: {
         highlights: string[];
         bestTimeToVisit: string;
@@ -146,7 +153,8 @@ export const vietnamPackages: Record<string, vietnamPackage> = {
             {
                 day: 1,
                 title: "Ho Chi Minh City - Arrival ",
-                description: `Pick-up at Tan Son Nhat International airport. Transfer to your hotel. Overnight in Ho Chi Minh City.`
+                description: `Pick-up at Tan Son Nhat International airport. Transfer to your hotel. Overnight in Ho Chi Minh City.`,
+                image: "/UGCImages/vietnam/HORIZONTAL/1.png"
             },
             {
                 day: 2,
@@ -163,7 +171,8 @@ provides an interesting look into the local cottage industry of making coconut c
 have a lunch of Elephant-Ear Fish combined with other delicious Vietnamese dishes - a local specialty.
 Visit Vinh Trang Pagoda, which is recognized as a national historical and cultural relic with distinctive
 architectural and spiritual values, a place worth visiting should not be missed. Overnight in Ho Chi Minh
-City.`
+City.`,
+                image: "/UGCImages/vietnam/HORIZONTAL/2.png"
             },
             {
                 day: 3,
@@ -180,13 +189,15 @@ In the afternoon, we will visit some of the other major attractions in Ho Chi Mi
 Reunification Palace, Notre Dame Cathedral and Old Post Office. These buildings are considered as the
 symbols of Ho Chi Minh City because of their architecture and historical meanings. We also will visit
 Thien Hau Pagoda in Cho Lon - a Chinese-style temple located on Nguyen Trai Street in Cho Lon (China
-Town). Overnight in Ho Chi Minh City.`
+Town). Overnight in Ho Chi Minh City.`,
+                image: "/UGCImages/vietnam/HORIZONTAL/3.png"
             },
             {
                 day: 4,
                 title: "Ho Chi Minh City - Departure (B)",
                 description: `Have breakfast at the hotel and relax until the time of transfer to Tan Son Nhat International airport for
-your departure flight.`
+your departure flight.`,
+                image: "/UGCImages/vietnam/HORIZONTAL/4.png"
             },
             
         ],
@@ -197,6 +208,24 @@ your departure flight.`
             "/UGCImages/vietnam/HORIZONTAL/4.png",
             "/UGCImages/vietnam/HORIZONTAL/5.png",
             "/UGCImages/vietnam/HORIZONTAL/6.png",
+        ],
+        experiences: [
+            {
+                title: "Mekong Delta",
+                image: "/UGCImages/vietnam/HORIZONTAL/2.png"
+            },
+            {
+                title: "Cu Chi Tunnels",
+                image: "/UGCImages/vietnam/HORIZONTAL/3.png"
+            },
+            {
+                title: "Cultural Sites",
+                image: "/UGCImages/vietnam/sightseeing/culture.jpg"
+            },
+            {
+                title: "Local Cuisine",
+                image: "/UGCImages/vietnam/sightseeing/cuisine.jpg"
+            }
             
         ],
         sightseeingSpots: [
