@@ -4,6 +4,7 @@ import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Chatbot } from "./components/chatbot/Chatbot";
+import TripPlanPopup from "../components/TripPlanPopup";
 // import Script from 'next/script'
 // import { GA_MEASUREMENT_ID } from '@/lib/gtag'
 import { Analytics } from "@vercel/analytics/react"
@@ -121,6 +122,7 @@ export default function RootLayout({
               {children}
             <SpeedInsights />
             <Chatbot />
+            <TripPlanPopup />
             <Footer />
           
           <Analytics />
