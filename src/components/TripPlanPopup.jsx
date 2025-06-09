@@ -50,7 +50,7 @@ const TripPlanPopup = () => {
     const checkAndShowPopup = () => {
       const lastShown = sessionStorage.getItem('tripPopupLastShown');
       const now = Date.now();
-      
+
       // Show popup if it hasn't been shown in the last 30 seconds
       if (!lastShown || now - parseInt(lastShown) > 30000) {
         setIsVisible(true);
@@ -60,7 +60,7 @@ const TripPlanPopup = () => {
 
     // Initial delay of 5 seconds, then every 30 seconds
     const initialTimeout = setTimeout(checkAndShowPopup, 5000);
-    const interval = setInterval(checkAndShowPopup, 30000);
+    const interval = setInterval(checkAndShowPopup, 5000);
 
     return () => {
       clearTimeout(initialTimeout);
@@ -100,7 +100,7 @@ const TripPlanPopup = () => {
 
     try {
       const response = await axios.post('/api/trip-plan', formData);
-      
+
       if (response.data.message) {
         setMessage(response.data.message);
         // Reset form only on success
@@ -117,7 +117,7 @@ const TripPlanPopup = () => {
           origin_city: '',
           package_type: ''
         });
-        
+
         // Close popup after successful submission
         setTimeout(() => {
           handleClose();
@@ -128,11 +128,11 @@ const TripPlanPopup = () => {
         status: error.response?.status,
         data: error.response?.data
       });
-      
+
       const errorMessage = error.response?.data?.error === 'MISSING_TOKEN'
         ? 'Service is temporarily unavailable. Please try again later or contact support.'
         : error.response?.data?.message || 'Failed to submit form. Please try again later.';
-      
+
       setError(errorMessage);
     } finally {
       setLoading(false);
@@ -142,28 +142,33 @@ const TripPlanPopup = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center z-50 p-2 sm:p-4 animate-fadeIn">
-      <div className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl w-full max-w-5xl h-[95vh] sm:max-h-[90vh] overflow-hidden transform animate-slideUp border border-gray-100">
-        <div className="flex flex-col lg:flex-row h-full relative overflow-hidden">
+    <div className="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center z-50 p-3 sm:p-6 animate-fadeIn">
+      <div className="bg-white rounded-xl sm:rounded-2xl shadow-2xl w-full max-w-4xl max-h-[85vh] sm:h-[80vh] overflow-hidden transform animate-slideUp border border-gray-100">
+        <div className="flex flex-col lg:flex-row lg:h-full relative overflow-hidden">
           {/* Image Section */}
-          <div className="w-full lg:w-3/5 relative overflow-hidden h-48 sm:h-56 lg:h-full">
+          <div className="w-full lg:w-1/2 relative overflow-hidden h-40 sm:h-48 lg:h-full">
             <div className="relative w-full h-full">
-              <Image 
-                src={baliImages[currentImageIndex]} 
-                alt="Bali Experience" 
+              <Image
+                src={baliImages[currentImageIndex]}
+                alt="Bali Experience"
                 fill
                 className="object-cover transition-all duration-1000 ease-in-out transform hover:scale-105"
-                sizes="(max-width: 768px) 100vw, 60vw"
+                sizes="(max-width: 768px) 100vw, 50vw"
                 priority
+                onError={(e) => {
+                  console.log('Image failed to load:', baliImages[currentImageIndex]);
+                  e.target.style.display = 'none';
+                }}
               />
+
               <div className="absolute inset-0 bg-gradient-to-br from-[#00B5C3]/40 via-transparent to-black/30"></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-              
+
               {/* Floating elements */}
-              <div className="absolute top-3 left-3 sm:top-6 sm:left-6 bg-white/20 backdrop-blur-md rounded-full px-3 py-1 sm:px-4 sm:py-2 text-white text-xs sm:text-sm font-medium animate-pulse">
-                ✨ Limited Time Offer
+              <div className="absolute top-3 left-3 sm:top-6 sm:left-6 bg-yellow-400/90 backdrop-blur-md rounded-full px-3 py-1 sm:px-4 sm:py-2 text-gray-900 text-xs sm:text-sm font-bold animate-pulse">
+                🎉 10 Years Anniversary - 10% OFF!
               </div>
-              
+
               {/* Close button */}
               <button
                 onClick={handleClose}
@@ -179,9 +184,8 @@ const TripPlanPopup = () => {
                 {baliImages.slice(0, 5).map((_, index) => (
                   <div
                     key={index}
-                    className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 ${
-                      index === currentImageIndex % 5 ? 'bg-white' : 'bg-white/40'
-                    }`}
+                    className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 ${index === currentImageIndex % 5 ? 'bg-white' : 'bg-white/40'
+                      }`}
                   />
                 ))}
               </div>
@@ -189,33 +193,33 @@ const TripPlanPopup = () => {
           </div>
 
           {/* Form Section */}
-          <div className="w-full lg:w-2/5 bg-gradient-to-br from-white via-gray-50/50 to-white relative flex-1 overflow-y-auto">
+          <div className="w-full lg:w-1/2 bg-gradient-to-br from-white via-gray-50/50 to-white relative flex-1 lg:overflow-hidden overflow-y-auto">
             {/* Decorative elements */}
-            <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-[#00B5C3]/10 to-transparent rounded-full -translate-y-12 translate-x-12 sm:-translate-y-16 sm:translate-x-16"></div>
-            <div className="absolute bottom-0 left-0 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-tr from-[#00B5C3]/5 to-transparent rounded-full translate-y-8 -translate-x-8 sm:translate-y-12 sm:-translate-x-12"></div>
-            
-            <div className="relative z-10 p-4 sm:p-6 lg:p-8 h-full flex flex-col">
-              <div className="mb-4 sm:mb-6">
-                <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#00B5C3] to-[#009AAF] rounded-full flex items-center justify-center animate-bounce">
-                    <span className="text-xl sm:text-2xl">🌴</span>
+            <div className="absolute top-0 right-0 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#00B5C3]/10 to-transparent rounded-full -translate-y-8 translate-x-8 sm:-translate-y-10 sm:translate-x-10"></div>
+            <div className="absolute bottom-0 left-0 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-tr from-[#00B5C3]/5 to-transparent rounded-full translate-y-6 -translate-x-6 sm:translate-y-8 sm:-translate-x-8"></div>
+
+            <div className="relative z-10 p-3 sm:p-4 lg:p-5 lg:h-full flex flex-col">
+              <div className="mb-3 sm:mb-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center animate-bounce">
+                    <span className="text-lg sm:text-xl">🎊</span>
                   </div>
                   <div>
-                    <h2 className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-[#00B5C3] to-[#009AAF] bg-clip-text text-transparent">
-                      Special Bali Offer!
+                    <h2 className="text-base sm:text-lg lg:text-xl font-bold bg-gradient-to-r from-[#00B5C3] to-[#009AAF] bg-clip-text text-transparent">
+                      🎉 10 Years of TrueDeal!
                     </h2>
-                    <div className="w-full h-1 bg-gradient-to-r from-[#00B5C3] to-[#009AAF] rounded-full mt-1"></div>
+                    <div className="w-full h-1 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full mt-1"></div>
                   </div>
                 </div>
-                <p className="text-gray-600 text-xs sm:text-sm lg:text-base font-medium">Don't miss out! Get your dream vacation planned 🎉</p>
+                <p className="text-gray-600 text-xs sm:text-sm font-medium">🎊 Celebrating a decade of amazing trips! Get 10% OFF any package! 🎁</p>
               </div>
 
-              {message && <div className="bg-green-50 text-green-700 p-2 sm:p-3 rounded-md mb-3 sm:mb-4 text-xs sm:text-sm">{message}</div>}
-              {error && <div className="bg-red-50 text-red-700 p-2 sm:p-3 rounded-md mb-3 sm:mb-4 text-xs sm:text-sm">{error}</div>}
+              {message && <div className="bg-green-50 text-green-700 p-2 rounded-md mb-2 sm:mb-3 text-xs sm:text-sm">{message}</div>}
+              {error && <div className="bg-red-50 text-red-700 p-2 rounded-md mb-2 sm:mb-3 text-xs sm:text-sm">{error}</div>}
 
-              <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 flex-1">
+              <form onSubmit={handleSubmit} className="space-y-3 lg:space-y-2 flex-1 flex flex-col">
                 <div className="space-y-1">
-                  <label htmlFor="popup-name" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
+                  <label htmlFor="popup-name" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
                     Name <span className="text-red-500">*</span>
                   </label>
                   <div className="relative group">
@@ -227,7 +231,7 @@ const TripPlanPopup = () => {
                       onChange={handleChange}
                       required
                       placeholder="Enter your full name"
-                      className="w-full px-3 py-2 sm:px-4 sm:py-3 border-2 border-gray-200 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-[#00B5C3]/50 focus:border-[#00B5C3] text-xs sm:text-sm transition-all duration-300 group-hover:border-gray-300 bg-white/80 backdrop-blur-sm"
+                      className="w-full px-3 py-2 sm:px-3 sm:py-2 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B5C3]/50 focus:border-[#00B5C3] text-xs sm:text-sm transition-all duration-300 group-hover:border-gray-300 bg-white/80 backdrop-blur-sm"
                     />
                     <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:pr-3 pointer-events-none">
                       <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-focus-within:text-[#00B5C3] transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -238,7 +242,7 @@ const TripPlanPopup = () => {
                 </div>
 
                 <div className="space-y-1">
-                  <label htmlFor="popup-phone" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
+                  <label htmlFor="popup-phone" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
                     Phone Number <span className="text-red-500">*</span>
                   </label>
                   <div className="relative group">
@@ -250,7 +254,7 @@ const TripPlanPopup = () => {
                       onChange={handleChange}
                       required
                       placeholder="Your 10 digit number"
-                      className="w-full px-3 py-2 sm:px-4 sm:py-3 border-2 border-gray-200 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-[#00B5C3]/50 focus:border-[#00B5C3] text-xs sm:text-sm transition-all duration-300 group-hover:border-gray-300 bg-white/80 backdrop-blur-sm"
+                      className="w-full px-3 py-2 sm:px-3 sm:py-2 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B5C3]/50 focus:border-[#00B5C3] text-xs sm:text-sm transition-all duration-300 group-hover:border-gray-300 bg-white/80 backdrop-blur-sm"
                     />
                     <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:pr-3 pointer-events-none">
                       <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-focus-within:text-[#00B5C3] transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -261,7 +265,7 @@ const TripPlanPopup = () => {
                 </div>
 
                 <div className="space-y-1">
-                  <label htmlFor="popup-destination" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
+                  <label htmlFor="popup-destination" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
                     Destination <span className="text-red-500">*</span>
                   </label>
                   <div className="relative group">
@@ -273,7 +277,7 @@ const TripPlanPopup = () => {
                       onChange={handleChange}
                       required
                       placeholder="Where to?"
-                      className="w-full px-3 py-2 sm:px-4 sm:py-3 border-2 border-gray-200 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-[#00B5C3]/50 focus:border-[#00B5C3] text-xs sm:text-sm transition-all duration-300 group-hover:border-gray-300 bg-white/80 backdrop-blur-sm"
+                      className="w-full px-3 py-2 sm:px-3 sm:py-2 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B5C3]/50 focus:border-[#00B5C3] text-xs sm:text-sm transition-all duration-300 group-hover:border-gray-300 bg-white/80 backdrop-blur-sm"
                     />
                     <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:pr-3 pointer-events-none">
                       <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-focus-within:text-[#00B5C3] transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -284,9 +288,9 @@ const TripPlanPopup = () => {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                <div className="grid grid-cols-2 gap-2 sm:gap-3">
                   <div className="space-y-1">
-                    <label htmlFor="popup-days" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
+                    <label htmlFor="popup-days" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
                       Days <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -298,12 +302,12 @@ const TripPlanPopup = () => {
                       required
                       min="1"
                       placeholder="Days"
-                      className="w-full px-3 py-2 sm:px-4 sm:py-3 border-2 border-gray-200 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-[#00B5C3]/50 focus:border-[#00B5C3] text-xs sm:text-sm transition-all duration-300 hover:border-gray-300 bg-white/80 backdrop-blur-sm"
+                      className="w-full px-3 py-2 sm:px-3 sm:py-2 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B5C3]/50 focus:border-[#00B5C3] text-xs sm:text-sm transition-all duration-300 hover:border-gray-300 bg-white/80 backdrop-blur-sm"
                     />
                   </div>
 
                   <div className="space-y-1">
-                    <label htmlFor="popup-adults" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
+                    <label htmlFor="popup-adults" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
                       Adults <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -315,50 +319,53 @@ const TripPlanPopup = () => {
                       required
                       min="1"
                       placeholder="Adults"
-                      className="w-full px-3 py-2 sm:px-4 sm:py-3 border-2 border-gray-200 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-[#00B5C3]/50 focus:border-[#00B5C3] text-xs sm:text-sm transition-all duration-300 hover:border-gray-300 bg-white/80 backdrop-blur-sm"
+                      className="w-full px-3 py-2 sm:px-3 sm:py-2 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00B5C3]/50 focus:border-[#00B5C3] text-xs sm:text-sm transition-all duration-300 hover:border-gray-300 bg-white/80 backdrop-blur-sm"
                     />
                   </div>
                 </div>
 
-                <div className="flex gap-3 sm:gap-4 pt-2 mt-auto">
+                <div className="flex gap-2 pt-1 mt-auto">
                   <button
                     type="button"
                     onClick={handleClose}
-                    className="flex-1 bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 font-semibold px-4 py-2 sm:px-6 sm:py-3 rounded-lg sm:rounded-xl hover:from-gray-200 hover:to-gray-300 transition-all duration-300 text-xs sm:text-sm shadow-md hover:shadow-lg transform hover:scale-105"
+                    className="flex-1 bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 font-medium px-3 py-2 rounded-md hover:from-gray-200 hover:to-gray-300 transition-all duration-300 text-xs shadow-sm hover:shadow-md transform hover:scale-105"
                   >
                     Maybe Later
                   </button>
                   <button
                     type="submit"
                     disabled={loading}
-                    className="flex-1 bg-gradient-to-r from-[#00B5C3] to-[#009AAF] text-white font-semibold px-4 py-2 sm:px-6 sm:py-3 rounded-lg sm:rounded-xl hover:from-[#009AAF] hover:to-[#00B5C3] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 text-xs sm:text-sm disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
+                    className="flex-1 bg-gradient-to-r from-[#00B5C3] to-[#009AAF] text-white font-medium px-3 py-2 rounded-md hover:from-[#009AAF] hover:to-[#00B5C3] transition-all duration-300 shadow-sm hover:shadow-md transform hover:scale-105 text-xs disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
                   >
                     {loading ? (
-                      <span className="flex items-center justify-center gap-1 sm:gap-2">
-                        <svg className="animate-spin -ml-1 mr-2 h-3 w-3 sm:h-4 sm:w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <span className="flex items-center justify-center gap-1">
+                        <svg className="animate-spin h-3 w-3 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 714 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                         </svg>
-                        <span className="hidden sm:inline">Submitting...</span>
-                        <span className="sm:hidden">...</span>
+                        <span>...</span>
                       </span>
                     ) : (
-                      '✨ Get Quote'
+                      '🎊 Get Quote'
                     )}
                   </button>
                 </div>
-              </form>
-
-              <div className="mt-4 sm:mt-6 text-center">
-                <p className="text-xs text-gray-500 font-medium">
-                  🎉 Limited time offer - Book now!
-                </p>
-                <div className="flex items-center justify-center gap-1 mt-1 sm:mt-2">
-                  <span className="text-xs text-gray-400">Trusted by</span>
-                  <span className="text-xs font-semibold text-[#00B5C3]">10,000+</span>
-                  <span className="text-xs text-gray-400">happy travelers</span>
+                {/* Footer moved inside form for better visibility */}
+                <div className="mt-2 text-center">
+                  <div className="bg-gradient-to-r from-yellow-100 to-orange-100 border border-yellow-300 rounded-lg px-2 py-1.5 mb-1">
+                    <p className="text-xs text-yellow-800 font-bold">
+                      🎊 10th Anniversary Special: 10% OFF All Packages! 🎁
+                    </p>
+                  </div>
+                  <div className="flex items-center justify-center gap-1 flex-wrap">
+                    <span className="text-xs text-gray-400">🏆 Celebrating</span>
+                    <span className="text-xs font-semibold text-orange-600">10 Years</span>
+                    <span className="text-xs text-gray-400">of amazing journeys with</span>
+                    <span className="text-xs font-semibold text-[#00B5C3]">10,000+</span>
+                    <span className="text-xs text-gray-400">travelers!</span>
+                  </div>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
