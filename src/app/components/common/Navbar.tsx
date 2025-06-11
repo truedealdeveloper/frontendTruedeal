@@ -57,7 +57,7 @@ const dropdownMenus = {
         { name: "Kashmir Paradise Tour (6 Days)", href: "/fixedDeparture/kashmir-6-days-paradise-tour" },
         { name: "Srinagar Paradise Tour (6 Days)", href: "/fixedDeparture/srinagar-6-days-paradise-tour" },
         { name: "Manali Volvo Tour (5 Days)", href: "/fixedDeparture/manali-5-days-volvo-tour" },
-        {name: "Chardham Yatra", href: "/chardhamYatra"}
+        { name: "Chardham Yatra", href: "/chardhamYatra" }
     ],
     "group-tours": [
         { name: "Bali Group Tour", href: "/bali" },
@@ -72,12 +72,12 @@ const dropdownMenus = {
 // Update the DropdownMenu component with new hover effects
 const DropdownMenu = ({ items, isOpen }: { items: { name: string; href: string }[]; isOpen: boolean }) => {
     if (!isOpen) return null;
-    
+
     const isInternational = items.length > 10;
-    
+
     const linkStyles = "block px-4 py-2 text-[15px] text-gray-600 hover:text-[#00DEF7] hover:bg-[#00DEF7]/5 rounded-lg transition-all duration-200 ease-in-out";
     const headerStyles = "font-medium text-[#00DEF7] text-xs uppercase mb-2 tracking-wider";
-    
+
     return (
         <div className={`absolute top-full left-0 right-0 mx-auto ${isInternational ? 'w-[800px]' : 'w-[500px]'} bg-white shadow-xl rounded-lg overflow-hidden py-4 px-6 z-50`}>
             <div className={`grid ${isInternational ? 'grid-cols-3' : 'grid-cols-2'} gap-2`}>
@@ -143,7 +143,7 @@ function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
     const inputRef = useRef<HTMLInputElement>(null)
 
     const filteredDestinations = useMemo(
-        () => destinations.filter((dest) => 
+        () => destinations.filter((dest) =>
             dest.name.toLowerCase().includes(searchTerm.toLowerCase())
         ),
         [searchTerm]
@@ -331,7 +331,7 @@ export default function Navbar() {
 
                         {/* Search Bar with new design */}
                         <div className="hidden md:block flex-1 max-w-xl mx-8">
-                            <div 
+                            <div
                                 onClick={() => setIsSearchModalOpen(true)}
                                 className="relative cursor-pointer group bg-white/50 backdrop-blur-sm hover:bg-white/80 transition-all duration-300 rounded-xl border border-gray-100 shadow-sm"
                             >
@@ -354,21 +354,20 @@ export default function Navbar() {
                                     key={item.label}
                                     href={item.href}
                                     onClick={(e) => handleNavClick(e, item.href)}
-                                    className={`relative text-sm font-medium group ${
-                                        pathname === item.href ? 'text-[#00f6ff]' : 'text-gray-600'
-                                    }`}
+                                    className={`relative text-sm font-medium group ${pathname === item.href ? 'text-[#00f6ff]' : 'text-gray-600'
+                                        }`}
                                     aria-label={item.label}
                                 >
                                     {item.label}
                                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#00f6ff] group-hover:w-full transition-all duration-300" />
                                 </Link>
                             ))}
-                            
+
                             {/* Phone number with new design */}
                             <div className="relative group">
                                 <div className="absolute inset-0 bg-[#00f6ff]/20 blur group-hover:blur-md transition-all duration-300 rounded-xl" />
-                                <a 
-                                    href="tel:+919310271488" 
+                                <a
+                                    href="tel:+919310271488"
                                     className="relative flex items-center gap-2 px-4 py-2 rounded-xl bg-white/50 backdrop-blur-sm border border-[#00f6ff]/20 hover:border-[#00f6ff]/40 transition-all duration-300"
                                     aria-label="Call us at +91-9310271488"
                                 >
@@ -380,14 +379,14 @@ export default function Navbar() {
 
                         {/* Mobile controls with new styling */}
                         <div className="flex md:hidden items-center gap-4">
-                            <button 
+                            <button
                                 onClick={() => setIsSearchModalOpen(true)}
                                 className="p-2 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors"
                                 aria-label="Open search"
                             >
                                 <Search className="h-5 w-5 text-gray-600" />
                             </button>
-                            <a 
+                            <a
                                 href="tel:+919310271488"
                                 className="p-2 rounded-lg bg-[#00f6ff]/10 hover:bg-[#00f6ff]/20 transition-colors"
                                 aria-label="Call us at +91-9310271488"
@@ -450,11 +449,11 @@ export default function Navbar() {
             {isMenuOpen && (
                 <>
                     {/* Backdrop */}
-                    <div 
+                    <div
                         className="md:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-40 transition-opacity duration-300"
                         onClick={() => setIsMenuOpen(false)}
                     />
-                    
+
                     {/* Side Drawer */}
                     <div className="md:hidden fixed top-0 right-0 h-full w-[80%] max-w-md bg-white z-50 shadow-xl animate-slideInRight">
                         {/* Header */}
@@ -464,15 +463,15 @@ export default function Navbar() {
                                 <span className="text-white text-sm">+91-9310271488</span>
                             </div>
                             <div className="flex items-center gap-4">
-                                <Search 
-                                    className="h-5 w-5 text-white cursor-pointer" 
+                                <Search
+                                    className="h-5 w-5 text-white cursor-pointer"
                                     onClick={() => {
                                         setIsMenuOpen(false);
                                         setIsSearchModalOpen(true);
                                     }}
                                 />
-                                <X 
-                                    className="h-6 w-6 text-white cursor-pointer" 
+                                <X
+                                    className="h-6 w-6 text-white cursor-pointer"
                                     onClick={() => setIsMenuOpen(false)}
                                 />
                             </div>
@@ -505,19 +504,17 @@ export default function Navbar() {
                                                 className="flex items-center justify-between w-full px-4 py-2.5 text-gray-700"
                                             >
                                                 <span>{item.label}</span>
-                                                <ChevronDown 
-                                                    className={`h-4 w-4 text-gray-500 transition-transform duration-300 ${
-                                                        activeMobileDropdown === menuId ? 'rotate-180' : ''
-                                                    }`}
+                                                <ChevronDown
+                                                    className={`h-4 w-4 text-gray-500 transition-transform duration-300 ${activeMobileDropdown === menuId ? 'rotate-180' : ''
+                                                        }`}
                                                 />
                                             </button>
-                                            
-                                            <div 
-                                                className={`transition-all duration-300 ease-in-out ${
-                                                    activeMobileDropdown === menuId 
-                                                        ? 'max-h-[60vh] opacity-100' 
+
+                                            <div
+                                                className={`transition-all duration-300 ease-in-out ${activeMobileDropdown === menuId
+                                                        ? 'max-h-[60vh] opacity-100'
                                                         : 'max-h-0 opacity-0 overflow-hidden'
-                                                }`}
+                                                    }`}
                                             >
                                                 <div className="bg-gray-50 ml-4 mr-2 rounded-lg">
                                                     {menuId === 'international-packages' ? (
@@ -597,8 +594,8 @@ export default function Navbar() {
                                 })}
 
                                 {/* Additional Links */}
-                                <Link 
-                                    href="/blogs" 
+                                <Link
+                                    href="/blogs"
                                     onClick={() => {
                                         setIsMenuOpen(false);
                                         setActiveMobileDropdown(null);
@@ -607,7 +604,7 @@ export default function Navbar() {
                                 >
                                     Blogs
                                 </Link>
-                                <Link 
+                                <Link
                                     href="/careers"
                                     onClick={() => {
                                         setIsMenuOpen(false);
@@ -617,7 +614,7 @@ export default function Navbar() {
                                 >
                                     Careers
                                 </Link>
-                                <Link 
+                                <Link
                                     href="/about-us"
                                     onClick={() => {
                                         setIsMenuOpen(false);
@@ -627,7 +624,7 @@ export default function Navbar() {
                                 >
                                     About Us
                                 </Link>
-                                <Link 
+                                <Link
                                     href="/payment"
                                     onClick={() => {
                                         setIsMenuOpen(false);
@@ -649,12 +646,11 @@ export default function Navbar() {
                                 </button>
 
                                 {/* Contact Options Dropdown */}
-                                <div 
-                                    className={`transition-all duration-300 ease-in-out mt-2 ${
-                                        activeMobileDropdown === 'contact' 
-                                            ? 'max-h-[200px] opacity-100' 
+                                <div
+                                    className={`transition-all duration-300 ease-in-out mt-2 ${activeMobileDropdown === 'contact'
+                                            ? 'max-h-[200px] opacity-100'
                                             : 'max-h-0 opacity-0 overflow-hidden'
-                                    }`}
+                                        }`}
                                 >
                                     <div className="space-y-2">
                                         {/* Call Button */}
@@ -691,9 +687,9 @@ export default function Navbar() {
             )}
 
             {/* Keep the existing SearchModal component */}
-            <SearchModal 
-                isOpen={isSearchModalOpen} 
-                onClose={() => setIsSearchModalOpen(false)} 
+            <SearchModal
+                isOpen={isSearchModalOpen}
+                onClose={() => setIsSearchModalOpen(false)}
             />
         </nav>
     )

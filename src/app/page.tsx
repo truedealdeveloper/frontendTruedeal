@@ -29,11 +29,13 @@ import AustraliaBanner from "./components/homepage/AustraliaBanner";
 import USA from "./components/homepage/USA";
 import SouthKorea from "./components/homepage/SouthKorea";
 import Turkey from "./components/homepage/Turkey";
+import TenYearSale from "./components/homepage/10YearSale";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <HeroSection />
+      <TenYearSale />
       {/* <BannerCarousel />   */}
       <section id="fixedDeparture" className="mt-6">
         <FixedDepartures />
