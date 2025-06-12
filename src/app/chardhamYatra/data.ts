@@ -442,8 +442,8 @@ Return to Badrinath helipad for departure
             "Any other services not mentioned in the inclusions.",
         ],
         images: [
-            "/UGCImages/chardham/dodham/7.webp",
             "/UGCImages/chardham/dodham/8.webp",
+            "/UGCImages/chardham/dodham/7.webp",
             "/UGCImages/chardham/dodham/9.webp",
             "/UGCImages/chardham/dodham/10.webp",
             "/UGCImages/chardham/dodham/11.webp",
