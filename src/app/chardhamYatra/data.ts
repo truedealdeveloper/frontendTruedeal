@@ -352,7 +352,104 @@ Return to Badrinath helipad for departure
             "/UGCImages/chardham/dodham/11.webp",
             "/UGCImages/chardham/dodham/12.webp",
         ]
-    }
+    },
+    chardhamBhaktiYatraPackage: {
+        id: "chardham-bhakti-yatra-package",
+        name: "Chardham Bhakti Yatra Package",
+        days: 10,
+        nights: 9,
+        amount: 19500,
+        dateStart: "Available on request",
+        dateEnd: "Available on request",
+        description: "Experience the sacred Chardham pilgrimage with our comprehensive Bhakti Yatra Package. This 10-day journey covers all four sacred shrines—Yamunotri, Gangotri, Kedarnath, and Badrinath—with a focus on spiritual and cultural experiences.",
+        tourSummary: [
+            "Fixed Departures: Chardham Bhakti Yatra Package",
+            "With over two decades of dedicated service in pilgrimage tourism, we take immense pride in offering exclusive tours. Our Chardham Bhakti Yatra Package allows pilgrims to visit one of the sacred Chardham shrines—Kedarnath Ji, Badrinath Ji, Gangotri, or Yamunotri—on a 10-day journey."
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Haridwar/RISHIKESH –  Barkot (200 kms/7 hrs)",
+                description: "Arrive ! Welcome  Today Morning after breakfast check out from the hotel and drive towards Barkot en route to beautiful Yamuna Valley. On arrival check in to the hotel and stay overnight at the hotel."
+            },
+            {
+                day: 2,
+                title: "Barkot - Yamunotri – Barkot  (45 Kms road/ 6kms Trek)",
+                description: "Drive to Jankichatti, the trek starts from here to Yamunotri (6kms). On arrival leave the vehicle and start to ascend on the trek route either by walk or pony/doli (at own cost). On arrival at Yamunotri purchase Prasad from local small shops, then proceed to holy dip in a natural hot water spring or in river Yamuna (icy cold water). One can cook rice in “Surya Kund” (hot water spring), dipping it in a muslin cloth, and take cooked rice home as Prasadam. Pooja can be offered to the mythological “Divya Shila”. Take blessings of Mata Yamuna and trek down to Jankichatti. Later drive back to Barkot for a night stay."
+            },
+            {
+                day: 3,
+                title: "Barkot  – Uttarkashi - (90kms/4hrs)",
+                description: "Morning departs to Uttarkashi, on arrival check-in at the hotel, and later visit the famous Kashi Vishwanath temple at Uttarkashi. Overnight stay at hotel."
+            },
+            {
+                day: 4,
+                title: "Uttarkashi - Gangotri -Uttarkashi ",
+                description: "Morning proceeds to Gangotri (3048 mts), en-route enjoy the drive parallel to the Bhagirathi River and the most magnificent view of the Himalayas. On arrival, Gangotri has a holy dip in river Bhagirathi (icy cold water). Perform Pooja and Hindu rites at the bank of the river. Then proceed to darshan, of Mata Ganga, Lord Shiva, Hanuman, Vinayaka, and BhagirathMaharaj, have blessings, and return back to Uttarkashi. Overnight stay at Uttarkashi."
+            },
+            {
+                day: 5,
+                title: "Uttarkashi  -– Sitapur /Guptkashi (198 kms/8 Hrs)",
+                description: "Morning drive to Guptkashi & visit Shri Kashi Viswanath Temple (Ardhanariswar Temple)  Later   Registration for visiting Kedarnath, overnight stay at Hotel"
+            },
+            {
+                day: 6,
+                title: "Sitapur / Guptkashi - Kedarnath  (18 kms Trek)",
+                description: "Early morning drive to Sonprayag/ Phata (for trek route or helipad)trek starts from here to Kedarnath (3584 mts) on foot or Heli/doli/pony (at own cost). Tour members should carry personal medicines, heavy woolen, toiletries, and clothes. After performing Pooja & Darshan of Shri Kedarnath ji return to Gaurikund and then to Sitapur. Overnight stay at Kedarnath Ji."
+            },
+            {
+                day: 7,
+                title: "Kedarnath- Guptkashi   (18 kms Trek)",
+                description: "Today morning trek down to Gaurikund and then proceed to Guptkashi. Stay overnight at the hotel."
+            },
+            {
+                day: 8,
+                title: "Guptkashi- Panduekshwar (170 kms / 7 Hrs)",
+                description: "Morning After breakfast transfer to Pandukeshwar, en-route Ukhimath, Chamoli  & Joshimath, and Govindghat on arrival check in at the hotel in the evening temple, overnight stay at hotel."
+            },
+            {
+                day: 9,
+                title: "Pandukeshwar- Badrinath - Joshimath /Pipalkoti/ Chamoli",
+                description: `Morning visits the temple after a holy dip in Taptkund. Proceed through the colorful entrance of the temple to have the Darshan of Badrivishal along with Ganesh, Kubera, Garuda, Narada, Udhhav, Nar & Narayan. Also see other small temples inside the temple compound i.e. Laxmimata, Nar-Narayana, Hanuman, Ghantakarn, and Kaamdhenu. One can get ‘Charnamirt’(abhishekamjal) inside the compound. Brahamakapal is significant for Pinddam Shraddh of ancestors (Pitrus), one can perform rites here. 
+                
+                Later a visit of  Mana Village (India’s last village towards the Indo-Tibetan border), which includes Vyasa Gufa, Ganesh Gufa, Bhimpul, Saraswati River, etc,  In the evening transfer to Srinagar, Overnight stay at Joshimath.`
+            },
+            {
+                day: 10,
+                title: "Joshimath /Pipalkoti/ Chamoli - Rishikesh (18 kms Trek)",
+                description: "The morning after transfer to Haridwar, en-route visit Devprayag the confluence of Alaknanda and Bhagirathi. You can see Laxman Jhoola, and Ram Jhoola at Rishikesh. later drive to the haridwar  and  drop  you there."
+            },
+        ],
+        inclusions: [
+            "Accommodation at hotels as mentioned or similar – on double/triple sharing basis.",
+            "Daily breakfast and dinner included at all hotels.",
+            "Transportation by 12-seater Tempo Traveller (as per group size).",
+            "All sightseeing and transfers as per the itinerary.",
+            "All tolls, parking, driver charges, and fuel expenses.",
+            "Pick-up and drop from Haridwar.",
+            "All applicable hotel taxes.",
+            "Assistance during the Yatra."
+        ],
+        exclusions: [
+            "Any air or train fare.",
+            "Lunch and Helipad services",
+            "Any personal expenses such as laundry, phone calls, tips, porterage, etc.",
+            "Pony, Doli, or Helicopter charges at Yamunotri and Kedarnath.",
+            "Kedarnath Night Stay charges (directly payable by client).",
+            "Entry fees to monuments, temples, or any special darshan.",
+            "Extra meals or beverages not mentioned in the itinerary.",
+            "Cost of any medical/rescue evacuation due to natural calamities or accidents.",
+            "Any other services not mentioned in the inclusions.",
+        ],
+        images: [
+            "/UGCImages/chardham/dodham/7.webp",
+            "/UGCImages/chardham/dodham/8.webp",
+            "/UGCImages/chardham/dodham/9.webp",
+            "/UGCImages/chardham/dodham/10.webp",
+            "/UGCImages/chardham/dodham/11.webp",
+            "/UGCImages/chardham/dodham/12.webp",
+        ],
+    },
 };
 
 // Helper function to get all packages

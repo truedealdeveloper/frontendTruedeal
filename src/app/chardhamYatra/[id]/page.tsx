@@ -1,33 +1,19 @@
 'use client';
 
+import { use, useState, useEffect } from 'react';
+import Image from 'next/image';
 import { chardhamData } from '../data';
 import { notFound } from 'next/navigation';
-import { FaPlane, FaCalendarAlt} from 'react-icons/fa';
-import { use, useState, useEffect, useRef } from 'react';
+import {
+    Calendar, Check, MapPin, Star, Users, X, Camera, Phone
+} from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BookingFormModal } from '@/app/components/BookingFormModal';
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { motion, useScroll, AnimatePresence } from "framer-motion";
+import { useScroll } from "framer-motion";
 import { Poppins } from 'next/font/google';
-import ChardhamYatra from '../page';
-import FixedDepartures from '@/app/fixedDeparture/page';
-import Domestic from '@/app/components/homepage/Domestic';
-// import Indonesia from '@/app/indonesia/page';
-// import BannerCarousel from '@/app/components/valentine/page';
-import Destinations from '@/app/components/homepage/Destinations';
-import Trending from '@/app/components/homepage/Trending';
-import ReviewsGlimpse from '@/app/components/homepage/ReviewsGlimpse';
-import Europe from '@/app/components/homepage/Europe';
-import ExoticDestinations from '@/app/components/homepage/Exotic';
-import Gallery from '@/app/components/homepage/Gallery';
-import Sponsors from '@/app/components/Ad/Sponsers';
-import HappyCustomers from '@/app/components/Ad/HappyCustomers';
-// import WallOfLove from '@/app/components/homepage/Ugc';
-
-
-interface PageProps {
-    params: Promise<{ id: string; }>
-}
 
 const poppins = Poppins({
     weight: ['400', '500', '600', '700'],
@@ -35,447 +21,729 @@ const poppins = Poppins({
     display: 'swap',
 });
 
-function formatIndianPrice(price: number): string {
-    return price.toLocaleString('en-IN', {
-        maximumFractionDigits: 0,
-        style: 'decimal',
-    });
+interface PageProps {
+    params: Promise<{ id: string; }>
 }
 
-export default function ChardhamYatraPage({ params }: PageProps) {
+export default function ChardhamYatraPackagePage({ params }: PageProps) {
     const { id } = use(params);
-    
-    const package_ = Object.values(chardhamData).find(pkg => pkg.id === id);
-    
-    if (!package_) {
+
+    const chardhamPkg = Object.values(chardhamData).find(p => p.id === id);
+
+    if (!chardhamPkg) {
         notFound();
     }
 
     const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
-    const [activeTab, setActiveTab] = useState("overview");
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const [openDay, setOpenDay] = useState<number | null>(null);
-    const [showFloatingCTA, setShowFloatingCTA] = useState(false);
-
-    const overviewRef = useRef<HTMLDivElement>(null);
-    const itineraryRef = useRef<HTMLDivElement>(null);
-    const inclusionsRef = useRef<HTMLDivElement>(null);
-    const exclusionsRef = useRef<HTMLDivElement>(null);
-    const otherRef = useRef<HTMLDivElement>(null);
-    const tabsRef = useRef<HTMLDivElement>(null);
+    const [selectedDay, setSelectedDay] = useState(1);
+    const [showFullDescription, setShowFullDescription] = useState(false);
+    const [expandedDays, setExpandedDays] = useState<number[]>([1]);
+    const [isGalleryModalOpen, setIsGalleryModalOpen] = useState(false);
+    const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
 
     useScroll();
 
     useEffect(() => {
-        const handleScroll = () => {
-            const sections = [
-                { id: 'overview', ref: overviewRef },
-                { id: 'itinerary', ref: itineraryRef },
-                { id: 'inclusions', ref: inclusionsRef },
-                { id: 'exclusions', ref: exclusionsRef },
-                { id: 'other', ref: otherRef }
-            ];
-
-            setShowFloatingCTA(window.scrollY > 200);
-
-            for (const section of sections) {
-                if (section.ref.current) {
-                    const rect = section.ref.current.getBoundingClientRect();
-                    if (rect.top <= 100 && rect.bottom >= 100) {
-                        setActiveTab(section.id);
-                        break;
-                    }
-                }
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    useEffect(() => {
         const timer = setInterval(() => {
-            setCurrentImageIndex((prev) => 
-                prev === (package_?.images?.length || 1) - 1 ? 0 : prev + 1
+            setCurrentImageIndex((prev) =>
+                prev === (chardhamPkg?.images?.length || 1) - 1 ? 0 : prev + 1
             );
         }, 5000);
 
         return () => clearInterval(timer);
-    }, [package_?.images?.length]);
+    }, [chardhamPkg?.images?.length]);
 
-    const scrollToSection = (sectionRef: React.RefObject<HTMLDivElement>, tabId: string) => {
-        sectionRef.current?.scrollIntoView({ behavior: 'smooth' });
-        setActiveTab(tabId);
+    // Calculate truncated description for "Read More" functionality
+    const description = chardhamPkg.description || "";
+    const truncatedDescription = description.length > 300
+        ? `${description.substring(0, 300)}...`
+        : description;
+
+    // Function to toggle day expansion
+    const toggleDayExpansion = (dayNumber: number) => {
+        setExpandedDays(prev =>
+            prev.includes(dayNumber)
+                ? prev.filter(d => d !== dayNumber)
+                : [...prev, dayNumber]
+        );
     };
 
+    // Add this new function to get all images from itinerary
+    const getAllImages = () => {
+        const packageImages = chardhamPkg.images || [];
+        return [...new Set([...packageImages])];
+    };
+
+    // Add these gallery navigation functions
+    const nextImage = () => {
+        setCurrentGalleryIndex((prev) =>
+            prev === getAllImages().length - 1 ? 0 : prev + 1
+        );
+    };
+
+    const previousImage = () => {
+        setCurrentGalleryIndex((prev) =>
+            prev === 0 ? getAllImages().length - 1 : prev - 1
+        );
+    };
+
+    // Add this function after the getAllImages function
+    const scrollToDay = (dayNumber: number) => {
+        const dayElement = document.getElementById(`day-${dayNumber}`);
+        if (dayElement) {
+            dayElement.scrollIntoView({ behavior: 'smooth' });
+            // Expand the day if it's not already expanded
+            if (!expandedDays.includes(dayNumber)) {
+                toggleDayExpansion(dayNumber);
+            }
+        }
+    };
+
+    // Generate experiences from existing data
+    const experiences = [
+        { title: "Helicopter Darshan", image: chardhamPkg.images?.[0] || "/UGCImages/chardham/Chardham/1.webp" },
+        { title: "VIP Temple Access", image: chardhamPkg.images?.[1] || "/UGCImages/chardham/Chardham/2.webp" },
+        { title: "Sacred Rituals", image: chardhamPkg.images?.[2] || "/UGCImages/chardham/Chardham/3.webp" },
+        { title: "Mountain Views", image: chardhamPkg.images?.[3] || "/UGCImages/chardham/Chardham/4.webp" },
+        { title: "Spiritual Journey", image: chardhamPkg.images?.[4] || "/UGCImages/chardham/Chardham/5.webp" },
+        { title: "Holy Dips", image: chardhamPkg.images?.[5] || "/UGCImages/chardham/Chardham/6.webp" },
+    ];
+
+    // Generate hotel details if not available
+    const hotelDetails = chardhamPkg.hotelDetails || [
+        { city: "Dehradun", hotel: "Premium Hotel Dehradun", roomType: "Deluxe Room" },
+        { city: "Temple Areas", hotel: "Guest Houses Near Temples", roomType: "Standard Room" }
+    ];
+
     return (
-        <div className={`min-h-screen bg-gray-50 ${poppins.className} relative`}>
+        <div className={`relative ${poppins.className}`}>
             {/* Hero Section */}
-            <div className="relative h-[70vh] md:h-[80vh] overflow-hidden">
-                <AnimatePresence mode='wait'>
-                    <motion.img 
-                        key={currentImageIndex}
-                        src={package_?.images?.[currentImageIndex] || '/default-image.jpg'}
-                        alt={package_.name}
-                        className="absolute w-full h-full object-cover object-center"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 1 }}
-                    />
-                </AnimatePresence>
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/70" />
-                <div className="container mx-auto relative h-full">
-                    <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8">
-                        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-                            <motion.div 
-                                className="text-white max-w-3xl"
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.2 }}
+            <div className="relative h-[70vh] w-full">
+                <Image
+                    src={chardhamPkg?.images?.[currentImageIndex] || '/default-image.jpg'}
+                    alt={chardhamPkg.name}
+                    fill
+                    className="object-cover brightness-[0.85]"
+                    priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-12">
+                    <div className="max-w-7xl w-full pl-0 md:pl-12 relative top-8 md:top-12">
+                        {/* Rating display */}
+                        <div className="flex items-center mb-4">
+                            {[...Array(5)].map((_, i) => (
+                                <Star key={i} className={`h-5 w-5 ${i < Math.floor(4.8) ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}`} />
+                            ))}
+                            <span className="ml-2 text-white font-medium">4.8/5 (67 reviews)</span>
+                        </div>
+
+                        {/* Package name */}
+                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">{chardhamPkg.name}</h1>
+
+                        {/* Location */}
+                        <div className="flex items-center text-white mb-6">
+                            <MapPin className="h-5 w-5 mr-2" />
+                            <span className="text-lg">Chardham Yatra</span>
+                        </div>
+
+                        {/* Action buttons */}
+                        <div className="flex flex-wrap gap-4 mb-12">
+                            <Button
+                                size="lg"
+                                className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition rounded-full px-8"
+                                onClick={() => setIsBookingModalOpen(true)}
                             >
-                                <h1 className="text-3xl md:text-6xl font-bold mb-4 leading-tight">
-                                    {package_.name}
-                                </h1>
-                                <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-8 text-base md:text-lg mb-4 md:mb-0">
-                                    <span className="flex items-center gap-3">
-                                        <FaCalendarAlt className="text-[#00f6ff] text-xl" /> 
-                                        <span className="text-gray-100">{package_.dateStart} - {package_.dateEnd}</span>
-                                    </span>
-                                    {package_.flightFrom && (
-                                        <span className="flex items-center gap-3">
-                                            <FaPlane className="text-[#00f6ff] text-xl" /> 
-                                            <span className="text-gray-100">{package_.flightFrom}</span>
-                                        </span>
-                                    )}
-                                </div>
-                            </motion.div>
-                            
-                            <div className="flex justify-end">
-                                <Button
-                                    className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white px-6 py-3 md:px-8 md:py-6 text-base md:text-lg rounded-lg shadow-lg transform transition hover:scale-105"
-                                    onClick={() => setIsBookingModalOpen(true)}
-                                >
-                                    Book Now
-                                </Button>
-                            </div>
+                                Book Now
+                            </Button>
+                            <Button
+                                size="lg"
+                                variant="outline"
+                                className="bg-white/10 backdrop-blur-sm border-white/20 text-white rounded-full px-8"
+                                onClick={() => setIsGalleryModalOpen(true)}
+                            >
+                                <Camera className="h-4 w-4 mr-2" /> View All Photos
+                            </Button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/* Fixed Tabs Navigation */}
-            <div 
-                ref={tabsRef}
-                className="sticky top-0 z-50 bg-white border-b shadow-lg mt-0"
-            >
-                <div className="container mx-auto">
-                    <div className="overflow-x-auto scrollbar-hide">
-                        <Tabs value={activeTab} className="w-full">
-                            <TabsList className="w-full h-14 flex space-x-4 md:space-x-8 min-w-max px-4">
-                                {[
-                                    { id: 'overview', label: 'Overview & Highlights', ref: overviewRef },
-                                    { id: 'itinerary', label: 'Itinerary', ref: itineraryRef },
-                                    { id: 'inclusions', label: 'Inclusions', ref: inclusionsRef },
-                                    { id: 'exclusions', label: 'Exclusions', ref: exclusionsRef },
-                                    { id: 'other', label: 'Other Info', ref: otherRef }
-                                ].map(tab => (
-                                    <TabsTrigger
-                                        key={tab.id}
-                                        value={tab.id}
-                                        onClick={() => scrollToSection(tab.ref, tab.id)}
-                                        className={`px-4 py-2 text-sm md:text-base whitespace-nowrap border-b-2 transition-all duration-300 ${
-                                            activeTab === tab.id 
-                                                ? 'border-[#017ae3] text-[#017ae3] font-semibold' 
-                                                : 'border-transparent text-gray-600 hover:text-[#017ae3]'
-                                        }`}
-                                    >
-                                        {tab.label}
-                                    </TabsTrigger>
-                                ))}
-                            </TabsList>
-                        </Tabs>
+            {/* Information bar */}
+            <div className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white">
+                <div className="max-w-7xl mx-auto px-4 py-5 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                    <div className="flex items-center">
+                        <div className="flex-shrink-0 w-8 md:w-auto">
+                            <Calendar className="h-6 w-6 mr-3" />
+                        </div>
+                        <div>
+                            <div className="text-sm opacity-80">Duration</div>
+                            <div className="font-medium text-sm md:text-base">{chardhamPkg.days} days / {chardhamPkg.nights} nights</div>
+                        </div>
+                    </div>
+
+                    <div className="flex items-center">
+                        <div className="flex-shrink-0 w-8 md:w-auto">
+                            <MapPin className="h-6 w-6 mr-3" />
+                        </div>
+                        <div>
+                            <div className="text-sm opacity-80">Location</div>
+                            <div className="font-medium text-sm md:text-base">Uttarakhand</div>
+                        </div>
+                    </div>
+
+                    <div className="flex items-center">
+                        <div className="flex-shrink-0 w-8 md:w-auto">
+                            <Users className="h-6 w-6 mr-3" />
+                        </div>
+                        <div>
+                            <div className="text-sm opacity-80">Group Size</div>
+                            <div className="font-medium text-sm md:text-base">Group Tour</div>
+                        </div>
+                    </div>
+
+                    <div className="flex items-center">
+                        <div className="flex-shrink-0 w-8 md:w-auto">
+                            <Star className="h-6 w-6 mr-3 text-yellow-400 fill-yellow-400" />
+                        </div>
+                        <div>
+                            <div className="text-sm opacity-80">Rating</div>
+                            <div className="font-medium text-sm md:text-base">4.8/5 (67 reviews)</div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            {/* Main Content */}
-            <div className="container mx-auto px-4 py-6 space-y-6 md:space-y-8">
-                {/* Overview Section */}
-                <div ref={overviewRef} className="scroll-mt-16">
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-8">
-                        <div className="lg:col-span-2 space-y-4">
-                            <div className="bg-white rounded-lg shadow-sm p-6">
-                                <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-[#017ae3] border-b pb-4">
-                                    About This Package
-                                </h2>
-                                
-                                <p className="text-gray-600 mb-6">{package_.description}</p>
-
-                                {/* Tour Summary Box */}
-                                {package_.tourSummary && (
-                                    <div className="bg-blue-50 rounded-lg p-4 mb-6">
-                                        <h3 className="text-lg font-semibold mb-4">Tour Overview</h3>
-                                        <div className="grid grid-cols-1 gap-4">
-                                            {package_.tourSummary.map((item, index) => (
-                                                <div key={index} className="flex gap-2">
-                                                    <span className="text-[#017ae3] font-medium">•</span>
-                                                    <span className="text-gray-600">{item}</span>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                )}
-
-                                {/* Package Details Grid */}
-                                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                                    {package_.groupDetails && (
-                                        <>
-                                            <div className="bg-gray-50 p-4 rounded-lg">
-                                                <h4 className="font-semibold mb-2">Duration</h4>
-                                                <p>{package_.groupDetails.duration}</p>
-                                            </div>
-                                            <div className="bg-gray-50 p-4 rounded-lg">
-                                                <h4 className="font-semibold mb-2">Accommodation</h4>
-                                                <p>{package_.groupDetails.rooms}</p>
-                                            </div>
-                                            <div className="bg-gray-50 p-4 rounded-lg">
-                                                <h4 className="font-semibold mb-2">Group Size</h4>
-                                                <p>{package_.groupDetails.pax}</p>
-                                            </div>
-                                            <div className="bg-gray-50 p-4 rounded-lg">
-                                                <h4 className="font-semibold mb-2">Cost Basis</h4>
-                                                <p>{package_.groupDetails.costBasis}</p>
-                                            </div>
-                                        </>
-                                    )}
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Price Card in sidebar */}
-                        <div className="space-y-4">
-                            <div className="bg-white rounded-lg shadow-sm p-6">
-                                <div className="text-center mb-4">
-                                    {package_.amount && (
-                                        <>
-                                            <p className="text-gray-500 line-through">₹{formatIndianPrice(package_.amount * 1.2)}/-</p>
-                                            <p className="text-3xl font-bold text-[#017ae3]">₹{formatIndianPrice(package_.amount)}/-</p>
-                                        </>
-                                    )}
-                                    <p className="text-sm text-gray-500">per person</p>
-                                </div>
-                                <Button 
-                                    className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white font-bold py-3 rounded-lg transition-all duration-300"
-                                    onClick={() => setIsBookingModalOpen(true)}
-                                >
-                                    Book Now
-                                </Button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Itinerary Section */}
-                {package_.itinerary && (
-                    <div ref={itineraryRef} className="scroll-mt-16">
-                        <div className="bg-white rounded-lg shadow-sm p-6">
-                            <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">Detailed Itinerary</h2>
-                            <div className="space-y-6">
-                                {package_.itinerary.map((day, index) => (
-                                    <div key={index} className="group">
-                                        <div 
-                                            className="flex items-center gap-4 cursor-pointer bg-gradient-to-r from-[#017ae3]/5 to-[#00f6ff]/5 p-4 rounded-lg hover:from-[#017ae3]/10 hover:to-[#00f6ff]/10 transition-colors"
-                                            onClick={() => setOpenDay(openDay === index ? null : index)}
+            {/* Main Content with Tabs */}
+            <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    {/* Left Column - Package Details with Tabs */}
+                    <div className="lg:col-span-2 min-w-0">
+                        {/* Make tabs sticky on scroll */}
+                        <div className="sticky top-16 z-30 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm -mx-4 px-4">
+                            <div className="max-w-full">
+                                <Tabs defaultValue="overview" className="w-full">
+                                    <TabsList className="w-full bg-gray-100 p-0 my-4 rounded-lg overflow-x-auto flex no-scrollbar">
+                                        <TabsTrigger
+                                            value="overview"
+                                            className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white py-2 px-4 md:py-3 md:px-6 flex-shrink-0"
                                         >
-                                            <div className="flex-shrink-0 w-24">
-                                                <div className="text-sm text-[#017ae3]">Day {day.day}</div>
-                                            </div>
-                                            <div className="flex-grow">
-                                                <h3 className="text-lg font-semibold text-gray-800">{day.title}</h3>
-                                            </div>
-                                            <div className="flex-shrink-0">
-                                                <svg 
-                                                    className={`w-6 h-6 text-[#017ae3] transform transition-transform duration-300 ${
-                                                        openDay === index ? 'rotate-180' : ''
-                                                    }`}
-                                                    fill="none" 
-                                                    stroke="currentColor" 
-                                                    viewBox="0 0 24 24"
-                                                >
-                                                    <path 
-                                                        strokeLinecap="round" 
-                                                        strokeLinejoin="round" 
-                                                        strokeWidth={2} 
-                                                        d="M19 9l-7 7-7-7" 
-                                                    />
-                                                </svg>
+                                            Overview
+                                        </TabsTrigger>
+                                        <TabsTrigger
+                                            value="itinerary"
+                                            className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white py-2 px-4 md:py-3 md:px-6 flex-shrink-0"
+                                        >
+                                            Itinerary
+                                        </TabsTrigger>
+                                        <TabsTrigger
+                                            value="accommodation"
+                                            className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white py-2 px-4 md:py-3 md:px-6 flex-shrink-0"
+                                        >
+                                            Accommodation
+                                        </TabsTrigger>
+                                    </TabsList>
+
+                                    {/* Tab Content sections */}
+                                    <TabsContent value="overview" className="mt-0">
+                                        {/* Package Highlights */}
+                                        <div className="mb-10">
+                                            <h2 className="text-2xl font-bold mb-6">Package Highlights</h2>
+                                            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                                                {[
+                                                    { icon: "🚁", title: "Helicopter Travel", desc: "Skip long treks with helicopter service" },
+                                                    { icon: "🕉️", title: "VIP Darshan", desc: "Priority access at all temples" },
+                                                    { icon: "🏨", title: "Quality Hotels", desc: `${chardhamPkg.nights} nights accommodation` },
+                                                    { icon: "🚕", title: "All Transfers", desc: "Airport and ground transfers included" },
+                                                    { icon: "🏔️", title: "Sacred Shrines", desc: "Visit all four holy dhams" },
+                                                    { icon: "🙏", title: "Spiritual Guide", desc: "Expert guidance throughout" },
+                                                ].map((highlight, index) => (
+                                                    <Card key={index} className="p-4 border border-gray-100 shadow-sm hover:shadow-md transition">
+                                                        <div className="text-3xl mb-2">{highlight.icon}</div>
+                                                        <h3 className="font-medium">{highlight.title}</h3>
+                                                        <p className="text-sm text-gray-600">{highlight.desc}</p>
+                                                    </Card>
+                                                ))}
                                             </div>
                                         </div>
-                                        <AnimatePresence>
-                                            {openDay === index && (
-                                                <motion.div 
-                                                    initial={{ height: 0, opacity: 0 }}
-                                                    animate={{ height: "auto", opacity: 1 }}
-                                                    exit={{ height: 0, opacity: 0 }}
-                                                    transition={{ duration: 0.3 }}
-                                                    className="overflow-hidden"
-                                                >
-                                                    <div className="mt-2 pl-28 pr-4 py-4">
-                                                        <p className="text-gray-600">{day.description}</p>
+
+                                        {/* About This Package */}
+                                        <div className="mb-10">
+                                            <h2 className="text-2xl font-bold mb-6">About This Package</h2>
+                                            <div className="bg-white rounded-3xl shadow-sm overflow-hidden">
+                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                                    <div className="p-6">
+                                                        <div className="prose max-w-none">
+                                                            <p>
+                                                                {showFullDescription ? description : truncatedDescription}
+                                                            </p>
+                                                            {description.length > 300 && (
+                                                                <Button
+                                                                    variant="link"
+                                                                    className="p-0 h-auto text-[#017ae3]"
+                                                                    onClick={() => setShowFullDescription(!showFullDescription)}
+                                                                >
+                                                                    {showFullDescription ? "Show Less" : "Read More ↓"}
+                                                                </Button>
+                                                            )}
+                                                        </div>
                                                     </div>
-                                                </motion.div>
+                                                    <div className="relative h-full min-h-[250px] md:min-h-0">
+                                                        <Image
+                                                            src={chardhamPkg?.images?.[1] || '/default-image.jpg'}
+                                                            alt="About Chardham"
+                                                            fill
+                                                            className="object-cover"
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Experiences You'll Love */}
+                                        <div className="mb-10">
+                                            <h2 className="text-2xl font-bold mb-6">Experiences You&apos;ll Love</h2>
+                                            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+                                                {experiences.map((experience, index) => (
+                                                    <div key={index} className="bg-white rounded-3xl overflow-hidden shadow-sm">
+                                                        <div className="relative h-48">
+                                                            <Image
+                                                                src={experience.image}
+                                                                alt={experience.title}
+                                                                fill
+                                                                className="object-cover hover:scale-105 transition duration-500"
+                                                            />
+                                                        </div>
+                                                        <div className="p-4">
+                                                            <h3 className="font-medium text-center">{experience.title}</h3>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+
+                                        {/* Gallery */}
+                                        <div className="mb-10">
+                                            <h2 className="text-2xl font-bold mb-6">Gallery</h2>
+                                            <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
+                                                {(chardhamPkg?.images || []).slice(0, 6).map((img, i) => (
+                                                    <div key={i} className="relative aspect-[4/3] overflow-hidden rounded-lg">
+                                                        <Image
+                                                            src={img}
+                                                            alt={`Chardham destination image ${i + 1}`}
+                                                            fill
+                                                            className="object-cover hover:scale-105 transition duration-500"
+                                                        />
+                                                    </div>
+                                                ))}
+                                            </div>
+                                            <div className="mt-4 text-center">
+                                                <Button variant="outline" className="text-sm">
+                                                    View All Photos ({chardhamPkg?.images?.length || 0})
+                                                </Button>
+                                            </div>
+                                        </div>
+
+                                        {/* What's Included */}
+                                        <div className="mb-10">
+                                            <h2 className="text-2xl font-bold mb-6">What&apos;s Included</h2>
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                                <div>
+                                                    <h3 className="text-lg font-medium mb-4 flex items-center">
+                                                        <Check className="h-5 w-5 mr-2 text-green-500" />
+                                                        Included in Your Package
+                                                    </h3>
+                                                    <ul className="space-y-3">
+                                                        {chardhamPkg.inclusions?.map((item, i) => (
+                                                            <li key={i} className="flex">
+                                                                <Check className="h-5 w-5 mr-3 text-green-500 flex-shrink-0" />
+                                                                <span>{item}</span>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+
+                                                <div>
+                                                    <h3 className="text-lg font-medium mb-4 flex items-center">
+                                                        <X className="h-5 w-5 mr-2 text-red-500" />
+                                                        Not Included
+                                                    </h3>
+                                                    <ul className="space-y-3">
+                                                        {chardhamPkg.exclusions?.map((item, i) => (
+                                                            <li key={i} className="flex">
+                                                                <X className="h-5 w-5 mr-3 text-red-500 flex-shrink-0" />
+                                                                <span>{item}</span>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </TabsContent>
+
+                                    <TabsContent value="itinerary" className="mt-0">
+                                        <div className="mb-10">
+                                            <h2 className="text-2xl font-bold mb-6">Day-by-Day Itinerary</h2>
+
+                                            {/* Day navigation buttons */}
+                                            {chardhamPkg.itinerary && chardhamPkg.itinerary.length > 1 && (
+                                                <div className="flex overflow-x-auto space-x-2 mb-8 pb-2 no-scrollbar">
+                                                    {chardhamPkg.itinerary.map((day, i) => (
+                                                        <button
+                                                            key={i}
+                                                            onClick={() => {
+                                                                setSelectedDay(day.day);
+                                                                scrollToDay(day.day);
+                                                            }}
+                                                            className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${selectedDay === day.day
+                                                                ? "bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white"
+                                                                : "bg-gray-100 hover:bg-gray-200 text-gray-800"
+                                                                }`}
+                                                        >
+                                                            Day {day.day}
+                                                        </button>
+                                                    ))}
+                                                </div>
                                             )}
-                                        </AnimatePresence>
+
+                                            {/* Timeline view with collapsible content */}
+                                            <div className="relative pb-6">
+                                                {chardhamPkg.itinerary && chardhamPkg.itinerary.length > 1 && (
+                                                    <div className="absolute left-4 md:left-[3.5rem] top-0 bottom-0 w-0.5 bg-[#017ae3]"></div>
+                                                )}
+
+                                                <div className="space-y-6">
+                                                    {chardhamPkg.itinerary?.map((day, i) => {
+                                                        const isExpanded = expandedDays.includes(day.day);
+
+                                                        return (
+                                                            <div
+                                                                key={i}
+                                                                id={`day-${day.day}`}
+                                                                className={`relative ${chardhamPkg.itinerary && chardhamPkg.itinerary.length > 1 ? 'pl-12 md:pl-20' : ''} scroll-mt-24`}
+                                                            >
+                                                                {/* Day number marker */}
+                                                                {chardhamPkg.itinerary && chardhamPkg.itinerary.length > 1 && (
+                                                                    <div
+                                                                        className="absolute left-0 top-2 w-8 h-8 rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] flex items-center justify-center text-white font-bold z-10 cursor-pointer"
+                                                                        onClick={() => toggleDayExpansion(day.day)}
+                                                                    >
+                                                                        {day.day}
+                                                                    </div>
+                                                                )}
+
+                                                                {/* Content card */}
+                                                                <div
+                                                                    className={`bg-white rounded-xl shadow-sm overflow-hidden ${selectedDay === day.day ? 'ring-2 ring-[#017ae3]/20' : ''}`}
+                                                                    onClick={() => toggleDayExpansion(day.day)}
+                                                                >
+                                                                    {/* Add image section if available */}
+                                                                    {chardhamPkg?.images?.[i] && (
+                                                                        <div className="relative h-48 w-full">
+                                                                            <Image
+                                                                                src={chardhamPkg.images[i]}
+                                                                                alt={`Day ${day.day} - ${day.title}`}
+                                                                                fill
+                                                                                className="object-cover"
+                                                                            />
+                                                                        </div>
+                                                                    )}
+
+                                                                    <div className="p-5">
+                                                                        <div className="flex justify-between items-center">
+                                                                            <h3 className="text-lg font-bold">Day {day.day}: {day.title}</h3>
+                                                                            {chardhamPkg.itinerary && chardhamPkg.itinerary.length > 1 && (
+                                                                                <button
+                                                                                    className="text-gray-400 hover:text-gray-600"
+                                                                                    onClick={(e) => {
+                                                                                        e.stopPropagation();
+                                                                                        toggleDayExpansion(day.day);
+                                                                                    }}
+                                                                                >
+                                                                                    {isExpanded ? (
+                                                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                                                            <path fillRule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clipRule="evenodd" />
+                                                                                        </svg>
+                                                                                    ) : (
+                                                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                                                            <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                                                                                        </svg>
+                                                                                    )}
+                                                                                </button>
+                                                                            )}
+                                                                        </div>
+
+                                                                        {(isExpanded || (chardhamPkg.itinerary && chardhamPkg.itinerary.length === 1)) && (
+                                                                            <p className="text-gray-700 mt-3 mb-4">{day.description}</p>
+                                                                        )}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        );
+                                                    })}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </TabsContent>
+
+                                    <TabsContent value="accommodation" className="mt-0">
+                                        <div className="mb-10">
+                                            <h2 className="text-2xl font-bold mb-6">Your Accommodations</h2>
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                                {hotelDetails.map((hotel, index) => (
+                                                    <Card key={index} className="overflow-hidden border-0 shadow-md">
+                                                        <div className="p-4">
+                                                            <h3 className="font-bold text-lg">{hotel.hotel}</h3>
+                                                            <div className="flex items-center text-sm text-gray-500 mb-2">
+                                                                <MapPin className="h-3 w-3 mr-1" />
+                                                                <span>{hotel.city}</span>
+                                                            </div>
+                                                            <div className="flex items-center justify-between">
+                                                                <div className="flex">
+                                                                    {[...Array(4)].map((_, i) => (
+                                                                        <Star key={i} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
+                                                                    ))}
+                                                                </div>
+                                                                <span className="text-sm font-medium">{hotel.roomType}</span>
+                                                            </div>
+                                                        </div>
+                                                    </Card>
+                                                ))}
+                                            </div>
+                                        </div>
+
+                                        {/* FAQ Section in Accommodation Tab */}
+                                        <div className="mb-10">
+                                            <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
+                                            <Accordion type="single" collapsible className="w-full">
+                                                {[
+                                                    {
+                                                        question: "What is the helicopter weight limit?",
+                                                        answer: "Maximum 5 kg baggage per passenger is allowed. Excess baggage charges apply for overweight luggage."
+                                                    },
+                                                    {
+                                                        question: "Are VIP darshans guaranteed?",
+                                                        answer: "VIP darshans are arranged as per temple authorities and government guidelines. Priority access is provided wherever possible."
+                                                    },
+                                                    {
+                                                        question: "What happens in case of bad weather?",
+                                                        answer: "Helicopter operations are subject to weather conditions. In case of cancellation due to weather, alternative arrangements or rescheduling will be provided."
+                                                    },
+                                                    {
+                                                        question: "Is medical support available during the tour?",
+                                                        answer: "Basic medical support is available, but we recommend carrying personal medicines and having a medical check-up before the journey due to high altitudes."
+                                                    },
+                                                ].map((faq, index) => (
+                                                    <AccordionItem key={index} value={`faq-${index}`}>
+                                                        <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
+                                                        <AccordionContent>
+                                                            <p className="text-gray-600">{faq.answer}</p>
+                                                        </AccordionContent>
+                                                    </AccordionItem>
+                                                ))}
+                                            </Accordion>
+                                        </div>
+                                    </TabsContent>
+                                </Tabs>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Right Column - Booking Card */}
+                    <div className="lg:col-span-1">
+                        <div className="sticky top-24">
+                            <Card className="border-0 shadow-lg overflow-hidden">
+                                <div className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] p-6 text-white">
+                                    <div className="text-3xl font-bold mb-1">₹{chardhamPkg.amount?.toLocaleString('en-IN')}</div>
+                                    <div className="flex items-baseline">
+                                        <span className="text-xl line-through text-white/80">₹{Math.round((chardhamPkg.amount || 0) * 1.3).toLocaleString('en-IN')}</span>
+                                        <span className="ml-2 bg-red-500 text-white text-sm px-2 py-1 rounded">Save 30%</span>
                                     </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                )}
-
-                {/* Inclusions Section */}
-                <div ref={inclusionsRef} className="scroll-mt-16">
-                    <div className="bg-white rounded-lg shadow-sm p-6">
-                        <h2 className="text-2xl font-bold mb-6 text-primary border-b pb-4">Package Inclusions</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {package_.inclusions?.map((item, index) => (
-                                <div key={index} className="flex items-start gap-2 bg-gray-50 p-4 rounded-lg">
-                                    <span className="text-green-500 text-xl">✓</span>
-                                    <span className="text-gray-700">{item}</span>
+                                    <div className="text-sm mt-1">per person, based on sharing</div>
                                 </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
 
-                {/* Exclusions Section */}
-                <div ref={exclusionsRef} className="scroll-mt-16">
-                    <div className="bg-white rounded-lg shadow-sm p-6">
-                        <h2 className="text-2xl font-bold mb-6 text-primary border-b pb-4">Package Exclusions</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {package_.exclusions?.map((item, index) => (
-                                <div key={index} className="flex items-start gap-2 bg-gray-50 p-4 rounded-lg">
-                                    <span className="text-red-500 text-xl">✕</span>
-                                    <span className="text-gray-700">{item}</span>
+                                <div className="p-6 space-y-4">
+                                    <div className="flex justify-between border-b pb-3">
+                                        <div className="font-medium">Duration:</div>
+                                        <div>{chardhamPkg.nights} nights / {chardhamPkg.days} days</div>
+                                    </div>
+
+                                    <div className="flex justify-between border-b pb-3">
+                                        <div className="font-medium">Departure:</div>
+                                        <div>{chardhamPkg.flightFrom || 'Dehradun'}</div>
+                                    </div>
+
+                                    <div className="flex justify-between border-b pb-3">
+                                        <div className="font-medium">Season:</div>
+                                        <div>{chardhamPkg.dateStart} - {chardhamPkg.dateEnd}</div>
+                                    </div>
+
+                                    <div className="flex justify-between border-b pb-3 mb-4">
+                                        <div className="font-medium">Group:</div>
+                                        <div>{chardhamPkg.groupDetails?.pax || 'Group Tour'}</div>
+                                    </div>
+
+                                    <Button
+                                        className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition text-lg py-6"
+                                        onClick={() => setIsBookingModalOpen(true)}
+                                    >
+                                        Book Now
+                                    </Button>
+
+                                    <a
+                                        href="tel:+919919111911"
+                                        className="mt-4 bg-blue-50 hover:bg-blue-100 transition-colors p-4 rounded-md flex items-center cursor-pointer no-underline"
+                                    >
+                                        <Phone className="h-5 w-5 text-blue-600 mr-3 flex-shrink-0" />
+                                        <div>
+                                            <div className="font-medium text-blue-800">Need assistance with booking?</div>
+                                            <div className="flex items-center text-blue-600">
+                                                <span className="font-semibold">+91 9919 111 911</span>
+                                                <span className="ml-2 text-xs bg-blue-600 text-white px-2 py-0.5 rounded-full">Tap to call</span>
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
+                            </Card>
 
-                {/* Other Info Section */}
-                <div ref={otherRef} className="scroll-mt-16">
-                    <div className="bg-white rounded-lg shadow-sm p-6">
-                        <h2 className="text-2xl font-bold mb-6 text-[#017ae3] border-b pb-4">Other Important Information</h2>
-                        
-                        {/* Terms and Conditions */}
-                        <div className="space-y-4">
-                            <div className="bg-gray-50 p-4 rounded-lg">
-                                <h3 className="font-semibold text-lg mb-3">Terms & Conditions</h3>
-                                <ul className="list-disc list-inside space-y-2 text-gray-600">
-                                    <li>Booking amount is non-refundable</li>
-                                    <li>All prices are subject to change without prior notice</li>
-                                    <li>Government issued ID proof is mandatory for all passengers</li>
-                                    <li>Package rates are subject to change during peak season</li>
-                                    <li>Weather conditions may affect the tour schedule</li>
-                                </ul>
-                            </div>
-
-                            {/* Cancellation Policy */}
-                            <div className="bg-gray-50 p-4 rounded-lg">
-                                <h3 className="font-semibold text-lg mb-3">Cancellation Policy</h3>
-                                <ul className="list-disc list-inside space-y-2 text-gray-600">
-                                    <li>30 days or more before departure: 25% of total cost</li>
-                                    <li>15-29 days before departure: 50% of total cost</li>
-                                    <li>7-14 days before departure: 75% of total cost</li>
-                                    <li>Less than 7 days before departure: 100% of total cost</li>
-                                </ul>
-                            </div>
-
-                            {/* Important Notes */}
-                            <div className="bg-gray-50 p-4 rounded-lg">
-                                <h3 className="font-semibold text-lg mb-3">Important Notes</h3>
-                                <ul className="list-disc list-inside space-y-2 text-gray-600">
-                                    <li>Carry warm clothes as temperatures can drop significantly</li>
-                                    <li>Medical certificate is mandatory for all pilgrims</li>
-                                    <li>Children below 5 years and adults above 70 years need special permission</li>
-                                    <li>Tour schedule may change due to weather conditions or local factors</li>
-                                </ul>
-                            </div>
+                            {/* Important Info Widget */}
+                            <Card className="border-0 shadow-lg mt-6 overflow-hidden">
+                                <div className="p-4 border-b">
+                                    <h3 className="font-bold text-lg">Important Information</h3>
+                                </div>
+                                <div className="p-6 space-y-4">
+                                    <div className="flex items-start">
+                                        <div className="text-orange-500 mr-3 mt-1">⚠️</div>
+                                        <div>
+                                            <div className="font-medium">Baggage Limit</div>
+                                            <div className="text-sm text-gray-600">5kg per person maximum</div>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-start">
+                                        <div className="text-blue-500 mr-3 mt-1">🚁</div>
+                                        <div>
+                                            <div className="font-medium">Weather Dependent</div>
+                                            <div className="text-sm text-gray-600">Subject to weather conditions</div>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-start">
+                                        <div className="text-green-500 mr-3 mt-1">✅</div>
+                                        <div>
+                                            <div className="font-medium">VIP Access</div>
+                                            <div className="text-sm text-gray-600">Priority darshan included</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Card>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/* Other Packages Section */}
-            <div className="mt-12">
-                <ChardhamYatra />
-                <FixedDepartures />
-                <Destinations />        
-                <Trending />
-                {/* <BannerCarousel />   */}
-                {/* <Indonesia /> */}
-                <Domestic />
-                <ExoticDestinations />
-                <Europe />
-                <HappyCustomers />   
-                <Gallery />
-                {/* <WallOfLove /> */}
-                <Sponsors /> 
-                <ReviewsGlimpse />
+            {/* Mobile Booking Bar */}
+            <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t p-4 flex items-center justify-between z-[9999]">
+                <div>
+                    <div className="text-sm">Per Person</div>
+                    <div className="font-bold text-xl">₹{chardhamPkg?.amount?.toLocaleString('en-IN')}</div>
+                </div>
+                <Button
+                    className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition"
+                    onClick={() => setIsBookingModalOpen(true)}
+                >
+                    Book Now
+                </Button>
             </div>
-
-            {/* Floating CTA Button */}
-            <AnimatePresence>
-                {showFloatingCTA && package_.amount && (
-                    <motion.div 
-                        className="fixed bottom-28 right-4 md:bottom-24 md:right-6 z-30"
-                        initial={{ opacity: 0, scale: 0.5, y: 50 }}
-                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                        exit={{ opacity: 0, scale: 0.5, y: 50 }}
-                        transition={{ duration: 0.3 }}
-                    >
-                        <Button
-                            onClick={() => setIsBookingModalOpen(true)}
-                            className="group flex items-center gap-2 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white px-4 md:px-6 py-3 md:py-4 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105"
-                        >
-                            <span className="text-sm md:text-base font-semibold">Book Now</span>
-                            <motion.span
-                                animate={{ x: [0, 5, 0] }}
-                                transition={{ 
-                                    duration: 1.5,
-                                    repeat: Infinity,
-                                    ease: "easeInOut"
-                                }}
-                            >
-                                →
-                            </motion.span>
-                            <div className="absolute -top-10 right-0 bg-white text-gray-800 px-3 py-1 rounded-lg shadow-md text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                ₹{formatIndianPrice(package_.amount)}/-
-                            </div>
-                        </Button>
-                    </motion.div>
-                )}
-            </AnimatePresence>
 
             {/* Booking Modal */}
             <BookingFormModal
                 isOpen={isBookingModalOpen}
                 onClose={() => setIsBookingModalOpen(false)}
-                destinationName={package_.name}
-                price={package_.amount}
-                dates={`${package_.dateStart} - ${package_.dateEnd}`}
+                destinationName={chardhamPkg?.name}
+                price={chardhamPkg?.amount}
+                dates={`${chardhamPkg?.dateStart} - ${chardhamPkg?.dateEnd}`}
             />
 
-            {/* Scrollbar Style */}
+            {/* Gallery Modal */}
+            {isGalleryModalOpen && (
+                <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4">
+                    <div className="relative w-full max-w-[90vh] mx-auto">
+                        <button
+                            onClick={() => setIsGalleryModalOpen(false)}
+                            className="absolute top-4 right-4 z-10 text-white/80 hover:text-white bg-black/30 hover:bg-black/50 p-2 rounded-full transition-all"
+                            aria-label="Close gallery"
+                        >
+                            <X className="h-6 w-6" />
+                        </button>
+
+                        <div className="relative aspect-square w-full">
+                            <Image
+                                src={getAllImages()[currentGalleryIndex]}
+                                alt={`Gallery image ${currentGalleryIndex + 1}`}
+                                fill
+                                className="object-contain"
+                                priority
+                                sizes="(max-width: 768px) 100vw, 80vw"
+                            />
+                        </div>
+
+                        <div className="absolute inset-y-0 left-0 flex items-center">
+                            <button
+                                onClick={previousImage}
+                                className="bg-black/30 hover:bg-black/50 p-2 rounded-full ml-2 md:ml-4 text-white transition-all"
+                                aria-label="Previous image"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div className="absolute inset-y-0 right-0 flex items-center">
+                            <button
+                                onClick={nextImage}
+                                className="bg-black/30 hover:bg-black/50 p-2 rounded-full mr-2 md:mr-4 text-white transition-all"
+                                aria-label="Next image"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div className="absolute bottom-4 left-0 right-0 text-center text-white text-sm md:text-base">
+                            {currentGalleryIndex + 1} / {getAllImages().length}
+                        </div>
+                    </div>
+                </div>
+            )}
+
             <style jsx global>{`
-                .scrollbar-hide::-webkit-scrollbar {
-                    display: none;
+                /* Prevent horizontal scroll */
+                html, body {
+                    overflow-x: hidden;
+                    max-width: 100vw;
                 }
-                .scrollbar-hide {
-                    -ms-overflow-style: none;
-                    scrollbar-width: none;
+                
+                /* Container constraints */
+                * {
+                    box-sizing: border-box;
+                }
+                
+                .no-scrollbar {
+                    -ms-overflow-style: none;  /* IE and Edge */
+                    scrollbar-width: none;  /* Firefox */
+                }
+                .no-scrollbar::-webkit-scrollbar {
+                    display: none;  /* Chrome, Safari, Opera */
+                }
+                
+                /* Mobile responsive containers */
+                @media (max-width: 768px) {
+                    .container, .max-w-7xl {
+                        max-width: 100vw;
+                        padding-left: 1rem;
+                        padding-right: 1rem;
+                    }
                 }
             `}</style>
         </div>

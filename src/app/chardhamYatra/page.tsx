@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { FaPlane, FaCalendarAlt, FaClock, FaWhatsapp, FaPhone, FaSuitcase, FaHeartbeat, FaMobile, FaInfoCircle } from 'react-icons/fa';
+import { FaPlane, FaCalendarAlt, FaWhatsapp, FaPhone, FaSuitcase, FaHeartbeat, FaMobile, FaInfoCircle } from 'react-icons/fa';
+import { MapPin, Star } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
 import { chardhamData, ChardhamPackage } from './data';
@@ -51,7 +52,7 @@ const FloatingCTA = () => {
             before:animate-shine before:rounded-full overflow-hidden w-[90%] sm:w-auto max-w-[320px] sm:max-w-none">
             <div className="flex items-center justify-between sm:gap-4 relative">
                 <span className="text-xs sm:text-sm text-gray-600 whitespace-nowrap">Book Now Starting from</span>
-                <Link 
+                <Link
                     href="/chardhamYatra/ekdham-same-day-tour"
                     className="text-blue-600 font-semibold whitespace-nowrap group flex items-center gap-1 text-sm sm:text-base"
                 >
@@ -110,50 +111,89 @@ const TypewriterText = () => {
     );
 };
 
-export default function ChardhamYatra() {
-    const [currentPage, setCurrentPage] = useState(0);
-    const [isMobile, setIsMobile] = useState(false);
+export default function ChardhamYatraPackages() {
+    const [currentPageWithFlight, setCurrentPageWithFlight] = useState(0);
+    const [currentPageNoFlight, setCurrentPageNoFlight] = useState(0);
+    const [isMuted, setIsMuted] = useState(true);
     const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
-    const packages = Object.values(chardhamData);
-    
-    // Calculate items per page based on screen size
-    const itemsPerPage = {
-        mobile: 1,
-        desktop: 3
+
+    const packagesWithFlight = Object.values(chardhamData);
+    const packagesPerPage = 3;
+
+    const totalPagesWithFlight = Math.ceil(packagesWithFlight.length / packagesPerPage);
+
+    const handlePrevPageWithFlight = () => {
+        setCurrentPageWithFlight(prev => (prev - 1 + totalPagesWithFlight) % totalPagesWithFlight);
     };
 
-    const totalPages = Math.ceil(packages.length / itemsPerPage.desktop);
-    const mobileTotalPages = Math.ceil(packages.length / itemsPerPage.mobile);
-
-    // Add useEffect to handle window resize
-    React.useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < 768);
-        };
-        
-        // Set initial value
-        handleResize();
-        
-        // Add event listener
-        window.addEventListener('resize', handleResize);
-        
-        // Cleanup
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
-    const handleNext = () => {
-        setCurrentPage((prev) => (prev + 1) % totalPages);
+    const handleNextPageWithFlight = () => {
+        setCurrentPageWithFlight(prev => (prev + 1) % totalPagesWithFlight);
     };
 
-    const handlePrev = () => {
-        setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
+    const toggleMute = () => {
+        setIsMuted(!isMuted);
     };
 
-    // Get current items
-    const getVisibleItems = (isMobile: boolean) => {
-        const perPage = isMobile ? itemsPerPage.mobile : itemsPerPage.desktop;
-        const start = currentPage * perPage;
-        return packages.slice(start, start + perPage);
+    const getVisiblePackagesWithFlight = () => {
+        const start = currentPageWithFlight * packagesPerPage;
+        return packagesWithFlight.slice(start, start + packagesPerPage);
+    };
+
+    const PackageCard = ({
+        package: pkg,
+        withFlight = true
+    }: {
+        package: ChardhamPackage;
+        withFlight?: boolean;
+    }) => {
+        return (
+            <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                <div className="relative h-64 overflow-hidden">
+                    <Image
+                        src={pkg.images?.[0] || '/default-image.jpg'}
+                        alt={pkg.name}
+                        fill
+                        className="object-cover transition-transform duration-700 hover:scale-110"
+                    />
+                    <div className="absolute top-4 left-4">
+                        <div className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            {pkg.days}D/{pkg.nights}N
+                        </div>
+                    </div>
+                    <div className="absolute top-4 right-4">
+                        {pkg.amount && (
+                            <div className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                                <span className="text-green-600 font-bold text-sm">₹{pkg.amount.toLocaleString('en-IN')}</span>
+                            </div>
+                        )}
+                    </div>
+                </div>
+
+                <div className="p-6">
+                    <h3 className="text-xl font-bold mb-2 line-clamp-2">{pkg.name}</h3>
+                    <p className="text-gray-600 text-sm mb-4 line-clamp-3">{pkg.description}</p>
+
+                    <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center text-sm text-gray-500">
+                            <MapPin className="h-4 w-4 mr-1" />
+                            <span>{pkg.flightFrom || 'Uttarakhand'}</span>
+                        </div>
+                        <div className="flex items-center">
+                            {[...Array(5)].map((_, i) => (
+                                <Star key={i} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
+                            ))}
+                            <span className="ml-1 text-sm text-gray-500">4.8</span>
+                        </div>
+                    </div>
+
+                    <Link href={`/chardhamYatra/${pkg.id}`}>
+                        <Button className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition-all duration-300 transform hover:scale-105">
+                            View Details
+                        </Button>
+                    </Link>
+                </div>
+            </div>
+        );
     };
 
     // Add countdown timer state
@@ -169,7 +209,7 @@ export default function ChardhamYatra() {
         // Get stored end time or set new one
         const storedEndTime = localStorage.getItem('earlyBirdEndTime');
         const endTime = storedEndTime ? parseInt(storedEndTime) : Date.now() + (15 * 24 * 60 * 60 * 1000);
-        
+
         if (!storedEndTime) {
             localStorage.setItem('earlyBirdEndTime', endTime.toString());
         }
@@ -215,11 +255,11 @@ export default function ChardhamYatra() {
             {/* Hero Section with Video Background */}
             <section className="relative h-[60vh] md:h-screen">
                 <div className="absolute inset-0 h-[60vh] md:h-screen">
-                    <video 
-                        autoPlay 
-                        loop 
-                        muted 
-                        playsInline 
+                    <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
                         preload="auto"
                         className="absolute top-0 left-0 w-full h-full object-cover"
                         poster="/Assets/HeroSectionImages/chardham-poster.jpg"
@@ -241,7 +281,7 @@ export default function ChardhamYatra() {
                         <span>Experience the divine journey to</span>
                         <TypewriterText />
                     </div>
-                    <Button 
+                    <Button
                         onClick={() => setIsBookingModalOpen(true)}
                         className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-4 sm:px-8 py-3 sm:py-6 text-sm sm:text-lg rounded-lg mt-4 sm:mt-10"
                     >
@@ -256,8 +296,8 @@ export default function ChardhamYatra() {
                             {/* Add gradient overlays */}
                             {/* <div className="absolute left-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-r from-black/80 to-transparent"></div> */}
                             {/* <div className="absolute right-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-l from-black/80 to-transparent"></div> */}
-                            
-                            <div 
+
+                            <div
                                 className="flex gap-4"
                                 style={{
                                     animation: 'slideRightToLeft 30s linear infinite',
@@ -266,7 +306,7 @@ export default function ChardhamYatra() {
                             >
                                 {/* First set of images */}
                                 {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((index) => (
-                                    <div 
+                                    <div
                                         key={`first-${index}`}
                                         className="relative w-32 h-20 flex-shrink-0 rounded-lg overflow-hidden transform hover:scale-110 transition-all duration-500 hover:shadow-[0_0_15px_rgba(255,255,255,0.5)]"
                                     >
@@ -280,7 +320,7 @@ export default function ChardhamYatra() {
                                 ))}
                                 {/* Duplicate set for seamless loop */}
                                 {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((index) => (
-                                    <div 
+                                    <div
                                         key={`second-${index}`}
                                         className="relative w-32 h-20 flex-shrink-0 rounded-lg overflow-hidden transform hover:scale-110 transition-all duration-500 hover:shadow-[0_0_15px_rgba(255,255,255,0.5)]"
                                     >
@@ -349,7 +389,7 @@ export default function ChardhamYatra() {
                                     20% OFF
                                 </span>
                             </h2>
-                            
+
                         </div>
 
                         {/* Right side CTA */}
@@ -376,7 +416,7 @@ export default function ChardhamYatra() {
                                         </div>
                                     </div>
                                 </div>
-                                <Button 
+                                <Button
                                     onClick={() => setIsBookingModalOpen(true)}
                                     className="w-full bg-white hover:bg-gray-100 text-blue-600 font-semibold px-3 md:px-8 py-2 md:py-4 text-xs md:text-lg rounded-xl 
                                         transform transition-all duration-300 hover:scale-105 hover:shadow-xl
@@ -398,7 +438,7 @@ export default function ChardhamYatra() {
                 <div className="container mx-auto px-4">
                     <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
                         {['Packages', 'Gallery', 'FAQs', 'Reviews', 'Contact'].map((item) => (
-                            <a 
+                            <a
                                 key={item}
                                 href={`#${item.toLowerCase()}`}
                                 className="whitespace-nowrap px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
@@ -415,31 +455,31 @@ export default function ChardhamYatra() {
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl font-bold text-center mb-8">
                         <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
-                        Glimpses of Chardham
+                            Glimpses of Chardham
                         </span>
                     </h2>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         {/* First 8 images */}
                         {[...Array(8)].map((_, i) => (
-                            <div 
-                                key={i} 
+                            <div
+                                key={i}
                                 className="relative cursor-pointer group"
                                 onClick={() => setSelectedImage(i)}
                             >
                                 <div className="relative h-48 rounded-lg overflow-hidden">
-                                <Image
-                                    src={`/UGCImages/chardham/Chardham/${i + 1}.webp`}
-                                    alt={`Chardham Gallery ${i + 1}`}
-                                    fill
+                                    <Image
+                                        src={`/UGCImages/chardham/Chardham/${i + 1}.webp`}
+                                        alt={`Chardham Gallery ${i + 1}`}
+                                        fill
                                         className="object-cover transition-transform duration-300 group-hover:scale-110"
-                                />
+                                    />
                                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
                                 </div>
                             </div>
                         ))}
 
                         {/* "+14 More Photos" Card */}
-                        <div 
+                        <div
                             className="relative cursor-pointer group col-span-2 md:col-span-4"
                             onClick={() => setSelectedImage(8)}
                         >
@@ -456,8 +496,8 @@ export default function ChardhamYatra() {
                                         <span className="inline-block px-4 py-2 bg-white/20 rounded-full text-white text-sm">
                                             Click to view all
                                         </span>
-                    </div>
-                </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -465,13 +505,13 @@ export default function ChardhamYatra() {
 
                 {/* Lightbox */}
                 {selectedImage !== null && (
-                    <div 
+                    <div
                         className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center"
                         onClick={() => setSelectedImage(null)}
                     >
                         <div className="relative w-full max-w-4xl mx-4" onClick={e => e.stopPropagation()}>
                             {/* Close button */}
-                            <button 
+                            <button
                                 onClick={() => setSelectedImage(null)}
                                 className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
                             >
@@ -481,7 +521,7 @@ export default function ChardhamYatra() {
                             {/* Main image */}
                             <div className="relative h-[70vh]">
                                 <Image
-                                    src={selectedImage < 8 
+                                    src={selectedImage < 8
                                         ? `/UGCImages/chardham/Chardham/${selectedImage + 1}.webp`
                                         : `/UGCImages/chardham/dodham/${selectedImage - 7}.webp`
                                     }
@@ -493,7 +533,7 @@ export default function ChardhamYatra() {
 
                             {/* Navigation buttons */}
                             <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between">
-                                <button 
+                                <button
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         setSelectedImage(prev => prev === 0 ? 21 : prev! - 1);
@@ -502,7 +542,7 @@ export default function ChardhamYatra() {
                                 >
                                     <IoIosArrowBack size={24} />
                                 </button>
-                                <button 
+                                <button
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         setSelectedImage(prev => prev === 21 ? 0 : prev! + 1);
@@ -523,222 +563,59 @@ export default function ChardhamYatra() {
             </section>
 
             {/* Packages Section */}
-            <section id="packages" className="py-16">
-                <div className="container mx-auto px-4">
-                    <h1 className="text-3xl font-bold mb-6 text-center">
-                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
-                            Chardham Yatra
-                            <p className="text-sm text-gray-500 mt-1 underline">Fixed Departures</p>
-                        </span>
-                    </h1>
-                    
-                    {/* Chardham Cards with Navigation */}
-                    <div className="relative">
-                        {/* Navigation Buttons */}
-                        <button 
-                            onClick={handlePrev}
-                            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white/80 p-2 rounded-full shadow-lg hover:bg-white transition-all"
-                            aria-label="Previous"
-                        >
-                            <IoIosArrowBack size={24} />
-                        </button>
-                        
-                        <button 
-                            onClick={handleNext}
-                            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white/80 p-2 rounded-full shadow-lg hover:bg-white transition-all"
-                            aria-label="Next"
-                        >
-                            <IoIosArrowForward size={24} />
-                        </button>
+            <section className="py-20 bg-gray-50">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
+                                Chardham Yatra Packages
+                            </span>
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                            Discover our carefully curated Chardham Yatra packages offering spiritual journeys with modern comfort and convenience.
+                        </p>
+                    </div>
 
-                        {/* Desktop View */}
-                        <div className="hidden md:block">
-                            <div className="flex justify-center gap-6">
-                                {getVisibleItems(false).map((package_: ChardhamPackage) => (
-                                    <div 
-                                        key={package_.id}
-                                        className="relative group h-[450px] w-[300px] md:w-[350px] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
-                                    >
-                                        {/* Background Image */}
-                                        <Image 
-                                            src={package_.images?.[0] || '/default-destination-image.jpg'} 
-                                            alt={package_.name}
-                                            fill
-                                            className="object-cover group-hover:scale-105 transition-transform duration-500"
-                                            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
-                                        />
-                                        
-                                        {/* Gradient Overlay */}
-                                        <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/50 to-black" />
-
-                                        {/* Price Tag */}
-                                        {package_.amount && (
-                                            <div className="absolute top-3 left-0 z-10">
-                                                <div className="bg-yellow-400 px-4 py-1.5 rounded-full shadow-lg">
-                                                    <span className="line-through text-sm mr-2">
-                                                        ₹{package_.amount * 1.2 >= 1000 ? (package_.amount * 1.2).toLocaleString('en-IN') : package_.amount * 1.2}/-
-                                                    </span>
-                                                    <span className="font-bold">
-                                                        ₹{package_.amount >= 1000 ? package_.amount.toLocaleString('en-IN') : package_.amount}/-
-                                                    </span>
-                                                    <span className="text-sm ml-1">onwards</span>
-                                                </div>
-                                            </div>
-                                        )}
-
-                                        {/* Content */}
-                                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                            {/* Title */}
-                                            <h2 className="text-2xl font-bold mb-2">
-                                                {package_.name}
-                                            </h2>
-
-                                            {/* Details Grid */}
-                                            <div className="grid grid-cols-2 gap-y-2 text-sm mb-4">
-                                                <div className="flex items-center gap-2">
-                                                    <FaClock className="text-yellow-400" />
-                                                    <span>{package_.days}D/{package_.nights}N</span>
-                                                </div>
-                                                {package_.flightFrom && (
-                                                    <div className="flex items-center gap-2">
-                                                        <FaPlane className="text-yellow-400" />
-                                                        <span>{package_.flightFrom}</span>
-                                                    </div>
-                                                )}
-                                                <div className="flex items-center gap-2">
-                                                    <FaCalendarAlt className="text-yellow-400" />
-                                                    <span>{package_.dateStart}</span>
-                                                </div>
-                                            </div>
-
-                                            {/* View Details Button */}
-                                            <Link href={`/chardhamYatra/${package_.id}`}>
-                                                <Button
-                                                    className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all duration-500"
-                                                >
-                                                    View Details
-                                                </Button>
-                                            </Link>
-                                        </div>
-                                    </div>
-                                ))}
+                    {/* Packages with Flight */}
+                    <div className="mb-16">
+                        <div className="flex items-center justify-between mb-8">
+                            <h3 className="text-2xl font-bold text-gray-900">Featured Packages</h3>
+                            <div className="flex space-x-2">
+                                <button
+                                    onClick={handlePrevPageWithFlight}
+                                    className="p-2 rounded-full bg-white shadow-md hover:shadow-lg transition-shadow"
+                                    disabled={currentPageWithFlight === 0}
+                                >
+                                    <IoIosArrowBack className="w-5 h-5 text-gray-600" />
+                                </button>
+                                <button
+                                    onClick={handleNextPageWithFlight}
+                                    className="p-2 rounded-full bg-white shadow-md hover:shadow-lg transition-shadow"
+                                    disabled={currentPageWithFlight === totalPagesWithFlight - 1}
+                                >
+                                    <IoIosArrowForward className="w-5 h-5 text-gray-600" />
+                                </button>
                             </div>
                         </div>
 
-                        {/* Mobile View */}
-                        <div className="md:hidden">
-                            <div className="overflow-x-auto -mx-4 px-4">
-                                <div className="flex gap-6 min-w-min">
-                                    {packages.map((package_: ChardhamPackage) => (
-                                        <div 
-                                            key={package_.id}
-                                            className="relative group h-[450px] w-[300px] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0"
-                                        >
-                                            {/* Background Image */}
-                                            <Image 
-                                                src={package_.images?.[0] || '/default-destination-image.jpg'} 
-                                                alt={package_.name}
-                                                fill
-                                                className="object-cover group-hover:scale-105 transition-transform duration-500"
-                                                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
-                                            />
-                                            
-                                            {/* Gradient Overlay */}
-                                            <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/50 to-black" />
-
-                                            {/* Price Tag */}
-                                            {package_.amount && (
-                                                <div className="absolute top-3 left-0 z-10">
-                                                    <div className="bg-yellow-400 px-4 py-1.5 rounded-full shadow-lg">
-                                                        <span className="line-through text-sm mr-2">
-                                                            ₹{package_.amount * 1.2 >= 1000 ? (package_.amount * 1.2).toLocaleString('en-IN') : package_.amount * 1.2}/-
-                                                        </span>
-                                                        <span className="font-bold">
-                                                            ₹{package_.amount >= 1000 ? package_.amount.toLocaleString('en-IN') : package_.amount}/-
-                                                        </span>
-                                                        <span className="text-sm ml-1">onwards</span>
-                                                    </div>
-                                                </div>
-                                            )}
-
-                                            {/* Content */}
-                                            <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                                {/* Title */}
-                                                <h2 className="text-2xl font-bold mb-2">
-                                                    {package_.name}
-                                                </h2>
-
-                                                {/* Details Grid */}
-                                                <div className="grid grid-cols-2 gap-y-2 text-sm mb-4">
-                                                    <div className="flex items-center gap-2">
-                                                        <FaClock className="text-yellow-400" />
-                                                        <span>{package_.days}D/{package_.nights}N</span>
-                                                    </div>
-                                                    {package_.flightFrom && (
-                                                        <div className="flex items-center gap-2">
-                                                            <FaPlane className="text-yellow-400" />
-                                                            <span>{package_.flightFrom}</span>
-                                                        </div>
-                                                    )}
-                                                    <div className="flex items-center gap-2">
-                                                        <FaCalendarAlt className="text-yellow-400" />
-                                                        <span>{package_.dateStart}</span>
-                                                    </div>
-                                                </div>
-
-                                                {/* View Details Button */}
-                                                <Link href={`/chardhamYatra/${package_.id}`}>
-                                                    <Button
-                                                        className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all duration-500"
-                                                    >
-                                                        View Details
-                                                    </Button>
-                                                </Link>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {getVisiblePackagesWithFlight().map((pkg) => (
+                                <PackageCard key={pkg.id} package={pkg} withFlight={true} />
+                            ))}
                         </div>
 
-                        {/* Pagination Controls */}
-                        <div className="mt-6">
-                            {/* Desktop pagination dots */}
-                            <div className="hidden md:flex justify-center gap-2">
-                                {[...Array(isMobile ? mobileTotalPages : totalPages)].map((_, index) => (
-                                    <button
-                                        key={index}
-                                        className={`h-2 rounded-full transition-all ${
-                                            currentPage === index ? 'w-6 bg-blue-500' : 'w-2 bg-gray-300'
+                        {/* Pagination Dots */}
+                        <div className="flex justify-center mt-8 space-x-2">
+                            {Array.from({ length: totalPagesWithFlight }, (_, i) => (
+                                <button
+                                    key={i}
+                                    onClick={() => setCurrentPageWithFlight(i)}
+                                    className={`w-3 h-3 rounded-full transition-all ${i === currentPageWithFlight
+                                        ? 'bg-[#017ae3] w-8'
+                                        : 'bg-gray-300 hover:bg-gray-400'
                                         }`}
-                                        onClick={() => setCurrentPage(index)}
-                                        aria-label={`Go to page ${index + 1}`}
-                                    />
-                                ))}
-                            </div>
-
-                            {/* Mobile pagination controls */}
-                            <div className="md:hidden flex justify-center items-center gap-2">
-                                <Button 
-                                    onClick={handlePrev} 
-                                    disabled={currentPage === 0}
-                                    variant="outline"
-                                    className="rounded-full w-8 h-8 p-0"
-                                >
-                                    <IoIosArrowBack className="w-3 h-3" />
-                                </Button>
-                                <span className="text-sm text-gray-500">
-                                    {currentPage + 1} / {isMobile ? mobileTotalPages : totalPages}
-                                </span>
-                                <Button 
-                                    onClick={handleNext} 
-                                    disabled={currentPage === (isMobile ? mobileTotalPages - 1 : totalPages - 1)}
-                                    variant="outline"
-                                    className="rounded-full w-8 h-8 p-0"
-                                >
-                                    <IoIosArrowForward className="w-3 h-3" />
-                                </Button>
-                            </div>
+                                />
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -781,8 +658,8 @@ export default function ChardhamYatra() {
                                     answer: "While basic medical support is available, we recommend a health check-up before the yatra due to high altitudes: Kedarnath (3,583m), Badrinath (3,133m), Gangotri (3,100m), and Yamunotri (3,293m)."
                                 }
                             ].map((faq, index) => (
-                                <AccordionItem 
-                                    key={index} 
+                                <AccordionItem
+                                    key={index}
                                     value={`item-${index}`}
                                     className="bg-white rounded-lg border border-gray-200"
                                 >
@@ -897,7 +774,7 @@ export default function ChardhamYatra() {
                                                 {review.rating}
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-green-500">
-                                              <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
+                                                <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
                                             </svg>
                                         </div>
                                     </div>
@@ -939,7 +816,7 @@ export default function ChardhamYatra() {
                                 Our travel experts are available to assist you with your pilgrimage planning
                             </p>
                         </div>
-                        
+
                         {/* Contact Options */}
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {[
@@ -965,7 +842,7 @@ export default function ChardhamYatra() {
                                     delay: "delay-[600ms]"
                                 }
                             ].map((item, index) => (
-                                <div 
+                                <div
                                     key={index}
                                     className={`bg-white p-6 rounded-lg shadow-sm border border-gray-100 
                                         hover:shadow-md transition-all duration-300 transform hover:-translate-y-1
@@ -973,12 +850,12 @@ export default function ChardhamYatra() {
                                 >
                                     <div className="flex flex-col items-center text-center">
                                         <div className="mb-4 text-gray-600 transform transition-all duration-300 hover:scale-110">
-                                                {item.icon}
-                                            </div>
+                                            {item.icon}
+                                        </div>
                                         <h3 className="text-lg font-medium mb-4 text-gray-800">
                                             {item.title}
                                         </h3>
-                                        <Button 
+                                        <Button
                                             onClick={item.action}
                                             className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] 
                                                 text-white transition-all duration-500 transform hover:scale-[1.02] hover:shadow-lg"
@@ -990,7 +867,7 @@ export default function ChardhamYatra() {
                             ))}
                         </div>
 
-                       
+
                     </div>
                 </div>
             </section>
@@ -1003,7 +880,7 @@ export default function ChardhamYatra() {
                             Temple Prasad
                         </span>
                     </h2>
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {[
                             {
@@ -1047,8 +924,8 @@ export default function ChardhamYatra() {
                                 image: "/UGCImages/chardham/Chardham/4.webp"
                             }
                         ].map((item, index) => (
-                            <div 
-                                key={index} 
+                            <div
+                                key={index}
                                 className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
                             >
                                 <div className="relative h-48">
@@ -1124,8 +1001,8 @@ export default function ChardhamYatra() {
                                 image: "/UGCImages/chardham/dodham/4.webp"
                             }
                         ].map((region, index) => (
-                            <div 
-                                key={index} 
+                            <div
+                                key={index}
                                 className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
                             >
                                 <div className="flex flex-col md:flex-row">
@@ -1293,38 +1170,38 @@ export default function ChardhamYatra() {
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {[
-                            { 
+                            {
                                 title: "Chardham Complete Package",
                                 description: "5 Nights 6 Days covering all four dhams",
                                 price: "₹2,30,000",
                                 link: "/chardhamYatra/CHARDHAM-5n6d"
                             },
-                            { 
+                            {
                                 title: "Same Day Dodham Tour",
                                 description: "Visit Kedarnath & Badrinath in one day",
                                 price: "₹1,15,000",
                                 link: "/chardhamYatra/dodham-helicopter-tour-same-day"
                             },
-                            { 
+                            {
                                 title: "Dodham Ex-Sersi Tour",
                                 description: "Convenient tour starting from Sersi",
                                 price: "₹3,50,000",
                                 link: "/chardhamYatra/dodham-ex-sersi-helicopter-tour"
                             },
-                            { 
+                            {
                                 title: "4 Days Dodham Tour",
                                 description: "Comfortable 4-day pilgrimage experience",
                                 price: "₹1,35,000",
                                 link: "/chardhamYatra/dodham-4-days-helicopter-tour"
                             },
-                            { 
+                            {
                                 title: "Ekdham Same Day Tour",
                                 description: "Choose any one dham for a day visit",
                                 price: "₹1,15,000",
                                 link: "/chardhamYatra/ekdham-same-day-tour"
                             }
                         ].map((item, index) => (
-                            <Link 
+                            <Link
                                 key={index}
                                 href={item.link}
                                 className="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 group"
