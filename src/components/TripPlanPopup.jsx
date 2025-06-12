@@ -60,7 +60,7 @@ const TripPlanPopup = () => {
 
     // Initial delay of 5 seconds, then every 30 seconds
     const initialTimeout = setTimeout(checkAndShowPopup, 5000);
-    const interval = setInterval(checkAndShowPopup, 10000);
+    const interval = setInterval(checkAndShowPopup, 30000);
 
     return () => {
       clearTimeout(initialTimeout);

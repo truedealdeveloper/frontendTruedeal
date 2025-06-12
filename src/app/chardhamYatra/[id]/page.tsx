@@ -438,10 +438,10 @@ export default function ChardhamYatraPackagePage({ params }: PageProps) {
                                                                     onClick={() => toggleDayExpansion(day.day)}
                                                                 >
                                                                     {/* Add image section if available */}
-                                                                    {chardhamPkg?.images?.[i] && (
+                                                                    {day.image && (
                                                                         <div className="relative h-48 w-full">
                                                                             <Image
-                                                                                src={chardhamPkg.images[i]}
+                                                                                src={day.image}
                                                                                 alt={`Day ${day.day} - ${day.title}`}
                                                                                 fill
                                                                                 className="object-cover"
