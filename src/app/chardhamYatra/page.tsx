@@ -113,8 +113,6 @@ const TypewriterText = () => {
 
 export default function ChardhamYatraPackages() {
     const [currentPageWithFlight, setCurrentPageWithFlight] = useState(0);
-    const [currentPageNoFlight, setCurrentPageNoFlight] = useState(0);
-    const [isMuted, setIsMuted] = useState(true);
     const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
     const packagesWithFlight = Object.values(chardhamData);
@@ -130,21 +128,15 @@ export default function ChardhamYatraPackages() {
         setCurrentPageWithFlight(prev => (prev + 1) % totalPagesWithFlight);
     };
 
-    const toggleMute = () => {
-        setIsMuted(!isMuted);
-    };
-
     const getVisiblePackagesWithFlight = () => {
         const start = currentPageWithFlight * packagesPerPage;
         return packagesWithFlight.slice(start, start + packagesPerPage);
     };
 
     const PackageCard = ({
-        package: pkg,
-        withFlight = true
+        package: pkg
     }: {
         package: ChardhamPackage;
-        withFlight?: boolean;
     }) => {
         return (
             <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
@@ -600,7 +592,7 @@ export default function ChardhamYatraPackages() {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {getVisiblePackagesWithFlight().map((pkg) => (
-                                <PackageCard key={pkg.id} package={pkg} withFlight={true} />
+                                <PackageCard key={pkg.id} package={pkg} />
                             ))}
                         </div>
 
