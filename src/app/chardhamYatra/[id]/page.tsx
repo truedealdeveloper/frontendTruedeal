@@ -6,7 +6,6 @@ import { chardhamData } from '../data';
 import { notFound } from 'next/navigation';
 import {
     Calendar, Check, MapPin, Star, Users, X, Camera, Phone,
-    Hotel
 } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
