@@ -43,7 +43,7 @@ export default function NotFound() {
               <p className="text-sm text-gray-500 mb-3">Or search for something specific:</p>
               <div className="flex gap-2">
                 <div className="relative flex-1">
-                  <div 
+                  <div
                     onClick={() => setIsSearchModalOpen(true)}
                     className="relative cursor-pointer group"
                   >
@@ -101,9 +101,9 @@ export default function NotFound() {
         </div>
       </div>
 
-      <SearchModal 
-        isOpen={isSearchModalOpen} 
-        onClose={() => setIsSearchModalOpen(false)} 
+      <SearchModal
+        isOpen={isSearchModalOpen}
+        onClose={() => setIsSearchModalOpen(false)}
       />
     </div>
   )
@@ -111,133 +111,143 @@ export default function NotFound() {
 
 // Search Modal Component
 function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
-    const [searchTerm, setSearchTerm] = useState("")
-    const router = useRouter()
-    const inputRef = useRef<HTMLInputElement>(null)
+  const [searchTerm, setSearchTerm] = useState("")
+  const router = useRouter()
+  const inputRef = useRef<HTMLInputElement>(null)
 
-    const filteredDestinations = useMemo(
-        () => destinations.filter((dest) => 
-            dest.name.toLowerCase().includes(searchTerm.toLowerCase())
-        ),
-        [searchTerm]
-    )
+  const filteredDestinations = useMemo(
+    () => destinations.filter((dest) =>
+      dest.name.toLowerCase().includes(searchTerm.toLowerCase())
+    ),
+    [searchTerm]
+  )
 
-    const handleDestinationSelect = useCallback((destination: Destination) => {
-        onClose()
-        if (destination.name.toLowerCase() === "bali") {
-            router.push("/bali")
-        } else if (destination.name.toLowerCase() === "vietnam") {
-            router.push("/vietnam")
-        } else if (destination.name.toLowerCase() === "australia packages") {
-            router.push("/australiaPackages")
-        } else if (["indochina", "laos", "combodia"].includes(destination.name.toLowerCase())) {
-            router.push("/indochina")
-        } else if (destination.isTrending) {
-            router.push(`/trending/${destination.name.toLowerCase()}`)
-        } else if (destination.tag?.label === "FIXED DEPARTURE" && destination.fixedDepartureId) {
-            router.push(`/fixedDeparture/${destination.fixedDepartureId}`)
-        } else {
-            router.push(`/destinations/${destination.name.toLowerCase()}`)
-        }
-    }, [router, onClose])
+  const handleDestinationSelect = useCallback((destination: Destination) => {
+    onClose()
+    if (destination.name.toLowerCase() === "bali") {
+      router.push("/bali")
+    } else if (destination.name.toLowerCase() === "vietnam") {
+      router.push("/vietnam")
+    } else if (destination.name.toLowerCase() === "australia packages") {
+      router.push("/australiaPackages")
+    } else if (destination.name.toLowerCase() === "turkey") {
+      router.push("/turkey")
+    } else if (destination.name.toLowerCase() === "leh ladakh") {
+      router.push("/lehladakh")
+    } else if (destination.name.toLowerCase() === "singapore + malaysia + langkawi") {
+      router.push("/singapore")
+    } else if (["indochina", "laos", "combodia"].includes(destination.name.toLowerCase())) {
+      router.push("/indochina")
+    } else if (destination.name.toLowerCase() === "chardham") {
+      router.push("/chardhamYatra")
+    } else if (destination.name.toLowerCase() === "almaty") {
+      router.push("/almaty")
+    } else if (destination.isTrending) {
+      router.push(`/trending/${destination.name.toLowerCase()}`)
+    } else if (destination.tag?.label === "FIXED DEPARTURE" && destination.fixedDepartureId) {
+      router.push(`/fixedDeparture/${destination.fixedDepartureId}`)
+    } else {
+      router.push(`/destinations/${destination.name.toLowerCase()}`)
+    }
+  }, [router, onClose])
 
-    const highlightMatch = useCallback((text: string, highlight: string) => {
-        if (!highlight) return text
-        const parts = text.split(new RegExp(`(${highlight})`, "gi"))
-        return (
-            <span>
-                {parts.map((part, index) =>
-                    part.toLowerCase() === highlight.toLowerCase() ? (
-                        <span key={index} className="bg-yellow-200 text-gray-800">
-                            {part}
-                        </span>
-                    ) : (
-                        part
-                    ),
-                )}
-            </span>
-        )
-    }, [])
-
-    useEffect(() => {
-        if (isOpen && inputRef.current) {
-            const timer = setTimeout(() => {
-                inputRef.current?.focus()
-            }, 100)
-            return () => clearTimeout(timer)
-        }
-    }, [isOpen])
-
-    if (!isOpen) return null
-
+  const highlightMatch = useCallback((text: string, highlight: string) => {
+    if (!highlight) return text
+    const parts = text.split(new RegExp(`(${highlight})`, "gi"))
     return (
-        <Dialog open={isOpen} onOpenChange={onClose}>
-            <DialogContent className="sm:max-w-[90vw] md:max-w-[70vw] lg:max-w-[50vw] xl:max-w-[40vw] bg-white border-gray-800 w-[90vw] h-[80vh] max-h-[600px] overflow-y-auto overflow-x-hidden flex flex-col">
-                <DialogTitle className="sr-only">Search Destinations</DialogTitle>
-                <div className="w-full flex flex-col h-full">
-                    <div className="p-4 border-b flex-shrink-0">
-                        <div className="relative">
-                            <Input
-                                ref={inputRef}
-                                type="text"
-                                placeholder="Search countries, cities..."
-                                value={searchTerm}
-                                onChange={(e) => setSearchTerm(e.target.value)}
-                                className="w-full bg-gradient-to-r from-[#e7e9ec] to-[#00f6ff] text-black border-0 rounded-full h-12 px-6 pr-12 shadow-lg focus:ring-0 focus:ring-offset-0 hover:opacity-90 transition-all duration-300 placeholder-gray-500"
-                                autoComplete="off"
-                                autoFocus
-                            />
-                            <Search className="absolute right-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-500 pointer-events-none" />
-                        </div>
-                    </div>
-
-                    <div className="flex-1 overflow-y-auto">
-                        {filteredDestinations.length > 0 ? (
-                            <div className="p-2 space-y-2">
-                                {filteredDestinations.map((dest, index) => (
-                                    <motion.button
-                                        key={dest.name}
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        transition={{ duration: 0.15, delay: index * 0.03 }}
-                                        onClick={() => handleDestinationSelect(dest)}
-                                        className="w-full flex items-center gap-3 px-4 py-3 text-left text-gray-700 rounded-xl transition-all hover:bg-gray-50"
-                                    >
-                                        <span className="flex-shrink-0">
-                                            {dest.isTrending ? (
-                                                <Globe className="h-5 w-5 text-blue-500" />
-                                            ) : (
-                                                <MapPin className="h-5 w-5 text-gray-400" />
-                                            )}
-                                        </span>
-                                        <span className="flex-grow font-medium">
-                                            {highlightMatch(dest.name, searchTerm)}
-                                        </span>
-                                        {dest.tag && (
-                                            <span className={`px-2 py-1 text-xs font-medium rounded-full
-                                                ${dest.tag.label === "Family"
-                                                    ? "bg-pink-100 text-pink-700"
-                                                    : dest.tag.label === "POPULAR"
-                                                        ? "bg-rose-100 text-rose-700"
-                                                        : dest.tag.label === "BUDGET"
-                                                            ? "bg-amber-100 text-amber-700"
-                                                            : `bg-${dest.tag.color}-100 text-${dest.tag.color}-700`
-                                                }`}
-                                            >
-                                                {dest.tag.label}
-                                            </span>
-                                        )}
-                                    </motion.button>
-                                ))}
-                            </div>
-                        ) : (
-                            <div className="p-8 text-center text-gray-500">
-                                No destinations found for &quot;{searchTerm}&quot;
-                            </div>
-                        )}
-                    </div>
-                </div>
-            </DialogContent>
-        </Dialog>
+      <span>
+        {parts.map((part, index) =>
+          part.toLowerCase() === highlight.toLowerCase() ? (
+            <span key={index} className="bg-yellow-200 text-gray-800">
+              {part}
+            </span>
+          ) : (
+            part
+          ),
+        )}
+      </span>
     )
+  }, [])
+
+  useEffect(() => {
+    if (isOpen && inputRef.current) {
+      const timer = setTimeout(() => {
+        inputRef.current?.focus()
+      }, 100)
+      return () => clearTimeout(timer)
+    }
+  }, [isOpen])
+
+  if (!isOpen) return null
+
+  return (
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      <DialogContent className="sm:max-w-[90vw] md:max-w-[70vw] lg:max-w-[50vw] xl:max-w-[40vw] bg-white border-gray-800 w-[90vw] h-[80vh] max-h-[600px] overflow-y-auto overflow-x-hidden flex flex-col">
+        <DialogTitle className="sr-only">Search Destinations</DialogTitle>
+        <div className="w-full flex flex-col h-full">
+          <div className="p-4 border-b flex-shrink-0">
+            <div className="relative">
+              <Input
+                ref={inputRef}
+                type="text"
+                placeholder="Search countries, cities..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full bg-gradient-to-r from-[#e7e9ec] to-[#00f6ff] text-black border-0 rounded-full h-12 px-6 pr-12 shadow-lg focus:ring-0 focus:ring-offset-0 hover:opacity-90 transition-all duration-300 placeholder-gray-500"
+                autoComplete="off"
+                autoFocus
+              />
+              <Search className="absolute right-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-500 pointer-events-none" />
+            </div>
+          </div>
+
+          <div className="flex-1 overflow-y-auto">
+            {filteredDestinations.length > 0 ? (
+              <div className="p-2 space-y-2">
+                {filteredDestinations.map((dest, index) => (
+                  <motion.button
+                    key={dest.name}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.15, delay: index * 0.03 }}
+                    onClick={() => handleDestinationSelect(dest)}
+                    className="w-full flex items-center gap-3 px-4 py-3 text-left text-gray-700 rounded-xl transition-all hover:bg-gray-50"
+                  >
+                    <span className="flex-shrink-0">
+                      {dest.isTrending ? (
+                        <Globe className="h-5 w-5 text-blue-500" />
+                      ) : (
+                        <MapPin className="h-5 w-5 text-gray-400" />
+                      )}
+                    </span>
+                    <span className="flex-grow font-medium">
+                      {highlightMatch(dest.name, searchTerm)}
+                    </span>
+                    {dest.tag && (
+                      <span className={`px-2 py-1 text-xs font-medium rounded-full
+                                                ${dest.tag.label === "Family"
+                          ? "bg-pink-100 text-pink-700"
+                          : dest.tag.label === "POPULAR"
+                            ? "bg-rose-100 text-rose-700"
+                            : dest.tag.label === "BUDGET"
+                              ? "bg-amber-100 text-amber-700"
+                              : `bg-${dest.tag.color}-100 text-${dest.tag.color}-700`
+                        }`}
+                      >
+                        {dest.tag.label}
+                      </span>
+                    )}
+                  </motion.button>
+                ))}
+              </div>
+            ) : (
+              <div className="p-8 text-center text-gray-500">
+                No destinations found for &quot;{searchTerm}&quot;
+              </div>
+            )}
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
+  )
 }

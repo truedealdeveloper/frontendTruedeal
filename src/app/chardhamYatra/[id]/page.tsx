@@ -5,7 +5,8 @@ import Image from 'next/image';
 import { chardhamData } from '../data';
 import { notFound } from 'next/navigation';
 import {
-    Calendar, Check, MapPin, Star, Users, X, Camera, Phone
+    Calendar, Check, MapPin, Star, Users, X, Camera, Phone,
+    Hotel
 } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -112,8 +113,15 @@ export default function ChardhamYatraPackagePage({ params }: PageProps) {
 
     // Generate hotel details if not available
     const hotelDetails = chardhamPkg.hotelDetails || [
-        { city: "Dehradun", hotel: "Premium Hotel Dehradun", roomType: "Deluxe Room" },
-        { city: "Temple Areas", hotel: "Guest Houses Near Temples", roomType: "Standard Room" }
+        { city: "Barkot (Naugaon)", hotel: `Hotel Mount Memory, Royal Hotel and Restaurant, Shivam Palace (Yamunotri Ji), Or Similar`, roomType: "Standard Budget Hotels" },
+        { city: "Uttarkashi", hotel: `Hotel K.P Residency, Oakland Camping, Hotel Divine Palace, Atulya, Or Similar`, roomType: "Standard to Deluxe" },
+        {
+            city: "Guptkashi", hotel: `Hotel Raj Palace, Hotel Shivaye, Hotel Panchwati, Or Similar`, roomType: "Standard"
+        },
+        { city: "Pandukeshwar / Badrinath", hotel: `Hotel Neelkanth, Charan Paduka, Or Similar`, roomType: "Standard Pilgrim Hotels" },
+        {
+            city: "Pipalkoti / Chamoli", hotel: `Heaven Hotel Comfort Inn, New Indarlok, Hotel Brahma Kamal, Hotel Uday Palace, Or Similar`, roomType: "Mid-Range Comfort"
+        },
     ];
 
     return (
@@ -236,12 +244,14 @@ export default function ChardhamYatraPackagePage({ params }: PageProps) {
                                         >
                                             Itinerary
                                         </TabsTrigger>
-                                        <TabsTrigger
-                                            value="accommodation"
-                                            className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white py-2 px-4 md:py-3 md:px-6 flex-shrink-0"
-                                        >
-                                            Accommodation
-                                        </TabsTrigger>
+                                        {chardhamPkg.id === "chardham-bhakti-yatra-package" && (
+                                            <TabsTrigger
+                                                value="accommodation"
+                                                className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white py-2 px-4 md:py-3 md:px-6 flex-shrink-0"
+                                            >
+                                                Accommodation
+                                            </TabsTrigger>
+                                        )}
                                     </TabsList>
 
                                     {/* Tab Content sections */}
@@ -486,64 +496,66 @@ export default function ChardhamYatraPackagePage({ params }: PageProps) {
                                         </div>
                                     </TabsContent>
 
-                                    <TabsContent value="accommodation" className="mt-0">
-                                        <div className="mb-10">
-                                            <h2 className="text-2xl font-bold mb-6">Your Accommodations</h2>
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                                {hotelDetails.map((hotel, index) => (
-                                                    <Card key={index} className="overflow-hidden border-0 shadow-md">
-                                                        <div className="p-4">
-                                                            <h3 className="font-bold text-lg">{hotel.hotel}</h3>
-                                                            <div className="flex items-center text-sm text-gray-500 mb-2">
-                                                                <MapPin className="h-3 w-3 mr-1" />
-                                                                <span>{hotel.city}</span>
-                                                            </div>
-                                                            <div className="flex items-center justify-between">
-                                                                <div className="flex">
-                                                                    {[...Array(4)].map((_, i) => (
-                                                                        <Star key={i} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
-                                                                    ))}
+                                    {chardhamPkg.id === "chardham-bhakti-yatra-package" && (
+                                        <TabsContent value="accommodation" className="mt-0">
+                                            <div className="mb-10">
+                                                <h2 className="text-2xl font-bold mb-6">Your Accommodations</h2>
+                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                                    {hotelDetails.map((hotel, index) => (
+                                                        <Card key={index} className="overflow-hidden border-0 shadow-md">
+                                                            <div className="p-4">
+                                                                <h3 className="font-bold text-lg">{hotel.hotel}</h3>
+                                                                <div className="flex items-center text-sm text-gray-500 mb-2">
+                                                                    <MapPin className="h-3 w-3 mr-1" />
+                                                                    <span>{hotel.city}</span>
                                                                 </div>
-                                                                <span className="text-sm font-medium">{hotel.roomType}</span>
+                                                                <div className="flex items-center justify-between">
+                                                                    <div className="flex">
+                                                                        {[...Array(4)].map((_, i) => (
+                                                                            <Star key={i} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
+                                                                        ))}
+                                                                    </div>
+                                                                    <span className="text-sm font-medium">{hotel.roomType}</span>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </Card>
-                                                ))}
+                                                        </Card>
+                                                    ))}
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        {/* FAQ Section in Accommodation Tab */}
-                                        <div className="mb-10">
-                                            <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
-                                            <Accordion type="single" collapsible className="w-full">
-                                                {[
-                                                    {
-                                                        question: "What is the helicopter weight limit?",
-                                                        answer: "Maximum 5 kg baggage per passenger is allowed. Excess baggage charges apply for overweight luggage."
-                                                    },
-                                                    {
-                                                        question: "Are VIP darshans guaranteed?",
-                                                        answer: "VIP darshans are arranged as per temple authorities and government guidelines. Priority access is provided wherever possible."
-                                                    },
-                                                    {
-                                                        question: "What happens in case of bad weather?",
-                                                        answer: "Helicopter operations are subject to weather conditions. In case of cancellation due to weather, alternative arrangements or rescheduling will be provided."
-                                                    },
-                                                    {
-                                                        question: "Is medical support available during the tour?",
-                                                        answer: "Basic medical support is available, but we recommend carrying personal medicines and having a medical check-up before the journey due to high altitudes."
-                                                    },
-                                                ].map((faq, index) => (
-                                                    <AccordionItem key={index} value={`faq-${index}`}>
-                                                        <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
-                                                        <AccordionContent>
-                                                            <p className="text-gray-600">{faq.answer}</p>
-                                                        </AccordionContent>
-                                                    </AccordionItem>
-                                                ))}
-                                            </Accordion>
-                                        </div>
-                                    </TabsContent>
+                                            {/* FAQ Section in Accommodation Tab */}
+                                            <div className="mb-10">
+                                                <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
+                                                <Accordion type="single" collapsible className="w-full">
+                                                    {[
+                                                        {
+                                                            question: "What is the helicopter weight limit?",
+                                                            answer: "Maximum 5 kg baggage per passenger is allowed. Excess baggage charges apply for overweight luggage."
+                                                        },
+                                                        {
+                                                            question: "Are VIP darshans guaranteed?",
+                                                            answer: "VIP darshans are arranged as per temple authorities and government guidelines. Priority access is provided wherever possible."
+                                                        },
+                                                        {
+                                                            question: "What happens in case of bad weather?",
+                                                            answer: "Helicopter operations are subject to weather conditions. In case of cancellation due to weather, alternative arrangements or rescheduling will be provided."
+                                                        },
+                                                        {
+                                                            question: "Is medical support available during the tour?",
+                                                            answer: "Basic medical support is available, but we recommend carrying personal medicines and having a medical check-up before the journey due to high altitudes."
+                                                        },
+                                                    ].map((faq, index) => (
+                                                        <AccordionItem key={index} value={`faq-${index}`}>
+                                                            <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
+                                                            <AccordionContent>
+                                                                <p className="text-gray-600">{faq.answer}</p>
+                                                            </AccordionContent>
+                                                        </AccordionItem>
+                                                    ))}
+                                                </Accordion>
+                                            </div>
+                                        </TabsContent>
+                                    )}
                                 </Tabs>
                             </div>
                         </div>

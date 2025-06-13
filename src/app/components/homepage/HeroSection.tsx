@@ -45,6 +45,8 @@ export default function HeroSection() {
                 router.push("/singapore")
             } else if (["indochina", "laos", "combodia"].includes(destination.name.toLowerCase())) {
                 router.push("/indochina")
+            } else if (destination.name.toLowerCase() === "chardham") {
+                router.push("/chardhamYatra")
             } else if (destination.isTrending) {
                 router.push(`/trending/${destination.name.toLowerCase()}`)
             } else if (destination.tag?.label === "FIXED DEPARTURE" && destination.fixedDepartureId) {
@@ -190,11 +192,11 @@ export default function HeroSection() {
             <div className="relative min-h-[65svh] md:min-h-[85vh] overflow-hidden">
                 {/* Background Video */}
                 <div className="absolute inset-0 h-[60svh] md:h-[85vh]">
-                    <video 
-                        autoPlay 
-                        loop 
-                        muted 
-                        playsInline 
+                    <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
                         preload="auto"
                         className="absolute top-0 left-0 w-full h-full object-cover object-center z-0"
                     >
@@ -242,13 +244,13 @@ export default function HeroSection() {
                             </Dialog>
                         </div>
                     </div>
-                    
+
                     {/* Stats Section - fixed at bottom */}
                     <div className="w-full mt-auto hidden md:block">
                         <div className="container mx-auto px-4">
                             <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-3xl mx-auto rounded-xl p-4">
                                 {/* MICE Services */}
-                                <button 
+                                <button
                                     onClick={() => router.push('/mice')}
                                     className="flex flex-col items-center text-white hover:bg-white/10 rounded-lg p-2 transition-all duration-300 hover:scale-105 cursor-pointer"
                                 >

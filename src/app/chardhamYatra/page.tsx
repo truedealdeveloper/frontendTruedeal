@@ -53,10 +53,10 @@ const FloatingCTA = () => {
             <div className="flex items-center justify-between sm:gap-4 relative">
                 <span className="text-xs sm:text-sm text-gray-600 whitespace-nowrap">Book Now Starting from</span>
                 <Link
-                    href="/chardhamYatra/ekdham-same-day-tour"
+                    href="/chardhamYatra/chardham-bhakti-yatra-package"
                     className="text-blue-600 font-semibold whitespace-nowrap group flex items-center gap-1 text-sm sm:text-base"
                 >
-                    ₹1,15,000
+                    ₹19,500
                     <span className="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300">→</span>
                 </Link>
             </div>

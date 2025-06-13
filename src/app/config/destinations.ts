@@ -41,6 +41,11 @@ export const destinations: Destination[] = [
         route: "/singapore"
     },
     {
+        name: "Chardham",
+        tag: { label: "TRENDING", color: "green" },
+        route: "/chardhamYatra"
+    },
+    {
         name: "Europe Trip",
         tag: { label: "FIXED DEPARTURE", color: "blue" },
         fixedDepartureId: "europe-12-days-grand-tour"
@@ -170,6 +175,6 @@ export const destinations: Destination[] = [
         tag: { label: "FIXED DEPARTURE", color: "green" },
         fixedDepartureId: "thailand-8-days-speedboat-tour"
     },
-   
-    
+
+
 ] 

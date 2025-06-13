@@ -165,6 +165,8 @@ function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
             router.push("/singapore")
         } else if (["indochina", "laos", "combodia"].includes(destination.name.toLowerCase())) {
             router.push("/indochina")
+        } else if (destination.name.toLowerCase() === "chardham") {
+            router.push("/chardhamYatra")
         } else if (destination.isTrending) {
             router.push(`/trending/${destination.name.toLowerCase()}`)
         } else if (destination.tag?.label === "FIXED DEPARTURE" && destination.fixedDepartureId) {
@@ -512,8 +514,8 @@ export default function Navbar() {
 
                                             <div
                                                 className={`transition-all duration-300 ease-in-out ${activeMobileDropdown === menuId
-                                                        ? 'max-h-[60vh] opacity-100'
-                                                        : 'max-h-0 opacity-0 overflow-hidden'
+                                                    ? 'max-h-[60vh] opacity-100'
+                                                    : 'max-h-0 opacity-0 overflow-hidden'
                                                     }`}
                                             >
                                                 <div className="bg-gray-50 ml-4 mr-2 rounded-lg">
@@ -648,8 +650,8 @@ export default function Navbar() {
                                 {/* Contact Options Dropdown */}
                                 <div
                                     className={`transition-all duration-300 ease-in-out mt-2 ${activeMobileDropdown === 'contact'
-                                            ? 'max-h-[200px] opacity-100'
-                                            : 'max-h-0 opacity-0 overflow-hidden'
+                                        ? 'max-h-[200px] opacity-100'
+                                        : 'max-h-0 opacity-0 overflow-hidden'
                                         }`}
                                 >
                                     <div className="space-y-2">
