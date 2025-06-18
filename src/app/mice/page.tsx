@@ -1,10 +1,10 @@
 "use client"
 
-import { useRef} from "react"
+import { useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import {NumberTicker} from "@/components/magicui/number-ticker"
+import { NumberTicker } from "@/components/magicui/number-ticker"
 
 import {
   Calendar,
@@ -143,7 +143,7 @@ export default function MICEPage() {
                 </div>
                 <div>
                   <p className="text-white font-semibold">
-                    <NumberTicker value={500} className="text-white font-semibold"/>+
+                    <NumberTicker value={500} className="text-white font-semibold" />+
                   </p>
                   <p className="text-white/70 text-sm">Events Organized</p>
                 </div>
@@ -156,7 +156,7 @@ export default function MICEPage() {
                 </div>
                 <div>
                   <p className="text-white font-semibold">
-                    <NumberTicker value={98} className="text-white font-semibold"/>
+                    <NumberTicker value={98} className="text-white font-semibold" />
                   </p>
                   <p className="text-white/70 text-sm">Client Satisfaction</p>
                 </div>
@@ -253,12 +253,13 @@ export default function MICEPage() {
                 initial={{ opacity: 1, y: 0 }}
                 className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group border border-gray-100"
               >
-                <div className="relative h-48 overflow-hidden">
-                  <Image 
-                    src={event.image} 
+                <div className="relative overflow-hidden">
+                  <Image
+                    src={event.image}
                     alt={`${event.organization} event in ${event.location}`}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    width={1080}
+                    height={1080}
+                    className="object-cover group-hover:scale-105 transition-transform duration-300 w-full h-auto"
                   />
                   <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-green-100 flex items-center justify-center shadow-lg">
                     <CheckCircle2 className="h-4 w-4 text-green-600" />
