@@ -576,7 +576,7 @@ export default function GreecePackages() {
                         Greece, the cradle of Western civilization, offers a perfect blend of ancient history, stunning landscapes, and vibrant culture. From the iconic Acropolis in Athens to the breathtaking sunsets of Santorini, every corner of Greece tells a story.
                     </p>
                     <p>
-                        Our Greece tour packages include visits to ancient ruins, island hopping adventures, and authentic cultural experiences. Whether you're exploring the historic streets of Athens or relaxing on the beaches of Mykonos, Greece promises an unforgettable journey.
+                        Our Greece tour packages include visits to ancient ruins, island hopping adventures, and authentic cultural experiences. Whether you&apos;re exploring the historic streets of Athens or relaxing on the beaches of Mykonos, Greece promises an unforgettable journey.
                     </p>
                     <p>
                         Experience the warm hospitality of the Greek people, savor delicious Mediterranean cuisine, and immerse yourself in a culture that has shaped the world for millennia.

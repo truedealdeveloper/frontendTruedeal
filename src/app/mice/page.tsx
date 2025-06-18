@@ -298,6 +298,128 @@ export default function MICEPage() {
         </div>
       </section>
 
+      {/* Rotary Phuket Trip Gallery */}
+      <section className="py-16 sm:py-20 bg-white w-full">
+        <div className="container mx-auto px-4 max-w-[100vw]">
+          <motion.div
+            initial={{ opacity: 1, y: 0 }}
+            className="text-center mb-12 sm:mb-16"
+          >
+            <div className="inline-flex items-center px-4 py-2 bg-[#017ae3]/10 rounded-full text-[#017ae3] text-sm font-medium mb-4">
+              <Camera className="h-4 w-4 mr-2" />
+              <span>Event Gallery</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Rotary International New Delhi Chapter - Phuket Trip
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              A successful corporate incentive trip showcasing our expertise in organizing memorable experiences for prestigious organizations.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+            {Array.from({ length: 13 }, (_, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 1, y: 0 }}
+                className="group relative overflow-hidden rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300"
+              >
+                <div className="aspect-square overflow-hidden">
+                  <Image
+                    src={`/UGCImages/gallantt/rotary_phuket/1 (${index + 1}).jpeg`}
+                    alt={`Rotary International New Delhi Chapter Phuket trip - Image ${index + 1}`}
+                    width={400}
+                    height={400}
+                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <p className="text-white text-sm font-medium">
+                      Rotary Phuket Experience
+                    </p>
+                    <p className="text-white/80 text-xs">
+                      Image {index + 1} of 13
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <div className="inline-flex items-center px-6 py-3 bg-green-50 rounded-full border border-green-200">
+              <CheckCircle2 className="h-5 w-5 text-green-600 mr-2" />
+              <span className="text-green-800 font-medium">Successfully Executed Corporate Incentive Trip</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallant Cement Goa Trip Gallery */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white w-full">
+        <div className="container mx-auto px-4 max-w-[100vw]">
+          <motion.div
+            initial={{ opacity: 1, y: 0 }}
+            className="text-center mb-12 sm:mb-16"
+          >
+            <div className="inline-flex items-center px-4 py-2 bg-[#017ae3]/10 rounded-full text-[#017ae3] text-sm font-medium mb-4">
+              <Camera className="h-4 w-4 mr-2" />
+              <span>Corporate Event Gallery</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Gallant Cement - Goa Corporate Trip
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              A successful corporate outing for 40 participants, featuring team building activities and memorable experiences in the beautiful beaches of Goa.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+            {Array.from({ length: 38 }, (_, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 1, y: 0 }}
+                className="group relative overflow-hidden rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300"
+              >
+                <div className="aspect-square overflow-hidden">
+                  <Image
+                    src={`/UGCImages/gallantt/gallant_goa/1 (${index + 1}).jpeg`}
+                    alt={`Gallant Cement Goa corporate trip - Image ${index + 1}`}
+                    width={400}
+                    height={400}
+                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <p className="text-white text-sm font-medium">
+                      Gallant Cement Goa Experience
+                    </p>
+                    <p className="text-white/80 text-xs">
+                      Image {index + 1} of 46
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="inline-flex items-center px-6 py-3 bg-green-50 rounded-full border border-green-200">
+                <CheckCircle2 className="h-5 w-5 text-green-600 mr-2" />
+                <span className="text-green-800 font-medium">40 Participants - Successfully Executed</span>
+              </div>
+              <div className="inline-flex items-center px-6 py-3 bg-blue-50 rounded-full border border-blue-200">
+                <Users className="h-5 w-5 text-blue-600 mr-2" />
+                <span className="text-blue-800 font-medium">Corporate Team Building Event</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section - Improve initial load */}
       <section className="py-16 sm:py-20 bg-gray-50 w-full">
         <div className="container mx-auto px-4 max-w-[100vw]">
