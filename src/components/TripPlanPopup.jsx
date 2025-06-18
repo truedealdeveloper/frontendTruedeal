@@ -45,27 +45,21 @@ const TripPlanPopup = () => {
     "/UGCImages/bali/extra/Uluwatu.jpg"
   ];
 
-  // Show popup every 30 seconds, but respect user's preference
+  // Show popup only once per session after page reload
   useEffect(() => {
-    const checkAndShowPopup = () => {
-      const lastShown = sessionStorage.getItem('tripPopupLastShown');
-      const now = Date.now();
+    const hasPopupBeenShown = sessionStorage.getItem('tripPopupShownThisSession');
 
-      // Show popup if it hasn't been shown in the last 30 seconds
-      if (!lastShown || now - parseInt(lastShown) > 30000) {
+    // Only show popup if it hasn't been shown in this session
+    if (!hasPopupBeenShown) {
+      const initialTimeout = setTimeout(() => {
         setIsVisible(true);
-        sessionStorage.setItem('tripPopupLastShown', now.toString());
-      }
-    };
+        sessionStorage.setItem('tripPopupShownThisSession', 'true');
+      }, 5000);
 
-    // Initial delay of 5 seconds, then every 30 seconds
-    const initialTimeout = setTimeout(checkAndShowPopup, 5000);
-    const interval = setInterval(checkAndShowPopup, 30000);
-
-    return () => {
-      clearTimeout(initialTimeout);
-      clearInterval(interval);
-    };
+      return () => {
+        clearTimeout(initialTimeout);
+      };
+    }
   }, []);
 
   // Cycle through images every 3 seconds when popup is visible
