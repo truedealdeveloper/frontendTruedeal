@@ -498,7 +498,7 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         ],
         images: [
             "/UGCImages/web/europe/1.webp",
-            "/UGCImages/web/europe/2.webp",  
+            "/UGCImages/web/europe/2.webp",
             "/UGCImages/web/europe/3.webp",
             "/UGCImages/web/europe/4.webp",
             "/UGCImages/web/europe/5.webp",
@@ -510,7 +510,7 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
             "/UGCImages/web/europe/11.webp",
             "/UGCImages/web/europe/12.webp",
             "/UGCImages/web/europe/13.webp",
-            
+
         ]
     },
     amTour: {
@@ -622,7 +622,7 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
             "/UGCImages/web/russia/5.webp",
             "/UGCImages/web/russia/6.webp",
             "/UGCImages/web/russia/7.webp",
-            
+
         ]
     },
     japanTour: {
@@ -1004,7 +1004,7 @@ Pick-up: 07:30 - 07:45 AM | Drop-off: 05:30 - 06:00 PM
             {
                 day: 11,
                 title: "Departure (18-05-2025)",
-                description:    `After breakfast, check out from the hotel and transfer to the airport for your return journey, marking the end of an unforgettable Thailand adventure.
+                description: `After breakfast, check out from the hotel and transfer to the airport for your return journey, marking the end of an unforgettable Thailand adventure.
 `
             }
         ],
@@ -1356,7 +1356,7 @@ Bid farewell to an unforgettable Thailand experience
             "Water bottle in the car 0.5 per day per person",
             "Speed train St. Petersburg-Moscow economy class",
             "Invitation Letter",
-           
+
         ],
         exclusions: [
             "Half Board Supplement (Indian/Local Dinners at the hotel): 8100 INR per person",
@@ -1377,7 +1377,7 @@ Free time for leisure
             {
                 day: 2,
                 title: "Saint-Petersburg City tour",
-                description:  `Saint-Petersburg City tour. In 2017 St. Petersburg was awarded third time the World Travel Awards prize as the leading tourist destination in World. St. Petersburg is a unique mixture of architectural styles; the city has retained the authentic monuments of architecture since its founding. 
+                description: `Saint-Petersburg City tour. In 2017 St. Petersburg was awarded third time the World Travel Awards prize as the leading tourist destination in World. St. Petersburg is a unique mixture of architectural styles; the city has retained the authentic monuments of architecture since its founding. 
 Kazan Cathedral - Traveling through Europe, imperator Pavel Petrovich, was struck by the beauty and harmony of the Cathedral of St. Peter's in Rome and the square in front of it, surrounded by colonnades. In 1799, when he was come back to Russian Capital, St-Petersburg, he announced a competition to design the cathedral, which would replace the dilapidated church of the Nativity of the Virgin (popularly known as Kazan), built earlier on the same place. The church houses one of the most important relics of Russia - the miraculous icon of Our Lady of Kazan.
 Peter and Paul Fortress - the historical kernel of St. Petersburg, military engineering and architectural monument.  From this place the city began its construction in 1701.
 
@@ -1520,7 +1520,7 @@ Free time for leisure
             {
                 day: 2,
                 title: "Singapore City Tour, Indian Lunch & Jewel Changi",
-                description:  `Arrive at Singapore Airport and embark on a complimentary Singapore City Tour* offered
+                description: `Arrive at Singapore Airport and embark on a complimentary Singapore City Tour* offered
 by Singapore Airlines (subject to approval). After the tour, enjoy a delicious Indian lunch
 before exploring the exciting attractions at Jewel Changi Airport. Later,
 board your flight to Christchurch.
@@ -1671,8 +1671,8 @@ Queenstown Lakeside and enjoy dinner.
                 hotel: "Shahdag Hotel & Spa",
                 roomType: "Double Room"
             },
-            
-            
+
+
         ],
         inclusions: [
             "Pure Veg. Indian Foop",
@@ -1787,9 +1787,9 @@ taking home wonderful memories of your Azerbaijani adventure.
             "/UGCImages/baku/2.png",
             "/UGCImages/baku/3.png",
             "/UGCImages/baku/4.png",
-        ], 
+        ],
     },
-    
+
 };
 
 export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight> = {
@@ -2082,7 +2082,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         amount: 85494,
         dateStart: "3,10,17,24 June",
         dateEnd: "18,25,30 July",
-        description: "Experience the best of Dubai with our exclusive 5-day, 4-night itinerary. This meticulously planned journey offers a seamless blend of luxury, culture, and adventure, ideal for travelers seeking a comprehensive and all-inclusive trip.",
+        description: "Experience the best of Hong Kong & Macau with our exclusive 5-day, 4-night itinerary. This meticulously planned journey offers a seamless blend of East meets West culture, stunning skylines, and unforgettable experiences, ideal for travelers seeking a comprehensive Asian adventure.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Twin Sharing Basis",
@@ -2092,66 +2092,66 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         },
         hotelDetails: [
             {
-                city: "Dubai",
-                hotel: "Atlantis The Palm",
-                roomType: "Ocean View Room (5 Star)"
+                city: "Hong Kong",
+                hotel: "Harbour Plaza Resort City",
+                roomType: "Superior Room (4 Star)"
             },
             {
-                city: "Dubai",
-                hotel: "Address Dubai Marina",
-                roomType: "Standard Room (5 Star)"
+                city: "Macau",
+                hotel: "Grand Lisboa Palace Resort",
+                roomType: "Deluxe Room (5 Star)"
             }
         ],
         tourSummary: [
-            "Day 1: Arrival in Dubai - Marina Dhow Cruise",
-            "Day 2: Dubai City Tour and Desert Safari",
-            "Day 3: Abu Dhabi Excursion",
-            "Day 4: Shopping and Global Village Visit",
-            "Day 5: Departure from Dubai"
+            "Day 1: Arrival in Hong Kong - Victoria Peak & Symphony of Lights",
+            "Day 2: Hong Kong Island Tour & Ocean Park",
+            "Day 3: Macau Day Trip - Historic Centre & Venetian Macao",
+            "Day 4: Hong Kong Shopping & Cultural Tour",
+            "Day 5: Departure from Hong Kong"
         ],
         inclusions: [
             "4 Nights Hotel Accommodation with daily breakfast",
-            "Round-trip Airport Transfers by luxury coach",
+            "Round-trip Airport Transfers by coach",
             "English-speaking guide services throughout the tour",
             "Meals as per itinerary: 4 Lunches and 4 Dinners (Indian/local meals)",
-            "Burj Khalifa (Level 124)",
-            "Desert Safari with BBQ dinner",
-            "Global Village",
-            "Louvre Abu Dhabi",
-            "Round-trip Dhow Cruise at Dubai Marina",
+            "Victoria Peak Tram & Sky Terrace",
+            "Ocean Park Hong Kong entry",
+            "Macau ferry transfers (round-trip)",
+            "Symphony of Lights viewing",
+            "Star Ferry ride across Victoria Harbour",
             "Daily 2 Bottles of Water per guest"
         ],
         exclusions: [
             "Airfare",
-            "UAE Visa fees",
+            "Hong Kong & Macau Visa fees (if applicable)",
             "Personal expenses",
             "Any item not explicitly mentioned under Inclusions"
         ],
         itinerary: [
             {
                 day: 1,
-                title: "Arrival in Dubai (B/L/D)",
-                description: "Arrival at Dubai International Airport. Meet & Greet with our English-speaking guide. Transfer to your hotel for check-in at the luxurious Atlantis The Palm (5-star), subject to room availability (standard check-in time: 1500 hrs). Lunch at a local restaurant. Evening Dhow Cruise at Dubai Marina with a buffet dinner and onboard entertainment. Return to the hotel for an overnight stay."
+                title: "Arrival in Hong Kong (B/L/D)",
+                description: "Arrival at Hong Kong International Airport. Meet & Greet with our English-speaking guide. Transfer to your hotel for check-in at Harbour Plaza Resort City (4-star), subject to room availability (standard check-in time: 1500 hrs). Lunch at a local restaurant. Evening visit to Victoria Peak via the iconic Peak Tram and enjoy panoramic views from Sky Terrace. Watch the Symphony of Lights show from Tsim Sha Tsui Promenade. Return to the hotel for an overnight stay."
             },
             {
                 day: 2,
-                title: "Dubai City Tour and Desert Safari (B/L/D)",
-                description: "Begin with a hearty breakfast at the hotel. Morning Dubai City Tour, visiting Burj Khalifa (At the Top – Level 124), Dubai Museum at Al Fahidi Fort, The iconic Jumeirah Mosque and Palm Jumeirah, and a photo stop at Burj Al Arab. Afternoon Desert Safari with dune bashing, camel rides, sandboarding, and traditional BBQ dinner with cultural performances."
+                title: "Hong Kong Island Tour & Ocean Park (B/L/D)",
+                description: "Begin with a hearty breakfast at the hotel. Morning Hong Kong Island Tour, visiting Man Mo Temple, Aberdeen Fishing Village with sampan ride, and Repulse Bay. Afternoon at Ocean Park Hong Kong with thrilling rides, marine life exhibits, and animal encounters. Experience the cable car rides and enjoy the spectacular ocean views."
             },
             {
                 day: 3,
-                title: "Abu Dhabi Excursion (B/L/D)",
-                description: "Full-day excursion to Abu Dhabi. Visit Sheikh Zayed Grand Mosque, Louvre Abu Dhabi, Emirates Palace photo stop, and drive through Yas Island with a brief stop at Ferrari World. Lunch at a local restaurant and dinner at an Indian restaurant."
+                title: "Macau Day Trip (B/L/D)",
+                description: "Full-day excursion to Macau via high-speed ferry. Visit the Historic Centre of Macau (UNESCO World Heritage), including Senado Square, St. Paul's Ruins, A-Ma Temple, and Mount Fortress. Explore the Venetian Macao with its Grand Canal Shoppes and replica of Venice's canals. Visit Galaxy Macau for entertainment and dining. Return to Hong Kong by evening ferry."
             },
             {
                 day: 4,
-                title: "Shopping and Global Village Visit (B/L/D)",
-                description: "Morning free for shopping at Dubai Mall or Gold Souk. Evening visit to Global Village to experience cultural pavilions, performances, and international cuisine."
+                title: "Hong Kong Shopping & Cultural Tour (B/L/D)",
+                description: "Morning visit to Ladies' Market in Mong Kok for bargain shopping. Explore Temple Street Night Market area and traditional Chinese medicine shops. Afternoon free time at Harbour City or Times Square for luxury shopping. Evening Star Ferry ride across Victoria Harbour and visit to Avenue of Stars."
             },
             {
                 day: 5,
-                title: "Departure from Dubai (B/L/D)",
-                description: "Breakfast at the hotel and check out. Stop for a farewell lunch at a local Indian restaurant. Transfer to Dubai International Airport for your departure flight."
+                title: "Departure from Hong Kong (B/L/D)",
+                description: "Breakfast at the hotel and check out. Visit to Wong Tai Sin Temple for good fortune. Last-minute shopping at Stanley Market. Farewell lunch at a local Dim Sum restaurant. Transfer to Hong Kong International Airport for your departure flight."
             }
         ],
         images: [
@@ -2167,7 +2167,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
             "/UGCImages/Images6/macau/horizontal/4.webp",
             "/UGCImages/Images6/macau/horizontal/5.webp",
             "/UGCImages/Images6/macau/horizontal/6.webp",
-            
+
         ]
     },
     malaysia: {
@@ -2250,7 +2250,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
     southKorea: {
         id: "korea-7-days-discovery-tour",
         country: "South Korea",
-        days: 7,    
+        days: 7,
         nights: 6,
         amount: 90000,
         dateStart: "7,14,21,28 June",
@@ -2345,7 +2345,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
             "/UGCImages/Images6/south korea/horizonta/5.webp",
             "/UGCImages/Images6/south korea/horizonta/6.webp",
         ],
-        
+
     },
     bhutan: {
         id: "bhutan-7-days-happiness-tour",
@@ -2379,7 +2379,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
                 hotel: "3-Star Ratna Vara",
                 roomType: "Budget Room"
             }
-                
+
         ],
         tourSummary: [
             "Day 1: Arrival at Bagdogra - Transfer to Phuentsholing",
@@ -2396,14 +2396,14 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
             "Pick up/drop from Bagdogra Airport in Breeza or Sedan AC car",
             "Daily 2 meals (Breakfast & Dinner) at hotel.",
             "A qualified & Licensed English-speaking guide.",
-            "Sustainable Development Fee (SDF) for total nights of stay.", 
+            "Sustainable Development Fee (SDF) for total nights of stay.",
             "All sightseeing as per itinerary.",
             "Bottled mineral water daily.",
             "All sightseeing & transfers on private basis.",
             "Full service & assistance before, during and after your Bhutan trip."
         ],
         exclusions: [
-            "Lunch, approx. 600 per meal.", 
+            "Lunch, approx. 600 per meal.",
             "Any beverages (hot or cold ordered during Breakfast, lunch or dinner)",
             "Any other cost arising due to medical situations, political unrest or any weather-related conditions beyond our control",
             "Expenditure of personal nature",
@@ -2464,7 +2464,7 @@ Overnight at the hotel in Paro.
             "/UGCImages/HD IMAGES/Bhutan/horizontal/6.png",
             "/UGCImages/HD IMAGES/Bhutan/horizontal/7.png",
         ],
-        
+
     },
     chinacanton: {
         id: "china-6-days-canton-fair-tour",
@@ -2882,7 +2882,7 @@ Overnight at the hotel in Paro.
             "3-Course Meals for Lunch & Dinner (as per itinerary)",
             "Driver Tips CHF 2/PP/Day (Included)",
             "2 x 500ml Bottles of Water per person per day (Included)"
-           
+
         ],
         exclusions: [
             "International & Domestic Airfare",
@@ -2907,7 +2907,7 @@ Overnight in Basel
             {
                 day: 2,
                 title: "Basel City Tour & Congress Visit",
-                description:  `Breakfast at the hotel
+                description: `Breakfast at the hotel
 Transfer to Congress Venue (Amee, an International Association for Health Professions Education) – Photo-stop
 Lunch at a Local Restaurant
 Half-day guided Basel City Tour (Historic Museum, Mittlere Brücke, Basler Münster, Museum der Kulturen, City Hall)
@@ -3085,7 +3085,7 @@ Overnight in Basel
             "/UGCImages/turkey/4.webp",
             "/UGCImages/turkey/5.webp",
             "/UGCImages/turkey/6.webp",
-            
+
         ]
     },
     kenya: {
@@ -3509,13 +3509,13 @@ be related once back home.`
         country: "Switzerland",
         days: 6,
         nights: 5,
-        amount: 149999, 
+        amount: 149999,
         dateStart: "15,22,29 June",
         dateEnd: "18,25,30 July",
         groupDetails: {
             pax: "2 Pax – Custom Package",
             rooms: "1 Room on Double Sharing",
-                arrivalDate: "Multiple dates in June 2025",
+            arrivalDate: "Multiple dates in June 2025",
             duration: "5N6D Switzerland",
             costBasis: "Cost Based On Double Sharing"
         },
@@ -3604,9 +3604,9 @@ be related once back home.`
             "/UGCImages/switzerland/4.png",
             "/UGCImages/switzerland/5.png",
             "/UGCImages/switzerland/6.png",
-            
+
         ]
-    }, 
+    },
     turkeyAnniversary: {
         id: "turkey-11-days-anniversary-trip",
         country: "Turkey",
@@ -3618,7 +3618,7 @@ be related once back home.`
         groupDetails: {
             pax: "2 Adults – Anniversary Trip",
             rooms: "1 Room on Double Sharing",
-                arrivalDate: "Multiple dates in June 2025",
+            arrivalDate: "Multiple dates in June 2025",
             duration: "10N11D Turkey",
             costBasis: "Cost Based On Double Sharing – Bed & Breakfast"
         },
@@ -3750,16 +3750,16 @@ be related once back home.`
             "/UGCImages/turkey/turkey-horizontal/5.png",
             "/UGCImages/turkey/turkey-horizontal/6.png",
             "/UGCImages/turkey/turkey-horizontal/7.png",
-            
+
         ]
-    }, 
+    },
     unitedArabEmirates: {
         id: "uae-5n6d-summer-deal",
         country: "United Arab Emirates",
         days: 6,
         nights: 5,
-        amount: 38499, 
-        dateStart: "14,21,28 June", 
+        amount: 38499,
+        dateStart: "14,21,28 June",
         dateEnd: "18,25,30 July",
         groupDetails: {
             pax: "2 Adults – Anniversary Trip",
@@ -3848,10 +3848,10 @@ be related once back home.`
             "/UGCImages/dubai/5.png",
             "/UGCImages/dubai/6.png",
             "/UGCImages/dubai/7.png",
-            
+
         ]
     }
-    
+
 };
 
 export function isFixedDeparture(destination: FixedDeparture | DestinationWithoutFlight): destination is FixedDeparture {
@@ -3875,19 +3875,19 @@ export const destinationGroups = [
         southKorea: destinationsWithoutFlight.southKorea,
     },
     {
-        
+
         bhutan: destinationsWithoutFlight.bhutan,
         chinacanton: destinationsWithoutFlight.chinacanton,
         kashmir: destinationsWithoutFlight.kashmir,
     },
     {
-        
+
         srinagar: destinationsWithoutFlight.srinagar,
         manali: destinationsWithoutFlight.manali,
         russia: destinationsWithoutFlight.russia,
     },
     {
-        
+
         europeMiceZurich: destinationsWithoutFlight.europeMiceZurich,
         russiaFixedDeparture: destinationsWithoutFlight.russiaFixedDeparture,
         turkey: destinationsWithoutFlight.turkey,
@@ -3902,7 +3902,7 @@ export const destinationGroups = [
         turkeyAnniversary: destinationsWithoutFlight.turkeyAnniversary,
         unitedArabEmirates: destinationsWithoutFlight.unitedArabEmirates
     }
-]; 
+];
 
 export const getTotalPages = (): number => destinationGroups.length;
 
