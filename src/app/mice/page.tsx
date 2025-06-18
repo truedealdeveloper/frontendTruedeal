@@ -243,10 +243,10 @@ export default function MICEPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {[
               { organization: "Rotary", location: "Phuket", image: "/UGCImages/gallantt/1.jpeg" },
-              { organization: "Gallant Cement", location: "GOA", image: "/UGCImages/gallantt/5.jpeg" },
+              { organization: "Gallantt Cement", location: "GOA", image: "/UGCImages/gallantt/5.jpeg" },
               { organization: "A.T.C", location: "Malaysia", image: "/UGCImages/gallantt/3.jpeg" },
-              { organization: "Gallant Cement", location: "Pattaya", image: "/UGCImages/gallantt/4.jpeg" },
-              { organization: "Gallant Ispat LTD", location: "Singapore", image: "/UGCImages/gallantt/2.jpeg" }
+              { organization: "Gallantt Cement", location: "Pattaya", image: "/UGCImages/gallantt/4.jpeg" },
+              { organization: "Gallantt Ispat LTD", location: "Singapore", image: "/UGCImages/gallantt/2.jpeg" }
             ].map((event, index) => (
               <motion.div
                 key={index}
@@ -368,7 +368,7 @@ export default function MICEPage() {
               <span>Corporate Event Gallery</span>
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Gallant Cement - Goa Corporate Trip
+              Gallantt Cement - Goa Corporate Trip
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               A successful corporate outing for 40 participants, featuring team building activities and memorable experiences in the beautiful beaches of Goa.
@@ -376,7 +376,7 @@ export default function MICEPage() {
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-            {Array.from({ length: 38 }, (_, index) => (
+            {Array.from({ length: 35 }, (_, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 1, y: 0 }}
@@ -385,7 +385,7 @@ export default function MICEPage() {
                 <div className="aspect-square overflow-hidden">
                   <Image
                     src={`/UGCImages/gallantt/gallant_goa/1 (${index + 1}).jpeg`}
-                    alt={`Gallant Cement Goa corporate trip - Image ${index + 1}`}
+                    alt={`Gallantt Cement Goa corporate trip - Image ${index + 1}`}
                     width={400}
                     height={400}
                     className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
@@ -394,7 +394,7 @@ export default function MICEPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-4 left-4 right-4">
                     <p className="text-white text-sm font-medium">
-                      Gallant Cement Goa Experience
+                      Gallantt Cement Goa Experience
                     </p>
                     <p className="text-white/80 text-xs">
                       Image {index + 1} of 46
