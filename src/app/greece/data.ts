@@ -1182,3 +1182,12 @@ At the end of the day, return to Thessaloniki for an overnight stay, filled with
         }
     },
 };
+
+export const withoutFlightPackages: Record<string, GreecePackage> = {
+    "peninsulaAthos": {
+        ...greecePackages["peninsulaAthos"],
+        id: "peninsula-athos-pella-vergina-5-days-no-flight",
+        packageName: "Thessaloniki Peninsula of Athos Pella Vergina - 5 days (Without Flights)",
+        amount: 43825
+    }
+};
