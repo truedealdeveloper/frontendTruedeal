@@ -15,30 +15,19 @@ const dancingScript = Dancing_Script({ subsets: ['latin'] });
 const playfair = Playfair_Display({ subsets: ['latin'] });
 
 export default function GreecePackages() {
-    const [currentPageWithFlight, setCurrentPageWithFlight] = useState(0);
-    const [currentPageNoFlight, setCurrentPageNoFlight] = useState(0);
+    const [currentPage, setCurrentPage] = useState(0);
     const [openFaq, setOpenFaq] = useState<number | null>(null);
     const [isMuted, setIsMuted] = useState(true);
-    const packagesWithFlight = Object.values(greecePackages || {});
-    const packagesWithoutFlight = Object.values(withoutFlightPackages || {});
+    const allPackages = [...Object.values(greecePackages || {}), ...Object.values(withoutFlightPackages || {})];
 
-    const totalPagesWithFlight = Math.ceil(packagesWithFlight.length / 3);
-    const totalPagesNoFlight = Math.ceil(packagesWithoutFlight.length / 3);
+    const totalPages = Math.ceil(allPackages.length / 3);
 
-    const handlePrevPageWithFlight = () => {
-        setCurrentPageWithFlight(prev => prev > 0 ? prev - 1 : prev);
+    const handlePrevPage = () => {
+        setCurrentPage(prev => prev > 0 ? prev - 1 : prev);
     };
 
-    const handleNextPageWithFlight = () => {
-        setCurrentPageWithFlight(prev => prev < totalPagesWithFlight - 1 ? prev + 1 : prev);
-    };
-
-    const handlePrevPageNoFlight = () => {
-        setCurrentPageNoFlight(prev => prev > 0 ? prev - 1 : prev);
-    };
-
-    const handleNextPageNoFlight = () => {
-        setCurrentPageNoFlight(prev => prev < totalPagesNoFlight - 1 ? prev + 1 : prev);
+    const handleNextPage = () => {
+        setCurrentPage(prev => prev < totalPages - 1 ? prev + 1 : prev);
     };
 
     const toggleMute = () => {
@@ -59,11 +48,9 @@ export default function GreecePackages() {
     };
 
     const PackageCard = ({
-        package: pkg,
-        withFlight = true
+        package: pkg
     }: {
         package: GreecePackage;
-        withFlight?: boolean;
     }) => {
         const [showDates, setShowDates] = useState(false);
 
@@ -92,11 +79,6 @@ export default function GreecePackages() {
                         </span>
                         <span className="text-sm ml-1">onwards</span>
                     </div>
-                    {!withFlight && (
-                        <div className="mt-2 bg-blue-500 text-white px-4 py-1.5 rounded-full shadow-lg text-sm">
-                            Without Flights
-                        </div>
-                    )}
                 </div>
 
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
@@ -326,25 +308,25 @@ export default function GreecePackages() {
                 </div>
             </div>
 
-            {/* With Flights Section */}
+            {/* Greece Packages Section */}
             <div className="bg-gray-50 py-16">
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl font-bold text-center mb-12">
                         <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
-                            With Flights Fixed Departures
+                            Greece Tour Packages
                         </span>
                     </h2>
-                    {packagesWithFlight.length === 0 ? (
+                    {allPackages.length === 0 ? (
                         <div className="text-center py-8">
-                            <p className="text-gray-600">No packages with flights available at the moment.</p>
+                            <p className="text-gray-600">No packages available at the moment.</p>
                         </div>
                     ) : (
                         <div className="relative">
                             {/* Navigation Controls */}
                             <div className="absolute top-1/2 -translate-y-1/2 left-0 z-10 hidden md:block">
                                 <Button
-                                    onClick={handlePrevPageWithFlight}
-                                    disabled={currentPageWithFlight === 0}
+                                    onClick={handlePrevPage}
+                                    disabled={currentPage === 0}
                                     variant="outline"
                                     className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -ml-5 shadow-lg"
                                 >
@@ -354,8 +336,8 @@ export default function GreecePackages() {
 
                             <div className="absolute top-1/2 -translate-y-1/2 right-0 z-10 hidden md:block">
                                 <Button
-                                    onClick={handleNextPageWithFlight}
-                                    disabled={currentPageWithFlight === totalPagesWithFlight - 1}
+                                    onClick={handleNextPage}
+                                    disabled={currentPage === totalPages - 1}
                                     variant="outline"
                                     className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -mr-5 shadow-lg"
                                 >
@@ -366,13 +348,12 @@ export default function GreecePackages() {
                             {/* Packages Grid */}
                             <div className="overflow-x-auto -mx-4 px-4 md:overflow-x-visible">
                                 <div className="flex md:grid md:grid-cols-3 gap-6 min-w-min md:min-w-0">
-                                    {packagesWithFlight
-                                        .slice(currentPageWithFlight * 3, (currentPageWithFlight * 3) + 3)
+                                    {allPackages
+                                        .slice(currentPage * 3, (currentPage * 3) + 3)
                                         .map((pkg) => (
                                             <PackageCard
                                                 key={pkg.id}
                                                 package={pkg}
-                                                withFlight={true}
                                             />
                                         ))}
                                 </div>
@@ -381,98 +362,19 @@ export default function GreecePackages() {
                             {/* Mobile Navigation */}
                             <div className="mt-6 flex justify-center items-center gap-2 md:hidden">
                                 <Button
-                                    onClick={handlePrevPageWithFlight}
-                                    disabled={currentPageWithFlight === 0}
+                                    onClick={handlePrevPage}
+                                    disabled={currentPage === 0}
                                     variant="outline"
                                     className="rounded-full w-8 h-8 p-0"
                                 >
                                     <FaChevronLeft className="w-3 h-3" />
                                 </Button>
                                 <span className="text-sm text-gray-500">
-                                    {currentPageWithFlight + 1} / {totalPagesWithFlight}
+                                    {currentPage + 1} / {totalPages}
                                 </span>
                                 <Button
-                                    onClick={handleNextPageWithFlight}
-                                    disabled={currentPageWithFlight === totalPagesWithFlight - 1}
-                                    variant="outline"
-                                    className="rounded-full w-8 h-8 p-0"
-                                >
-                                    <FaChevronRight className="w-3 h-3" />
-                                </Button>
-                            </div>
-                        </div>
-                    )}
-                </div>
-            </div>
-
-            {/* Without Flights Section */}
-            <div className="bg-white py-16">
-                <div className="container mx-auto px-4">
-                    <h2 className="text-3xl font-bold text-center mb-12">
-                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
-                            Without Flights Fixed Departures
-                        </span>
-                    </h2>
-                    {packagesWithoutFlight.length === 0 ? (
-                        <div className="text-center py-8">
-                            <p className="text-gray-600">No packages without flights available at the moment.</p>
-                        </div>
-                    ) : (
-                        <div className="relative">
-                            {/* Navigation Controls */}
-                            <div className="absolute top-1/2 -translate-y-1/2 left-0 z-10 hidden md:block">
-                                <Button
-                                    onClick={handlePrevPageNoFlight}
-                                    disabled={currentPageNoFlight === 0}
-                                    variant="outline"
-                                    className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -ml-5 shadow-lg"
-                                >
-                                    <FaChevronLeft className="w-4 h-4" />
-                                </Button>
-                            </div>
-
-                            <div className="absolute top-1/2 -translate-y-1/2 right-0 z-10 hidden md:block">
-                                <Button
-                                    onClick={handleNextPageNoFlight}
-                                    disabled={currentPageNoFlight === totalPagesNoFlight - 1}
-                                    variant="outline"
-                                    className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -mr-5 shadow-lg"
-                                >
-                                    <FaChevronRight className="w-4 h-4" />
-                                </Button>
-                            </div>
-
-                            {/* Packages Grid */}
-                            <div className="overflow-x-auto -mx-4 px-4 md:overflow-x-visible">
-                                <div className="flex md:grid md:grid-cols-3 gap-6 min-w-min md:min-w-0">
-                                    {packagesWithoutFlight
-                                        .slice(currentPageNoFlight * 3, (currentPageNoFlight * 3) + 3)
-                                        .map((pkg) => (
-                                            <PackageCard
-                                                key={pkg.id}
-                                                package={pkg}
-                                                withFlight={false}
-                                            />
-                                        ))}
-                                </div>
-                            </div>
-
-                            {/* Mobile Navigation */}
-                            <div className="mt-6 flex justify-center items-center gap-2 md:hidden">
-                                <Button
-                                    onClick={handlePrevPageNoFlight}
-                                    disabled={currentPageNoFlight === 0}
-                                    variant="outline"
-                                    className="rounded-full w-8 h-8 p-0"
-                                >
-                                    <FaChevronLeft className="w-3 h-3" />
-                                </Button>
-                                <span className="text-sm text-gray-500">
-                                    {currentPageNoFlight + 1} / {totalPagesNoFlight}
-                                </span>
-                                <Button
-                                    onClick={handleNextPageNoFlight}
-                                    disabled={currentPageNoFlight === totalPagesNoFlight - 1}
+                                    onClick={handleNextPage}
+                                    disabled={currentPage === totalPages - 1}
                                     variant="outline"
                                     className="rounded-full w-8 h-8 p-0"
                                 >

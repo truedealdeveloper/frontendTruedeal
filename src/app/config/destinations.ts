@@ -12,6 +12,7 @@ export interface Destination {
 export const destinations: Destination[] = [
     { name: "Bali", tag: { label: "POPULAR", color: "rose" } },
     { name: "Vietnam", tag: { label: "TRENDING", color: "green" } },
+    { name: "Greece", tag: { label: "POPULAR", color: "blue" }, route: "/greece" },
     { name: "Indochina", tag: { label: "TRENDING", color: "green" } },
     { name: "Laos", tag: { label: "Family", color: "yellow" } },
     { name: "Combodia", tag: { label: "Family", color: "pink" } },
@@ -45,6 +46,7 @@ export const destinations: Destination[] = [
         tag: { label: "TRENDING", color: "green" },
         route: "/chardhamYatra"
     },
+
     {
         name: "Europe Trip",
         tag: { label: "FIXED DEPARTURE", color: "blue" },

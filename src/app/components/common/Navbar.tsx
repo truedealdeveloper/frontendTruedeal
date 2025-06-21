@@ -46,6 +46,7 @@ const dropdownMenus = {
         { name: "Bhutan Happiness Tour", href: "/fixedDeparture/bhutan-7-days-happiness-tour" },
         { name: "Almaty", href: "/almaty" },
         // Rest of World
+        { name: "Greece", href: "/greece" },
         { name: "Langkawi", href: "/singapore/5-days-wonderful-langkawi" },
         { name: "Kenya", href: "/fixedDeparture/kenya-10-days-discovery-tour" },
         { name: "Europe Tour 12 Days", href: "/fixedDeparture/europe-12-days-grand-tour" },
@@ -151,10 +152,14 @@ function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
 
     const handleDestinationSelect = useCallback((destination: Destination) => {
         onClose()
-        if (destination.name.toLowerCase() === "bali") {
+        if (destination.route) {
+            router.push(destination.route)
+        } else if (destination.name.toLowerCase() === "bali") {
             router.push("/bali")
         } else if (destination.name.toLowerCase() === "vietnam") {
             router.push("/vietnam")
+        } else if (destination.name.toLowerCase() === "greece") {
+            router.push("/greece")
         } else if (destination.name.toLowerCase() === "australia packages") {
             router.push("/australiaPackages")
         } else if (destination.name.toLowerCase() === "turkey") {
