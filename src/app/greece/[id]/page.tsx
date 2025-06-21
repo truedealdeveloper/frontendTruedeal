@@ -592,73 +592,70 @@ export default function GreecePackagePage({ params }: PageProps) {
                                             </div>
 
                                             {/* Add Flights Section - Only show for packages with flights */}
-                                            {isPackageWithFlight && (
+                                            {isPackageWithFlight && greecePkg.departureDates && greecePkg.departureDates.length > 0 && (
                                                 <div className="mb-10">
                                                     <h2 className="text-2xl font-bold mb-2">Available Dates</h2>
                                                     <p className="text-gray-500 mb-6 text-sm">Select your preferred travel dates</p>
 
                                                     <div className="space-y-4">
-                                                        {[
-                                                            {
-                                                                month: "March",
-                                                                dates: ["15-20", "22-27"],
-                                                                seats: "8 seats left"
-                                                            },
-                                                            {
-                                                                month: "April",
-                                                                dates: ["5-10", "12-17", "19-24"],
-                                                                seats: "12 seats left"
-                                                            },
-                                                            {
-                                                                month: "May",
-                                                                dates: ["3-8", "10-15", "17-22"],
-                                                                seats: "10 seats left"
-                                                            }
-                                                        ].map((batch, index) => (
-                                                            <div
-                                                                key={index}
-                                                                className="bg-white rounded-lg border border-gray-100 hover:shadow-md transition-shadow duration-300"
-                                                            >
-                                                                <div className="p-4 md:p-6">
-                                                                    <div className="flex items-center justify-between">
-                                                                        <div className="flex items-center space-x-4 flex-1">
-                                                                            <div className="min-w-[100px]">
-                                                                                <div className="text-lg font-semibold">{batch.month}</div>
-                                                                            </div>
+                                                        {greecePkg.departureDates.map((departureDate, index) => {
+                                                            // Parse the date string to extract month and dates
+                                                            const dateStr = departureDate.date;
+                                                            const parts = dateStr.split(' ');
+                                                            const month = parts[0];
+                                                            const year = parts[parts.length - 1];
+                                                            const dates = parts.slice(1, -1).join(' ').split(',').map(d => d.trim()).filter(d => d);
 
-                                                                            <div className="flex-1">
-                                                                                <div className="flex gap-2">
-                                                                                    {batch.dates.map((date, i) => (
-                                                                                        <span
-                                                                                            key={i}
-                                                                                            className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm"
-                                                                                        >
-                                                                                            {date}
-                                                                                        </span>
-                                                                                    ))}
+                                                            // Generate random seats for demo (you can replace this with actual data)
+                                                            const availableSeats = Math.floor(Math.random() * 15) + 5;
+
+                                                            return (
+                                                                <div
+                                                                    key={index}
+                                                                    className="bg-white rounded-lg border border-gray-100 hover:shadow-md transition-shadow duration-300"
+                                                                >
+                                                                    <div className="p-4 md:p-6">
+                                                                        <div className="flex items-center justify-between">
+                                                                            <div className="flex items-center space-x-4 flex-1">
+                                                                                <div className="min-w-[100px]">
+                                                                                    <div className="text-lg font-semibold">{month}</div>
+                                                                                    <div className="text-sm text-gray-500">{year}</div>
+                                                                                </div>
+
+                                                                                <div className="flex-1">
+                                                                                    <div className="flex gap-2 flex-wrap">
+                                                                                        {dates.map((date, i) => (
+                                                                                            <span
+                                                                                                key={i}
+                                                                                                className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm"
+                                                                                            >
+                                                                                                {date}
+                                                                                            </span>
+                                                                                        ))}
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
-                                                                        </div>
 
-                                                                        <div className="flex items-center gap-4 ml-8">
-                                                                            <div className="text-sm text-gray-600 hidden md:block">
-                                                                                {batch.seats}
+                                                                            <div className="flex items-center gap-4 ml-8">
+                                                                                <div className="text-sm text-gray-600 hidden md:block">
+                                                                                    {availableSeats} seats left
+                                                                                </div>
+                                                                                <Button
+                                                                                    variant="outline"
+                                                                                    className="text-[#017ae3] border-[#017ae3] hover:bg-[#017ae3] hover:text-white transition-colors duration-300"
+                                                                                    onClick={() => setIsBookingModalOpen(true)}
+                                                                                >
+                                                                                    Book
+                                                                                </Button>
                                                                             </div>
-                                                                            <Button
-                                                                                variant="outline"
-                                                                                className="text-[#017ae3] border-[#017ae3] hover:bg-[#017ae3] hover:text-white transition-colors duration-300"
-                                                                                onClick={() => setIsBookingModalOpen(true)}
-                                                                            >
-                                                                                Book
-                                                                            </Button>
                                                                         </div>
-                                                                    </div>
-                                                                    <div className="text-sm text-gray-600 mt-3 md:hidden">
-                                                                        {batch.seats}
+                                                                        <div className="text-sm text-gray-600 mt-3 md:hidden">
+                                                                            {availableSeats} seats left
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                        ))}
+                                                            );
+                                                        })}
                                                     </div>
 
                                                     <div className="mt-4 text-center text-sm text-gray-500">
