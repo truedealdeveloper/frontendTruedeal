@@ -34,7 +34,7 @@ export async function POST(request: Request) {
         };
 
         // Prepare attachment if resume is provided
-        let attachments: any[] = [];
+        const attachments: { content: string; filename: string; type: string; disposition: string }[] = [];
         if (resume && resume.size > 0) {
             const buffer = await resume.arrayBuffer();
             const attachment = {

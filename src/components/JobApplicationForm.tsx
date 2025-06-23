@@ -156,7 +156,7 @@ export default function JobApplicationForm({ isOpen, onClose, position }: JobApp
                 <form onSubmit={handleSubmit} className="p-6 space-y-6">
                     {submitStatus === 'success' && (
                         <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-md">
-                            ✅ Application submitted successfully! We'll get back to you soon.
+                            ✅ Application submitted successfully! We&apos;ll get back to you soon.
                         </div>
                     )}
 
@@ -245,7 +245,7 @@ export default function JobApplicationForm({ isOpen, onClose, position }: JobApp
                             onChange={handleInputChange}
                             rows={4}
                             className={`w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.whyHireYou ? 'border-red-500' : ''}`}
-                            placeholder="Tell us why you're the perfect fit for this role..."
+                            placeholder="Tell us why you&apos;re the perfect fit for this role..."
                         />
                         {errors.whyHireYou && <p className="text-red-500 text-sm mt-1">{errors.whyHireYou}</p>}
                     </div>
