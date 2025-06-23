@@ -319,7 +319,7 @@ Enjoy the evening at your leisure or opt for a tour to Cape Sounion to witness a
     },
     "athenianReviera": {
         id: "athenianReviera",
-        packageName: "Athensian Riviera",
+        packageName: "Athensian Riviera 8 Days",
         days: 8,
         nights: 7,
         amount: 64536,
@@ -351,16 +351,14 @@ Enjoy the evening at your leisure or opt for a tour to Cape Sounion to witness a
             }
         ],
         tourSummary: [
-            "Athens (Acropolis, Acropolis Museum, Monastiraki, Thissio, Temple of Olympian Zeus, historical centre)",
-            "Mykonos (Little Venice, Lower Mills, Matogiannia)",
-            "Santorini (Archeological site of Akrotiri, Oia, Fira, Nea Kameni volcano, Imerovigli, Firostefani)"
+            "Athens (Acropolis, Parthenon, Acropolis Museum, Monastiraki, Thisseion, Temple of Olympian Zeus, Historical Center)",
+            "Aegina (Agios Nektarios Monastery, Temple of Aphaia)",
+            "Poros is the smallest of the three islands, and Hydra is one of the most cosmopolitan and picturesque Greek islands."
         ],
         inclusions: [
-            "Arrival and departure transfers in Athens and the islands",
-            "7 nights accommodation with breakfast (3 in Athens 4* hotel, 2 in Mykonos 3* hotel, 2 in Santorini 3* hotel)",
-            "Half-day Athens city guided sightseeing tour",
-            "Santorini half-day island tour",
-            "Ferry tickets Athens - Mykonos - Santorini - Athens"
+            "Arrival and departure transfers",
+            "7 nights at a 4* hotel in the coastal area of Athens with breakfast",
+            "Panoramic city tour of Athens with an English-speaking guide",
         ],
         exclusions: [
             "City tax",
@@ -443,10 +441,9 @@ Arrive at the port of Piraeus at around 19:30, and return to the hotel at around
             "/UGCImages/greece/7.webp"
         ],
         departureDates: [
-            { date: "June 1, 2024" },
-            { date: "June 15, 2024" },
-            { date: "July 1, 2024" },
-            { date: "July 15, 2024" }
+            { date: "June 24 2025" },
+            { date: "July 1, 8, 15, 22, 29 2025" },
+            { date: "August 5, 12, 19, 26 2025" },
         ],
         experiences: [
             {
@@ -549,7 +546,7 @@ Arrive at the port of Piraeus at around 19:30, and return to the hotel at around
         packageName: "Athens Thessaloniki - 5 days",
         days: 5,
         nights: 4,
-        amount: 34536,
+        amount: 59816,
         dateStart: "24 June",
         dateEnd: "14 Oct",
         description: `Experience the allure of Athens, Greece's captivating capital. Immerse yourself in history at famous archaeological sites and museums. Wander through the charming Plaka district beneath the majestic Acropolis, and stroll along Ermou street from Syntagma to Monastiraki. Savor the true Greek spirit by enjoying ouzo in Thiseion and exploring the vibrant nightlife of Psirri.
@@ -582,16 +579,15 @@ Arrive at the port of Piraeus at around 19:30, and return to the hotel at around
             }
         ],
         tourSummary: [
-            "Athens (Acropolis, Acropolis Museum, Monastiraki, Thissio, Temple of Olympian Zeus, historical centre)",
-            "Mykonos (Little Venice, Lower Mills, Matogiannia)",
-            "Santorini (Archeological site of Akrotiri, Oia, Fira, Nea Kameni volcano, Imerovigli, Firostefani)"
+            "Athens: Acropolis, the New Acropolis Museum, Erechtheion, Pnyx Hill, Plaka, Monastiraki, Psirri.",
+            "Thessaloniki: White Tower, Archaeological Museum, Central market, Ladadika, Ano Poli, Saint Demetrius Church."
         ],
         inclusions: [
-            "Arrival and departure transfers in Athens and the islands",
-            "7 nights accommodation with breakfast (3 in Athens 4* hotel, 2 in Mykonos 3* hotel, 2 in Santorini 3* hotel)",
-            "Half-day Athens city guided sightseeing tour",
-            "Santorini half-day island tour",
-            "Ferry tickets Athens - Mykonos - Santorini - Athens"
+            "Airport transfers in both cities",
+            "4 nights accomodation in 4* hotel with breakfast (2 nights in Athens and 2 nights in Thessaloniki)",
+            "Athens City Tour",
+            "Thessaloniki City Tour",
+            "Domestic Flight ticket Athens – Thessaloniki or v.v."
         ],
         exclusions: [
             "City tax",
@@ -637,31 +633,31 @@ Arrive at the port of Piraeus at around 19:30, and return to the hotel at around
                 day: 4,
                 title: "Free days at Athens Riviera - Day 1st of 4 days of free days ",
                 description: `Take time out of the city and admire the nearby enchantments of the Greek coastline. Athens has some stunning beaches locally. If you are looking for a calm and quiet beach visit the private beaches found southeast of Athens in Glyfada. Here you may have to pay for access but a visit to the unspoiled coves is worth the charge. To the northeast of Athens, the beaches are more alive with locals and tourists, you will be part of the buzzing holiday atmosphere! The best way to discover the beaches surrounding Athens is to hop on a bus and get off when you see a beach that takes your fancy.`,
-                image: "/UGCImages/greece/4.webp"
+                image: "/UGCImages/greece/11.webp"
             },
             {
                 day: 5,
                 title: "Free days at Athens Riviera - Day 2nd of 4 days of free days ",
                 description: `Take time out of the city and admire the nearby enchantments of the Greek coastline. Athens has some stunning beaches locally. If you are looking for a calm and quiet beach visit the private beaches found southeast of Athens in Glyfada. Here you may have to pay for access but a visit to the unspoiled coves is worth the charge. To the northeast of Athens, the beaches are more alive with locals and tourists, you will be part of the buzzing holiday atmosphere! The best way to discover the beaches surrounding Athens is to hop on a bus and get off when you see a beach that takes your fancy.`,
-                image: "/UGCImages/greece/5.webp"
+                image: "/UGCImages/greece/12.webp"
             },
             {
                 day: 6,
                 title: "Free days at Athens Riviera - Day 3rd of 4 days of free days ",
                 description: `Take time out of the city and admire the nearby enchantments of the Greek coastline. Athens has some stunning beaches locally. If you are looking for a calm and quiet beach visit the private beaches found southeast of Athens in Glyfada. Here you may have to pay for access but a visit to the unspoiled coves is worth the charge. To the northeast of Athens, the beaches are more alive with locals and tourists, you will be part of the buzzing holiday atmosphere! The best way to discover the beaches surrounding Athens is to hop on a bus and get off when you see a beach that takes your fancy.`,
-                image: "/UGCImages/greece/5.webp"
+                image: "/UGCImages/greece/13.webp"
             },
             {
                 day: 7,
                 title: "Free days at Athens Riviera - Day 4th of 4 days of free days ",
                 description: `Take time out of the city and admire the nearby enchantments of the Greek coastline. Athens has some stunning beaches locally. If you are looking for a calm and quiet beach visit the private beaches found southeast of Athens in Glyfada. Here you may have to pay for access but a visit to the unspoiled coves is worth the charge. To the northeast of Athens, the beaches are more alive with locals and tourists, you will be part of the buzzing holiday atmosphere! The best way to discover the beaches surrounding Athens is to hop on a bus and get off when you see a beach that takes your fancy.`,
-                image: "/UGCImages/greece/5.webp"
+                image: "/UGCImages/greece/14.webp"
             },
             {
                 day: 8,
                 title: "Departure",
                 description: `As your journey comes to an end, we'll arrange a timely transfer to the airport for your departure flight. Depart with cherished memories of Greece's beauty and hospitality.`,
-                image: "/UGCImages/greece/8.webp"
+                image: "/UGCImages/greece/15.webp"
             }
         ],
         images: [
@@ -674,10 +670,9 @@ Arrive at the port of Piraeus at around 19:30, and return to the hotel at around
             "/UGCImages/greece/1.webp",
         ],
         departureDates: [
-            { date: "June 1, 2024" },
-            { date: "June 15, 2024" },
-            { date: "July 1, 2024" },
-            { date: "July 15, 2024" }
+            { date: "June 30 2025" },
+            { date: "July 7, 14 2025" },
+            { date: "August 4, 11, 18, 25 2025" },
         ],
         experiences: [
             {
@@ -781,7 +776,7 @@ Arrive at the port of Piraeus at around 19:30, and return to the hotel at around
         days: 5,
         nights: 4,
         amount: 62713,
-        dateStart: "23 June",
+        dateStart: "30 June",
         dateEnd: "26 Oct",
         description: `Step into the enchanting realm of Attica, where the sky unfolds a captivating spectacle. Prepare to be awestruck by the majestic Acropolis and the iconic Parthenon, timeless creations from the golden age of Greece. Immerse yourself in the allure of the New Acropolis Museum, a true gem and one of the world's finest.
 
@@ -796,7 +791,7 @@ In Attica, a world of wonders awaits, promising unforgettable experiences that w
             pax: "Group Tour",
             rooms: "Double Sharing",
             arrivalDate: "Contact Us",
-            duration: "8 Days / 7 Nights",
+            duration: "5 Days / 4 Nights",
             costBasis: "Cost Based On 2 pax travelling together"
         },
         hotelDetails: [
@@ -817,16 +812,16 @@ In Attica, a world of wonders awaits, promising unforgettable experiences that w
             }
         ],
         tourSummary: [
-            "Athens (Acropolis, Acropolis Museum, Monastiraki, Thissio, Temple of Olympian Zeus, historical centre)",
-            "Mykonos (Little Venice, Lower Mills, Matogiannia)",
-            "Santorini (Archeological site of Akrotiri, Oia, Fira, Nea Kameni volcano, Imerovigli, Firostefani)"
+            "Athens (Acropolis, Parthenon, Acropolis museum, Monastiraki, Thissio, Temple of Olympian Zeus, the historical centre)",
+            "Argolis (Agamemnon Tomb, Mycenae archaeological site, Theatre of Epidaurus)",
+            "Delphi (Sacred way, Oracle, Temple of Apollo)"
         ],
         inclusions: [
-            "Arrival and departure transfers in Athens and the islands",
-            "7 nights accommodation with breakfast (3 in Athens 4* hotel, 2 in Mykonos 3* hotel, 2 in Santorini 3* hotel)",
-            "Half-day Athens city guided sightseeing tour",
-            "Santorini half-day island tour",
-            "Ferry tickets Athens - Mykonos - Santorini - Athens"
+            "Arrival and departure transfers",
+            "4 nights accommodation at a 4* hotel with breakfast",
+            "Athens City Tour",
+            "Argolis Tour",
+            "Delphi Tour"
         ],
         exclusions: [
             "City tax",
@@ -838,27 +833,27 @@ In Attica, a world of wonders awaits, promising unforgettable experiences that w
         itinerary: [
             {
                 day: 1,
-                title: "Arrival in Athens ",
+                title: "Arrival in Athens",
                 description: `Welcome to Athens! Upon arrival at Athens airport, our assistant will warmly receive you and transfer you to the city center. Check-in at your hotel in Athens or Glyfada and settle in. In the evening, we invite you to join our optional Athens by night tour (optional). Experience a panoramic drive through the city center, where you'll witness the breathtaking illuminated Acropolis. Take a delightful stroll through the charming streets of Plaka and indulge in a traditional Greek Tavern, complete with a dinner accompanied by live Greek music. Overnight in Athens.`,
-                image: "/UGCImages/greece/1.webp"
+                image: "/UGCImages/greece/18.webp"
             },
             {
                 day: 2,
                 title: "Panoramic tour of Athens",
                 description: `After a refreshing breakfast, embark on a comprehensive tour of Athens. Explore the fascinating contrasts that make this city so captivating. Our expert guides will take you to see notable landmarks such as the Panathenaic Stadium, the site of the first modern Olympic Games in 1896. Pass by the Prime Minister's residence (Old Royal Palace), the Temple of Olympian Zeus, Hadrian's Arch, the Parliament, and the memorial to the Unknown Soldier. Admire the architectural marvels of the Golden Age of Athens at the Acropolis, including the Propylaea, Temple of Athena Nike, Erechtheion, and the iconic Parthenon. Visit the Acropolis Museum, where you can immerse yourself in the wonders of the classical era. Enjoy the evening at your leisure or opt for a tour to witness the mesmerizing sunset at Cape Sounion. Overnight in Athens.`,
-                image: "/UGCImages/greece/2.webp"
+                image: "/UGCImages/greece/19.webp"
             },
             {
                 day: 3,
                 title: "Athens - Full Day Argolis",
                 description: `After breakfast, embark on a full-day excursion to Argolis. Drive along the scenic coastal road and make a stop at the Corinth Canal for photo opportunities. Visit the renowned Theatre of Epidaurus, famous for its exceptional acoustics. Proceed to the charming town of Nafplion for a brief stop, then continue to Mycenae to explore the Archaeological site and the tomb of Agamemnon. Enjoy lunch during the visit. Return to Athens for overnight.`,
-                image: "/UGCImages/greece/3.webp"
+                image: "/UGCImages/greece/20.webp"
             },
             {
                 day: 4,
                 title: "Athens -  Full Day Delphi",
                 description: `Start your day with a delicious breakfast before embarking on a journey to Delphi. Delve into layers of myth and history as you explore this magnificent site. Discover why it was considered the "navel of the world" when Zeus sent two eagles in opposite directions, and they met at Delphi. Walk up the Sacred Way to the awe-inspiring Temple of Apollo, where the Delphic oracle issued prophecies. Marvel at the monuments dedicated to ancient Greek city-states, leaders, and ordinary people. Take in the energy that still resonates in this sacred place. Visit the theatre and the Stadium, where the Pythian Games were held. Enjoy lunch during the visit and make a short stop in the picturesque village of Arachova on the way back. Overnight in Athens.`,
-                image: "/UGCImages/greece/4.webp"
+                image: "/UGCImages/greece/17.webp"
             },
             {
                 day: 5,
@@ -877,8 +872,9 @@ In Attica, a world of wonders awaits, promising unforgettable experiences that w
             "/UGCImages/greece/1.webp",
         ],
         departureDates: [
-            { date: "June 23, 2025" },
-            { date: "October 26, 2025" }
+            { date: "June 30 2025" },
+            { date: "July 6, 13, 20, 27 2025" },
+            { date: "August 3, 10, 17, 24, 31 2025" },
         ],
         experiences: [
             {
@@ -984,15 +980,9 @@ In Attica, a world of wonders awaits, promising unforgettable experiences that w
         amount: 43825,
         dateStart: "23 June",
         dateEnd: "26 Oct",
-        description: `Step into the enchanting realm of Attica, where the sky unfolds a captivating spectacle. Prepare to be awestruck by the majestic Acropolis and the iconic Parthenon, timeless creations from the golden age of Greece. Immerse yourself in the allure of the New Acropolis Museum, a true gem and one of the world's finest.
+        description: `Embark on a captivating journey through "Discover Byzantine Greece," a 5-day package unveiling the wonders of Thessaloniki, the sacred Peninsula of Athos, and the historical gems of Pella and Vergina.
 
-        Indulge in a plethora of activities, savoring the distinct flavors of Greek cuisine that will delight your taste buds. Explore the local markets for unique treasures and immerse yourself in the vibrant nightlife that pulses through the city.
-
-In Attica, a world of wonders awaits, promising unforgettable experiences that will leave you with cherished memories. Join us and be captivated by the magic that Greece has to offer!
-
-
-
-`,
+Immerse yourself in the cultural heart of Thessaloniki, where ancient tales echo through cobblestone streets and magnificent churches. Explore the secluded monasteries and breathtaking landscapes of the Peninsula of Athos, a UNESCO World Heritage site.`,
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
@@ -1081,8 +1071,9 @@ At the end of the day, return to Thessaloniki for an overnight stay, filled with
             "/UGCImages/greece/7.webp"
         ],
         departureDates: [
-            { date: "June 23, 2025" },
-            { date: "October 26, 2025" }
+            { date: "June 24 2025" },
+            { date: "July 1, 8, 15, 22, 29 2025" },
+            { date: "August 5, 12, 19, 26 2025" },
         ],
         experiences: [
             {
@@ -1706,10 +1697,5 @@ Overnight in Venice.`,
 };
 
 export const withoutFlightPackages: Record<string, GreecePackage> = {
-    "peninsulaAthos": {
-        ...greecePackages["peninsulaAthos"],
-        id: "peninsula-athos-pella-vergina-5-days-no-flight",
-        packageName: "Thessaloniki Peninsula of Athos Pella Vergina - 5 days (Without Flights)",
-        amount: 43825
-    }
+
 };
