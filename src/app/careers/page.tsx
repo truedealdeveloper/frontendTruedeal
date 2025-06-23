@@ -226,10 +226,10 @@ export default function CareersPage() {
                                 Email your resume and cover letter to:
                             </p>
                             <a
-                                href="mailto:web@truedeal4u.com"
+                                href="mailto:aditya@truedeal4u.com"
                                 className="inline-block bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white py-2 px-6 rounded-md hover:opacity-90 transition-opacity"
                             >
-                                web@truedeal4u.com
+                                aditya@truedeal4u.com
                             </a>
                             <p className="text-gray-600 mt-4">
                                 Please include a brief introduction and highlight your relevant experience in the message.

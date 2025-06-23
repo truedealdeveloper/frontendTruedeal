@@ -47,7 +47,7 @@ export async function POST(request: Request) {
         }
 
         const msg = {
-            to: 'web@truedeal4u.com',
+            to: 'aditya@truedeal4u.com',
             from: 'web@truedeal4u.com',
             subject: `New Job Application - ${position} - ${fullName}`,
             html: generateJobApplicationHTML(applicationData),

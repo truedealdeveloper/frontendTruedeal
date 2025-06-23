@@ -175,7 +175,7 @@ export function generateJobApplicationHTML(data: JobApplicationData): string {
                 <p>This application was submitted through the Truedeal careers page.</p>
                 <p style="margin-top: 10px;">
                     <strong>Truedeal</strong> | 
-                    <a href="mailto:web@truedeal4u.com" style="color: #017ae3; text-decoration: none;">web@truedeal4u.com</a>
+                    <a href="mailto:aditya@truedeal4u.com" style="color: #017ae3; text-decoration: none;">aditya@truedeal4u.com</a>
                 </p>
             </div>
         </div>

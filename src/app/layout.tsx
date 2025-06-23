@@ -12,6 +12,8 @@ import GoogleAnalytics from '../components/GoogleAnalytics';
 import { Poppins } from 'next/font/google';
 import { GoogleTagManager } from '@next/third-parties/google'
 import dynamic from 'next/dynamic';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Dynamically import ClerkProvider with fallback
 const ClerkProvider = dynamic(
@@ -25,9 +27,9 @@ const ClerkProvider = dynamic(
 );
 
 const poppins = Poppins({
-    weight: ['400', '500', '600', '700'],
-    subsets: ['latin'],
-    display: 'swap',
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -117,14 +119,26 @@ export default function RootLayout({
             />
           </noscript>
           <GoogleAnalytics />
-          
-            <Navbar />
-              {children}
-            <SpeedInsights />
-            <Chatbot />
-            <TripPlanPopup />
-            <Footer />
-          
+
+          <Navbar />
+          {children}
+          <SpeedInsights />
+          <Chatbot />
+          <TripPlanPopup />
+          <Footer />
+          <ToastContainer
+            position="top-right"
+            autoClose={4000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
+
           <Analytics />
         </body>
       </html>

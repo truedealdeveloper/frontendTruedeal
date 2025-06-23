@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { X, Upload, User, Mail, Phone, Briefcase, FileText, Send } from 'lucide-react';
+import { toast } from 'react-toastify';
 
 interface JobApplicationFormProps {
     isOpen: boolean;
@@ -22,13 +23,26 @@ export default function JobApplicationForm({ isOpen, onClose, position }: JobApp
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
     const [errors, setErrors] = useState<{ [key: string]: string }>({});
+    const hangTightTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
-        setFormData(prev => ({
-            ...prev,
-            [name]: value
-        }));
+
+        // Special handling for phone number
+        if (name === 'phone') {
+            // Only allow digits and limit to 10 characters
+            const phoneValue = value.replace(/\D/g, '').slice(0, 10);
+            setFormData(prev => ({
+                ...prev,
+                [name]: phoneValue
+            }));
+        } else {
+            setFormData(prev => ({
+                ...prev,
+                [name]: value
+            }));
+        }
+
         // Clear error when user starts typing
         if (errors[name]) {
             setErrors(prev => ({
@@ -43,19 +57,23 @@ export default function JobApplicationForm({ isOpen, onClose, position }: JobApp
         if (file) {
             // Check file size (max 5MB)
             if (file.size > 5 * 1024 * 1024) {
+                const errorMsg = 'File size must be less than 5MB';
                 setErrors(prev => ({
                     ...prev,
-                    resume: 'File size must be less than 5MB'
+                    resume: errorMsg
                 }));
+                toast.error(errorMsg);
                 return;
             }
             // Check file type
             const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
             if (!allowedTypes.includes(file.type)) {
+                const errorMsg = 'Please upload a PDF or Word document';
                 setErrors(prev => ({
                     ...prev,
-                    resume: 'Please upload a PDF or Word document'
+                    resume: errorMsg
                 }));
+                toast.error(errorMsg);
                 return;
             }
             setResume(file);
@@ -73,13 +91,20 @@ export default function JobApplicationForm({ isOpen, onClose, position }: JobApp
         if (!formData.email.trim()) newErrors.email = 'Email is required';
         else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email is invalid';
         if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
-        else if (!/^\+?[\d\s-()]{10,}$/.test(formData.phone)) newErrors.phone = 'Phone number is invalid';
+        else if (!/^[987]\d{9}$/.test(formData.phone)) newErrors.phone = 'Phone number must start with 9, 8, or 7 and be exactly 10 digits';
         if (!formData.position) newErrors.position = 'Position is required';
         if (!formData.whyHireYou.trim()) newErrors.whyHireYou = 'This field is required';
         if (!formData.bestWork.trim()) newErrors.bestWork = 'This field is required';
         if (!resume) newErrors.resume = 'Resume is required';
 
         setErrors(newErrors);
+
+        // Show toast for first error found
+        if (Object.keys(newErrors).length > 0) {
+            const firstError = Object.values(newErrors)[0];
+            toast.error(firstError);
+        }
+
         return Object.keys(newErrors).length === 0;
     };
 
@@ -90,6 +115,11 @@ export default function JobApplicationForm({ isOpen, onClose, position }: JobApp
 
         setIsSubmitting(true);
         setSubmitStatus('idle');
+
+        // Set timeout to show "hang tight" message after 3 seconds
+        hangTightTimeoutRef.current = setTimeout(() => {
+            toast.info('Hang tight! We are saving your details in our database so that we can track you better 📄');
+        }, 3000);
 
         try {
             const submitFormData = new FormData();
@@ -109,6 +139,7 @@ export default function JobApplicationForm({ isOpen, onClose, position }: JobApp
 
             if (response.ok) {
                 setSubmitStatus('success');
+                toast.success('Thank you for applying! We appreciate your time and will revert you soon. 🎉');
                 // Reset form after successful submission
                 setTimeout(() => {
                     onClose();
@@ -125,13 +156,20 @@ export default function JobApplicationForm({ isOpen, onClose, position }: JobApp
                 }, 2000);
             } else {
                 setSubmitStatus('error');
+                toast.error(result.error || 'Failed to submit application. Please try again.');
                 console.error('Error:', result.error);
             }
         } catch (error) {
             setSubmitStatus('error');
+            toast.error('Network error. Please check your connection and try again.');
             console.error('Error submitting application:', error);
         } finally {
             setIsSubmitting(false);
+            // Clear the hang tight timeout
+            if (hangTightTimeoutRef.current) {
+                clearTimeout(hangTightTimeoutRef.current);
+                hangTightTimeoutRef.current = null;
+            }
         }
     };
 
@@ -209,8 +247,10 @@ export default function JobApplicationForm({ isOpen, onClose, position }: JobApp
                                 name="phone"
                                 value={formData.phone}
                                 onChange={handleInputChange}
+                                maxLength={10}
+                                pattern="[987][0-9]{9}"
                                 className={`w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.phone ? 'border-red-500' : ''}`}
-                                placeholder="Enter your phone number"
+                                placeholder="9876543210 (without +91)"
                             />
                             {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
                         </div>
