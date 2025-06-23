@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import sgMail from '@sendgrid/mail';
 
 // Import the generateEmailHTML function
-import { generateJobApplicationHTML, JobApplicationData } from './emailTemplate.js';
+import { generateJobApplicationHTML, JobApplicationData } from './emailTemplate';
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
 
