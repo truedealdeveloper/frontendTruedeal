@@ -1324,8 +1324,9 @@ We will continue with the premier Perivolos black sand beach, which offers a big
             "/UGCImages/greece/1.webp",
         ],
         departureDates: [
-            { date: "June 23, 2025" },
-            { date: "October 26, 2025" }
+            { date: "June 24 2025" },
+            { date: "July 1, 8, 15, 22, 29 2025" },
+            { date: "August 5, 12, 19, 26 2025" },
         ],
         experiences: [
             {
@@ -1594,8 +1595,9 @@ Overnight in Venice.`,
             "/UGCImages/greece/1.webp",
         ],
         departureDates: [
-            { date: "June 23, 2025" },
-            { date: "October 26, 2025" }
+            { date: "June 24 2025" },
+            { date: "July 1, 8, 15, 22, 29 2025" },
+            { date: "August 5, 12, 19, 26 2025" },
         ],
         experiences: [
             {
