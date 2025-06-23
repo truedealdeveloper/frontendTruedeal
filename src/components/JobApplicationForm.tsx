@@ -252,7 +252,7 @@ export default function JobApplicationForm({ isOpen, onClose, position }: JobApp
 
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
-                            🏆 What's your best work? *
+                            🏆 What&apos;s your best work? *
                         </label>
                         <textarea
                             name="bestWork"
