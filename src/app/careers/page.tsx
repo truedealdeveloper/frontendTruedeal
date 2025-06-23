@@ -1,6 +1,18 @@
+'use client';
+
 import { Mail, MapPin, Briefcase } from "lucide-react"
+import { useState } from "react"
+import JobApplicationForm from "@/components/JobApplicationForm"
 
 export default function CareersPage() {
+    const [isFormOpen, setIsFormOpen] = useState(false);
+    const [selectedPosition, setSelectedPosition] = useState('');
+
+    const handleApplyClick = (position: string) => {
+        setSelectedPosition(position);
+        setIsFormOpen(true);
+    };
+
     return (
         <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 mt-10">
             <div className="max-w-4xl mx-auto">
@@ -15,9 +27,9 @@ export default function CareersPage() {
                     <div className="prose max-w-none">
                         <h2 className="text-2xl font-semibold mb-4">About Us</h2>
                         <p className="text-gray-600 mb-6">
-                            Truedeal is a comprehensive tour and travel company established in 2015, offering services such as foreign currency exchange, 
-                            forex cards, remittance, visa services, sightseeing, air tickets, hotel bookings, land packages, holiday packages, 
-                            travel insurance, transfers, and cruise bookings. We aim to provide the ultimate travel experience with a focus on 
+                            Truedeal is a comprehensive tour and travel company established in 2015, offering services such as foreign currency exchange,
+                            forex cards, remittance, visa services, sightseeing, air tickets, hotel bookings, land packages, holiday packages,
+                            travel insurance, transfers, and cruise bookings. We aim to provide the ultimate travel experience with a focus on
                             convenience, cost-efficiency, and security.
                         </p>
                     </div>
@@ -25,27 +37,27 @@ export default function CareersPage() {
 
                 <div className="bg-white rounded-lg shadow-lg p-8 mb-10">
                     <h2 className="text-2xl font-semibold mb-6">Current Openings</h2>
-                    
+
                     <div className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow mb-6">
                         <div className="flex justify-between items-start mb-4">
                             <h3 className="text-xl font-semibold text-gray-900">Travel Operations Manager</h3>
                             <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">5 Openings</span>
                         </div>
-                        
+
                         <div className="flex items-center text-gray-600 mb-4">
                             <MapPin className="w-4 h-4 mr-1" />
                             <span>Noida Sector 62, India</span>
                         </div>
-                        
+
                         <div className="mb-4">
                             <h4 className="font-medium text-gray-900 mb-2">Job Description:</h4>
                             <p className="text-gray-600 text-sm mb-3">
-                                We are seeking an experienced and dynamic Travel Operations Manager to oversee and enhance our daily operations. 
-                                The ideal candidate will have a strong background in the travel industry, exceptional leadership skills, 
+                                We are seeking an experienced and dynamic Travel Operations Manager to oversee and enhance our daily operations.
+                                The ideal candidate will have a strong background in the travel industry, exceptional leadership skills,
                                 and a passion for delivering outstanding customer service.
                             </p>
                         </div>
-                        
+
                         <div className="mb-4">
                             <h4 className="font-medium text-gray-900 mb-2">Key Responsibilities:</h4>
                             <ul className="list-disc pl-5 text-gray-600 text-sm">
@@ -58,7 +70,7 @@ export default function CareersPage() {
                                 <li>Compliance: Ensure all operations comply with industry regulations and company policies.</li>
                             </ul>
                         </div>
-                        
+
                         <div className="mb-4">
                             <h4 className="font-medium text-gray-900 mb-2">Qualifications:</h4>
                             <ul className="list-disc pl-5 text-gray-600 text-sm">
@@ -71,34 +83,34 @@ export default function CareersPage() {
                                 <li>Ability to work under pressure and manage multiple priorities.</li>
                             </ul>
                         </div>
-                        
-                        <a 
-                            href="mailto:web@truedeal4u.com?subject=Application for Travel Operations Manager Position" 
+
+                        <button
+                            onClick={() => handleApplyClick('Travel Operations Manager')}
                             className="inline-block bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white py-2 px-6 rounded-md hover:opacity-90 transition-opacity flex items-center"
                         >
                             Apply Now <Briefcase className="w-4 h-4 ml-2" />
-                        </a>
+                        </button>
                     </div>
-                    
+
                     <div className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
                         <div className="flex justify-between items-start mb-4">
                             <h3 className="text-xl font-semibold text-gray-900">Sales Executive – Travel & Tourism</h3>
                             <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Multiple Openings</span>
                         </div>
-                        
+
                         <div className="flex items-center text-gray-600 mb-4">
                             <MapPin className="w-4 h-4 mr-1" />
                             <span>Noida Sector 62, India</span>
                         </div>
-                        
+
                         <div className="mb-4">
                             <h4 className="font-medium text-gray-900 mb-2">Job Description:</h4>
                             <p className="text-gray-600 text-sm mb-3">
-                                We are looking for a dynamic Sales Executive to join our team and drive sales for our travel packages and services. 
+                                We are looking for a dynamic Sales Executive to join our team and drive sales for our travel packages and services.
                                 If you have a passion for travel, excellent communication skills, and a knack for sales, we&apos;d love to hear from you!
                             </p>
                         </div>
-                        
+
                         <div className="mb-4">
                             <h4 className="font-medium text-gray-900 mb-2">Key Responsibilities:</h4>
                             <ul className="list-disc pl-5 text-gray-600 text-sm">
@@ -109,7 +121,7 @@ export default function CareersPage() {
                                 <li><strong>Customer Support & Problem Solving:</strong> Handle customer queries, concerns, and complaints professionally. Ensure smooth pre- and post-sales support, resolving issues proactively. Assist travelers in last-minute changes, cancellations, and modifications.</li>
                             </ul>
                         </div>
-                        
+
                         <div className="mb-4">
                             <h4 className="font-medium text-gray-900 mb-2">Qualifications:</h4>
                             <ul className="list-disc pl-5 text-gray-600 text-sm">
@@ -123,7 +135,7 @@ export default function CareersPage() {
                                 <li>Ability to work under pressure and meet sales targets.</li>
                             </ul>
                         </div>
-                        
+
                         <div className="mb-4">
                             <h4 className="font-medium text-gray-900 mb-2">What We Offer:</h4>
                             <ul className="list-disc pl-5 text-gray-600 text-sm">
@@ -134,13 +146,66 @@ export default function CareersPage() {
                                 <li>Performance-based bonuses and rewards</li>
                             </ul>
                         </div>
-                        
-                        <a 
-                            href="mailto:web@truedeal4u.com?subject=Application for Sales Executive Position" 
+
+                        <button
+                            onClick={() => handleApplyClick('Sales Executive – Travel & Tourism')}
                             className="inline-block bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white py-2 px-6 rounded-md hover:opacity-90 transition-opacity flex items-center"
                         >
                             Apply Now <Briefcase className="w-4 h-4 ml-2" />
-                        </a>
+                        </button>
+                    </div>
+
+                    <div className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+                        <div className="flex justify-between items-start mb-4">
+                            <h3 className="text-xl font-semibold text-gray-900">Accountant</h3>
+                            <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">2 Openings</span>
+                        </div>
+
+                        <div className="flex items-center text-gray-600 mb-4">
+                            <MapPin className="w-4 h-4 mr-1" />
+                            <span>Noida Sector 62, India</span>
+                        </div>
+
+                        <div className="mb-4">
+                            <h4 className="font-medium text-gray-900 mb-2">Job Description:</h4>
+                            <p className="text-gray-600 text-sm mb-3">
+                                We are seeking a qualified Accountant to join our team and handle financial records, transactions, and compliance.
+                                The ideal candidate will have strong attention to detail, excellent analytical skills, and experience with financial software.
+                            </p>
+                        </div>
+
+                        <div className="mb-4">
+                            <h4 className="font-medium text-gray-900 mb-2">Key Responsibilities:</h4>
+                            <ul className="list-disc pl-5 text-gray-600 text-sm">
+                                <li>Maintain accurate financial records and ledgers</li>
+                                <li>Prepare monthly, quarterly, and annual financial statements</li>
+                                <li>Handle accounts payable and receivable</li>
+                                <li>Manage tax compliance and filing</li>
+                                <li>Assist in budget preparation and financial analysis</li>
+                                <li>Ensure compliance with accounting standards and regulations</li>
+                                <li>Support audit processes and provide necessary documentation</li>
+                            </ul>
+                        </div>
+
+                        <div className="mb-4">
+                            <h4 className="font-medium text-gray-900 mb-2">Qualifications:</h4>
+                            <ul className="list-disc pl-5 text-gray-600 text-sm">
+                                <li>Bachelor&apos;s degree in Accounting, Finance, or related field</li>
+                                <li>2+ years of accounting experience</li>
+                                <li>Proficiency in accounting software (Tally, QuickBooks, etc.)</li>
+                                <li>Strong knowledge of Indian taxation laws and GST</li>
+                                <li>Excellent attention to detail and accuracy</li>
+                                <li>Strong analytical and problem-solving skills</li>
+                                <li>Good communication and teamwork abilities</li>
+                            </ul>
+                        </div>
+
+                        <button
+                            onClick={() => handleApplyClick('Accountant')}
+                            className="inline-block bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white py-2 px-6 rounded-md hover:opacity-90 transition-opacity flex items-center"
+                        >
+                            Apply Now <Briefcase className="w-4 h-4 ml-2" />
+                        </button>
                     </div>
                 </div>
 
@@ -182,13 +247,19 @@ export default function CareersPage() {
                                 <li>Team player attitude</li>
                             </ul>
                         </div>
-                        
+
                         <div className="mt-6 text-gray-600">
                             <p>Truedeal is an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive environment for all employees.</p>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <JobApplicationForm
+                isOpen={isFormOpen}
+                onClose={() => setIsFormOpen(false)}
+                position={selectedPosition}
+            />
         </div>
     )
 } 
