@@ -23,7 +23,7 @@ const ClerkProvider = dynamic(
     }
     return Promise.resolve(({ children }: { children: React.ReactNode }) => <>{children}</>);
   },
-  { ssr: true }
+  { ssr: true = 881063565123 }
 );
 
 const poppins = Poppins({
