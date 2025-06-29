@@ -158,11 +158,6 @@ const TripPlanPopup = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-[#00B5C3]/40 via-transparent to-black/30"></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
 
-              {/* Floating elements */}
-              <div className="absolute top-3 left-3 sm:top-6 sm:left-6 bg-yellow-400/90 backdrop-blur-md rounded-full px-3 py-1 sm:px-4 sm:py-2 text-gray-900 text-xs sm:text-sm font-bold animate-pulse">
-                🎉 10 Years Anniversary - 10% OFF!
-              </div>
-
               {/* Close button */}
               <button
                 onClick={handleClose}
@@ -205,7 +200,7 @@ const TripPlanPopup = () => {
                     <div className="w-full h-1 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full mt-1"></div>
                   </div>
                 </div>
-                <p className="text-gray-600 text-xs sm:text-sm font-medium">🎊 Celebrating a decade of amazing trips! Get 10% OFF any package! 🎁</p>
+                <p className="text-gray-600 text-xs sm:text-sm font-medium">🎊 Celebrating a decade of amazing trips!</p>
               </div>
 
               {message && <div className="bg-green-50 text-green-700 p-2 rounded-md mb-2 sm:mb-3 text-xs sm:text-sm">{message}</div>}
@@ -346,11 +341,7 @@ const TripPlanPopup = () => {
                 </div>
                 {/* Footer moved inside form for better visibility */}
                 <div className="mt-2 text-center">
-                  <div className="bg-gradient-to-r from-yellow-100 to-orange-100 border border-yellow-300 rounded-lg px-2 py-1.5 mb-1">
-                    <p className="text-xs text-yellow-800 font-bold">
-                      🎊 10th Anniversary Special: 10% OFF All Packages! 🎁
-                    </p>
-                  </div>
+                  
                   <div className="flex items-center justify-center gap-1 flex-wrap">
                     <span className="text-xs text-gray-400">🏆 Celebrating</span>
                     <span className="text-xs font-semibold text-orange-600">10 Years</span>
