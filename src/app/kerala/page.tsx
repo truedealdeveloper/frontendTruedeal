@@ -253,7 +253,7 @@ export default function KeralaPackages() {
                                 Discover
                             </span>
                             <span className={`block text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-green-200 to-emerald-200 bg-clip-text text-transparent mt-2 ${playfair.className}`}>
-                                God's Own Country
+                                God&apos;s Own Country
                             </span>
                         </motion.h1>
 
@@ -462,7 +462,7 @@ export default function KeralaPackages() {
                 </h2>
                 <div className="text-gray-600 space-y-4">
                     <p>
-                        Kerala, rightly called "God's Own Country," offers an enchanting blend of serene backwaters, misty hill stations, pristine beaches, and rich cultural heritage. The backwaters of Alleppey and Kumarakom provide a unique experience of cruising through palm-fringed lagoons in traditional houseboats.
+                        Kerala, rightly called &quot;God&apos;s Own Country,&quot; offers an enchanting blend of serene backwaters, misty hill stations, pristine beaches, and rich cultural heritage. The backwaters of Alleppey and Kumarakom provide a unique experience of cruising through palm-fringed lagoons in traditional houseboats.
                     </p>
                     <p>
                         The hill stations of Munnar, Wayanad, and Thekkady offer breathtaking views of tea plantations, spice gardens, and wildlife sanctuaries. Experience the therapeutic benefits of authentic Ayurvedic treatments, witness the vibrant Kathakali performances, and savor the delicious Kerala cuisine.
