@@ -1435,9 +1435,9 @@ Entry Included: Metro
         nights: 12,
         amount: 439000,
         flightFrom: "Mumbai",
-        dateStart: "7,14,21,28 June",
+        dateStart: "18 July",
         dateEnd: "18,25,30 July",
-        description: `Enjoy the best of New Zealand with our fixed departure tour. From the Red Square to the Kremlin, this tour offers a comprehensive and all-inclusive experience of the country's highlights.`,
+        description: `Discover the breathtaking beauty of New Zealand with our comprehensive 13-day fixed departure tour. From the stunning landscapes of the South Island to the geothermal wonders of the North Island, experience the best of New Zealand's natural attractions and adventure activities.`,
         groupDetails: {
             pax: "Group Tour Fixed Departure",
             rooms: "Double/Single Sharing Available",
@@ -1446,19 +1446,19 @@ Entry Included: Metro
             costBasis: "Double sharing basis"
         },
         tourSummary: [
-            "4th May: Departure to Christchurch on Singapore Airline",
-            "5th May: Singapore City Tour, Indian Lunch & Jewel Changi",
-            "6th May: Christchurch Tram City Tour & Punting",
-            "7th May: Breakfast - Helicopter Ride",
-            "8th May: Breakfastt - Star Gazing with Hot Pool",
-            "9th May: Wanaka Lake, Puzzling World",
-            "10th May: Glenorchy, Kjet Boat, Gondola Ride",
-            "11th May: Milford Sound Coach Tour",
-            "12th May: Leisure for Adventure Activities",
-            "13th May: Flight to Auckland - Redwood Forest Walk",
-            "14th May: Volcano Air, Te Puia Visit",
-            "15th May: Transfer to Auckland - Waitomo Caves Tour",
-            "16th May: Sky Tower, City Tour - Fly Back",
+            "Departure to Christchurch on Singapore Airline",
+            "Transit via Singapore - Arrival in Christchurch",
+            "Christchurch Tram City Tour & Punting",
+            "Breakfast - Helicopter Ride",
+            "Breakfast - Star Gazing with Hot Pool",
+            "Wanaka Lake, Puzzling World",
+            "Glenorchy, Jet Boat, Gondola Ride",
+            "Milford Sound Coach Tour",
+            "Leisure for Adventure Activities",
+            "Flight to Auckland - Redwood Forest Walk",
+            "Volcano Air, Te Puia Visit",
+            "Transfer to Auckland - Waitomo Caves Tour",
+            "Sky Tower, City Tour - Fly Back",
         ],
         hotelDetails: [
             {
@@ -1519,15 +1519,8 @@ Free time for leisure
             },
             {
                 day: 2,
-                title: "Singapore City Tour, Indian Lunch & Jewel Changi",
-                description: `Arrive at Singapore Airport and embark on a complimentary Singapore City Tour* offered
-by Singapore Airlines (subject to approval). After the tour, enjoy a delicious Indian lunch
-before exploring the exciting attractions at Jewel Changi Airport. Later,
-board your flight to Christchurch.
-
-
-
-`
+                title: "Transit via Singapore - Arrival in Christchurch",
+                description: `Transit via Singapore Airport with optional layover activities. Board your connecting flight to Christchurch, New Zealand. Upon arrival in Christchurch, you'll be transferred to your hotel for check-in and rest after the long journey.`
             },
             {
                 day: 3,
@@ -1593,32 +1586,27 @@ Queenstown Lakeside and enjoy dinner.
             {
                 day: 9,
                 title: "Leisure for Adventure Activities",
-                description: `After breakfast, transfer to Milford Sound and explore the scenic beauty of the area. Enjoy lunch at
-`
+                description: `Enjoy a free day in Queenstown for optional adventure activities. Choose from bungee jumping, skydiving, zip-lining, or simply explore the charming town. Meals and activities are at your own expense today to allow flexibility for your preferred adventures.`
             },
             {
                 day: 10,
                 title: "Flight to Auckland - Redwood Forest Walk",
-                description: `After breakfast, transfer to Milford Sound and explore the scenic beauty of the area. Enjoy lunch at
-`
+                description: `After breakfast, fly from Queenstown to Auckland. Upon arrival, check into your hotel and enjoy lunch. In the afternoon, visit the magnificent Redwood Forest for a peaceful walk among the towering trees. Return to Auckland for dinner and overnight stay.`
             },
             {
                 day: 11,
                 title: "Volcano Air, Te Puia Visit",
-                description: `After breakfast, transfer to Milford Sound and explore the scenic beauty of the area. Enjoy lunch at
-`
+                description: `After breakfast, take a scenic helicopter flight over active volcanoes (Volcano Air experience). Visit Te Puia Geothermal Park to witness bubbling mud pools, steaming geysers, and learn about Maori culture. Enjoy traditional Maori performances and cultural demonstrations.`
             },
             {
                 day: 12,
                 title: "Transfer to Auckland - Waitomo Caves Tour",
-                description: `After breakfast, transfer to Milford Sound and explore the scenic beauty of the area. Enjoy lunch at
-`
+                description: `After breakfast, embark on a journey to the famous Waitomo Caves. Explore the magical glowworm caves on a boat ride through the underground caverns. Marvel at thousands of glowworms illuminating the cave ceiling. Transfer back to Auckland for your final night.`
             },
             {
                 day: 13,
                 title: "Sky Tower, City Tour - Fly Back",
-                description: `After breakfast, transfer to Milford Sound and explore the scenic beauty of the area. Enjoy lunch at
-`
+                description: `After breakfast, enjoy a final Auckland city tour including a visit to the iconic Sky Tower for panoramic city views. Complete any last-minute shopping before transferring to Auckland Airport for your departure flight back to Mumbai.`
             }
         ],
         images: [
