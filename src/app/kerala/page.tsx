@@ -2,18 +2,22 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { baliPackages, BaliPackage } from './data';
+import { keralaPackages, keralaPackage } from './data';
 import { FaCalendarAlt, FaClock, FaChevronLeft, FaChevronRight, FaPlus, FaMinus, FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 import { IoLocationSharp } from 'react-icons/io5';
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import TripPlanRequest from '../../components/TripPlanRequest';
+import { Dancing_Script, Playfair_Display } from 'next/font/google';
 
-export default function BaliPackages() {
+const dancingScript = Dancing_Script({ subsets: ['latin'] });
+const playfair = Playfair_Display({ subsets: ['latin'] });
+
+export default function KeralaPackages() {
     const [currentPage, setCurrentPage] = useState(0);
     const [openFaq, setOpenFaq] = useState<number | null>(null);
-    const packages = Object.values(baliPackages);
+    const packages = Object.values(keralaPackages);
     const totalPages = Math.ceil(packages.length / 3);
     const [isMuted, setIsMuted] = useState(true);
 
@@ -26,8 +30,8 @@ export default function BaliPackages() {
     };
 
     const toggleMute = () => {
-        const audio = document.getElementById('baliAudio') as HTMLAudioElement;
-        const video = document.getElementById('baliVideo') as HTMLVideoElement;
+        const audio = document.getElementById('keralaAudio') as HTMLAudioElement;
+        const video = document.getElementById('keralaVideo') as HTMLVideoElement;
         if (audio && video) {
             if (isMuted) {
                 // When unmuting
@@ -44,13 +48,19 @@ export default function BaliPackages() {
         }
     };
 
-    const PackageCard = ({ package: baliPackage }: { package: BaliPackage }) => {
+    const PackageCard = ({
+        package: pkg
+    }: {
+        package: keralaPackage;
+    }) => {
+        const [showDates, setShowDates] = useState(false);
+
         return (
             <div className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0">
                 {/* Background Image */}
                 <Image
-                    src={baliPackage.images[0]}
-                    alt={baliPackage.packageName}
+                    src={pkg.images[0]}
+                    alt={pkg.packageName}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
@@ -61,43 +71,68 @@ export default function BaliPackages() {
 
                 {/* Price Tag */}
                 <div className="absolute top-3 left-0 z-10">
-                    <div className="bg-yellow-400 px-4 py-1.5 rounded-full shadow-lg">
-                        <span className="line-through text-sm mr-2">
-                            ₹{(baliPackage.amount * 1.2).toLocaleString('en-IN')}/-
+                    <div className="bg-green-500 px-4 py-1.5 rounded-full shadow-lg">
+                        <span className="line-through text-sm mr-2 text-white">
+                            ₹{(pkg.amount * 1.2).toLocaleString('en-IN')}/-
                         </span>
-                        <span className="font-bold">
-                            ₹{baliPackage.amount.toLocaleString('en-IN')}/-
+                        <span className="font-bold text-white">
+                            ₹{pkg.amount.toLocaleString('en-IN')}/-
                         </span>
-                        <span className="text-sm ml-1">onwards</span>
+                        <span className="text-sm ml-1 text-white">onwards</span>
                     </div>
                 </div>
 
                 {/* Content */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                     <h2 className="text-2xl font-bold mb-2">
-                        {baliPackage.packageName}
+                        {pkg.packageName}
                     </h2>
 
                     {/* Details Grid */}
                     <div className="grid grid-cols-2 gap-y-2 text-sm mb-4">
                         <div className="flex items-center gap-2">
-                            <FaClock className="text-yellow-400" />
-                            <span>{baliPackage.days}D/{baliPackage.nights}N</span>
+                            <FaClock className="text-green-400" />
+                            <span>{pkg.days}D/{pkg.nights}N</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <IoLocationSharp className="text-yellow-400" />
-                            <span>{baliPackage.hotelDetails[0].city}</span>
+                            <IoLocationSharp className="text-green-400" />
+                            <span>{pkg.hotelDetails[0].city}</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <FaCalendarAlt className="text-yellow-400" />
-                            <span>{baliPackage.dateStart}</span>
+                            <FaCalendarAlt className="text-green-400" />
+                            <button
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    setShowDates(!showDates);
+                                }}
+                                className="hover:text-green-400 transition-colors"
+                            >
+                                View Dates
+                            </button>
                         </div>
                     </div>
 
+                    {/* Departure Dates Popup */}
+                    {showDates && pkg.departureDates && (
+                        <div
+                            className="absolute bottom-full left-0 right-0 bg-black/90 p-4 rounded-t-lg max-h-[200px] overflow-y-auto"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <h3 className="text-green-400 font-semibold mb-2">Departure Dates</h3>
+                            <div className="space-y-2">
+                                {pkg.departureDates.map((departure, index) => (
+                                    <div key={index} className="text-sm">
+                                        {departure.date}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
                     {/* View Details Button */}
-                    <Link href={`/bali/${baliPackage.id}`}>
+                    <Link href={`/kerala/${pkg.id}`}>
                         <Button
-                            className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all duration-500"
+                            className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-emerald-600 hover:to-green-600 text-white transition-all duration-500"
                         >
                             View Details
                         </Button>
@@ -107,57 +142,57 @@ export default function BaliPackages() {
         );
     };
 
-    const faqs = [
+    const keralaHighlights = [
         {
-            question: "What is the best time to visit Bali?",
-            answer: "The best time to visit Bali is from May to July when the weather is dry and less humid. December is peak season with higher prices, while January sees more rainfall."
+            title: "Backwater Cruises",
+            image: "/UGCImages/kerala/sightseeing/backwaters.jpg",
+            description: "Experience serene backwater cruises through palm-fringed lagoons and canals"
         },
         {
-            question: "What activities can I do in Bali?",
-            answer: "Bali offers numerous activities including scuba diving, snorkeling, surfing, temple visits, mountain trekking, rice terrace tours, and traditional dance performances."
+            title: "Tea Plantations",
+            image: "/UGCImages/kerala/sightseeing/tea-plantations.jpg",
+            description: "Explore lush green tea gardens and learn about tea processing in Munnar"
         },
         {
-            question: "Which temples should I visit in Bali?",
-            answer: "Must-visit temples include Uluwatu Temple (famous for sunset views and Kecak dance), Tanah Lot Temple, and Ulun Danu Temple."
+            title: "Ayurveda & Wellness",
+            image: "/UGCImages/kerala/sightseeing/ayurveda.jpg",
+            description: "Rejuvenate with authentic Ayurvedic treatments and traditional healing"
         },
         {
-            question: "What adventure activities are available?",
-            answer: "You can enjoy mountain biking, trekking Mount Batur, white water rafting, parasailing, canyon tubing, and various water sports."
+            title: "Spice Plantations",
+            image: "/UGCImages/kerala/sightseeing/spices.jpg",
+            description: "Discover aromatic spice gardens with cardamom, pepper, and cinnamon"
+        },
+        {
+            title: "Kerala Cuisine",
+            image: "/UGCImages/kerala/cuisine/fish-curry.jpg",
+            description: "Savor authentic Kerala dishes with coconut, curry leaves, and fresh seafood"
+        },
+        {
+            title: "Cultural Heritage",
+            image: "/UGCImages/kerala/culture/kathakali.jpg",
+            description: "Experience rich cultural traditions including Kathakali dance and temple festivals"
         }
     ];
 
-    const baliHighlights = [
+    const faqs = [
         {
-            title: "Culture & Traditions",
-            image: "/UGCImages/bali/Bali Banner/baliHome/1.png",
-            description: "Experience traditional Balinese ceremonies, dance performances, and local customs"
+            question: "What is the best time to visit Kerala?",
+            answer: "The best time to visit Kerala is from October to March when the weather is pleasant and cool. Monsoon season (June-September) is also beautiful but expect rainfall."
         },
         {
-            title: "Cuisine & Dining",
-            image: "/UGCImages/bali/Bali Banner/baliHome/2.png",
-            description: "Savor authentic Indonesian dishes, fresh seafood, and local delicacies"
+            question: "What activities can I do in Kerala?",
+            answer: "Kerala offers backwater cruises, houseboat stays, tea plantation tours, wildlife safaris, Ayurvedic treatments, beach relaxation, and cultural performances."
         },
         {
-            title: "Sacred Temples",
-            image: "/UGCImages/bali/Bali Banner/baliHome/3.png",
-            description: "Visit ancient temples like Tanah Lot, Uluwatu, and Ulun Danu Beratan"
+            question: "Which are the must-visit places in Kerala?",
+            answer: "Must-visit places include Alleppey backwaters, Munnar hill station, Kochi historic city, Thekkady wildlife sanctuary, and Kovalam beaches."
         },
         {
-            title: "Nature & Landscapes",
-            image: "/UGCImages/bali/Bali Banner/baliHome/4.png",
-            description: "Explore stunning rice terraces, volcanoes, and tropical forests"
-        },
-        {
-            title: "Beach Paradise",
-            image: "/UGCImages/bali/Bali Banner/baliHome/5.png",
-            description: "Relax on pristine beaches and enjoy world-class water sports"
-        },
-        {
-            title: "Wellness & Spa",
-            image: "/UGCImages/bali/Bali Banner/baliHome/6.png",
-            description: "Indulge in traditional Balinese spa treatments and yoga retreats"
+            question: "What are the famous Kerala dishes to try?",
+            answer: "Try Kerala fish curry, appam with stew, puttu and kadala curry, karimeen fry, and traditional Kerala sadya served on banana leaf."
         }
-    ];
+    ] as const;
 
     return (
         <div className="min-h-screen">
@@ -165,13 +200,13 @@ export default function BaliPackages() {
             <div className="relative h-[60vh] md:h-[100vh] w-full overflow-hidden">
                 {/* Add audio element */}
                 <audio
-                    id="baliAudio"
+                    id="keralaAudio"
                     loop
                     muted
                     autoPlay
                     className="hidden"
                 >
-                    <source src="/UGCImages/bali/Bali Banner/baliMobile/bali.mp3" type="audio/mp3" />
+                    <source src="/UGCImages/kerala/kerala-audio.mp3" type="audio/mp3" />
                 </audio>
 
                 {/* Add audio control button */}
@@ -188,24 +223,24 @@ export default function BaliPackages() {
                 </button>
 
                 <video
-                    id="baliVideo"
+                    id="keralaVideo"
                     autoPlay
                     loop
                     muted
                     playsInline
                     className="absolute inset-0 w-full h-full object-cover"
                 >
-                    <source src="/UGCImages/bali/balii.mp4" type="video/mp4" />
+                    <source src="/UGCImages/kerala/kerala-hero.mp4" type="video/mp4" />
                     {/* Fallback image in case video fails to load */}
                     <Image
-                        src="/UGCImages/bali/bali.jpg"
-                        alt="Bali Paradise"
+                        src="/webImage/kerala/mobile/kerala1.jpg"
+                        alt="Kerala Paradise"
                         fill
                         className="object-cover"
                         priority
                     />
                 </video>
-                <div className="absolute inset-0 bg-black/40" /> {/* Slightly reduced opacity for better video visibility */}
+                <div className="absolute inset-0 bg-black/40" />
                 <div className="absolute inset-0 flex items-center justify-center text-center">
                     <div className="max-w-4xl px-4">
                         <motion.h1
@@ -214,11 +249,11 @@ export default function BaliPackages() {
                             transition={{ duration: 0.8 }}
                             className="text-4xl md:text-7xl font-bold mb-6"
                         >
-                            <span className="block bg-gradient-to-r from-yellow-300 via-pink-200 to-yellow-300 bg-clip-text text-transparent font-serif mt-10 sm:text-3xl md:text-4xl lg:text-5xl">
-                                Discover Paradise
+                            <span className={`block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] mb-2 ${dancingScript.className}`}>
+                                Discover
                             </span>
-                            <span className="block bg-gradient-to-r from-blue-400 via-teal-300 to-blue-400 bg-clip-text text-transparent mt-2">
-                                in Bali
+                            <span className={`block text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-green-200 to-emerald-200 bg-clip-text text-transparent mt-2 ${playfair.className}`}>
+                                God's Own Country
                             </span>
                         </motion.h1>
 
@@ -241,25 +276,25 @@ export default function BaliPackages() {
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 1.5, duration: 0.5 }}
-                                    className="text-yellow-300"
+                                    className="text-green-300"
                                 >
-                                    Culture
+                                    Serene Backwaters
                                 </motion.span>
                                 <motion.span
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 1.8, duration: 0.5 }}
-                                    className="text-blue-300"
+                                    className="text-emerald-300"
                                 >
-                                    Adventure
+                                    Lush Hill Stations
                                 </motion.span>
                                 <motion.span
                                     initial={{ opacity: 0, x: 20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 2.1, duration: 0.5 }}
-                                    className="text-green-300"
+                                    className="text-teal-300"
                                 >
-                                    Relaxation
+                                    Ancient Traditions
                                 </motion.span>
                             </div>
                         </motion.div>
@@ -267,14 +302,15 @@ export default function BaliPackages() {
                 </div>
             </div>
 
+            {/* Kerala Packages Section */}
             <div className="bg-gray-50 py-16">
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl font-bold text-center mb-12">
-                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
-                            Our Bali Packages
+                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-600">
+                            Our Kerala Packages
                         </span>
                     </h2>
-                    <div className="relative ">
+                    <div className="relative">
                         <div className="relative">
                             {/* Navigation Controls */}
                             <div className="absolute top-1/2 -translate-y-1/2 left-0 z-10 hidden md:block">
@@ -304,8 +340,8 @@ export default function BaliPackages() {
                                 <div className="flex md:grid md:grid-cols-3 gap-6 min-w-min md:min-w-0">
                                     {packages
                                         .slice(currentPage * 3, (currentPage * 3) + 3)
-                                        .map((baliPkg) => (
-                                            <PackageCard key={baliPkg.id} package={baliPkg} />
+                                        .map((keralaPkg) => (
+                                            <PackageCard key={keralaPkg.id} package={keralaPkg} />
                                         ))}
                                 </div>
                             </div>
@@ -337,7 +373,7 @@ export default function BaliPackages() {
                 </div>
             </div>
 
-            {/* Bali Highlights Section */}
+            {/* Kerala Highlights Section */}
             <div className="py-16 bg-white">
                 <div className="container mx-auto px-4">
                     <motion.div
@@ -348,13 +384,13 @@ export default function BaliPackages() {
                         className="max-w-7xl mx-auto"
                     >
                         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
-                                Experience the Magic of Bali
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-600">
+                                Experience the Magic of Kerala
                             </span>
                         </h2>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {baliHighlights.map((highlight, index) => (
+                            {keralaHighlights.map((highlight, index) => (
                                 <motion.div
                                     key={highlight.title}
                                     initial={{ opacity: 0, y: 20 }}
@@ -383,18 +419,15 @@ export default function BaliPackages() {
                 </div>
             </div>
 
-            {/* Packages Section */}
-
-
             {/* FAQ Section */}
-            <div className="max-w-3xl mx-auto mt-16">
+            <div className="max-w-3xl mx-auto mt-16 px-4">
                 <h2 className="text-3xl font-bold text-center mb-8">
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-600">
                         Frequently Asked Questions
                     </span>
                 </h2>
                 <div className="space-y-4">
-                    {faqs.map((faq, index) => (
+                    {faqs.map((faq: { question: string; answer: string }, index: number) => (
                         <div
                             key={index}
                             className="border rounded-lg overflow-hidden"
@@ -421,21 +454,21 @@ export default function BaliPackages() {
             </div>
 
             {/* Additional Information */}
-            <div className="max-w-4xl mx-auto mt-16 prose prose-lg">
+            <div className="max-w-4xl mx-auto mt-16 prose prose-lg px-4">
                 <h2 className="text-3xl font-bold text-center mb-8">
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
-                        Discover Bali
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-600">
+                        Discover Kerala
                     </span>
                 </h2>
                 <div className="text-gray-600 space-y-4">
                     <p>
-                        The beaches in Bali are something to look forward to, as the golden shaded beaches and water are fairly land for the surfers. You are basically spoilt for choices in the activities available.
+                        Kerala, rightly called "God's Own Country," offers an enchanting blend of serene backwaters, misty hill stations, pristine beaches, and rich cultural heritage. The backwaters of Alleppey and Kumarakom provide a unique experience of cruising through palm-fringed lagoons in traditional houseboats.
                     </p>
                     <p>
-                        Moving on to the land, the Bali Tour Package consist of a trek in Mount Batur, visit the Tegallalang Rice Terraces and being amidst the animals in the Bali safari and marine parks, mountain biking in the landscapes and the paddy fields.
+                        The hill stations of Munnar, Wayanad, and Thekkady offer breathtaking views of tea plantations, spice gardens, and wildlife sanctuaries. Experience the therapeutic benefits of authentic Ayurvedic treatments, witness the vibrant Kathakali performances, and savor the delicious Kerala cuisine.
                     </p>
                     <p>
-                        These packages include some serene spots like the Uluwatu temple, Ulun Danu temple and Tanah lot temple where you can take in all the spirituality and serenity as well.
+                        Our Kerala tour packages include comfortable stays in premium resorts, houseboat accommodations, and authentic cultural experiences that showcase the true essence of this beautiful state.
                     </p>
                 </div>
             </div>

@@ -2,7 +2,7 @@
 
 import { use, useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { baliPackages } from '../data';
+import { keralaPackages } from '../data';
 import { notFound } from 'next/navigation';
 import {
     Calendar, Check, MapPin, Star, Users, X, Camera, Phone
@@ -27,11 +27,11 @@ interface PageProps {
     params: Promise<{ id: string; }>
 }
 
-export default function BaliPackagePage({ params }: PageProps) {
+export default function KeralaPackagePage({ params }: PageProps) {
     const { id } = use(params);
-    const baliPkg = Object.values(baliPackages).find(p => p.id === id);
+    const keralaPkg = Object.values(keralaPackages).find(p => p.id === id);
 
-    if (!baliPkg) {
+    if (!keralaPkg) {
         notFound();
     }
 
@@ -51,12 +51,12 @@ export default function BaliPackagePage({ params }: PageProps) {
     useEffect(() => {
         const timer = setInterval(() => {
             setCurrentImageIndex((prev) =>
-                prev === (baliPkg?.images?.length || 1) - 1 ? 0 : prev + 1
+                prev === (keralaPkg?.images?.length || 1) - 1 ? 0 : prev + 1
             );
         }, 5000);
 
         return () => clearInterval(timer);
-    }, [baliPkg?.images?.length]);
+    }, [keralaPkg?.images?.length]);
 
     const useAutoScroll = (scrollRef: React.RefObject<HTMLDivElement>, duration: number = 40000) => {
         useEffect(() => {
@@ -92,7 +92,7 @@ export default function BaliPackagePage({ params }: PageProps) {
     useAutoScroll(cultureScrollRef, 50000);
 
     // Calculate truncated description for "Read More" functionality
-    const description = baliPkg.description || "";
+    const description = keralaPkg.description || "";
     const truncatedDescription = description.length > 300
         ? `${description.substring(0, 300)}...`
         : description;
@@ -108,10 +108,10 @@ export default function BaliPackagePage({ params }: PageProps) {
 
     // Add this new function to get all images from itinerary and package
     const getAllImages = () => {
-        const itineraryImages = baliPkg.itinerary.map(day => day.image).filter(Boolean);
-        const packageImages = baliPkg.images || [];
-        const sightseeingImages = baliPkg.sightseeingSpots?.map(spot => spot.image) || [];
-        const cultureImages = baliPkg.culture?.map(item => item.image) || [];
+        const itineraryImages = keralaPkg.itinerary.map(day => day.image).filter(Boolean);
+        const packageImages = keralaPkg.images || [];
+        const sightseeingImages = keralaPkg.sightseeingSpots?.map(spot => spot.image) || [];
+        const cultureImages = keralaPkg.culture?.map(item => item.image) || [];
         return [...new Set([...packageImages, ...itineraryImages, ...sightseeingImages, ...cultureImages])];
     };
 
@@ -146,8 +146,8 @@ export default function BaliPackagePage({ params }: PageProps) {
                 {/* Hero Section */}
                 <div className="relative h-[70vh] w-full">
                     <Image
-                        src={baliPkg?.images?.[currentImageIndex] || '/default-image.jpg'}
-                        alt={baliPkg.packageName}
+                        src={keralaPkg?.images?.[currentImageIndex] || '/webImage/kerala/mobile/kerala1.jpg'}
+                        alt={keralaPkg.packageName}
                         fill
                         className="object-cover brightness-[0.85]"
                         priority
@@ -160,23 +160,23 @@ export default function BaliPackagePage({ params }: PageProps) {
                                 {[...Array(5)].map((_, i) => (
                                     <Star key={i} className={`h-5 w-5 ${i < Math.floor(4.8) ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}`} />
                                 ))}
-                                <span className="ml-2 text-white font-medium">4.8/5 (89 reviews)</span>
+                                <span className="ml-2 text-white font-medium">4.8/5 (52 reviews)</span>
                             </div>
 
                             {/* Package name */}
-                            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">{baliPkg.packageName}</h1>
+                            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">{keralaPkg.packageName}</h1>
 
                             {/* Location */}
                             <div className="flex items-center text-white mb-6">
                                 <MapPin className="h-5 w-5 mr-2" />
-                                <span className="text-lg">Bali, Indonesia</span>
+                                <span className="text-lg">Kerala, India</span>
                             </div>
 
                             {/* Action buttons */}
                             <div className="flex flex-wrap gap-4 mb-12">
                                 <Button
                                     size="lg"
-                                    className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition rounded-full px-8"
+                                    className="bg-gradient-to-r from-green-600 to-emerald-600 hover:opacity-90 transition rounded-full px-8"
                                     onClick={() => setIsBookingModalOpen(true)}
                                 >
                                     Book Now
@@ -197,7 +197,7 @@ export default function BaliPackagePage({ params }: PageProps) {
                 </div>
 
                 {/* Information bar */}
-                <div className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white">
+                <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white">
                     <div className="max-w-7xl mx-auto px-4 py-5 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
                         <div className="flex items-center">
                             <div className="flex-shrink-0 w-8 md:w-auto">
@@ -205,7 +205,7 @@ export default function BaliPackagePage({ params }: PageProps) {
                             </div>
                             <div>
                                 <div className="text-sm opacity-80">Duration</div>
-                                <div className="font-medium text-sm md:text-base">{baliPkg.days} days / {baliPkg.nights} nights</div>
+                                <div className="font-medium text-sm md:text-base">{keralaPkg.days} days / {keralaPkg.nights} nights</div>
                             </div>
                         </div>
 
@@ -215,7 +215,7 @@ export default function BaliPackagePage({ params }: PageProps) {
                             </div>
                             <div>
                                 <div className="text-sm opacity-80">Location</div>
-                                <div className="font-medium text-sm md:text-base">Bali, Indonesia</div>
+                                <div className="font-medium text-sm md:text-base">Kerala</div>
                             </div>
                         </div>
 
@@ -235,7 +235,7 @@ export default function BaliPackagePage({ params }: PageProps) {
                             </div>
                             <div>
                                 <div className="text-sm opacity-80">Rating</div>
-                                <div className="font-medium text-sm md:text-base">4.8/5 (89 reviews)</div>
+                                <div className="font-medium text-sm md:text-base">4.8/5 (52 reviews)</div>
                             </div>
                         </div>
                     </div>
@@ -253,19 +253,19 @@ export default function BaliPackagePage({ params }: PageProps) {
                                         <TabsList className="w-full bg-gray-100 p-0 my-4 rounded-lg overflow-x-auto flex no-scrollbar">
                                             <TabsTrigger
                                                 value="overview"
-                                                className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white py-2 px-4 md:py-3 md:px-6 flex-shrink-0"
+                                                className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-green-600 data-[state=active]:to-emerald-600 data-[state=active]:text-white py-2 px-4 md:py-3 md:px-6 flex-shrink-0"
                                             >
                                                 Overview
                                             </TabsTrigger>
                                             <TabsTrigger
                                                 value="itinerary"
-                                                className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white py-2 px-4 md:py-3 md:px-6 flex-shrink-0"
+                                                className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-green-600 data-[state=active]:to-emerald-600 data-[state=active]:text-white py-2 px-4 md:py-3 md:px-6 flex-shrink-0"
                                             >
                                                 Itinerary
                                             </TabsTrigger>
                                             <TabsTrigger
                                                 value="accommodation"
-                                                className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white py-2 px-4 md:py-3 md:px-6 flex-shrink-0"
+                                                className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-green-600 data-[state=active]:to-emerald-600 data-[state=active]:text-white py-2 px-4 md:py-3 md:px-6 flex-shrink-0"
                                             >
                                                 Accommodation
                                             </TabsTrigger>
@@ -278,12 +278,12 @@ export default function BaliPackagePage({ params }: PageProps) {
                                                 <h2 className="text-2xl font-bold mb-6">Package Highlights</h2>
                                                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                                                     {[
-                                                        { icon: "🏛️", title: "Temple Visits", desc: "Visit ancient Balinese temples" },
-                                                        { icon: "🍲", title: "Local Cuisine", desc: "Experience Balinese food culture" },
-                                                        { icon: "🏨", title: "Quality Hotels", desc: `${baliPkg.nights} nights accommodation` },
-                                                        { icon: "🚕", title: "Airport Transfers", desc: "Convenient transport included" },
-                                                        { icon: "🏝️", title: "Island Visits", desc: "Explore Nusa Penida and more" },
-                                                        { icon: "🌊", title: "Water Sports", desc: "Exciting beach activities" },
+                                                        { icon: "🚤", title: "Backwater Cruises", desc: "Traditional houseboat experience in Alleppey" },
+                                                        { icon: "🍃", title: "Tea Plantations", desc: "Scenic tea gardens of Munnar" },
+                                                        { icon: "🏨", title: "Premium Hotels", desc: `${keralaPkg.nights} nights accommodation` },
+                                                        { icon: "🚗", title: "Airport Transfers", desc: "Convenient transport included" },
+                                                        { icon: "🌿", title: "Ayurveda Spa", desc: "Traditional wellness treatments" },
+                                                        { icon: "🦅", title: "Wildlife Safari", desc: "Periyar National Park exploration" },
                                                     ].map((highlight, index) => (
                                                         <Card key={index} className="p-4 border border-gray-100 shadow-sm hover:shadow-md transition">
                                                             <div className="text-3xl mb-2">{highlight.icon}</div>
@@ -307,7 +307,7 @@ export default function BaliPackagePage({ params }: PageProps) {
                                                                 {description.length > 300 && (
                                                                     <Button
                                                                         variant="link"
-                                                                        className="p-0 h-auto text-[#017ae3]"
+                                                                        className="p-0 h-auto text-green-600"
                                                                         onClick={() => setShowFullDescription(!showFullDescription)}
                                                                     >
                                                                         {showFullDescription ? "Show Less" : "Read More ↓"}
@@ -317,8 +317,8 @@ export default function BaliPackagePage({ params }: PageProps) {
                                                         </div>
                                                         <div className="relative h-full min-h-[250px] md:min-h-0">
                                                             <Image
-                                                                src={baliPkg?.images?.[1] || '/default-image.jpg'}
-                                                                alt="About Bali"
+                                                                src={keralaPkg?.images?.[1] || '/webImage/kerala/mobile/kerala2.jpg'}
+                                                                alt="About Kerala"
                                                                 fill
                                                                 className="object-cover"
                                                             />
@@ -327,37 +327,12 @@ export default function BaliPackagePage({ params }: PageProps) {
                                                 </div>
                                             </div>
 
-                                            {/* Departure Cities */}
-                                            {baliPkg.departureCities && (
-                                                <div className="mb-10">
-                                                    <h2 className="text-2xl font-bold mb-6">Available Departures From:</h2>
-                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                                        {baliPkg.departureCities.map((departure, index) => (
-                                                            <Card key={index} className="border border-gray-200">
-                                                                <div className="p-4 flex justify-between items-center">
-                                                                    <div>
-                                                                        <h3 className="font-bold text-lg">{departure.city}</h3>
-                                                                        <p className="text-sm text-gray-500">Direct flights available</p>
-                                                                    </div>
-                                                                    <div className="text-right">
-                                                                        <p className="font-bold text-[#017ae3] text-lg">
-                                                                            ₹{departure.price.toLocaleString('en-IN')}
-                                                                        </p>
-                                                                        <p className="text-sm text-gray-500">per person</p>
-                                                                    </div>
-                                                                </div>
-                                                            </Card>
-                                                        ))}
-                                                    </div>
-                                                </div>
-                                            )}
-
                                             {/* Experiences You'll Love */}
-                                            {baliPkg.experiences && (
+                                            {keralaPkg.experiences && (
                                                 <div className="mb-10">
                                                     <h2 className="text-2xl font-bold mb-6">Experiences You&apos;ll Love</h2>
                                                     <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-                                                        {baliPkg.experiences.map((experience, index) => (
+                                                        {keralaPkg.experiences.map((experience, index) => (
                                                             <div key={index} className="bg-white rounded-3xl overflow-hidden shadow-sm">
                                                                 <div className="relative h-48">
                                                                     <Image
@@ -376,68 +351,15 @@ export default function BaliPackagePage({ params }: PageProps) {
                                                 </div>
                                             )}
 
-                                            {/* Sightseeing Spots */}
-                                            <div className="mb-10">
-                                                <h2 className="text-2xl font-bold mb-6">Popular Sightseeing Spots</h2>
-                                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                                                    {baliPkg.sightseeingSpots?.map((spot, index) => (
-                                                        <div key={index} className="group relative overflow-hidden rounded-lg">
-                                                            <Image
-                                                                src={spot.image}
-                                                                alt={spot.name}
-                                                                width={400}
-                                                                height={300}
-                                                                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
-                                                            />
-                                                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                                                                <div className="p-4 text-white">
-                                                                    <h3 className="text-xl font-semibold mb-2">{spot.name}</h3>
-                                                                    <p className="text-sm opacity-90">{spot.description}</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            </div>
-
-                                            {/* Culture & Traditions Section */}
-                                            <div className="mb-10">
-                                                <h2 className="text-2xl font-bold mb-6">Balinese Culture & Traditions</h2>
-                                                <div
-                                                    ref={cultureScrollRef}
-                                                    className="overflow-x-hidden relative -mx-4 px-4"
-                                                >
-                                                    <div className="flex gap-4 md:gap-6 animate-scroll">
-                                                        {[...baliPkg.culture, ...baliPkg.culture]?.map((item, index) => (
-                                                            <div
-                                                                key={index}
-                                                                className="flex-none w-[280px] md:w-[400px]"
-                                                            >
-                                                                <div className="relative h-[250px] mb-4">
-                                                                    <Image
-                                                                        src={item.image}
-                                                                        alt={item.title}
-                                                                        fill
-                                                                        className="rounded-lg object-cover"
-                                                                    />
-                                                                </div>
-                                                                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                                                                <p className="text-gray-600 text-sm line-clamp-3">{item.description}</p>
-                                                            </div>
-                                                        ))}
-                                                    </div>
-                                                </div>
-                                            </div>
-
                                             {/* Gallery */}
                                             <div className="mb-10">
                                                 <h2 className="text-2xl font-bold mb-6">Gallery</h2>
                                                 <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
-                                                    {(baliPkg?.images || []).slice(0, 6).map((img, i) => (
+                                                    {(keralaPkg?.images || []).slice(0, 6).map((img, i) => (
                                                         <div key={i} className="relative aspect-[4/3] overflow-hidden rounded-lg">
                                                             <Image
                                                                 src={img}
-                                                                alt={`Bali destination image ${i + 1}`}
+                                                                alt={`Kerala destination image ${i + 1}`}
                                                                 fill
                                                                 className="object-cover hover:scale-105 transition duration-500"
                                                             />
@@ -446,7 +368,7 @@ export default function BaliPackagePage({ params }: PageProps) {
                                                 </div>
                                                 <div className="mt-4 text-center">
                                                     <Button variant="outline" className="text-sm">
-                                                        View All Photos ({baliPkg?.images?.length || 0})
+                                                        View All Photos ({keralaPkg?.images?.length || 0})
                                                     </Button>
                                                 </div>
                                             </div>
@@ -461,7 +383,7 @@ export default function BaliPackagePage({ params }: PageProps) {
                                                             Included in Your Package
                                                         </h3>
                                                         <ul className="space-y-3">
-                                                            {baliPkg.inclusions?.map((item, i) => (
+                                                            {keralaPkg.inclusions?.map((item, i) => (
                                                                 <li key={i} className="flex">
                                                                     <Check className="h-5 w-5 mr-3 text-green-500 flex-shrink-0" />
                                                                     <span>{item}</span>
@@ -476,7 +398,7 @@ export default function BaliPackagePage({ params }: PageProps) {
                                                             Not Included
                                                         </h3>
                                                         <ul className="space-y-3">
-                                                            {baliPkg.exclusions?.map((item, i) => (
+                                                            {keralaPkg.exclusions?.map((item, i) => (
                                                                 <li key={i} className="flex">
                                                                     <X className="h-5 w-5 mr-3 text-red-500 flex-shrink-0" />
                                                                     <span>{item}</span>
@@ -494,7 +416,7 @@ export default function BaliPackagePage({ params }: PageProps) {
 
                                                 {/* Day navigation buttons */}
                                                 <div className="flex overflow-x-auto space-x-2 mb-8 pb-2 no-scrollbar">
-                                                    {baliPkg.itinerary.map((day, i) => (
+                                                    {keralaPkg.itinerary.map((day, i) => (
                                                         <button
                                                             key={i}
                                                             onClick={() => {
@@ -502,7 +424,7 @@ export default function BaliPackagePage({ params }: PageProps) {
                                                                 scrollToDay(day.day);
                                                             }}
                                                             className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${selectedDay === day.day
-                                                                ? "bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white"
+                                                                ? "bg-gradient-to-r from-green-600 to-emerald-600 text-white"
                                                                 : "bg-gray-100 hover:bg-gray-200 text-gray-800"
                                                                 }`}
                                                         >
@@ -513,10 +435,10 @@ export default function BaliPackagePage({ params }: PageProps) {
 
                                                 {/* Timeline view with collapsible content */}
                                                 <div className="relative pb-6">
-                                                    <div className="absolute left-4 md:left-[3.5rem] top-0 bottom-0 w-0.5 bg-[#017ae3]"></div>
+                                                    <div className="absolute left-4 md:left-[3.5rem] top-0 bottom-0 w-0.5 bg-green-600"></div>
 
                                                     <div className="space-y-6">
-                                                        {baliPkg.itinerary.map((day, i) => {
+                                                        {keralaPkg.itinerary.map((day, i) => {
                                                             const isExpanded = expandedDays.includes(day.day);
 
                                                             return (
@@ -527,7 +449,7 @@ export default function BaliPackagePage({ params }: PageProps) {
                                                                 >
                                                                     {/* Day number marker */}
                                                                     <div
-                                                                        className="absolute left-0 top-2 w-8 h-8 rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] flex items-center justify-center text-white font-bold z-10 cursor-pointer"
+                                                                        className="absolute left-0 top-2 w-8 h-8 rounded-full bg-gradient-to-r from-green-600 to-emerald-600 flex items-center justify-center text-white font-bold z-10 cursor-pointer"
                                                                         onClick={() => toggleDayExpansion(day.day)}
                                                                     >
                                                                         {day.day}
@@ -535,7 +457,7 @@ export default function BaliPackagePage({ params }: PageProps) {
 
                                                                     {/* Content card */}
                                                                     <div
-                                                                        className={`bg-white rounded-xl shadow-sm overflow-hidden ${selectedDay === day.day ? 'ring-2 ring-[#017ae3]/20' : ''}`}
+                                                                        className={`bg-white rounded-xl shadow-sm overflow-hidden ${selectedDay === day.day ? 'ring-2 ring-green-600/20' : ''}`}
                                                                         onClick={() => toggleDayExpansion(day.day)}
                                                                     >
                                                                         {/* Add image section */}
@@ -575,22 +497,6 @@ export default function BaliPackagePage({ params }: PageProps) {
                                                                             {isExpanded && (
                                                                                 <>
                                                                                     <p className="text-gray-700 mt-3 mb-4">{day.description}</p>
-
-                                                                                    <div>
-                                                                                        <h4 className="text-[#017ae3] font-medium mb-2">Activities:</h4>
-                                                                                        <div className="space-y-2">
-                                                                                            {day.title.split(' • ').map((activity, j) => (
-                                                                                                <div key={j} className="flex items-center">
-                                                                                                    <div className="h-5 w-5 rounded-full bg-[#e6f7ff] flex items-center justify-center mr-3 flex-shrink-0">
-                                                                                                        <svg className="h-3 w-3 text-[#017ae3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                                                                                        </svg>
-                                                                                                    </div>
-                                                                                                    <span className="text-gray-700 text-sm">{activity}</span>
-                                                                                                </div>
-                                                                                            ))}
-                                                                                        </div>
-                                                                                    </div>
                                                                                 </>
                                                                             )}
                                                                         </div>
@@ -607,7 +513,7 @@ export default function BaliPackagePage({ params }: PageProps) {
                                             <div className="mb-10">
                                                 <h2 className="text-2xl font-bold mb-6">Your Accommodations</h2>
                                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                                    {baliPkg.hotelDetails.map((hotel, index) => (
+                                                    {keralaPkg.hotelDetails.map((hotel, index) => (
                                                         <Card key={index} className="overflow-hidden border-0 shadow-md">
                                                             <div className="p-4">
                                                                 <h3 className="font-bold text-lg">{hotel.hotel}</h3>
@@ -629,34 +535,6 @@ export default function BaliPackagePage({ params }: PageProps) {
                                                 </div>
                                             </div>
 
-                                            {/* Local Food & Restaurants Section */}
-                                            <div className="mb-10">
-                                                <h2 className="text-2xl font-bold mb-6">Famous Local Cuisine</h2>
-                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                                    {baliPkg.localFood?.map((food, index) => (
-                                                        <div key={index} className="flex gap-4 items-center bg-gray-50 rounded-lg p-4">
-                                                            <Image
-                                                                src={food.image}
-                                                                alt={food.name}
-                                                                width={120}
-                                                                height={120}
-                                                                className="rounded-lg object-cover"
-                                                            />
-                                                            <div>
-                                                                <h3 className="text-lg font-semibold mb-2">{food.name}</h3>
-                                                                <p className="text-gray-600 text-sm">{food.description}</p>
-                                                                {food.where && (
-                                                                    <p className="text-sm text-[#017ae3] mt-2 flex items-center">
-                                                                        <MapPin className="h-3 w-3 mr-1" />
-                                                                        {food.where}
-                                                                    </p>
-                                                                )}
-                                                            </div>
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            </div>
-
                                             {/* FAQ Section in Accommodation Tab */}
                                             <div className="mb-10">
                                                 <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
@@ -671,12 +549,12 @@ export default function BaliPackagePage({ params }: PageProps) {
                                                             answer: "Yes, daily breakfast is included at all hotels in this package."
                                                         },
                                                         {
-                                                            question: "Are the hotels centrally located?",
-                                                            answer: "Yes, we select hotels that offer convenient access to major attractions and popular areas in Bali."
+                                                            question: "Are the hotels near major attractions?",
+                                                            answer: "Yes, we select hotels that offer convenient access to major attractions like tea gardens, backwaters, and wildlife sanctuaries in Kerala."
                                                         },
                                                         {
-                                                            question: "Can I request a specific room type?",
-                                                            answer: "Yes, you can request specific room preferences such as king bed, twin beds, or connecting rooms during booking. We'll do our best to accommodate your preferences based on availability."
+                                                            question: "Is the houseboat accommodation safe?",
+                                                            answer: "Absolutely! Our houseboats are well-maintained with safety equipment, experienced crew, and all modern amenities while maintaining traditional charm."
                                                         },
                                                     ].map((faq, index) => (
                                                         <AccordionItem key={index} value={`faq-${index}`}>
@@ -698,11 +576,11 @@ export default function BaliPackagePage({ params }: PageProps) {
                         <div className="lg:col-span-1">
                             <div className="sticky top-24">
                                 <Card className="border-0 shadow-lg overflow-hidden">
-                                    <div className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] p-6 text-white">
-                                        <div className="text-3xl font-bold mb-1">₹{baliPkg.amount?.toLocaleString('en-IN')}</div>
+                                    <div className="bg-gradient-to-r from-green-600 to-emerald-600 p-6 text-white">
+                                        <div className="text-3xl font-bold mb-1">₹{keralaPkg.amount?.toLocaleString('en-IN')}</div>
                                         <div className="flex items-baseline">
-                                            <span className="text-xl line-through text-white/80">₹{Math.round(baliPkg.amount * 1.3).toLocaleString('en-IN')}</span>
-                                            <span className="ml-2 bg-red-500 text-white text-sm px-2 py-1 rounded">Save 30%</span>
+                                            <span className="text-xl line-through text-white/80">₹{Math.round(keralaPkg.amount * 1.2).toLocaleString('en-IN')}</span>
+                                            <span className="ml-2 bg-red-500 text-white text-sm px-2 py-1 rounded">Save 20%</span>
                                         </div>
                                         <div className="text-sm mt-1">per person, based on double occupancy</div>
                                     </div>
@@ -710,7 +588,7 @@ export default function BaliPackagePage({ params }: PageProps) {
                                     <div className="p-6 space-y-4">
                                         <div className="flex justify-between border-b pb-3">
                                             <div className="font-medium">Duration:</div>
-                                            <div>{baliPkg.nights} nights / {baliPkg.days} days</div>
+                                            <div>{keralaPkg.nights} nights / {keralaPkg.days} days</div>
                                         </div>
 
                                         <div className="flex justify-between border-b pb-3">
@@ -725,26 +603,26 @@ export default function BaliPackagePage({ params }: PageProps) {
 
                                         <div className="flex justify-between border-b pb-3 mb-4">
                                             <div className="font-medium">Languages:</div>
-                                            <div>English, Hindi</div>
+                                            <div>English, Hindi, Malayalam</div>
                                         </div>
 
                                         <Button
-                                            className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition text-lg py-6"
+                                            className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:opacity-90 transition text-lg py-6"
                                             onClick={() => setIsBookingModalOpen(true)}
                                         >
                                             Book Now
                                         </Button>
 
                                         <a
-                                            href="tel:+919310271488"
-                                            className="mt-4 bg-blue-50 hover:bg-blue-100 transition-colors p-4 rounded-md flex items-center cursor-pointer no-underline"
+                                            href="tel:+919919111911"
+                                            className="mt-4 bg-green-50 hover:bg-green-100 transition-colors p-4 rounded-md flex items-center cursor-pointer no-underline"
                                         >
-                                            <Phone className="h-5 w-5 text-blue-600 mr-3 flex-shrink-0" />
+                                            <Phone className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
                                             <div>
-                                                <div className="font-medium text-blue-800">Need assistance with booking?</div>
-                                                <div className="flex items-center text-blue-600">
-                                                    <span className="font-semibold">+91 9310271488</span>
-                                                    <span className="ml-2 text-xs bg-blue-600 text-white px-2 py-0.5 rounded-full">Tap to call</span>
+                                                <div className="font-medium text-green-800">Need assistance with booking?</div>
+                                                <div className="flex items-center text-green-600">
+                                                    <span className="font-semibold">+91 9919 111 911</span>
+                                                    <span className="ml-2 text-xs bg-green-600 text-white px-2 py-0.5 rounded-full">Tap to call</span>
                                                 </div>
                                             </div>
                                         </a>
@@ -754,12 +632,12 @@ export default function BaliPackagePage({ params }: PageProps) {
                                 {/* Weather Widget */}
                                 <Card className="border-0 shadow-lg mt-6 overflow-hidden">
                                     <div className="p-4 border-b">
-                                        <h3 className="font-bold text-lg">Weather in Bali</h3>
+                                        <h3 className="font-bold text-lg">Weather in Kerala</h3>
                                     </div>
                                     <div className="p-6 grid grid-cols-2 gap-4">
                                         <div>
                                             <div className="text-amber-500 mb-1">Sunrise</div>
-                                            <div className="font-medium">6:15 AM</div>
+                                            <div className="font-medium">6:00 AM</div>
                                         </div>
                                         <div>
                                             <div className="text-amber-500 mb-1">Sunset</div>
@@ -767,17 +645,100 @@ export default function BaliPackagePage({ params }: PageProps) {
                                         </div>
                                         <div>
                                             <div className="text-blue-500 mb-1">Humidity</div>
-                                            <div className="font-medium">85%</div>
+                                            <div className="font-medium">75%</div>
                                         </div>
                                         <div>
-                                            <div className="text-blue-500 mb-1">Wind</div>
-                                            <div className="font-medium">12 km/h</div>
+                                            <div className="text-green-500 mb-1">Wind</div>
+                                            <div className="font-medium">5 km/h</div>
                                         </div>
                                     </div>
                                 </Card>
                             </div>
                         </div>
                     </div>
+
+                    {/* Additional sections for culture, sightseeing spots, local food */}
+                    {keralaPkg.sightseeingSpots && keralaPkg.sightseeingSpots.length > 0 && (
+                        <div className="mt-16">
+                            <h2 className="text-3xl font-bold mb-8 text-center">Must-Visit Sightseeing Spots</h2>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                {keralaPkg.sightseeingSpots.map((spot, index) => (
+                                    <Card key={index} className="overflow-hidden border-0 shadow-lg">
+                                        <div className="relative h-48">
+                                            <Image
+                                                src={spot.image}
+                                                alt={spot.name}
+                                                fill
+                                                className="object-cover"
+                                            />
+                                        </div>
+                                        <div className="p-4">
+                                            <h3 className="font-bold text-lg mb-2">{spot.name}</h3>
+                                            <p className="text-gray-600 text-sm">{spot.description}</p>
+                                        </div>
+                                    </Card>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Local Food Section */}
+                    {keralaPkg.localFood && keralaPkg.localFood.length > 0 && (
+                        <div className="mt-16">
+                            <h2 className="text-3xl font-bold mb-8 text-center">Taste of Kerala</h2>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                {keralaPkg.localFood.map((food, index) => (
+                                    <Card key={index} className="overflow-hidden border-0 shadow-lg">
+                                        <div className="flex">
+                                            <div className="relative w-1/3 h-32">
+                                                <Image
+                                                    src={food.image}
+                                                    alt={food.name}
+                                                    fill
+                                                    className="object-cover"
+                                                />
+                                            </div>
+                                            <div className="p-4 w-2/3">
+                                                <h3 className="font-bold text-lg mb-2">{food.name}</h3>
+                                                <p className="text-gray-600 text-sm mb-2">{food.description}</p>
+                                                {food.where && (
+                                                    <p className="text-green-600 text-xs font-medium">{food.where}</p>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </Card>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Culture Section */}
+                    {keralaPkg.culture && keralaPkg.culture.length > 0 && (
+                        <div className="mt-16">
+                            <h2 className="text-3xl font-bold mb-8 text-center">Kerala Culture & Heritage</h2>
+                            <div
+                                ref={cultureScrollRef}
+                                className="flex space-x-6 overflow-x-auto pb-4 no-scrollbar"
+                            >
+                                {keralaPkg.culture.map((item, index) => (
+                                    <Card key={index} className="flex-shrink-0 w-80 overflow-hidden border-0 shadow-lg">
+                                        <div className="relative h-48">
+                                            <Image
+                                                src={item.image}
+                                                alt={item.title}
+                                                fill
+                                                className="object-cover"
+                                            />
+                                        </div>
+                                        <div className="p-4">
+                                            <h3 className="font-bold text-lg mb-2">{item.title}</h3>
+                                            <p className="text-gray-600 text-sm">{item.description}</p>
+                                        </div>
+                                    </Card>
+                                ))}
+                            </div>
+                        </div>
+                    )}
                 </div>
 
                 {/* Mobile Booking Bar */}
@@ -785,10 +746,10 @@ export default function BaliPackagePage({ params }: PageProps) {
                     <div className="fixed bottom-0 left-0 right-0 bg-white border-t p-4 flex items-center justify-between z-[9999]">
                         <div>
                             <div className="text-sm">Per Person</div>
-                            <div className="font-bold text-xl">₹{baliPkg?.amount?.toLocaleString('en-IN')}</div>
+                            <div className="font-bold text-xl">₹{keralaPkg?.amount?.toLocaleString('en-IN')}</div>
                         </div>
                         <Button
-                            className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition"
+                            className="bg-gradient-to-r from-green-600 to-emerald-600 hover:opacity-90 transition"
                             onClick={() => setIsBookingModalOpen(true)}
                         >
                             Book Now
@@ -800,9 +761,9 @@ export default function BaliPackagePage({ params }: PageProps) {
                 <BookingFormModal
                     isOpen={isBookingModalOpen}
                     onClose={() => setIsBookingModalOpen(false)}
-                    destinationName={baliPkg?.packageName}
-                    price={baliPkg?.amount}
-                    dates={`${baliPkg?.dateStart} - ${baliPkg?.dateEnd}`}
+                    destinationName={keralaPkg?.packageName}
+                    price={keralaPkg?.amount}
+                    dates={`${keralaPkg?.dateStart} - ${keralaPkg?.dateEnd}`}
                 />
 
                 {/* Gallery Modal */}
@@ -819,7 +780,7 @@ export default function BaliPackagePage({ params }: PageProps) {
 
                             <div className="relative aspect-square w-full">
                                 <Image
-                                    src={getAllImages()[currentGalleryIndex] || '/default-image.jpg'}
+                                    src={getAllImages()[currentGalleryIndex] || '/webImage/kerala/mobile/kerala1.jpg'}
                                     alt={`Gallery image ${currentGalleryIndex + 1}`}
                                     fill
                                     className="object-contain"
