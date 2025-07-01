@@ -4,17 +4,17 @@ import { use, useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { vietnamPackages } from '../data';
 import { notFound } from 'next/navigation';
-import { 
-  Calendar, Check, MapPin, Star, Users, X, Camera, Phone 
+import {
+    Calendar, Check, MapPin, Star, Users, X, Camera, Phone
 } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BookingFormModal } from '@/app/components/BookingFormModal';
-import {useScroll} from "framer-motion";
+import { useScroll } from "framer-motion";
 import { Poppins } from 'next/font/google';
-import {PageWrapper} from '@/components/page-wrapper';
+import { PageWrapper } from '@/components/page-wrapper';
 import { useMobile } from '@/hooks/use-mobile';
 
 const poppins = Poppins({
@@ -61,26 +61,26 @@ export default function VietnamPackagePage({ params }: PageProps) {
     const useAutoScroll = (scrollRef: React.RefObject<HTMLDivElement>, duration: number = 40000) => {
         useEffect(() => {
             if (!scrollRef.current) return;
-            
+
             const scrollElement = scrollRef.current;
             let animationFrameId: number;
             let startTime: number;
-            
+
             const scroll = (timestamp: number) => {
                 if (!startTime) startTime = timestamp;
                 const progress = timestamp - startTime;
-                
+
                 if (scrollElement) {
                     const scrollWidth = scrollElement.scrollWidth - scrollElement.clientWidth;
                     const newPosition = (progress % duration) / duration * scrollWidth;
                     scrollElement.scrollLeft = newPosition;
                 }
-                
+
                 animationFrameId = requestAnimationFrame(scroll);
             };
-            
+
             animationFrameId = requestAnimationFrame(scroll);
-            
+
             return () => {
                 if (animationFrameId) {
                     cancelAnimationFrame(animationFrameId);
@@ -93,15 +93,15 @@ export default function VietnamPackagePage({ params }: PageProps) {
 
     // Calculate truncated description for "Read More" functionality
     const description = vietnamPkg.description || "";
-    const truncatedDescription = description.length > 300 
-        ? `${description.substring(0, 300)}...` 
+    const truncatedDescription = description.length > 300
+        ? `${description.substring(0, 300)}...`
         : description;
 
     // Function to toggle day expansion
     const toggleDayExpansion = (dayNumber: number) => {
-        setExpandedDays(prev => 
-            prev.includes(dayNumber) 
-                ? prev.filter(d => d !== dayNumber) 
+        setExpandedDays(prev =>
+            prev.includes(dayNumber)
+                ? prev.filter(d => d !== dayNumber)
                 : [...prev, dayNumber]
         );
     };
@@ -117,13 +117,13 @@ export default function VietnamPackagePage({ params }: PageProps) {
 
     // Add these gallery navigation functions
     const nextImage = () => {
-        setCurrentGalleryIndex((prev) => 
+        setCurrentGalleryIndex((prev) =>
             prev === getAllImages().length - 1 ? 0 : prev + 1
         );
     };
 
     const previousImage = () => {
-        setCurrentGalleryIndex((prev) => 
+        setCurrentGalleryIndex((prev) =>
             prev === 0 ? getAllImages().length - 1 : prev - 1
         );
     };
@@ -143,7 +143,7 @@ export default function VietnamPackagePage({ params }: PageProps) {
     return (
         <PageWrapper>
             <div className={`relative ${poppins.className}`}>
-            {/* Hero Section */}
+                {/* Hero Section */}
                 <div className="relative h-[70vh] w-full">
                     <Image
                         src={vietnamPkg?.images?.[currentImageIndex] || '/default-image.jpg'}
@@ -162,25 +162,25 @@ export default function VietnamPackagePage({ params }: PageProps) {
                                 ))}
                                 <span className="ml-2 text-white font-medium">4.7/5 (45 reviews)</span>
                             </div>
-                            
+
                             {/* Package name */}
                             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">{vietnamPkg.packageName}</h1>
-                            
+
                             {/* Location */}
                             <div className="flex items-center text-white mb-6">
                                 <MapPin className="h-5 w-5 mr-2" />
                                 <span className="text-lg">Vietnam</span>
-                                </div>
-                            
+                            </div>
+
                             {/* Action buttons */}
                             <div className="flex flex-wrap gap-4 mb-12">
-                            <Button
-                                    size="lg" 
+                                <Button
+                                    size="lg"
                                     className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition rounded-full px-8"
-                                onClick={() => setIsBookingModalOpen(true)}
-                            >
-                                Book Now
-                            </Button>
+                                    onClick={() => setIsBookingModalOpen(true)}
+                                >
+                                    Book Now
+                                </Button>
                                 {!isMobile && (
                                     <Button
                                         size="lg"
@@ -192,9 +192,9 @@ export default function VietnamPackagePage({ params }: PageProps) {
                                     </Button>
                                 )}
                             </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
                 {/* Information bar */}
                 <div className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white">
@@ -202,27 +202,27 @@ export default function VietnamPackagePage({ params }: PageProps) {
                         <div className="flex items-center">
                             <div className="flex-shrink-0 w-8 md:w-auto">
                                 <Calendar className="h-6 w-6 mr-3" />
-                    </div>
+                            </div>
                             <div>
                                 <div className="text-sm opacity-80">Duration</div>
                                 <div className="font-medium text-sm md:text-base">{vietnamPkg.days} days / {vietnamPkg.nights} nights</div>
-                </div>
-            </div>
+                            </div>
+                        </div>
 
                         <div className="flex items-center">
                             <div className="flex-shrink-0 w-8 md:w-auto">
                                 <MapPin className="h-6 w-6 mr-3" />
-                                            </div>
+                            </div>
                             <div>
                                 <div className="text-sm opacity-80">Location</div>
                                 <div className="font-medium text-sm md:text-base">Vietnam</div>
-                                    </div>
-                                </div>
+                            </div>
+                        </div>
 
                         <div className="flex items-center">
                             <div className="flex-shrink-0 w-8 md:w-auto">
                                 <Users className="h-6 w-6 mr-3" />
-                                            </div>
+                            </div>
                             <div>
                                 <div className="text-sm opacity-80">Group Size</div>
                                 <div className="font-medium text-sm md:text-base">Max 20 people</div>
@@ -232,8 +232,8 @@ export default function VietnamPackagePage({ params }: PageProps) {
                         <div className="flex items-center">
                             <div className="flex-shrink-0 w-8 md:w-auto">
                                 <Star className="h-6 w-6 mr-3 text-yellow-400 fill-yellow-400" />
-                                </div>
-                                                    <div>
+                            </div>
+                            <div>
                                 <div className="text-sm opacity-80">Rating</div>
                                 <div className="font-medium text-sm md:text-base">4.7/5 (45 reviews)</div>
                             </div>
@@ -251,26 +251,26 @@ export default function VietnamPackagePage({ params }: PageProps) {
                                 <div className="max-w-full">
                                     <Tabs defaultValue="overview" className="w-full">
                                         <TabsList className="w-full bg-gray-100 p-0 my-4 rounded-lg overflow-x-auto flex no-scrollbar">
-                                            <TabsTrigger 
+                                            <TabsTrigger
                                                 value="overview"
                                                 className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white py-2 px-4 md:py-3 md:px-6 flex-shrink-0"
                                             >
                                                 Overview
                                             </TabsTrigger>
-                                            <TabsTrigger 
+                                            <TabsTrigger
                                                 value="itinerary"
                                                 className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white py-2 px-4 md:py-3 md:px-6 flex-shrink-0"
                                             >
                                                 Itinerary
                                             </TabsTrigger>
-                                            <TabsTrigger 
+                                            <TabsTrigger
                                                 value="accommodation"
                                                 className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white py-2 px-4 md:py-3 md:px-6 flex-shrink-0"
                                             >
                                                 Accommodation
                                             </TabsTrigger>
                                         </TabsList>
-                                        
+
                                         {/* Tab Content sections */}
                                         <TabsContent value="overview" className="mt-0">
                                             {/* Package Highlights */}
@@ -322,10 +322,37 @@ export default function VietnamPackagePage({ params }: PageProps) {
                                                                 fill
                                                                 className="object-cover"
                                                             />
-                                </div>
-                        </div>
-                    </div>
-                </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {/* Departure Dates */}
+                                            {vietnamPkg.departureDates && (
+                                                <div className="mb-10">
+                                                    <h2 className="text-2xl font-bold mb-6">Available Departure Dates:</h2>
+                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                        {vietnamPkg.departureDates.map((departure, index) => (
+                                                            <Card key={index} className="border border-gray-200">
+                                                                <div className="p-4 flex justify-between items-center">
+                                                                    <div>
+                                                                        <h3 className="font-bold text-lg">{departure.date}</h3>
+                                                                        <p className="text-sm text-gray-500">{departure.availability || 'Available'}</p>
+                                                                    </div>
+                                                                    {departure.price && (
+                                                                        <div className="text-right">
+                                                                            <p className="font-bold text-[#017ae3] text-lg">
+                                                                                ₹{departure.price.toLocaleString('en-IN')}
+                                                                            </p>
+                                                                            <p className="text-sm text-gray-500">per person</p>
+                                                                        </div>
+                                                                    )}
+                                                                </div>
+                                                            </Card>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            )}
 
                                             {/* Experiences You'll Love */}
                                             {vietnamPkg.experiences && (
@@ -341,15 +368,44 @@ export default function VietnamPackagePage({ params }: PageProps) {
                                                                         fill
                                                                         className="object-cover hover:scale-105 transition duration-500"
                                                                     />
-                                    </div>
+                                                                </div>
                                                                 <div className="p-4">
                                                                     <h3 className="font-medium text-center">{experience.title}</h3>
-                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            )}
+
+                                            {/* Culture & Traditions Section */}
+                                            <div className="mb-10">
+                                                <h2 className="text-2xl font-bold mb-6">Vietnamese Culture & Traditions</h2>
+                                                <div
+                                                    ref={cultureScrollRef}
+                                                    className="overflow-x-hidden relative -mx-4 px-4"
+                                                >
+                                                    <div className="flex gap-4 md:gap-6 animate-scroll">
+                                                        {[...vietnamPkg.culture, ...vietnamPkg.culture]?.map((item, index) => (
+                                                            <div
+                                                                key={index}
+                                                                className="flex-none w-[280px] md:w-[400px]"
+                                                            >
+                                                                <div className="relative h-[250px] mb-4">
+                                                                    <Image
+                                                                        src={item.image}
+                                                                        alt={item.title}
+                                                                        fill
+                                                                        className="rounded-lg object-cover"
+                                                                    />
+                                                                </div>
+                                                                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                                                                <p className="text-gray-600 text-sm line-clamp-3">{item.description}</p>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                </div>
                                             </div>
-                                        ))}
-                                </div>
-                            </div>
-                        )}
 
                                             {/* Gallery */}
                                             <div className="mb-10">
@@ -409,11 +465,11 @@ export default function VietnamPackagePage({ params }: PageProps) {
                                                 </div>
                                             </div>
                                         </TabsContent>
-                                        
+
                                         <TabsContent value="itinerary" className="mt-0">
                                             <div className="mb-10">
                                                 <h2 className="text-2xl font-bold mb-6">Day-by-Day Itinerary</h2>
-                                                
+
                                                 {/* Day navigation buttons */}
                                                 <div className="flex overflow-x-auto space-x-2 mb-8 pb-2 no-scrollbar">
                                                     {vietnamPkg.itinerary.map((day, i) => (
@@ -423,41 +479,40 @@ export default function VietnamPackagePage({ params }: PageProps) {
                                                                 setSelectedDay(day.day);
                                                                 scrollToDay(day.day);
                                                             }}
-                                                            className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                                                                selectedDay === day.day
-                                                                    ? "bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white"
-                                                                    : "bg-gray-100 hover:bg-gray-200 text-gray-800"
-                                                            }`}
+                                                            className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${selectedDay === day.day
+                                                                ? "bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white"
+                                                                : "bg-gray-100 hover:bg-gray-200 text-gray-800"
+                                                                }`}
                                                         >
                                                             Day {day.day}
                                                         </button>
                                                     ))}
                                                 </div>
-                                                
+
                                                 {/* Timeline view with collapsible content */}
                                                 <div className="relative pb-6">
                                                     <div className="absolute left-4 md:left-[3.5rem] top-0 bottom-0 w-0.5 bg-[#017ae3]"></div>
-                                                    
+
                                                     <div className="space-y-6">
                                                         {vietnamPkg.itinerary.map((day, i) => {
                                                             const isExpanded = expandedDays.includes(day.day);
-                                                            
+
                                                             return (
-                                                                <div 
-                                                                    key={i} 
-                                                                    id={`day-${day.day}`} 
+                                                                <div
+                                                                    key={i}
+                                                                    id={`day-${day.day}`}
                                                                     className="relative pl-12 md:pl-20 scroll-mt-24"
                                                                 >
                                                                     {/* Day number marker */}
-                                                                    <div 
+                                                                    <div
                                                                         className="absolute left-0 top-2 w-8 h-8 rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] flex items-center justify-center text-white font-bold z-10 cursor-pointer"
                                                                         onClick={() => toggleDayExpansion(day.day)}
                                                                     >
                                                                         {day.day}
                                                                     </div>
-                                                                    
+
                                                                     {/* Content card */}
-                                                                    <div 
+                                                                    <div
                                                                         className={`bg-white rounded-xl shadow-sm overflow-hidden ${selectedDay === day.day ? 'ring-2 ring-[#017ae3]/20' : ''}`}
                                                                         onClick={() => toggleDayExpansion(day.day)}
                                                                     >
@@ -476,7 +531,7 @@ export default function VietnamPackagePage({ params }: PageProps) {
                                                                         <div className="p-5">
                                                                             <div className="flex justify-between items-center">
                                                                                 <h3 className="text-lg font-bold">Day {day.day}: {day.title}</h3>
-                                                                                <button 
+                                                                                <button
                                                                                     className="text-gray-400 hover:text-gray-600"
                                                                                     onClick={(e) => {
                                                                                         e.stopPropagation();
@@ -494,10 +549,26 @@ export default function VietnamPackagePage({ params }: PageProps) {
                                                                                     )}
                                                                                 </button>
                                                                             </div>
-                                                                            
+
                                                                             {isExpanded && (
                                                                                 <>
                                                                                     <p className="text-gray-700 mt-3 mb-4">{day.description}</p>
+
+                                                                                    <div>
+                                                                                        <h4 className="text-[#017ae3] font-medium mb-2">Activities:</h4>
+                                                                                        <div className="space-y-2">
+                                                                                            {day.title.split(' • ').map((activity, j) => (
+                                                                                                <div key={j} className="flex items-center">
+                                                                                                    <div className="h-5 w-5 rounded-full bg-[#e6f7ff] flex items-center justify-center mr-3 flex-shrink-0">
+                                                                                                        <svg className="h-3 w-3 text-[#017ae3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                                                                                        </svg>
+                                                                                                    </div>
+                                                                                                    <span className="text-gray-700 text-sm">{activity}</span>
+                                                                                                </div>
+                                                                                            ))}
+                                                                                        </div>
+                                                                                    </div>
                                                                                 </>
                                                                             )}
                                                                         </div>
@@ -509,7 +580,7 @@ export default function VietnamPackagePage({ params }: PageProps) {
                                                 </div>
                                             </div>
                                         </TabsContent>
-                                        
+
                                         <TabsContent value="accommodation" className="mt-0">
                                             <div className="mb-10">
                                                 <h2 className="text-2xl font-bold mb-6">Your Accommodations</h2>
@@ -533,9 +604,37 @@ export default function VietnamPackagePage({ params }: PageProps) {
                                                             </div>
                                                         </Card>
                                                     ))}
-                    </div>
-                </div>
-                                            
+                                                </div>
+                                            </div>
+
+                                            {/* Famous Local Cuisine */}
+                                            <div className="mb-10">
+                                                <h2 className="text-2xl font-bold mb-6">Famous Local Cuisine</h2>
+                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                                    {vietnamPkg.localFood?.map((food, index) => (
+                                                        <div key={index} className="flex gap-4 items-center bg-gray-50 rounded-lg p-4">
+                                                            <Image
+                                                                src={food.image}
+                                                                alt={food.name}
+                                                                width={120}
+                                                                height={120}
+                                                                className="rounded-lg object-cover"
+                                                            />
+                                                            <div>
+                                                                <h3 className="text-lg font-semibold mb-2">{food.name}</h3>
+                                                                <p className="text-gray-600 text-sm">{food.description}</p>
+                                                                {food.where && (
+                                                                    <p className="text-sm text-[#017ae3] mt-2 flex items-center">
+                                                                        <MapPin className="h-3 w-3 mr-1" />
+                                                                        {food.where}
+                                                                    </p>
+                                                                )}
+                                                            </div>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+
                                             {/* FAQ Section in Accommodation Tab */}
                                             <div className="mb-10">
                                                 <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
@@ -591,45 +690,45 @@ export default function VietnamPackagePage({ params }: PageProps) {
                                             <div className="font-medium">Duration:</div>
                                             <div>{vietnamPkg.nights} nights / {vietnamPkg.days} days</div>
                                         </div>
-                                        
+
                                         <div className="flex justify-between border-b pb-3">
                                             <div className="font-medium">Availability:</div>
                                             <div className="text-green-600">Available</div>
                                         </div>
-                                        
+
                                         <div className="flex justify-between border-b pb-3">
                                             <div className="font-medium">Group Size:</div>
                                             <div>Max 20 people</div>
-                </div>
+                                        </div>
 
                                         <div className="flex justify-between border-b pb-3 mb-4">
                                             <div className="font-medium">Languages:</div>
                                             <div>English, Vietnamese</div>
                                         </div>
 
-                                        <Button 
+                                        <Button
                                             className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition text-lg py-6"
                                             onClick={() => setIsBookingModalOpen(true)}
                                         >
                                             Book Now
                                         </Button>
 
-                                        <a 
-                                            href="tel:+919919111911" 
+                                        <a
+                                            href="tel:+919310271488"
                                             className="mt-4 bg-blue-50 hover:bg-blue-100 transition-colors p-4 rounded-md flex items-center cursor-pointer no-underline"
                                         >
                                             <Phone className="h-5 w-5 text-blue-600 mr-3 flex-shrink-0" />
                                             <div>
                                                 <div className="font-medium text-blue-800">Need assistance with booking?</div>
                                                 <div className="flex items-center text-blue-600">
-                                                    <span className="font-semibold">+91 9919 111 911</span>
+                                                    <span className="font-semibold">+91 9310271488</span>
                                                     <span className="ml-2 text-xs bg-blue-600 text-white px-2 py-0.5 rounded-full">Tap to call</span>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
                                 </Card>
-                                
+
                                 {/* Weather Widget */}
                                 <Card className="border-0 shadow-lg mt-6 overflow-hidden">
                                     <div className="p-4 border-b">
@@ -660,12 +759,12 @@ export default function VietnamPackagePage({ params }: PageProps) {
                 </div>
 
                 {/* Mobile Booking Bar */}
-                {isMobile && (
+                {isMobile && !isBookingModalOpen && (
                     <div className="fixed bottom-0 left-0 right-0 bg-white border-t p-4 flex items-center justify-between z-[9999]">
                         <div>
                             <div className="text-sm">Per Person</div>
                             <div className="font-bold text-xl">₹{vietnamPkg?.amount?.toLocaleString('en-IN')}</div>
-            </div>
+                        </div>
                         <Button
                             className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition"
                             onClick={() => setIsBookingModalOpen(true)}
@@ -674,9 +773,9 @@ export default function VietnamPackagePage({ params }: PageProps) {
                         </Button>
                     </div>
                 )}
-                
+
                 {/* Booking Modal */}
-                <BookingFormModal 
+                <BookingFormModal
                     isOpen={isBookingModalOpen}
                     onClose={() => setIsBookingModalOpen(false)}
                     destinationName={vietnamPkg?.packageName}
@@ -688,14 +787,14 @@ export default function VietnamPackagePage({ params }: PageProps) {
                 {isGalleryModalOpen && (
                     <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4">
                         <div className="relative w-full max-w-[90vh] mx-auto">
-                            <button 
+                            <button
                                 onClick={() => setIsGalleryModalOpen(false)}
                                 className="absolute top-4 right-4 z-10 text-white/80 hover:text-white bg-black/30 hover:bg-black/50 p-2 rounded-full transition-all"
                                 aria-label="Close gallery"
                             >
                                 <X className="h-6 w-6" />
                             </button>
-                            
+
                             <div className="relative aspect-square w-full">
                                 <Image
                                     src={getAllImages()[currentGalleryIndex] || '/default-image.jpg'}
@@ -706,7 +805,7 @@ export default function VietnamPackagePage({ params }: PageProps) {
                                     sizes="(max-width: 768px) 100vw, 80vw"
                                 />
                             </div>
-                            
+
                             <div className="absolute inset-y-0 left-0 flex items-center">
                                 <button
                                     onClick={previousImage}
@@ -718,7 +817,7 @@ export default function VietnamPackagePage({ params }: PageProps) {
                                     </svg>
                                 </button>
                             </div>
-                            
+
                             <div className="absolute inset-y-0 right-0 flex items-center">
                                 <button
                                     onClick={nextImage}
@@ -730,7 +829,7 @@ export default function VietnamPackagePage({ params }: PageProps) {
                                     </svg>
                                 </button>
                             </div>
-                            
+
                             <div className="absolute bottom-4 left-0 right-0 text-center text-white text-sm md:text-base">
                                 {currentGalleryIndex + 1} / {getAllImages().length}
                             </div>

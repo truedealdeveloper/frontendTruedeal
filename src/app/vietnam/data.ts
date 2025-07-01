@@ -3468,4 +3468,299 @@ The next stop is Dam Market - Nha Trang's oldest and largest market. The final l
             { date: "4, 11, 18, 25 Oct 2025" },
         ]
     },
+    vietnamClassicTour: {
+        id: "7-nights-8-days-vietnam-classic",
+        packageName: "7 Nights 8 Days Vietnam Classic Tour with Flights",
+        days: 8,
+        nights: 7,
+        amount: 75999,
+        dateStart: "Multiple departure dates available",
+        dateEnd: "",
+        description: "Discover the essence of Vietnam with our comprehensive 8-day tour covering Ho Chi Minh City, Danang, Hoi An, Hanoi, and Halong Bay. Experience ancient towns, bustling cities, scenic landscapes, and overnight cruise in the world-famous Halong Bay. This package includes flights from Mumbai and all meals for a hassle-free vacation.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Double Sharing",
+            arrivalDate: "Multiple dates available",
+            duration: "7N8D Vietnam Classic Tour",
+            costBasis: "Cost Based On per person"
+        },
+        hotelDetails: [
+            {
+                city: "Ho Chi Minh City",
+                hotel: "4 Star Hotel",
+                roomType: "Deluxe Room"
+            },
+            {
+                city: "Danang",
+                hotel: "4 Star Hotel",
+                roomType: "Deluxe Room"
+            },
+            {
+                city: "Hanoi",
+                hotel: "4 Star Hotel",
+                roomType: "Deluxe Room"
+            },
+            {
+                city: "Halong Bay",
+                hotel: "Cruise Ship",
+                roomType: "Deluxe Cabin"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Ho Chi Minh Arrival – Cu Chi Tunnels-Early Check Inn (B, L, D)",
+            "Day 2: Ho Chi Minh City – Mekong Delta (B, L, D)",
+            "Day 3: Ho Chi Minh City – Fly to Danang – City Tour (B, L, D)",
+            "Day 4: Danang – Ba Na Hill – Danang (B, L, D)",
+            "Day 5: Cam Thanh Village – Hoi An Ancient Town (B, L, D)",
+            "Day 6: Danang – Fly to Hanoi – Half Day City Tour (B, L, D)",
+            "Day 7: Hanoi – Halong Bay – Overnight Cruise (B, L, D)",
+            "Day 8: Ha Long Bay – Hanoi – Departure (B, Brunch, Lunch)"
+        ],
+        inclusions: [
+            "Travel Insurance",
+            "Welcome Drink on arrival",
+            "Entrance Fees And Permits",
+            "Bottle of drinking water during the tour",
+            "Boat Excursions at Ha Long Bay & Mekong Delta",
+            "An hour cyclo in Old Quarter Ha Noi",
+            "International Air Tickets, Domestic Air Tickets Included",
+            "7-Nights stay with daily breakfast as per the itinerary planned",
+            "Early Check Inn on Day 1 with Breakfast",
+            "All Meals as mentioned at Indian Restaurants",
+            "Meals are Included"
+        ],
+        exclusions: [
+            "Late Check-out not included",
+            "Any other meal which is not mentioned in inclusions specifically",
+            "Any kind of surcharge, compulsory dinner cost, or room upgrade cost",
+            "Any beverages which is not mentioned in inclusions specifically",
+            "Expenses of personal nature like, shopping, adventure sports etc. which is not mentioned specifically",
+            "Other expense like porter charges, laundry bills, any damage to hotel/resort or their room amenities. Client has to settle directly with the hotel, we have no role in this",
+            "Hotels may require a refundable security deposit to cover any potential damages or extra charges during your stay. It's a standard practice to ensure everything goes smoothly, and you'll get the deposit back when you check out",
+            "GST Will be charged additional as per govt. of India rules at the moment, it is 5%",
+            "TCS is applicable on International booking and not included in the package cost its on an additional basis currently it is 5%"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Ho Chi Minh Arrival – Cu Chi Tunnels-Early Check Inn (B, L, D)",
+                description: "Arrive at Ho Chi Minh City Airport and transfer to hotel for early check-in with breakfast. After refreshment, visit the famous Cu Chi Tunnels - an underground network that played a crucial role during the Vietnam War. Explore the tunnel system, learn about the ingenious construction and survival tactics used during wartime. Return to the city for lunch at an Indian restaurant and dinner. Overnight in Ho Chi Minh City.",
+                image: "/UGCImages/vietnam/vt/1.png"
+            },
+            {
+                day: 2,
+                title: "Ho Chi Minh City – Mekong Delta (B, L, D)",
+                description: "After breakfast, embark on a full-day excursion to the Mekong Delta. Take a boat cruise along the Mekong River to explore local villages and coconut candy workshops. Experience the traditional way of life in the delta region, visit fruit orchards, and enjoy local performances. Lunch will be served during the tour. Return to Ho Chi Minh City for dinner and overnight stay.",
+                image: "/UGCImages/vietnam/vt/2.png"
+            },
+            {
+                day: 3,
+                title: "Ho Chi Minh City – Fly to Danang – City Tour (B, L, D)",
+                description: "After breakfast, transfer to airport for domestic flight to Danang. Upon arrival, check into hotel and proceed for Danang city tour. Visit the famous Marble Mountains with its Buddhist pagodas and limestone caves. Explore the stone carving village and enjoy panoramic views from the mountain top. Lunch and dinner at Indian restaurants. Overnight in Danang.",
+                image: "/UGCImages/vietnam/vt/3.png"
+            },
+            {
+                day: 4,
+                title: "Danang – Ba Na Hill – Danang (B, L, D)",
+                description: "Today visit the spectacular Ba Na Hills, accessible by cable car offering breathtaking views. Explore the French Village, Golden Bridge held by giant stone hands, and beautiful gardens. Experience the cool mountain climate and colonial architecture. Enjoy lunch at the hilltop and return to Danang for dinner. Overnight in Danang.",
+                image: "/UGCImages/vietnam/vt/4.png"
+            },
+            {
+                day: 5,
+                title: "Cam Thanh Village – Hoi An Ancient Town (B, L, D)",
+                description: "After breakfast, visit Cam Thanh Village for a unique basket boat experience through coconut forests. Learn about local fishing techniques and rural life. Later, explore the UNESCO World Heritage site of Hoi An Ancient Town with its well-preserved architecture, Japanese Covered Bridge, and colorful lanterns. Visit local markets and enjoy shopping for souvenirs. Overnight in Danang.",
+                image: "/UGCImages/vietnam/vt/5.png"
+            },
+            {
+                day: 6,
+                title: "Danang – Fly to Hanoi – Half Day City Tour (B, L, D)",
+                description: "After breakfast, fly to Hanoi, Vietnam's capital city. Check into hotel and embark on a half-day city tour. Visit the Temple of Literature (Vietnam's first university), Hoan Kiem Lake, and Ngoc Son Temple. Experience the bustling Old Quarter with its narrow streets and traditional shops. Enjoy an hour-long cyclo ride through the historic quarter. Overnight in Hanoi.",
+                image: "/UGCImages/vietnam/vt/6.png"
+            },
+            {
+                day: 7,
+                title: "Hanoi – Halong Bay – Overnight Cruise (B, L, D)",
+                description: "After breakfast, drive to Halong Bay (3.5 hours), one of Vietnam's most spectacular natural wonders and UNESCO World Heritage site. Board your cruise ship and sail through the emerald waters dotted with thousands of limestone karsts. Visit Sung Sot Cave (Surprise Cave), enjoy kayaking or swimming activities. Watch the sunset over the bay while enjoying dinner on board. Overnight on the cruise.",
+                image: "/UGCImages/vietnam/vt/7.png"
+            },
+            {
+                day: 8,
+                title: "Ha Long Bay – Hanoi – Departure (B, Brunch, Lunch)",
+                description: "Wake up early to witness the beautiful sunrise over Halong Bay. Enjoy breakfast on board and continue cruising to explore more of the bay's beauty. Check out of cabins and enjoy brunch while cruising back to the harbor. Drive back to Hanoi and have lunch before transferring to Noi Bai International Airport for your departure flight back to Mumbai.",
+                image: "/UGCImages/vietnam/vt/8.png"
+            }
+        ],
+        images: [
+            "/UGCImages/vietnam/HORIZONTAL/1.png",
+            "/UGCImages/vietnam/HORIZONTAL/2.png",
+            "/UGCImages/vietnam/HORIZONTAL/3.png",
+            "/UGCImages/vietnam/HORIZONTAL/4.png",
+        ],
+        experiences: [
+            {
+                title: "Cu Chi Tunnels Exploration",
+                image: "/UGCImages/vietnam/vt/1.png"
+            },
+            {
+                title: "Mekong Delta",
+                image: "/UGCImages/vietnam/vt/2.png"
+            },
+            {
+                title: "Ba Na Hills Cable Car",
+                image: "/UGCImages/vietnam/vt/cablecar.jpg"
+            },
+            {
+                title: "Halong Bay",
+                image: "/UGCImages/vietnam/vt/4.png"
+            }
+        ],
+        sightseeingSpots: [
+            {
+                name: "Cu Chi Tunnels",
+                description: "Historic underground network used during the Vietnam War, featuring tunnel systems, trap doors, and war exhibits",
+                image: "/UGCImages/vietnam/extra/CuChiTunnels.jpg"
+            },
+            {
+                name: "Mekong Delta",
+                description: "Vietnam's rice bowl region with floating markets, fruit orchards, and traditional riverside life",
+                image: "/UGCImages/vietnam/extra/MekongDelta.jpg"
+            },
+            {
+                name: "Ba Na Hills",
+                description: "French colonial hill station featuring the famous Golden Bridge and panoramic mountain views",
+                image: "/UGCImages/vietnam/extra/GoldenBridge.jpg"
+            },
+            {
+                name: "Hoi An Ancient Town",
+                description: "UNESCO World Heritage site with well-preserved ancient architecture and colorful lanterns",
+                image: "/UGCImages/vietnam/extra/HoiAnTown.jpg"
+            },
+            {
+                name: "Halong Bay",
+                description: "UNESCO World Heritage site with emerald waters and thousands of limestone karsts",
+                image: "/UGCImages/vietnam/extra/HalongBay.jpg"
+            },
+            {
+                name: "Temple of Literature",
+                description: "Vietnam's first university and beautiful example of traditional Vietnamese architecture",
+                image: "/UGCImages/vietnam/extra/TempleOfLiterature.jpg"
+            }
+        ],
+        localFood: [
+            {
+                name: "Pho",
+                description: "Vietnam's iconic rice noodle soup with beef or chicken, fresh herbs, and aromatic broth",
+                image: "/UGCImages/vietnam/cuisine/Pho.jpg",
+                where: "Throughout Vietnam"
+            },
+            {
+                name: "Banh Mi",
+                description: "Crispy Vietnamese baguette sandwich filled with meats, pâté, vegetables and herbs",
+                image: "/UGCImages/vietnam/cuisine/BanhMi.jpg",
+                where: "Hoi An specialty shops"
+            },
+            {
+                name: "Cao Lau",
+                description: "Hoi An specialty with thick rice noodles, pork, and local greens in a light broth",
+                image: "/UGCImages/vietnam/cuisine/CaoLau.jpg",
+                where: "Hoi An Ancient Town"
+            },
+            {
+                name: "Bun Cha",
+                description: "Hanoi specialty of grilled pork served with rice noodles, herbs and dipping sauce",
+                image: "/UGCImages/vietnam/cuisine/BunCha.jpg",
+                where: "Hanoi Old Quarter"
+            },
+            {
+                name: "Mi Quang",
+                description: "Central Vietnam's signature turmeric noodle soup with shrimp, pork, and fresh herbs",
+                image: "/UGCImages/vietnam/cuisine/MiQuang.jpg",
+                where: "Danang & Hoi An region"
+            }
+        ],
+        culture: [
+            {
+                title: "Traditional Water Puppetry",
+                description: "Ancient Vietnamese art form where puppets perform on water, telling folk tales and legends",
+                image: "/UGCImages/vietnam/culture/WaterPuppet.jpg"
+            },
+            {
+                title: "Ao Dai Traditional Dress",
+                description: "Vietnam's elegant national costume worn by women, featuring a long tunic over pants",
+                image: "/UGCImages/vietnam/culture/AoDai.jpg"
+            },
+            {
+                title: "Basket Boat Tours",
+                description: "Traditional round boats used in coconut forests and waterways for fishing and transportation",
+                image: "/UGCImages/vietnam/culture/BasketBoats.jpg"
+            },
+            {
+                title: "Lantern Festival Culture",
+                description: "Hoi An's famous colorful lanterns that light up the ancient town during festivals",
+                image: "/UGCImages/vietnam/culture/LanternFestival.jpg"
+            },
+            {
+                title: "Traditional Tailoring",
+                description: "Hoi An's world-famous custom tailoring shops creating beautiful silk garments",
+                image: "/UGCImages/vietnam/culture/Tailoring.jpg"
+            }
+        ],
+        additionalInfo: {
+            highlights: [
+                "Complete Vietnam experience covering South, Central, and North regions",
+                "Overnight cruise in UNESCO World Heritage Halong Bay",
+                "Explore ancient Hoi An town and its cultural heritage",
+                "Visit famous Cu Chi Tunnels and learn Vietnam War history",
+                "Experience Mekong Delta's floating markets and rural life",
+                "All domestic flights included for comfortable travel",
+                "Early check-in and all meals included"
+            ],
+            bestTimeToVisit: "October to April (Dry Season)",
+            cuisine: [
+                "All meals at Indian restaurants",
+                "Local Vietnamese specialties",
+                "Fresh seafood during Halong Bay cruise",
+                "Regional dishes from different provinces"
+            ],
+            accommodation: {
+                type: "4 Star Hotels and Cruise Ship",
+                amenities: [
+                    "Swimming pools",
+                    "Spa facilities",
+                    "Restaurants & bars",
+                    "Free Wi-Fi",
+                    "Air conditioning",
+                    "Early check-in included"
+                ]
+            },
+            transportation: {
+                type: "Private AC Vehicle + Domestic Flights",
+                features: [
+                    "Professional English-speaking driver",
+                    "Comfortable seating",
+                    "Air conditioning",
+                    "International flights from Mumbai",
+                    "Domestic flights between cities"
+                ]
+            },
+            visaInfo: {
+                requirement: "Visa on Arrival or E-Visa",
+                duration: "30 days",
+                cost: "USD 25-50 depending on type",
+                documents: [
+                    "Valid passport (minimum 6 months)",
+                    "Return flight tickets",
+                    "Hotel booking confirmation",
+                    "Visa approval letter (if applicable)"
+                ]
+            }
+        },
+        departureDates: [
+            { date: "Every Friday departure available" },
+            { date: "Fixed departures: 10, 17, 24 Jan 2025" },
+            { date: "Fixed departures: 7, 14, 21, 28 Feb 2025" },
+            { date: "Fixed departures: 7, 14, 21, 28 Mar 2025" },
+            { date: "Fixed departures: 4, 11, 18, 25 Apr 2025" }
+        ]
+    },
 }; 
