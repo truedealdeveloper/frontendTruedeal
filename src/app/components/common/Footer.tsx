@@ -84,9 +84,9 @@ export default function Component() {
             </section> */}
 
 
-            <footer 
+            <footer
                 className="bg-white py-12 px-4 border-t"
-                itemScope 
+                itemScope
                 itemType="http://schema.org/WPFooter"
                 aria-label="Site footer"
             >
@@ -124,9 +124,9 @@ export default function Component() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
                         {/* Company Info with enhanced styling */}
-                        <div 
+                        <div
                             className="transform transition-all duration-300 hover:translate-y-[-5px]"
-                            itemScope 
+                            itemScope
                             itemType="http://schema.org/Organization"
                             data-nosnippet
                         >
@@ -171,7 +171,7 @@ export default function Component() {
                         </div>
 
                         {/* Quick Links with enhanced styling */}
-                        <nav 
+                        <nav
                             className="transform transition-all duration-300 hover:translate-y-[-5px]"
                             aria-label="Footer navigation"
                             data-nosnippet
@@ -190,11 +190,13 @@ export default function Component() {
                                     { name: "Terms & conditions", path: "/terms&conditions" },
                                     { name: "Reviews", path: "/reviews" },
                                     { name: "Refund & Cancellation", path: "/refund&cancellation" },
-                                    { name: "Payment", path: "/payment" }
+                                    { name: "Payment", path: "/payment" },
+                                    { name: "EMI Calculator", path: "https://app.sankash.in/customer/application?token=eyJhcHBsaWNhdGlvbl9udW1iZXIiOiJTSy1BUC0wNDUxMjg5IiwicGFnZSI6Im5ldyIsImRhdGEiOiJaVEExT1RRd1pHWmlPVEZqTTJSbU5qUTNNemxoWWpVeU5qSmpaV05sWkRjPSIsInN0b3BfYXRfYXBwcm92YWwiOmZhbHNlfQ==" }
                                 ].map((link) => (
                                     <li key={link.name} className="transform transition-all duration-200 hover:translate-x-2">
-                                        <Link href={link.path} 
-                                            className="group text-gray-700 hover:text-[#017ae3] text-sm transition-colors duration-200 flex items-center gap-2">
+                                        <Link href={link.path}
+                                            className="group text-gray-700 hover:text-[#017ae3] text-sm transition-colors duration-200 flex items-center gap-2"
+                                            {...(link.path.startsWith('http') ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
                                             <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-200">→</span>
                                             {link.name}
                                         </Link>
@@ -204,7 +206,7 @@ export default function Component() {
                         </nav>
 
                         {/* Fixed Departures section */}
-                        <nav 
+                        <nav
                             className="transform transition-all duration-300 hover:translate-y-[-5px]"
                             aria-label="Fixed departures navigation"
                             data-nosnippet
@@ -218,7 +220,7 @@ export default function Component() {
                                     <ul className="space-y-1.5">
                                         {fixedDepartureDestinations.international.map((dest) => (
                                             <li key={dest.id} className="transform transition-all duration-200 hover:translate-x-2">
-                                                <Link 
+                                                <Link
                                                     href={`/fixedDeparture/${dest.id}`}
                                                     className="group text-gray-700 hover:text-[#017ae3] text-sm transition-colors duration-200 flex items-center gap-2"
                                                 >
@@ -234,7 +236,7 @@ export default function Component() {
                                     <ul className="space-y-1.5">
                                         {fixedDepartureDestinations.domestic.map((dest) => (
                                             <li key={dest.id} className="transform transition-all duration-200 hover:translate-x-2">
-                                                <Link 
+                                                <Link
                                                     href={`/fixedDeparture/${dest.id}`}
                                                     className="group text-gray-700 hover:text-[#017ae3] text-sm transition-colors duration-200 flex items-center gap-2"
                                                 >
@@ -252,8 +254,8 @@ export default function Component() {
 
                 {/* Copyright Section with enhanced styling and illustrations */}
                 <div className="mt-12 pt-8 border-t border-gray-200 relative">
-                   
-                    
+
+
                     {/* Certification Badges */}
                     <div className="max-w-7xl mx-auto mb-6">
                         <div className="flex justify-center gap-8 mb-6">
@@ -279,7 +281,7 @@ export default function Component() {
                                 className="opacity-70 hover:opacity-100 transition-opacity"
                             />
 
-<Image
+                            <Image
                                 src="/Assets/chatbot/building.png"
                                 alt="Tourism Certified"
                                 width={60}
