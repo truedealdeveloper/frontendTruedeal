@@ -98,13 +98,13 @@ export const vietnamPackages: Record<string, vietnamPackage> = {
         days: 4,
         nights: 3,
         amount: 30799,
-        dateStart: "1,8,15,22,29 June",
-        dateEnd: "5,12,19,26,30 July",
+        dateStart: "5,12,19,26,30 July",
+        dateEnd: "",
         description: "Explore the highlights of Vietnam's south with our 4-day tour covering Ho Chi Minh City, Mekong Delta, and Cu Chi Tunnels. From bustling markets to historical sites, this tour offers a perfect blend of culture, adventure, and relaxation.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in June 2025",
+            arrivalDate: "Multiple dates in July 2025",
             duration: "4N3D vietnam Fixed Departure",
             costBasis: "Cost Based On per person"
         },
@@ -124,7 +124,7 @@ export const vietnamPackages: Record<string, vietnamPackage> = {
                 hotel: "5 star EASTIN GRAND HOTEL",
                 roomType: "Superior Room"
             }
-            
+
         ],
         tourSummary: [
             "Day 1: Ho Chi Minh City - Arrival ",
@@ -199,7 +199,7 @@ Town). Overnight in Ho Chi Minh City.`,
 your departure flight.`,
                 image: "/UGCImages/vietnam/HORIZONTAL/4.png"
             },
-            
+
         ],
         images: [
             "/UGCImages/vietnam/HORIZONTAL/1.png",
@@ -226,7 +226,7 @@ your departure flight.`,
                 title: "Local Cuisine",
                 image: "/UGCImages/vietnam/sightseeing/cuisine.jpg"
             }
-            
+
         ],
         sightseeingSpots: [
             {
@@ -320,7 +320,7 @@ your departure flight.`,
                 "Traditional vietnamnese dishes",
                 "Fresh seafood specialties",
                 "Local fruit varieties",
-                
+
             ],
             accommodation: {
                 type: "4-Star Premium Hotels",
@@ -354,10 +354,10 @@ your departure flight.`,
             }
         },
         departureDates: [
-            { date: "1, 8, 15, 22 Mar 2025" },
-            { date: "3, 10, 17, 24 Apr 2025" },
-            { date: "7, 14, 21, 28 May 2025" },
-            { date: "5, 12, 19, 26 Jun 2025" },
+            { date: "1, 8, 15, 22 July 2025" },
+            { date: "3, 10, 17, 24 Aug 2025" },
+            { date: "7, 14, 21, 28 Sept 2025" },
+            { date: "5, 12, 19, 26 Oct 2025" },
         ]
     },
     vietnamPhuQuoc: {
@@ -366,13 +366,13 @@ your departure flight.`,
         days: 4,
         nights: 3,
         amount: 39000,
-        dateStart: "1,8,15,22,29 June",
+        dateStart: "1,8,15,22,29 July",
         dateEnd: "5,12,19,26,30 July",
         description: "Experience the Phu Quoc Island with our 4-day tour covering Phu Quoc Island. From pristine beaches to cultural landmarks, this tour offers a perfect blend of relaxation, adventure, and urban exploration.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in June 2025",
+            arrivalDate: "Multiple dates in July 2025",
             duration: "4D3N vietnam Fixed Departure",
             costBasis: "Cost Based On per person"
         },
@@ -392,7 +392,7 @@ your departure flight.`,
                 hotel: "5 star SEASHELLS RESORT & SPA",
                 roomType: "Classic city view Room"
             }
-            
+
         ],
         tourSummary: [
             "Day 1: Phu Quoc - Arrival",
@@ -439,7 +439,7 @@ your departure flight.`,
                 description: `Have breakfast at the hotel and relax until the time of transfer to Phu Quoc International airport for
 your departure flight.`
             },
-            
+
         ],
         images: [
             "/UGCImages/vietnam/vietnam/hoi an/1.webp",
@@ -447,8 +447,8 @@ your departure flight.`
             "/UGCImages/vietnam/vietnam/hoi an/3.webp",
             "/UGCImages/vietnam/vietnam/hoi an/4.webp",
             "/UGCImages/vietnam/vietnam/hoi an/5.webp",
-            
-            
+
+
         ],
         sightseeingSpots: [
             {
@@ -576,11 +576,11 @@ your departure flight.`
             }
         },
         departureDates: [
-            { date: "3, 10, 17, 24, 31 Mar 2025" },
-            { date: "7, 14, 21 Apr 2025" },
-            { date: "5, 12, 19, 26 May 2025" },
-            { date: "2, 9, 16, 23, 30 Jun 2025" },
-            
+            { date: "3, 10, 17, 24, 31 July 2025" },
+            { date: "7, 14, 21 Aug 2025" },
+            { date: "5, 12, 19, 26 Sept 2025" },
+            { date: "2, 9, 16, 23, 30 Oct 2025" },
+
         ]
     },
     vietnamNorth: {
@@ -589,13 +589,13 @@ your departure flight.`
         days: 5,
         nights: 4,
         amount: 39000,
-        dateStart: "1,8,15,22,29 June",
+        dateStart: "1,8,15,22,29 July",
         dateEnd: "5,12,19,26,30 July",
         description: "Discover the highlights of Vietnam's north with our 5-day tour covering Hanoi, Halong Bay. From ancient temples to stunning landscapes, this tour offers a perfect blend of culture, adventure, and relaxation.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in June 2025",
+            arrivalDate: "Multiple dates in July 2025",
             duration: "5D4N vietnam Fixed Departure",
             costBasis: "Cost Based On per person"
         },
@@ -630,7 +630,7 @@ your departure flight.`
                 hotel: "5 star PARADISE SAILS CRUISE",
                 roomType: "Deluxe Room"
             }
-            
+
         ],
         tourSummary: [
             "Day 1: Hanoi - Arrival",
@@ -682,7 +682,7 @@ your departure flight.`
                 title: "Ha Noi - Departure (B)",
                 description: `Have breakfast at the hotel and relax until the time of transfer to Hanoi International airport for your departure flight.`
             },
-            
+
         ],
         images: [
             "/UGCImages/vietnam/vietnam/hoi an/2.webp",
@@ -690,7 +690,7 @@ your departure flight.`
             "/UGCImages/vietnam/vietnam/hoi an/4.webp",
             "/UGCImages/vietnam/vietnam/hoi an/5.webp",
 
-            
+
         ],
         sightseeingSpots: [
             {
@@ -818,10 +818,10 @@ your departure flight.`
             }
         },
         departureDates: [
-            { date: "7, 14, 21, 28 Mar 2025" },
-            { date: "11, 18 Apr 2025" },
-            { date: "2, 9, 16, 23, 30 May 2025" },
-            { date: "6, 13, 20, 27 Jun 2025" },
+            { date: "7, 14, 21, 28 July 2025" },
+            { date: "11, 18 Aug 2025" },
+            { date: "2, 9, 16, 23, 30 Sept 2025" },
+            { date: "6, 13, 20, 27 Oct 2025" },
         ]
     },
     vietnamCentral: {
@@ -830,13 +830,13 @@ your departure flight.`
         days: 5,
         nights: 4,
         amount: 32900,
-        dateStart: "1,8,15,22,29 June",
+        dateStart: "1,8,15,22,29 July",
         dateEnd: "5,12,19,26,30 July",
         description: "Discover the highlights of Vietnam's central with our 5-day tour covering Hoi An, Danang, Hue, and Ho Chi Minh City. From ancient temples to stunning landscapes, this tour offers a perfect blend of culture, adventure, and relaxation.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in June 2025",
+            arrivalDate: "Multiple dates in July 2025",
             duration: "5D4N Vietnam Fixed Departure",
             costBasis: "Double sharing basis"
         },
@@ -871,7 +871,7 @@ your departure flight.`
                 hotel: "5 star TMS HOTEL DA NANG BEACH",
                 roomType: "Premier Suite City"
             }
-            
+
         ],
         tourSummary: [
             "Day 1: Da Nang - Arrival - Da Nang",
@@ -925,15 +925,15 @@ your departure flight.`
                 title: "Hoi An - Da Nang Departure (B)",
                 description: `Have breakfast at the hotel and relax until the time of transfer to Da Nang International airport for your departure flight.`
             },
-            
+
         ],
         images: [
-            
+
             "/UGCImages/vietnam/vietnam/hoi an/6.webp",
             "/UGCImages/vietnam/vietnam/hoi an/7.webp",
             "/UGCImages/vietnam/vietnam/hoi an/8.webp",
             "/UGCImages/vietnam/vietnam/hoi an/9.webp",
-            
+
         ],
         sightseeingSpots: [
             {
@@ -1061,11 +1061,11 @@ your departure flight.`
             }
         },
         departureDates: [
-            { date: "3, 10, 17, 24, 31 Mar 2025" },
-            { date: "7, 14, 21 Apr 2025" },
-            { date: "5, 12, 19, 26 May 2025" },
-            { date: "2, 9, 16, 23, 30 Jun 2025" },
-            
+            { date: "3, 10, 17, 24, 31 July 2025" },
+            { date: "7, 14, 21 Aug 2025" },
+            { date: "5, 12, 19, 26 Sept 2025" },
+            { date: "2, 9, 16, 23, 30 Oct 2025" },
+
         ]
     },
     vietnamDiscovery: {
@@ -1074,13 +1074,13 @@ your departure flight.`
         days: 7,
         nights: 6,
         amount: 69000,
-        dateStart: "1,8,15,22,29 June",
+        dateStart: "1,8,15,22,29 July",
         dateEnd: "5,12,19,26,30 July",
         description: "Discover the highlights of Vietnam's central region, from the ancient capital of Hue to the charming Hoi An, with visits to historical sites, natural wonders, and culinary delights.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in June 2025",
+            arrivalDate: "Multiple dates in July 2025",
             duration: "7D6N Vietnam Fixed Departure",
             costBasis: "Double sharing basis"
         },
@@ -1130,7 +1130,7 @@ your departure flight.`
                 hotel: "5 star MUONG THANH LUXURY HOTEL",
                 roomType: "Deluxe"
             },
-            
+
         ],
         tourSummary: [
             "Day 1: Da Nang - Arrival",
@@ -1199,12 +1199,12 @@ your departure flight.`
             }
         ],
         images: [
-            
+
             "/UGCImages/vietnam/vietnam/hoi an/10.webp",
             "/UGCImages/vietnam/vietnam/hoi an/11.webp",
             "/UGCImages/vietnam/vietnam/hoi an/12.webp",
             "/UGCImages/vietnam/vietnam/hoi an/13.webp",
-            
+
 
         ],
         sightseeingSpots: [
@@ -1333,10 +1333,10 @@ your departure flight.`
             }
         },
         departureDates: [
-            { date: "1, 8, 15, 22, 29 Mar 2025" },
-            { date: "12, 19 Apr 2025" },
-            { date: "3, 10, 17, 24, 31 May 2025" },
-            { date: "7, 14, 21, 28 Jun 2025" },
+            { date: "1, 8, 15, 22, 29 July 2025" },
+            { date: "12, 19 Aug 2025" },
+            { date: "3, 10, 17, 24, 31 Sept 2025" },
+            { date: "7, 14, 21, 28 Oct 2025" },
         ]
     },
     vietnamDiscoverySouth: {
@@ -1345,13 +1345,13 @@ your departure flight.`
         days: 7,
         nights: 6,
         amount: 69500,
-        dateStart: "1,8,15,22,29 June",
+        dateStart: "1,8,15,22,29 July",
         dateEnd: "5,12,19,26,30 July",
         description: "Discover the highlights of Vietnam's central region, from the ancient capital of Hue to the charming Hoi An, with visits to historical sites, natural wonders, and culinary delights.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in June 2025",
+            arrivalDate: "Multiple dates in July 2025",
             duration: "7D6N Vietnam Fixed Departure",
             costBasis: "Double sharing basis"
         },
@@ -1386,7 +1386,7 @@ your departure flight.`
                 hotel: "5 star ALMANITY HOI AN RESORT & SPA",
                 roomType: "Loft Deluxe Room"
             }
-            
+
         ],
         tourSummary: [
             "Day 1: Ho Chi Minh City - Arrival",
@@ -1466,9 +1466,9 @@ In the afternoon, transfer to Da Nang airport to go to Ho Chi Minh City. Upon ar
             "/UGCImages/vietnam/vietnam/hoi an/14.webp",
             "/UGCImages/vietnam/vietnam/hoi an/15.webp",
             "/UGCImages/vietnam/vietnam/hoi an/16.webp",
-            
 
-            
+
+
         ],
         sightseeingSpots: [
             {
@@ -1596,10 +1596,10 @@ In the afternoon, transfer to Da Nang airport to go to Ho Chi Minh City. Upon ar
             }
         },
         departureDates: [
-            { date: "1, 8, 15, 22, 29 Mar 2025" },
-            { date: "12, 19 Apr 2025" },
-            { date: "3, 10, 17, 24, 31 May 2025" },
-            { date: "7, 14, 21, 28 Jun 2025" },
+            { date: "1, 8, 15, 22, 29 July 2025" },
+            { date: "12, 19 Aug 2025" },
+            { date: "3, 10, 17, 24, 31 Sept 2025" },
+            { date: "7, 14, 21, 28 Oct 2025" },
         ]
     },
     vietnamDiscoveryNorth: {
@@ -1608,8 +1608,8 @@ In the afternoon, transfer to Da Nang airport to go to Ho Chi Minh City. Upon ar
         days: 8,
         nights: 7,
         amount: 65500,
-        dateStart: "01 May 2025",
-        dateEnd: "27 Jun 2025",
+        dateStart: "01 July 2025",
+        dateEnd: "27 Oct 2025",
         description: "Discover the highlights of Vietnam's central region, from the ancient capital of Hue to the charming Hoi An, with visits to historical sites, natural wonders, and culinary delights.",
         groupDetails: {
             pax: "Group Tour",
@@ -1657,7 +1657,7 @@ In the afternoon, transfer to Da Nang airport to go to Ho Chi Minh City. Upon ar
             {
                 city: "Hanoi",
                 hotel: "4 star FLOWER GARDEN HOTEL",
-                roomType: "Deluxe Room"   
+                roomType: "Deluxe Room"
             },
             {
                 city: "Hanoi",
@@ -1739,12 +1739,12 @@ In the afternoon, transfer to Da Nang airport to go to Ho Chi Minh City. Upon ar
             }
         ],
         images: [
-            
+
             "/UGCImages/vietnam/vietnam/hoi an/17.webp",
             "/UGCImages/vietnam/vietnam/hoi an/18.webp",
             "/UGCImages/vietnam/vietnam/hoi an/19.webp"
-            
-            
+
+
 
         ],
         sightseeingSpots: [
@@ -1874,9 +1874,9 @@ In the afternoon, transfer to Da Nang airport to go to Ho Chi Minh City. Upon ar
         },
         departureDates: [
             { date: "7, 14, 21, 28 Mar 2025" },
-            { date: "4, 11, 18, 25 Apr 2025" },
-            { date: "2, 9, 16, 23, 30 May 2025" },
-            { date: "6, 13, 20, 27 Jun 2025" },
+            { date: "4, 11, 18, 25 Aug 2025" },
+            { date: "2, 9, 16, 23, 30 Sept 2025" },
+            { date: "6, 13, 20, 27 Oct 2025" },
         ]
     },
     vietnamDiscoverySouthToNorth: {
@@ -1885,8 +1885,8 @@ In the afternoon, transfer to Da Nang airport to go to Ho Chi Minh City. Upon ar
         days: 10,
         nights: 9,
         amount: 105000,
-        dateStart: "01 May 2025",
-        dateEnd: "27 Jun 2025",
+        dateStart: "01 July 2025",
+        dateEnd: "27 Oct 2025",
         description: "Discover the highlights of Vietnam's central region, from the ancient capital of Hue to the charming Hoi An, with visits to historical sites, natural wonders, and culinary delights.",
         groupDetails: {
             pax: "Group Tour",
@@ -2051,7 +2051,7 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
             "/UGCImages/vietnam/vietnam/hoi an/20.webp",
             "/UGCImages/vietnam/vietnam/hoi an/21.webp",
             "/UGCImages/vietnam/vietnam/hoi an/22.webp",
-            
+
         ],
         sightseeingSpots: [
             {
@@ -2180,10 +2180,10 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
             }
         },
         departureDates: [
-            { date: "1, 8, 15, 22, 29 Mar 2025" },
-            { date: "5, 12, 19, 26 Apr 2025" },
-            { date: "3, 10, 17, 24, 31 May 2025" },
-            { date: "7, 14, 21, 28 Jun 2025" },
+            { date: "1, 8, 15, 22, 29 July 2025" },
+            { date: "12, 19 Aug 2025" },
+            { date: "3, 10, 17, 24, 31 Sept 2025" },
+            { date: "7, 14, 21, 28 Oct 2025" },
         ]
     },
     vietnamFoodTastingAndBeachRelaxTour: {
@@ -2192,8 +2192,8 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
         days: 10,
         nights: 9,
         amount: 84000,
-        dateStart: "01 May 2025",
-        dateEnd: "27 Jun 25",
+        dateStart: "01 July 2025",
+        dateEnd: "27 Oct 25",
         description: "Discover the highlights of Vietnam's central region, from the ancient capital of Hue to the charming Hoi An, with visits to historical sites, natural wonders, and culinary delights.",
         groupDetails: {
             pax: "Group Tour",
@@ -2348,11 +2348,11 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
             }
         ],
         images: [
-            
+
             "/UGCImages/vietnam/vietnam/hoi an/24.webp",
             "/UGCImages/vietnam/vietnam/hoi an/25.webp",
             "/UGCImages/vietnam/vietnam/hoi an/26.webp",
-            
+
 
         ],
         sightseeingSpots: [
@@ -2482,10 +2482,10 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
             }
         },
         departureDates: [
-            { date: "1, 8, 15, 22, 29 Mar 2025" },
-            { date: "5, 12, 19, 26 Apr 2025" },
-            { date: "3, 10, 17, 24, 31 May 2025" },
-            { date: "7, 14, 21, 28 Jun 2025" },
+            { date: "1, 8, 15, 22, 29 July 2025" },
+            { date: "12, 19 Aug 2025" },
+            { date: "3, 10, 17, 24, 31 Sept 2025" },
+            { date: "7, 14, 21, 28 Oct 2025" },
         ]
     },
     northtoSouthVietnamTour: {
@@ -2494,8 +2494,8 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
         days: 11,
         nights: 10,
         amount: 107000,
-        dateStart: "01 May 2025",
-        dateEnd: "27 Jun 25",
+        dateStart: "01 July 2025",
+        dateEnd: "27 Oct 25",
         description: "Discover the highlights of Vietnam's central region, from the ancient capital of Hue to the charming Hoi An, with visits to historical sites, natural wonders, and culinary delights.",
         groupDetails: {
             pax: "Group Tour",
@@ -2669,7 +2669,7 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
             "/UGCImages/vietnam/vietnam/hoi an/28.webp",
             "/UGCImages/vietnam/vietnam/da nang 1/9.webp",
             "/UGCImages/vietnam/vietnam/da nang 1/10.webp",
-            
+
 
         ],
         sightseeingSpots: [
@@ -2799,10 +2799,10 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
             }
         },
         departureDates: [
-            { date: "7, 14, 21, 28 Mar 2025" },
-            { date: "4, 11, 18, 25 Apr 2025" },
-            { date: "2, 9, 16, 23, 30 May 2025" },
-            { date: "6, 13, 20, 27 Jun 2025" },
+            { date: "7, 14, 21, 28 July 2025" },
+            { date: "4, 11, 18, 25 Aug 2025" },
+            { date: "2, 9, 16, 23, 30 Sept 2025" },
+            { date: "6, 13, 20, 27 Oct 2025" },
         ]
     },
     authenticVietnamPlusGoldenBridge: {
@@ -2811,8 +2811,8 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
         days: 13,
         nights: 12,
         amount: 141000,
-        dateStart: "01 May 2025",
-        dateEnd: "27 Jun 2025",
+        dateStart: "01 July 2025",
+        dateEnd: "27 Oct 2025",
         description: "Enjoy the 13 days authentic Vietnam plus golden bridge tour with us. This tour covers the highlights of Vietnam, from the ancient capital of Hue to the charming Hoi An, with visits to historical sites, natural wonders, and culinary delights.",
         groupDetails: {
             pax: "Group Tour",
@@ -2973,7 +2973,7 @@ We will begin our evening with a dinner at a lovely local restaurant. After dinn
                 title: 'Ha Noi - Departure (B)',
                 description: 'Have breakfast at the hotel and relax until the time of transfer to Noi Bai International airport for your departure flight.'
             }
-            
+
         ],
         images: [
             "/UGCImages/vietnam/vietnam/da nang 1/1.webp",
@@ -3109,10 +3109,10 @@ We will begin our evening with a dinner at a lovely local restaurant. After dinn
             }
         },
         departureDates: [
-            { date: "2, 9, 16, 23 Mar 2025" },
-            { date: "6, 13, 20, 27 Apr 2025" },
-            { date: "4, 11, 18, 25 May 2025" },
-            { date: "1, 8, 15, 22, 29 Jun 2025" },
+            { date: "2, 9, 16, 23 July 2025" },
+            { date: "6, 13, 20, 27 Aug 2025" },
+            { date: "4, 11, 18, 25 Sept 2025" },
+            { date: "1, 8, 15, 22, 29 Oct 2025" },
         ]
     },
     vietnamGolfTrails: {
@@ -3121,8 +3121,8 @@ We will begin our evening with a dinner at a lovely local restaurant. After dinn
         days: 13,
         nights: 12,
         amount: 280000,
-        dateStart: "01 May 2025",
-        dateEnd: "27 Jun 2025",
+        dateStart: "01 July 2025",
+        dateEnd: "27 Oct 2025",
         description: "Enjoy the 13 days golf trails in Vietnam. This premium golf tour combines world-class golf courses with cultural exploration across Vietnam's most beautiful destinations, from Ho Chi Minh City to Hanoi.",
         groupDetails: {
             pax: "Group Tour",
@@ -3462,10 +3462,10 @@ The next stop is Dam Market - Nha Trang's oldest and largest market. The final l
             }
         },
         departureDates: [
-            { date: "5, 12, 19, 26 Mar 2025" },
-            { date: "2, 9, 16 Apr 2025" },
-            { date: "7, 14, 21, 28 May 2025" },
-            { date: "4, 11, 18, 25 Jun 2025" },
+            { date: "5, 12, 19, 26 July 2025" },
+            { date: "2, 9, 16 Aug 2025" },
+            { date: "7, 14, 21, 28 Sept 2025" },
+            { date: "4, 11, 18, 25 Oct 2025" },
         ]
     },
 }; 
