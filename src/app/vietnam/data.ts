@@ -3476,7 +3476,7 @@ The next stop is Dam Market - Nha Trang's oldest and largest market. The final l
         amount: 75999,
         dateStart: "Multiple departure dates available",
         dateEnd: "",
-        description: "Discover the essence of Vietnam with our comprehensive 8-day tour covering Ho Chi Minh City, Danang, Hoi An, Hanoi, and Halong Bay. Experience ancient towns, bustling cities, scenic landscapes, and overnight cruise in the world-famous Halong Bay. This package includes flights from Mumbai and all meals for a hassle-free vacation.",
+        description: "Discover the essence of Vietnam with our comprehensive 8-day tour covering Ho Chi Minh City, Danang, Hoi An, Hanoi, and Halong Bay. Experience ancient towns, bustling cities, scenic landscapes, and overnight cruise in the world-famous Halong Bay. This package includes flights from Delhi (DEL), Mumbai (BOM), and Kolkata (KOL) and all meals for a hassle-free vacation.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
@@ -3586,7 +3586,7 @@ The next stop is Dam Market - Nha Trang's oldest and largest market. The final l
             {
                 day: 8,
                 title: "Ha Long Bay – Hanoi – Departure (B, Brunch, Lunch)",
-                description: "Wake up early to witness the beautiful sunrise over Halong Bay. Enjoy breakfast on board and continue cruising to explore more of the bay's beauty. Check out of cabins and enjoy brunch while cruising back to the harbor. Drive back to Hanoi and have lunch before transferring to Noi Bai International Airport for your departure flight back to Mumbai.",
+                description: "Wake up early to witness the beautiful sunrise over Halong Bay. Enjoy breakfast on board and continue cruising to explore more of the bay's beauty. Check out of cabins and enjoy brunch while cruising back to the harbor. Drive back to Hanoi and have lunch before transferring to Noi Bai International Airport for your departure flight back to your departure city (Delhi/Mumbai/Kolkata).",
                 image: "/UGCImages/vietnam/vt/8.png"
             }
         ],
@@ -3712,6 +3712,7 @@ The next stop is Dam Market - Nha Trang's oldest and largest market. The final l
                 "Explore ancient Hoi An town and its cultural heritage",
                 "Visit famous Cu Chi Tunnels and learn Vietnam War history",
                 "Experience Mekong Delta's floating markets and rural life",
+                "Flights available from Delhi (DEL), Mumbai (BOM), and Kolkata (KOL)",
                 "All domestic flights included for comfortable travel",
                 "Early check-in and all meals included"
             ],
@@ -3739,7 +3740,7 @@ The next stop is Dam Market - Nha Trang's oldest and largest market. The final l
                     "Professional English-speaking driver",
                     "Comfortable seating",
                     "Air conditioning",
-                    "International flights from Mumbai",
+                    "International flights from Delhi (DEL), Mumbai (BOM), and Kolkata (KOL)",
                     "Domestic flights between cities"
                 ]
             },
@@ -3756,11 +3757,10 @@ The next stop is Dam Market - Nha Trang's oldest and largest market. The final l
             }
         },
         departureDates: [
-            { date: "Every Friday departure available" },
-            { date: "Fixed departures: 10, 17, 24 Jan 2025" },
-            { date: "Fixed departures: 7, 14, 21, 28 Feb 2025" },
-            { date: "Fixed departures: 7, 14, 21, 28 Mar 2025" },
-            { date: "Fixed departures: 4, 11, 18, 25 Apr 2025" }
+            { date: "5, 12, 19, 26 July 2025", availability: "Available from DEL/BOM/KOL" },
+            { date: "2, 9, 16 Aug 2025", availability: "Available from DEL/BOM/KOL" },
+            { date: "7, 14, 21, 28 Sept 2025", availability: "Available from DEL/BOM/KOL" },
+            { date: "4, 11, 18, 25 Oct 2025", availability: "Available from DEL/BOM/KOL" },
         ]
     },
 }; 

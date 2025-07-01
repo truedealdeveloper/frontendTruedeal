@@ -378,34 +378,7 @@ export default function VietnamPackagePage({ params }: PageProps) {
                                                 </div>
                                             )}
 
-                                            {/* Culture & Traditions Section */}
-                                            <div className="mb-10">
-                                                <h2 className="text-2xl font-bold mb-6">Vietnamese Culture & Traditions</h2>
-                                                <div
-                                                    ref={cultureScrollRef}
-                                                    className="overflow-x-hidden relative -mx-4 px-4"
-                                                >
-                                                    <div className="flex gap-4 md:gap-6 animate-scroll">
-                                                        {[...vietnamPkg.culture, ...vietnamPkg.culture]?.map((item, index) => (
-                                                            <div
-                                                                key={index}
-                                                                className="flex-none w-[280px] md:w-[400px]"
-                                                            >
-                                                                <div className="relative h-[250px] mb-4">
-                                                                    <Image
-                                                                        src={item.image}
-                                                                        alt={item.title}
-                                                                        fill
-                                                                        className="rounded-lg object-cover"
-                                                                    />
-                                                                </div>
-                                                                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                                                                <p className="text-gray-600 text-sm line-clamp-3">{item.description}</p>
-                                                            </div>
-                                                        ))}
-                                                    </div>
-                                                </div>
-                                            </div>
+
 
                                             {/* Gallery */}
                                             <div className="mb-10">
@@ -603,34 +576,6 @@ export default function VietnamPackagePage({ params }: PageProps) {
                                                                 </div>
                                                             </div>
                                                         </Card>
-                                                    ))}
-                                                </div>
-                                            </div>
-
-                                            {/* Famous Local Cuisine */}
-                                            <div className="mb-10">
-                                                <h2 className="text-2xl font-bold mb-6">Famous Local Cuisine</h2>
-                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                                    {vietnamPkg.localFood?.map((food, index) => (
-                                                        <div key={index} className="flex gap-4 items-center bg-gray-50 rounded-lg p-4">
-                                                            <Image
-                                                                src={food.image}
-                                                                alt={food.name}
-                                                                width={120}
-                                                                height={120}
-                                                                className="rounded-lg object-cover"
-                                                            />
-                                                            <div>
-                                                                <h3 className="text-lg font-semibold mb-2">{food.name}</h3>
-                                                                <p className="text-gray-600 text-sm">{food.description}</p>
-                                                                {food.where && (
-                                                                    <p className="text-sm text-[#017ae3] mt-2 flex items-center">
-                                                                        <MapPin className="h-3 w-3 mr-1" />
-                                                                        {food.where}
-                                                                    </p>
-                                                                )}
-                                                            </div>
-                                                        </div>
                                                     ))}
                                                 </div>
                                             </div>
