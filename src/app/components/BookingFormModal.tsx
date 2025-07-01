@@ -94,9 +94,10 @@ export function BookingFormModal({
                 window.location.href = `/thankyou-query?name=${encodedName}`;
             }, 2000);
 
-        } catch (error: any) {
+        } catch (error: unknown) {
             console.error("Error submitting booking request:", error);
-            setSubmitError(error.message || 'Failed to submit booking request. Please try again.');
+            const errorMessage = error instanceof Error ? error.message : 'Failed to submit booking request. Please try again.';
+            setSubmitError(errorMessage);
         } finally {
             setIsSubmitting(false);
         }
@@ -110,7 +111,7 @@ export function BookingFormModal({
                         Book {destinationName}
                     </DialogTitle>
                     <p className="text-xs text-gray-600 mt-1">
-                        Fill in your details and we'll contact you with the best options
+                        Fill in your details and we&apos;ll contact you with the best options
                     </p>
                 </DialogHeader>
 
@@ -121,7 +122,7 @@ export function BookingFormModal({
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             <p className="text-xl font-semibold">Booking request submitted!</p>
-                            <p className="text-sm text-gray-600 mt-2">We'll contact you shortly with the best deals</p>
+                            <p className="text-sm text-gray-600 mt-2">We&apos;ll contact you shortly with the best deals</p>
                         </div>
                     </div>
                 )}
