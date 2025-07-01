@@ -54,6 +54,7 @@ export default function KeralaPackages() {
         package: keralaPackage;
     }) => {
         const [showDates, setShowDates] = useState(false);
+        const [showCities, setShowCities] = useState(false);
 
         return (
             <div className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0">
@@ -71,7 +72,7 @@ export default function KeralaPackages() {
 
                 {/* Price Tag */}
                 <div className="absolute top-3 left-0 z-10">
-                    <div className="bg-green-500 px-4 py-1.5 rounded-full shadow-lg">
+                    <div className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] px-4 py-1.5 rounded-full shadow-lg">
                         <span className="line-through text-sm mr-2 text-white">
                             ₹{(pkg.amount * 1.2).toLocaleString('en-IN')}/-
                         </span>
@@ -91,25 +92,43 @@ export default function KeralaPackages() {
                     {/* Details Grid */}
                     <div className="grid grid-cols-2 gap-y-2 text-sm mb-4">
                         <div className="flex items-center gap-2">
-                            <FaClock className="text-green-400" />
+                            <FaClock className="text-[#00f6ff]" />
                             <span>{pkg.days}D/{pkg.nights}N</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <IoLocationSharp className="text-green-400" />
+                            <IoLocationSharp className="text-[#00f6ff]" />
                             <span>{pkg.hotelDetails[0].city}</span>
                         </div>
-                        <div className="flex items-center gap-2">
-                            <FaCalendarAlt className="text-green-400" />
-                            <button
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    setShowDates(!showDates);
-                                }}
-                                className="hover:text-green-400 transition-colors"
-                            >
-                                View Dates
-                            </button>
-                        </div>
+                        {pkg.departureDates && (
+                            <div className="flex items-center gap-2">
+                                <FaCalendarAlt className="text-[#00f6ff]" />
+                                <button
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        setShowDates(!showDates);
+                                        setShowCities(false);
+                                    }}
+                                    className="hover:text-[#00f6ff] transition-colors"
+                                >
+                                    View Dates
+                                </button>
+                            </div>
+                        )}
+                        {pkg.departureCities && (
+                            <div className="flex items-center gap-2">
+                                <FaCalendarAlt className="text-[#00f6ff]" />
+                                <button
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        setShowCities(!showCities);
+                                        setShowDates(false);
+                                    }}
+                                    className="hover:text-[#00f6ff] transition-colors"
+                                >
+                                    Departure Cities
+                                </button>
+                            </div>
+                        )}
                     </div>
 
                     {/* Departure Dates Popup */}
@@ -118,11 +137,32 @@ export default function KeralaPackages() {
                             className="absolute bottom-full left-0 right-0 bg-black/90 p-4 rounded-t-lg max-h-[200px] overflow-y-auto"
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <h3 className="text-green-400 font-semibold mb-2">Departure Dates</h3>
+                            <h3 className="text-[#00f6ff] font-semibold mb-2">Departure Dates</h3>
                             <div className="space-y-2">
                                 {pkg.departureDates.map((departure, index) => (
-                                    <div key={index} className="text-sm">
-                                        {departure.date}
+                                    <div key={index} className="text-sm flex justify-between">
+                                        <span>{departure.date}</span>
+                                        {departure.price && (
+                                            <span className="text-[#00f6ff]">₹{departure.price.toLocaleString('en-IN')}</span>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Departure Cities Popup */}
+                    {showCities && pkg.departureCities && (
+                        <div
+                            className="absolute bottom-full left-0 right-0 bg-black/90 p-4 rounded-t-lg max-h-[200px] overflow-y-auto"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <h3 className="text-[#00f6ff] font-semibold mb-2">Departure Cities</h3>
+                            <div className="space-y-2">
+                                {pkg.departureCities.map((departure, index) => (
+                                    <div key={index} className="text-sm flex justify-between">
+                                        <span>{departure.city}</span>
+                                        <span className="text-[#00f6ff] font-semibold">₹{departure.price.toLocaleString('en-IN')}</span>
                                     </div>
                                 ))}
                             </div>
@@ -132,7 +172,7 @@ export default function KeralaPackages() {
                     {/* View Details Button */}
                     <Link href={`/kerala/${pkg.id}`}>
                         <Button
-                            className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-emerald-600 hover:to-green-600 text-white transition-all duration-500"
+                            className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all duration-500"
                         >
                             View Details
                         </Button>
@@ -145,32 +185,32 @@ export default function KeralaPackages() {
     const keralaHighlights = [
         {
             title: "Backwater Cruises",
-            image: "/UGCImages/kerala/sightseeing/backwaters.jpg",
+            image: "/UGCImages/kerala/keralaa/backwater.png",
             description: "Experience serene backwater cruises through palm-fringed lagoons and canals"
         },
         {
             title: "Tea Plantations",
-            image: "/UGCImages/kerala/sightseeing/tea-plantations.jpg",
+            image: "/UGCImages/kerala/keralaa/tea.png",
             description: "Explore lush green tea gardens and learn about tea processing in Munnar"
         },
         {
             title: "Ayurveda & Wellness",
-            image: "/UGCImages/kerala/sightseeing/ayurveda.jpg",
+            image: "/UGCImages/kerala/keralaa/ayurveda.png",
             description: "Rejuvenate with authentic Ayurvedic treatments and traditional healing"
         },
         {
             title: "Spice Plantations",
-            image: "/UGCImages/kerala/sightseeing/spices.jpg",
+            image: "/UGCImages/kerala/keralaa/spice.png",
             description: "Discover aromatic spice gardens with cardamom, pepper, and cinnamon"
         },
         {
             title: "Kerala Cuisine",
-            image: "/UGCImages/kerala/cuisine/fish-curry.jpg",
+            image: "/UGCImages/kerala/keralaa/cuisines.png",
             description: "Savor authentic Kerala dishes with coconut, curry leaves, and fresh seafood"
         },
         {
             title: "Cultural Heritage",
-            image: "/UGCImages/kerala/culture/kathakali.jpg",
+            image: "/UGCImages/kerala/keralaa/cultural2.png",
             description: "Experience rich cultural traditions including Kathakali dance and temple festivals"
         }
     ];
@@ -230,7 +270,7 @@ export default function KeralaPackages() {
                     playsInline
                     className="absolute inset-0 w-full h-full object-cover"
                 >
-                    <source src="/UGCImages/kerala/kerala-hero.mp4" type="video/mp4" />
+                    <source src="/UGCImages/kerala/kerala.mp4" type="video/mp4" />
                     {/* Fallback image in case video fails to load */}
                     <Image
                         src="/webImage/kerala/mobile/kerala1.jpg"
@@ -240,7 +280,7 @@ export default function KeralaPackages() {
                         priority
                     />
                 </video>
-                <div className="absolute inset-0 bg-black/40" />
+                <div className="absolute inset-0 bg-black/30" />
                 <div className="absolute inset-0 flex items-center justify-center text-center">
                     <div className="max-w-4xl px-4">
                         <motion.h1
@@ -276,7 +316,7 @@ export default function KeralaPackages() {
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 1.5, duration: 0.5 }}
-                                    className="text-green-300"
+                                    className="text-[#00f6ff]"
                                 >
                                     Serene Backwaters
                                 </motion.span>
@@ -284,7 +324,7 @@ export default function KeralaPackages() {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 1.8, duration: 0.5 }}
-                                    className="text-emerald-300"
+                                    className="text-cyan-300"
                                 >
                                     Lush Hill Stations
                                 </motion.span>
@@ -292,7 +332,7 @@ export default function KeralaPackages() {
                                     initial={{ opacity: 0, x: 20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 2.1, duration: 0.5 }}
-                                    className="text-teal-300"
+                                    className="text-blue-300"
                                 >
                                     Ancient Traditions
                                 </motion.span>
@@ -306,7 +346,7 @@ export default function KeralaPackages() {
             <div className="bg-gray-50 py-16">
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl font-bold text-center mb-12">
-                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-600">
+                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
                             Our Kerala Packages
                         </span>
                     </h2>
@@ -384,7 +424,7 @@ export default function KeralaPackages() {
                         className="max-w-7xl mx-auto"
                     >
                         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-600">
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
                                 Experience the Magic of Kerala
                             </span>
                         </h2>
@@ -422,7 +462,7 @@ export default function KeralaPackages() {
             {/* FAQ Section */}
             <div className="max-w-3xl mx-auto mt-16 px-4">
                 <h2 className="text-3xl font-bold text-center mb-8">
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-600">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
                         Frequently Asked Questions
                     </span>
                 </h2>
@@ -456,7 +496,7 @@ export default function KeralaPackages() {
             {/* Additional Information */}
             <div className="max-w-4xl mx-auto mt-16 prose prose-lg px-4">
                 <h2 className="text-3xl font-bold text-center mb-8">
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-600">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
                         Discover Kerala
                     </span>
                 </h2>

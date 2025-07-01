@@ -4,33 +4,33 @@ import { use, useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { turkeyPackages } from '../data';
 import { notFound, usePathname } from 'next/navigation';
-import { 
-  Calendar, MapPin, Star, Users, X, Camera,
-  Phone,
-  Check,
-  ChevronUp,
-  ChevronDown,
-  Building2,
-  Utensils,
-  Hotel,
-  Plane,
-  Palmtree,
-  Landmark,
-  Sun,
-  Sunset,
-  Droplets,
-  Wind,
-  Share2,
-  ImageIcon
+import {
+    Calendar, MapPin, Star, Users, X, Camera,
+    Phone,
+    Check,
+    ChevronUp,
+    ChevronDown,
+    Building2,
+    Utensils,
+    Hotel,
+    Plane,
+    Palmtree,
+    Landmark,
+    Sun,
+    Sunset,
+    Droplets,
+    Wind,
+    Share2,
+    ImageIcon
 } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BookingFormModal } from '@/app/components/BookingFormModal';
-import {  useScroll} from "framer-motion";
+import { useScroll } from "framer-motion";
 import { Poppins } from 'next/font/google';
-import {PageWrapper} from '@/components/page-wrapper';
+import { PageWrapper } from '@/components/page-wrapper';
 import { useMobile } from '@/hooks/use-mobile';
 import TurkeyPackages from '../page';
 
@@ -108,26 +108,26 @@ export default function TurkeyPackagePage({ params }: PageProps) {
     const useAutoScroll = (scrollRef: React.RefObject<HTMLDivElement>, duration: number = 40000) => {
         useEffect(() => {
             if (!scrollRef.current) return;
-            
+
             const scrollElement = scrollRef.current;
             let animationFrameId: number;
             let startTime: number;
-            
+
             const scroll = (timestamp: number) => {
                 if (!startTime) startTime = timestamp;
                 const progress = timestamp - startTime;
-                
+
                 if (scrollElement) {
                     const scrollWidth = scrollElement.scrollWidth - scrollElement.clientWidth;
                     const newPosition = (progress % duration) / duration * scrollWidth;
                     scrollElement.scrollLeft = newPosition;
                 }
-                
+
                 animationFrameId = requestAnimationFrame(scroll);
             };
-            
+
             animationFrameId = requestAnimationFrame(scroll);
-            
+
             return () => {
                 if (animationFrameId) {
                     cancelAnimationFrame(animationFrameId);
@@ -140,15 +140,15 @@ export default function TurkeyPackagePage({ params }: PageProps) {
 
     // Calculate truncated description for "Read More" functionality
     const description = turkeyPkg.description || "";
-    const truncatedDescription = description.length > 300 
-        ? `${description.substring(0, 300)}...` 
+    const truncatedDescription = description.length > 300
+        ? `${description.substring(0, 300)}...`
         : description;
 
     // Function to toggle day expansion
     const toggleDayExpansion = (dayNumber: number) => {
-        setExpandedDays(prev => 
-            prev.includes(dayNumber) 
-                ? prev.filter(d => d !== dayNumber) 
+        setExpandedDays(prev =>
+            prev.includes(dayNumber)
+                ? prev.filter(d => d !== dayNumber)
                 : [...prev, dayNumber]
         );
     };
@@ -162,13 +162,13 @@ export default function TurkeyPackagePage({ params }: PageProps) {
 
     // Add these gallery navigation functions
     const nextImage = () => {
-        setCurrentGalleryIndex((prev) => 
+        setCurrentGalleryIndex((prev) =>
             prev === getAllImages().length - 1 ? 0 : prev + 1
         );
     };
 
     const previousImage = () => {
-        setCurrentGalleryIndex((prev) => 
+        setCurrentGalleryIndex((prev) =>
             prev === 0 ? getAllImages().length - 1 : prev - 1
         );
     };
@@ -177,13 +177,13 @@ export default function TurkeyPackagePage({ params }: PageProps) {
     const handleShareToInstagram = () => {
         // Get the full URL of the current page
         const fullUrl = `${window.location.origin}${pathname}`;
-        
+
         // Instagram story sharing URL with mention
         const instagramUrl = `instagram://story-camera?text=${encodeURIComponent(fullUrl)}&hashtags=TurkeyJourney,TRExplorer&mention=itstruedeal`;
-        
+
         // Fallback URL for desktop or if Instagram app is not installed
         const webUrl = `https://www.instagram.com/itstruedeal`;
-        
+
         try {
             window.location.href = instagramUrl;
             // If Instagram app is not installed, this will fail and catch block will execute
@@ -223,20 +223,20 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                 ))}
                                 <span className="ml-2 text-white font-medium">4.8/5 (58 reviews)</span>
                             </div>
-                            
+
                             {/* Package name */}
                             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">{turkeyPkg.packageName}</h1>
-                            
+
                             {/* Location */}
                             <div className="flex items-center text-white mb-6">
                                 <MapPin className="h-5 w-5 mr-2" />
                                 <span className="text-lg">Turkey</span>
                             </div>
-                            
+
                             {/* Action buttons */}
                             <div className="flex flex-wrap gap-4 mb-12">
-                                <Button 
-                                    size="lg" 
+                                <Button
+                                    size="lg"
                                     className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition rounded-full px-8"
                                     onClick={() => setIsBookingModalOpen(true)}
                                 >
@@ -269,7 +269,7 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                 <div className="font-medium text-sm md:text-base">{turkeyPkg.days} days / {turkeyPkg.nights} nights</div>
                             </div>
                         </div>
-                        
+
                         <div className="flex items-center">
                             <div className="flex-shrink-0 w-8 md:w-auto">
                                 <MapPin className="h-6 w-6 mr-3" />
@@ -279,7 +279,7 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                 <div className="font-medium text-sm md:text-base">Entire Turkey</div>
                             </div>
                         </div>
-                        
+
                         <div className="flex items-center">
                             <div className="flex-shrink-0 w-8 md:w-auto">
                                 <Users className="h-6 w-6 mr-3" />
@@ -289,7 +289,7 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                 <div className="font-medium text-sm md:text-base">Max 20 people</div>
                             </div>
                         </div>
-                        
+
                         <div className="flex items-center">
                             <div className="flex-shrink-0 w-8 md:w-auto">
                                 <Star className="h-6 w-6 mr-3 text-yellow-400 fill-yellow-400" />
@@ -312,27 +312,27 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                 <div className="max-w-7xl mx-auto px-4">
                                     <Tabs defaultValue="overview" className="w-full">
                                         <TabsList className="w-full bg-gray-100 my-4 rounded-lg overflow-x-auto flex no-scrollbar">
-                                            <TabsTrigger 
+                                            <TabsTrigger
                                                 value="overview"
                                                 className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff]  data-[state=active]:text-white  flex-shrink-0"
                                             >
                                                 Overview
                                             </TabsTrigger>
-                                            
-                                            <TabsTrigger 
+
+                                            <TabsTrigger
                                                 value="itinerary"
                                                 className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white  flex-shrink-0"
                                             >
                                                 Itinerary
                                             </TabsTrigger>
-                                            <TabsTrigger 
+                                            <TabsTrigger
                                                 value="accommodation"
                                                 className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white flex-shrink-0"
                                             >
                                                 Accommodation
                                             </TabsTrigger>
                                         </TabsList>
-                                        
+
                                         {/* Tab Content sections */}
                                         <TabsContent value="overview" className="mt-0">
                                             {/* Package Highlights */}
@@ -395,7 +395,7 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                             {turkeyPkg.batchDetails && (
                                                 <div className="mb-10">
                                                     <h2 className="text-2xl font-bold mb-6">Available Dates & Flights</h2>
-                                                    
+
                                                     {/* Current Batch Alert */}
                                                     <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6">
                                                         <div className="flex items-center">
@@ -438,7 +438,7 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                                     {turkeyPkg.flightDetails && (
                                                         <div className="space-y-4">
                                                             <h3 className="text-xl font-semibold mb-4">Flight Information</h3>
-                                                            
+
                                                             {/* Delhi to Turkey */}
                                                             <Card className="overflow-hidden">
                                                                 <div className="bg-gradient-to-r from-[#017ae3]/10 to-[#00f6ff]/10 p-4">
@@ -454,20 +454,20 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                                                             <div className="text-lg font-bold">{turkeyPkg.flightDetails.airlines[0].departureCity}</div>
                                                                             <div className="text-sm text-gray-500">Departure</div>
                                                                         </div>
-                                                                        
+
                                                                         <div className="flex-1 px-4 flex items-center justify-center">
                                                                             <div className="w-full relative">
                                                                                 <div className="absolute w-full top-1/2 h-0.5 bg-gray-200"></div>
                                                                                 <Plane className="h-5 w-5 text-blue-600 relative -top-[10px] animate-pulse" />
                                                                             </div>
                                                                         </div>
-                                                                        
+
                                                                         <div className="text-center flex-1">
                                                                             <div className="text-lg font-bold">{turkeyPkg.flightDetails.airlines[0].arrivalCity}</div>
                                                                             <div className="text-sm text-gray-500">Arrival</div>
                                                                         </div>
                                                                     </div>
-                                                                    
+
                                                                     <div className="mt-4 pt-4 border-t">
                                                                         <div className="flex items-center justify-between text-sm text-gray-600">
                                                                             <div className="flex items-center">
@@ -533,7 +533,7 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                                             </div>
                                                         </div>
                                                         <div className="grid grid-cols-3 gap-2">
-                                                            {[1,2,3,4,5].map((num) => (
+                                                            {[1, 2, 3, 4, 5].map((num) => (
                                                                 <div key={num} className="relative aspect-square rounded-lg overflow-hidden group">
                                                                     <Image
                                                                         src={`/UGCImages/turkey/turkey2/${num}.png`}
@@ -565,8 +565,8 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                                     ))}
                                                 </div>
                                                 <div className="mt-4 text-center">
-                                                    <Button 
-                                                        variant="outline" 
+                                                    <Button
+                                                        variant="outline"
                                                         className="text-sm"
                                                         onClick={() => openGallery(0)}
                                                     >
@@ -594,10 +594,10 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                                                 </li>
                                                             ))}
                                                         </ul>
-                                                        
+
                                                         {/* Added image for inclusions */}
                                                         <div className="mt-6 relative h-40 rounded-lg overflow-hidden">
-                                                            <Image 
+                                                            <Image
                                                                 src={turkeyPkg?.images?.[2] || '/default-image.jpg'}
                                                                 alt="Included services"
                                                                 fill
@@ -625,10 +625,10 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                                                 </li>
                                                             ))}
                                                         </ul>
-                                                        
+
                                                         {/* Added image for exclusions */}
                                                         <div className="mt-6 relative h-40 rounded-lg overflow-hidden">
-                                                            <Image 
+                                                            <Image
                                                                 src={turkeyPkg?.images?.[3] || '/default-image.jpg'}
                                                                 alt="Additional expenses"
                                                                 fill
@@ -663,20 +663,20 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                                                             <div className="text-lg font-bold">{flight.departureCity}</div>
                                                                             <div className="text-sm text-gray-500">Departure</div>
                                                                         </div>
-                                                                        
+
                                                                         <div className="flex-1 px-4 flex items-center justify-center">
                                                                             <div className="w-full relative">
                                                                                 <div className="absolute w-full top-1/2 h-0.5 bg-gray-200"></div>
                                                                                 <Plane className="h-5 w-5 text-blue-600 relative -top-[10px] animate-pulse" />
                                                                             </div>
                                                                         </div>
-                                                                        
+
                                                                         <div className="text-center flex-1">
                                                                             <div className="text-lg font-bold">{flight.arrivalCity}</div>
                                                                             <div className="text-sm text-gray-500">Arrival</div>
                                                                         </div>
                                                                     </div>
-                                                                    
+
                                                                     <div className="mt-4 pt-4 border-t">
                                                                         <div className="flex items-center justify-between text-sm text-gray-600">
                                                                             <div className="flex items-center">
@@ -692,7 +692,7 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                                             </Card>
                                                         ))}
                                                     </div>
-                                                    
+
                                                     {/* Additional Flight Information */}
                                                     <div className="mt-6 bg-gray-50 rounded-xl p-6">
                                                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -705,7 +705,7 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                                                     <p className="text-sm text-gray-600">No layovers, straight to your destination</p>
                                                                 </div>
                                                             </div>
-                                                            
+
                                                             <div className="flex items-start space-x-3">
                                                                 <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
                                                                     <Plane className="h-4 w-4 text-blue-600" />
@@ -715,7 +715,7 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                                                     <p className="text-sm text-gray-600">Flying with trusted carriers</p>
                                                                 </div>
                                                             </div>
-                                                            
+
                                                             <div className="flex items-start space-x-3">
                                                                 <div className="h-8 w-8 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0">
                                                                     <Calendar className="h-4 w-4 text-amber-600" />
@@ -730,11 +730,11 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                                 </div>
                                             )}
                                         </TabsContent>
-                                        
+
                                         <TabsContent value="itinerary" className="mt-0">
                                             <div className="mb-10">
                                                 <h2 className="text-2xl font-bold mb-6">Day-by-Day Itinerary</h2>
-                                                
+
                                                 {/* Day navigation buttons */}
                                                 <div className="flex overflow-x-auto space-x-2 mb-8 pb-2 no-scrollbar">
                                                     {turkeyPkg.itinerary.map((day, i) => (
@@ -746,39 +746,38 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                                                     toggleDayExpansion(day.day);
                                                                 }
                                                             }}
-                                                            className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                                                                selectedDay === day.day
+                                                            className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${selectedDay === day.day
                                                                     ? "bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white shadow-md"
                                                                     : "bg-gray-100 hover:bg-gray-200 text-gray-800"
-                                                            }`}
+                                                                }`}
                                                         >
                                                             Day {day.day}
                                                         </button>
                                                     ))}
                                                 </div>
-                                                
+
                                                 {/* Timeline view with collapsible content */}
                                                 <div className="relative pb-6">
                                                     {/* Timeline vertical line */}
                                                     <div className="absolute left-4 md:left-[3.5rem] top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#017ae3] to-[#00f6ff]"></div>
-                                                    
+
                                                     {/* Timeline content */}
                                                     <div className="space-y-6">
                                                         {turkeyPkg.itinerary.map((day, i) => {
                                                             const isExpanded = expandedDays.includes(day.day);
-                                                            
+
                                                             return (
                                                                 <div key={i} className="relative pl-12 md:pl-20">
                                                                     {/* Day number marker */}
-                                                                    <div 
+                                                                    <div
                                                                         className="absolute left-0 top-2 w-8 h-8 rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] flex items-center justify-center text-white font-bold z-10 cursor-pointer shadow-md"
                                                                         onClick={() => toggleDayExpansion(day.day)}
                                                                     >
                                                                         {day.day}
                                                                     </div>
-                                                                    
+
                                                                     {/* Content card */}
-                                                                    <div 
+                                                                    <div
                                                                         className={`bg-white rounded-xl shadow-sm overflow-hidden transition-all duration-300 ${selectedDay === day.day ? 'ring-2 ring-[#017ae3]/20 shadow-md' : ''}`}
                                                                         onClick={() => toggleDayExpansion(day.day)}
                                                                     >
@@ -799,7 +798,7 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                                                         <div className="p-5">
                                                                             <div className="flex justify-between items-center">
                                                                                 <h3 className="text-lg font-bold">{day.title}</h3>
-                                                                                <button 
+                                                                                <button
                                                                                     className="text-gray-400 hover:text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-full p-1 transition-colors"
                                                                                     onClick={(e) => {
                                                                                         e.stopPropagation();
@@ -813,11 +812,11 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                                                                     )}
                                                                                 </button>
                                                                             </div>
-                                                                            
+
                                                                             {isExpanded && (
                                                                                 <>
                                                                                     <p className="text-gray-700 mt-3 mb-4">{day.description}</p>
-                                                                                    
+
                                                                                     <div>
                                                                                         <h4 className="text-[#017ae3] font-medium mb-2">Activities:</h4>
                                                                                         <div className="space-y-2">
@@ -842,7 +841,7 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                                 </div>
                                             </div>
                                         </TabsContent>
-                                        
+
                                         <TabsContent value="accommodation" className="mt-0">
                                             <div className="mb-10">
                                                 <h2 className="text-2xl font-bold mb-6">Your Accommodations</h2>
@@ -868,7 +867,7 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                                     ))}
                                                 </div>
                                             </div>
-                                            
+
                                             {/* FAQ Section in Accommodation Tab */}
                                             <div className="mb-10">
                                                 <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
@@ -924,31 +923,31 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                             <div className="font-medium">Duration:</div>
                                             <div>{turkeyPkg.nights} nights / {turkeyPkg.days} days</div>
                                         </div>
-                                        
+
                                         <div className="flex justify-between border-b pb-3">
                                             <div className="font-medium">Availability:</div>
                                             <div className="text-green-600 font-medium">Available</div>
                                         </div>
-                                        
+
                                         <div className="flex justify-between border-b pb-3">
                                             <div className="font-medium">Group Size:</div>
                                             <div>Max 12 people</div>
                                         </div>
-                                        
+
                                         <div className="flex justify-between border-b pb-3 mb-4">
                                             <div className="font-medium">Languages:</div>
                                             <div>English, Mandarin</div>
                                         </div>
 
-                                        <Button 
+                                        <Button
                                             className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition text-lg py-6 shadow-lg"
                                             onClick={() => setIsBookingModalOpen(true)}
                                         >
                                             Book Now
                                         </Button>
 
-                                        <a 
-                                            href="tel:+919919111911" 
+                                        <a
+                                            href="tel:+919310271488"
                                             className="mt-4 bg-blue-50 hover:bg-blue-100 transition-colors p-4 rounded-md flex items-center cursor-pointer no-underline"
                                         >
                                             <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mr-3 flex-shrink-0">
@@ -964,7 +963,7 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                         </a>
                                     </div>
                                 </Card>
-                                
+
                                 {/* Weather Widget */}
                                 <Card className="border-0 shadow-lg mt-6 overflow-hidden">
                                     <div className="p-4 border-b">
@@ -1009,7 +1008,7 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                             <div className="text-sm">Per Person</div>
                             <div className="font-bold text-xl">₹{turkeyPkg?.amount?.toLocaleString('en-IN')}</div>
                         </div>
-                        <Button 
+                        <Button
                             className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition"
                             onClick={() => setIsBookingModalOpen(true)}
                         >
@@ -1019,7 +1018,7 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                 )}
 
                 {/* Booking Modal */}
-                <BookingFormModal 
+                <BookingFormModal
                     isOpen={isBookingModalOpen}
                     onClose={() => setIsBookingModalOpen(false)}
                     destinationName={turkeyPkg?.packageName}
@@ -1032,14 +1031,14 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                     <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4">
                         <div className="relative w-full max-w-[90vh] mx-auto">
                             {/* Close button */}
-                            <button 
+                            <button
                                 onClick={() => setIsGalleryModalOpen(false)}
                                 className="absolute top-4 right-4 z-10 text-white/80 hover:text-white bg-black/30 hover:bg-black/50 p-2 rounded-full transition-all"
                                 aria-label="Close gallery"
                             >
                                 <X className="h-6 w-6" />
                             </button>
-                            
+
                             {/* Main image */}
                             <div className="relative aspect-square w-full">
                                 <Image
@@ -1051,7 +1050,7 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                     sizes="(max-width: 768px) 100vw, 80vw"
                                 />
                             </div>
-                            
+
                             {/* Navigation buttons */}
                             <div className="absolute inset-y-0 left-0 flex items-center">
                                 <button
@@ -1064,7 +1063,7 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                     </svg>
                                 </button>
                             </div>
-                            
+
                             <div className="absolute inset-y-0 right-0 flex items-center">
                                 <button
                                     onClick={nextImage}
@@ -1076,7 +1075,7 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                     </svg>
                                 </button>
                             </div>
-                            
+
                             {/* Image counter */}
                             <div className="absolute bottom-4 left-0 right-0 text-center text-white text-sm md:text-base">
                                 {currentGalleryIndex + 1} / {getAllImages().length}
@@ -1089,9 +1088,8 @@ export default function TurkeyPackagePage({ params }: PageProps) {
                                         <button
                                             key={idx}
                                             onClick={() => setCurrentGalleryIndex(idx)}
-                                            className={`relative w-16 h-16 rounded-lg overflow-hidden transition-all ${
-                                                currentGalleryIndex === idx ? 'ring-2 ring-white' : 'opacity-50'
-                                            }`}
+                                            className={`relative w-16 h-16 rounded-lg overflow-hidden transition-all ${currentGalleryIndex === idx ? 'ring-2 ring-white' : 'opacity-50'
+                                                }`}
                                         >
                                             <Image
                                                 src={img}

@@ -4,17 +4,17 @@ import { use, useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { lehladakhPackages, withoutFlightPackages } from '../data';
 import { notFound } from 'next/navigation';
-import { 
-  Calendar, Check, MapPin, Star, Users, X, Camera, Phone 
+import {
+    Calendar, Check, MapPin, Star, Users, X, Camera, Phone
 } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BookingFormModal } from '@/app/components/BookingFormModal';
-import {useScroll} from "framer-motion";
+import { useScroll } from "framer-motion";
 import { Poppins } from 'next/font/google';
-import {PageWrapper} from '@/components/page-wrapper';
+import { PageWrapper } from '@/components/page-wrapper';
 import { useMobile } from '@/hooks/use-mobile';
 
 const poppins = Poppins({
@@ -29,10 +29,10 @@ interface PageProps {
 
 export default function LehladakhPackagePage({ params }: PageProps) {
     const { id } = use(params);
-    
+
     // Check in both package collections
-    const lehladakhPkg = Object.values(lehladakhPackages).find(p => p.id === id) || 
-                        Object.values(withoutFlightPackages).find(p => p.id === id);
+    const lehladakhPkg = Object.values(lehladakhPackages).find(p => p.id === id) ||
+        Object.values(withoutFlightPackages).find(p => p.id === id);
 
     // Add this check to determine if it's a package with flights
     const isPackageWithFlight = Object.values(lehladakhPackages).some(p => p.id === id);
@@ -66,7 +66,7 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                 { id: 'overview', ref: overviewRef },
                 { id: 'itinerary', ref: itineraryRef },
                 { id: 'inclusions', ref: inclusionsRef },
-                { id: 'exclusions', ref: exclusionsRef },  
+                { id: 'exclusions', ref: exclusionsRef },
                 { id: 'other', ref: otherRef }
             ];
 
@@ -97,26 +97,26 @@ export default function LehladakhPackagePage({ params }: PageProps) {
     const useAutoScroll = (scrollRef: React.RefObject<HTMLDivElement>, duration: number = 40000) => {
         useEffect(() => {
             if (!scrollRef.current) return;
-            
+
             const scrollElement = scrollRef.current;
             let animationFrameId: number;
             let startTime: number;
-            
+
             const scroll = (timestamp: number) => {
                 if (!startTime) startTime = timestamp;
                 const progress = timestamp - startTime;
-                
+
                 if (scrollElement) {
                     const scrollWidth = scrollElement.scrollWidth - scrollElement.clientWidth;
                     const newPosition = (progress % duration) / duration * scrollWidth;
                     scrollElement.scrollLeft = newPosition;
                 }
-                
+
                 animationFrameId = requestAnimationFrame(scroll);
             };
-            
+
             animationFrameId = requestAnimationFrame(scroll);
-            
+
             return () => {
                 if (animationFrameId) {
                     cancelAnimationFrame(animationFrameId);
@@ -129,15 +129,15 @@ export default function LehladakhPackagePage({ params }: PageProps) {
 
     // Calculate truncated description for "Read More" functionality
     const description = lehladakhPkg.description || "";
-    const truncatedDescription = description.length > 300 
-        ? `${description.substring(0, 300)}...` 
+    const truncatedDescription = description.length > 300
+        ? `${description.substring(0, 300)}...`
         : description;
 
     // Function to toggle day expansion
     const toggleDayExpansion = (dayNumber: number) => {
-        setExpandedDays(prev => 
-            prev.includes(dayNumber) 
-                ? prev.filter(d => d !== dayNumber) 
+        setExpandedDays(prev =>
+            prev.includes(dayNumber)
+                ? prev.filter(d => d !== dayNumber)
                 : [...prev, dayNumber]
         );
     };
@@ -151,13 +151,13 @@ export default function LehladakhPackagePage({ params }: PageProps) {
 
     // Add these gallery navigation functions
     const nextImage = () => {
-        setCurrentGalleryIndex((prev) => 
+        setCurrentGalleryIndex((prev) =>
             prev === getAllImages().length - 1 ? 0 : prev + 1
         );
     };
 
     const previousImage = () => {
-        setCurrentGalleryIndex((prev) => 
+        setCurrentGalleryIndex((prev) =>
             prev === 0 ? getAllImages().length - 1 : prev - 1
         );
     };
@@ -196,20 +196,20 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                 ))}
                                 <span className="ml-2 text-white font-medium">4.8/5 (67 reviews)</span>
                             </div>
-                            
+
                             {/* Package name */}
                             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">{lehladakhPkg.packageName}</h1>
-                            
+
                             {/* Location */}
                             <div className="flex items-center text-white mb-6">
                                 <MapPin className="h-5 w-5 mr-2" />
                                 <span className="text-lg">Leh Ladakh</span>
                             </div>
-                            
+
                             {/* Action buttons */}
                             <div className="flex flex-wrap gap-4 mb-12">
-                                <Button 
-                                    size="lg" 
+                                <Button
+                                    size="lg"
                                     className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition rounded-full px-8"
                                     onClick={() => setIsBookingModalOpen(true)}
                                 >
@@ -242,7 +242,7 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                 <div className="font-medium text-sm md:text-base">{lehladakhPkg.days} days / {lehladakhPkg.nights} nights</div>
                             </div>
                         </div>
-                        
+
                         <div className="flex items-center">
                             <div className="flex-shrink-0 w-8 md:w-auto">
                                 <MapPin className="h-6 w-6 mr-3" />
@@ -252,7 +252,7 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                 <div className="font-medium text-sm md:text-base">Leh Ladakh</div>
                             </div>
                         </div>
-                        
+
                         <div className="flex items-center">
                             <div className="flex-shrink-0 w-8 md:w-auto">
                                 <Users className="h-6 w-6 mr-3" />
@@ -262,7 +262,7 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                 <div className="font-medium text-sm md:text-base">Max 12 people</div>
                             </div>
                         </div>
-                        
+
                         <div className="flex items-center">
                             <div className="flex-shrink-0 w-8 md:w-auto">
                                 <Star className="h-6 w-6 mr-3 text-yellow-400 fill-yellow-400" />
@@ -285,26 +285,26 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                 <div className="max-w-full">
                                     <Tabs defaultValue="overview" className="w-full">
                                         <TabsList className="w-full bg-gray-100 p-0 my-4 rounded-lg overflow-x-auto flex no-scrollbar">
-                                            <TabsTrigger 
+                                            <TabsTrigger
                                                 value="overview"
                                                 className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white py-2 px-4 md:py-3 md:px-6 flex-shrink-0"
                                             >
                                                 Overview
                                             </TabsTrigger>
-                                            <TabsTrigger 
+                                            <TabsTrigger
                                                 value="itinerary"
                                                 className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white py-2 px-4 md:py-3 md:px-6 flex-shrink-0"
                                             >
                                                 Itinerary
                                             </TabsTrigger>
-                                            <TabsTrigger 
+                                            <TabsTrigger
                                                 value="accommodation"
                                                 className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white py-2 px-4 md:py-3 md:px-6 flex-shrink-0"
                                             >
                                                 Accommodation
                                             </TabsTrigger>
                                         </TabsList>
-                                        
+
                                         {/* Tab Content sections */}
                                         <TabsContent value="overview" className="mt-0">
                                             {/* Package Highlights */}
@@ -365,7 +365,7 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                             {isPackageWithFlight && lehladakhPkg.batchDetails && (
                                                 <div className="mb-10">
                                                     <h2 className="text-2xl font-bold mb-6">Available Dates & Flights</h2>
-                                                    
+
                                                     {/* Current Batch Alert */}
                                                     <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6">
                                                         <div className="flex items-center">
@@ -408,7 +408,7 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                                     {lehladakhPkg.flightDetails && (
                                                         <div className="space-y-4">
                                                             <h3 className="text-xl font-semibold mb-4">Flight Information</h3>
-                                                            
+
                                                             {/* Delhi to Leh Ladakh */}
                                                             <Card className="border border-gray-200">
                                                                 <div className="p-4">
@@ -443,10 +443,10 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                                 </div>
                                             )}
 
-                                                                        {/* Experiences You'll Love */}
-                            <div className="mb-10">
-                                <h2 className="text-2xl font-bold mb-6">Experiences You&apos;ll Love</h2>
-                                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                                            {/* Experiences You'll Love */}
+                                            <div className="mb-10">
+                                                <h2 className="text-2xl font-bold mb-6">Experiences You&apos;ll Love</h2>
+                                                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
                                                     {lehladakhPkg.experiences.map((experience, index) => (
                                                         <div key={index} className="bg-white rounded-3xl overflow-hidden shadow-sm">
                                                             <div className="relative h-48">
@@ -500,10 +500,10 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                                 </div>
                                             </div>
 
-                                                                        {/* Gallery */}
-                            <div className="mb-10">
-                                <h2 className="text-2xl font-bold mb-6">Gallery</h2>
-                                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
+                                            {/* Gallery */}
+                                            <div className="mb-10">
+                                                <h2 className="text-2xl font-bold mb-6">Gallery</h2>
+                                                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
                                                     {(lehladakhPkg?.images || []).slice(0, 6).map((img, i) => (
                                                         <div key={i} className="relative aspect-[4/3] overflow-hidden rounded-lg">
                                                             <Image
@@ -558,11 +558,11 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                                 </div>
                                             </div>
                                         </TabsContent>
-                                        
+
                                         <TabsContent value="itinerary" className="mt-0">
                                             <div className="mb-10">
                                                 <h2 className="text-2xl font-bold mb-6">Day-by-Day Itinerary</h2>
-                                                
+
                                                 {/* Day navigation buttons */}
                                                 <div className="flex overflow-x-auto space-x-2 mb-8 pb-2 no-scrollbar">
                                                     {lehladakhPkg.itinerary.map((day, i) => (
@@ -572,41 +572,40 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                                                 setSelectedDay(day.day);
                                                                 scrollToDay(day.day);
                                                             }}
-                                                            className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                                                                selectedDay === day.day
+                                                            className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${selectedDay === day.day
                                                                     ? "bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white"
                                                                     : "bg-gray-100 hover:bg-gray-200 text-gray-800"
-                                                            }`}
+                                                                }`}
                                                         >
                                                             Day {day.day}
                                                         </button>
                                                     ))}
                                                 </div>
-                                                
+
                                                 {/* Timeline view with collapsible content */}
                                                 <div className="relative pb-6">
                                                     <div className="absolute left-4 md:left-[3.5rem] top-0 bottom-0 w-0.5 bg-[#017ae3]"></div>
-                                                    
+
                                                     <div className="space-y-6">
                                                         {lehladakhPkg.itinerary.map((day, i) => {
                                                             const isExpanded = expandedDays.includes(day.day);
-                                                            
+
                                                             return (
-                                                                <div 
-                                                                    key={i} 
-                                                                    id={`day-${day.day}`} 
+                                                                <div
+                                                                    key={i}
+                                                                    id={`day-${day.day}`}
                                                                     className="relative pl-12 md:pl-20 scroll-mt-24"
                                                                 >
                                                                     {/* Day number marker */}
-                                                                    <div 
+                                                                    <div
                                                                         className="absolute left-0 top-2 w-8 h-8 rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] flex items-center justify-center text-white font-bold z-10 cursor-pointer"
                                                                         onClick={() => toggleDayExpansion(day.day)}
                                                                     >
                                                                         {day.day}
                                                                     </div>
-                                                                    
+
                                                                     {/* Content card */}
-                                                                    <div 
+                                                                    <div
                                                                         className={`bg-white rounded-xl shadow-sm overflow-hidden ${selectedDay === day.day ? 'ring-2 ring-[#017ae3]/20' : ''}`}
                                                                         onClick={() => toggleDayExpansion(day.day)}
                                                                     >
@@ -623,7 +622,7 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                                                         <div className="p-5">
                                                                             <div className="flex justify-between items-center">
                                                                                 <h3 className="text-lg font-bold">Day {day.day}: {day.title}</h3>
-                                                                                <button 
+                                                                                <button
                                                                                     className="text-gray-400 hover:text-gray-600"
                                                                                     onClick={(e) => {
                                                                                         e.stopPropagation();
@@ -641,11 +640,11 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                                                                     )}
                                                                                 </button>
                                                                             </div>
-                                                                            
+
                                                                             {isExpanded && (
                                                                                 <>
                                                                                     <p className="text-gray-700 mt-3 mb-4">{day.description}</p>
-                                                                                    
+
                                                                                     <div>
                                                                                         <h4 className="text-[#017ae3] font-medium mb-2">Activities:</h4>
                                                                                         <div className="space-y-2">
@@ -677,7 +676,7 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                                 <div className="mb-10">
                                                     <h2 className="text-2xl font-bold mb-2">Available Flights</h2>
                                                     <p className="text-gray-500 mb-6 text-sm">Direct flights available from major cities</p>
-                                                    
+
                                                     <div className="space-y-4">
                                                         {[
                                                             {
@@ -696,8 +695,8 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                                                 frequency: "Regular flights available"
                                                             }
                                                         ].map((flight, index) => (
-                                                            <div 
-                                                                key={index} 
+                                                            <div
+                                                                key={index}
                                                                 className="bg-white rounded-lg border border-gray-100 hover:shadow-md transition-shadow duration-300"
                                                             >
                                                                 <div className="p-4 md:p-6">
@@ -706,7 +705,7 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                                                             <div className="min-w-[100px]">
                                                                                 <div className="text-lg font-semibold">From {flight.from}</div>
                                                                             </div>
-                                                                            
+
                                                                             <div className="flex-1 relative px-4">
                                                                                 <div className="absolute w-full top-1/2 h-0.5 bg-[#017ae3]/10"></div>
                                                                                 <div className="absolute w-full top-1/2 flex justify-center">
@@ -716,12 +715,12 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        
+
                                                                         <div className="flex items-center gap-4 ml-8">
                                                                             <div className="text-sm text-gray-600 hidden md:block">
                                                                                 {flight.frequency}
                                                                             </div>
-                                                                            <Button 
+                                                                            <Button
                                                                                 variant="outline"
                                                                                 className="text-[#017ae3] border-[#017ae3] hover:bg-[#017ae3] hover:text-white transition-colors duration-300"
                                                                                 onClick={() => setIsBookingModalOpen(true)}
@@ -737,14 +736,14 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                                             </div>
                                                         ))}
                                                     </div>
-                                                    
+
                                                     <div className="mt-4 text-center text-sm text-gray-500">
                                                         * Flight schedules are subject to change
                                                     </div>
                                                 </div>
                                             )}
                                         </TabsContent>
-                                        
+
                                         <TabsContent value="accommodation" className="mt-0">
                                             <div className="mb-10">
                                                 <h2 className="text-2xl font-bold mb-6">Your Accommodations</h2>
@@ -770,7 +769,7 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                                     ))}
                                                 </div>
                                             </div>
-                                            
+
                                             {/* FAQ Section in Accommodation Tab */}
                                             <div className="mb-10">
                                                 <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
@@ -826,31 +825,31 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                             <div className="font-medium">Duration:</div>
                                             <div>{lehladakhPkg.nights} nights / {lehladakhPkg.days} days</div>
                                         </div>
-                                        
+
                                         <div className="flex justify-between border-b pb-3">
                                             <div className="font-medium">Availability:</div>
                                             <div className="text-green-600">Available</div>
                                         </div>
-                                        
+
                                         <div className="flex justify-between border-b pb-3">
                                             <div className="font-medium">Group Size:</div>
                                             <div>Max 12 people</div>
                                         </div>
-                                        
+
                                         <div className="flex justify-between border-b pb-3 mb-4">
                                             <div className="font-medium">Languages:</div>
                                             <div>English, Mandarin</div>
                                         </div>
 
-                                        <Button 
+                                        <Button
                                             className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition text-lg py-6"
                                             onClick={() => setIsBookingModalOpen(true)}
                                         >
                                             Book Now
                                         </Button>
 
-                                        <a 
-                                            href="tel:+919919111911" 
+                                        <a
+                                            href="tel:+919310271488"
                                             className="mt-4 bg-blue-50 hover:bg-blue-100 transition-colors p-4 rounded-md flex items-center cursor-pointer no-underline"
                                         >
                                             <Phone className="h-5 w-5 text-blue-600 mr-3 flex-shrink-0" />
@@ -864,7 +863,7 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                         </a>
                                     </div>
                                 </Card>
-                                
+
                                 {/* Weather Widget */}
                                 <Card className="border-0 shadow-lg mt-6 overflow-hidden">
                                     <div className="p-4 border-b">
@@ -901,7 +900,7 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                             <div className="text-sm">Per Person</div>
                             <div className="font-bold text-xl">₹{lehladakhPkg?.amount?.toLocaleString('en-IN')}</div>
                         </div>
-                        <Button 
+                        <Button
                             className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition"
                             onClick={() => setIsBookingModalOpen(true)}
                         >
@@ -911,7 +910,7 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                 )}
 
                 {/* Booking Modal */}
-                <BookingFormModal 
+                <BookingFormModal
                     isOpen={isBookingModalOpen}
                     onClose={() => setIsBookingModalOpen(false)}
                     destinationName={lehladakhPkg?.packageName}
@@ -923,14 +922,14 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                 {isGalleryModalOpen && (
                     <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4">
                         <div className="relative w-full max-w-[90vh] mx-auto">
-                            <button 
+                            <button
                                 onClick={() => setIsGalleryModalOpen(false)}
                                 className="absolute top-4 right-4 z-10 text-white/80 hover:text-white bg-black/30 hover:bg-black/50 p-2 rounded-full transition-all"
                                 aria-label="Close gallery"
                             >
                                 <X className="h-6 w-6" />
                             </button>
-                            
+
                             <div className="relative aspect-square w-full">
                                 <Image
                                     src={getAllImages()[currentGalleryIndex]}
@@ -941,7 +940,7 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                     sizes="(max-width: 768px) 100vw, 80vw"
                                 />
                             </div>
-                            
+
                             <div className="absolute inset-y-0 left-0 flex items-center">
                                 <button
                                     onClick={previousImage}
@@ -953,7 +952,7 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                     </svg>
                                 </button>
                             </div>
-                            
+
                             <div className="absolute inset-y-0 right-0 flex items-center">
                                 <button
                                     onClick={nextImage}
@@ -965,7 +964,7 @@ export default function LehladakhPackagePage({ params }: PageProps) {
                                     </svg>
                                 </button>
                             </div>
-                            
+
                             <div className="absolute bottom-4 left-0 right-0 text-center text-white text-sm md:text-base">
                                 {currentGalleryIndex + 1} / {getAllImages().length}
                             </div>

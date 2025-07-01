@@ -4,17 +4,17 @@ import { use, useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { singaporePackages } from '../data';
 import { notFound } from 'next/navigation';
-import { 
-  Calendar, Check, MapPin, Star, Users, X, Camera, Phone 
+import {
+    Calendar, Check, MapPin, Star, Users, X, Camera, Phone
 } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BookingFormModal } from '@/app/components/BookingFormModal';
-import {  useScroll} from "framer-motion";
+import { useScroll } from "framer-motion";
 import { Poppins } from 'next/font/google';
-import {PageWrapper} from '@/components/page-wrapper';
+import { PageWrapper } from '@/components/page-wrapper';
 import { useMobile } from '@/hooks/use-mobile';
 import SingaporePackages from '../page';
 
@@ -91,26 +91,26 @@ export default function SingaporePackagePage({ params }: PageProps) {
     const useAutoScroll = (scrollRef: React.RefObject<HTMLDivElement>, duration: number = 40000) => {
         useEffect(() => {
             if (!scrollRef.current) return;
-            
+
             const scrollElement = scrollRef.current;
             let animationFrameId: number;
             let startTime: number;
-            
+
             const scroll = (timestamp: number) => {
                 if (!startTime) startTime = timestamp;
                 const progress = timestamp - startTime;
-                
+
                 if (scrollElement) {
                     const scrollWidth = scrollElement.scrollWidth - scrollElement.clientWidth;
                     const newPosition = (progress % duration) / duration * scrollWidth;
                     scrollElement.scrollLeft = newPosition;
                 }
-                
+
                 animationFrameId = requestAnimationFrame(scroll);
             };
-            
+
             animationFrameId = requestAnimationFrame(scroll);
-            
+
             return () => {
                 if (animationFrameId) {
                     cancelAnimationFrame(animationFrameId);
@@ -123,15 +123,15 @@ export default function SingaporePackagePage({ params }: PageProps) {
 
     // Calculate truncated description for "Read More" functionality
     const description = singaporePkg.description || "";
-    const truncatedDescription = description.length > 300 
-        ? `${description.substring(0, 300)}...` 
+    const truncatedDescription = description.length > 300
+        ? `${description.substring(0, 300)}...`
         : description;
 
     // Function to toggle day expansion
     const toggleDayExpansion = (dayNumber: number) => {
-        setExpandedDays(prev => 
-            prev.includes(dayNumber) 
-                ? prev.filter(d => d !== dayNumber) 
+        setExpandedDays(prev =>
+            prev.includes(dayNumber)
+                ? prev.filter(d => d !== dayNumber)
                 : [...prev, dayNumber]
         );
     };
@@ -145,13 +145,13 @@ export default function SingaporePackagePage({ params }: PageProps) {
 
     // Add these gallery navigation functions
     const nextImage = () => {
-        setCurrentGalleryIndex((prev) => 
+        setCurrentGalleryIndex((prev) =>
             prev === getAllImages().length - 1 ? 0 : prev + 1
         );
     };
 
     const previousImage = () => {
-        setCurrentGalleryIndex((prev) => 
+        setCurrentGalleryIndex((prev) =>
             prev === 0 ? getAllImages().length - 1 : prev - 1
         );
     };
@@ -178,20 +178,20 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                 ))}
                                 <span className="ml-2 text-white font-medium">4.8/5 (67 reviews)</span>
                             </div>
-                            
+
                             {/* Package name */}
                             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">{singaporePkg.packageName}</h1>
-                            
+
                             {/* Location */}
                             <div className="flex items-center text-white mb-6">
                                 <MapPin className="h-5 w-5 mr-2" />
                                 <span className="text-lg">Singapore</span>
                             </div>
-                            
+
                             {/* Action buttons */}
                             <div className="flex flex-wrap gap-4 mb-12">
-                                <Button 
-                                    size="lg" 
+                                <Button
+                                    size="lg"
                                     className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition rounded-full px-8"
                                     onClick={() => setIsBookingModalOpen(true)}
                                 >
@@ -224,7 +224,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                 <div className="font-medium text-sm md:text-base">{singaporePkg.days} days / {singaporePkg.nights} nights</div>
                             </div>
                         </div>
-                        
+
                         <div className="flex items-center">
                             <div className="flex-shrink-0 w-8 md:w-auto">
                                 <MapPin className="h-6 w-6 mr-3" />
@@ -234,7 +234,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                 <div className="font-medium text-sm md:text-base">Singapore</div>
                             </div>
                         </div>
-                        
+
                         <div className="flex items-center">
                             <div className="flex-shrink-0 w-8 md:w-auto">
                                 <Users className="h-6 w-6 mr-3" />
@@ -244,7 +244,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                 <div className="font-medium text-sm md:text-base">Max 20 people</div>
                             </div>
                         </div>
-                        
+
                         <div className="flex items-center">
                             <div className="flex-shrink-0 w-8 md:w-auto">
                                 <Star className="h-6 w-6 mr-3 text-yellow-400 fill-yellow-400" />
@@ -267,26 +267,26 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                 <div className="max-w-7xl mx-auto px-4">
                                     <Tabs defaultValue="overview" className="w-full">
                                         <TabsList className="w-full bg-gray-100 p-0 my-4 rounded-lg overflow-x-auto flex no-scrollbar">
-                                            <TabsTrigger 
+                                            <TabsTrigger
                                                 value="overview"
                                                 className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white py-2 px-4 md:py-3 md:px-6 flex-shrink-0"
                                             >
                                                 Overview
                                             </TabsTrigger>
-                                            <TabsTrigger 
+                                            <TabsTrigger
                                                 value="itinerary"
                                                 className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white py-2 px-4 md:py-3 md:px-6 flex-shrink-0"
                                             >
                                                 Itinerary
                                             </TabsTrigger>
-                                            <TabsTrigger 
+                                            <TabsTrigger
                                                 value="accommodation"
                                                 className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white py-2 px-4 md:py-3 md:px-6 flex-shrink-0"
                                             >
                                                 Accommodation
                                             </TabsTrigger>
                                         </TabsList>
-                                        
+
                                         {/* Tab Content sections */}
                                         <TabsContent value="overview" className="mt-0">
                                             {/* Package Highlights */}
@@ -347,7 +347,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                             {singaporePkg.batchDetails && (
                                                 <div className="mb-10">
                                                     <h2 className="text-2xl font-bold mb-6">Available Dates & Flights</h2>
-                                                    
+
                                                     {/* Current Batch Alert */}
                                                     <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6">
                                                         <div className="flex items-center">
@@ -390,7 +390,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                     {singaporePkg.flightDetails && (
                                                         <div className="space-y-4">
                                                             <h3 className="text-xl font-semibold mb-4">Flight Information</h3>
-                                                            
+
                                                             {/* Delhi to Singapore */}
                                                             <Card className="border border-gray-200">
                                                                 <div className="p-4">
@@ -540,11 +540,11 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                 </div>
                                             </div>
                                         </TabsContent>
-                                        
+
                                         <TabsContent value="itinerary" className="mt-0">
                                             <div className="mb-10">
                                                 <h2 className="text-2xl font-bold mb-6">Day-by-Day Itinerary</h2>
-                                                
+
                                                 {/* Day navigation buttons */}
                                                 <div className="flex overflow-x-auto space-x-2 mb-8 pb-2 no-scrollbar">
                                                     {singaporePkg.itinerary.map((day, i) => (
@@ -556,39 +556,38 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                                     toggleDayExpansion(day.day);
                                                                 }
                                                             }}
-                                                            className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                                                                selectedDay === day.day
+                                                            className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${selectedDay === day.day
                                                                     ? "bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white"
                                                                     : "bg-gray-100 hover:bg-gray-200 text-gray-800"
-                                                            }`}
+                                                                }`}
                                                         >
                                                             Day {day.day}
                                                         </button>
                                                     ))}
                                                 </div>
-                                                
+
                                                 {/* Timeline view with collapsible content */}
                                                 <div className="relative pb-6">
                                                     {/* Timeline vertical line */}
                                                     <div className="absolute left-4 md:left-[3.5rem] top-0 bottom-0 w-0.5 bg-[#017ae3]"></div>
-                                                    
+
                                                     {/* Timeline content */}
                                                     <div className="space-y-6">
                                                         {singaporePkg.itinerary.map((day, i) => {
                                                             const isExpanded = expandedDays.includes(day.day);
-                                                            
+
                                                             return (
                                                                 <div key={i} className="relative pl-12 md:pl-20">
                                                                     {/* Day number marker */}
-                                                                    <div 
+                                                                    <div
                                                                         className="absolute left-0 top-2 w-8 h-8 rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] flex items-center justify-center text-white font-bold z-10 cursor-pointer"
                                                                         onClick={() => toggleDayExpansion(day.day)}
                                                                     >
                                                                         {day.day}
                                                                     </div>
-                                                                    
+
                                                                     {/* Content card */}
-                                                                    <div 
+                                                                    <div
                                                                         className={`bg-white rounded-xl shadow-sm overflow-hidden ${selectedDay === day.day ? 'ring-2 ring-[#017ae3]/20' : ''}`}
                                                                         onClick={() => toggleDayExpansion(day.day)}
                                                                     >
@@ -605,7 +604,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                                         <div className="p-5">
                                                                             <div className="flex justify-between items-center">
                                                                                 <h3 className="text-lg font-bold">Day {day.day}: {day.title}</h3>
-                                                                                <button 
+                                                                                <button
                                                                                     className="text-gray-400 hover:text-gray-600"
                                                                                     onClick={(e) => {
                                                                                         e.stopPropagation();
@@ -623,11 +622,11 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                                                     )}
                                                                                 </button>
                                                                             </div>
-                                                                            
+
                                                                             {isExpanded && (
                                                                                 <>
                                                                                     <p className="text-gray-700 mt-3 mb-4">{day.description}</p>
-                                                                                    
+
                                                                                     <div>
                                                                                         <h4 className="text-[#017ae3] font-medium mb-2">Activities:</h4>
                                                                                         <div className="space-y-2">
@@ -654,7 +653,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                 </div>
                                             </div>
                                         </TabsContent>
-                                        
+
                                         <TabsContent value="accommodation" className="mt-0">
                                             <div className="mb-10">
                                                 <h2 className="text-2xl font-bold mb-6">Your Accommodations</h2>
@@ -680,7 +679,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                     ))}
                                                 </div>
                                             </div>
-                                            
+
                                             {/* FAQ Section in Accommodation Tab */}
                                             <div className="mb-10">
                                                 <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
@@ -736,31 +735,31 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                             <div className="font-medium">Duration:</div>
                                             <div>{singaporePkg.nights} nights / {singaporePkg.days} days</div>
                                         </div>
-                                        
+
                                         <div className="flex justify-between border-b pb-3">
                                             <div className="font-medium">Availability:</div>
                                             <div className="text-green-600">Available</div>
                                         </div>
-                                        
+
                                         <div className="flex justify-between border-b pb-3">
                                             <div className="font-medium">Group Size:</div>
                                             <div>Max 12 people</div>
                                         </div>
-                                        
+
                                         <div className="flex justify-between border-b pb-3 mb-4">
                                             <div className="font-medium">Languages:</div>
                                             <div>English, Mandarin</div>
                                         </div>
 
-                                        <Button 
+                                        <Button
                                             className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition text-lg py-6"
                                             onClick={() => setIsBookingModalOpen(true)}
                                         >
                                             Book Now
                                         </Button>
 
-                                        <a 
-                                            href="tel:+919919111911" 
+                                        <a
+                                            href="tel:+919310271488"
                                             className="mt-4 bg-blue-50 hover:bg-blue-100 transition-colors p-4 rounded-md flex items-center cursor-pointer no-underline"
                                         >
                                             <Phone className="h-5 w-5 text-blue-600 mr-3 flex-shrink-0" />
@@ -774,7 +773,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                         </a>
                                     </div>
                                 </Card>
-                                
+
                                 {/* Weather Widget */}
                                 <Card className="border-0 shadow-lg mt-6 overflow-hidden">
                                     <div className="p-4 border-b">
@@ -811,7 +810,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                             <div className="text-sm">Per Person</div>
                             <div className="font-bold text-xl">₹{singaporePkg?.amount?.toLocaleString('en-IN')}</div>
                         </div>
-                        <Button 
+                        <Button
                             className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition"
                             onClick={() => setIsBookingModalOpen(true)}
                         >
@@ -821,7 +820,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                 )}
 
                 {/* Booking Modal */}
-                <BookingFormModal 
+                <BookingFormModal
                     isOpen={isBookingModalOpen}
                     onClose={() => setIsBookingModalOpen(false)}
                     destinationName={singaporePkg?.packageName}
@@ -833,14 +832,14 @@ export default function SingaporePackagePage({ params }: PageProps) {
                 {isGalleryModalOpen && (
                     <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4">
                         <div className="relative w-full max-w-[90vh] mx-auto">
-                            <button 
+                            <button
                                 onClick={() => setIsGalleryModalOpen(false)}
                                 className="absolute top-4 right-4 z-10 text-white/80 hover:text-white bg-black/30 hover:bg-black/50 p-2 rounded-full transition-all"
                                 aria-label="Close gallery"
                             >
                                 <X className="h-6 w-6" />
                             </button>
-                            
+
                             <div className="relative aspect-square w-full">
                                 <Image
                                     src={getAllImages()[currentGalleryIndex]}
@@ -851,7 +850,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                     sizes="(max-width: 768px) 100vw, 80vw"
                                 />
                             </div>
-                            
+
                             <div className="absolute inset-y-0 left-0 flex items-center">
                                 <button
                                     onClick={previousImage}
@@ -863,7 +862,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                     </svg>
                                 </button>
                             </div>
-                            
+
                             <div className="absolute inset-y-0 right-0 flex items-center">
                                 <button
                                     onClick={nextImage}
@@ -875,7 +874,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                     </svg>
                                 </button>
                             </div>
-                            
+
                             <div className="absolute bottom-4 left-0 right-0 text-center text-white text-sm md:text-base">
                                 {currentGalleryIndex + 1} / {getAllImages().length}
                             </div>

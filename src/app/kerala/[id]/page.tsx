@@ -176,7 +176,7 @@ export default function KeralaPackagePage({ params }: PageProps) {
                             <div className="flex flex-wrap gap-4 mb-12">
                                 <Button
                                     size="lg"
-                                    className="bg-gradient-to-r from-green-600 to-emerald-600 hover:opacity-90 transition rounded-full px-8"
+                                    className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition rounded-full px-8"
                                     onClick={() => setIsBookingModalOpen(true)}
                                 >
                                     Book Now
@@ -197,7 +197,7 @@ export default function KeralaPackagePage({ params }: PageProps) {
                 </div>
 
                 {/* Information bar */}
-                <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white">
+                <div className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white">
                     <div className="max-w-7xl mx-auto px-4 py-5 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
                         <div className="flex items-center">
                             <div className="flex-shrink-0 w-8 md:w-auto">
@@ -253,19 +253,19 @@ export default function KeralaPackagePage({ params }: PageProps) {
                                         <TabsList className="w-full bg-gray-100 p-0 my-4 rounded-lg overflow-x-auto flex no-scrollbar">
                                             <TabsTrigger
                                                 value="overview"
-                                                className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-green-600 data-[state=active]:to-emerald-600 data-[state=active]:text-white py-2 px-4 md:py-3 md:px-6 flex-shrink-0"
+                                                className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white py-2 px-4 md:py-3 md:px-6 flex-shrink-0"
                                             >
                                                 Overview
                                             </TabsTrigger>
                                             <TabsTrigger
                                                 value="itinerary"
-                                                className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-green-600 data-[state=active]:to-emerald-600 data-[state=active]:text-white py-2 px-4 md:py-3 md:px-6 flex-shrink-0"
+                                                className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white py-2 px-4 md:py-3 md:px-6 flex-shrink-0"
                                             >
                                                 Itinerary
                                             </TabsTrigger>
                                             <TabsTrigger
                                                 value="accommodation"
-                                                className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-green-600 data-[state=active]:to-emerald-600 data-[state=active]:text-white py-2 px-4 md:py-3 md:px-6 flex-shrink-0"
+                                                className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#017ae3] data-[state=active]:to-[#00f6ff] data-[state=active]:text-white py-2 px-4 md:py-3 md:px-6 flex-shrink-0"
                                             >
                                                 Accommodation
                                             </TabsTrigger>
@@ -373,19 +373,44 @@ export default function KeralaPackagePage({ params }: PageProps) {
                                                 </div>
                                             </div>
 
+                                            {/* Available Departures From */}
+                                            {keralaPkg.departureCities && (
+                                                <div className="mb-10">
+                                                    <h2 className="text-2xl font-bold mb-6">Available Departures From:</h2>
+                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                        {keralaPkg.departureCities.map((departure, index) => (
+                                                            <Card key={index} className="border border-gray-200">
+                                                                <div className="p-4 flex justify-between items-center">
+                                                                    <div>
+                                                                        <h3 className="font-bold text-lg">{departure.city}</h3>
+                                                                        <p className="text-sm text-gray-500">Direct flights/trains available</p>
+                                                                    </div>
+                                                                    <div className="text-right">
+                                                                        <p className="font-bold text-[#017ae3] text-lg">
+                                                                            ₹{departure.price.toLocaleString('en-IN')}
+                                                                        </p>
+                                                                        <p className="text-sm text-gray-500">per person</p>
+                                                                    </div>
+                                                                </div>
+                                                            </Card>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            )}
+
                                             {/* What's Included */}
                                             <div className="mb-10">
                                                 <h2 className="text-2xl font-bold mb-6">What&apos;s Included</h2>
                                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                                     <div>
                                                         <h3 className="text-lg font-medium mb-4 flex items-center">
-                                                            <Check className="h-5 w-5 mr-2 text-green-500" />
+                                                            <Check className="h-5 w-5 mr-2 text-[#017ae3]" />
                                                             Included in Your Package
                                                         </h3>
                                                         <ul className="space-y-3">
                                                             {keralaPkg.inclusions?.map((item, i) => (
                                                                 <li key={i} className="flex">
-                                                                    <Check className="h-5 w-5 mr-3 text-green-500 flex-shrink-0" />
+                                                                    <Check className="h-5 w-5 mr-3 text-[#017ae3] flex-shrink-0" />
                                                                     <span>{item}</span>
                                                                 </li>
                                                             ))}
@@ -424,7 +449,7 @@ export default function KeralaPackagePage({ params }: PageProps) {
                                                                 scrollToDay(day.day);
                                                             }}
                                                             className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${selectedDay === day.day
-                                                                ? "bg-gradient-to-r from-green-600 to-emerald-600 text-white"
+                                                                ? "bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white"
                                                                 : "bg-gray-100 hover:bg-gray-200 text-gray-800"
                                                                 }`}
                                                         >
@@ -435,7 +460,7 @@ export default function KeralaPackagePage({ params }: PageProps) {
 
                                                 {/* Timeline view with collapsible content */}
                                                 <div className="relative pb-6">
-                                                    <div className="absolute left-4 md:left-[3.5rem] top-0 bottom-0 w-0.5 bg-green-600"></div>
+                                                    <div className="absolute left-4 md:left-[3.5rem] top-0 bottom-0 w-0.5 bg-[#017ae3]"></div>
 
                                                     <div className="space-y-6">
                                                         {keralaPkg.itinerary.map((day, i) => {
@@ -449,7 +474,7 @@ export default function KeralaPackagePage({ params }: PageProps) {
                                                                 >
                                                                     {/* Day number marker */}
                                                                     <div
-                                                                        className="absolute left-0 top-2 w-8 h-8 rounded-full bg-gradient-to-r from-green-600 to-emerald-600 flex items-center justify-center text-white font-bold z-10 cursor-pointer"
+                                                                        className="absolute left-0 top-2 w-8 h-8 rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] flex items-center justify-center text-white font-bold z-10 cursor-pointer"
                                                                         onClick={() => toggleDayExpansion(day.day)}
                                                                     >
                                                                         {day.day}
@@ -457,7 +482,7 @@ export default function KeralaPackagePage({ params }: PageProps) {
 
                                                                     {/* Content card */}
                                                                     <div
-                                                                        className={`bg-white rounded-xl shadow-sm overflow-hidden ${selectedDay === day.day ? 'ring-2 ring-green-600/20' : ''}`}
+                                                                        className={`bg-white rounded-xl shadow-sm overflow-hidden ${selectedDay === day.day ? 'ring-2 ring-[#017ae3]/20' : ''}`}
                                                                         onClick={() => toggleDayExpansion(day.day)}
                                                                     >
                                                                         {/* Add image section */}
@@ -576,7 +601,7 @@ export default function KeralaPackagePage({ params }: PageProps) {
                         <div className="lg:col-span-1">
                             <div className="sticky top-24">
                                 <Card className="border-0 shadow-lg overflow-hidden">
-                                    <div className="bg-gradient-to-r from-green-600 to-emerald-600 p-6 text-white">
+                                    <div className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] p-6 text-white">
                                         <div className="text-3xl font-bold mb-1">₹{keralaPkg.amount?.toLocaleString('en-IN')}</div>
                                         <div className="flex items-baseline">
                                             <span className="text-xl line-through text-white/80">₹{Math.round(keralaPkg.amount * 1.2).toLocaleString('en-IN')}</span>
@@ -593,7 +618,7 @@ export default function KeralaPackagePage({ params }: PageProps) {
 
                                         <div className="flex justify-between border-b pb-3">
                                             <div className="font-medium">Availability:</div>
-                                            <div className="text-green-600">Available</div>
+                                            <div className="text-[#017ae3]">Available</div>
                                         </div>
 
                                         <div className="flex justify-between border-b pb-3">
@@ -607,22 +632,22 @@ export default function KeralaPackagePage({ params }: PageProps) {
                                         </div>
 
                                         <Button
-                                            className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:opacity-90 transition text-lg py-6"
+                                            className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition text-lg py-6"
                                             onClick={() => setIsBookingModalOpen(true)}
                                         >
                                             Book Now
                                         </Button>
 
                                         <a
-                                            href="tel:+919919111911"
-                                            className="mt-4 bg-green-50 hover:bg-green-100 transition-colors p-4 rounded-md flex items-center cursor-pointer no-underline"
+                                            href="tel:+919310271488"
+                                            className="mt-4 bg-blue-50 hover:bg-blue-100 transition-colors p-4 rounded-md flex items-center cursor-pointer no-underline"
                                         >
-                                            <Phone className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
+                                            <Phone className="h-5 w-5 text-[#017ae3] mr-3 flex-shrink-0" />
                                             <div>
-                                                <div className="font-medium text-green-800">Need assistance with booking?</div>
-                                                <div className="flex items-center text-green-600">
-                                                    <span className="font-semibold">+91 9919 111 911</span>
-                                                    <span className="ml-2 text-xs bg-green-600 text-white px-2 py-0.5 rounded-full">Tap to call</span>
+                                                <div className="font-medium text-blue-800">Need assistance with booking?</div>
+                                                <div className="flex items-center text-[#017ae3]">
+                                                    <span className="font-semibold">+91 9310 271 488</span>
+                                                    <span className="ml-2 text-xs bg-[#017ae3] text-white px-2 py-0.5 rounded-full">Tap to call</span>
                                                 </div>
                                             </div>
                                         </a>
@@ -648,7 +673,7 @@ export default function KeralaPackagePage({ params }: PageProps) {
                                             <div className="font-medium">75%</div>
                                         </div>
                                         <div>
-                                            <div className="text-green-500 mb-1">Wind</div>
+                                            <div className="text-[#00f6ff] mb-1">Wind</div>
                                             <div className="font-medium">5 km/h</div>
                                         </div>
                                     </div>
@@ -702,7 +727,7 @@ export default function KeralaPackagePage({ params }: PageProps) {
                                                 <h3 className="font-bold text-lg mb-2">{food.name}</h3>
                                                 <p className="text-gray-600 text-sm mb-2">{food.description}</p>
                                                 {food.where && (
-                                                    <p className="text-green-600 text-xs font-medium">{food.where}</p>
+                                                    <p className="text-[#017ae3] text-xs font-medium">{food.where}</p>
                                                 )}
                                             </div>
                                         </div>
@@ -749,7 +774,7 @@ export default function KeralaPackagePage({ params }: PageProps) {
                             <div className="font-bold text-xl">₹{keralaPkg?.amount?.toLocaleString('en-IN')}</div>
                         </div>
                         <Button
-                            className="bg-gradient-to-r from-green-600 to-emerald-600 hover:opacity-90 transition"
+                            className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition"
                             onClick={() => setIsBookingModalOpen(true)}
                         >
                             Book Now
