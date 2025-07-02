@@ -5,7 +5,7 @@ export const metadata = {
     openGraph: {
         title: 'Rajasthan Tour Packages | Royal Heritage',
         description: 'Discover the royal heritage of Rajasthan with our curated tour packages featuring majestic forts, desert adventures, and cultural experiences.',
-        images: ['/webImage/rajasthan/mobile/rajasthan-og.jpg'],
+        images: ['/UGCImages/rajasthan/1.png'],
     },
 };
 
