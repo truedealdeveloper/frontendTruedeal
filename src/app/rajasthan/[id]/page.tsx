@@ -351,31 +351,6 @@ export default function RajasthanPackagePage({ params }: PageProps) {
                                                 </div>
                                             )}
 
-                                            {/* Available Departures From */}
-                                            {rajasthanPkg.departureCities && (
-                                                <div className="mb-10">
-                                                    <h2 className="text-2xl font-bold mb-6">Available Departures From:</h2>
-                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                                        {rajasthanPkg.departureCities.map((departure, index) => (
-                                                            <Card key={index} className="border border-gray-200">
-                                                                <div className="p-4 flex justify-between items-center">
-                                                                    <div>
-                                                                        <h3 className="font-bold text-lg">{departure.city}</h3>
-                                                                        <p className="text-sm text-gray-500">Direct flights/trains available</p>
-                                                                    </div>
-                                                                    <div className="text-right">
-                                                                        <p className="font-bold text-[#017ae3] text-lg">
-                                                                            ₹{departure.price.toLocaleString('en-IN')}
-                                                                        </p>
-                                                                        <p className="text-sm text-gray-500">per person</p>
-                                                                    </div>
-                                                                </div>
-                                                            </Card>
-                                                        ))}
-                                                    </div>
-                                                </div>
-                                            )}
-
                                             {/* What's Included */}
                                             <div className="mb-10">
                                                 <h2 className="text-2xl font-bold mb-6">What&apos;s Included</h2>
