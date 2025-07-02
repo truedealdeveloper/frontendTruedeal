@@ -41,6 +41,8 @@ export default function HeroSection() {
                 router.push("/turkey")
             } else if (destination.name.toLowerCase() === "kerala") {
                 router.push("/kerala")
+            } else if (destination.name.toLowerCase() === "rajasthan") {
+                router.push("/rajasthan")
             } else if (destination.name.toLowerCase() === "greece") {
                 router.push("/greece")
             } else if (destination.name.toLowerCase() === "leh ladakh") {
