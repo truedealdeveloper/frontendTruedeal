@@ -185,32 +185,32 @@ export default function RajasthanPackages() {
     const rajasthanHighlights = [
         {
             title: "Majestic Forts",
-            image: "/UGCImages/rajasthan/rajasthana/forts.png",
+            image: "/UGCImages/rajasthan/front/1.png",
             description: "Explore magnificent forts like Amber, Mehrangarh, and Jaisalmer Fort"
         },
         {
             title: "Royal Palaces",
-            image: "/UGCImages/rajasthan/rajasthana/palaces.png",
+            image: "/UGCImages/rajasthan/front/2.png",
             description: "Visit opulent palaces including City Palace and Lake Palace"
         },
         {
             title: "Desert Safari",
-            image: "/UGCImages/rajasthan/rajasthana/desert.png",
+            image: "/UGCImages/rajasthan/front/3.png",
             description: "Experience camel safari and desert camping in the Thar Desert"
         },
         {
             title: "Cultural Heritage",
-            image: "/UGCImages/rajasthan/rajasthana/cultural.png",
+            image: "/UGCImages/rajasthan/front/4.png",
             description: "Witness vibrant folk dances, music, and traditional performances"
         },
         {
             title: "Handicrafts",
-            image: "/UGCImages/rajasthan/rajasthana/handicrafts.png",
+            image: "/UGCImages/rajasthan/front/5.png",
             description: "Shop for exquisite textiles, jewelry, and traditional crafts"
         },
         {
             title: "Rajasthani Cuisine",
-            image: "/UGCImages/rajasthan/rajasthana/cuisine.png",
+            image: "/UGCImages/rajasthan/front/6.png",
             description: "Savor royal cuisine including Dal Baati Churma and Laal Maas"
         }
     ];
@@ -273,7 +273,7 @@ export default function RajasthanPackages() {
                     <source src="/UGCImages/rajasthan/rajasthan.mp4" type="video/mp4" />
                     {/* Fallback image in case video fails to load */}
                     <Image
-                        src="/webImage/rajasthan/mobile/rajasthan1.jpg"
+                        src="/UGCImages/rajasthan/1.png"
                         alt="Royal Rajasthan"
                         fill
                         className="object-cover"
