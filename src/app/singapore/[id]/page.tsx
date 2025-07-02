@@ -564,8 +564,8 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                                 }
                                                             }}
                                                             className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${selectedDay === day.day
-                                                                    ? "bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white"
-                                                                    : "bg-gray-100 hover:bg-gray-200 text-gray-800"
+                                                                ? "bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white"
+                                                                : "bg-gray-100 hover:bg-gray-200 text-gray-800"
                                                                 }`}
                                                         >
                                                             Day {day.day}
@@ -811,7 +811,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                 </div>
 
                 {/* Mobile Booking Bar */}
-                {isMobile && (
+                {isMobile && !isBookingModalOpen && (
                     <div className="fixed bottom-0 left-0 right-0 bg-white border-t p-4 flex items-center justify-between z-[9999]">
                         <div>
                             <div className="text-sm">Per Person</div>

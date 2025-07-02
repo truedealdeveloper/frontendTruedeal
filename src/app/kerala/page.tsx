@@ -246,7 +246,7 @@ export default function KeralaPackages() {
                     autoPlay
                     className="hidden"
                 >
-                    <source src="/UGCImages/kerala/kerala-audio.mp3" type="audio/mp3" />
+                    <source src="/UGCImages/kerala/audio.mpeg" type="audio/mp3" />
                 </audio>
 
                 {/* Add audio control button */}

@@ -767,7 +767,7 @@ export default function KeralaPackagePage({ params }: PageProps) {
                 </div>
 
                 {/* Mobile Booking Bar */}
-                {isMobile && (
+                {isMobile && !isBookingModalOpen && (
                     <div className="fixed bottom-0 left-0 right-0 bg-white border-t p-4 flex items-center justify-between z-[9999]">
                         <div>
                             <div className="text-sm">Per Person</div>
