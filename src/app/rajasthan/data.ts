@@ -98,8 +98,8 @@ export interface rajasthanPackage {
 }
 
 export const rajasthanPackages: Record<string, rajasthanPackage> = {
-    "rajasthan-5d4n-package": {
-        id: "rajasthan-5d4n-package",
+    "royal-rajasthan-5d4n-package": {
+        id: "royal-rajasthan-5d4n-package",
         packageName: "Royal Rajasthan - 5D4N Package",
         days: 5,
         nights: 4,
@@ -188,7 +188,7 @@ export const rajasthanPackages: Record<string, rajasthanPackage> = {
             },
         ],
         images: [
-            "/UGCImages/rajasthan/rajasthan/6.png",
+            "/UGCImages/rajasthan/rajasthan/3.png",
             "/UGCImages/rajasthan/rajasthan/7.png",
             "/UGCImages/rajasthan/rajasthan/8.png",
             "/UGCImages/rajasthan/rajasthan/9.png",
@@ -355,6 +355,305 @@ export const rajasthanPackages: Record<string, rajasthanPackage> = {
             {
                 city: "Mumbai",
                 price: 35000
+            },
+        ]
+    },
+    "golden-triangle-tour-delhi-jaipur-agra-delhi": {
+        id: "golden-triangle-tour-delhi-jaipur-agra-delhi",
+        packageName: "Golden Triangle Tour - (Delhi – Jaipur – Agra – Delhi)",
+        days: 5,
+        nights: 4,
+        amount: 37000,
+        dateStart: "Available throughout the year",
+        dateEnd: "",
+        description: "Enjoy the serene beauty of Golden Traingle. Visit the Pink City of Jaipur, the Blue City of Jodhpur, and the City of Lakes - Udaipur. ",
+        groupDetails: {
+            pax: "2",
+            rooms: "1",
+            arrivalDate: "Available throughout the year",
+            duration: "5 days / 4 nights",
+            costBasis: "Package cost ₹37,000 for couple"
+        },
+        hotelDetails: [
+            {
+                city: "Jaisalmer",
+                hotel: "3 Star Hotel",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Sam Sand Dunes",
+                hotel: "Desert Camp",
+                roomType: "Swiss Tent"
+            }
+        ],
+        tourSummary: [
+            "Explore the Pink City of Jaipur with Amber Fort and City Palace",
+            "Visit the Blue City of Jodhpur and magnificent Mehrangarh Fort",
+            "Experience Thar Desert with camel safari and desert camping in Jaisalmer",
+            "Discover the City of Lakes - Udaipur with Lake Pichola boat ride",
+            "Visit iconic landmarks like Hawa Mahal, Jal Mahal, and Saheliyon Ki Bari",
+            "Experience authentic Rajasthani culture, music, and dance performances"
+        ],
+        inclusions: [
+            "4 Breakfast + 4 Dinner",
+            "All sightseeing on private basis with AC cab",
+            "3 Star hotel accommodation",
+        ],
+        exclusions: [
+            "Entry fees to monuments and museums",
+            "Lunch",
+            "Extra meals",
+            "Personal expenses and shopping"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Delhi + Local Sightseeing",
+                description: `Pickup: Delhi Airport / Railway Station
+
+Sightseeing Highlights:
+
+India Gate
+
+Rashtrapati Bhawan (Drive Past)
+
+Qutub Minar
+
+Humayun's Tomb
+
+Lotus Temple (closed on Monday)
+
+Evening at Connaught Place / Local Market
+
+Overnight: Delhi`,
+                image: "/UGCImages/rajasthan/rajasthan/1.png"
+            },
+            {
+                day: 2,
+                title: "Delhi – Jaipur (Approx. 280 km / 5-6 hrs) + Sightseeing",
+                description: `After breakfast, drive to Jaipur. Upon arrival, check-in at hotel.
+
+Evening Sightseeing:
+
+Birla Mandir
+
+Albert Hall (Drive Past & Photo Stop)
+
+Optional: Visit Chokhi Dhani (Traditional Rajasthani Dinner & Cultural Activities)
+
+Overnight: Jaipur`,
+                image: "/UGCImages/rajasthan/rajasthan/2.png"
+            },
+            {
+                day: 3,
+                title: "Jaipur Local Sightseeing",
+                description: `Sightseeing Highlights:
+
+Amber Fort (elephant ride or jeep ride optional)
+
+Jal Mahal (Photo stop)
+
+City Palace
+
+Jantar Mantar (UNESCO World Heritage)
+
+Hawa Mahal (Photo stop)
+
+Shopping at Bapu Bazaar / Johari Bazaar
+
+Overnight: Jaipur`,
+                image: "/UGCImages/rajasthan/rajasthan/3.png"
+            },
+            {
+                day: 4,
+                title: "Jaipur – Agra via Fatehpur Sikri (Approx. 240 km / 5 hrs)",
+                description: `En route: Visit Fatehpur Sikri (Buland Darwaza, Jama Masjid, Tomb of Salim Chishti)
+
+In Agra:
+
+Mehtab Bagh (Sunset view of Taj Mahal from across the Yamuna)
+
+Optional: Explore local markets
+
+Overnight: Agra`,
+                image: "/UGCImages/rajasthan/rajasthan/4.png"
+            },
+            {
+                day: 5,
+                title: "Agra – Delhi (Approx. 230 km / 4 hrs) & Departure",
+                description: `Early morning: Visit Taj Mahal at sunrise
+Later visit: Agra Fort
+
+Post breakfast: Drive back to Delhi
+Drop at: Delhi Airport / Railway Station for departure
+`,
+                image: "/UGCImages/rajasthan/rajasthan/5.png"
+            }
+        ],
+        images: [
+            "/UGCImages/rajasthan/rajasthan/10.png",
+            "/UGCImages/rajasthan/rajasthan/7.png",
+            "/UGCImages/rajasthan/rajasthan/8.png",
+            "/UGCImages/rajasthan/rajasthan/9.png",
+            "/UGCImages/rajasthan/rajasthan/10.png",
+        ],
+        experiences: [
+            {
+                title: "Camel Safari",
+                image: "/UGCImages/rajasthan/vertical/1.png"
+            },
+            {
+                title: "Desert Camping",
+                image: "/UGCImages/rajasthan/vertical/4.png"
+            },
+            {
+                title: "Cultural Shows",
+                image: "/UGCImages/rajasthan/vertical/3.png"
+            },
+            {
+                title: "Heritage Tours",
+                image: "/UGCImages/rajasthan/vertical/2.png"
+            }
+        ],
+        additionalInfo: {
+            highlights: [
+                "Living Jaisalmer Fort experience",
+                "Camel safari in Thar Desert",
+                "Desert camping under stars",
+                "Beautiful havelis and architecture",
+                "Folk music and dance performances",
+                "Mysterious Kuldhara Village"
+            ],
+            bestTimeToVisit: "October to March - Pleasant weather perfect for desert activities",
+            cuisine: [
+                "Dal Baati Churma",
+                "Ker Sangri",
+                "Gatte Ki Sabzi",
+                "Rajasthani Thali",
+                "Malpua",
+                "Traditional Desert Camp Dinner"
+            ],
+            accommodation: {
+                type: "3 Star Hotel & Desert Camp",
+                amenities: [
+                    "AC Rooms",
+                    "Traditional Desert Tents",
+                    "Cultural Programs",
+                    "Camel Safari",
+                    "Campfire",
+                    "Rajasthani Cuisine"
+                ]
+            },
+            transportation: {
+                type: "AC Cab",
+                features: [
+                    "Experienced Driver",
+                    "Fuel Included",
+                    "Toll & Parking",
+                    "Climate Control",
+                    "GPS Enabled",
+                    "24/7 Support"
+                ]
+            },
+            visaInfo: {
+                requirement: "Indian Domestic Travel",
+                duration: "Not Required",
+                cost: "Not Applicable",
+                documents: [
+                    "Valid Photo ID",
+                    "Address Proof",
+                    "Travel Voucher"
+                ]
+            }
+        },
+        sightseeingSpots: [
+            {
+                name: "Jaisalmer Fort",
+                description: "Living fort made of golden sandstone, UNESCO World Heritage site",
+                image: "/UGCImages/rajasthan/sight/3.png"
+            },
+            {
+                name: "Patwon Ki Haveli",
+                description: "Cluster of five havelis with intricate architecture and historical significance",
+                image: "/UGCImages/rajasthan/sight/1.png"
+            },
+            {
+                name: "Sam Sand Dunes",
+                description: "Perfect spot for camel safari and desert camping experience",
+                image: "/UGCImages/rajasthan/sight/6.png"
+            },
+            {
+                name: "Gadisar Lake",
+                description: "Scenic man-made reservoir with temples and ghats around it",
+                image: "/UGCImages/rajasthan/sight/4.png"
+            },
+            {
+                name: "Kuldhara Village",
+                description: "Mysterious abandoned village with fascinating ruins and legends",
+                image: "/UGCImages/rajasthan/sight/5.png"
+            },
+            {
+                name: "Bada Bagh",
+                description: "Beautiful cenotaphs with panoramic desert views",
+                image: "/UGCImages/rajasthan/sight/2.png"
+            }
+        ],
+        localFood: [
+            {
+                name: "Dal Baati Churma",
+                description: "Traditional Rajasthani dish with lentils, wheat balls, and sweet crumbs",
+                image: "/UGCImages/rajasthan/food/1.png",
+                where: "Local Rajasthani restaurants and desert camp"
+            },
+            {
+                name: "Ker Sangri",
+                description: "Traditional desert vegetable curry made with dried berries and beans",
+                image: "/UGCImages/rajasthan/food/2.png",
+                where: "Local eateries and heritage restaurants"
+            },
+            {
+                name: "Rajasthani Thali",
+                description: "Complete meal with variety of curries, bread, rice, and sweets",
+                image: "/UGCImages/rajasthan/food/3.png",
+                where: "Traditional Rajasthani restaurants"
+            },
+            {
+                name: "Ghevar",
+                description: "Traditional Rajasthani sweet dish, especially popular during festivals",
+                image: "/UGCImages/rajasthan/food/4.png",
+                where: "Local sweet shops and markets"
+            }
+        ],
+        culture: [
+            {
+                title: "Golden City Heritage",
+                description: "Magnificent sandstone architecture and living fort experience",
+                image: "/UGCImages/rajasthan/exp/1.png"
+            },
+            {
+                title: "Desert Folk Culture",
+                description: "Traditional music, dance, and cultural performances at desert camps",
+                image: "/UGCImages/rajasthan/exp/2.png"
+            },
+            {
+                title: "Handicrafts & Textiles",
+                description: "Exquisite mirror work, embroidery, and traditional craftsmanship",
+                image: "/UGCImages/rajasthan/exp/3.png"
+            },
+            {
+                title: "Desert Lifestyle",
+                description: "Experience authentic desert living and camel safari adventures",
+                image: "/UGCImages/rajasthan/exp/4.png"
+            }
+        ],
+        departureDates: [
+            { date: "Daily Departures Available", availability: "Available", price: 11000 },
+            { date: "October to March (Peak Season)", availability: "Recommended", price: 11000 },
+        ],
+        departureCities: [
+            {
+                city: "-",
+                price: 11000
             },
         ]
     },

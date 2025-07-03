@@ -383,7 +383,7 @@ export default function KeralaPackagePage({ params }: PageProps) {
                                                                 <div className="p-4 flex justify-between items-center">
                                                                     <div>
                                                                         <h3 className="font-bold text-lg">{departure.city}</h3>
-                                                                        <p className="text-sm text-gray-500">Direct flights/trains available</p>
+                                                                        <p className="text-sm text-gray-500">Available</p>
                                                                     </div>
                                                                     <div className="text-right">
                                                                         <p className="font-bold text-[#017ae3] text-lg">

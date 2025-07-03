@@ -98,11 +98,11 @@ export interface keralaPackage {
 }
 
 export const keralaPackages: Record<string, keralaPackage> = {
-    "kerala-6d5n-package": {
-        id: "kerala-6d5n-munnar-thekkady-alleppey",
+    "kerala-4n5d-munnar-thekkady-alleppey": {
+        id: "kerala-4n5d-munnar-thekkady-alleppey",
         packageName: "Kerala Complete - Munnar, Thekkady & Alleppey",
-        days: 6,
-        nights: 5,
+        days: 5,
+        nights: 4,
         amount: 24000,
         dateStart: "1, 5, 8, 12, 15, 19, 22, 26, 29 July 2025",
         dateEnd: "",
@@ -111,7 +111,7 @@ export const keralaPackages: Record<string, keralaPackage> = {
             pax: "2",
             rooms: "1",
             arrivalDate: "1, 5, 8, 12, 15, 19, 22, 26, 29 July 2025",
-            duration: "6 days / 5 nights",
+            duration: "5 days / 4 nights",
             costBasis: "Per Person on double sharing basis"
         },
         hotelDetails: [
