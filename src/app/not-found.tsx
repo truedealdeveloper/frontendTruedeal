@@ -134,6 +134,8 @@ function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
       router.push("/turkey")
     } else if (destination.name.toLowerCase() === "kerala") {
       router.push("/kerala")
+    } else if (destination.name.toLowerCase() === "goa") {
+      router.push("/goa")
     } else if (destination.name.toLowerCase() === "rajasthan") {
       router.push("/rajasthan")
     } else if (destination.name.toLowerCase() === "leh ladakh") {
