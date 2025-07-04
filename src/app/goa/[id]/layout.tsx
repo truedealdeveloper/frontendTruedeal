@@ -9,55 +9,38 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 
     if (!goaPkg) {
         return {
-            title: 'Package Not Found | TrueDeal Travel',
+            title: 'Package Not Found | TrueDeal4U',
             description: 'The requested Goa package could not be found.'
         };
     }
 
-    // Create a detailed description from package data
-    const metaDescription = `${goaPkg.description} Starting from ₹${goaPkg.amount.toLocaleString('en-IN')} for ${goaPkg.days} days / ${goaPkg.nights} nights. Includes ${goaPkg.inclusions.slice(0, 3).join(', ')} and more.`;
-
     return {
-        title: `${goaPkg.packageName} | Starting ₹${goaPkg.amount.toLocaleString('en-IN')} | TrueDeal Travel`,
-        description: metaDescription,
-        keywords: [
-            goaPkg.packageName,
-            'Goa tour package',
-            'Goa holidays',
-            'beach vacation Goa',
-            `${goaPkg.days} days Goa trip`,
-            'North Goa South Goa',
-            'Goa sightseeing',
-            'water sports Goa',
-            'Portuguese heritage',
-            'TrueDeal Travel',
-            `₹${goaPkg.amount} Goa package`
-        ].join(', '),
+        title: `${goaPkg.packageName} | TrueDeal4U`,
+        description: `${goaPkg.description} Starting from ₹${goaPkg.amount.toLocaleString('en-IN')} for ${goaPkg.days} days / ${goaPkg.nights} nights. Book your perfect Goa getaway today!`,
+        keywords: `${goaPkg.packageName}, goa tour packages, goa holidays, beach vacation goa, ${goaPkg.days} days goa trip, north goa south goa`,
         formatDetection: {
             email: false,
             address: false,
             telephone: false
         },
         openGraph: {
-            title: `${goaPkg.packageName} | Starting ₹${goaPkg.amount.toLocaleString('en-IN')}`,
-            description: metaDescription,
+            title: `${goaPkg.packageName} | TrueDeal4U`,
+            description: `${goaPkg.description} Starting from ₹${goaPkg.amount.toLocaleString('en-IN')} for ${goaPkg.days} days / ${goaPkg.nights} nights. Book your perfect Goa getaway today!`,
             images: [
                 {
-                    url: `https://www.truedeal4u.com${goaPkg.images[0]}`,
+                    url: '/UGCImages/goa/goa/1.png',
                     width: 1200,
                     height: 630,
-                    alt: `${goaPkg.packageName} - Beautiful Goa beaches and experiences`,
+                    alt: `${goaPkg.packageName} - Goa Tour Package`
                 }
             ],
-            type: 'website',
-            url: `https://www.truedeal4u.com/goa/${id}`,
-            siteName: 'TrueDeal Travel',
+            type: 'website'
         },
         twitter: {
             card: 'summary_large_image',
-            title: `${goaPkg.packageName} | Starting ₹${goaPkg.amount.toLocaleString('en-IN')}`,
-            description: metaDescription,
-            images: [`https://www.truedeal4u.com${goaPkg.images[0]}`]
+            title: `${goaPkg.packageName} | TrueDeal4U`,
+            description: `${goaPkg.description} Starting from ₹${goaPkg.amount.toLocaleString('en-IN')} for ${goaPkg.days} days / ${goaPkg.nights} nights. Book your perfect Goa getaway today!`,
+            images: ['/UGCImages/goa/goa/1.png']
         }
     };
 }
