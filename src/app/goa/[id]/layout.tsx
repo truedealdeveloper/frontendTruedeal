@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: 'Goa Tour Packages | TrueDeal4U',
+    title: 'Goa Tour Packages | TrueDeal Travels ',
     description: 'Experience the best of Goa with our comprehensive tour packages. Explore pristine beaches, vibrant nightlife, Portuguese heritage, and thrilling water sports. Perfect blend of relaxation and adventure.',
     keywords: 'goa tour packages, goa holidays, beach vacation goa, north goa south goa, goa sightseeing, water sports goa',
     formatDetection: {
