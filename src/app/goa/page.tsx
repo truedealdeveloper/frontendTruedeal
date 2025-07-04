@@ -235,7 +235,7 @@ export default function GoaPackages() {
                     autoPlay
                     className="hidden"
                 >
-                    <source src="/UGCImages/goa/audio.mpeg" type="audio/mp3" />
+                    <source src="/UGCImages/goa/goa.mp3" type="audio/mp3" />
                 </audio>
 
                 <button
