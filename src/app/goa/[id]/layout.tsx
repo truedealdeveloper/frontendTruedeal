@@ -1,10 +1,7 @@
 import { Metadata } from 'next'
 import { goaPackages } from '../data'
 
-interface LayoutProps {
-    params: Promise<{ id: string }>
-    children: React.ReactNode
-}
+
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
     const { id } = await params;
