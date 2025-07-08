@@ -4,7 +4,7 @@ import { Target, Eye } from 'lucide-react'
 import Services from "./Services"
 import Founder from "../components/common/Founder";
 import NumberTicker from "../../components/ui/number-ticker"
-import { SmoothCursor } from "../../components/ui/smooth-cursor"
+// import { SmoothCursor } from "../../components/ui/smooth-cursor"
 
 const AboutPage: React.FC = () => {
     return (
@@ -35,14 +35,14 @@ const AboutPage: React.FC = () => {
                             <div className="h-1.5 w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] mt-4" />
                         </div>
                         <p className="text-gray-600 leading-relaxed max-w-xl font-poppins text-lg">
-                        Welcome to TrueDeal, your ultimate travel companion for 
-                        unforgettable journeys and unbeatable deals. As a premier 
-                        travel agency, we specialize in providing customized vacation 
-                        packages, unforgettable travel experiences, and exceptional 
-                        customer service to adventurers of all types. Whether you are 
-                        planning a luxurious getaway, a family vacation, or a 
-                        thrilling solo Journey, we have the perfect travel solutions 
-                        for you.
+                            Welcome to TrueDeal, your ultimate travel companion for
+                            unforgettable journeys and unbeatable deals. As a premier
+                            travel agency, we specialize in providing customized vacation
+                            packages, unforgettable travel experiences, and exceptional
+                            customer service to adventurers of all types. Whether you are
+                            planning a luxurious getaway, a family vacation, or a
+                            thrilling solo Journey, we have the perfect travel solutions
+                            for you.
                         </p>
                     </div>
 
@@ -110,14 +110,14 @@ const AboutPage: React.FC = () => {
                                 <div className="h-1.5 w-32 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] mt-4" />
                             </h2>
                             <p className="text-gray-600 leading-relaxed font-poppins text-lg">
-                            Our mission at TrueDeal is simple to provide 
-                            you with affordable, hassle-free, and personalized 
-                            travel experiences. We believe that travel should be 
-                            accessible to everyone, and thats why we focus on 
-                            delivering cost-effective solutions without compromising 
-                            quality. We are dedicated to helping you find the best 
-                            travel deals, discounted vacation packages, and tailored 
-                            travel plans that meet your unique preferences.
+                                Our mission at TrueDeal is simple to provide
+                                you with affordable, hassle-free, and personalized
+                                travel experiences. We believe that travel should be
+                                accessible to everyone, and thats why we focus on
+                                delivering cost-effective solutions without compromising
+                                quality. We are dedicated to helping you find the best
+                                travel deals, discounted vacation packages, and tailored
+                                travel plans that meet your unique preferences.
                             </p>
                         </div>
                     </div>
@@ -135,7 +135,7 @@ const AboutPage: React.FC = () => {
                                 <div className="h-1.5 w-32 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] mt-4" />
                             </h2>
                             <p className="text-gray-600 leading-relaxed font-poppins text-lg">
-                            We are committed to delivering top-tier travel packages, hotels to excursions and local experiences, all while maintaining the highest level of customer satisfaction. With a strong focus on quality, reliability, and integrity, TrueDeal continues to grow as a leader in the travel industry, shaping the future of travel one experience at a time.
+                                We are committed to delivering top-tier travel packages, hotels to excursions and local experiences, all while maintaining the highest level of customer satisfaction. With a strong focus on quality, reliability, and integrity, TrueDeal continues to grow as a leader in the travel industry, shaping the future of travel one experience at a time.
                             </p>
                         </div>
                     </div>
@@ -143,7 +143,7 @@ const AboutPage: React.FC = () => {
             </div>
             <Services />
             <Founder />
-            <SmoothCursor />
+            {/* <SmoothCursor /> */}
         </div>
     );
 };
