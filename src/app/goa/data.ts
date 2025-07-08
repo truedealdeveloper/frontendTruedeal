@@ -150,7 +150,7 @@ export const goaPackages: Record<string, goaPackage> = {
             {
                 day: 1,
                 title: "Arrival in Goa – Leisure Day",
-                description: `Arrive at Goa Airport or Railway Station. Meet our representative and transfer to your hotel. After check-in, relax and freshen up. Spend the rest of the day at leisure—enjoy the nearby beach, explore the local markets, or unwind at a beach shack. In the evening, you can experience Goa’s vibrant nightlife or enjoy a peaceful sunset by the sea. Overnight stay at the hotel.`,
+                description: `Arrive at Goa Airport or Railway Station. Meet our representative and transfer to your hotel. After check-in, relax and freshen up. Spend the rest of the day at leisure—enjoy the nearby beach, explore the local markets, or unwind at a beach shack. In the evening, you can experience Goa's vibrant nightlife or enjoy a peaceful sunset by the sea. Overnight stay at the hotel.`,
                 image: "/UGCImages/goa/goa/1.png"
             },
             {

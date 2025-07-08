@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: 'Goa Tour Packages | TrueDeal Travels ',
+    title: 'Goa Tour Packages | Beaches | Water Sports | Nightlife | Sightseeing',
     description: 'Experience the best of Goa with our comprehensive tour packages. Explore pristine beaches, vibrant nightlife, Portuguese heritage, and thrilling water sports. Perfect blend of relaxation and adventure.',
     keywords: 'goa tour packages, goa holidays, beach vacation goa, north goa south goa, goa sightseeing, water sports goa',
     formatDetection: {
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
         telephone: false
     },
     openGraph: {
-        title: 'Goa Tour Packages | TrueDeal4U',
+        title: 'Goa Tour Packages | Beaches | Water Sports | Nightlife | Sightseeing',
         description: 'Experience the best of Goa with our comprehensive tour packages. Explore pristine beaches, vibrant nightlife, Portuguese heritage, and thrilling water sports.',
         images: [
             {
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Goa Tour Packages | TrueDeal4U',
+        title: 'Goa Tour Packages | Beaches | Water Sports | Nightlife | Sightseeing',
         description: 'Experience the best of Goa with our comprehensive tour packages. Explore pristine beaches, vibrant nightlife, Portuguese heritage, and thrilling water sports.',
         images: ['/UGCImages/goa/goa/1.png']
     }
