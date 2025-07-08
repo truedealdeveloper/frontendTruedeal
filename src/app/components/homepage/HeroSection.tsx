@@ -283,7 +283,10 @@ export default function HeroSection() {
                                 </div>
 
                                 {/* EMI */}
-                                <div className="flex flex-col items-center text-white">
+                                <button
+                                    onClick={() => window.open('https://app.sankash.in/customer/application?token=eyJhcHBsaWNhdGlvbl9udW1iZXIiOiJTSy1BUC0wNDUxMjg5IiwicGFnZSI6Im5ldyIsImRhdGEiOiJaVEExT1RRd1pHWmlPVEZqTTJSbU5qUTNNemxoWWpVeU5qSmpaV05sWkRjPSIsInN0b3BfYXRfYXBwcm92YWwiOmZhbHNlfQ==', '_blank')}
+                                    className="flex flex-col items-center text-white hover:bg-white/10 rounded-lg p-2 transition-all duration-300 hover:scale-105 cursor-pointer"
+                                >
                                     <div className="mb-1 md:mb-2">
                                         <CreditCard className="w-6 h-6 md:w-8 md:h-8 text-purple-400" />
                                     </div>
@@ -291,7 +294,7 @@ export default function HeroSection() {
                                         <p className="font-bold text-xs md:text-sm">No Cost</p>
                                         <p className="text-[10px] md:text-xs">EMI Available</p>
                                     </div>
-                                </div>
+                                </button>
                             </div>
                         </div>
                     </div>
