@@ -562,9 +562,110 @@ Great service keep it up 👍
         media: [],
         booked: 'Dubai'
     },
-
-
-
+    {
+        id: '31',
+        author: 'Deepika Aggarwal',
+        rating: 5.0,
+        date: 'February 2025',
+        content: `
+        I had a great experience with TrueDeal. Our honeymoon trip to Bali was planned and executed flawlessly. The team was very helpful and responsive. They made sure to provide me with the best possible service. I would definitely recommend them to my friends and family.
+`,
+        media: [
+            { type: 'image', url: '/GoogleReviews/18/1 (8).jpeg' },
+            { type: 'image', url: '/GoogleReviews/18/1 (1).jpeg' },
+            { type: 'image', url: '/GoogleReviews/18/1 (2).jpeg' },
+            { type: 'image', url: '/GoogleReviews/18/1 (3).jpeg' },
+            { type: 'image', url: '/GoogleReviews/18/1 (4).jpeg' },
+            { type: 'image', url: '/GoogleReviews/18/1 (5).jpeg' },
+            { type: 'image', url: '/GoogleReviews/18/1 (6).jpeg' },
+            { type: 'image', url: '/GoogleReviews/18/1 (7).jpeg' },
+            { type: 'image', url: '/GoogleReviews/18/1 (9).jpeg' },
+            { type: 'image', url: '/GoogleReviews/18/1 (10).jpeg' },
+            { type: 'image', url: '/GoogleReviews/18/1 (11).jpeg' },
+            { type: 'image', url: '/GoogleReviews/18/1 (12).jpeg' },
+            { type: 'image', url: '/GoogleReviews/18/1 (13).jpeg' },
+            { type: 'image', url: '/GoogleReviews/18/1 (14).jpeg' },
+            { type: 'image', url: '/GoogleReviews/18/1 (16).jpeg' },
+            { type: 'image', url: '/GoogleReviews/18/1 (17).jpeg' },
+            { type: 'image', url: '/GoogleReviews/18/1 (18).jpeg' },
+            { type: 'image', url: '/GoogleReviews/18/1 (19).jpeg' },
+            { type: 'image', url: '/GoogleReviews/18/1 (20).jpeg' },
+            { type: 'image', url: '/GoogleReviews/18/1 (21).jpeg' },
+        ],
+        booked: 'Bali'
+    },
+    {
+        id: '32',
+        author: 'Kapil',
+        rating: 5.0,
+        date: 'February 2025',
+        content: `
+        Bali
+`,
+        media: [
+            { type: 'image', url: '/GoogleReviews/19/1 (1).jpeg' },
+            { type: 'image', url: '/GoogleReviews/19/1 (2).jpeg' },
+            { type: 'image', url: '/GoogleReviews/19/1 (3).jpeg' },
+            { type: 'image', url: '/GoogleReviews/19/1 (4).jpeg' },
+            { type: 'image', url: '/GoogleReviews/19/1 (5).jpeg' },
+            { type: 'image', url: '/GoogleReviews/19/1 (6).jpeg' },
+            { type: 'image', url: '/GoogleReviews/19/1 (7).jpeg' },
+            { type: 'image', url: '/GoogleReviews/19/1 (8).jpeg' },
+            { type: 'image', url: '/GoogleReviews/19/1 (9).jpeg' },
+            { type: 'image', url: '/GoogleReviews/19/1 (10).jpeg' },
+        ],
+        booked: 'Bali'
+    },
+    {
+        id: '33',
+        author: 'Rajkuvar Deshmukh',
+        rating: 5.0,
+        date: 'February 2025',
+        content: `
+        Had an awesome experience with Truedeal and specially Rashid **They were super professional and made sure everything went smoothly. What really stood out was how quickly they sorted out any issues whether it was a last-minute change, a small hiccup with hotels, or anything else, they handled it fast and without any stress. It made the whole trip so much more enjoyable. Definitely recommend them if you want a hassle-free and wellorganized trip❤️
+`,
+        media: [
+            { type: 'image', url: '/GoogleReviews/20/1 (1).jpeg' },
+            { type: 'image', url: '/GoogleReviews/20/1 (2).jpeg' },
+            { type: 'image', url: '/GoogleReviews/20/1 (3).jpeg' },
+            { type: 'image', url: '/GoogleReviews/20/1 (4).jpeg' },
+            { type: 'image', url: '/GoogleReviews/20/1 (5).jpeg' },
+            { type: 'image', url: '/GoogleReviews/20/1 (6).jpeg' },
+            { type: 'image', url: '/GoogleReviews/20/1 (7).jpeg' },
+            { type: 'image', url: '/GoogleReviews/20/1 (8).jpeg' },
+            { type: 'image', url: '/GoogleReviews/20/1 (9).jpeg' },
+            { type: 'image', url: '/GoogleReviews/20/1 (10).jpeg' },
+            { type: 'image', url: '/GoogleReviews/20/1 (11).jpeg' },
+        ],
+        booked: 'Turkey'
+    },
+    {
+        id: '34',
+        author: 'Manoj',
+        rating: 5.0,
+        date: 'March 2025',
+        content: `
+        We have an amazing experience with TrueDeal. Our trip to Thailand was planned and executed flawlessly. The team was very helpful and responsive. They made sure to provide us with the best possible service. We would definitely recommend them to our friends and family.
+`,
+        media: [
+            { type: 'image', url: '/GoogleReviews/21/1 (1).jpeg' },
+            { type: 'image', url: '/GoogleReviews/21/1 (2).jpeg' },
+            { type: 'image', url: '/GoogleReviews/21/1 (3).jpeg' },
+            { type: 'image', url: '/GoogleReviews/21/1 (4).jpeg' },
+            { type: 'image', url: '/GoogleReviews/21/1 (5).jpeg' },
+            { type: 'image', url: '/GoogleReviews/21/1 (6).jpeg' },
+            { type: 'image', url: '/GoogleReviews/21/1 (7).jpeg' },
+            { type: 'image', url: '/GoogleReviews/21/1 (8).jpeg' },
+            { type: 'image', url: '/GoogleReviews/21/1 (9).jpeg' },
+            { type: 'image', url: '/GoogleReviews/21/1 (10).jpeg' },
+            { type: 'image', url: '/GoogleReviews/21/1 (11).jpeg' },
+            { type: 'image', url: '/GoogleReviews/21/1 (12).jpeg' },
+            { type: 'image', url: '/GoogleReviews/21/1 (13).jpeg' },
+            { type: 'image', url: '/GoogleReviews/21/1 (14).jpeg' },
+            { type: 'image', url: '/GoogleReviews/21/1 (15).jpeg' },
+        ],
+        booked: 'Thailand'
+    },
 ]
 
 export default function ReviewsPage() {
