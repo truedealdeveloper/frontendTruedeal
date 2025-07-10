@@ -30,8 +30,8 @@ export function BookingFormModal({
         phone_number: '',
         email: '', // Keep for API but don't show in form
         start_date: '',
-        no_of_days: '',
-        no_of_adults: '2',
+        no_of_days: '', // Keep for API but don't show in form
+        no_of_adults: '', // Keep for API but don't show in form
         no_of_children: '', // Keep for API but don't show in form
         destination: destinationName,
         comments: '', // Keep for API but don't show in form
@@ -77,8 +77,8 @@ export function BookingFormModal({
                 phone_number: '',
                 email: '', // Keep for API but don't show in form
                 start_date: '',
-                no_of_days: '',
-                no_of_adults: '2',
+                no_of_days: '', // Keep for API but don't show in form
+                no_of_adults: '', // Keep for API but don't show in form
                 no_of_children: '', // Keep for API but don't show in form
                 destination: destinationName,
                 comments: '', // Keep for API but don't show in form
@@ -183,81 +183,39 @@ export function BookingFormModal({
 
 
                     {/* Travel Details Row */}
-                    <div className="grid grid-cols-2 gap-3">
-                        <div className="space-y-2">
-                            <Label htmlFor="start_date" className="text-sm font-medium text-gray-700 flex items-center">
-                                <CalendarIcon className="h-4 w-4 mr-2 text-[#017ae3]" />
-                                START DATE <span className="text-red-500 ml-1">*</span>
-                            </Label>
-                            <Input
-                                id="start_date"
-                                name="start_date"
-                                type="date"
-                                required
-                                value={formData.start_date}
-                                onChange={handleChange}
-                                min={new Date().toISOString().split('T')[0]}
-                                className="border-gray-200 focus:border-[#017ae3] focus:ring-[#017ae3]"
-                            />
-                        </div>
-
-                        <div className="space-y-2">
-                            <Label htmlFor="no_of_days" className="text-sm font-medium text-gray-700 flex items-center">
-                                <CalendarIcon className="h-4 w-4 mr-2 text-[#017ae3]" />
-                                DURATION <span className="text-red-500 ml-1">*</span>
-                            </Label>
-                            <Input
-                                id="no_of_days"
-                                name="no_of_days"
-                                type="number"
-                                required
-                                min="1"
-                                max="30"
-                                value={formData.no_of_days}
-                                onChange={handleChange}
-                                placeholder="No. of days"
-                                className="border-gray-200 focus:border-[#017ae3] focus:ring-[#017ae3]"
-                            />
-                        </div>
+                    <div className="space-y-2">
+                        <Label htmlFor="start_date" className="text-sm font-medium text-gray-700 flex items-center">
+                            <CalendarIcon className="h-4 w-4 mr-2 text-[#017ae3]" />
+                            START DATE <span className="text-red-500 ml-1">*</span>
+                        </Label>
+                        <Input
+                            id="start_date"
+                            name="start_date"
+                            type="date"
+                            required
+                            value={formData.start_date}
+                            onChange={handleChange}
+                            min={new Date().toISOString().split('T')[0]}
+                            className="border-gray-200 focus:border-[#017ae3] focus:ring-[#017ae3]"
+                        />
                     </div>
 
-                    {/* Travelers and Origin Row */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="space-y-2">
-                            <Label htmlFor="no_of_adults" className="text-sm font-medium text-gray-700 flex items-center">
-                                <UsersIcon className="h-4 w-4 mr-2 text-[#017ae3]" />
-                                ADULTS <span className="text-red-500 ml-1">*</span>
-                            </Label>
-                            <Input
-                                id="no_of_adults"
-                                name="no_of_adults"
-                                type="number"
-                                required
-                                min="1"
-                                max="20"
-                                value={formData.no_of_adults}
-                                onChange={handleChange}
-                                className="border-gray-200 focus:border-[#017ae3] focus:ring-[#017ae3]"
-                            />
-                        </div>
-
-                        <div className="space-y-2">
-                            <Label htmlFor="origin_city" className="text-sm font-medium text-gray-700 flex items-center">
-                                <MapPinIcon className="h-4 w-4 mr-2 text-[#017ae3]" />
-                                FROM CITY
-                            </Label>
-                            <Input
-                                id="origin_city"
-                                name="origin_city"
-                                type="text"
-                                value={formData.origin_city}
-                                onChange={handleChange}
-                                placeholder="Departure city"
-                                className="border-gray-200 focus:border-[#017ae3] focus:ring-[#017ae3]"
-                            />
-                        </div>
+                    {/* Origin City */}
+                    <div className="space-y-2">
+                        <Label htmlFor="origin_city" className="text-sm font-medium text-gray-700 flex items-center">
+                            <MapPinIcon className="h-4 w-4 mr-2 text-[#017ae3]" />
+                            FROM CITY
+                        </Label>
+                        <Input
+                            id="origin_city"
+                            name="origin_city"
+                            type="text"
+                            value={formData.origin_city}
+                            onChange={handleChange}
+                            placeholder="Departure city"
+                            className="border-gray-200 focus:border-[#017ae3] focus:ring-[#017ae3]"
+                        />
                     </div>
-
 
 
                     {submitError && (
