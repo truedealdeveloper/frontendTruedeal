@@ -647,13 +647,12 @@ Drop at: Delhi Airport / Railway Station for departure
             }
         ],
         departureDates: [
-            { date: "Daily Departures Available", availability: "Available", price: 11000 },
-            { date: "October to March (Peak Season)", availability: "Recommended", price: 11000 },
+            { date: "Daily Departures Available", availability: "Available", price: 37000 },
         ],
         departureCities: [
             {
-                city: "-",
-                price: 11000
+                city: "Delhi",
+                price: 37000
             },
         ]
     },
