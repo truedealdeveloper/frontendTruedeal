@@ -10,7 +10,7 @@ import {
     DialogHeader,
     DialogTitle,
 } from "@/components/ui/dialog"
-import { CalendarIcon, MapPinIcon, UsersIcon, PhoneIcon, UserIcon } from 'lucide-react';
+import { CalendarIcon, MapPinIcon, PhoneIcon, UserIcon } from 'lucide-react';
 
 interface BookingFormModalProps {
     isOpen: boolean;
