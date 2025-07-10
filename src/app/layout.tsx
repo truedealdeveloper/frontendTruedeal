@@ -117,8 +117,8 @@ export default function RootLayout({
               style={{ display: 'none', visibility: 'hidden' }}
             />
           </noscript>
-          <GoogleAnalytics gaId="G-47YH3J6089" />
-
+          {/* <GoogleAnalytics gaId="G-47YH3J6089" /> */}
+          <GoogleAnalytics gaId="G-SR9YQK2TPK" />
           <Navbar />
           {children}
           <SpeedInsights />
