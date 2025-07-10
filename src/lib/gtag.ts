@@ -1,5 +1,5 @@
 // Google Analytics measurement ID
-export const GA_MEASUREMENT_ID = 'G-JSZ8M226ZH'
+export const GA_MEASUREMENT_ID = 'G-47YH3J6089'
 
 // Define types for gtag
 type GtagEvent = {

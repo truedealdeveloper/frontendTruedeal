@@ -8,9 +8,8 @@ import TripPlanPopup from "../components/TripPlanPopup";
 // import Script from 'next/script'
 // import { GA_MEASUREMENT_ID } from '@/lib/gtag'
 import { Analytics } from "@vercel/analytics/react"
-import GoogleAnalytics from '../components/GoogleAnalytics';
 import { Poppins } from 'next/font/google';
-import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
 import dynamic from 'next/dynamic';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -118,7 +117,7 @@ export default function RootLayout({
               style={{ display: 'none', visibility: 'hidden' }}
             />
           </noscript>
-          <GoogleAnalytics />
+          <GoogleAnalytics gaId="G-47YH3J6089" />
 
           <Navbar />
           {children}
