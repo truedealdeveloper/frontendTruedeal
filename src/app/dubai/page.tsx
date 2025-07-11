@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { dubaiPackages, dubaiPackage } from './data';
-import { FaCalendarAlt, FaClock, FaChevronLeft, FaChevronRight, FaPlus, FaMinus } from 'react-icons/fa';
+import { FaCalendarAlt, FaClock, FaChevronLeft, FaChevronRight, FaPlus, FaMinus, FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 import { IoLocationSharp } from 'react-icons/io5';
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
@@ -19,6 +19,7 @@ export default function DubaiPackages() {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
     const packages = Object.values(dubaiPackages);
     const totalPages = Math.ceil(packages.length / 3);
+    const [isMuted, setIsMuted] = useState(true);
 
     const handlePrevPage = () => {
         setCurrentPage(prev => prev > 0 ? prev - 1 : prev);
@@ -26,6 +27,25 @@ export default function DubaiPackages() {
 
     const handleNextPage = () => {
         setCurrentPage(prev => prev < totalPages - 1 ? prev + 1 : prev);
+    };
+
+    const toggleMute = () => {
+        const audio = document.getElementById('dubaiAudio') as HTMLAudioElement;
+        const video = document.getElementById('dubaiVideo') as HTMLVideoElement;
+        if (audio && video) {
+            if (isMuted) {
+                // When unmuting
+                audio.muted = false;
+                video.muted = true; // Keep video muted
+                audio.play(); // Ensure audio plays
+                audio.volume = 0.5; // Set volume to 50%
+            } else {
+                // When muting
+                audio.muted = true;
+                audio.pause(); // Pause the audio
+            }
+            setIsMuted(!isMuted);
+        }
     };
 
     const PackageCard = ({
@@ -216,15 +236,50 @@ export default function DubaiPackages() {
 
     return (
         <div className="min-h-screen">
-            {/* Hero Section with Image */}
+            {/* Hero Section with Video */}
             <div className="relative h-[60vh] md:h-[100vh] w-full overflow-hidden">
-                <Image
-                    src="/Assets/DestinationsImage/Dubai.jpg"
-                    alt="Dubai City of Gold"
-                    fill
-                    className="object-cover"
-                    priority
-                />
+                {/* Add audio element */}
+                <audio
+                    id="dubaiAudio"
+                    loop
+                    muted
+                    autoPlay
+                    className="hidden"
+                >
+                    <source src="/UGCImages/dubai/audio.mp3" type="audio/mp3" />
+                </audio>
+
+                {/* Add audio control button */}
+                <button
+                    onClick={toggleMute}
+                    className="absolute bottom-4 right-4 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm p-3 rounded-full transition-all duration-300 text-white shadow-lg"
+                    aria-label={isMuted ? "Unmute audio" : "Mute audio"}
+                >
+                    {isMuted ? (
+                        <FaVolumeMute className="w-6 h-6" />
+                    ) : (
+                        <FaVolumeUp className="w-6 h-6" />
+                    )}
+                </button>
+
+                <video
+                    id="dubaiVideo"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover"
+                >
+                    <source src="/UGCImages/dubai/dubai.mp4" type="video/mp4" />
+                    {/* Fallback image in case video fails to load */}
+                    <Image
+                        src="/Assets/DestinationsImage/Dubai.jpg"
+                        alt="Dubai City of Gold"
+                        fill
+                        className="object-cover"
+                        priority
+                    />
+                </video>
                 <div className="absolute inset-0 bg-black/30" />
                 <div className="absolute inset-0 flex items-center justify-center text-center">
                     <div className="max-w-4xl px-4">
