@@ -37,6 +37,11 @@ export const destinations: Destination[] = [
         route: "/kerala"
     },
     {
+        name: "Dubai",
+        tag: { label: "FIXED DEPARTURE", color: "blue" },
+        route: "/dubai"
+    },
+    {
         name: "Goa",
         tag: { label: "FIXED DEPARTURE", color: "blue" },
         route: "/goa"
