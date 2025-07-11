@@ -5,7 +5,7 @@ export const metadata = {
     openGraph: {
         title: 'Dubai Tour Packages | City of Gold',
         description: 'Discover the glamour of Dubai with our curated tour packages featuring iconic landmarks, luxury experiences, and desert adventures.',
-        images: ['/UGCImages/dubai/dubai-og.jpg'],
+        images: ['/UGCImages/dubai/dubai/1.png'],
     },
 };
 
