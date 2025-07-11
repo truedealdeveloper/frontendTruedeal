@@ -206,19 +206,19 @@ export const dubaiPackages: Record<string, dubaiPackage> = {
         experiences: [
             {
                 title: "Burj Khalifa Sky Deck",
-                image: "/UGCImages/dubai/1.png"
+                image: "/UGCImages/dubai/dubaiS/1.png"
             },
             {
                 title: "Desert Dune Bashing",
-                image: "/UGCImages/dubai/2.png"
+                image: "/UGCImages/dubai/dubaiS/2.png"
             },
             {
                 title: "Dubai Fountain Show",
-                image: "/UGCImages/dubai/3.png"
+                image: "/UGCImages/dubai/dubaiS/3.png"
             },
             {
                 title: "Luxury Shopping",
-                image: "/UGCImages/dubai/4.png"
+                image: "/UGCImages/dubai/dubaiS/4.png"
             }
         ],
         additionalInfo: {
@@ -278,57 +278,57 @@ export const dubaiPackages: Record<string, dubaiPackage> = {
             {
                 name: "Burj Khalifa",
                 description: "World's tallest building with observation decks offering panoramic views of Dubai",
-                image: "/UGCImages/dubai/1.png"
+                image: "/UGCImages/dubai/sight/1.png"
             },
             {
                 name: "Dubai Mall",
                 description: "World's largest shopping mall with over 1,200 stores and entertainment options",
-                image: "/UGCImages/dubai/2.png"
+                image: "/UGCImages/dubai/sight/2.png"
             },
             {
                 name: "Desert Safari",
                 description: "Thrilling dune bashing experience with traditional Bedouin culture and BBQ dinner",
-                image: "/UGCImages/dubai/3.png"
+                image: "/UGCImages/dubai/sight/3.png"
             },
             {
                 name: "Palm Jumeirah",
                 description: "Iconic man-made island shaped like a palm tree with luxury resorts",
-                image: "/UGCImages/dubai/4.png"
+                image: "/UGCImages/dubai/sight/4.png"
             },
             {
                 name: "Dubai Creek",
                 description: "Historic waterway offering traditional dhow cruises and cultural experiences",
-                image: "/UGCImages/dubai/5.png"
+                image: "/UGCImages/dubai/sight/5.png"
             },
             {
                 name: "Gold & Spice Souk",
                 description: "Traditional markets showcasing Dubai's heritage with gold jewelry and aromatic spices",
-                image: "/UGCImages/dubai/6.png"
+                image: "/UGCImages/dubai/sight/6.png"
             }
         ],
         localFood: [
             {
                 name: "Emirati Al Harees",
                 description: "Traditional wheat and meat dish slow-cooked to perfection, served during special occasions",
-                image: "/UGCImages/dubai/1.png",
+                image: "/UGCImages/dubai/food/1.png",
                 where: "Traditional Emirati restaurants"
             },
             {
                 name: "Middle Eastern Mezze",
                 description: "Variety of small dishes including hummus, tabbouleh, and falafel with Arabic bread",
-                image: "/UGCImages/dubai/2.png",
+                image: "/UGCImages/dubai/food/2.png",
                 where: "Arabic restaurants and hotel dining"
             },
             {
                 name: "Desert BBQ",
                 description: "Grilled meats and traditional bread prepared in authentic Bedouin style",
-                image: "/UGCImages/dubai/3.png",
+                image: "/UGCImages/dubai/food/3.png",
                 where: "Desert safari camps"
             },
             {
                 name: "Fresh Dates & Arabic Coffee",
                 description: "Traditional welcome refreshment served throughout Dubai with authentic hospitality",
-                image: "/UGCImages/dubai/4.png",
+                image: "/UGCImages/dubai/food/4.png",
                 where: "Hotels, restaurants, and cultural sites"
             }
         ],
@@ -341,17 +341,17 @@ export const dubaiPackages: Record<string, dubaiPackage> = {
             {
                 title: "Traditional Heritage",
                 description: "Historic Dubai Creek and traditional souks preserve ancient trading culture",
-                image: "/UGCImages/dubai/2.png"
+                image: "/UGCImages/dubai/sight/5.png"
             },
             {
                 title: "Bedouin Desert Culture",
                 description: "Desert safari experiences showcase traditional Bedouin lifestyle and customs",
-                image: "/UGCImages/dubai/3.png"
+                image: "/UGCImages/dubai/life/1.png"
             },
             {
                 title: "Luxury Lifestyle",
                 description: "Dubai's reputation for luxury shopping, dining, and world-class hospitality",
-                image: "/UGCImages/dubai/4.png"
+                image: "/UGCImages/dubai/life/2.png"
             }
         ],
         departureDates: [
