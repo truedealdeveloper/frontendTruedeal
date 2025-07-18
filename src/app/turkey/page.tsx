@@ -169,7 +169,7 @@ export default function TurkeyPackages() {
     const faqs = [
         {
             question: "What is the best time to visit Turkey?",
-            answer: "The best time to visit Turkey is during spring (April to May) and autumn (September to November) when the weather is pleasant and crowds are smaller. Summer (June to August) is peak tourist season but can be very hot."
+            answer: "The best time to visit Turkey is during spring (April to May) and autumn (September to November) when the weather is pleasant and crowds are smaller. Summer (July to August) is peak tourist season but can be very hot."
         },
         {
             question: "Do Indians need a visa for Turkey?",

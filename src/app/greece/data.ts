@@ -104,7 +104,7 @@ export const greecePackages: Record<string, GreecePackage> = {
         days: 8,
         nights: 7,
         amount: 118601,
-        dateStart: "22 June",
+        dateStart: "22 July",
         dateEnd: "26 Oct",
         description: `Embark on a captivating adventure to Athens, the enchanting city, and explore the breathtaking beauty of Santorini and Mykonos, the top destinations in Greece. Nestled in the picturesque Cyclades, these two islands offer an experience like no other.
 
@@ -217,7 +217,7 @@ Enjoy the evening at your leisure or opt for a tour to Cape Sounion to witness a
             "/UGCImages/greece/7.webp"
         ],
         departureDates: [
-            { date: "June 22, 29 2025" },
+            { date: "July 22, 29 2025" },
             { date: "July 6, 13, 20, 27 2025" },
             { date: "August 3, 10, 17, 24, 31 2025" },
         ],
@@ -288,11 +288,11 @@ Enjoy the evening at your leisure or opt for a tour to Cape Sounion to witness a
             }
         },
         batchDetails: {
-            currentBatch: "June 2024",
+            currentBatch: "July 2024",
             remainingSlots: 8,
             monthlyBatches: [
                 {
-                    month: "June",
+                    month: "July",
                     dates: ["1st", "15th"],
                     availableSeats: 8
                 },
@@ -323,7 +323,7 @@ Enjoy the evening at your leisure or opt for a tour to Cape Sounion to witness a
         days: 8,
         nights: 7,
         amount: 64536,
-        dateStart: "24 June",
+        dateStart: "24 July",
         dateEnd: "14 Oct",
         description: `Athenian Riviera is the ideal choice for those wishing to explore Athens, having as a basis a charming hotel on the seaside, just a few kilometres from the city centre. The green gardens meet the blue of the sea in an idyllic setting that will refresh your mood and brighten your senses. Our hotels, with stunning beachfront views, provide comfort and impeccable elegance.`,
         groupDetails: {
@@ -441,7 +441,7 @@ Arrive at the port of Piraeus at around 19:30, and return to the hotel at around
             "/UGCImages/greece/7.webp"
         ],
         departureDates: [
-            { date: "June 24 2025" },
+            { date: "July 24 2025" },
             { date: "July 1, 8, 15, 22, 29 2025" },
             { date: "August 5, 12, 19, 26 2025" },
         ],
@@ -512,11 +512,11 @@ Arrive at the port of Piraeus at around 19:30, and return to the hotel at around
             }
         },
         batchDetails: {
-            currentBatch: "June 2024",
+            currentBatch: "July 2024",
             remainingSlots: 8,
             monthlyBatches: [
                 {
-                    month: "June",
+                    month: "July",
                     dates: ["1st", "15th"],
                     availableSeats: 8
                 },
@@ -547,7 +547,7 @@ Arrive at the port of Piraeus at around 19:30, and return to the hotel at around
         days: 5,
         nights: 4,
         amount: 59816,
-        dateStart: "24 June",
+        dateStart: "24 July",
         dateEnd: "14 Oct",
         description: `Experience the allure of Athens, Greece's captivating capital. Immerse yourself in history at famous archaeological sites and museums. Wander through the charming Plaka district beneath the majestic Acropolis, and stroll along Ermou street from Syntagma to Monastiraki. Savor the true Greek spirit by enjoying ouzo in Thiseion and exploring the vibrant nightlife of Psirri.
         Continue your adventure in Thessaloniki, the country's second major city. Marvel at its Roman and Byzantine heritage through intriguing museums and buildings. Sip a coffee in Aristotelous Square, indulge in shopping along Tsimiski street, and soak in the melodies of Greek music while relaxing with a drink in the lively Ladadika district.
@@ -670,7 +670,7 @@ Arrive at the port of Piraeus at around 19:30, and return to the hotel at around
             "/UGCImages/greece/1.webp",
         ],
         departureDates: [
-            { date: "June 30 2025" },
+            { date: "July 30 2025" },
             { date: "July 7, 14 2025" },
             { date: "August 4, 11, 18, 25 2025" },
         ],
@@ -741,11 +741,11 @@ Arrive at the port of Piraeus at around 19:30, and return to the hotel at around
             }
         },
         batchDetails: {
-            currentBatch: "June 2024",
+            currentBatch: "July 2024",
             remainingSlots: 8,
             monthlyBatches: [
                 {
-                    month: "June",
+                    month: "July",
                     dates: ["1st", "15th"],
                     availableSeats: 8
                 },
@@ -776,7 +776,7 @@ Arrive at the port of Piraeus at around 19:30, and return to the hotel at around
         days: 5,
         nights: 4,
         amount: 62713,
-        dateStart: "30 June",
+        dateStart: "30 July",
         dateEnd: "26 Oct",
         description: `Step into the enchanting realm of Attica, where the sky unfolds a captivating spectacle. Prepare to be awestruck by the majestic Acropolis and the iconic Parthenon, timeless creations from the golden age of Greece. Immerse yourself in the allure of the New Acropolis Museum, a true gem and one of the world's finest.
 
@@ -872,7 +872,7 @@ In Attica, a world of wonders awaits, promising unforgettable experiences that w
             "/UGCImages/greece/1.webp",
         ],
         departureDates: [
-            { date: "June 30 2025" },
+            { date: "July 30 2025" },
             { date: "July 6, 13, 20, 27 2025" },
             { date: "August 3, 10, 17, 24, 31 2025" },
         ],
@@ -943,11 +943,11 @@ In Attica, a world of wonders awaits, promising unforgettable experiences that w
             }
         },
         batchDetails: {
-            currentBatch: "June 2024",
+            currentBatch: "July 2024",
             remainingSlots: 8,
             monthlyBatches: [
                 {
-                    month: "June",
+                    month: "July",
                     dates: ["1st", "15th"],
                     availableSeats: 8
                 },
@@ -978,7 +978,7 @@ In Attica, a world of wonders awaits, promising unforgettable experiences that w
         days: 5,
         nights: 4,
         amount: 43825,
-        dateStart: "23 June",
+        dateStart: "23 July",
         dateEnd: "26 Oct",
         description: `Embark on a captivating journey through "Discover Byzantine Greece," a 5-day package unveiling the wonders of Thessaloniki, the sacred Peninsula of Athos, and the historical gems of Pella and Vergina.
 
@@ -1071,7 +1071,7 @@ At the end of the day, return to Thessaloniki for an overnight stay, filled with
             "/UGCImages/greece/7.webp"
         ],
         departureDates: [
-            { date: "June 24 2025" },
+            { date: "July 24 2025" },
             { date: "July 1, 8, 15, 22, 29 2025" },
             { date: "August 5, 12, 19, 26 2025" },
         ],
@@ -1142,11 +1142,11 @@ At the end of the day, return to Thessaloniki for an overnight stay, filled with
             }
         },
         batchDetails: {
-            currentBatch: "June 2024",
+            currentBatch: "July 2024",
             remainingSlots: 8,
             monthlyBatches: [
                 {
-                    month: "June",
+                    month: "July",
                     dates: ["1st", "15th"],
                     availableSeats: 8
                 },
@@ -1177,7 +1177,7 @@ At the end of the day, return to Thessaloniki for an overnight stay, filled with
         days: 11,
         nights: 10,
         amount: 100000,
-        dateStart: "23 June",
+        dateStart: "23 July",
         dateEnd: "26 Oct",
         description: `Embark on a captivating journey through the storied landscapes of ancient Greece, where myths and legends come alive. Uncover the birthplace of the Greek civilization, immersing yourself in its rich history, culture, and timeless traditions.
 
@@ -1324,7 +1324,7 @@ We will continue with the premier Perivolos black sand beach, which offers a big
             "/UGCImages/greece/1.webp",
         ],
         departureDates: [
-            { date: "June 24 2025" },
+            { date: "July 24 2025" },
             { date: "July 1, 8, 15, 22, 29 2025" },
             { date: "August 5, 12, 19, 26 2025" },
         ],
@@ -1395,11 +1395,11 @@ We will continue with the premier Perivolos black sand beach, which offers a big
             }
         },
         batchDetails: {
-            currentBatch: "June 2024",
+            currentBatch: "July 2024",
             remainingSlots: 8,
             monthlyBatches: [
                 {
-                    month: "June",
+                    month: "July",
                     dates: ["1st", "15th"],
                     availableSeats: 8
                 },
@@ -1430,7 +1430,7 @@ We will continue with the premier Perivolos black sand beach, which offers a big
         days: 14,
         nights: 13,
         amount: 171597,
-        dateStart: "23 June",
+        dateStart: "23 July",
         dateEnd: "06 July",
         description: `Greece,  a country with ancient history, great historical monuments, picturesque neighborhoods in the historic center and modern architecture in the suburbs. Intense nightlife, beaches, mountains, traditional cuisine and gourmet restaurants. 
 
@@ -1595,7 +1595,7 @@ Overnight in Venice.`,
             "/UGCImages/greece/1.webp",
         ],
         departureDates: [
-            { date: "June 24 2025" },
+            { date: "July 24 2025" },
             { date: "July 1, 8, 15, 22, 29 2025" },
             { date: "August 5, 12, 19, 26 2025" },
         ],
@@ -1666,11 +1666,11 @@ Overnight in Venice.`,
             }
         },
         batchDetails: {
-            currentBatch: "June 2024",
+            currentBatch: "July 2024",
             remainingSlots: 8,
             monthlyBatches: [
                 {
-                    month: "June",
+                    month: "July",
                     dates: ["1st", "15th"],
                     availableSeats: 8
                 },

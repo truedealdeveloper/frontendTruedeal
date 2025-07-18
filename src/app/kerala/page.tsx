@@ -218,7 +218,7 @@ export default function KeralaPackages() {
     const faqs = [
         {
             question: "What is the best time to visit Kerala?",
-            answer: "The best time to visit Kerala is from October to March when the weather is pleasant and cool. Monsoon season (June-September) is also beautiful but expect rainfall."
+            answer: "The best time to visit Kerala is from October to March when the weather is pleasant and cool. Monsoon season (July-September) is also beautiful but expect rainfall."
         },
         {
             question: "What activities can I do in Kerala?",

@@ -144,7 +144,7 @@ Rating Breakdown:
         id: '5',
         author: 'Akshay Bhisikar',
         rating: 4.0,
-        date: 'June 2024',
+        date: 'July 2024',
         content: `Great Team. Well-Planned Itinerary. Good Service.
 
 We are grateful to the True Deal team for organizing an amazing trip to Bali. They assisted us every step of the way, from booking flights and exchanging money to arranging all aspects of our trip. The itinerary was well-planned and hassle-free, with options for customization. Our accommodations were all above 3-star quality, and we thoroughly enjoyed our stay. The tour drivers and guides were highly professional, and the vehicles were impeccably clean.

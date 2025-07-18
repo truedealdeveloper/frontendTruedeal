@@ -1008,7 +1008,7 @@ End of tour with memories to cherish forever!`,
                     availableSeats: 11
                 },
                 {
-                    month: "June",
+                    month: "July",
                     dates: ["13th", "14th", "15th"],
                     availableSeats: 20
                 },

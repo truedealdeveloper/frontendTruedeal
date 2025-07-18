@@ -106,13 +106,13 @@ export const turkeyPackages: Record<string, TurkeyPackage> = {
         days: 6,
         nights: 5,
         amount: 142500,
-        dateStart: "01 May 2025",
-        dateEnd: "26 July 2025",
+        dateStart: "01 July 2025",
+        dateEnd: "26 August 2025",
         description: "Experience the vibrant city life of Turkey with our 6-day tour covering iconic attractions, cultural sites, and modern marvels.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Starting May",
+            arrivalDate: "Starting July",
             duration: "6D5N Turkey Fixed Departure",
             costBasis: "Cost Based On 2 pax travelling together"
         },
@@ -203,7 +203,7 @@ export const turkeyPackages: Record<string, TurkeyPackage> = {
             "/UGCImages/turkey/turkey1/4.png",
         ],
         departureDates: [
-            { date: "May 2025 - July 2025" }
+            { date: "July 2025 - August 2025" }
         ],
         additionalInfo: {
             highlights: [
@@ -297,13 +297,13 @@ export const turkeyPackages: Record<string, TurkeyPackage> = {
         days: 7,
         nights: 6,
         amount: 159819,
-        dateStart: "01 May 2025",
-        dateEnd: "26 July 2025",
+        dateStart: "01 July 2025",
+        dateEnd: "26 August 2025",
         description: "Experience the vibrant city life of Turkey with our 7-day tour covering iconic attractions, cultural sites, and modern marvels.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Starting May",
+            arrivalDate: "Starting July",
             duration: "7D6N Turkey Fixed Departure",
             costBasis: "Cost Based On 2 pax travelling together"
         },
@@ -407,7 +407,7 @@ export const turkeyPackages: Record<string, TurkeyPackage> = {
             "/UGCImages/turkey/turkey4/4.png",
         ],
         departureDates: [
-            { date: "May 2025 - July 2025" }
+                { date: "July 2025 - August 2025" }
         ],
         additionalInfo: {
             highlights: [
@@ -501,13 +501,13 @@ export const turkeyPackages: Record<string, TurkeyPackage> = {
         days: 8,
         nights: 7,
         amount: 165000,
-        dateStart: "01 May 2025",
-        dateEnd: "26 July 2025",
+        dateStart: "01 July 2025",
+        dateEnd: "26 August 2025",
         description: "Experience the vibrant city life of Turkey with our 8-day tour covering iconic attractions, cultural sites, and modern marvels. This package includes 3 nights in Istanbul, 2 nights in Cappadocia, and 2 nights in Antalya.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Starting May",
+            arrivalDate: "Starting July",
             duration: "8D7N Turkey Fixed Departure",
             costBasis: "Cost Based On 2 pax travelling together"
         },
@@ -618,7 +618,7 @@ export const turkeyPackages: Record<string, TurkeyPackage> = {
             "/UGCImages/turkey/turkey5/4.png",
         ],
         departureDates: [
-            { date: "May 2025 - July 2025" }
+                { date: "July 2025 - August 2025" }
         ],
         additionalInfo: {
             highlights: [
@@ -712,13 +712,13 @@ export const turkeyPackages: Record<string, TurkeyPackage> = {
         days: 8,
         nights: 7,
         amount: 163271,
-        dateStart: "01 May 2025",
-        dateEnd: "26 July 2025",
+        dateStart: "01 July 2025",
+        dateEnd: "26 August 2025",
         description: "Experience the vibrant city life of Turkey with our 8-day tour covering iconic attractions, cultural sites, and modern marvels. This package includes 2 nights in Istanbul, 2 nights in Cappadocia, and 3 nights in Antalya. We have included the best of Turkey in this package. Life is short, and the world is wide. Start your Turkey journey with us. ",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Starting May",
+            arrivalDate: "Starting July",
             duration: "8D7N Turkey Fixed Departure",
             costBasis: "Cost Based On 2 pax travelling together"
         },
@@ -828,7 +828,7 @@ export const turkeyPackages: Record<string, TurkeyPackage> = {
             "/UGCImages/turkey/turkey6/4.png",
         ],
         departureDates: [
-            { date: "May 2025 - July 2025" }
+            { date: "July 2025 - August 2025" }
         ],
         additionalInfo: {
             highlights: [

@@ -468,7 +468,7 @@ export const almatyPackages: Record<string, AlmatyPackage> = {
             }
         ],
         departureDates: [
-            { date: "Mar 2025 - July 2025" }
+            { date: "July 2025 - August 2025" }
         ]
     },
 };

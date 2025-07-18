@@ -82,7 +82,7 @@ export default function AustraliaPackages() {
     const faqs = [
         {
             question: "What's the best time to visit Australia?",
-            answer: "December to February (summer) is ideal for beach activities, while June to August (winter) is perfect for visiting the outback and northern regions."
+            answer: "December to February (summer) is ideal for beach activities, while July to August (winter) is perfect for visiting the outback and northern regions."
         },
         {
             question: "Do I need a visa to visit Australia?",

@@ -53,7 +53,7 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         days: 12,
         nights: 11,
         amount: 395000,
-        dateStart: "7,14,21,28 June",
+        dateStart: "7,14,21,28 July",
         dateEnd: "18,25,30 July",
         flightFrom: "Delhi",
         groupDetails: {
@@ -221,14 +221,14 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         days: 8,
         nights: 7,
         amount: 101999,
-        dateStart: "15,22,29 June",
-        dateEnd: "22,29,30 June",
+        dateStart: "15,22,29 July",
+        dateEnd: "22,29,30 July",
         flightFrom: "DEL/BOM/KOL",
         description: "Experience the best of Vietnam in 8 days covering Hanoi, Danang, and Ho Chi Minh. Explore natural beauty including Ha Long Bay, cultural treasures like ancient temples, and historic sites across Vietnam's most vibrant cities.",
         groupDetails: {
             pax: "Group Departure",
             rooms: "Twin Sharing Basis",
-            arrivalDate: "Available Dates:  15 June (Last Slot)",
+            arrivalDate: "Available Dates:  15 July (Last Slot)",
             duration: "7N8D Vietnam",
             costBasis: "Cost Based On Double Sharing"
         },
@@ -339,14 +339,14 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         days: 15,
         nights: 14,
         amount: 336000,
-        dateStart: "7,14,21,28 June",
+        dateStart: "7,14,21,28 July",
         dateEnd: "18,25,30 July",
         flightFrom: "Mumbai",
         description: "Experience Europe Like Never Before with TrueDeal! Our exclusive 14 Nights / 15 Days group departure tour blends Europe's iconic landmarks with hidden gems—from the Eiffel Tower in Paris to the breathtaking Swiss Alps and the charm of the Italian Riviera. Features centrally located accommodations, pure Jain food with a dedicated kitchen caravan, unique & relaxed itinerary, and 24/7 assistance & support.",
         groupDetails: {
             pax: "Group Departure",
             rooms: "Double/Twin Sharing",
-            arrivalDate: "Departure 1: May 7, 2025 – May 21, 2025\nDeparture 2: May 21, 2025 – June 4, 2025",
+            arrivalDate: "Departure 1: May 7, 2025 – May 21, 2025\nDeparture 2: May 21, 2025 – July 4, 2025",
             duration: "14N15D Euro Quest",
             costBasis: "Cost Based On Double Sharing."
         },
@@ -519,7 +519,7 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         days: 8,
         nights: 7,
         amount: 149000,
-        dateStart: "7,14,21,28 June",
+        dateStart: "7,14,21,28 July",
         dateEnd: "18,25,30 July",
         flightFrom: "Delhi",
         description: "Experience the magical blend of Russian culture and natural wonders with our AM Tour. From the historic streets of Saint Petersburg to the mesmerizing Aurora lights in Murmansk, and the vibrant energy of Moscow, this tour offers an unforgettable journey through Russia's most captivating destinations.",
@@ -631,7 +631,7 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         days: 10,
         nights: 9,
         amount: 470000,
-        dateStart: "7,14,21,28 June",
+        dateStart: "7,14,21,28 July",
         dateEnd: "18,25,30 July",
         flightFrom: "Multiple",
         description: "Experience the perfect blend of tradition and modernity with our Japan Fixed Departure Tour! From the towering skyscrapers of Tokyo to the serene temples of Kyoto, this trip is designed to give you an authentic Japanese experience.",
@@ -755,7 +755,7 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         days: 8,
         nights: 7,
         amount: 75895,
-        dateStart: "7,14,21,28 June",
+        dateStart: "7,14,21,28 July",
         dateEnd: "18,25,30 July",
         flightFrom: "Mumbai",
         description: "Experience the best of Thailand with our meticulously planned 8-day adventure tour. From the pristine beaches of Phuket and Krabi to the vibrant city life of Bangkok, this tour offers a perfect blend of relaxation, adventure, and cultural experiences.",
@@ -870,7 +870,7 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         days: 11,
         nights: 10,
         amount: 86895,
-        dateStart: "7,14,21,28 June",
+        dateStart: "7,14,21,28 July",
         dateEnd: "18,25,30 July",
         flightFrom: "Mumbai",
         description: "Experience the ultimate Thailand adventure with our comprehensive 11-day tour covering Phuket, Krabi, Pattaya, and Bangkok. From pristine islands to cultural landmarks, this tour offers the perfect blend of relaxation, adventure, and urban exploration.",
@@ -1025,7 +1025,7 @@ Pick-up: 07:30 - 07:45 AM | Drop-off: 05:30 - 06:00 PM
         days: 8,
         nights: 7,
         amount: 77895,
-        dateStart: "7,14,21,28 June",
+        dateStart: "7,14,21,28 July",
         dateEnd: "18,25,30 July",
         flightFrom: "Mumbai",
         description: "Experience the ultimate Thailand adventure with our comprehensive 8-day speedboat  tour covering Phuket, Krabi, Pattaya, and Bangkok. From pristine islands to cultural landmarks, this tour offers the perfect blend of relaxation, adventure, and urban exploration.",
@@ -1207,7 +1207,7 @@ Bid farewell to an unforgettable Thailand experience
         days: 7,
         nights: 6,
         amount: 79999,
-        dateStart: "7,14,21,28 June",
+        dateStart: "7,14,21,28 July",
         dateEnd: "18,25,30 July",
         flightFrom: "Delhi",
         description: "Experience the stunning beauty of Kazakhstan with our luxury Almaty tour package. From scenic mountain resorts to historical sites and natural wonders, this comprehensive tour offers the perfect blend of adventure, culture, and relaxation.",
@@ -1308,7 +1308,7 @@ Bid farewell to an unforgettable Thailand experience
         nights: 5,
         amount: 105000,
         flightFrom: "Delhi",
-        dateStart: "7,14,21,28 June",
+        dateStart: "7,14,21,28 July",
         dateEnd: "18,25,30 July",
         description: `Enjoy the best of Russia with our fixed departure tour. From the Red Square to the Kremlin, this tour offers a comprehensive and all-inclusive experience of the country's highlights.`,
         groupDetails: {
@@ -1330,12 +1330,12 @@ Bid farewell to an unforgettable Thailand experience
             {
                 city: "Saint Petersburg",
                 hotel: "Cosmos Saint-Petersburg Pribaltiyskaya Hotel, a member of Radisson Individuals 4*",
-                roomType: "Standard Room (Check In: 17 May / 22 May / 29 May / 26 June)"
+                roomType: "Standard Room (Check In: 17 May / 22 May / 29 May / 26 July)"
             },
             {
                 city: "Saint Petersburg",
                 hotel: "Theatre Square Hotel or Sadovaya (ex. Holiday Inn)",
-                roomType: "Standard Room (Check-in dates: 8 May / 29 May / 12 June)"
+                roomType: "Standard Room (Check-in dates: 8 May / 29 May / 12 July)"
             },
             {
                 city: "Moscow",
@@ -1623,7 +1623,7 @@ Queenstown Lakeside and enjoy dinner.
         nights: 6,
         amount: 166999,
         flightFrom: "Mumbai",
-        dateStart: "7,14,21,28 June",
+        dateStart: "7,14,21,28 July",
         dateEnd: "18,25,30 July",
         description: `Discover the rich history and culture of Azerbaijan with our fixed departure tour. From the historic Maiden Tower to the stunning Shahdag Mountain, this tour offers a comprehensive and all-inclusive experience of the country's highlights.`,
         groupDetails: {
@@ -1787,7 +1787,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         days: 7,
         nights: 6,
         amount: 99000,
-        dateStart: "3,10,17,24 June",
+        dateStart: "3,10,17,24 July",
         dateEnd: "18,25,30 July",
         description: "Experience the best of Europe with our specially curated 6-night itinerary, covering iconic destinations across Italy, Switzerland, and France. Perfectly planned for travelers who seek an effortless, all-inclusive journey with fixed departures.",
         groupDetails: {
@@ -1895,7 +1895,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         days: 5,
         nights: 4,
         amount: 39999,
-        dateStart: "3,10,17,24 June",
+        dateStart: "3,10,17,24 July",
         dateEnd: "18,25,30 July",
         description: "Experience the wonders of Almaty with our meticulously designed 4-night itinerary. This fixed-departure package offers the perfect balance of cultural exploration, natural beauty, and leisure activities, making it an ideal choice for all travelers.",
         groupDetails: {
@@ -1976,13 +1976,13 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         days: 5,
         nights: 4,
         amount: 35000,
-        dateStart: "3,10,17,24 June",
+        dateStart: "3,10,17,24 July",
         dateEnd: "18,25,30 July",
         description: "Experience the vibrant city of Dubai with our 4-night, 5-day all-inclusive tour package, carefully curated for an unforgettable adventure. Perfect for travelers seeking fixed departure convenience, this tour covers Dubai's iconic landmarks, desert adventures, and cultural experiences.",
         groupDetails: {
             pax: "Group Tour (20-30 pax)",
             rooms: "10-15 Rooms on Twin Sharing Basis",
-            arrivalDate: "Multiple dates in June 2025",
+            arrivalDate: "Multiple dates in July 2025",
             duration: "4N5D Dubai",
             costBasis: "Cost Based On Group Size (20-30 pax)"
         },
@@ -2068,13 +2068,13 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         days: 5,
         nights: 4,
         amount: 85494,
-        dateStart: "3,10,17,24 June",
+        dateStart: "3,10,17,24 July",
         dateEnd: "18,25,30 July",
         description: "Experience the best of Hong Kong & Macau with our exclusive 5-day, 4-night itinerary. This meticulously planned journey offers a seamless blend of East meets West culture, stunning skylines, and unforgettable experiences, ideal for travelers seeking a comprehensive Asian adventure.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Twin Sharing Basis",
-            arrivalDate: "Multiple dates in June 2025",
+            arrivalDate: "Multiple dates in July 2025",
             duration: "4N5D Hong Kong & Macau",
             costBasis: "Cost Based On Double Sharing"
         },
@@ -2164,13 +2164,13 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         days: 4,
         nights: 3,
         amount: 20000,
-        dateStart: "1,8,15,22 June",
+        dateStart: "1,8,15,22 July",
         dateEnd: "18,25,30 July",
         description: "Embark on an unforgettable journey to Malaysia with our exclusive 4-day fixed departure package. Explore iconic landmarks, enjoy thrilling experiences, and immerse yourself in the vibrant culture of Kuala Lumpur and Genting Highlands.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Twin Sharing Basis",
-            arrivalDate: "Multiple dates between June 2025",
+            arrivalDate: "Multiple dates between July 2025",
             duration: "3N4D Kuala Lumpur & Genting",
             costBasis: "Cost Based On Double Sharing"
         },
@@ -2241,13 +2241,13 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         days: 7,
         nights: 6,
         amount: 90000,
-        dateStart: "7,14,21,28 June",
+        dateStart: "7,14,21,28 July",
         dateEnd: "18,25,30 July",
         description: "Embark on a captivating journey through South Korea with this 7-day tour showcasing the perfect blend of history, culture, and modernity.",
         groupDetails: {
             pax: "2-6 Pax Groups",
             rooms: "Twin Sharing Basis",
-            arrivalDate: "Multiple dates in June 2025",
+            arrivalDate: "Multiple dates in July 2025",
             duration: "6N7D South Korea",
             costBasis: "Cost Based On Group Size and Hotel Category"
         },
@@ -2341,13 +2341,13 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         days: 7,
         nights: 6,
         amount: 51000,
-        dateStart: "23,30 June",
+        dateStart: "23,30 July",
         dateEnd: "18,25,30 July",
         description: "Join our expertly guided tour and explore Bhutan's finest destinations in one immersive trip. The itinerary includes a blend of cultural immersion, scenic drives, and visits to iconic landmarks, ensuring you experience the best Bhutan has to offer.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Twin Sharing Basis",
-            arrivalDate: "Multiple dates: 23,30 June, 18,25,30 July",
+            arrivalDate: "Multiple dates: 23,30 July, 18,25,30 July",
             duration: "6N7D Bhutan",
             costBasis: "Cost Based On Double Sharing"
         },
@@ -2460,13 +2460,13 @@ Overnight at the hotel in Paro.
         days: 6,
         nights: 5,
         amount: 28000,
-        dateStart: "1,8,15,22 June",
+        dateStart: "1,8,15,22 July",
         dateEnd: "18,25,30 July",
         description: "Experience the world's largest trade fair with our comprehensive Canton Fair package. Perfect for business travelers and trade professionals looking to explore global manufacturing and trade opportunities in Guangzhou, China.",
         groupDetails: {
             pax: "Business Group Tour",
             rooms: "Single/Twin Sharing Basis",
-            arrivalDate: "Multiple dates in June 2025",
+            arrivalDate: "Multiple dates in July 2025",
             duration: "5N6D Canton Fair",
             costBasis: "Cost Based On Room Type"
         },
@@ -2543,13 +2543,13 @@ Overnight at the hotel in Paro.
         days: 6,
         nights: 5,
         amount: 19000,
-        dateStart: "3,10,17,24 June",
+        dateStart: "3,10,17,24 July",
         dateEnd: "18,25,30 July",
         description: "Experience the paradise on Earth with our comprehensive Kashmir tour package. From the stunning Dal Lake to the meadows of Gulmarg and Sonamarg, immerse yourself in Kashmir's breathtaking landscapes and rich culture.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Twin Sharing Basis",
-            arrivalDate: "Multiple dates in June 2025",
+            arrivalDate: "Multiple dates in July 2025",
             duration: "5N6D Kashmir",
             costBasis: "Cost Based On Double Sharing"
         },
@@ -2647,13 +2647,13 @@ Overnight at the hotel in Paro.
         days: 6,
         nights: 5,
         amount: 19999,
-        dateStart: "3,10,17,24 June",
+        dateStart: "3,10,17,24 July",
         dateEnd: "18,25,30 July",
         description: "Experience the magical charm of Kashmir with a blend of adventure, history, and breathtaking landscapes. From serene lakes to snow-capped peaks, every moment of this journey promises unforgettable memories.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Twin Sharing Basis",
-            arrivalDate: "Multiple dates in June 2025",
+            arrivalDate: "Multiple dates in July 2025",
             duration: "5N6D Srinagar",
             costBasis: "Cost Based On Double Sharing"
         },
@@ -2748,13 +2748,13 @@ Overnight at the hotel in Paro.
         days: 5,
         nights: 4,
         amount: 9999,
-        dateStart: "3,10,17,24 June",
+        dateStart: "3,10,17,24 July",
         dateEnd: "18,25,30 July",
         description: "Experience the serene beauty of Manali with our perfectly curated 5-day Volvo package. From ancient temples to adventure activities in Solang Valley, this tour offers the perfect blend of relaxation and excitement.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing Basis",
-            arrivalDate: "Multiple dates in June 2025",
+            arrivalDate: "Multiple dates in July 2025",
             duration: "4N5D Manali (2N Volvo + 2N Hotel)",
             costBasis: "Cost Based On Double Sharing"
         },
@@ -2839,14 +2839,14 @@ Overnight at the hotel in Paro.
         days: 6,
         nights: 5,
         amount: 168000,
-        dateStart: "3,10,17,24 June",
+        dateStart: "3,10,17,24 July",
         dateEnd: "18,25,30 July",
         description: `Embark on a luxurious and professionally curated Truedeal itinerary through Basel, Interlaken, and Jura Mountain. Enjoy scenic landscapes, cultural highlights, and seamless travel arrangements tailored for an enriching experience.
 `,
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double/Single Sharing Available",
-            arrivalDate: "Multiple dates in June 2025",
+            arrivalDate: "Multiple dates in July 2025",
             duration: "5N6D Eurpope",
             costBasis: "DBL: ₹1,68,000"
         },
@@ -2973,7 +2973,7 @@ Overnight in Basel
         groupDetails: {
             pax: "Group Departure",
             rooms: "Twin Sharing Basis",
-            arrivalDate: "Multiple dates in June 2025",
+            arrivalDate: "Multiple dates in July 2025",
             duration: "8N9D Turkey",
             costBasis: "Cost Based On Room Type"
         },
@@ -3082,13 +3082,13 @@ Overnight in Basel
         days: 10,
         nights: 9,
         amount: 215600,
-        dateStart: "5,12,19,26 June",
+        dateStart: "5,12,19,26 July",
         dateEnd: "18,25,30 July",
         description: "Experience the best of Kenya with our specially curated 10-night itinerary, covering iconic destinations across Kenya. Perfectly planned for travelers who seek an effortless, all-inclusive journey with fixed departures.",
         groupDetails: {
             pax: "Group Tour (10-40 pax)",
             rooms: "Twin Sharing Basis",
-            arrivalDate: "Multiple dates in June 2025",
+            arrivalDate: "Multiple dates in July 2025",
             duration: "10N9D Kenya (Nairobi, Lake Nakuru, Masai Mara, Amboseli, Lake Naivasha, Lake Elementaita, Lake Bogoria, Lake Baringo, Lake Nakuru, Lake Naivasha, Lake Elementaita, Lake Bogoria, Lake Baringo)",
             costBasis: "Cost based on per person (Double Sharing)"
         },
@@ -3213,7 +3213,7 @@ Overnight in Basel
         groupDetails: {
             pax: "Group Tour (10-40 pax)",
             rooms: "Twin Sharing Basis",
-            arrivalDate: "Multiple dates in June 2025",
+            arrivalDate: "Multiple dates in July 2025",
             duration: "5N4D Baku",
             costBasis: "Cost based on per person (Double Sharing)"
         },
@@ -3349,7 +3349,7 @@ World Heritage site. Afterward, enjoy the rest of the day at leisure in Baku.`
         groupDetails: {
             pax: "Group Tour (10-40 pax)",
             rooms: "Twin Sharing Basis",
-            arrivalDate: "Multiple dates in June 2025",
+            arrivalDate: "Multiple dates in July 2025",
             duration: "7N6D Leh Ladakh",
             costBasis: "Cost based on per person (Double Sharing)"
         },
@@ -3493,17 +3493,17 @@ be related once back home.`
         ]
     },
     switzerlandSwissPass: {
-        id: "swiss-6-days-june2025",
+        id: "swiss-6-days-July2025",
         country: "Switzerland",
         days: 6,
         nights: 5,
         amount: 149999,
-        dateStart: "15,22,29 June",
+        dateStart: "15,22,29 July",
         dateEnd: "18,25,30 July",
         groupDetails: {
             pax: "2 Pax – Custom Package",
             rooms: "1 Room on Double Sharing",
-            arrivalDate: "Multiple dates in June 2025",
+            arrivalDate: "Multiple dates in July 2025",
             duration: "5N6D Switzerland",
             costBasis: "Cost Based On Double Sharing"
         },
@@ -3601,12 +3601,12 @@ be related once back home.`
         days: 11,
         nights: 10,
         amount: 139999,
-        dateStart: "14,21,28 June",
+        dateStart: "14,21,28 July",
         dateEnd: "18,25,30 July",
         groupDetails: {
             pax: "2 Adults – Anniversary Trip",
             rooms: "1 Room on Double Sharing",
-            arrivalDate: "Multiple dates in June 2025",
+            arrivalDate: "Multiple dates in July 2025",
             duration: "10N11D Turkey",
             costBasis: "Cost Based On Double Sharing – Bed & Breakfast"
         },
@@ -3747,12 +3747,12 @@ be related once back home.`
         days: 6,
         nights: 5,
         amount: 38499,
-        dateStart: "14,21,28 June",
+        dateStart: "14,21,28 July",
         dateEnd: "18,25,30 July",
         groupDetails: {
             pax: "2 Adults – Anniversary Trip",
             rooms: "1 Room on Double Sharing",
-            arrivalDate: "Multiple dates in June 2025",
+            arrivalDate: "Multiple dates in July 2025",
             duration: "5N6D UAE",
             costBasis: "Cost Based On Double Sharing"
         },

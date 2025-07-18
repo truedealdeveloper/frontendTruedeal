@@ -101,7 +101,7 @@ export const baliPackages: Record<string, BaliPackage> = {
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in June 2025",
+            arrivalDate: "Multiple dates in July 2025",
             duration: "6N7D Bali Fixed Departure",
             costBasis: "Cost Based On Double Sharing"
         },
@@ -415,7 +415,7 @@ from prominent Balinese artists. (Breakfast)`,
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in June 2025",
+            arrivalDate: "Multiple dates in July 2025",
             duration: "5N6D Bali Honeymoon",
             costBasis: "Cost Based On per person"
         },
@@ -692,7 +692,7 @@ Depending on your flight timings, You will be transferred from Hotel to Bali Int
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in June 2025",
+            arrivalDate: "Multiple dates in July 2025",
             duration: "6N7D Bali Deluxe",
             costBasis: "Cost Based On per person"
         },
@@ -947,7 +947,7 @@ Depending on your flight timings, You will be transferred from Hotel to Bali Int
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in June 2025",
+            arrivalDate: "Multiple dates in July 2025",
             duration: "8N9D Bali Gili T Package",
             costBasis: "Cost Based On per person"
         },

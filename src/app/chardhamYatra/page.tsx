@@ -635,7 +635,7 @@ export default function ChardhamYatraPackages() {
                                 },
                                 {
                                     question: "When is the best time for Chardham Yatra?",
-                                    answer: "Our helicopter services operate from early May to late June. The temples remain open during this period with favorable weather conditions for helicopter operations."
+                                    answer: "Our helicopter services operate from early May to late July. The temples remain open during this period with favorable weather conditions for helicopter operations."
                                 },
                                 {
                                     question: "What are the departure points for different packages?",
@@ -713,7 +713,7 @@ export default function ChardhamYatraPackages() {
                                 author: "Priya Sharma",
                                 location: "Mumbai",
                                 rating: 5,
-                                date: "June 2024",
+                                date: "July 2024",
                                 content: "Excellent service! The 4-day Dodham tour was well-organized. The accommodations were comfortable and the helicopter rides were smooth. The team took care of everything, making our pilgrimage truly memorable. A truly spiritual experience.",
                                 booked: "Dodham 4 Days Tour",
                                 images: [
