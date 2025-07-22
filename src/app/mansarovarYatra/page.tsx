@@ -137,32 +137,32 @@ export default function MansarovarYatraPackages() {
     const mansarovarHighlights = [
         {
             title: "Mount Kailash Parikrama",
-            image: "/UGCImages/mansarovar/highlight1.webp",
+            image: "/UGCImages/mansarovar/Kailash/1.webp",
             description: "Complete the sacred circumambulation of Mount Kailash"
         },
         {
             title: "Lake Mansarovar",
-            image: "/UGCImages/mansarovar/highlight2.webp",
+            image: "/UGCImages/mansarovar/Kailash/2.webp",
             description: "Take holy bath in the sacred lake at 15,060 feet"
         },
         {
             title: "Dolma La Pass",
-            image: "/UGCImages/mansarovar/highlight3.webp",
+            image: "/UGCImages/mansarovar/Kailash/3.webp",
             description: "Cross the highest point of Kailash Parikrama at 18,600 feet"
         },
         {
             title: "Tibetan Monasteries",
-            image: "/UGCImages/mansarovar/highlight4.webp",
+            image: "/UGCImages/mansarovar/Kailash/4.webp",
             description: "Visit ancient monasteries and experience Buddhist culture"
         },
         {
             title: "Spiritual Transformation",
-            image: "/UGCImages/mansarovar/highlight5.webp",
+            image: "/UGCImages/mansarovar/Kailash/5.webp",
             description: "Experience profound spiritual awakening and inner peace"
         },
         {
             title: "Sacred Geography",
-            image: "/UGCImages/mansarovar/highlight6.webp",
+            image: "/UGCImages/mansarovar/Kailash/6.webp",
             description: "Explore the mythical landscape described in ancient texts"
         }
     ];

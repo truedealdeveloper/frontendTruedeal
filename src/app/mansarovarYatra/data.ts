@@ -276,15 +276,15 @@ Depending on weather conditions, fly back to Simikot.`,
         experiences: [
             {
                 title: "Mount Kailash Parikrama",
-                image: "/UGCImages/mansarovar/Man/Sacred Geography.png"
+                image: "/UGCImages/mansarovar/Kailash/2.webp"
             },
             {
                 title: "Lake Mansarovar",
-                image: "/UGCImages/mansarovar/Man/Lake Mansarovar.png"
+                image: "/UGCImages/mansarovar/Kailash/9.webp"
             },
             {
                 title: "Tibetan Monasteries",
-                image: "/UGCImages/mansarovar/Tibetain monastry.png"
+                image: "/UGCImages/mansarovar/Kailash/1.webp"
             }
         ],
         sightseeingSpots: [
