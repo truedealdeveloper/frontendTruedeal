@@ -330,8 +330,8 @@ export const goaPackages: Record<string, goaPackage> = {
             }
         ],
         departureDates: [
-            { date: "1, 5, 8, 12, 15, 19, 22, 26, 29 December 2024", availability: "Available", price: 18000 },
-            { date: "2, 6, 9, 13, 16, 20, 23, 27, 30 January 2025", availability: "Available", price: 18000 },
+            { date: "1, 5, 8, 12, 15, 19, 22, 26, 29 July 2025", availability: "Available", price: 18000 },
+            { date: "2, 6, 9, 13, 16, 20, 23, 27, 30 August 2025", availability: "Available", price: 18000 },
         ],
         departureCities: [
             {
