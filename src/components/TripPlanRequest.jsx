@@ -38,7 +38,7 @@ const TripPlanRequest = () => {
 
     try {
       const response = await axios.post('/api/trip-plan', formData);
-      
+
       if (response.data.message) {
         setMessage(response.data.message);
         // Reset form only on success
@@ -61,12 +61,12 @@ const TripPlanRequest = () => {
         status: error.response?.status,
         data: error.response?.data
       });
-      
+
       // More specific error message
       const errorMessage = error.response?.data?.error === 'MISSING_TOKEN'
         ? 'Service is temporarily unavailable. Please try again later or contact support.'
         : error.response?.data?.message || 'Failed to submit form. Please try again later.';
-      
+
       setError(errorMessage);
     } finally {
       setLoading(false);
@@ -80,16 +80,15 @@ const TripPlanRequest = () => {
         {/* Image Section */}
         <div className="w-full lg:w-3/5 relative rounded-2xl overflow-hidden shadow-2xl">
           <div className="relative w-full aspect-[16/9]">
-            <Image 
-              src="/UGCImages/groupManali.png" 
-              alt="Truedeal Team" 
+            <Image
+              src="/GoogleReviews/29/1 (15).jpeg"
+              alt="Truedeal Team"
               fill
               priority
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 60vw"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#00B5C3]/30 to-transparent"></div>
         </div>
 
         {/* Form Section */}
