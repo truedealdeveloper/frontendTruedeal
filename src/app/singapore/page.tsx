@@ -1,5 +1,34 @@
 'use client';
 
+/*
+ * AWS S3 Media Assets Structure for Singapore Page:
+ * 
+ * S3 Bucket: your-s3-bucket
+ * Base URL: https://your-s3-bucket.s3.amazonaws.com
+ * 
+ * Required Files:
+ * ├── singapore/
+ * │   ├── audio/
+ * │   │   └── singapore.mp3
+ * │   ├── videos/
+ * │   │   └── singapore-background.mp4
+ * │   └── images/
+ * │       ├── singapore-poster.webp (video poster)
+ * │       ├── singapore-fallback.webp (video fallback)
+ * │       ├── modern-city.webp
+ * │       ├── theme-parks.webp
+ * │       ├── cultural-heritage.webp
+ * │       ├── shopping-paradise.webp
+ * │       ├── gardens-nature.webp
+ * │       ├── culinary-delights.webp
+ * │       ├── marina-bay-sands.webp
+ * │       ├── sentosa-island.webp
+ * │       ├── merlion-park.webp
+ * │       └── singapore-zoo.webp
+ * 
+ * To customize: Replace 'your-s3-bucket' with your actual S3 bucket name
+ */
+
 import { useState } from 'react';
 import Link from 'next/link';
 import { singaporePackages, SingaporePackage } from './data';
@@ -137,34 +166,50 @@ export default function SingaporePackages() {
     const singaporeHighlights = [
         {
             title: "Modern City",
-            image: "/UGCImages/singapore/banner/1.png",
+            image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/1.png",
             description: "Experience the ultra-modern cityscape and architecture"
         },
         {
             title: "Theme Parks",
-            image: "/UGCImages/singapore/banner/2.png",
+            image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/2.png",
             description: "Enjoy Universal Studios and other attractions"
         },
         {
             title: "Cultural Heritage",
-            image: "/UGCImages/singapore/banner/3.png",
+            image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/3.png",
             description: "Explore diverse cultural neighborhoods"
         },
         {
             title: "Shopping Paradise",
-            image: "/UGCImages/singapore/banner/4.png",
+            image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/4.png",
             description: "World-class shopping on Orchard Road"
         },
         {
             title: "Gardens & Nature",
-            image: "/UGCImages/singapore/banner/5.png",
+            image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/5.png",
             description: "Visit Gardens by the Bay and nature parks"
         },
         {
             title: "Culinary Delights",
-            image: "/UGCImages/singapore/banner/6.png",
+            image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/6.png",
             description: "Savor local cuisine at hawker centers"
-        }
+        },
+        {
+            title: "Marina Bay Sands",
+            image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/7.png",
+            description: "Iconic landmark with stunning city views"
+        },
+        {
+            title: "Sentosa Island",
+            image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/8.png",
+            description: "Beach resort destination with attractions"
+        },
+        {
+            title: "Merlion Park",
+            image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/9.png",
+            description: "Singapore's iconic symbol and landmark"
+        },
+
     ];
 
     const faqs = [
@@ -197,7 +242,7 @@ export default function SingaporePackages() {
                     autoPlay
                     className="hidden"
                 >
-                    <source src="/UGCImages/singapore/audio/singapore.mp3" type="audio/mp3" />
+                    <source src="https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/audio/singapore.mp3" type="audio/mp3" />
                 </audio>
 
                 <button
@@ -219,7 +264,7 @@ export default function SingaporePackages() {
                     muted={isMuted}
                     playsInline
                     className="absolute inset-0 w-full h-full object-cover"
-                    poster="/UGCImages/singapore/singapore/6.webp"
+                    poster="https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/1.png"
                     preload="metadata"
                     onError={(e) => {
                         const fallbackImage = e.currentTarget.parentElement?.querySelector('img');
@@ -229,7 +274,7 @@ export default function SingaporePackages() {
                     }}
                 >
                     <source
-                        src={`/UGCImages/singapore/singaporeBG.mp4`}
+                        src="https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/video/singaporeBG.mp4"
                         type="video/mp4"
                     />
                     Your browser does not support the video tag.
@@ -237,7 +282,7 @@ export default function SingaporePackages() {
 
                 {/* Fallback image */}
                 <Image
-                    src="/UGCImages/singapore/singapore/6.webp"
+                    src="https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/1.png"
                     alt="Singapore Background"
                     fill
                     className="object-cover hidden"
