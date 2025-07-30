@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { S3Image, S3Banner, S3Thumbnail, S3Avatar } from '@/components/ui/S3Image';
-import { useS3Images, useS3ImageSequence, useS3Image } from '@/hooks/useS3Images';
+import { useS3Images, useS3Image } from '@/hooks/useS3Images';
 import { SINGAPORE_ASSETS, getS3Url, getS3UrlSequence, S3_FOLDERS } from '@/lib/s3-config';
 
 /**

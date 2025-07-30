@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { isS3Url } from '@/lib/s3-config';
 
 interface ImageCache {
     [url: string]: {
@@ -134,7 +133,7 @@ export function useS3Images(
         if (preload && urls.length > 0) {
             preloadAll();
         }
-    }, [preload, preloadAll]);
+    }, [preload, preloadAll, urls.length]);
 
     // Cleanup cache on unmount
     useEffect(() => {
@@ -235,7 +234,6 @@ export class S3ImageCache {
     }
 
     private cleanup(): void {
-        const now = Date.now();
         const entries = Object.entries(this.cache);
 
         // Sort by timestamp and remove oldest entries

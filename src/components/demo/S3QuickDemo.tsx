@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { S3Image, S3Banner } from '@/components/ui/S3Image';
+import { S3Image } from '@/components/ui/S3Image';
 import { useS3ImageSequence } from '@/hooks/useS3Images';
 
 /**
