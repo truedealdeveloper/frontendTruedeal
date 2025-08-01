@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description: 'Experience the best of Singapore and Malaysia with our comprehensive tour packages. Visit Gardens by the Bay, Universal Studios, Marina Bay Sands, and enjoy world-class shopping.',
     images: [
       {
-        url: '/UGCImages/singapore/dayWise/1.png',
+        url: 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/1.png',
         width: 1200,
         height: 630,
         alt: 'Singapore Tour Package'
@@ -26,7 +26,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Singapore Tour Packages | TrueDeal4U',
     description: 'Experience the best of Singapore with our comprehensive tour packages. Visit Gardens by the Bay, Universal Studios, Marina Bay Sands, and enjoy world-class shopping.',
-    images: ['/UGCImages/singapore/dayWise/1.png']
+    images: ['https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/1.png']
+  },
+  other: {
+    'theme-color': '#017ae3'
   }
 }
 
@@ -37,6 +40,22 @@ export default function SingaporeLayout({
 }) {
   return (
     <>
+      {/* Preload critical resources for better performance */}
+      <link
+        rel="preload"
+        href="https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/1.png"
+        as="image"
+        type="image/png"
+      />
+      <link
+        rel="dns-prefetch"
+        href="https://truedeal-assets.s3.eu-north-1.amazonaws.com"
+      />
+      <link
+        rel="preconnect"
+        href="https://truedeal-assets.s3.eu-north-1.amazonaws.com"
+        crossOrigin="anonymous"
+      />
       {children}
     </>
   )

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { singaporePackages, SingaporePackage } from './data';
 import { FaCalendarAlt, FaClock, FaChevronLeft, FaChevronRight, FaPlus, FaMinus, FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
@@ -21,6 +21,27 @@ export default function SingaporePackages() {
     const packages = Object.values(singaporePackages);
     const totalPages = Math.ceil(packages.length / 3);
     const [isMuted, setIsMuted] = useState(true);
+    const [isMobile, setIsMobile] = useState(false);
+    const [videoLoaded, setVideoLoaded] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+
+        // Lazy load video only on desktop and when in viewport
+        if (!isMobile) {
+            const timer = setTimeout(() => {
+                setVideoLoaded(true);
+            }, 1000); // Delay video loading
+            return () => clearTimeout(timer);
+        }
+
+        return () => window.removeEventListener('resize', checkMobile);
+    }, [isMobile]);
 
     const handlePrevPage = () => {
         setCurrentPage(prev => prev > 0 ? prev - 1 : prev);
@@ -31,13 +52,15 @@ export default function SingaporePackages() {
     };
 
     const toggleMute = () => {
+        if (isMobile) return; // Disable audio controls on mobile
+
         const audio = document.getElementById('singaporeAudio') as HTMLAudioElement;
         const video = document.getElementById('singaporeVideo') as HTMLVideoElement;
         if (audio && video) {
             if (isMuted) {
                 audio.muted = false;
                 video.muted = true;
-                audio.play();
+                audio.play().catch(() => { }); // Handle autoplay restrictions
                 audio.volume = 0.5;
             } else {
                 audio.muted = true;
@@ -61,7 +84,9 @@ export default function SingaporePackages() {
                     alt={pkg.packageName}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                    sizes="(max-width: 480px) 300px, (max-width: 768px) 350px, (max-width: 1280px) 400px, 450px"
+                    priority={currentPage === 0} // Only prioritize first page images
+                    loading={currentPage === 0 ? "eager" : "lazy"}
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/50 to-black" />
@@ -204,61 +229,66 @@ export default function SingaporePackages() {
 
     return (
         <div className="min-h-screen">
-            {/* Hero Section with Video */}
+            {/* Hero Section with Optimized Media */}
             <div className="relative h-[60vh] md:h-[100vh] w-full overflow-hidden">
-                <audio
-                    id="singaporeAudio"
-                    loop
-                    muted
-                    autoPlay
-                    className="hidden"
-                >
-                    <source src="https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/audio/singapore.mp3" type="audio/mp3" />
-                </audio>
+                {/* Conditional Audio for Desktop Only */}
+                {!isMobile && (
+                    <audio
+                        id="singaporeAudio"
+                        loop
+                        muted
+                        className="hidden"
+                        preload="none"
+                    >
+                        <source src="https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/audio/singapore.mp3" type="audio/mp3" />
+                    </audio>
+                )}
 
-                <button
-                    onClick={toggleMute}
-                    className="absolute bottom-4 right-4 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm p-3 rounded-full transition-all duration-300 text-white shadow-lg"
-                    aria-label={isMuted ? "Unmute audio" : "Mute audio"}
-                >
-                    {isMuted ? (
-                        <FaVolumeMute className="w-6 h-6" />
-                    ) : (
-                        <FaVolumeUp className="w-6 h-6" />
-                    )}
-                </button>
+                {/* Audio Control Button - Desktop Only */}
+                {!isMobile && (
+                    <button
+                        onClick={toggleMute}
+                        className="absolute bottom-4 right-4 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm p-3 rounded-full transition-all duration-300 text-white shadow-lg"
+                        aria-label={isMuted ? "Unmute audio" : "Mute audio"}
+                    >
+                        {isMuted ? (
+                            <FaVolumeMute className="w-6 h-6" />
+                        ) : (
+                            <FaVolumeUp className="w-6 h-6" />
+                        )}
+                    </button>
+                )}
 
-                <video
-                    id="singaporeVideo"
-                    autoPlay
-                    loop
-                    muted={isMuted}
-                    playsInline
-                    className="absolute inset-0 w-full h-full object-cover"
-                    poster="https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/1.png"
-                    preload="metadata"
-                    onError={(e) => {
-                        const fallbackImage = e.currentTarget.parentElement?.querySelector('img');
-                        if (fallbackImage) {
-                            fallbackImage.style.display = 'block';
-                        }
-                    }}
-                >
-                    <source
-                        src="https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/video/singaporeBG.mp4"
-                        type="video/mp4"
+                {/* Conditional Video for Desktop, Image for Mobile */}
+                {!isMobile && videoLoaded ? (
+                    <video
+                        id="singaporeVideo"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="absolute inset-0 w-full h-full object-cover"
+                        poster="https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/1.png"
+                        preload="metadata"
+                        onError={() => setVideoLoaded(false)}
+                    >
+                        <source
+                            src="https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/video/singaporeBG.mp4"
+                            type="video/mp4"
+                        />
+                    </video>
+                ) : (
+                    <Image
+                        src="https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/1.png"
+                        alt="Singapore Background"
+                        fill
+                        className="object-cover"
+                        priority
+                        sizes="(max-width: 768px) 100vw, 100vw"
+                        quality={isMobile ? 75 : 90}
                     />
-                    Your browser does not support the video tag.
-                </video>
+                )}
 
-                {/* Fallback image */}
-                <Image
-                    src="https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/1.png"
-                    alt="Singapore Background"
-                    fill
-                    className="object-cover hidden"
-                    priority
-                />
                 <div className="absolute inset-0 bg-black/40" />
                 <div className="absolute inset-0 flex items-center justify-center text-center">
                     <div className="max-w-4xl px-4">
@@ -423,6 +453,9 @@ export default function SingaporePackages() {
                                         alt={highlight.title}
                                         fill
                                         className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                        sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 350px"
+                                        loading="lazy"
+                                        quality={75}
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                                     <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
