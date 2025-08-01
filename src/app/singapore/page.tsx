@@ -1,34 +1,5 @@
 'use client';
 
-/*
- * AWS S3 Media Assets Structure for Singapore Page:
- * 
- * S3 Bucket: your-s3-bucket
- * Base URL: https://your-s3-bucket.s3.amazonaws.com
- * 
- * Required Files:
- * ├── singapore/
- * │   ├── audio/
- * │   │   └── singapore.mp3
- * │   ├── videos/
- * │   │   └── singapore-background.mp4
- * │   └── images/
- * │       ├── singapore-poster.webp (video poster)
- * │       ├── singapore-fallback.webp (video fallback)
- * │       ├── modern-city.webp
- * │       ├── theme-parks.webp
- * │       ├── cultural-heritage.webp
- * │       ├── shopping-paradise.webp
- * │       ├── gardens-nature.webp
- * │       ├── culinary-delights.webp
- * │       ├── marina-bay-sands.webp
- * │       ├── sentosa-island.webp
- * │       ├── merlion-park.webp
- * │       └── singapore-zoo.webp
- * 
- * To customize: Replace 'your-s3-bucket' with your actual S3 bucket name
- */
-
 import { useState } from 'react';
 import Link from 'next/link';
 import { singaporePackages, SingaporePackage } from './data';

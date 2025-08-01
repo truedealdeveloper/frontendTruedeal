@@ -92,7 +92,7 @@ export interface SingaporePackage {
             documents: string[];
         };
     };
-   
+
     departureDates?: DepartureDate[];
     experiences: Experience[];
     batchDetails?: BatchDetails;
@@ -159,13 +159,13 @@ export const singaporePackages: Record<string, SingaporePackage> = {
             {
                 day: 1,
                 title: "Arrive Singapore + Marina Bay Sands (Observation Deck) + Gardens by the Bay (Flower Dome + Cloud Forest) – SIC",
-                description:`Welcome to Singapore – also known as the Lion City
+                description: `Welcome to Singapore – also known as the Lion City
 Upon arrival our representative assist you, pick up and transfer to your hotel. Check in at hotel (standard time approx 1400/1500 hrs).
 Visit the Marina Bay Sands hotel (SIC)
 Enjoy panoramic view of the city from MBS Sky Park. Take a walk from MBS to Gardens by the Bay. Then visit Gardens by the Bay – Flower Dome and Cloud Forest Observation Deck. Enter the flower Dome, the largest glass greenhouse in the world. It replicates a mild, dry climate and features plants found in the Mediterranean and other semi-arid tropical regions. Admire a forest that boasts one of the world's largest indoor waterfalls at 35 meters tall. Step into a landscape of dramatic greenery, featuring vegetation that is typically native to habitats 2,000 meters above sea level.
 Overnight stay at Singapore
 `,
-                image: "/UGCImages/singapore/dayWise/1.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/dayWise/1.png"
             },
             {
                 day: 2,
@@ -177,7 +177,7 @@ Later, visit the Universal Studios
 Start your journey to Hollywood movie theme park - Universal Studios™ forms part of Resorts World™ Sentosa. Among the park's many rides and exciting attractions are Battle star Galactica, the world's tallest pair of dueling roller coasters and Far Away Castle™, the first castle from the world of Shrek where you can experience the amazing Shrek 4-D™ attraction. One of the biggest spectacles in live entertainment is based on the movie Water world™. The action comes gushing to life in a tidal wave of death-defying stunts, explosions and thrilling action. Enjoy Jurassic Park Rapids Adventure™, Madagascar: A Crate Adventure™ and Revenge of the Mummy™, TRANSFORMERS The Ride and many more.
 Overnight stay at Singapore	
 `,
-                image: "/UGCImages/singapore/dayWise/2.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/dayWise/2.png"
             },
             {
                 day: 3,
@@ -187,7 +187,7 @@ Today enjoy full day at the Sentosa Island (SIC). Sentosa is an island resort of
 Enjoy the cable car ride and experience Madame Tussauds 4 in 1 along with. Finish your day on Sentosa Island on a spectacular note with the award-winning Wings of Time show.
 Overnight stay at Singapore
 `,
-                image: "/UGCImages/singapore/dayWise/3.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/dayWise/3.png"
             },
             {
                 day: 4,
@@ -195,14 +195,14 @@ Overnight stay at Singapore
                 description: `Morning after breakfast; you will be transferred to the airport for your flight back home to India 
 Meals: Breakfast at the hotel 
 `,
-                image: "/UGCImages/singapore/dayWise/4.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/dayWise/4.png"
             }
         ],
         images: [
-            "/UGCImages/singapore/singapore/4.webp",
-            "/UGCImages/singapore/singapore/3.webp",
-            "/UGCImages/singapore/singapore/1.webp",
-            "/UGCImages/singapore/singapore/2.webp",
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singapore/4.webp",
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singapore/3.webp",
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singapore/1.webp",
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singapore/2.webp",
         ],
         departureDates: [
             { date: "Mar 2025 - July 2025" }
@@ -254,19 +254,19 @@ Meals: Breakfast at the hotel
         experiences: [
             {
                 title: "Marina Bay Sands",
-                image: "/UGCImages/singapore/experience/1.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/experience/1.png"
             },
             {
                 title: "Gardens By The Bay",
-                image: "/UGCImages/singapore/experience/2.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/experience/2.png"
             },
             {
                 title: "Sentosa Island",
-                image: "/UGCImages/singapore/experience/3.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/experience/3.png"
             },
             {
                 title: "Night Safari",
-                image: "/UGCImages/singapore/experience/4.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/experience/4.png"
             }
         ]
     },
@@ -331,13 +331,13 @@ Meals: Breakfast at the hotel
             {
                 day: 1,
                 title: "Arrive Singapore + Marina Bay Sands (Observation Deck) + Gardens by the Bay (Flower Dome + Cloud Forest) – SIC",
-                description:`Welcome to Singapore – also known as the Lion City
+                description: `Welcome to Singapore – also known as the Lion City
 Upon arrival our representative assist you, pick up and transfer to your hotel. Check in at hotel (standard time approx. 1400/1500 hrs.).
 Later we visit the Marina Bay Sands hotel (SIC) to enjoy panoramic view of the city from MBS Sky Park. Take a walk from MBS to Gardens by the Bay. We then visit Gardens by the Bay – Flower Dome and Super Tree Observation Deck. Enter the flower Dome, the largest glass greenhouse in the world. It replicates a mild, dry climate and features plants found in the Mediterranean and other semi-arid tropical regions. Admire a forest that boasts one of the world's largest indoor waterfalls at 35 meters tall. Step into a landscape of dramatic greenery, featuring vegetation that is typically native to habitats 2,000 meters above sea level.
 Overnight stay at Singapore
 
 `,
-                image: "/UGCImages/singapore/itinerary/1.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/itinerary/1.png"
             },
             {
                 day: 2,
@@ -350,7 +350,7 @@ Start your journey to Hollywood movie theme park - Universal Studios™ forms pa
 Overnight stay at Singapore
 
 `,
-                image: "/UGCImages/singapore/itinerary/2.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/itinerary/2.png"
             },
             {
                 day: 3,
@@ -361,7 +361,7 @@ Enjoy the cable car ride and experience Madame Tussauds 4 in 1 along with. Finis
 Overnight stay at Singapore
 
 `,
-                image: "/UGCImages/singapore/itinerary/3.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/itinerary/3.png"
             },
             {
                 day: 4,
@@ -372,7 +372,7 @@ Explore the Night Safari for an off-hour wildlife adventure to observe the Zoo's
 Overnight stay at Singapore
 
 `,
-                image: "/UGCImages/singapore/itinerary/4.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/itinerary/4.png"
             },
             {
                 day: 5,
@@ -380,16 +380,16 @@ Overnight stay at Singapore
                 description: `Morning after breakfast; you will be transferred to the airport for your flight back home to India 
 Meals: Breakfast at the hotel 
 `,
-                image: "/UGCImages/singapore/itinerary/5.png"
-            }       
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/itinerary/5.png"
+            }
         ],
         images: [
-            "/UGCImages/singapore/package2/1.png",
-            "/UGCImages/singapore/package2/2.png",
-            "/UGCImages/singapore/package2/3.png",
-            "/UGCImages/singapore/package2/4.png",
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/package2/1.png",
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/package2/2.png",
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/package2/3.png",
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/package2/4.png",
         ],
-       
+
         departureDates: [
             { date: "Mar 2025 - July 2025" }
         ],
@@ -440,19 +440,19 @@ Meals: Breakfast at the hotel
         experiences: [
             {
                 title: "Marina Bay Sands",
-                image: "/UGCImages/singapore/experience/1.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/experience/1.png"
             },
             {
                 title: "Gardens By The Bay",
-                image: "/UGCImages/singapore/experience/2.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/experience/2.png"
             },
             {
                 title: "Sentosa Island",
-                image: "/UGCImages/singapore/experience/3.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/experience/3.png"
             },
             {
                 title: "Night Safari",
-                image: "/UGCImages/singapore/experience/4.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/experience/4.png"
             }
         ]
     },
@@ -510,14 +510,14 @@ Meals: Breakfast at the hotel
             {
                 day: 1,
                 title: "Arrive at Kuala Lumpur (En-Route Putrajaya 20Mins Photo-Stop) – PVT",
-                description:`Welcome to Malaysia's capital city - Kuala Lumpur!
+                description: `Welcome to Malaysia's capital city - Kuala Lumpur!
 Upon arrival at Kuala Lumpur, pick up from airport. Enroute stop by at Putrajaya for 20 min photo stop only.
 Check in hotel (Standard Check in time 1400hrs)
 Overnight Stay at Kuala Lumpur Hotel
 
 
 `,
-                image: "/UGCImages/singapore/klcc/1.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/klcc/1.png"
             },
             {
                 day: 2,
@@ -533,7 +533,7 @@ Overnight Stay at Kuala Lumpur Hotel
 
 
 `,
-                image: "/UGCImages/singapore/klcc/2.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/klcc/2.png"
             },
             {
                 day: 3,
@@ -548,7 +548,7 @@ Overnight stay at Kuala Lumpur hotel
 
 
 `,
-                image: "/UGCImages/singapore/klcc/3.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/klcc/3.png"
             },
             {
                 day: 4,
@@ -558,16 +558,16 @@ Meals: Breakfast at the hotel
 
 
 `,
-                image: "/UGCImages/singapore/klcc/4.png"
-            },    
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/klcc/4.png"
+            },
         ],
         images: [
-            "/UGCImages/singapore/Malaysia/1.png",
-            "/UGCImages/singapore/Malaysia/2.png",
-            "/UGCImages/singapore/Malaysia/3.png",
-            "/UGCImages/singapore/Malaysia/4.png"
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/Malaysia/1.png",
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/Malaysia/2.png",
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/Malaysia/3.png",
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/Malaysia/4.png"
         ],
-        
+
         departureDates: [
             { date: "Mar 2025 - July 2025" }
         ],
@@ -671,14 +671,14 @@ Meals: Breakfast at the hotel
             {
                 day: 1,
                 title: "Arrive at Langkawi – PVT",
-                description:`Welcome to Langkawi!
+                description: `Welcome to Langkawi!
 Upon arrival at Langkawi, pick up from airport.
 Check in hotel (Standard Check in time 1400hrs)
 Overnight Stay at Langkawi Hotel
 
 
 `,
-                image: "/UGCImages/singapore/lan/1.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/lan/1.png"
             },
             {
                 day: 2,
@@ -692,7 +692,7 @@ Overnight accommodation @ Hotel, Langkawi
 
 
 `,
-                image: "/UGCImages/singapore/lan/2.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/lan/2.png"
             },
             {
                 day: 3,
@@ -704,7 +704,7 @@ Overnight accommodation @ Hotel, Langkawi
 
 
 `,
-                image: "/UGCImages/singapore/lan/3.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/lan/3.png"
             },
             {
                 day: 4,
@@ -712,8 +712,8 @@ Overnight accommodation @ Hotel, Langkawi
                 description: `Enjoy Breakfast in Hotel. 
 Have a Leisure day and stay at Hotel.
 `,
-                image: "/UGCImages/singapore/lan/4.png"
-            },    
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/lan/4.png"
+            },
             {
                 day: 5,
                 title: "Langkawi - Departure - PVT",
@@ -724,17 +724,17 @@ Standard Check out time1200hrs
 Check out and meet driver at hotel lobby for transfer to LGK Airport for departure
 
 `,
-                image: "/UGCImages/singapore/lan/5.png"
-            },    
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/lan/5.png"
+            },
         ],
         images: [
-            "/UGCImages/singapore/lan/1.png",
-            "/UGCImages/singapore/lan/2.png",
-            "/UGCImages/singapore/lan/3.png",
-            "/UGCImages/singapore/lan/4.png",
-            "/UGCImages/singapore/lan/5.png"
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/lan/1.png",
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/lan/2.png",
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/lan/3.png",
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/lan/4.png",
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/lan/5.png"
         ],
-        
+
         departureDates: [
             { date: "Mar 2025 - July 2025" }
         ],
@@ -838,7 +838,7 @@ Check out and meet driver at hotel lobby for transfer to LGK Airport for departu
             "Image of Singapore",
             "Boat Ride | Ultimate Film Star",
             "Madame Tussaud | Wing of Time",
-            
+
             "MALAYSIA INCLUSIONS",
             "Daily breakfast at hotel",
             "Genting Trip",
@@ -862,7 +862,7 @@ Check out and meet driver at hotel lobby for transfer to LGK Airport for departu
 Evening visit to Marina Bay Sands Observation Deck for panoramic city views, followed by the spectacular Gardens by the Bay. Experience the Flower Dome and Cloud Forest, featuring one of the world's largest indoor waterfalls.
 
 Overnight stay in Singapore.`,
-                image: "/UGCImages/singapore/dayWise/1.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/dayWise/1.png"
             },
             {
                 day: 2,
@@ -872,7 +872,7 @@ Overnight stay in Singapore.`,
 Later, visit the S.E.A. Aquarium, home to more than 100,000 marine animals across 45 different habitats.
 
 Overnight stay in Singapore.`,
-                image: "/UGCImages/singapore/singaMal/universal.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singaMal/universal.png"
             },
             {
                 day: 3,
@@ -880,7 +880,7 @@ Overnight stay in Singapore.`,
                 description: `Post breakfast, enjoy a full day at Sentosa Island. Take the scenic cable car ride to the island. Visit Madame Tussauds and experience the 4-in-1 combo. End your day with the mesmerizing Wings of Time show.
 
 Overnight stay in Singapore.`,
-                image: "/UGCImages/singapore/singaMal/1.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singaMal/1.png"
             },
             {
                 day: 4,
@@ -890,7 +890,7 @@ Overnight stay in Singapore.`,
 Evening arrival in Kuala Lumpur, check-in to your hotel and enjoy the rest of the day at leisure.
 
 Overnight stay in Kuala Lumpur.`,
-                image: "/UGCImages/singapore/singaMal/2.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singaMal/2.png"
             },
             {
                 day: 5,
@@ -900,7 +900,7 @@ Overnight stay in Kuala Lumpur.`,
 Enjoy the scenic cable car ride to Genting Highlands and spend time at leisure exploring the entertainment options and shopping.
 
 Return to Kuala Lumpur for overnight stay.`,
-                image: "/UGCImages/singapore/singaMal/3.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singaMal/3.png"
             },
             {
                 day: 6,
@@ -915,7 +915,7 @@ Return to Kuala Lumpur for overnight stay.`,
 
 Evening at leisure for shopping and personal activities.
 Overnight stay in Kuala Lumpur.`,
-                image: "/UGCImages/singapore/singaMal/4.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singaMal/4.png"
             },
             {
                 day: 7,
@@ -923,14 +923,14 @@ Overnight stay in Kuala Lumpur.`,
                 description: `After breakfast, check out from the hotel (standard check-out time: 1200 hrs) and transfer to the airport for your return flight.
 
 End of tour with memories to cherish forever!`,
-                image: "/UGCImages/singapore/singaMal/5.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singaMal/5.png"
             }
         ],
         images: [
-            "/UGCImages/singapore/singapore/4.webp",
-            "/UGCImages/singapore/singapore/3.webp",
-            "/UGCImages/singapore/singapore/1.webp",
-            "/UGCImages/singapore/singapore/2.webp",
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singapore/4.webp",
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singapore/3.webp",
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singapore/1.webp",
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singapore/2.webp",
         ],
         departureDates: [
             { date: "Mar 2025 - July 2025" }
@@ -982,19 +982,19 @@ End of tour with memories to cherish forever!`,
         experiences: [
             {
                 title: "Marina Bay Sands",
-                image: "/UGCImages/singapore/experience/1.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/experience/1.png"
             },
             {
                 title: "Gardens By The Bay",
-                image: "/UGCImages/singapore/experience/2.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/experience/2.png"
             },
             {
                 title: "Sentosa Island",
-                image: "/UGCImages/singapore/experience/3.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/experience/3.png"
             },
             {
                 title: "Night Safari",
-                image: "/UGCImages/singapore/experience/4.png"
+                image: "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/experience/4.png"
             }
         ],
         batchDetails: {

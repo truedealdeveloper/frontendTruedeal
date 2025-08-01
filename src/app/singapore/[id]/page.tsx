@@ -169,7 +169,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                 {/* Hero Section */}
                 <div className="relative h-[70vh] w-full">
                     <Image
-                        src={singaporePkg?.images?.[currentImageIndex] || '/default-image.jpg'}
+                        src={singaporePkg?.images?.[currentImageIndex] || 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singapore/1.webp'}
                         alt={singaporePkg.packageName}
                         fill
                         className="object-cover brightness-[0.85]"
@@ -340,7 +340,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                         </div>
                                                         <div className="relative h-full min-h-[250px] md:min-h-0">
                                                             <Image
-                                                                src={singaporePkg?.images?.[1] || '/default-image.jpg'}
+                                                                src={singaporePkg?.images?.[1] || 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singapore/1.webp'}
                                                                 alt="About Singapore"
                                                                 fill
                                                                 className="object-cover"
@@ -477,7 +477,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                             {[5, 6, 7, 8, 9, 10].map((num) => (
                                                                 <div key={num} className="relative aspect-square rounded-lg overflow-hidden">
                                                                     <Image
-                                                                        src={`/UGCImages/singapore/singapore/${num}.webp`}
+                                                                        src={`https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singapore/${num}.webp`}
                                                                         alt={`User shared photo ${num}`}
                                                                         fill
                                                                         className="object-cover"
