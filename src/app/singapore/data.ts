@@ -1002,11 +1002,6 @@ End of tour with memories to cherish forever!`,
             remainingSlots: 11,
             monthlyBatches: [
                 {
-                    month: "May",
-                    dates: ["9th", "10th", "11th"],
-                    availableSeats: 11
-                },
-                {
                     month: "July",
                     dates: ["13th", "14th", "15th"],
                     availableSeats: 20
