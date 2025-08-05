@@ -1,6 +1,6 @@
 'use client';
 
-import { use, useState, useEffect, useRef } from 'react';
+import { use, useState, useEffect, useRef, lazy, Suspense } from 'react';
 import Image from 'next/image';
 import { singaporePackages } from '../data';
 import { notFound } from 'next/navigation';
@@ -11,12 +11,13 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { BookingFormModal } from '@/app/components/BookingFormModal';
-import { useScroll } from "framer-motion";
 import { Poppins } from 'next/font/google';
 import { PageWrapper } from '@/components/page-wrapper';
 import { useMobile } from '@/hooks/use-mobile';
-import SingaporePackages from '../page';
+
+// Lazy load heavy components
+const BookingFormModal = lazy(() => import('@/app/components/BookingFormModal').then(mod => ({ default: mod.BookingFormModal })));
+const SingaporePackages = lazy(() => import('../page'));
 
 const poppins = Poppins({
     weight: ['400', '500', '600', '700'],
@@ -52,9 +53,10 @@ export default function SingaporePackagePage({ params }: PageProps) {
     const otherRef = useRef<HTMLDivElement>(null);
     const cultureScrollRef = useRef<HTMLDivElement>(null);
 
-    useScroll();
-
+    // Only use complex scroll logic on desktop
     useEffect(() => {
+        if (isMobile) return;
+
         const handleScroll = () => {
             const sections = [
                 { id: 'overview', ref: overviewRef },
@@ -76,21 +78,24 @@ export default function SingaporePackagePage({ params }: PageProps) {
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [isMobile]);
 
+    // Optimize image rotation - disable on mobile, slower on desktop
     useEffect(() => {
+        if (isMobile) return; // No image rotation on mobile to save performance
+
         const timer = setInterval(() => {
             setCurrentImageIndex((prev) =>
                 prev === (singaporePkg?.images?.length || 1) - 1 ? 0 : prev + 1
             );
-        }, 5000);
+        }, 8000); // Slower rotation
 
         return () => clearInterval(timer);
-    }, [singaporePkg?.images?.length]);
+    }, [singaporePkg?.images?.length, isMobile]);
 
     const useAutoScroll = (scrollRef: React.RefObject<HTMLDivElement>, duration: number = 40000) => {
         useEffect(() => {
-            if (!scrollRef.current) return;
+            if (isMobile || !scrollRef.current) return; // Disable auto-scroll on mobile
 
             const scrollElement = scrollRef.current;
             let animationFrameId: number;
@@ -116,7 +121,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                     cancelAnimationFrame(animationFrameId);
                 }
             };
-        }, [duration, scrollRef]);
+        }, [duration, scrollRef, isMobile]);
     };
 
     useAutoScroll(cultureScrollRef, 50000);
@@ -169,11 +174,19 @@ export default function SingaporePackagePage({ params }: PageProps) {
                 {/* Hero Section */}
                 <div className="relative h-[70vh] w-full">
                     <Image
-                        src={singaporePkg?.images?.[currentImageIndex] || 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singapore/1.webp'}
+                        src={isMobile
+                            ? singaporePkg?.images?.[0] || 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singapore/1.webp'
+                            : singaporePkg?.images?.[currentImageIndex] || 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singapore/1.webp'
+                        }
                         alt={singaporePkg.packageName}
                         fill
                         className="object-cover brightness-[0.85]"
-                        priority
+                        priority={true}
+                        fetchPriority="high"
+                        quality={isMobile ? 70 : 85}
+                        placeholder="blur"
+                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                        sizes="(max-width: 768px) 100vw, 100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                     <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-12">
@@ -443,7 +456,9 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                                     src={experience.image}
                                                                     alt={experience.title}
                                                                     fill
-                                                                    className="object-cover hover:scale-105 transition duration-500"
+                                                                    className={`object-cover transition duration-500 ${isMobile ? '' : 'hover:scale-105'}`}
+                                                                    loading="lazy"
+                                                                    quality={isMobile ? 70 : 85}
                                                                 />
                                                             </div>
                                                             <div className="p-4">
@@ -481,6 +496,8 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                                         alt={`User shared photo ${num}`}
                                                                         fill
                                                                         className="object-cover"
+                                                                        loading="lazy"
+                                                                        quality={isMobile ? 60 : 75}
                                                                     />
                                                                 </div>
                                                             ))}
@@ -499,7 +516,9 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                                 src={img}
                                                                 alt={`Singapore destination image ${i + 1}`}
                                                                 fill
-                                                                className="object-cover hover:scale-105 transition duration-500"
+                                                                className={`object-cover transition duration-500 ${isMobile ? '' : 'hover:scale-105'}`}
+                                                                loading="lazy"
+                                                                quality={isMobile ? 60 : 75}
                                                             />
                                                         </div>
                                                     ))}
@@ -605,6 +624,8 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                                                 alt={`Day ${day.day} - ${day.title}`}
                                                                                 fill
                                                                                 className="object-cover"
+                                                                                loading="lazy"
+                                                                                quality={isMobile ? 60 : 75}
                                                                             />
                                                                         </div>
 
@@ -827,13 +848,17 @@ export default function SingaporePackagePage({ params }: PageProps) {
                 )}
 
                 {/* Booking Modal */}
-                <BookingFormModal
-                    isOpen={isBookingModalOpen}
-                    onClose={() => setIsBookingModalOpen(false)}
-                    destinationName={singaporePkg?.packageName}
-                    price={singaporePkg?.amount}
-                    dates={`${singaporePkg?.dateStart} - ${singaporePkg?.dateEnd}`}
-                />
+                {isBookingModalOpen && (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <BookingFormModal
+                            isOpen={isBookingModalOpen}
+                            onClose={() => setIsBookingModalOpen(false)}
+                            destinationName={singaporePkg?.packageName}
+                            price={singaporePkg?.amount}
+                            dates={`${singaporePkg?.dateStart} - ${singaporePkg?.dateEnd}`}
+                        />
+                    </Suspense>
+                )}
 
                 {/* Gallery Modal */}
                 {isGalleryModalOpen && (
@@ -890,7 +915,9 @@ export default function SingaporePackagePage({ params }: PageProps) {
                 )}
 
                 <div className='mt-[50px]'>
-                    <SingaporePackages />
+                    <Suspense fallback={<div className="h-64 flex items-center justify-center">Loading related packages...</div>}>
+                        <SingaporePackages />
+                    </Suspense>
                 </div>
 
                 <style jsx global>{`

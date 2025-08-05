@@ -1,15 +1,17 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import Link from 'next/link';
 import { singaporePackages, SingaporePackage } from './data';
 import { FaCalendarAlt, FaClock, FaChevronLeft, FaChevronRight, FaPlus, FaMinus, FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 import { IoLocationSharp } from 'react-icons/io5';
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
-import { motion } from 'framer-motion';
-import TripPlanRequest from '../../components/TripPlanRequest';
 import { Dancing_Script, Playfair_Display } from 'next/font/google';
+
+// Lazy load heavy components
+const MotionDiv = lazy(() => import('framer-motion').then(mod => ({ default: mod.motion.div })));
+const TripPlanRequest = lazy(() => import('../../components/TripPlanRequest'));
 
 const dancingScript = Dancing_Script({ subsets: ['latin'] });
 const playfair = Playfair_Display({ subsets: ['latin'] });
@@ -24,6 +26,24 @@ export default function SingaporePackages() {
     const [isMobile, setIsMobile] = useState(false);
     const [videoLoaded, setVideoLoaded] = useState(false);
 
+    // Preload critical LCP image for mobile
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'image';
+            link.href = 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/1.png';
+            link.fetchPriority = 'high';
+            document.head.appendChild(link);
+
+            return () => {
+                if (document.head.contains(link)) {
+                    document.head.removeChild(link);
+                }
+            };
+        }
+    }, []);
+
     useEffect(() => {
         const checkMobile = () => {
             setIsMobile(window.innerWidth < 768);
@@ -32,11 +52,11 @@ export default function SingaporePackages() {
         checkMobile();
         window.addEventListener('resize', checkMobile);
 
-        // Lazy load video only on desktop and when in viewport
+        // Only load video on desktop and with longer delay
         if (!isMobile) {
             const timer = setTimeout(() => {
                 setVideoLoaded(true);
-            }, 1000); // Delay video loading
+            }, 2000); // Increased delay to not block LCP
             return () => clearTimeout(timer);
         }
 
@@ -83,10 +103,11 @@ export default function SingaporePackages() {
                     src={pkg.images[0]}
                     alt={pkg.packageName}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className={`object-cover transition-transform duration-500 ${isMobile ? '' : 'group-hover:scale-105'}`}
                     sizes="(max-width: 480px) 300px, (max-width: 768px) 350px, (max-width: 1280px) 400px, 450px"
                     priority={currentPage === 0} // Only prioritize first page images
                     loading={currentPage === 0 ? "eager" : "lazy"}
+                    quality={isMobile ? 70 : 85}
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/50 to-black" />
@@ -259,7 +280,7 @@ export default function SingaporePackages() {
                     </button>
                 )}
 
-                {/* Conditional Video for Desktop, Image for Mobile */}
+                {/* Conditional Video for Desktop, Optimized Image for Mobile */}
                 {!isMobile && videoLoaded ? (
                     <video
                         id="singaporeVideo"
@@ -269,7 +290,7 @@ export default function SingaporePackages() {
                         playsInline
                         className="absolute inset-0 w-full h-full object-cover"
                         poster="https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/1.png"
-                        preload="metadata"
+                        preload="none"
                         onError={() => setVideoLoaded(false)}
                     >
                         <source
@@ -279,74 +300,73 @@ export default function SingaporePackages() {
                     </video>
                 ) : (
                     <Image
-                        src="https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/1.png"
+                        src={isMobile
+                            ? "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/1.png"
+                            : "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/1.png"
+                        }
                         alt="Singapore Background"
                         fill
                         className="object-cover"
-                        priority
+                        priority={true}
+                        fetchPriority="high"
                         sizes="(max-width: 768px) 100vw, 100vw"
-                        quality={isMobile ? 75 : 90}
+                        quality={isMobile ? 60 : 90}
+                        placeholder="blur"
+                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                     />
                 )}
 
                 <div className="absolute inset-0 bg-black/40" />
                 <div className="absolute inset-0 flex items-center justify-center text-center">
                     <div className="max-w-4xl px-4">
-                        <motion.h1
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                            className="text-4xl md:text-7xl font-bold mb-6"
-                        >
-                            <span className={`block font-dancing-script text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] mb-2 ${dancingScript.className}`}>
-                                Welcome to
-                            </span>
-                            <span className={`block text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-rose-100 to-teal-100 bg-clip-text text-transparent mt-2 ${playfair.className}`}>
-                                Singapore
-                            </span>
-                        </motion.h1>
-
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.5, duration: 0.8 }}
-                            className="space-y-4"
-                        >
-                            <motion.p
-                                className="text-xl md:text-2xl text-white/90 font-light"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ delay: 1, duration: 0.8 }}
-                            >
-                                Where tradition meets tomorrow
-                            </motion.p>
-                            <div className="flex justify-center gap-4 text-lg md:text-xl">
-                                <motion.span
-                                    initial={{ opacity: 0, x: -20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: 1.5, duration: 0.5 }}
-                                    className="text-yellow-300"
-                                >
-                                    Modern City
-                                </motion.span>
-                                <motion.span
+                        {isMobile ? (
+                            // Simple static content for mobile to avoid blocking main thread
+                            <h1 className="text-4xl md:text-7xl font-bold mb-6">
+                                <span className={`block font-dancing-script text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] mb-2 ${dancingScript.className}`}>
+                                    Welcome to
+                                </span>
+                                <span className={`block text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-rose-100 to-teal-100 bg-clip-text text-transparent mt-2 ${playfair.className}`}>
+                                    Singapore
+                                </span>
+                            </h1>
+                        ) : (
+                            // Animated content for desktop
+                            <Suspense fallback={
+                                <h1 className="text-4xl md:text-7xl font-bold mb-6">
+                                    <span className={`block font-dancing-script text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] mb-2 ${dancingScript.className}`}>
+                                        Welcome to
+                                    </span>
+                                    <span className={`block text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-rose-100 to-teal-100 bg-clip-text text-transparent mt-2 ${playfair.className}`}>
+                                        Singapore
+                                    </span>
+                                </h1>
+                            }>
+                                <MotionDiv
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 1.8, duration: 0.5 }}
-                                    className="text-blue-300"
+                                    transition={{ duration: 0.8 }}
+                                    className="text-4xl md:text-7xl font-bold mb-6"
                                 >
-                                    Rich Culture
-                                </motion.span>
-                                <motion.span
-                                    initial={{ opacity: 0, x: 20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: 2.1, duration: 0.5 }}
-                                    className="text-green-300"
-                                >
-                                    Amazing Food
-                                </motion.span>
+                                    <span className={`block font-dancing-script text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] mb-2 ${dancingScript.className}`}>
+                                        Welcome to
+                                    </span>
+                                    <span className={`block text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-rose-100 to-teal-100 bg-clip-text text-transparent mt-2 ${playfair.className}`}>
+                                        Singapore
+                                    </span>
+                                </MotionDiv>
+                            </Suspense>
+                        )}
+
+                        <div className="space-y-4">
+                            <p className="text-xl md:text-2xl text-white/90 font-light">
+                                Where tradition meets tomorrow
+                            </p>
+                            <div className="flex justify-center gap-4 text-lg md:text-xl">
+                                <span className="text-yellow-300">Modern City</span>
+                                <span className="text-blue-300">Rich Culture</span>
+                                <span className="text-green-300">Amazing Food</span>
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -425,13 +445,7 @@ export default function SingaporePackages() {
             {/* Singapore Highlights Section */}
             <div className="py-16 bg-white">
                 <div className="container mx-auto px-4">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                        className="max-w-7xl mx-auto"
-                    >
+                    <div className="max-w-7xl mx-auto">
                         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
                             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
                                 Experience the Magic of Singapore
@@ -440,34 +454,30 @@ export default function SingaporePackages() {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {singaporeHighlights.map((highlight, index) => (
-                                <motion.div
+                                <div
                                     key={highlight.title}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                                    viewport={{ once: true }}
                                     className="group relative overflow-hidden rounded-xl shadow-lg h-[300px]"
                                 >
                                     <Image
                                         src={highlight.image}
                                         alt={highlight.title}
                                         fill
-                                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                        className={`object-cover transition-transform duration-700 ${isMobile ? '' : 'group-hover:scale-110'}`}
                                         sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 350px"
-                                        loading="lazy"
-                                        quality={75}
+                                        loading={index < 3 ? "eager" : "lazy"}
+                                        quality={isMobile ? 70 : 85}
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                                     <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                                         <h3 className="text-xl font-semibold mb-2">{highlight.title}</h3>
-                                        <p className="text-sm text-white/90 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                                        <p className={`text-sm text-white/90 ${isMobile ? 'opacity-100' : 'opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300'}`}>
                                             {highlight.description}
                                         </p>
                                     </div>
-                                </motion.div>
+                                </div>
                             ))}
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
             </div>
 
@@ -525,7 +535,9 @@ export default function SingaporePackages() {
                 </div>
             </div>
 
-            <TripPlanRequest />
+            <Suspense fallback={<div className="h-32 flex items-center justify-center">Loading...</div>}>
+                <TripPlanRequest />
+            </Suspense>
         </div>
     );
 } 

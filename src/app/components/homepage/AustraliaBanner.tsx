@@ -231,7 +231,7 @@ const AustraliaBanner = () => {
 
                       <div className="mt-6">
                         <Button
-                          className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all text-lg py-6 rounded-lg transition-all duration-300"
+                          className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all text-lg py-6 rounded-lg duration-300"
                         >
                           View Details
                         </Button>
