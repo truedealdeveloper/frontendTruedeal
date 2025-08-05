@@ -38,24 +38,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
         notFound();
     }
 
-    // Preload critical LCP image for mobile ASAP
-    useEffect(() => {
-        if (isMobile && typeof window !== 'undefined') {
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.as = 'image';
-            link.href = 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/1.png';
-            link.fetchPriority = 'high';
-            link.crossOrigin = 'anonymous';
-            document.head.appendChild(link);
-
-            return () => {
-                if (document.head.contains(link)) {
-                    document.head.removeChild(link);
-                }
-            };
-        }
-    }, [isMobile]);
+    // No image preloading needed on mobile since we use CSS-only background
 
     const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -193,41 +176,31 @@ export default function SingaporePackagePage({ params }: PageProps) {
         <PageWrapper>
             <div className={`relative ${poppins.className}`}>
                 {/* Hero Section */}
-                <div className={`relative h-[70vh] w-full ${isMobile ? 'hero-bg' : ''}`}>
+                <div className={`relative h-[70vh] w-full ${isMobile ? 'bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-600' : ''}`}>
                     {isMobile ? (
-                        // Mobile-optimized hero with instant background
-                        <>
-                            <Image
-                                src="https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/1.png"
-                                alt={singaporePkg.packageName}
-                                fill
-                                className="object-cover brightness-[0.75] opacity-80"
-                                priority={true}
-                                fetchPriority="high"
-                                quality={40}
-                                sizes="100vw"
-                                onLoad={() => {
-                                    // Preload next image in background after LCP
-                                    if (typeof window !== 'undefined') {
-                                        const img = new window.Image();
-                                        img.src = singaporePkg?.images?.[0] || '';
-                                    }
-                                }}
-                            />
-                        </>
+                        // Mobile-optimized hero with instant CSS background - NO IMAGES
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-600">
+                            {/* Decorative elements using CSS only */}
+                            <div className="absolute top-10 right-10 w-20 h-20 border border-white/20 rounded-full"></div>
+                            <div className="absolute top-32 left-8 w-12 h-12 border border-white/30 rounded-full"></div>
+                            <div className="absolute bottom-32 right-16 w-16 h-16 border border-white/20 rounded-full"></div>
+                            <div className="absolute top-20 left-1/2 w-8 h-8 bg-white/10 rounded-full"></div>
+                        </div>
                     ) : (
                         // Desktop version with rotating images
-                        <Image
-                            src={singaporePkg?.images?.[currentImageIndex] || 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singapore/1.webp'}
-                            alt={singaporePkg.packageName}
-                            fill
-                            className="object-cover brightness-[0.85]"
-                            priority={false}
-                            quality={85}
-                            sizes="100vw"
-                        />
+                        <>
+                            <Image
+                                src={singaporePkg?.images?.[currentImageIndex] || 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singapore/1.webp'}
+                                alt={singaporePkg.packageName}
+                                fill
+                                className="object-cover brightness-[0.85]"
+                                priority={false}
+                                quality={85}
+                                sizes="100vw"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                        </>
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                     <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-12">
                         <div className="max-w-7xl w-full pl-0 md:pl-12 relative top-8 md:top-12">
                             {/* Rating display */}
@@ -391,17 +364,26 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                             </div>
                                                         </div>
                                                         <div className="relative h-full min-h-[250px] md:min-h-0">
-                                                            <Image
-                                                                src={isMobile
-                                                                    ? 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/2.png'
-                                                                    : singaporePkg?.images?.[1] || 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singapore/1.webp'
-                                                                }
-                                                                alt="About Singapore"
-                                                                fill
-                                                                className="object-cover"
-                                                                loading="lazy"
-                                                                quality={isMobile ? 60 : 80}
-                                                            />
+                                                            {isMobile ? (
+                                                                // Mobile: CSS-only decorative design
+                                                                <div className="h-full bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
+                                                                    <div className="text-center text-white">
+                                                                        <div className="text-6xl mb-4">🏙️</div>
+                                                                        <div className="text-xl font-semibold">Singapore</div>
+                                                                        <div className="text-sm opacity-90">Modern City Experience</div>
+                                                                    </div>
+                                                                </div>
+                                                            ) : (
+                                                                // Desktop: Regular image
+                                                                <Image
+                                                                    src={singaporePkg?.images?.[1] || 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singapore/1.webp'}
+                                                                    alt="About Singapore"
+                                                                    fill
+                                                                    className="object-cover"
+                                                                    loading="lazy"
+                                                                    quality={80}
+                                                                />
+                                                            )}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -999,9 +981,10 @@ export default function SingaporePackagePage({ params }: PageProps) {
                             perspective: 1000;
                         }
                         
-                        /* Instant background for hero section */
-                        .hero-bg {
+                        /* Instant CSS backgrounds for mobile - no images to load */
+                        .mobile-hero {
                             background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #0891b2 100%);
+                            will-change: transform;
                         }
                     }
                 `}</style>
