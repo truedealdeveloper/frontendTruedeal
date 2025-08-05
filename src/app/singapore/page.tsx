@@ -40,7 +40,7 @@ export default function SingaporePackages() {
 
             // Also create an image object to force immediate loading
             const img = new window.Image();
-            (img as any).fetchPriority = 'high';
+            img['fetchPriority'] = 'high';
             img.src = 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/1.png';
 
             return () => {

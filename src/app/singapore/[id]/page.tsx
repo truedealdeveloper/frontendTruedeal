@@ -140,7 +140,9 @@ export default function SingaporePackagePage({ params }: PageProps) {
                     cancelAnimationFrame(animationFrameId);
                 }
             };
-        }, [duration, scrollRef, isMobile]);
+            // isMobile from useMobile() hook is a reactive value that should trigger effect re-run
+            // when viewport changes to start/stop auto-scroll functionality
+        }, [duration, scrollRef, isMobile]); // eslint-disable-line react-hooks/exhaustive-deps
     };
 
     useAutoScroll(cultureScrollRef, 50000);
