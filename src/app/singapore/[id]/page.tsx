@@ -38,6 +38,25 @@ export default function SingaporePackagePage({ params }: PageProps) {
         notFound();
     }
 
+    // Preload critical LCP image for mobile ASAP
+    useEffect(() => {
+        if (isMobile && typeof window !== 'undefined') {
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'image';
+            link.href = 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/1.png';
+            link.fetchPriority = 'high';
+            link.crossOrigin = 'anonymous';
+            document.head.appendChild(link);
+
+            return () => {
+                if (document.head.contains(link)) {
+                    document.head.removeChild(link);
+                }
+            };
+        }
+    }, [isMobile]);
+
     const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [selectedDay, setSelectedDay] = useState(1);
@@ -172,22 +191,40 @@ export default function SingaporePackagePage({ params }: PageProps) {
         <PageWrapper>
             <div className={`relative ${poppins.className}`}>
                 {/* Hero Section */}
-                <div className="relative h-[70vh] w-full">
-                    <Image
-                        src={isMobile
-                            ? singaporePkg?.images?.[0] || 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singapore/1.webp'
-                            : singaporePkg?.images?.[currentImageIndex] || 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singapore/1.webp'
-                        }
-                        alt={singaporePkg.packageName}
-                        fill
-                        className="object-cover brightness-[0.85]"
-                        priority={true}
-                        fetchPriority="high"
-                        quality={isMobile ? 70 : 85}
-                        placeholder="blur"
-                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-                        sizes="(max-width: 768px) 100vw, 100vw"
-                    />
+                <div className={`relative h-[70vh] w-full ${isMobile ? 'hero-bg' : ''}`}>
+                    {isMobile ? (
+                        // Mobile-optimized hero with instant background
+                        <>
+                            <Image
+                                src="https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/1.png"
+                                alt={singaporePkg.packageName}
+                                fill
+                                className="object-cover brightness-[0.75] opacity-80"
+                                priority={true}
+                                fetchPriority="high"
+                                quality={40}
+                                sizes="100vw"
+                                onLoad={() => {
+                                    // Preload next image in background after LCP
+                                    if (typeof window !== 'undefined') {
+                                        const img = new window.Image();
+                                        img.src = singaporePkg?.images?.[0] || '';
+                                    }
+                                }}
+                            />
+                        </>
+                    ) : (
+                        // Desktop version with rotating images
+                        <Image
+                            src={singaporePkg?.images?.[currentImageIndex] || 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singapore/1.webp'}
+                            alt={singaporePkg.packageName}
+                            fill
+                            className="object-cover brightness-[0.85]"
+                            priority={false}
+                            quality={85}
+                            sizes="100vw"
+                        />
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                     <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-12">
                         <div className="max-w-7xl w-full pl-0 md:pl-12 relative top-8 md:top-12">
@@ -353,10 +390,15 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                         </div>
                                                         <div className="relative h-full min-h-[250px] md:min-h-0">
                                                             <Image
-                                                                src={singaporePkg?.images?.[1] || 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singapore/1.webp'}
+                                                                src={isMobile
+                                                                    ? 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/2.png'
+                                                                    : singaporePkg?.images?.[1] || 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singapore/1.webp'
+                                                                }
                                                                 alt="About Singapore"
                                                                 fill
                                                                 className="object-cover"
+                                                                loading="lazy"
+                                                                quality={isMobile ? 60 : 80}
                                                             />
                                                         </div>
                                                     </div>
@@ -940,12 +982,24 @@ export default function SingaporePackagePage({ params }: PageProps) {
                         display: none;  /* Chrome, Safari, Opera */
                     }
                     
-                    /* Mobile responsive containers */
+                    /* Optimize image rendering on mobile */
                     @media (max-width: 768px) {
                         .container, .max-w-7xl {
                             max-width: 100vw;
                             padding-left: 1rem;
                             padding-right: 1rem;
+                        }
+                        
+                        /* Force hardware acceleration for images */
+                        img {
+                            transform: translateZ(0);
+                            backface-visibility: hidden;
+                            perspective: 1000;
+                        }
+                        
+                        /* Instant background for hero section */
+                        .hero-bg {
+                            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #0891b2 100%);
                         }
                     }
                 `}</style>

@@ -26,7 +26,7 @@ export default function SingaporePackages() {
     const [isMobile, setIsMobile] = useState(false);
     const [videoLoaded, setVideoLoaded] = useState(false);
 
-    // Preload critical LCP image for mobile
+    // Preload critical LCP image for mobile immediately
     useEffect(() => {
         if (typeof window !== 'undefined') {
             const link = document.createElement('link');
@@ -34,7 +34,14 @@ export default function SingaporePackages() {
             link.as = 'image';
             link.href = 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/1.png';
             link.fetchPriority = 'high';
+            link.crossOrigin = 'anonymous';
+            // Add immediately without waiting
             document.head.appendChild(link);
+
+            // Also create an image object to force immediate loading
+            const img = new window.Image();
+            (img as any).fetchPriority = 'high';
+            img.src = 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/1.png';
 
             return () => {
                 if (document.head.contains(link)) {
@@ -251,7 +258,7 @@ export default function SingaporePackages() {
     return (
         <div className="min-h-screen">
             {/* Hero Section with Optimized Media */}
-            <div className="relative h-[60vh] md:h-[100vh] w-full overflow-hidden">
+            <div className={`relative h-[60vh] md:h-[100vh] w-full overflow-hidden ${isMobile ? 'bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-600' : ''}`}>
                 {/* Conditional Audio for Desktop Only */}
                 {!isMobile && (
                     <audio
@@ -300,19 +307,14 @@ export default function SingaporePackages() {
                     </video>
                 ) : (
                     <Image
-                        src={isMobile
-                            ? "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/1.png"
-                            : "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/1.png"
-                        }
+                        src="https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/banner/1.png"
                         alt="Singapore Background"
                         fill
                         className="object-cover"
                         priority={true}
                         fetchPriority="high"
-                        sizes="(max-width: 768px) 100vw, 100vw"
-                        quality={isMobile ? 60 : 90}
-                        placeholder="blur"
-                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                        sizes="100vw"
+                        quality={isMobile ? 50 : 85}
                     />
                 )}
 
