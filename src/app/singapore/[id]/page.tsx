@@ -15,7 +15,7 @@ import { Poppins } from 'next/font/google';
 import { PageWrapper } from '@/components/page-wrapper';
 import { useMobile } from '@/hooks/use-mobile';
 
-// Lazy load heavy components
+// Lazy load heavy components with idle priority
 const BookingFormModal = lazy(() => import('@/app/components/BookingFormModal').then(mod => ({ default: mod.BookingFormModal })));
 const SingaporePackages = lazy(() => import('../page'));
 
@@ -47,6 +47,8 @@ export default function SingaporePackagePage({ params }: PageProps) {
     const [expandedDays, setExpandedDays] = useState<number[]>([1]);
     const [isGalleryModalOpen, setIsGalleryModalOpen] = useState(false);
     const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
+    const [showRelated, setShowRelated] = useState(false);
+    const relatedRef = useRef<HTMLDivElement>(null);
 
     const overviewRef = useRef<HTMLDivElement>(null);
     const itineraryRef = useRef<HTMLDivElement>(null);
@@ -130,6 +132,21 @@ export default function SingaporePackagePage({ params }: PageProps) {
 
     useAutoScroll(cultureScrollRef, 50000);
 
+    // Lazy-render related packages only when nearing viewport
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            if (entry.isIntersecting) {
+                setShowRelated(true);
+                observer.disconnect();
+            }
+        }, { rootMargin: '200px' });
+        if (relatedRef.current) {
+            observer.observe(relatedRef.current);
+        }
+        return () => observer.disconnect();
+    }, []);
+
     // Calculate truncated description for "Read More" functionality
     const description = singaporePkg.description || "";
     const truncatedDescription = description.length > 300
@@ -197,6 +214,8 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                 priority={false}
                                 quality={85}
                                 sizes="100vw"
+                                placeholder="blur"
+                                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AArcB4cE5E1gAAAAASUVORK5CYII="
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                         </>
@@ -212,7 +231,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                             </div>
 
                             {/* Package name */}
-                            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">{singaporePkg.packageName}</h1>
+                            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4" style={{ contain: 'content' }}>{singaporePkg.packageName}</h1>
 
                             {/* Location - Updated to use dynamic location */}
                             <div className="flex items-center text-white mb-6">
@@ -229,6 +248,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                 >
                                     Book Now
                                 </Button>
+                                {/* Avoid extra modal JS on mobile initial load */}
                                 {!isMobile && (
                                     <Button
                                         size="lg"
@@ -382,6 +402,8 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                                     className="object-cover"
                                                                     loading="lazy"
                                                                     quality={80}
+                                                                    placeholder="blur"
+                                                                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AArcB4cE5E1gAAAAASUVORK5CYII="
                                                                 />
                                                             )}
                                                         </div>
@@ -474,7 +496,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                             {/* Experiences You'll Love */}
                                             <div className="mb-10">
                                                 <h2 className="text-2xl font-bold mb-6">Experiences You&apos;ll Love</h2>
-                                                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                                                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4" style={{ contentVisibility: 'auto', containIntrinsicSize: '600px' }}>
                                                     {singaporePkg.experiences.map((experience, index) => (
                                                         <div key={index} className="bg-white rounded-3xl overflow-hidden shadow-sm">
                                                             <div className="relative h-48">
@@ -485,6 +507,8 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                                     className={`object-cover transition duration-500 ${isMobile ? '' : 'hover:scale-105'}`}
                                                                     loading="lazy"
                                                                     quality={isMobile ? 70 : 85}
+                                                                    placeholder="blur"
+                                                                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AArcB4cE5E1gAAAAASUVORK5YII="
                                                                 />
                                                             </div>
                                                             <div className="p-4">
@@ -524,6 +548,8 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                                         className="object-cover"
                                                                         loading="lazy"
                                                                         quality={isMobile ? 60 : 75}
+                                                                        placeholder="blur"
+                                                                        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AArcB4cE5E1gAAAAASUVORK5CYII="
                                                                     />
                                                                 </div>
                                                             ))}
@@ -535,7 +561,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                             {/* Gallery */}
                                             <div className="mb-10">
                                                 <h2 className="text-2xl font-bold mb-6">Gallery</h2>
-                                                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
+                                                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3" style={{ contentVisibility: 'auto', containIntrinsicSize: '600px' }}>
                                                     {(singaporePkg?.images || []).slice(0, 6).map((img, i) => (
                                                         <div key={i} className="relative aspect-[4/3] overflow-hidden rounded-lg">
                                                             <Image
@@ -545,6 +571,8 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                                 className={`object-cover transition duration-500 ${isMobile ? '' : 'hover:scale-105'}`}
                                                                 loading="lazy"
                                                                 quality={isMobile ? 60 : 75}
+                                                                placeholder="blur"
+                                                                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AArcB4cE5E1gAAAAASUVORK5CYII="
                                                             />
                                                         </div>
                                                     ))}
@@ -557,7 +585,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                             </div>
 
                                             {/* What's Included */}
-                                            <div className="mb-10">
+                                            <div className="mb-10" style={{ contentVisibility: 'auto', containIntrinsicSize: '1200px' }}>
                                                 <h2 className="text-2xl font-bold mb-6">What&apos;s Included</h2>
                                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                                     <div>
@@ -652,6 +680,8 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                                                 className="object-cover"
                                                                                 loading="lazy"
                                                                                 quality={isMobile ? 60 : 75}
+                                                                                placeholder="blur"
+                                                                                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AArcB4cE5E1gAAAAASUVORK5CYII="
                                                                             />
                                                                         </div>
 
@@ -940,10 +970,12 @@ export default function SingaporePackagePage({ params }: PageProps) {
                     </div>
                 )}
 
-                <div className='mt-[50px]'>
-                    <Suspense fallback={<div className="h-64 flex items-center justify-center">Loading related packages...</div>}>
-                        <SingaporePackages />
-                    </Suspense>
+                <div className='mt-[50px]' ref={relatedRef}>
+                    {showRelated && (
+                        <Suspense fallback={<div className="h-64 flex items-center justify-center">Loading related packages...</div>}>
+                            <SingaporePackages />
+                        </Suspense>
+                    )}
                 </div>
 
                 <style jsx global>{`

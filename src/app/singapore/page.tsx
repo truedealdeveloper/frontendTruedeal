@@ -315,6 +315,8 @@ export default function SingaporePackages() {
                         fetchPriority="high"
                         sizes="100vw"
                         quality={isMobile ? 50 : 85}
+                        placeholder="blur"
+                        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AArcB4cE5E1gAAAAASUVORK5CYII="
                     />
                 )}
 
