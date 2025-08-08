@@ -7,8 +7,6 @@ import { notFound } from "next/navigation";
 import { Calendar, Check, MapPin, Star, Users, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Poppins } from "next/font/google";
 import { PageWrapper } from "@/components/page-wrapper";
@@ -65,12 +63,8 @@ export default function SingaporePackagePage({ params }: PageProps) {
     const [expandedDays, setExpandedDays] = useState<number[]>([1]);
     // removed gallery for performance
 
-    const overviewRef = useRef<HTMLDivElement>(null);
-    const itineraryRef = useRef<HTMLDivElement>(null);
-    const inclusionsRef = useRef<HTMLDivElement>(null);
-    const exclusionsRef = useRef<HTMLDivElement>(null);
 
-    const [overviewMountRef, overviewInView] = useInView<HTMLDivElement>("300px");
+    const [overviewMountRef] = useInView<HTMLDivElement>("300px");
 
     // no image rotation
 
