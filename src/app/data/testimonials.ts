@@ -82,7 +82,7 @@ export const testimonials = [
         avatar: "/IMAGES/china/1/1.webp",
         fullReview: "My work as a freelance photographer means I often have to book trips on short notice. This service has been a lifesaver with their flexible options and great rates for frequent travelers. They understand the needs of professionals with unpredictable schedules, and I couldn't be happier with their service.",
         destination: "China",
-        travelDate: "July 2024",
+        travelDate: "August 2024",
         images: [
             "/IMAGES/china/1/1.webp",
             "/IMAGES/china/1/2.webp",
@@ -97,7 +97,7 @@ export const testimonials = [
         avatar: "/Assets/UserImages/user6.webp",
         fullReview: "In sales, first impressions are everything. This travel service ensures I'm always at my best for important client meetings. From comfortable accommodations to punctual transportation, they take care of all the details so I can focus on my work. I highly recommend them to any sales professional.",
         destination: "New York",
-        travelDate: "July 2024",
+        travelDate: "August 2024",
         images: [
             "/Assets/ReviewImages/david1.jpg",
             "/Assets/ReviewImages/david2.jpg",

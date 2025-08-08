@@ -92,7 +92,7 @@ export interface SingaporePackage {
             documents: string[];
         };
     };
-   
+
     departureDates?: DepartureDate[];
     experiences: Experience[];
     batchDetails?: BatchDetails;
@@ -107,7 +107,7 @@ export const singaporePackages: Record<string, SingaporePackage> = {
         nights: 3,
         amount: 44500,
         dateStart: "01 May 2025",
-        dateEnd: "26 July 2025",
+        dateEnd: "26 August 2025",
         description: "Experience the vibrant city life of Singapore with our 4-day tour covering iconic attractions, cultural sites, and modern marvels.",
         groupDetails: {
             pax: "Group Tour",
@@ -159,7 +159,7 @@ export const singaporePackages: Record<string, SingaporePackage> = {
             {
                 day: 1,
                 title: "Arrive Singapore + Marina Bay Sands (Observation Deck) + Gardens by the Bay (Flower Dome + Cloud Forest) – SIC",
-                description:`Welcome to Singapore – also known as the Lion City
+                description: `Welcome to Singapore – also known as the Lion City
 Upon arrival our representative assist you, pick up and transfer to your hotel. Check in at hotel (standard time approx 1400/1500 hrs).
 Visit the Marina Bay Sands hotel (SIC)
 Enjoy panoramic view of the city from MBS Sky Park. Take a walk from MBS to Gardens by the Bay. Then visit Gardens by the Bay – Flower Dome and Cloud Forest Observation Deck. Enter the flower Dome, the largest glass greenhouse in the world. It replicates a mild, dry climate and features plants found in the Mediterranean and other semi-arid tropical regions. Admire a forest that boasts one of the world's largest indoor waterfalls at 35 meters tall. Step into a landscape of dramatic greenery, featuring vegetation that is typically native to habitats 2,000 meters above sea level.
@@ -205,7 +205,7 @@ Meals: Breakfast at the hotel
             "/UGCImages/singapore/singapore/2.webp",
         ],
         departureDates: [
-            { date: "Mar 2025 - July 2025" }
+            { date: "Mar 2025 - August 2025" }
         ],
         additionalInfo: {
             highlights: [
@@ -277,7 +277,7 @@ Meals: Breakfast at the hotel
         nights: 4,
         amount: 59000,
         dateStart: "01 May 2025",
-        dateEnd: "26 July 2025",
+        dateEnd: "26 August 2025",
         description: "Experience the vibrant city life of Singapore with our 5-day tour covering iconic attractions, cultural sites, and modern marvels.",
         groupDetails: {
             pax: "Group Tour",
@@ -331,7 +331,7 @@ Meals: Breakfast at the hotel
             {
                 day: 1,
                 title: "Arrive Singapore + Marina Bay Sands (Observation Deck) + Gardens by the Bay (Flower Dome + Cloud Forest) – SIC",
-                description:`Welcome to Singapore – also known as the Lion City
+                description: `Welcome to Singapore – also known as the Lion City
 Upon arrival our representative assist you, pick up and transfer to your hotel. Check in at hotel (standard time approx. 1400/1500 hrs.).
 Later we visit the Marina Bay Sands hotel (SIC) to enjoy panoramic view of the city from MBS Sky Park. Take a walk from MBS to Gardens by the Bay. We then visit Gardens by the Bay – Flower Dome and Super Tree Observation Deck. Enter the flower Dome, the largest glass greenhouse in the world. It replicates a mild, dry climate and features plants found in the Mediterranean and other semi-arid tropical regions. Admire a forest that boasts one of the world's largest indoor waterfalls at 35 meters tall. Step into a landscape of dramatic greenery, featuring vegetation that is typically native to habitats 2,000 meters above sea level.
 Overnight stay at Singapore
@@ -381,7 +381,7 @@ Overnight stay at Singapore
 Meals: Breakfast at the hotel 
 `,
                 image: "/UGCImages/singapore/itinerary/5.png"
-            }       
+            }
         ],
         images: [
             "/UGCImages/singapore/package2/1.png",
@@ -389,9 +389,9 @@ Meals: Breakfast at the hotel
             "/UGCImages/singapore/package2/3.png",
             "/UGCImages/singapore/package2/4.png",
         ],
-       
+
         departureDates: [
-            { date: "Mar 2025 - July 2025" }
+            { date: "Mar 2025 - August 2025" }
         ],
         additionalInfo: {
             highlights: [
@@ -463,7 +463,7 @@ Meals: Breakfast at the hotel
         nights: 3,
         amount: 35000,
         dateStart: "01 May 2025",
-        dateEnd: "26 July 2025",
+        dateEnd: "26 August 2025",
         description: "Experience the vibrant city life of Malaysia with our 4-day tour covering iconic attractions, cultural sites, and modern marvels.",
         groupDetails: {
             pax: "Group Tour",
@@ -510,7 +510,7 @@ Meals: Breakfast at the hotel
             {
                 day: 1,
                 title: "Arrive at Kuala Lumpur (En-Route Putrajaya 20Mins Photo-Stop) – PVT",
-                description:`Welcome to Malaysia's capital city - Kuala Lumpur!
+                description: `Welcome to Malaysia's capital city - Kuala Lumpur!
 Upon arrival at Kuala Lumpur, pick up from airport. Enroute stop by at Putrajaya for 20 min photo stop only.
 Check in hotel (Standard Check in time 1400hrs)
 Overnight Stay at Kuala Lumpur Hotel
@@ -559,7 +559,7 @@ Meals: Breakfast at the hotel
 
 `,
                 image: "/UGCImages/singapore/klcc/4.png"
-            },    
+            },
         ],
         images: [
             "/UGCImages/singapore/Malaysia/1.png",
@@ -567,9 +567,9 @@ Meals: Breakfast at the hotel
             "/UGCImages/singapore/Malaysia/3.png",
             "/UGCImages/singapore/Malaysia/4.png"
         ],
-        
+
         departureDates: [
-            { date: "Mar 2025 - July 2025" }
+            { date: "Mar 2025 - August 2025" }
         ],
         additionalInfo: {
             highlights: [
@@ -624,7 +624,7 @@ Meals: Breakfast at the hotel
         nights: 4,
         amount: 25000,
         dateStart: "01 May 2025",
-        dateEnd: "26 July 2025",
+        dateEnd: "26 August 2025",
         description: "Experience the vibrant city life of Langkawi with our 5-day tour covering iconic attractions, cultural sites, and modern marvels.",
         groupDetails: {
             pax: "Group Tour",
@@ -671,7 +671,7 @@ Meals: Breakfast at the hotel
             {
                 day: 1,
                 title: "Arrive at Langkawi – PVT",
-                description:`Welcome to Langkawi!
+                description: `Welcome to Langkawi!
 Upon arrival at Langkawi, pick up from airport.
 Check in hotel (Standard Check in time 1400hrs)
 Overnight Stay at Langkawi Hotel
@@ -713,7 +713,7 @@ Overnight accommodation @ Hotel, Langkawi
 Have a Leisure day and stay at Hotel.
 `,
                 image: "/UGCImages/singapore/lan/4.png"
-            },    
+            },
             {
                 day: 5,
                 title: "Langkawi - Departure - PVT",
@@ -725,7 +725,7 @@ Check out and meet driver at hotel lobby for transfer to LGK Airport for departu
 
 `,
                 image: "/UGCImages/singapore/lan/5.png"
-            },    
+            },
         ],
         images: [
             "/UGCImages/singapore/lan/1.png",
@@ -734,9 +734,9 @@ Check out and meet driver at hotel lobby for transfer to LGK Airport for departu
             "/UGCImages/singapore/lan/4.png",
             "/UGCImages/singapore/lan/5.png"
         ],
-        
+
         departureDates: [
-            { date: "Mar 2025 - July 2025" }
+            { date: "Mar 2025 - August 2025" }
         ],
         additionalInfo: {
             highlights: [
@@ -838,7 +838,7 @@ Check out and meet driver at hotel lobby for transfer to LGK Airport for departu
             "Image of Singapore",
             "Boat Ride | Ultimate Film Star",
             "Madame Tussaud | Wing of Time",
-            
+
             "MALAYSIA INCLUSIONS",
             "Daily breakfast at hotel",
             "Genting Trip",
@@ -932,9 +932,9 @@ End of tour with memories to cherish forever!`,
             "/UGCImages/singapore/singapore/1.webp",
             "/UGCImages/singapore/singapore/2.webp",
         ],
-       
+
         departureDates: [
-            { date: "Mar 2025 - July 2025" }
+            { date: "Mar 2025 - August 2025" }
         ],
         additionalInfo: {
             highlights: [
@@ -1008,12 +1008,12 @@ End of tour with memories to cherish forever!`,
                     availableSeats: 11
                 },
                 {
-                    month: "July",
+                    month: "August",
                     dates: ["13th", "14th", "15th"],
                     availableSeats: 20
                 },
                 {
-                    month: "July",
+                    month: "August",
                     dates: ["11th", "12th", "13th"],
                     availableSeats: 20
                 },

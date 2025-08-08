@@ -91,7 +91,7 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
         days: 13,
         nights: 12,
         amount: 490999,
-        dateStart: "1,8,15,22,29 July",
+        dateStart: "1,8,15,22,29 August",
         dateEnd: "5,12,19,26,30 August",
         description: "Experience the best of Australia's east coast with our 13-day tour covering Sydney's iconic landmarks and Gold Coast's stunning beaches.",
         groupDetails: {
@@ -304,7 +304,7 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
             }
         },
         departureDates: [
-            { date: "1,8,15,22,29 July" }
+            { date: "1,8,15,22,29 August" }
         ]
     },
     incredibleAustralia: {
@@ -313,13 +313,13 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
         days: 10,
         nights: 9,
         amount: 354999,
-        dateStart: "1,8,15,22,29 July",
+        dateStart: "1,8,15,22,29 August",
         dateEnd: "5,12,19,26,30 August",
         description: "Experience the best of Australia's east coast with our 10-day tour covering Melbourne, Gold Coast, and Sydney.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in July 2025",
+            arrivalDate: "Multiple dates in August 2025",
             duration: "10D9N Australia Fixed Departure",
             costBasis: "Cost Based On per person"
         },
@@ -476,7 +476,7 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
                 "Sydney attractions (Tower Eye, Wildlife, SeaLife, Tussauds)",
                 "Blue Mountains tour"
             ],
-                bestTimeToVisit: "September to November or May to October",
+            bestTimeToVisit: "September to November or May to October",
             cuisine: [
                 "Fresh seafood",
                 "Australian BBQ",
@@ -513,7 +513,7 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
             }
         },
         departureDates: [
-            { date: "July 2025 - August 2025" }
+            { date: "August 2025 - August 2025" }
         ]
     },
     whitsundaysDelight: {
@@ -522,13 +522,13 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
         days: 10,
         nights: 9,
         amount: 364999,
-        dateStart: "1,8,15,22,29 July",
-            dateEnd: "5,12,19,26,30 August",
+        dateStart: "1,8,15,22,29 August",
+        dateEnd: "5,12,19,26,30 August",
         description: "Discover Australia's diverse beauty: Melbourne's charm, Whitsundays' paradise, Brisbane's wildlife, and Sydney's icons.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in July 2025",
+            arrivalDate: "Multiple dates in August 2025",
             duration: "10D9N Australia Fixed Departure",
             costBasis: "Cost Based On per person"
         },
@@ -632,7 +632,7 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
             "/UGCImages/australia/images/12.png",
             "/UGCImages/australia/images/20.webp",
             "/UGCImages/australia/images/1.webp",
-            
+
 
         ],
         sightseeingSpots: [
@@ -691,7 +691,7 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
                 "Coastal sightseeing",
                 "Wildlife encounters"
             ],
-                bestTimeToVisit: "September to November or May to October",
+            bestTimeToVisit: "September to November or May to October",
             cuisine: [
                 "Fresh seafood",
                 "Australian BBQ",
@@ -729,7 +729,7 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
             }
         },
         departureDates: [
-            { date: "July 2025 - August 2025" }
+            { date: "August 2025 - August 2025" }
         ]
     },
     eastCoastAdventure: {
@@ -738,13 +738,13 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
         days: 11,
         nights: 10,
         amount: 344999,
-        dateStart: "1,8,15,22,29 July",
-            dateEnd: "5,12,19,26,30 August",
+        dateStart: "1,8,15,22,29 August",
+        dateEnd: "5,12,19,26,30 August",
         description: "Discover Australia's diverse beauty: Melbourne's charm, Whitsundays' paradise, Brisbane's wildlife, and Sydney's icons.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in July 2025",
+            arrivalDate: "Multiple dates in August 2025",
             duration: "11D10N Australia Fixed Departure",
             costBasis: "Cost Based On per person"
         },
@@ -847,7 +847,7 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
             "/UGCImages/australia/images/13.png",
             "/UGCImages/australia/images/14.webp",
             "/UGCImages/australia/images/15.webp"
-            
+
         ],
         sightseeingSpots: [
             {
@@ -943,7 +943,7 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
             }
         },
         departureDates: [
-            { date: "Mar 2025 - July 2025" }
+            { date: "Mar 2025 - August 2025" }
         ]
     },
     hamiltonIsland: {
@@ -952,13 +952,13 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
         days: 13,
         nights: 12,
         amount: 596999,
-        dateStart: "1,8,15,22,29 July",
+        dateStart: "1,8,15,22,29 August",
         dateEnd: "5,12,19,26,30 August",
         description: "Discover the best of Hamilton Island with this 13-day honeymoon tour. From the stunning beaches to the lush rainforests, this tour has everything you need to make your honeymoon unforgettable.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in July 2025",
+            arrivalDate: "Multiple dates in August 2025",
             duration: "13D12N Australia Fixed Departure",
             costBasis: "Cost Based On per person"
         },
@@ -1082,7 +1082,7 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
             "/UGCImages/australia/hamilton/3.png",
             "/UGCImages/australia/hamilton/4.png",
             "/UGCImages/australia/hamilton/5.png",
-            
+
         ],
         sightseeingSpots: [
             {
@@ -1178,7 +1178,7 @@ export const australiaPackages: Record<string, AustraliaPackage> = {
             }
         },
         departureDates: [
-            { date: "Mar 2025 - July 2025" }
+            { date: "Mar 2025 - August 2025" }
         ]
     },
 }; 

@@ -48,23 +48,23 @@ export default function SingaporePackages() {
         }
     };
 
-    const PackageCard = ({ 
+    const PackageCard = ({
         package: pkg
-    }: { 
+    }: {
         package: SingaporePackage;
     }) => {
         const [showDates, setShowDates] = useState(false);
 
         return (
             <div className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0">
-                <Image 
-                    src={pkg.images[0]} 
+                <Image
+                    src={pkg.images[0]}
                     alt={pkg.packageName}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                 />
-                
+
                 <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/50 to-black" />
 
                 <div className="absolute top-3 left-0 z-10">
@@ -95,7 +95,7 @@ export default function SingaporePackages() {
                         </div>
                         <div className="flex items-center gap-2">
                             <FaCalendarAlt className="text-yellow-400" />
-                            <button 
+                            <button
                                 onClick={(e) => {
                                     e.preventDefault();
                                     setShowDates(!showDates);
@@ -108,7 +108,7 @@ export default function SingaporePackages() {
                     </div>
 
                     {showDates && pkg.departureDates && (
-                        <div 
+                        <div
                             className="absolute bottom-full left-0 right-0 bg-black/90 p-4 rounded-t-lg max-h-[200px] overflow-y-auto"
                             onClick={(e) => e.stopPropagation()}
                         >
@@ -171,7 +171,7 @@ export default function SingaporePackages() {
     const faqs = [
         {
             question: "What is the best time to visit Singapore?",
-            answer: "Singapore is a year-round destination. However, July to September typically has the best weather with less rainfall."
+            answer: "Singapore is a year-round destination. However, August to September typically has the best weather with less rainfall."
         },
         {
             question: "Do Indians need a visa for Singapore?",
@@ -213,10 +213,10 @@ export default function SingaporePackages() {
                     )}
                 </button>
 
-                <video 
+                <video
                     id="singaporeVideo"
-                    autoPlay 
-                    loop 
+                    autoPlay
+                    loop
                     muted={isMuted}
                     playsInline
                     className="absolute inset-0 w-full h-full object-cover"
@@ -229,13 +229,13 @@ export default function SingaporePackages() {
                         }
                     }}
                 >
-                    <source 
-                        src={`${BLOB_URL}/singaporeBG-y961zYwC9Ky6O3X7VxBc9WcCiJRUeb.mp4`} 
-                        type="video/mp4" 
+                    <source
+                        src={`${BLOB_URL}/singaporeBG-y961zYwC9Ky6O3X7VxBc9WcCiJRUeb.mp4`}
+                        type="video/mp4"
                     />
                     Your browser does not support the video tag.
                 </video>
-                
+
                 {/* Fallback image */}
                 <Image
                     src="/UGCImages/singapore/singapore/6.webp"
@@ -247,7 +247,7 @@ export default function SingaporePackages() {
                 <div className="absolute inset-0 bg-black/40" />
                 <div className="absolute inset-0 flex items-center justify-center text-center">
                     <div className="max-w-4xl px-4">
-                        <motion.h1 
+                        <motion.h1
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
@@ -260,14 +260,14 @@ export default function SingaporePackages() {
                                 Singapore
                             </span>
                         </motion.h1>
-                        
+
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.5, duration: 0.8 }}
                             className="space-y-4"
                         >
-                            <motion.p 
+                            <motion.p
                                 className="text-xl md:text-2xl text-white/90 font-light"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
@@ -318,8 +318,8 @@ export default function SingaporePackages() {
                         <div className="relative">
                             {/* Navigation Controls */}
                             <div className="absolute top-1/2 -translate-y-1/2 left-0 z-10 hidden md:block">
-                                <Button 
-                                    onClick={handlePrevPage} 
+                                <Button
+                                    onClick={handlePrevPage}
                                     disabled={currentPage === 0}
                                     variant="outline"
                                     className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -ml-5 shadow-lg"
@@ -329,8 +329,8 @@ export default function SingaporePackages() {
                             </div>
 
                             <div className="absolute top-1/2 -translate-y-1/2 right-0 z-10 hidden md:block">
-                                <Button 
-                                    onClick={handleNextPage} 
+                                <Button
+                                    onClick={handleNextPage}
                                     disabled={currentPage === totalPages - 1}
                                     variant="outline"
                                     className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -mr-5 shadow-lg"
@@ -352,8 +352,8 @@ export default function SingaporePackages() {
 
                             {/* Mobile Navigation */}
                             <div className="mt-3 flex justify-center items-center gap-2 md:hidden">
-                                <Button 
-                                    onClick={handlePrevPage} 
+                                <Button
+                                    onClick={handlePrevPage}
                                     disabled={currentPage === 0}
                                     variant="outline"
                                     className="rounded-full w-8 h-8 p-0"
@@ -363,8 +363,8 @@ export default function SingaporePackages() {
                                 <span className="text-sm text-gray-500">
                                     {currentPage + 1} / {totalPages}
                                 </span>
-                                <Button 
-                                    onClick={handleNextPage} 
+                                <Button
+                                    onClick={handleNextPage}
                                     disabled={currentPage === totalPages - 1}
                                     variant="outline"
                                     className="rounded-full w-8 h-8 p-0"
@@ -392,7 +392,7 @@ export default function SingaporePackages() {
                                 Experience the Magic of Singapore
                             </span>
                         </h2>
-                        
+
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {singaporeHighlights.map((highlight, index) => (
                                 <motion.div

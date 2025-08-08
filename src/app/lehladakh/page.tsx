@@ -21,7 +21,7 @@ export default function LehladakhPackages() {
     const [isMuted, setIsMuted] = useState(true);
     const packagesWithFlight = Object.values(lehladakhPackages);
     const packagesWithoutFlight = Object.values(withoutFlightPackages);
-    
+
     const totalPagesWithFlight = Math.ceil(packagesWithFlight.length / 3);
     const totalPagesNoFlight = Math.ceil(packagesWithoutFlight.length / 3);
 
@@ -58,10 +58,10 @@ export default function LehladakhPackages() {
         }
     };
 
-    const PackageCard = ({ 
+    const PackageCard = ({
         package: pkg,
         withFlight = true
-    }: { 
+    }: {
         package: LehladakhPackage;
         withFlight?: boolean;
     }) => {
@@ -69,14 +69,14 @@ export default function LehladakhPackages() {
 
         return (
             <div className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0">
-                <Image 
-                    src={pkg.images[0]} 
+                <Image
+                    src={pkg.images[0]}
                     alt={pkg.packageName}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                 />
-                
+
                 <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/50 to-black" />
 
                 <div className="absolute top-3 left-0 z-10">
@@ -112,7 +112,7 @@ export default function LehladakhPackages() {
                         </div>
                         <div className="flex items-center gap-2">
                             <FaCalendarAlt className="text-yellow-400" />
-                            <button 
+                            <button
                                 onClick={(e) => {
                                     e.preventDefault();
                                     setShowDates(!showDates);
@@ -125,7 +125,7 @@ export default function LehladakhPackages() {
                     </div>
 
                     {showDates && pkg.departureDates && (
-                        <div 
+                        <div
                             className="absolute bottom-full left-0 right-0 bg-black/90 p-4 rounded-t-lg max-h-[200px] overflow-y-auto"
                             onClick={(e) => e.stopPropagation()}
                         >
@@ -188,7 +188,7 @@ export default function LehladakhPackages() {
     const faqs = [
         {
             question: "What is the best time to visit Leh Ladakh?",
-            answer: "The best time to visit Leh Ladakh is from July to September when the weather is most favorable and all passes are open."
+            answer: "The best time to visit Leh Ladakh is from August to September when the weather is most favorable and all passes are open."
         },
         {
             question: "Do I need special permits to visit Leh Ladakh?",
@@ -230,10 +230,10 @@ export default function LehladakhPackages() {
                     )}
                 </button>
 
-                <video 
+                <video
                     id="lehladakhVideo"
-                    autoPlay 
-                    loop 
+                    autoPlay
+                    loop
                     muted={isMuted}
                     playsInline
                     className="absolute inset-0 w-full h-full object-cover"
@@ -246,13 +246,13 @@ export default function LehladakhPackages() {
                         }
                     }}
                 >
-                    <source 
+                    <source
                         src="/UGCImages/leh/leh.mp4"
-                        type="video/mp4" 
+                        type="video/mp4"
                     />
                     Your browser does not support the video tag.
                 </video>
-                
+
                 {/* Fallback image */}
                 <Image
                     src="/UGCImages/leh/leh/6.webp"
@@ -264,7 +264,7 @@ export default function LehladakhPackages() {
                 <div className="absolute inset-0 bg-black/40" />
                 <div className="absolute inset-0 flex items-center justify-center text-center">
                     <div className="max-w-4xl px-4">
-                        <motion.h1 
+                        <motion.h1
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
@@ -277,14 +277,14 @@ export default function LehladakhPackages() {
                                 Leh Ladakh
                             </span>
                         </motion.h1>
-                        
+
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.5, duration: 0.8 }}
                             className="space-y-4"
                         >
-                            <motion.p 
+                            <motion.p
                                 className="text-xl md:text-2xl text-white/90 font-light"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
@@ -334,8 +334,8 @@ export default function LehladakhPackages() {
                     <div className="relative">
                         {/* Navigation Controls */}
                         <div className="absolute top-1/2 -translate-y-1/2 left-0 z-10 hidden md:block">
-                            <Button 
-                                onClick={handlePrevPageWithFlight} 
+                            <Button
+                                onClick={handlePrevPageWithFlight}
                                 disabled={currentPageWithFlight === 0}
                                 variant="outline"
                                 className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -ml-5 shadow-lg"
@@ -345,8 +345,8 @@ export default function LehladakhPackages() {
                         </div>
 
                         <div className="absolute top-1/2 -translate-y-1/2 right-0 z-10 hidden md:block">
-                            <Button 
-                                onClick={handleNextPageWithFlight} 
+                            <Button
+                                onClick={handleNextPageWithFlight}
                                 disabled={currentPageWithFlight === totalPagesWithFlight - 1}
                                 variant="outline"
                                 className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -mr-5 shadow-lg"
@@ -361,8 +361,8 @@ export default function LehladakhPackages() {
                                 {packagesWithFlight
                                     .slice(currentPageWithFlight * 3, (currentPageWithFlight * 3) + 3)
                                     .map((pkg) => (
-                                        <PackageCard 
-                                            key={pkg.id} 
+                                        <PackageCard
+                                            key={pkg.id}
                                             package={pkg}
                                             withFlight={true}
                                         />
@@ -372,8 +372,8 @@ export default function LehladakhPackages() {
 
                         {/* Mobile Navigation */}
                         <div className="mt-6 flex justify-center items-center gap-2 md:hidden">
-                            <Button 
-                                onClick={handlePrevPageWithFlight} 
+                            <Button
+                                onClick={handlePrevPageWithFlight}
                                 disabled={currentPageWithFlight === 0}
                                 variant="outline"
                                 className="rounded-full w-8 h-8 p-0"
@@ -383,8 +383,8 @@ export default function LehladakhPackages() {
                             <span className="text-sm text-gray-500">
                                 {currentPageWithFlight + 1} / {totalPagesWithFlight}
                             </span>
-                            <Button 
-                                onClick={handleNextPageWithFlight} 
+                            <Button
+                                onClick={handleNextPageWithFlight}
                                 disabled={currentPageWithFlight === totalPagesWithFlight - 1}
                                 variant="outline"
                                 className="rounded-full w-8 h-8 p-0"
@@ -407,8 +407,8 @@ export default function LehladakhPackages() {
                     <div className="relative">
                         {/* Navigation Controls */}
                         <div className="absolute top-1/2 -translate-y-1/2 left-0 z-10 hidden md:block">
-                            <Button 
-                                onClick={handlePrevPageNoFlight} 
+                            <Button
+                                onClick={handlePrevPageNoFlight}
                                 disabled={currentPageNoFlight === 0}
                                 variant="outline"
                                 className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -ml-5 shadow-lg"
@@ -418,8 +418,8 @@ export default function LehladakhPackages() {
                         </div>
 
                         <div className="absolute top-1/2 -translate-y-1/2 right-0 z-10 hidden md:block">
-                            <Button 
-                                onClick={handleNextPageNoFlight} 
+                            <Button
+                                onClick={handleNextPageNoFlight}
                                 disabled={currentPageNoFlight === totalPagesNoFlight - 1}
                                 variant="outline"
                                 className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -mr-5 shadow-lg"
@@ -434,8 +434,8 @@ export default function LehladakhPackages() {
                                 {packagesWithoutFlight
                                     .slice(currentPageNoFlight * 3, (currentPageNoFlight * 3) + 3)
                                     .map((pkg) => (
-                                        <PackageCard 
-                                            key={pkg.id} 
+                                        <PackageCard
+                                            key={pkg.id}
                                             package={pkg}
                                             withFlight={false}
                                         />
@@ -445,8 +445,8 @@ export default function LehladakhPackages() {
 
                         {/* Mobile Navigation */}
                         <div className="mt-6 flex justify-center items-center gap-2 md:hidden">
-                            <Button 
-                                onClick={handlePrevPageNoFlight} 
+                            <Button
+                                onClick={handlePrevPageNoFlight}
                                 disabled={currentPageNoFlight === 0}
                                 variant="outline"
                                 className="rounded-full w-8 h-8 p-0"
@@ -456,8 +456,8 @@ export default function LehladakhPackages() {
                             <span className="text-sm text-gray-500">
                                 {currentPageNoFlight + 1} / {totalPagesNoFlight}
                             </span>
-                            <Button 
-                                onClick={handleNextPageNoFlight} 
+                            <Button
+                                onClick={handleNextPageNoFlight}
                                 disabled={currentPageNoFlight === totalPagesNoFlight - 1}
                                 variant="outline"
                                 className="rounded-full w-8 h-8 p-0"
@@ -484,7 +484,7 @@ export default function LehladakhPackages() {
                                 Experience the Magic of Ladakh
                             </span>
                         </h2>
-                        
+
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {lehladakhHighlights.map((highlight, index) => (
                                 <motion.div

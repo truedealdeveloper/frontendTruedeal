@@ -105,7 +105,7 @@ export const lehladakhPackages: Record<string, LehladakhPackage> = {
         nights: 5,
         amount: 34078,
         dateStart: "May 2025",
-        dateEnd: "30 July 2025",
+        dateEnd: "30 August 2025",
         description: "Experience the magic of Ladakh with our 6-day tour covering Leh, Sham Valley, Pangong Lake, Nubra Valley.",
         groupDetails: {
             pax: "Group Tour",
@@ -215,12 +215,12 @@ Hotel/Camp`,
         ],
         images: [
             "/UGCImages/LADAKH/7.webp",
-            "/UGCImages/LADAKH/8.webp", 
+            "/UGCImages/LADAKH/8.webp",
             "/UGCImages/LADAKH/9.webp",
             "/UGCImages/LADAKH/10.webp"
         ],
         departureDates: [
-            { date: "May 2025 - July 2025" }
+            { date: "May 2025 - August 2025" }
         ],
         experiences: [
             {
@@ -274,10 +274,10 @@ Hotel/Camp`,
         id: "premium-ladakh-6-nights-7-days",
         packageName: "Magical Ladakh 6 Nights 7 Days",
         days: 7,
-        nights: 6,  
+        nights: 6,
         amount: 36801,
-        dateStart: "May 2025",  
-        dateEnd: "30 July 2025",
+        dateStart: "May 2025",
+        dateEnd: "30 August 2025",
         description: "Experience the magic of Ladakh with our 7-day tour covering Leh, Sham Valley, Pangong Lake, Nubra Valley.",
         groupDetails: {
             pax: "Group Tour",
@@ -405,7 +405,7 @@ landscape we reach to Shey Palace, The ancient capital of Ladakh &amp; 3 Idiots 
             "/UGCImages/LADAKH/17.webp"
         ],
         departureDates: [
-            { date: "May 2025 - July 2025" }
+            { date: "May 2025 - August 2025" }
         ],
         experiences: [
             {
@@ -455,7 +455,7 @@ landscape we reach to Shey Palace, The ancient capital of Ladakh &amp; 3 Idiots 
             }
         }
     },
-    
+
     // Add more packages as needed
 };
 
@@ -465,7 +465,7 @@ export const withoutFlightPackages: Record<string, LehladakhPackage> = {
         packageName: "Quick Ladakh 5 Nights 6 Days (Land Package)",
         days: 6,
         nights: 5,
-        amount: 24069, 
+        amount: 24069,
         dateStart: "May 2025",
         dateEnd: "October 2025",
         description: "Experience the magic of Ladakh with our land package covering Leh, Sham Valley, Pangong Lake, and Nubra Valley. Perfect for travelers arranging their own flights.",
@@ -608,7 +608,7 @@ landscape we reach to Shey Palace, The ancient capital of Ladakh &amp; 3 Idiots 
         days: 8,
         nights: 7,
         amount: 30562,
-        dateStart: "July 2025",
+        dateStart: "August 2025",
         dateEnd: "October 2025",
         description: "A comprehensive land package exploring the best of Ladakh including premium accommodations and exclusive experiences.",
         groupDetails: {
@@ -783,7 +783,7 @@ Dinner &amp; overnight stay at hotel in Leh.`,
         nights: 6,
         amount: 29999,
         dateStart: "May 2025",
-        dateEnd: "30 July 2025",
+        dateEnd: "30 August 2025",
         description: "A comprehensive land package exploring the best of Ladakh including premium accommodations and exclusive experiences.",
         groupDetails: {
             pax: "Group Tour",

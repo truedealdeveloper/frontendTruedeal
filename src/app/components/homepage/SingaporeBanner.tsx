@@ -22,7 +22,7 @@ const SingaporeBanner = () => {
         '/UGCImages/singapore/singaMal/2.png',
         '/UGCImages/singapore/singaMal/3.png',
       ],
-      date: 'Every Friday - July & August 2025',
+      date: 'Every Friday - August & August 2025',
       price: '109,100'
     },
     {
@@ -33,18 +33,18 @@ const SingaporeBanner = () => {
         '/UGCImages/singapore/banner/2.png',
         '/UGCImages/singapore/banner/3.png',
       ],
-      date: 'Every Friday - July & August 2025',
+      date: 'Every Friday - August & August 2025',
       price: '44,500'
     },
     {
-      id: '5-days-singapore-discovery',               
+      id: '5-days-singapore-discovery',
       title: '5 Days Singapore',
       images: [
         '/UGCImages/singapore/banner/4.png',
         '/UGCImages/singapore/banner/5.png',
         '/UGCImages/singapore/banner/6.png',
       ],
-      date: 'Every Friday - July & August 2025',
+      date: 'Every Friday - August & August 2025',
       price: '59,000'
     },
     {
@@ -56,22 +56,22 @@ const SingaporeBanner = () => {
         '/UGCImages/singapore/banner/9.png',
         '/UGCImages/singapore/banner/10.png',
       ],
-      date: 'Every Friday - July & August 2025',
+      date: 'Every Friday - August & August 2025',
       price: '35,000'
     },
     {
-        id: '5-days-wonderful-langkawi',
-        title: '5 Days Wonderful Langkawi',
-        images: [
-          '/UGCImages/singapore/langkawi/1.png',
-          '/UGCImages/singapore/langkawi/2.png',
-          '/UGCImages/singapore/langkawi/3.png',
-        ],
-        date: 'Every Friday - July & August 2025',
-        price: '25,000'
-      },
-      
-    
+      id: '5-days-wonderful-langkawi',
+      title: '5 Days Wonderful Langkawi',
+      images: [
+        '/UGCImages/singapore/langkawi/1.png',
+        '/UGCImages/singapore/langkawi/2.png',
+        '/UGCImages/singapore/langkawi/3.png',
+      ],
+      date: 'Every Friday - August & August 2025',
+      price: '25,000'
+    },
+
+
   ];
 
   const totalPages = Math.ceil(singaporePackages.length / 3);
@@ -86,7 +86,7 @@ const SingaporeBanner = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => 
+      setCurrentImageIndex((prevIndex) =>
         prevIndex === 2 ? 0 : prevIndex + 1
       );
     }, 3000);
@@ -118,7 +118,7 @@ const SingaporeBanner = () => {
           </div>
           <div className="relative flex justify-center">
             <span className="bg-white px-4">
-              <Image 
+              <Image
                 src="/UGCImages/singapore/icons/merlion.png"
                 alt="Singapore icon"
                 width={40}
@@ -133,8 +133,8 @@ const SingaporeBanner = () => {
         <div className="relative">
           {/* Navigation Controls */}
           <div className="absolute top-1/2 -translate-y-1/2 left-0 z-10 hidden md:block">
-            <Button 
-              onClick={handlePrevPage} 
+            <Button
+              onClick={handlePrevPage}
               disabled={currentPage === 0}
               variant="outline"
               className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -ml-5 shadow-lg"
@@ -145,8 +145,8 @@ const SingaporeBanner = () => {
           </div>
 
           <div className="absolute top-1/2 -translate-y-1/2 right-0 z-10 hidden md:block">
-            <Button 
-              onClick={handleNextPage} 
+            <Button
+              onClick={handleNextPage}
               disabled={currentPage === totalPages - 1}
               variant="outline"
               className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -mr-5 shadow-lg"
@@ -162,20 +162,20 @@ const SingaporeBanner = () => {
               {singaporePackages
                 .slice(currentPage * 3, (currentPage * 3) + 3)
                 .map((pkg) => (
-                  <Link 
+                  <Link
                     href={`/singapore/${pkg.id}`}
                     key={pkg.id}
                     className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0"
                   >
                     {/* Background Image */}
-                    <Image 
+                    <Image
                       src={pkg.images[currentImageIndex]}
                       alt={pkg.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                       sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                     />
-                    
+
                     {/* Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
 
@@ -218,8 +218,8 @@ const SingaporeBanner = () => {
 
           {/* Mobile Navigation */}
           <div className="mt-6 flex justify-center items-center gap-2 md:hidden">
-            <Button 
-              onClick={handlePrevPage} 
+            <Button
+              onClick={handlePrevPage}
               disabled={currentPage === 0}
               variant="outline"
               className="rounded-full w-8 h-8 p-0"
@@ -230,8 +230,8 @@ const SingaporeBanner = () => {
             <span className="text-sm text-gray-500">
               Page {currentPage + 1} of {totalPages}
             </span>
-            <Button 
-              onClick={handleNextPage} 
+            <Button
+              onClick={handleNextPage}
               disabled={currentPage === totalPages - 1}
               variant="outline"
               className="rounded-full w-8 h-8 p-0"
@@ -247,9 +247,8 @@ const SingaporeBanner = () => {
               <button
                 key={index}
                 onClick={() => setCurrentImageIndex(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  currentImageIndex === index ? 'bg-blue-500 w-4' : 'bg-gray-400'
-                }`}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${currentImageIndex === index ? 'bg-blue-500 w-4' : 'bg-gray-400'
+                  }`}
                 aria-label={`Show image ${index + 1} of 3`}
                 aria-current={currentImageIndex === index ? 'true' : 'false'}
               />

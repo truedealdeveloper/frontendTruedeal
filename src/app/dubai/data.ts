@@ -104,13 +104,13 @@ export const dubaiPackages: Record<string, dubaiPackage> = {
         days: 7,
         nights: 6,
         amount: 65000,
-        dateStart: "6-12 July 2025",
+        dateStart: "6-12 August 2025",
         dateEnd: "16th November 2025",
         description: "Experience the ultimate luxury in Dubai with this comprehensive 5-day tour covering iconic landmarks, world-class shopping, thrilling desert safari, and modern architectural marvels. Perfect for luxury travelers, shopping enthusiasts, and adventure seekers.",
         groupDetails: {
             pax: "2",
             rooms: "1",
-            arrivalDate: "6-12 July 2025",
+            arrivalDate: "6-12 August 2025",
             duration: "6 days / 7 nights",
             costBasis: "Per Person on double sharing basis"
         },
@@ -355,7 +355,7 @@ export const dubaiPackages: Record<string, dubaiPackage> = {
             }
         ],
         departureDates: [
-            { date: "6-12 July 2025", availability: "Available", price: 65000 },
+            { date: "6-12 August 2025", availability: "Available", price: 65000 },
         ],
         departureCities: [
             {

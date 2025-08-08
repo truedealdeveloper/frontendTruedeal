@@ -92,7 +92,7 @@ export interface TurkeyPackage {
             documents: string[];
         };
     };
-   
+
     departureDates?: DepartureDate[];
     experiences: Experience[];
     batchDetails?: BatchDetails;
@@ -106,13 +106,13 @@ export const turkeyPackages: Record<string, TurkeyPackage> = {
         days: 6,
         nights: 5,
         amount: 142500,
-        dateStart: "01 July 2025",
+        dateStart: "01 August 2025",
         dateEnd: "26 August 2025",
         description: "Experience the vibrant city life of Turkey with our 6-day tour covering iconic attractions, cultural sites, and modern marvels.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Starting July",
+            arrivalDate: "Starting August",
             duration: "6D5N Turkey Fixed Departure",
             costBasis: "Cost Based On 2 pax travelling together"
         },
@@ -203,7 +203,7 @@ export const turkeyPackages: Record<string, TurkeyPackage> = {
             "/UGCImages/turkey/turkey1/4.png",
         ],
         departureDates: [
-            { date: "July 2025 - August 2025" }
+            { date: "August 2025 - August 2025" }
         ],
         additionalInfo: {
             highlights: [
@@ -214,7 +214,7 @@ export const turkeyPackages: Record<string, TurkeyPackage> = {
                 "Sentosa Island",
                 "Shopping at Orchard Road"
             ],
-            bestTimeToVisit: "May to July ",
+            bestTimeToVisit: "May to August ",
             cuisine: [
                 "Chili Crab",
                 "Hainanese Chicken Rice",
@@ -266,7 +266,7 @@ export const turkeyPackages: Record<string, TurkeyPackage> = {
             {
                 title: "North Red Tour ",
                 image: "/UGCImages/turkey/turkey1/3.png"
-            }   
+            }
         ],
         flightDetails: {
             airlines: [
@@ -297,13 +297,13 @@ export const turkeyPackages: Record<string, TurkeyPackage> = {
         days: 7,
         nights: 6,
         amount: 159819,
-        dateStart: "01 July 2025",
+        dateStart: "01 August 2025",
         dateEnd: "26 August 2025",
         description: "Experience the vibrant city life of Turkey with our 7-day tour covering iconic attractions, cultural sites, and modern marvels.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Starting July",
+            arrivalDate: "Starting August",
             duration: "7D6N Turkey Fixed Departure",
             costBasis: "Cost Based On 2 pax travelling together"
         },
@@ -337,13 +337,13 @@ export const turkeyPackages: Record<string, TurkeyPackage> = {
             "2 Nights Accommodation in Istanbul on mentioned hotels.",
             "2 Nights Accommodation in Cappadocia on mentioned hotel.",
             "2 Nights Accommodation in Antalya on mentioned hotels.",
-            "1 Room on double sharing.", 
+            "1 Room on double sharing.",
             "06 open buffet Breakfasts.",
             "Evening Bosphorus cruise with dinner and soft drinks.",
             "Full day Istanbul city tour.",
             "Full day Cappadocia North tour.",
             "Full day Pamukkale & Hierapolis tour",
-            "All airport transfers on private basis.", 
+            "All airport transfers on private basis.",
             "All tours on SIC basis",
             "Domestic Air Fare",
             "International Airfare",
@@ -407,7 +407,7 @@ export const turkeyPackages: Record<string, TurkeyPackage> = {
             "/UGCImages/turkey/turkey4/4.png",
         ],
         departureDates: [
-                { date: "July 2025 - August 2025" }
+            { date: "August 2025 - August 2025" }
         ],
         additionalInfo: {
             highlights: [
@@ -418,7 +418,7 @@ export const turkeyPackages: Record<string, TurkeyPackage> = {
                 "Sentosa Island",
                 "Shopping at Orchard Road"
             ],
-            bestTimeToVisit: "May to July ",
+            bestTimeToVisit: "May to August ",
             cuisine: [
                 "Chili Crab",
                 "Hainanese Chicken Rice",
@@ -470,7 +470,7 @@ export const turkeyPackages: Record<string, TurkeyPackage> = {
             {
                 title: "North Red Tour ",
                 image: "/UGCImages/turkey/turkey1/3.png"
-            }   
+            }
         ],
         flightDetails: {
             airlines: [
@@ -501,13 +501,13 @@ export const turkeyPackages: Record<string, TurkeyPackage> = {
         days: 8,
         nights: 7,
         amount: 165000,
-        dateStart: "01 July 2025",
+        dateStart: "01 August 2025",
         dateEnd: "26 August 2025",
         description: "Experience the vibrant city life of Turkey with our 8-day tour covering iconic attractions, cultural sites, and modern marvels. This package includes 3 nights in Istanbul, 2 nights in Cappadocia, and 2 nights in Antalya.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Starting July",
+            arrivalDate: "Starting August",
             duration: "8D7N Turkey Fixed Departure",
             costBasis: "Cost Based On 2 pax travelling together"
         },
@@ -555,7 +555,7 @@ export const turkeyPackages: Record<string, TurkeyPackage> = {
             "Visa"
         ],
         exclusions: [
-            "Hot Air Balloon", 
+            "Hot Air Balloon",
             "Personal Expenses",
             "Anything not mentioned in the inclusions.",
             "Beverages NOT included in the quotation (unless specified).",
@@ -618,7 +618,7 @@ export const turkeyPackages: Record<string, TurkeyPackage> = {
             "/UGCImages/turkey/turkey5/4.png",
         ],
         departureDates: [
-                { date: "July 2025 - August 2025" }
+            { date: "August 2025 - August 2025" }
         ],
         additionalInfo: {
             highlights: [
@@ -630,7 +630,7 @@ export const turkeyPackages: Record<string, TurkeyPackage> = {
                 "Domestic Airfare",
                 "International Airfare",
             ],
-            bestTimeToVisit: "May to July ",
+            bestTimeToVisit: "May to August ",
             cuisine: [
                 "Turkish Cuisine",
                 "Mediterranean Cuisine",
@@ -681,7 +681,7 @@ export const turkeyPackages: Record<string, TurkeyPackage> = {
             {
                 title: "North Red Tour ",
                 image: "/UGCImages/turkey/turkey1/3.png"
-            }   
+            }
         ],
         flightDetails: {
             airlines: [
@@ -712,13 +712,13 @@ export const turkeyPackages: Record<string, TurkeyPackage> = {
         days: 8,
         nights: 7,
         amount: 163271,
-        dateStart: "01 July 2025",
+        dateStart: "01 August 2025",
         dateEnd: "26 August 2025",
         description: "Experience the vibrant city life of Turkey with our 8-day tour covering iconic attractions, cultural sites, and modern marvels. This package includes 2 nights in Istanbul, 2 nights in Cappadocia, and 3 nights in Antalya. We have included the best of Turkey in this package. Life is short, and the world is wide. Start your Turkey journey with us. ",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Starting July",
+            arrivalDate: "Starting August",
             duration: "8D7N Turkey Fixed Departure",
             costBasis: "Cost Based On 2 pax travelling together"
         },
@@ -763,7 +763,7 @@ export const turkeyPackages: Record<string, TurkeyPackage> = {
             "All tours on SIC basis.",
             "Domestic Airfare",
             "International Airfare",
-            "Visa"  
+            "Visa"
         ],
         exclusions: [
             "Personal Expenses",
@@ -828,7 +828,7 @@ export const turkeyPackages: Record<string, TurkeyPackage> = {
             "/UGCImages/turkey/turkey6/4.png",
         ],
         departureDates: [
-            { date: "July 2025 - August 2025" }
+            { date: "August 2025 - August 2025" }
         ],
         additionalInfo: {
             highlights: [
@@ -840,7 +840,7 @@ export const turkeyPackages: Record<string, TurkeyPackage> = {
                 "Domestic Airfare",
                 "International Airfare",
             ],
-            bestTimeToVisit: "May to July ",
+            bestTimeToVisit: "May to August ",
             cuisine: [
                 "Turkish Cuisine",
                 "Mediterranean Cuisine",
@@ -891,7 +891,7 @@ export const turkeyPackages: Record<string, TurkeyPackage> = {
             {
                 title: "North Red Tour ",
                 image: "/UGCImages/turkey/turkey1/3.png"
-            }   
+            }
         ],
         flightDetails: {
             airlines: [

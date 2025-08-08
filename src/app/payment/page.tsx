@@ -57,7 +57,7 @@ export default function PaymentPage() {
                     <div className="space-y-2">
                         <div>
                             <p className="text-sm text-gray-600">UPI us at (Google Pay/BHIM/PhonePe):</p>
-                            <p className="font-medium">9310271488.eazypay@icici</p>
+                            <p className="font-medium">9919111911.eazypay@icici</p>
                         </div>
                         <Image
                             src="/Assets/BankLogo/scanner.png"

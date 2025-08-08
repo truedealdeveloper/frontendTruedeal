@@ -144,7 +144,7 @@ Rating Breakdown:
         id: '5',
         author: 'Akshay Bhisikar',
         rating: 4.0,
-        date: 'July 2024',
+        date: 'August 2024',
         content: `Great Team. Well-Planned Itinerary. Good Service.
 
 We are grateful to the True Deal team for organizing an amazing trip to Bali. They assisted us every step of the way, from booking flights and exchanging money to arranging all aspects of our trip. The itinerary was well-planned and hassle-free, with options for customization. Our accommodations were all above 3-star quality, and we thoroughly enjoyed our stay. The tour drivers and guides were highly professional, and the vehicles were impeccably clean.
@@ -269,7 +269,7 @@ Cheers to Aman 💐
         id: '10',
         author: 'Chintan Gandhi',
         rating: 5.0,
-        date: 'July 2024',
+        date: 'August 2024',
         content: `It was a great experience to book a Bali trip through True Deal. True Deal's employees are supportive, and assigned drivers are polite. Our package contains adventure activities and nice places to visit in Bali. Thank you, True Deal, for making a trip awesome.
 `,
         media: [

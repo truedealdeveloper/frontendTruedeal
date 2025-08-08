@@ -91,13 +91,13 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
         days: 6,
         nights: 5,
         amount: 59500,
-        dateStart: "1,8,15,22,29 July",
+        dateStart: "1,8,15,22,29 August",
         dateEnd: "5,12,19,26,30 August",
         description: "Explore the highlights of Cambodia with our 6-day tour.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in July & August 2025",
+            arrivalDate: "Multiple dates in August & August 2025",
             duration: "6N5D Combodia Highlights",
             costBasis: "Cost Based On per person"
         },
@@ -336,13 +336,13 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
         days: 14,
         nights: 13,
         amount: 140000,
-        dateStart: "1,8,15,22,29 July",
+        dateStart: "1,8,15,22,29 August",
         dateEnd: "5,12,19,26,30 August",
         description: "Explore the highlights of Vietnam and Cambodia with our comprehensive 14-day tour.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in July & August 2025",
+            arrivalDate: "Multiple dates in August & August 2025",
             duration: "14D13N Vietnam & Cambodia Highlights",
             costBasis: "Cost Based On per person"
         },
@@ -358,7 +358,7 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
                 roomType: "Deluxe"
             },
             {
-                city: "Ha Noi", 
+                city: "Ha Noi",
                 hotel: "5 star GRAND VISTA HA NOI HOTEL",
                 roomType: "Deluxe"
             },
@@ -550,7 +550,7 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
             "/UGCImages/indochina/laos/6.webp",
             "/UGCImages/indochina/laos/7.webp",
             "/UGCImages/indochina/laos/8.webp",
-            
+
         ],
         sightseeingSpots: [
             {
@@ -691,13 +691,13 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
         days: 6,
         nights: 5,
         amount: 56000,
-        dateStart: "1,8,15,22,29 July",
+        dateStart: "1,8,15,22,29 August",
         dateEnd: "5,12,19,26,30 August",
         description: "Discover the charm and beauty of Laos with our 6-day tour through Luang Prabang and Vientiane.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in July & August 2025",
+            arrivalDate: "Multiple dates in August & August 2025",
             duration: "6D5N Lively Laos Highlights",
             costBasis: "Cost Based On per person"
         },
@@ -796,7 +796,7 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
             "/UGCImages/indochina/laos/10.webp",
             "/UGCImages/indochina/laos/11.webp",
             "/UGCImages/indochina/laos/12.webp",
-            
+
         ],
         sightseeingSpots: [
             {
@@ -925,7 +925,7 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
             }
         },
         departureDates: [
-            { date: "3, 10, 17, 24 July 2025" },
+            { date: "3, 10, 17, 24 August 2025" },
         ]
     },
     laosVietnam: {
@@ -934,7 +934,7 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
         days: 12,
         nights: 11,
         amount: 135300,
-        dateStart: "1,8,15,22,29 July",
+        dateStart: "1,8,15,22,29 August",
         dateEnd: "5,12,19,26,30 August",
         description: "Experience the best of Laos and Vietnam with our comprehensive 12-day tour through Luang Prabang, Ha Noi, Ha Long Bay, and Hoi An.",
         groupDetails: {
@@ -1107,9 +1107,9 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
             "/UGCImages/indochina/laos/14.webp",
             "/UGCImages/indochina/laos/15.webp",
             "/UGCImages/indochina/laos/16.webp",
-            
-            
-            
+
+
+
         ],
         sightseeingSpots: [
             {
@@ -1238,7 +1238,7 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
             }
         },
         departureDates: [
-            { date: "3, 10, 17, 24 July 2025" },
+            { date: "3, 10, 17, 24 August 2025" },
         ]
     },
     beautyOfIndochina: {
@@ -1247,13 +1247,13 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
         days: 10,
         nights: 9,
         amount: 118000,
-        dateStart: "1,8,15,22,29 July",
+        dateStart: "1,8,15,22,29 August",
         dateEnd: "5,12,19,26,30 August",
         description: "Experience the diverse beauty of Indochina with our 10-day journey through Vietnam, Cambodia, and Laos.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in July & August   2025",
+            arrivalDate: "Multiple dates in August & August   2025",
             duration: "10D9N Beauty of Indochina Highlights",
             costBasis: "Cost Based On per person"
         },
@@ -1387,12 +1387,12 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
             }
         ],
         images: [
-           
+
             "/UGCImages/indochina/laos/17.webp",
             "/UGCImages/indochina/laos/18.webp",
             "/UGCImages/indochina/laos/19.webp",
             "/UGCImages/indochina/laos/20.webp",
-            
+
         ],
         sightseeingSpots: [
             {
@@ -1532,14 +1532,14 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
         packageName: "11 days Fascinating Vietnam and Thailand",
         days: 11,
         nights: 10,
-        amount: 123000, 
-        dateStart: "1,8,15,22,29 July",
+        amount: 123000,
+        dateStart: "1,8,15,22,29 August",
         dateEnd: "5,12,19,26,30 August",
         description: "Experience the diverse beauty of Indochina with our 11-day journey through Vietnam and Thailand.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in July & August 2025",
+            arrivalDate: "Multiple dates in August & August 2025",
             duration: "11D10N Fascinating Vietnam and Thailand Highlights",
             costBasis: "Cost Based On per person"
         },
@@ -1713,7 +1713,7 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
             "/UGCImages/indochina/laos/21.webp",
             "/UGCImages/indochina/laos/22.webp",
             "/UGCImages/indochina/laos/23.webp",
-            
+
         ],
         sightseeingSpots: [
             {
@@ -1854,13 +1854,13 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
         days: 21,
         nights: 20,
         amount: 268700,
-        dateStart: "1,8,15,22,29 July",
+        dateStart: "1,8,15,22,29 August",
         dateEnd: "5,12,19,26,30 August",
         description: "Experience the ultimate Indochina journey with our comprehensive 21-day tour through Thailand, Laos, Vietnam, and Cambodia.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in July & August   2025",
+            arrivalDate: "Multiple dates in August & August   2025",
             duration: "21D20N Indochina Grand Tour",
             costBasis: "Cost Based On per person"
         },
@@ -2152,14 +2152,14 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
             }
         ],
         images: [
-            
+
             "/UGCImages/indochina/combodia/1.webp",
             "/UGCImages/indochina/combodia/2.webp",
             "/UGCImages/indochina/combodia/3.webp",
             "/UGCImages/indochina/combodia/4.webp",
             "/UGCImages/indochina/combodia/5.webp",
             "/UGCImages/indochina/combodia/6.webp",
-            
+
         ],
         sightseeingSpots: [
             {

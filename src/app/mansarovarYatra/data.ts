@@ -126,7 +126,7 @@ export const mansarovarYatraPackages: Record<string, MansarovarYatraPackage> = {
         days: 9,
         nights: 8,
         amount: 270000,
-        dateStart: "July 2025",
+        dateStart: "August 2025",
         dateEnd: "18th September 2025",
         description: "Embark on a sacred journey to Mount Kailash and Lake Mansarovar, the most revered pilgrimage site in Hinduism and Buddhism. This overland expedition takes you through breathtaking landscapes of Tibet.",
         groupDetails: {
@@ -271,7 +271,7 @@ Depending on weather conditions, fly back to Simikot.`,
             "/UGCImages/mansarovar/Kailash/10.webp",
         ],
         departureDates: [
-            { date: "July 2025 - September 2025" }
+            { date: "August 2025 - September 2025" }
         ],
         experiences: [
             {
@@ -401,7 +401,7 @@ Depending on weather conditions, fly back to Simikot.`,
             }
         },
         batchDetails: {
-            currentBatch: "July 2025",
+            currentBatch: "August 2025",
             remainingSlots: 8,
             monthlyBatches: [
                 {

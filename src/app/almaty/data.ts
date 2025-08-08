@@ -208,7 +208,7 @@ export const almatyPackages: Record<string, AlmatyPackage> = {
             }
         ],
         departureDates: [
-            { date: "Mar 2025 - July 2025" }
+            { date: "Mar 2025 - August 2025" }
         ]
     },
     almatyWinter: {
@@ -261,7 +261,7 @@ export const almatyPackages: Record<string, AlmatyPackage> = {
             "Visa fees",
             "Travel insurance",
             "Personal expenses",
-            ],
+        ],
         itinerary: [
             {
                 day: 1,
@@ -328,7 +328,7 @@ export const almatyPackages: Record<string, AlmatyPackage> = {
             }
         ],
         departureDates: [
-            { date: "Mar 2025 - July 2025" }
+            { date: "Mar 2025 - August 2025" }
         ]
     },
     almatyExplore: {
@@ -428,7 +428,7 @@ export const almatyPackages: Record<string, AlmatyPackage> = {
             "/UGCImages/Images4/almaty/almaty/11.webp",
             "/UGCImages/Images4/almaty/almaty/12.webp",
             "/UGCImages/Images4/almaty/almaty/13.webp",
-            
+
         ],
         sightseeingSpots: [
             {
@@ -468,7 +468,7 @@ export const almatyPackages: Record<string, AlmatyPackage> = {
             }
         ],
         departureDates: [
-            { date: "July 2025 - August 2025" }
+            { date: "August 2025 - August 2025" }
         ]
     },
 };

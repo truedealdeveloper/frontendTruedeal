@@ -157,12 +157,12 @@ export const chardhamData: Record<string, ChardhamPackage> = {
         amount: 230000,
         flightFrom: "Dehradun",
         dateStart: "01 May",
-        dateEnd: "30 July",
+        dateEnd: "30 August",
         description: "Embark on a once-in-a-lifetime spiritual journey with our Fixed Departure Chardham Yatra by helicopter. Our meticulously planned itinerary ensures a seamless, comfortable, and spiritually enriching experience, covering all four sacred shrines—Yamunotri, Gangotri, Kedarnath, and Badrinath.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Twin Sharing Basis",
-            arrivalDate: "Multiple dates between May-July",
+            arrivalDate: "Multiple dates between May-August",
             duration: "5N6D Chardham Yatra",
             costBasis: "Cost Based On Double Sharing"
         },
@@ -248,7 +248,7 @@ export const chardhamData: Record<string, ChardhamPackage> = {
         nights: 0,
         amount: 115000,
         dateStart: "05 May",
-        dateEnd: "30 July",
+        dateEnd: "30 August",
         flightFrom: "Sahastradhara Helidrome",
         description: "Experience a divine journey covering the sacred shrines of Kedarnath Ji and Badrinath Ji in a single day. Operating with excellence since 1998, we offer seamless pilgrimage experiences with comfort and safety at the core.",
         inclusions: [
@@ -311,7 +311,7 @@ Return to Badrinath helipad for departure
         nights: 0,
         amount: 350000,
         dateStart: "05 May",
-        dateEnd: "30 July",
+        dateEnd: "30 August",
         flightFrom: "SERSI HELIPAD",
         description: "Experience a divine and seamless pilgrimage with our Dodham Same Day Heli-Tour from Sersi, covering Kedarnath and Badrinath temples with VIP darshans and priority access.",
         itinerary: [
@@ -356,7 +356,7 @@ Return to Badrinath helipad for departure
         nights: 3,
         amount: 135000,
         dateStart: "05 May",
-        dateEnd: "30 July",
+        dateEnd: "30 August",
         flightFrom: "Dehradun",
         description: "A comprehensive 4-day helicopter tour covering Kedarnath and Badrinath with comfortable stays and detailed sightseeing.",
         itinerary: [

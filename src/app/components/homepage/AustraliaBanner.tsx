@@ -25,7 +25,7 @@ const AustraliaBanner = () => {
       ],
       cities: ['Sydney', 'Melbourne', 'Gold Coast', 'Cairns'],
       startCity: 'Sydney',
-      dateStart: '1,8,15,22,29 July',
+      dateStart: '1,8,15,22,29 August',
       amount: 490999
     },
     {
@@ -40,7 +40,7 @@ const AustraliaBanner = () => {
       ],
       cities: ['Melbourne', 'Gold Coast', 'Brisbane'],
       startCity: 'Melbourne',
-      dateStart: '1,8,15,22,29 July',
+      dateStart: '1,8,15,22,29 August',
       amount: 354999
     },
     {
@@ -55,7 +55,7 @@ const AustraliaBanner = () => {
       ],
       cities: ['Hamilton Island', 'Whitsundays', 'Gold Coast'],
       startCity: 'Hamilton Island',
-      dateStart: '1,8,15,22,29 July',
+      dateStart: '1,8,15,22,29 August',
       amount: 364999
     },
     {
@@ -71,7 +71,7 @@ const AustraliaBanner = () => {
       ],
       cities: ['Sydney', 'Brisbane', 'Gold Coast'],
       startCity: 'Sydney',
-      dateStart: '1,8,15,22,29 July',
+      dateStart: '1,8,15,22,29 August',
       amount: 344999
     },
     {
@@ -86,7 +86,7 @@ const AustraliaBanner = () => {
       ],
       cities: ['Hamilton Island', 'Whitsundays'],
       startCity: 'Hamilton Island',
-      dateStart: '1,8,15,22,29 July',
+      dateStart: '1,8,15,22,29 August',
       amount: 596999
     }
   ];
@@ -103,7 +103,7 @@ const AustraliaBanner = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => 
+      setCurrentImageIndex((prevIndex) =>
         prevIndex === 2 ? 0 : prevIndex + 1
       );
     }, 3000);
@@ -133,7 +133,7 @@ const AustraliaBanner = () => {
           </div>
           <div className="relative flex justify-center">
             <span className="bg-gray-50 px-4">
-              <Image 
+              <Image
                 src="/UGCImages/australia/kangaroo.png"
                 alt="Australia icon"
                 width={40}
@@ -148,8 +148,8 @@ const AustraliaBanner = () => {
         <div className="relative">
           {/* Navigation Controls */}
           <div className="absolute top-1/2 -translate-y-1/2 left-0 z-10 hidden md:block">
-            <Button 
-              onClick={handlePrevPage} 
+            <Button
+              onClick={handlePrevPage}
               disabled={currentPage === 0}
               variant="outline"
               className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -ml-5 shadow-lg"
@@ -160,8 +160,8 @@ const AustraliaBanner = () => {
           </div>
 
           <div className="absolute top-1/2 -translate-y-1/2 right-0 z-10 hidden md:block">
-            <Button 
-              onClick={handleNextPage} 
+            <Button
+              onClick={handleNextPage}
               disabled={currentPage === totalPages - 1}
               variant="outline"
               className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -mr-5 shadow-lg"
@@ -177,20 +177,20 @@ const AustraliaBanner = () => {
               {australiaPackages
                 .slice(currentPage * 3, (currentPage * 3) + 3)
                 .map((pkg) => (
-                  <Link 
+                  <Link
                     href={`/australiaPackages/${pkg.id}`}
                     key={pkg.id}
                     className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0"
                   >
                     {/* Background Image */}
-                    <Image 
+                    <Image
                       src={pkg.images[currentImageIndex]}
                       alt={pkg.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                       sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                     />
-                    
+
                     {/* Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
 
@@ -244,8 +244,8 @@ const AustraliaBanner = () => {
 
           {/* Mobile Navigation */}
           <div className="mt-6 flex justify-center items-center gap-2 md:hidden">
-            <Button 
-              onClick={handlePrevPage} 
+            <Button
+              onClick={handlePrevPage}
               disabled={currentPage === 0}
               variant="outline"
               className="rounded-full w-8 h-8 p-0"
@@ -256,8 +256,8 @@ const AustraliaBanner = () => {
             <span className="text-sm text-gray-500" aria-live="polite">
               Page {currentPage + 1} of {totalPages}
             </span>
-            <Button 
-              onClick={handleNextPage} 
+            <Button
+              onClick={handleNextPage}
               disabled={currentPage === totalPages - 1}
               variant="outline"
               className="rounded-full w-8 h-8 p-0"
@@ -273,9 +273,8 @@ const AustraliaBanner = () => {
               <button
                 key={index}
                 onClick={() => setCurrentImageIndex(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  currentImageIndex === index ? 'bg-blue-500 w-4' : 'bg-gray-400'
-                }`}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${currentImageIndex === index ? 'bg-blue-500 w-4' : 'bg-gray-400'
+                  }`}
                 aria-label={`Show image ${index + 1} of 4`}
                 aria-current={currentImageIndex === index ? 'true' : 'false'}
               />
