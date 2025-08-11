@@ -96,12 +96,18 @@ export default function SingaporePackagePage({ params }: PageProps) {
                 {/* Hero: CSS-only on mobile, improved mobile layout */}
                 <header className={`relative w-full ${isMobile ? 'bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-600' : ''}`} style={{ minHeight: isMobile ? '56vh' : '68vh' }}>
                     {isMobile ? (
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-600">
-                            <div className="absolute top-10 right-10 w-20 h-20 border border-white/20 rounded-full" />
-                            <div className="absolute top-32 left-8 w-12 h-12 border border-white/30 rounded-full" />
-                            <div className="absolute bottom-32 right-16 w-16 h-16 border border-white/20 rounded-full" />
-                            <div className="absolute top-20 left-1/2 w-8 h-8 bg-white/10 rounded-full" />
-                        </div>
+                        <>
+                            <Image
+                                src={'https://truedeal-assets.s3.eu-north-1.amazonaws.com/mobile/singa.jpg'}
+                                alt={singaporePkg?.packageName || 'Singapore package'}
+                                fill
+                                className="object-cover"
+                                priority
+                                quality={70}
+                                sizes="100vw"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                        </>
                     ) : (
                         <>
                             <Image
@@ -170,12 +176,11 @@ export default function SingaporePackagePage({ params }: PageProps) {
                     <div className="mx-3 mb-3 rounded-full shadow-lg backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 border border-black/5">
                         <div className="flex items-center justify-between px-3 py-2">
                             <div className="flex items-center gap-2">
-                                <Phone className="h-4 w-4 text-black/70" />
-                                <span className="text-sm font-medium">Need help?</span>
+                                <span className="text-sm font-bold bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-3 py-1 rounded-full">₹{singaporePkg?.amount?.toLocaleString('en-IN')}</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <a href="tel:+919310271488"><Button size="sm" variant="outline" className="rounded-full">Call</Button></a>
-                                <Button size="sm" className="rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff]" onClick={() => setIsBookingModalOpen(true)}>Book</Button>
+                                <Button size="sm" className="rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff]" onClick={() => setIsBookingModalOpen(true)}>Enquire</Button>
                             </div>
                         </div>
                     </div>

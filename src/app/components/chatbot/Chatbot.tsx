@@ -142,7 +142,7 @@ export function Chatbot() {
 
     return (
         <>
-            <div className="fixed bottom-4 right-4 z-50">
+            <div className="fixed bottom-4 right-4 z-50 hidden md:block">
                 <motion.div
                     animate={{
                         scale: [1, 1.1, 1],
@@ -157,7 +157,7 @@ export function Chatbot() {
                         src="/Assets/chatbot/whatsapp.svg"
                         alt="WhatsApp"
                         width={42}
-                        height={42} 
+                        height={42}
                         className="cursor-pointer"
                         onClick={() => setIsOpen(true)}
                     />
