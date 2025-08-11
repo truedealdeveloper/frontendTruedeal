@@ -107,9 +107,9 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
+      <html lang="en" className="overflow-x-hidden">
         <GoogleTagManager gtmId="GTM-NTPTHZPG" />
-        <body className={poppins.className}>
+        <body className={`${poppins.className} overflow-x-hidden w-full`}>
           <noscript>
             <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NTPTHZPG"
               height="0"

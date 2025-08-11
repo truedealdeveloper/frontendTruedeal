@@ -313,6 +313,30 @@ export default function Navbar() {
     const [activeMobileDropdown, setActiveMobileDropdown] = useState<string | null>(null);
     const isHomePage = pathname === '/';
 
+    // Lock scroll when mobile menu or search modal is open to prevent layout shift/overflow on mobile
+    useEffect(() => {
+        const htmlEl = document.documentElement;
+        const bodyEl = document.body;
+        const lock = () => {
+            htmlEl.style.overflow = 'hidden';
+            bodyEl.style.overflow = 'hidden';
+            bodyEl.style.width = '100%';
+        };
+        const unlock = () => {
+            htmlEl.style.overflow = '';
+            bodyEl.style.overflow = '';
+            bodyEl.style.width = '';
+        };
+        if (isMenuOpen || isSearchModalOpen) {
+            lock();
+        } else {
+            unlock();
+        }
+        return () => {
+            unlock();
+        };
+    }, [isMenuOpen, isSearchModalOpen]);
+
     const handleMouseEnter = (menuId: string) => {
         setActiveDropdown(menuId);
     };
@@ -327,7 +351,7 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-50">
+        <nav className="fixed top-0 left-0 right-0 z-50 w-full overflow-x-hidden">
             {/* Gradient background for top nav - reduced height from h-20 to h-16 */}
             <div className="bg-gradient-to-r from-white via-[#f0fdff] to-white shadow-md">
                 <div className="max-w-7xl mx-auto px-4">

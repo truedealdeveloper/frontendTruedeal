@@ -42,6 +42,14 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Prevent global horizontal scroll on small screens */
+html,
+body,
+#__next {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .rounded-hexagon {
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
@@ -232,12 +240,12 @@ select::-webkit-listbox {
 
 /* Add these styles to hide scrollbar but keep scrolling functionality */
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari and Opera */
+  display: none; /* Chrome, Safari and Opera */
 }
 
 @keyframes slideDown {
