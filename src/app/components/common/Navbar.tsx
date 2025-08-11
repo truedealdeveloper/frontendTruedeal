@@ -352,8 +352,8 @@ export default function Navbar() {
 
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 w-full overflow-x-hidden">
-            {/* Gradient background for top nav - reduced height from h-20 to h-16 */}
-            <div className="bg-gradient-to-r from-white via-[#f0fdff] to-white shadow-md">
+            {/* Gradient background for top nav - Indian flag theme (lighter) */}
+            <div className="bg-gradient-to-r from-[#FFD1A6] via-white to-[#B7E5B4] shadow-md">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="flex items-center justify-between h-16 relative">
                         {/* Logo - enhanced visibility */}
