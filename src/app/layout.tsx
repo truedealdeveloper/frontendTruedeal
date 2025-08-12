@@ -110,6 +110,8 @@ export default function RootLayout({
       <html lang="en" className="overflow-x-hidden">
         <GoogleTagManager gtmId="GTM-NTPTHZPG" />
         <body className={`${poppins.className} overflow-x-hidden w-full`}>
+          {/* Preload navbar logo to avoid it becoming LCP and reduce load delay */}
+          <link rel="preload" as="image" href="/Assets/NavbarImages/logo.png" />
           <noscript>
             <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NTPTHZPG"
               height="0"

@@ -365,6 +365,7 @@ export default function Navbar() {
                                 height={50}
                                 className="w-[100px] sm:w-[140px] h-auto object-contain drop-shadow-sm"
                                 priority
+                                fetchPriority="high"
                             />
                         </Link>
 
