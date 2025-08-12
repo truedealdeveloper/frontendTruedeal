@@ -7,7 +7,8 @@ import { notFound } from "next/navigation";
 import { Calendar, Check, MapPin, Star, Users, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+// Use global booking modal instead of inline dialog
+import { BookingFormModal } from '@/app/components/BookingFormModal';
 import { Poppins } from "next/font/google";
 import { PageWrapper } from "@/components/page-wrapper";
 import { useMobile } from "@/hooks/use-mobile";
@@ -163,22 +164,14 @@ export default function SingaporePackagePage({ params }: PageProps) {
 
                             {/* CTA + chips on mobile in a card strip */}
                             <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-6 md:mb-12">
-                                <Dialog open={isBookingModalOpen} onOpenChange={setIsBookingModalOpen}>
-                                    <DialogTrigger asChild>
-                                        <Button size="sm" className="rounded-full px-5 md:px-8 bg-gradient-to-r from-[#17b1ff] to-[#00f6ff] hover:opacity-90 transition shadow-md" aria-label="Book Singapore tour">Book Now</Button>
-                                    </DialogTrigger>
-                                    <DialogContent className="sm:max-w-md">
-                                        <DialogHeader>
-                                            <DialogTitle>Quick Booking</DialogTitle>
-                                        </DialogHeader>
-                                        <form className="grid gap-3" onSubmit={(e) => { e.preventDefault(); setIsBookingModalOpen(false); }}>
-                                            <input className="h-11 rounded-md border border-input bg-background px-3" placeholder="Full name" aria-label="Full name" />
-                                            <input className="h-11 rounded-md border border-input bg-background px-3" placeholder="Email" type="email" aria-label="Email" />
-                                            <input className="h-11 rounded-md border border-input bg-background px-3" placeholder="Travel dates" aria-label="Travel dates" />
-                                            <Button type="submit">Send Enquiry</Button>
-                                        </form>
-                                    </DialogContent>
-                                </Dialog>
+                                <Button
+                                    size="sm"
+                                    className="rounded-full px-5 md:px-8 bg-gradient-to-r from-[#17b1ff] to-[#00f6ff] hover:opacity-90 transition shadow-md"
+                                    aria-label="Book Singapore tour"
+                                    onClick={() => setIsBookingModalOpen(true)}
+                                >
+                                    Book Now
+                                </Button>
 
                                 {/* Inline quick facts on mobile header */}
                                 <div className="flex md:hidden w-full gap-2">
@@ -351,6 +344,11 @@ export default function SingaporePackagePage({ params }: PageProps) {
                 </main>
 
                 {/* No gallery modal */}
+                <BookingFormModal
+                    isOpen={isBookingModalOpen}
+                    onClose={() => setIsBookingModalOpen(false)}
+                    destinationName={singaporePkg?.packageName || 'Singapore'}
+                />
             </div>
         </PageWrapper>
     );
