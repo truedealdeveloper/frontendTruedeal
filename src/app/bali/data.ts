@@ -59,6 +59,7 @@ export interface BaliPackage {
     exclusions: string[];
     itinerary: ItineraryDay[];
     images: string[];
+    mobileImages?: string[];
     experiences?: Experience[];
     additionalInfo?: {
         highlights: string[];
@@ -248,6 +249,9 @@ from prominent Balinese artists. (Breakfast)`,
         images: [
             "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-desktop/8.png",
         ],
+        mobileImages: [
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-mobile/1.png",
+        ],
         experiences: [],
         sightseeingSpots: [],
         localFood: [],
@@ -380,6 +384,9 @@ Depending on your flight timings, You will be transferred from Hotel to Bali Int
         ],
         images: [
             "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-desktop/4.png",
+        ],
+        mobileImages: [
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-mobile/2.png",
         ],
         experiences: [],
         sightseeingSpots: [],
@@ -542,6 +549,9 @@ Depending on your flight timings, You will be transferred from Hotel to Bali Int
         ],
         images: [
             "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-desktop/9.png",
+        ],
+        mobileImages: [
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-mobile/3.png",
         ],
         experiences: [],
         sightseeingSpots: [],
@@ -781,6 +791,9 @@ And Local Lunch and drinks Balinese coffee, tea and water.`,
         images: [
             "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-desktop/7.png",
         ],
+        mobileImages: [
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-mobile/4.png",
+        ],
         experiences: [],
         sightseeingSpots: [],
         localFood: [
@@ -950,6 +963,9 @@ And Local Lunch and drinks Balinese coffee, tea and water.`,
         ],
         images: [
             "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-desktop/5.png",
+        ],
+        mobileImages: [
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-mobile/5.png",
         ],
         experiences: [],
         sightseeingSpots: [],
