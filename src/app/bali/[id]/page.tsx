@@ -52,6 +52,9 @@ export default function BaliPackagePage({ params }: PageProps) {
     );
     const isMobile = useMobile();
 
+    const mobileHeroSrc = (baliPkg?.mobileImages?.[0]) || 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-mobile/1.png';
+    const desktopHeroSrc = baliPkg?.images?.[0] || 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-desktop/1.png';
+
     if (!baliPkg) {
         notFound();
     }
@@ -112,15 +115,19 @@ export default function BaliPackagePage({ params }: PageProps) {
         <PageWrapper>
             <div className={`relative ${poppins.className}`}>
                 <header className={`relative w-full ${isMobile ? '' : 'md:max-w-[1898px] md:mx-auto'}`} style={{ minHeight: isMobile ? '348px' : '492px' }}>
+                    {/* Preload hero image variants to reduce LCP load delay on production with unoptimized images */}
+                    <link rel="preload" as="image" href={mobileHeroSrc} media="(max-width: 767px)" />
+                    <link rel="preload" as="image" href={desktopHeroSrc} media="(min-width: 768px)" />
                     {isMobile ? (
                         <>
                             <Image
-                                src={(baliPkg?.mobileImages?.[0]) || 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-mobile/1.png'}
+                                src={mobileHeroSrc}
                                 alt={baliPkg?.packageName || 'Bali package'}
                                 fill
                                 className="object-cover"
                                 priority
-                                quality={85}
+                                // Hint browser to fetch hero quickly
+                                fetchPriority="high"
                                 sizes="100vw"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -128,12 +135,13 @@ export default function BaliPackagePage({ params }: PageProps) {
                     ) : (
                         <>
                             <Image
-                                src={baliPkg?.images?.[0] || 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-desktop/1.png'}
+                                src={desktopHeroSrc}
                                 alt={baliPkg?.packageName || 'Bali package'}
                                 fill
                                 className="object-cover brightness-[0.85]"
-                                priority={false}
-                                quality={85}
+                                // Desktop header is above the fold on large screens
+                                priority={true}
+                                fetchPriority="high"
                                 sizes="(max-width: 767px) 100vw, 1898px"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />

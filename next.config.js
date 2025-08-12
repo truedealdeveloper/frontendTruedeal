@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+    // Keep images unoptimized to maintain compatibility with static export/production hosting
     unoptimized: true,
     domains: ["truedeal-assets.s3.eu-north-1.amazonaws.com"],
     remotePatterns: [
@@ -12,7 +13,8 @@ const nextConfig = {
       },
     ],
     formats: ["image/webp", "image/avif"],
-    deviceSizes: [480, 640, 750, 828, 1080, 1200, 1920, 2048],
+    // Include smaller breakpoints to better match common mobile widths
+    deviceSizes: [360, 414, 480, 640, 750, 828, 1080, 1200, 1920, 2048],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
     dangerouslyAllowSVG: true,
