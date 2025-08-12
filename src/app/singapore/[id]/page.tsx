@@ -105,6 +105,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                 priority
                                 quality={70}
                                 sizes="100vw"
+                                unoptimized
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                         </>
