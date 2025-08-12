@@ -1265,4 +1265,246 @@ And Local Lunch and drinks Balinese coffee, tea and water.`,
             }
         }
     },
+    baliDiwaliExBOM: {
+        id: "bali-diwali-ex-bom",
+        packageName: "Bali Diwali Departure (Ex Mumbai)",
+        days: 8,
+        nights: 7,
+        amount: 69999,
+        dateStart: "23 and 25 October 2025",
+        dateEnd: "",
+        description: "Special Diwali fixed departure from Mumbai with Malaysia Airlines. Enjoy Kuta and Ubud with water sports, temples, Trans Studio Bali, Kintamani, Ubud market and more.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Twin Sharing (price based on 4 pax)",
+            arrivalDate: "23 Oct and 25 Oct 2025",
+            duration: "7N8D Diwali Departure",
+            costBasis: "Per person on twin sharing (min 4 pax)"
+        },
+        departureCities: [
+            { city: "Mumbai", price: 69999 }
+        ],
+        hotelDetails: [
+            {
+                city: "Kuta",
+                hotel: "Cross Paasha Kuta / Wina Holiday Kuta or Similar",
+                roomType: "Superior Room (Breakfast)"
+            },
+            {
+                city: "Ubud",
+                hotel: "Bali Masari Ubud / Bumi Linggah Villas or Similar",
+                roomType: "01 Bedroom Pool Villa (Breakfast)"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Arrival in Bali",
+            "Day 2: Water Sports (Banana Boat, Jet Ski, Parasailing) + Uluwatu Temple - Private",
+            "Day 3: Ulun Danu Temple (Bedugul) + Tanah Lot Temple - Private",
+            "Day 4: Half Day Trans Studio Bali - Fly Over Indonesia (Private Transfers)",
+            "Day 5: Day at Leisure",
+            "Day 6: Full Day Kintamani Volcano Tour + Ubud Village + Ubud Market + Coffee Plantation + Sidan Swing (Private)",
+            "Day 7: Day at Leisure",
+            "Day 8: Departure"
+        ],
+        inclusions: [
+            "Garland welcome on arrival",
+            "1 x 500 ml water bottle during tours & transfers",
+            "Return airport transfers and inter-hotel transfer – Private",
+            "Water Sports package: Banana Boat, Jet Ski and Parasailing + Uluwatu Temple – Private (Day 02)",
+            "Ulun Danu Batur Temple and Tanah Lot Temple – Private (Day 03)",
+            "Half Day Trans Studio Fly Over Indonesia with Private Transfers – (Day 04)",
+            "Leisure day – (Day 05)",
+            "Full Day Kintamani Volcano Tour and Ubud Village, Ubud Market and Coffee Plantation followed by Sidan Swing with Private Transfers – (Day 06)",
+            "Leisure day – (Day 07)"
+        ],
+        exclusions: [
+            "Visa fees",
+            "Meals not mentioned in itinerary",
+            "Tips and personal expenses",
+            "Optional activities entrance fees",
+            "Travel insurance",
+            "GST & TCS charges"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Bali",
+                description: "Arrive at Ngurah Rai International Airport, meet our representative and transfer to your hotel for check-in.",
+                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/1.webp"
+            },
+            {
+                day: 2,
+                title: "Water Sports + Uluwatu Temple",
+                description: "Enjoy Banana Boat, Jet Ski and Parasailing with private transfers. Later visit Uluwatu Temple for sunset views.",
+                image: "/UGCImages/bali/extra/Uluwatu.jpg"
+            },
+            {
+                day: 3,
+                title: "Ulun Danu Temple + Tanah Lot",
+                description: "Visit the iconic floating Ulun Danu Temple at Lake Bratan and the picturesque Tanah Lot Temple on a private tour.",
+                image: "/UGCImages/bali/extra/Tanah Lot Temple.jpg"
+            },
+            {
+                day: 4,
+                title: "Trans Studio Bali – Fly Over Indonesia",
+                description: "Half-day visit to Trans Studio Bali to experience the Fly Over Indonesia attraction with private transfers.",
+                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/5.webp"
+            },
+            {
+                day: 5,
+                title: "Leisure Day",
+                description: "Free day to relax or explore on your own.",
+                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/5.webp"
+            },
+            {
+                day: 6,
+                title: "Kintamani, Ubud Village, Market, Coffee Plantation + Sidan Swing",
+                description: "Full day tour covering Kintamani volcano viewpoint, coffee plantation tasting, Ubud Village and Market followed by Sidan Swing photo spots.",
+                image: "/UGCImages/bali/extra/Tegalalang Rice Terraces.jpg"
+            },
+            {
+                day: 7,
+                title: "Leisure Day",
+                description: "Enjoy resort amenities or choose optional activities.",
+                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/5.webp"
+            },
+            {
+                day: 8,
+                title: "Departure",
+                description: "Check out and transfer to the airport for your flight home.",
+                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/6.webp"
+            }
+        ],
+        images: [
+            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/1.webp",
+            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/2.webp",
+            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/3.webp",
+            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/4.webp",
+            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/5.webp",
+            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/6.webp"
+        ],
+        experiences: [
+            { title: "Temple Visits", image: "/UGCImages/bali/extra/Tanah Lot Temple.jpg" },
+            { title: "Water Sports", image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/3.webp" },
+            { title: "Cultural Experience", image: "/UGCImages/bali/culture/market.png" },
+            { title: "Theme Park Experience", image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/5.webp" }
+        ],
+        sightseeingSpots: [
+            {
+                name: "Ulun Danu Temple",
+                description: "Floating temple on Lake Bratan surrounded by mountains and cool highlands.",
+                image: "/UGCImages/bali/extra/Tanah Lot Temple.jpg"
+            },
+            {
+                name: "Tanah Lot Temple",
+                description: "Sea temple perched on a rocky outcrop famed for sunsets.",
+                image: "/UGCImages/bali/extra/Tanah Lot Temple.jpg"
+            },
+            {
+                name: "Uluwatu Temple",
+                description: "Clifftop temple with sweeping ocean views and Kecak fire dance.",
+                image: "/UGCImages/bali/extra/Uluwatu.jpg"
+            },
+            {
+                name: "Kintamani Volcano",
+                description: "View of Mount Batur and its caldera lake from the highlands.",
+                image: "/UGCImages/bali/extra/mountBatur.jpg"
+            }
+        ],
+        localFood: [
+            {
+                name: "Nasi Goreng",
+                description: "Indonesian fried rice with vegetables, chicken or seafood, topped with a fried egg",
+                image: "/UGCImages/bali/cuisine/Nasi Goreng.jpg",
+                where: "Warung Made, Kuta"
+            },
+            {
+                name: "Babi Guling",
+                description: "Traditional Balinese-style roasted pig served with rice and local spices",
+                image: "/UGCImages/bali/cuisine/Babi Guling.png",
+                where: "Warung Ibu Oka, Ubud"
+            },
+            {
+                name: "Bebek Betutu",
+                description: "Slow-cooked duck with Balinese spices, served with plecing kangkung",
+                image: "/UGCImages/bali/cuisine/Bebek Betutu.png",
+                where: "Bebek Tepi Sawah, Ubud"
+            },
+            {
+                name: "Sambal Matah",
+                description: "Raw spicy Balinese relish made with shallots, lemongrass, and chili",
+                image: "/UGCImages/bali/cuisine/Sambal Matah.jpg",
+                where: "Merah Putih Restaurant, Seminyak"
+            }
+        ],
+        culture: [
+            {
+                title: "Legong Dance",
+                description: "Graceful traditional dance performed by young girls in elaborate costumes, telling stories of ancient kingdoms",
+                image: "/UGCImages/bali/culture/dance.jpg"
+            },
+            {
+                title: "Temple Ceremonies",
+                description: "Vibrant religious ceremonies with offerings, traditional music, and elaborate decorations",
+                image: "/UGCImages/bali/culture/baliTemple.jpg"
+            },
+            {
+                title: "Traditional Crafts",
+                description: "Ancient art of wood carving, silver smithing, and batik making passed down through generations",
+                image: "/UGCImages/bali/culture/craft.jpg"
+            },
+            {
+                title: "Traditional Markets",
+                description: "Bustling local markets selling fresh produce, spices, crafts, and traditional offerings",
+                image: "/UGCImages/bali/culture/market.png"
+            }
+        ],
+        additionalInfo: {
+            highlights: [
+                "Malaysia Airlines Diwali departure ex Mumbai",
+                "Water sports package + Uluwatu sunset",
+                "Ulun Danu and Tanah Lot temples",
+                "Trans Studio Bali – Fly Over Indonesia",
+                "Kintamani volcano and Ubud experiences"
+            ],
+            bestTimeToVisit: "October (Diwali departures)",
+            cuisine: [
+                "Traditional Balinese dishes",
+                "Fresh seafood specialties",
+                "Local fruit varieties",
+                "Indonesian street food"
+            ],
+            accommodation: {
+                type: "4-Star Hotels & Pool Villas",
+                amenities: [
+                    "Swimming pool",
+                    "Spa facilities",
+                    "Restaurant & bar",
+                    "Free Wi-Fi",
+                    "Room service"
+                ]
+            },
+            transportation: {
+                type: "Private AC Vehicle",
+                features: [
+                    "Professional driver",
+                    "Comfortable seating",
+                    "Air conditioning",
+                    "Tourist permit"
+                ]
+            },
+            visaInfo: {
+                requirement: "Visa on Arrival",
+                duration: "30 days",
+                cost: "USD 35",
+                documents: [
+                    "Valid passport (minimum 6 months)",
+                    "Return flight tickets",
+                    "Hotel booking confirmation",
+                    "Sufficient funds proof"
+                ]
+            }
+        }
+    },
+
 }; 

@@ -62,6 +62,18 @@ export default function SingaporePackagePage({ params }: PageProps) {
     const [selectedDay, setSelectedDay] = useState(1);
     const [showFullDescription, setShowFullDescription] = useState(false);
     const [expandedDays, setExpandedDays] = useState<number[]>([1]);
+    const dayRefs = useRef<Record<number, HTMLDivElement | null>>({});
+    const scrollToDay = useCallback((dayNumber: number) => {
+        setSelectedDay(dayNumber);
+        setExpandedDays((prev) => (prev.includes(dayNumber) ? prev : [...prev, dayNumber]));
+        requestAnimationFrame(() => {
+            const el = dayRefs.current[dayNumber];
+            if (!el) return;
+            const navbarOffsetPx = isMobile ? 120 : 90;
+            const y = el.getBoundingClientRect().top + window.scrollY - navbarOffsetPx;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        });
+    }, [isMobile]);
     // removed gallery for performance
 
 
@@ -85,7 +97,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
     };
 
     const quickFacts = useMemo(() => ([
-        { label: "Duration", value: `${singaporePkg?.days}d / ${singaporePkg?.nights}n`, icon: Calendar },
+        { label: "Duration", value: `${singaporePkg?.days} Days / ${singaporePkg?.nights} Nights`, icon: Calendar },
         { label: "Location", value: getPackageLocation(id), icon: MapPin },
         { label: "Group", value: "Max 20", icon: Users },
         { label: "Rating", value: "4.8 / 5", icon: Star },
@@ -161,7 +173,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
 
                                 {/* Inline quick facts on mobile header */}
                                 <div className="flex md:hidden w-full gap-2">
-                                    <span className="px-3 py-1 rounded-full bg-white/15 text-white text-xs">{singaporePkg?.days}d / {singaporePkg?.nights}n</span>
+                                    <span className="px-3 py-1 rounded-full bg-white/15 text-white text-xs">{singaporePkg?.days} Days / {singaporePkg?.nights} Nights</span>
                                     <span className="px-3 py-1 rounded-full bg-white/15 text-white text-xs">{getPackageLocation(id)}</span>
                                     <span className="px-3 py-1 rounded-full bg-white/15 text-white text-xs">Max 20</span>
                                 </div>
@@ -248,9 +260,9 @@ export default function SingaporePackagePage({ params }: PageProps) {
                             {/* Itinerary - image free */}
                             <section className="mb-8" style={{ contentVisibility: 'auto', containIntrinsicSize: '1200px' }}>
                                 <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">Day-by-Day Itinerary</h2>
-                                <div className="flex overflow-x-auto space-x-2 mb-4 pb-2 no-scrollbar">
+                                <div className="md:static sticky top-16 z-30 -mx-4 px-4 bg-white/85 backdrop-blur supports-[backdrop-filter]:bg-white/75 py-2 rounded-xl shadow-sm flex overflow-x-auto space-x-2 mb-4 pb-2 no-scrollbar">
                                     {singaporePkg?.itinerary.map((day, i) => (
-                                        <button key={i} onClick={() => { setSelectedDay(day.day); if (!expandedDays.includes(day.day)) toggleDayExpansion(day.day); }} className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${selectedDay === day.day ? 'bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-800'}`}>
+                                        <button key={i} onClick={() => scrollToDay(day.day)} className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${selectedDay === day.day ? 'bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-800'}`}>
                                             Day {day.day}
                                         </button>
                                     ))}
@@ -259,7 +271,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                     {singaporePkg?.itinerary.map((day, i) => {
                                         const isExpanded = expandedDays.includes(day.day);
                                         return (
-                                            <Card key={i} className={`p-4 ${selectedDay === day.day ? 'ring-2 ring-[#017ae3]/20' : ''}`} onClick={() => toggleDayExpansion(day.day)} role="button" aria-expanded={isExpanded}>
+                                            <Card key={i} ref={(el) => { dayRefs.current[day.day] = el; }} className={`p-4 scroll-mt-24 md:scroll-mt-28 ${selectedDay === day.day ? 'ring-2 ring-[#017ae3]/20' : ''}`} onClick={() => toggleDayExpansion(day.day)} role="button" aria-expanded={isExpanded}>
                                                 <div className="flex items-center justify-between">
                                                     <h3 className="text-base md:text-lg font-semibold">Day {day.day}: {day.title}</h3>
                                                     <span className="text-gray-400">{isExpanded ? '▲' : '▼'}</span>
