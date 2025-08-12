@@ -115,21 +115,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
             <div className={`relative ${poppins.className}`}>
                 {/* Hero: CSS-only on mobile, improved mobile layout */}
                 <header className={`relative w-full ${isMobile ? 'bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-600' : ''}`} style={{ minHeight: isMobile ? '56vh' : '68vh' }}>
-                    {isMobile ? (
-                        <>
-                            <Image
-                                src={'https://truedeal-assets.s3.eu-north-1.amazonaws.com/mobile/singa.jpg'}
-                                alt={singaporePkg?.packageName || 'Singapore package'}
-                                fill
-                                className="object-cover"
-                                priority
-                                quality={70}
-                                sizes="100vw"
-                                unoptimized
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                        </>
-                    ) : (
+                    {isMobile ? null : (
                         <>
                             <Image
                                 src={singaporePkg?.images?.[0] || 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singapore/1.webp'}
