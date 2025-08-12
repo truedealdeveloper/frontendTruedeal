@@ -90,6 +90,25 @@ export default function SingaporePackagePage({ params }: PageProps) {
         { label: "Rating", value: "4.8 / 5", icon: Star },
     ]), [id, singaporePkg?.days, singaporePkg?.nights]);
 
+    const faqs = useMemo(() => ([
+        {
+            question: "What is the best time to visit Singapore?",
+            answer: "Singapore is a year-round destination. However, August to September typically has the best weather with less rainfall.",
+        },
+        {
+            question: "Do Indians need a visa for Singapore?",
+            answer: "Yes, Indian citizens need a visa to enter Singapore. The process is relatively straightforward and can be done online.",
+        },
+        {
+            question: "What are the must-visit attractions?",
+            answer: "Popular attractions include Gardens by the Bay, Universal Studios, Marina Bay Sands, Sentosa Island, and Singapore Zoo.",
+        },
+        {
+            question: "Is Singapore expensive to visit?",
+            answer: "Singapore can be relatively expensive, but there are options for all budgets, especially for food at hawker centers.",
+        },
+    ]), []);
+
     return (
         <PageWrapper>
             <div className={`relative ${poppins.className}`}>
@@ -211,7 +230,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
                         <div className="lg:col-span-2 min-w-0">
                             {/* Overview */}
                             <section ref={overviewMountRef} className="mb-8" style={{ contentVisibility: 'auto', containIntrinsicSize: '600px' }}>
-                                <h2 className="text-2xl font-bold mb-4">About This Package</h2>
+                                <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">About This Package</h2>
                                 <Card className="p-5">
                                     <p className="text-gray-700">{showFullDescription ? description : truncatedDescription}</p>
                                     {description.length > 300 && (
@@ -224,16 +243,22 @@ export default function SingaporePackagePage({ params }: PageProps) {
 
                             {/* What's Included / Not Included */}
                             <section className="mb-8" style={{ contentVisibility: 'auto', containIntrinsicSize: '700px' }}>
-                                <h2 className="text-2xl font-bold mb-4">What’s Included</h2>
+                                <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">What’s Included</h2>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <Card className="p-5">
-                                        <h3 className="text-lg font-medium mb-3 flex items-center"><Check className="h-5 w-5 mr-2 text-green-500" /> Included</h3>
+                                        <h3 className="text-lg font-medium mb-3 flex items-center">
+                                            <Check className="h-5 w-5 mr-2 text-green-500" />
+                                            <span className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">Included</span>
+                                        </h3>
                                         <ul className="space-y-2 text-sm">
                                             {singaporePkg?.inclusions?.map((item, i) => (<li key={i} className="flex items-start"><Check className="h-4 w-4 text-green-500 mr-2 mt-0.5" /> {item}</li>))}
                                         </ul>
                                     </Card>
                                     <Card className="p-5">
-                                        <h3 className="text-lg font-medium mb-3 flex items-center"><X className="h-5 w-5 mr-2 text-red-500" /> Not Included</h3>
+                                        <h3 className="text-lg font-medium mb-3 flex items-center">
+                                            <X className="h-5 w-5 mr-2 text-red-500" />
+                                            <span className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">Excluded</span>
+                                        </h3>
                                         <ul className="space-y-2 text-sm">
                                             {singaporePkg?.exclusions?.map((item, i) => (<li key={i} className="flex items-start"><X className="h-4 w-4 text-red-500 mr-2 mt-0.5" /> {item}</li>))}
                                         </ul>
@@ -243,7 +268,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
 
                             {/* Itinerary - image free */}
                             <section className="mb-8" style={{ contentVisibility: 'auto', containIntrinsicSize: '1200px' }}>
-                                <h2 className="text-2xl font-bold mb-4">Day-by-Day Itinerary</h2>
+                                <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">Day-by-Day Itinerary</h2>
                                 <div className="flex overflow-x-auto space-x-2 mb-4 pb-2 no-scrollbar">
                                     {singaporePkg?.itinerary.map((day, i) => (
                                         <button key={i} onClick={() => { setSelectedDay(day.day); if (!expandedDays.includes(day.day)) toggleDayExpansion(day.day); }} className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${selectedDay === day.day ? 'bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-800'}`}>
@@ -278,7 +303,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
 
                             {/* Accommodation - text only */}
                             <section className="mb-8">
-                                <h2 className="text-2xl font-bold mb-4">Your Accommodations</h2>
+                                <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">Your Accommodations</h2>
                                 <div className="space-y-3">
                                     {singaporePkg.hotelDetails.map((hotel, index) => (
                                         <Card key={index} className="p-4 flex items-center justify-between">
@@ -287,6 +312,21 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                                 <div className="text-sm text-gray-500 flex items-center"><MapPin className="h-3 w-3 mr-1" />{hotel.city}</div>
                                             </div>
                                             <div className="text-sm font-medium">{hotel.roomType}</div>
+                                        </Card>
+                                    ))}
+                                </div>
+                            </section>
+
+                            {/* FAQs */}
+                            <section className="mb-8">
+                                <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">FAQs</h2>
+                                <div className="space-y-3">
+                                    {faqs.map((faq, index) => (
+                                        <Card key={index} className="p-4">
+                                            <details>
+                                                <summary className="cursor-pointer font-semibold list-none">{faq.question}</summary>
+                                                <p className="mt-2 text-sm text-gray-700">{faq.answer}</p>
+                                            </details>
                                         </Card>
                                     ))}
                                 </div>
