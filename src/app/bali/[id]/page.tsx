@@ -111,17 +111,17 @@ export default function BaliPackagePage({ params }: PageProps) {
     return (
         <PageWrapper>
             <div className={`relative ${poppins.className}`}>
-                <header className={`relative w-full ${isMobile ? 'bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-600' : ''}`} style={{ minHeight: isMobile ? '56vh' : '68vh' }}>
+                <header className={`relative w-full ${isMobile ? 'bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-600' : 'md:max-w-[1898px] md:mx-auto'}`} style={{ minHeight: isMobile ? '56vh' : '492px' }}>
                     {isMobile ? null : (
                         <>
                             <Image
-                                src={baliPkg?.images?.[0] || '/default-image.jpg'}
+                                src={baliPkg?.images?.[0] || 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-desktop/1.png'}
                                 alt={baliPkg?.packageName || 'Bali package'}
                                 fill
                                 className="object-cover brightness-[0.85]"
                                 priority={false}
                                 quality={85}
-                                sizes="100vw"
+                                sizes="(max-width: 767px) 100vw, 1898px"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                         </>

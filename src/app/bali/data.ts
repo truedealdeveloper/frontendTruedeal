@@ -178,7 +178,7 @@ export const baliPackages: Record<string, BaliPackage> = {
                 day: 1,
                 title: "Arrival in Bali",
                 description: "Upon your arrival at Ngurah Rai Airport in Denpasar, Bali, our representative will meet and welcome you. You will then be taken to the hotel for your refreshment",
-                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/1.webp"
+
             },
             {
                 day: 2,
@@ -194,7 +194,6 @@ coffee Luwak plantation and shop. It is one of the hottest Instagram spots in Ba
 You can experience incredible views and an exciting adventure at Aloha Swing. As we
 walk down the many stairs to the temple, we can enjoy the views of the terraced rice
 fields. We will end the tour with a visit to Teggunagan Waterfalls. (Breakfast)`,
-                image: "/UGCImages/bali/extra/Tegalalang Rice Terraces.jpg"
             },
             {
                 day: 3,
@@ -210,7 +209,6 @@ excitement or unforgettable memories, this package has it all! Visit a spectacul
 Tanah Lot Temple which stands proudly on the rock inside the ocean. Shopping time
 is available on this visit for any kind of Balinese handicraft products good for
 souvenirs and or for collection. (Breakfast)`,
-                image: "/UGCImages/bali/extra/Tanah Lot Temple.jpg"
             },
             {
                 day: 4,
@@ -225,7 +223,6 @@ offers the perfect mix of adventure and leisure in one of Bali's hidden gems If 
 decide to take snorkelling (at extra cost), you will not be able to go for Crystal bay
 because of lack of time Local Lunch is Served and options and quantity is limited.
 (Breakfast & Lunch)`,
-                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/3.webp"
             },
             {
                 day: 5,
@@ -236,172 +233,26 @@ through the nearby Ubud Market among the colourful stalls of wood carvings, text
 and souvenirs. After lunch, continue to Puri Lukisan Museum the oldest art museum
 in Bali. Here you can admire an array of contemporary paintings and wood carvings
 from prominent Balinese artists. (Breakfast)`,
-                image: "/UGCImages/bali/culture/market.png"
             },
             {
                 day: 6,
                 title: "Bali - Day at leisure",
                 description: "Today you are free to explore on your own. (Breakfast). Explore the beautiful city of Ubud at your own pace. You can visit the Ubud Palace, the Ubud Market, or take a walk through the nearby Ubud Market among the colourful stalls of wood carvings, textiles and souvenirs. (Breakfast)",
-                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/5.webp"
             },
             {
                 day: 7,
                 title: "Departure from Bali",
                 description: "After a hearty breakfast you are transferred in time to the airport to board your flight.(Breakfast)",
-                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/6.webp"
             }
         ],
         images: [
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/1.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/3.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/4.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/5.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/6.webp",
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-desktop/8.png",
         ],
-        experiences: [
-            {
-                title: "Temple Visits",
-                image: "/UGCImages/bali/extra/Tanah Lot Temple.jpg"
-            },
-            {
-                title: "Rice Terraces",
-                image: "/UGCImages/bali/extra/Tegalalang Rice Terraces.jpg"
-            },
-            {
-                title: "Water Sports",
-                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/3.webp"
-            },
-            {
-                title: "Cultural Experience",
-                image: "/UGCImages/bali/culture/dance.jpg"
-            }
-        ],
-        sightseeingSpots: [
-            {
-                name: "Tanah Lot Temple",
-                description: "Ancient Hindu shrine perched on a rocky outcrop, offering stunning sunset views and cultural performances",
-                image: "/UGCImages/bali/extra/Tanah Lot Temple.jpg"
-            },
-            {
-                name: "Tegalalang Rice Terraces",
-                description: "Spectacular terraced rice fields showcasing traditional Balinese irrigation system (subak)",
-                image: "/UGCImages/bali/extra/Tegalalang Rice Terraces.jpg"
-            },
-            {
-                name: "Sacred Monkey Forest",
-                description: "Ancient forest temple complex home to hundreds of playful monkeys and stunning architecture",
-                image: "/UGCImages/bali/extra/monkeyForest.jpg"
-            },
-            {
-                name: "Mount Batur",
-                description: "Active volcano offering sunrise trekking experiences and breathtaking caldera views",
-                image: "/UGCImages/bali/extra/mountBatur.jpg"
-            },
-            {
-                name: "Uluwatu Temple",
-                description: "Clifftop temple famous for traditional Kecak fire dance performances at sunset",
-                image: "/UGCImages/bali/extra/Uluwatu.jpg"
-            }
-        ],
-        localFood: [
-            {
-                name: "Nasi Goreng",
-                description: "Indonesian fried rice with vegetables, chicken or seafood, topped with a fried egg",
-                image: "/UGCImages/bali/cuisine/Nasi Goreng.jpg",
-                where: "Warung Made, Kuta"
-            },
-            {
-                name: "Babi Guling",
-                description: "Traditional Balinese-style roasted pig served with rice and local spices",
-                image: "/UGCImages/bali/cuisine/Babi Guling.png",
-                where: "Warung Ibu Oka, Ubud"
-            },
-            {
-                name: "Bebek Betutu",
-                description: "Slow-cooked duck with Balinese spices, served with plecing kangkung",
-                image: "/UGCImages/bali/cuisine/Bebek Betutu.png",
-                where: "Bebek Tepi Sawah, Ubud"
-            },
-            {
-                name: "Sambal Matah",
-                description: "Raw spicy Balinese relish made with shallots, lemongrass, and chili",
-                image: "/UGCImages/bali/cuisine/Sambal Matah.jpg",
-                where: "Merah Putih Restaurant, Seminyak"
-            },
-        ],
-        culture: [
-            {
-                title: "Legong Dance",
-                description: "Graceful traditional dance performed by young girls in elaborate costumes, telling stories of ancient kingdoms",
-                image: "/UGCImages/bali/culture/dance.jpg"
-            },
-            {
-                title: "Temple Ceremonies",
-                description: "Vibrant religious ceremonies with offerings, traditional music, and elaborate decorations",
-                image: "/UGCImages/bali/culture/baliTemple.jpg"
-            },
-            {
-                title: "Traditional Crafts",
-                description: "Ancient art of wood carving, silver smithing, and batik making passed down through generations",
-                image: "/UGCImages/bali/culture/craft.jpg"
-            },
-            {
-                title: "Galungan Festival",
-                description: "Major Balinese holiday celebrating the victory of dharma over adharma, marked by decorated bamboo poles",
-                image: "/UGCImages/bali/culture/festival.png"
-            },
-            {
-                title: "Traditional Markets",
-                description: "Bustling local markets selling fresh produce, spices, crafts, and traditional offerings",
-                image: "/UGCImages/bali/culture/market.png"
-            }
-        ],
-        additionalInfo: {
-            highlights: [
-                "Visit to iconic Tanah Lot Temple",
-                "Traditional Kecak Fire Dance show",
-                "Nusa Penida Island exploration",
-                "Water sports activities package",
-                "Scenic Tegalalang Rice Terraces"
-            ],
-            bestTimeToVisit: "May to October (Dry Season)",
-            cuisine: [
-                "Traditional Balinese dishes",
-                "Fresh seafood specialties",
-                "Local fruit varieties",
-                "Indonesian street food"
-            ],
-            accommodation: {
-                type: "4-Star Premium Hotels",
-                amenities: [
-                    "Swimming pool",
-                    "Spa facilities",
-                    "Restaurant & bar",
-                    "Free Wi-Fi",
-                    "Room service"
-                ]
-            },
-            transportation: {
-                type: "Private AC Vehicle",
-                features: [
-                    "Professional driver",
-                    "Comfortable seating",
-                    "Air conditioning",
-                    "Tourist permit"
-                ]
-            },
-            visaInfo: {
-                requirement: "Visa on Arrival",
-                duration: "30 days",
-                cost: "USD 35",
-                documents: [
-                    "Valid passport (minimum 6 months)",
-                    "Return flight tickets",
-                    "Hotel booking confirmation",
-                    "Sufficient funds proof"
-                ]
-            }
-        }
+        experiences: [],
+        sightseeingSpots: [],
+        localFood: [],
+        culture: [],
+        additionalInfo: undefined
     },
     baliHoneymoon: {
         id: "bali-honeymoon",
@@ -528,58 +379,10 @@ Depending on your flight timings, You will be transferred from Hotel to Bali Int
             },
         ],
         images: [
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/4.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/1.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/2.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/3.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/5.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/6.webp"
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-desktop/4.png",
         ],
-        experiences: [
-            {
-                title: "Romantic Temples",
-                image: "/UGCImages/bali/extra/Tanah Lot Temple.jpg"
-            },
-            {
-                title: "Island Adventure",
-                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/2.webp"
-            },
-            {
-                title: "ATV & Swing",
-                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/3.webp"
-            },
-            {
-                title: "Cultural Sites",
-                image: "/UGCImages/bali/culture/market.png"
-            }
-        ],
-        sightseeingSpots: [
-            {
-                name: "Tanah Lot Temple",
-                description: "Ancient Hindu shrine perched on a rocky outcrop, offering stunning sunset views and cultural performances",
-                image: "/UGCImages/bali/extra/Tanah Lot Temple.jpg"
-            },
-            {
-                name: "Tegalalang Rice Terraces",
-                description: "Spectacular terraced rice fields showcasing traditional Balinese irrigation system (subak)",
-                image: "/UGCImages/bali/extra/Tegalalang Rice Terraces.jpg"
-            },
-            {
-                name: "Sacred Monkey Forest",
-                description: "Ancient forest temple complex home to hundreds of playful monkeys and stunning architecture",
-                image: "/UGCImages/bali/extra/monkeyForest.jpg"
-            },
-            {
-                name: "Mount Batur",
-                description: "Active volcano offering sunrise trekking experiences and breathtaking caldera views",
-                image: "/UGCImages/bali/extra/mountBatur.jpg"
-            },
-            {
-                name: "Uluwatu Temple",
-                description: "Clifftop temple famous for traditional Kecak fire dance performances at sunset",
-                image: "/UGCImages/bali/extra/Uluwatu.jpg"
-            }
-        ],
+        experiences: [],
+        sightseeingSpots: [],
         localFood: [
             {
                 name: "Nasi Goreng",
@@ -633,52 +436,7 @@ Depending on your flight timings, You will be transferred from Hotel to Bali Int
                 image: "/UGCImages/bali/culture/market.png"
             }
         ],
-        additionalInfo: {
-            highlights: [
-                "Private pool villa experience",
-                "Romantic sunset dinner",
-                "Couple spa treatment",
-                "Private beach access",
-                "Customized tours"
-            ],
-            bestTimeToVisit: "May to October (Dry Season)",
-            cuisine: [
-                "Candlelight dinners",
-                "Floating breakfast",
-                "Local delicacies",
-                "International cuisine"
-            ],
-            accommodation: {
-                type: "Luxury Pool Villas & Hotels",
-                amenities: [
-                    "Private pool",
-                    "Butler service",
-                    "Couples spa",
-                    "Ocean view options",
-                    "Premium amenities"
-                ]
-            },
-            transportation: {
-                type: "Private Luxury Vehicle",
-                features: [
-                    "Professional driver",
-                    "Luxury seating",
-                    "Air conditioning",
-                    "On-call service"
-                ]
-            },
-            visaInfo: {
-                requirement: "Visa on Arrival",
-                duration: "30 days",
-                cost: "USD 35",
-                documents: [
-                    "Valid passport (minimum 6 months)",
-                    "Return flight tickets",
-                    "Hotel booking confirmation",
-                    "Sufficient funds proof"
-                ]
-            }
-        }
+        additionalInfo: undefined
     },
     baliDeluxe: {
         id: "bali-deluxe",
@@ -783,58 +541,10 @@ Depending on your flight timings, You will be transferred from Hotel to Bali Int
             }
         ],
         images: [
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/1.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/2.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/3.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/4.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/5.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/6.webp"
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-desktop/9.png",
         ],
-        experiences: [
-            {
-                title: "Luxury Water Sports",
-                image: "/UGCImages/bali/extra/Uluwatu.jpg"
-            },
-            {
-                title: "Island Exploration",
-                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/3.webp"
-            },
-            {
-                title: "Adventure Activities",
-                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/5.webp"
-            },
-            {
-                title: "Cultural Heritage",
-                image: "/UGCImages/bali/extra/Tanah Lot Temple.jpg"
-            }
-        ],
-        sightseeingSpots: [
-            {
-                name: "Tanah Lot Temple",
-                description: "Ancient Hindu shrine perched on a rocky outcrop, offering stunning sunset views and cultural performances",
-                image: "/UGCImages/bali/extra/Tanah Lot Temple.jpg"
-            },
-            {
-                name: "Tegalalang Rice Terraces",
-                description: "Spectacular terraced rice fields showcasing traditional Balinese irrigation system (subak)",
-                image: "/UGCImages/bali/extra/Tegalalang Rice Terraces.jpg"
-            },
-            {
-                name: "Sacred Monkey Forest",
-                description: "Ancient forest temple complex home to hundreds of playful monkeys and stunning architecture",
-                image: "/UGCImages/bali/extra/monkeyForest.jpg"
-            },
-            {
-                name: "Mount Batur",
-                description: "Active volcano offering sunrise trekking experiences and breathtaking caldera views",
-                image: "/UGCImages/bali/extra/mountBatur.jpg"
-            },
-            {
-                name: "Uluwatu Temple",
-                description: "Clifftop temple famous for traditional Kecak fire dance performances at sunset",
-                image: "/UGCImages/bali/extra/Uluwatu.jpg"
-            }
-        ],
+        experiences: [],
+        sightseeingSpots: [],
         localFood: [
             {
                 name: "Nasi Goreng",
@@ -888,52 +598,7 @@ Depending on your flight timings, You will be transferred from Hotel to Bali Int
                 image: "/UGCImages/bali/culture/market.png"
             }
         ],
-        additionalInfo: {
-            highlights: [
-                "Premium hotel accommodations",
-                "Water sports package",
-                "Private Nusa Penida tour",
-                "ATV and rafting adventure",
-                "Unlimited jungle swing access"
-            ],
-            bestTimeToVisit: "May to October (Dry Season)",
-            cuisine: [
-                "Daily breakfast included",
-                "Complimentary local lunches",
-                "Traditional Balinese dishes",
-                "International cuisine options"
-            ],
-            accommodation: {
-                type: "4-Star Hotels & Luxury Villas",
-                amenities: [
-                    "Pool access",
-                    "Daily breakfast",
-                    "Room service",
-                    "Free Wi-Fi",
-                    "Premium amenities"
-                ]
-            },
-            transportation: {
-                type: "Private AC Vehicle",
-                features: [
-                    "Professional driver",
-                    "Comfortable seating",
-                    "Air conditioning",
-                    "Tourist permit"
-                ]
-            },
-            visaInfo: {
-                requirement: "Visa on Arrival",
-                duration: "30 days",
-                cost: "USD 35",
-                documents: [
-                    "Valid passport (minimum 6 months)",
-                    "Return flight tickets",
-                    "Hotel booking confirmation",
-                    "Sufficient funds proof"
-                ]
-            }
-        }
+        additionalInfo: undefined
     },
     baliGiliT: {
         id: "bali-gili-t",
@@ -1114,57 +779,10 @@ And Local Lunch and drinks Balinese coffee, tea and water.`,
             }
         ],
         images: [
-            "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/1.webp",
-            "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/2.webp",
-            "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/3.webp",
-            "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/4.webp",
-            "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/5.webp",
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-desktop/7.png",
         ],
-        experiences: [
-            {
-                title: "Pirate Dinner Cruise",
-                image: "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/2.webp"
-            },
-            {
-                title: "Island Hopping",
-                image: "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/3.webp"
-            },
-            {
-                title: "Gili Trawangan",
-                image: "/UGCImages/bali/BALI LEMBONGAN PACKAGE/horizontal/4.webp"
-            },
-            {
-                title: "Adventure Swing",
-                image: "/UGCImages/bali/extra/Tegalalang Rice Terraces.jpg"
-            }
-        ],
-        sightseeingSpots: [
-            {
-                name: "Tanah Lot Temple",
-                description: "Ancient Hindu shrine perched on a rocky outcrop, offering stunning sunset views and cultural performances",
-                image: "/UGCImages/bali/extra/Tanah Lot Temple.jpg"
-            },
-            {
-                name: "Tegalalang Rice Terraces",
-                description: "Spectacular terraced rice fields showcasing traditional Balinese irrigation system (subak)",
-                image: "/UGCImages/bali/extra/Tegalalang Rice Terraces.jpg"
-            },
-            {
-                name: "Sacred Monkey Forest",
-                description: "Ancient forest temple complex home to hundreds of playful monkeys and stunning architecture",
-                image: "/UGCImages/bali/extra/monkeyForest.jpg"
-            },
-            {
-                name: "Mount Batur",
-                description: "Active volcano offering sunrise trekking experiences and breathtaking caldera views",
-                image: "/UGCImages/bali/extra/mountBatur.jpg"
-            },
-            {
-                name: "Uluwatu Temple",
-                description: "Clifftop temple famous for traditional Kecak fire dance performances at sunset",
-                image: "/UGCImages/bali/extra/Uluwatu.jpg"
-            }
-        ],
+        experiences: [],
+        sightseeingSpots: [],
         localFood: [
             {
                 name: "Nasi Goreng",
@@ -1218,52 +836,7 @@ And Local Lunch and drinks Balinese coffee, tea and water.`,
                 image: "/UGCImages/bali/culture/market.png"
             }
         ],
-        additionalInfo: {
-            highlights: [
-                "Premium hotel accommodations",
-                "Water sports package",
-                "Private Nusa Penida tour",
-                "ATV and rafting adventure",
-                "Unlimited jungle swing access"
-            ],
-            bestTimeToVisit: "May to October (Dry Season)",
-            cuisine: [
-                "Daily breakfast included",
-                "Complimentary local lunches",
-                "Traditional Balinese dishes",
-                "International cuisine options"
-            ],
-            accommodation: {
-                type: "4-Star Hotels & Luxury Villas",
-                amenities: [
-                    "Pool access",
-                    "Daily breakfast",
-                    "Room service",
-                    "Free Wi-Fi",
-                    "Premium amenities"
-                ]
-            },
-            transportation: {
-                type: "Private AC Vehicle",
-                features: [
-                    "Professional driver",
-                    "Comfortable seating",
-                    "Air conditioning",
-                    "Tourist permit"
-                ]
-            },
-            visaInfo: {
-                requirement: "Visa on Arrival",
-                duration: "30 days",
-                cost: "USD 35",
-                documents: [
-                    "Valid passport (minimum 6 months)",
-                    "Return flight tickets",
-                    "Hotel booking confirmation",
-                    "Sufficient funds proof"
-                ]
-            }
-        }
+        additionalInfo: undefined
     },
     baliDiwaliExBOM: {
         id: "bali-diwali-ex-bom",
@@ -1376,41 +949,10 @@ And Local Lunch and drinks Balinese coffee, tea and water.`,
             }
         ],
         images: [
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/1.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/2.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/3.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/4.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/5.webp",
-            "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/6.webp"
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-desktop/5.png",
         ],
-        experiences: [
-            { title: "Temple Visits", image: "/UGCImages/bali/extra/Tanah Lot Temple.jpg" },
-            { title: "Water Sports", image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/3.webp" },
-            { title: "Cultural Experience", image: "/UGCImages/bali/culture/market.png" },
-            { title: "Theme Park Experience", image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/5.webp" }
-        ],
-        sightseeingSpots: [
-            {
-                name: "Ulun Danu Temple",
-                description: "Floating temple on Lake Bratan surrounded by mountains and cool highlands.",
-                image: "/UGCImages/bali/extra/Tanah Lot Temple.jpg"
-            },
-            {
-                name: "Tanah Lot Temple",
-                description: "Sea temple perched on a rocky outcrop famed for sunsets.",
-                image: "/UGCImages/bali/extra/Tanah Lot Temple.jpg"
-            },
-            {
-                name: "Uluwatu Temple",
-                description: "Clifftop temple with sweeping ocean views and Kecak fire dance.",
-                image: "/UGCImages/bali/extra/Uluwatu.jpg"
-            },
-            {
-                name: "Kintamani Volcano",
-                description: "View of Mount Batur and its caldera lake from the highlands.",
-                image: "/UGCImages/bali/extra/mountBatur.jpg"
-            }
-        ],
+        experiences: [],
+        sightseeingSpots: [],
         localFood: [
             {
                 name: "Nasi Goreng",
@@ -1459,52 +1001,7 @@ And Local Lunch and drinks Balinese coffee, tea and water.`,
                 image: "/UGCImages/bali/culture/market.png"
             }
         ],
-        additionalInfo: {
-            highlights: [
-                "Malaysia Airlines Diwali departure ex Mumbai",
-                "Water sports package + Uluwatu sunset",
-                "Ulun Danu and Tanah Lot temples",
-                "Trans Studio Bali – Fly Over Indonesia",
-                "Kintamani volcano and Ubud experiences"
-            ],
-            bestTimeToVisit: "October (Diwali departures)",
-            cuisine: [
-                "Traditional Balinese dishes",
-                "Fresh seafood specialties",
-                "Local fruit varieties",
-                "Indonesian street food"
-            ],
-            accommodation: {
-                type: "4-Star Hotels & Pool Villas",
-                amenities: [
-                    "Swimming pool",
-                    "Spa facilities",
-                    "Restaurant & bar",
-                    "Free Wi-Fi",
-                    "Room service"
-                ]
-            },
-            transportation: {
-                type: "Private AC Vehicle",
-                features: [
-                    "Professional driver",
-                    "Comfortable seating",
-                    "Air conditioning",
-                    "Tourist permit"
-                ]
-            },
-            visaInfo: {
-                requirement: "Visa on Arrival",
-                duration: "30 days",
-                cost: "USD 35",
-                documents: [
-                    "Valid passport (minimum 6 months)",
-                    "Return flight tickets",
-                    "Hotel booking confirmation",
-                    "Sufficient funds proof"
-                ]
-            }
-        }
+        additionalInfo: undefined
     },
 
 }; 
