@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    unoptimized: false,
+    unoptimized: true,
     domains: ["truedeal-assets.s3.eu-north-1.amazonaws.com"],
     remotePatterns: [
       {
