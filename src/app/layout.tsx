@@ -9,7 +9,7 @@ import { Chatbot } from "./components/chatbot/Chatbot";
 // import { GA_MEASUREMENT_ID } from '@/lib/gtag'
 import { Analytics } from "@vercel/analytics/react"
 import { Poppins } from 'next/font/google';
-import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
+import Script from 'next/script'
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -98,7 +98,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="overflow-x-hidden">
-      <GoogleTagManager gtmId="GTM-NTPTHZPG" />
+      <Script id="gtm-lazy" strategy="lazyOnload">{`
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id=GTM-NTPTHZPG'+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NTPTHZPG');
+      `}</Script>
       <body className={`${poppins.className} overflow-x-hidden w-full`}>
         {/* Preload navbar logo to avoid it becoming LCP and reduce load delay */}
         <link rel="preload" as="image" href="/Assets/NavbarImages/logo.webp" />
@@ -109,8 +115,7 @@ export default function RootLayout({
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
-        {/* <GoogleAnalytics gaId="G-47YH3J6089" /> */}
-        <GoogleAnalytics gaId="G-SR9YQK2TPK" />
+        {/* GA is loaded via GTM; avoid double-loading to reduce TBT */}
         <Navbar />
         {children}
         <SpeedInsights />

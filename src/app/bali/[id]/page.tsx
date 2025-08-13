@@ -7,16 +7,15 @@ import { notFound } from "next/navigation";
 import { Calendar, Check, MapPin, Star, Users, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { BookingFormModal } from '@/app/components/BookingFormModal';
-import { Poppins } from "next/font/google";
+import dynamic from 'next/dynamic';
 import { PageWrapper } from "@/components/page-wrapper";
 import { useMobile } from "@/hooks/use-mobile";
 
-const poppins = Poppins({
-    weight: ["400", "500", "600", "700"],
-    subsets: ["latin"],
-    display: "swap",
-});
+// Lazy load the booking modal only when needed to reduce initial JS
+const BookingFormModal = dynamic(() =>
+    import('@/app/components/BookingFormModal').then(m => m.BookingFormModal),
+    { ssr: false }
+);
 
 interface PageProps {
     params: Promise<{ id: string }>
@@ -113,7 +112,7 @@ export default function BaliPackagePage({ params }: PageProps) {
 
     return (
         <PageWrapper>
-            <div className={`relative ${poppins.className}`}>
+            <div className={`relative`}>
                 <header className={`relative w-full ${isMobile ? '' : 'md:max-w-[1898px] md:mx-auto'}`} style={{ minHeight: isMobile ? '348px' : '492px' }}>
                     {/* Preload hero image variants to reduce LCP load delay on production with unoptimized images */}
                     <link rel="preload" as="image" href={mobileHeroSrc} media="(max-width: 767px)" />
@@ -333,11 +332,13 @@ export default function BaliPackagePage({ params }: PageProps) {
                     </div>
                 </main>
 
-                <BookingFormModal
-                    isOpen={isBookingModalOpen}
-                    onClose={() => setIsBookingModalOpen(false)}
-                    destinationName={baliPkg?.packageName || 'Bali'}
-                />
+                {isBookingModalOpen && (
+                    <BookingFormModal
+                        isOpen={isBookingModalOpen}
+                        onClose={() => setIsBookingModalOpen(false)}
+                        destinationName={baliPkg?.packageName || 'Bali'}
+                    />
+                )}
             </div>
         </PageWrapper>
     );
