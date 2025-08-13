@@ -127,6 +127,7 @@ export default function BaliPackagePage({ params }: PageProps) {
                                 priority
                                 // Hint browser to fetch hero quickly
                                 fetchPriority="high"
+                                quality={70}
                                 sizes="100vw"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -141,6 +142,7 @@ export default function BaliPackagePage({ params }: PageProps) {
                                 // Desktop header is above the fold on large screens
                                 priority={true}
                                 fetchPriority="high"
+                                quality={70}
                                 sizes="(max-width: 767px) 100vw, 1898px"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />

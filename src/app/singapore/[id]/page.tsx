@@ -135,8 +135,8 @@ export default function SingaporePackagePage({ params }: PageProps) {
                                 fill
                                 className="object-cover brightness-[0.85]"
                                 priority={false}
-                                quality={85}
-                                sizes="100vw"
+                                quality={70}
+                                sizes="(max-width: 767px) 100vw, 1200px"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                         </>
