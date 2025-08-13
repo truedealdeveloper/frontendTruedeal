@@ -4,26 +4,17 @@ import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Chatbot } from "./components/chatbot/Chatbot";
-import TripPlanPopup from "../components/TripPlanPopup";
+// import TripPlanPopup from "../components/TripPlanPopup";
 // import Script from 'next/script'
 // import { GA_MEASUREMENT_ID } from '@/lib/gtag'
 import { Analytics } from "@vercel/analytics/react"
 import { Poppins } from 'next/font/google';
 import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
-import dynamic from 'next/dynamic';
+
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-// Dynamically import ClerkProvider with fallback
-const ClerkProvider = dynamic(
-  () => {
-    if (process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY) {
-      return import('@clerk/nextjs').then((mod) => mod.ClerkProvider);
-    }
-    return Promise.resolve(({ children }: { children: React.ReactNode }) => <>{children}</>);
-  },
-  { ssr: true }
-);
+
 
 const poppins = Poppins({
   weight: ['400', '500', '600', '700'],
@@ -106,43 +97,41 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang="en" className="overflow-x-hidden">
-        <GoogleTagManager gtmId="GTM-NTPTHZPG" />
-        <body className={`${poppins.className} overflow-x-hidden w-full`}>
-          {/* Preload navbar logo to avoid it becoming LCP and reduce load delay */}
-          <link rel="preload" as="image" href="/Assets/NavbarImages/logo.png" />
-          <noscript>
-            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NTPTHZPG"
-              height="0"
-              width="0"
-              style={{ display: 'none', visibility: 'hidden' }}
-            />
-          </noscript>
-          {/* <GoogleAnalytics gaId="G-47YH3J6089" /> */}
-          <GoogleAnalytics gaId="G-SR9YQK2TPK" />
-          <Navbar />
-          {children}
-          <SpeedInsights />
-          <Chatbot />
-          <TripPlanPopup />
-          <Footer />
-          <ToastContainer
-            position="top-right"
-            autoClose={4000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="light"
+    <html lang="en" className="overflow-x-hidden">
+      <GoogleTagManager gtmId="GTM-NTPTHZPG" />
+      <body className={`${poppins.className} overflow-x-hidden w-full`}>
+        {/* Preload navbar logo to avoid it becoming LCP and reduce load delay */}
+        <link rel="preload" as="image" href="/Assets/NavbarImages/logo.webp" />
+        <noscript>
+          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NTPTHZPG"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
           />
+        </noscript>
+        {/* <GoogleAnalytics gaId="G-47YH3J6089" /> */}
+        <GoogleAnalytics gaId="G-SR9YQK2TPK" />
+        <Navbar />
+        {children}
+        <SpeedInsights />
+        <Chatbot />
+        {/* <TripPlanPopup /> */}
+        <Footer />
+        <ToastContainer
+          position="top-right"
+          autoClose={4000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
 
-          <Analytics />
-        </body>
-      </html>
-    </ClerkProvider>
+        <Analytics />
+      </body>
+    </html>
   );
 }
