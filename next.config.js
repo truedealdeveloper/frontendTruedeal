@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    // Keep images unoptimized to maintain compatibility with static export/production hosting
-    unoptimized: true,
+    // Enable Next.js image optimization for responsive, compressed formats
+    unoptimized: false,
     domains: ["truedeal-assets.s3.eu-north-1.amazonaws.com"],
     remotePatterns: [
       {

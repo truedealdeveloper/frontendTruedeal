@@ -359,7 +359,7 @@ export default function Navbar() {
                         {/* Logo - enhanced visibility */}
                         <Link href="/" className="flex-shrink-0">
                             <Image
-                                src="/Assets/NavbarImages/logo.png"
+                                src="/Assets/NavbarImages/logo.webp"
                                 alt="Logo"
                                 width={150}
                                 height={50}
