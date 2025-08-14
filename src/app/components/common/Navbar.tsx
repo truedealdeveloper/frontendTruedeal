@@ -71,7 +71,7 @@ const dropdownMenus = {
 }
 
 // Update the DropdownMenu component with new hover effects
-const DropdownMenu = ({ items, isOpen }: { items: { name: string; href: string }[]; isOpen: boolean }) => {
+const DropdownMenu = ({ items, isOpen, top, onMouseEnter, onMouseLeave }: { items: { name: string; href: string }[]; isOpen: boolean; top: number; onMouseEnter?: () => void; onMouseLeave?: () => void }) => {
     if (!isOpen) return null;
 
     const isInternational = items.length > 10;
@@ -80,7 +80,7 @@ const DropdownMenu = ({ items, isOpen }: { items: { name: string; href: string }
     const headerStyles = "font-medium text-[#00DEF7] text-xs uppercase mb-2 tracking-wider";
 
     return (
-        <div className={`absolute top-full left-0 right-0 mx-auto ${isInternational ? 'w-[800px]' : 'w-[500px]'} bg-white shadow-xl rounded-lg overflow-hidden py-4 px-6 z-50`}>
+        <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} style={{ top }} className={`fixed left-1/2 -translate-x-1/2 ${isInternational ? 'w-[800px]' : 'w-[560px]'} max-w-[90vw] bg-white shadow-xl rounded-lg overflow-hidden py-4 px-6 z-[60] max-h-[70vh] overflow-y-auto overscroll-contain`}>
             <div className={`grid ${isInternational ? 'grid-cols-3' : 'grid-cols-2'} gap-2`}>
                 {isInternational ? (
                     <>
@@ -312,6 +312,9 @@ export default function Navbar() {
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
     const [activeMobileDropdown, setActiveMobileDropdown] = useState<string | null>(null);
     const isHomePage = pathname === '/';
+    const bottomBarRef = useRef<HTMLDivElement | null>(null);
+    const [dropdownTop, setDropdownTop] = useState<number>(0);
+    const closeTimeoutRef = useRef<number | null>(null);
 
     // Lock scroll when mobile menu or search modal is open to prevent layout shift/overflow on mobile
     useEffect(() => {
@@ -337,12 +340,40 @@ export default function Navbar() {
         };
     }, [isMenuOpen, isSearchModalOpen]);
 
+    // Compute dropdown top position from bottom menu bar
+    useEffect(() => {
+        const updateTop = () => {
+            const rect = bottomBarRef.current?.getBoundingClientRect();
+            const scrollY = window.scrollY || window.pageYOffset;
+            if (rect) {
+                setDropdownTop(rect.bottom + scrollY + 8); // 8px gap
+            }
+        };
+        updateTop();
+        window.addEventListener('resize', updateTop);
+        window.addEventListener('scroll', updateTop, { passive: true });
+        return () => {
+            window.removeEventListener('resize', updateTop);
+            window.removeEventListener('scroll', updateTop as EventListener);
+        };
+    }, [isHomePage]);
+
     const handleMouseEnter = (menuId: string) => {
+        if (closeTimeoutRef.current) {
+            window.clearTimeout(closeTimeoutRef.current);
+            closeTimeoutRef.current = null;
+        }
         setActiveDropdown(menuId);
     };
 
     const handleMouseLeave = () => {
-        setActiveDropdown(null);
+        if (closeTimeoutRef.current) {
+            window.clearTimeout(closeTimeoutRef.current);
+        }
+        closeTimeoutRef.current = window.setTimeout(() => {
+            setActiveDropdown(null);
+            closeTimeoutRef.current = null;
+        }, 150);
     };
 
     // Add this function to handle mobile menu item clicks
@@ -453,9 +484,9 @@ export default function Navbar() {
 
             {/* Bottom Menu Bar - reduced padding and gap */}
             {isHomePage && (
-                <div className="bg-[#00DEF7]">
+                <div className="bg-[#00DEF7]" ref={bottomBarRef}>
                     <div className="max-w-7xl mx-auto">
-                        <div className="hidden md:flex items-center justify-center gap-12 px-4">
+                        <div className="hidden md:flex items-center justify-center gap-12 px-4 flex-nowrap h-11">
                             {menuItems.map((item) => {
                                 const menuId = item.href.replace('/', '');
                                 return (
@@ -465,7 +496,7 @@ export default function Navbar() {
                                         onMouseEnter={() => handleMouseEnter(menuId)}
                                         onMouseLeave={handleMouseLeave}
                                     >
-                                        <div className="relative group py-2 px-2 block whitespace-nowrap cursor-default">
+                                        <div className="relative group py-2 px-2 block whitespace-nowrap cursor-default select-none">
                                             <span className="relative z-10 text-white text-[14px] font-normal group-hover:text-white/90 transition-colors flex items-center gap-1">
                                                 {item.label}
                                                 <ChevronDown className="h-3 w-3 opacity-80" />
@@ -475,6 +506,9 @@ export default function Navbar() {
                                             <DropdownMenu
                                                 items={dropdownMenus[menuId as keyof typeof dropdownMenus]}
                                                 isOpen={activeDropdown === menuId}
+                                                top={dropdownTop}
+                                                onMouseEnter={() => handleMouseEnter(menuId)}
+                                                onMouseLeave={handleMouseLeave}
                                             />
                                         )}
                                     </div>
