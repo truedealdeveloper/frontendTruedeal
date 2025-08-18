@@ -8,20 +8,12 @@ import { IoLocationSharp } from 'react-icons/io5';
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import dynamic from 'next/dynamic';
-
-// Dynamically import TripPlanRequest to avoid SSR issues
-const TripPlanRequest = dynamic(() => import('../../components/TripPlanRequest'), {
-    ssr: false
-});
 
 export default function ThailandPackages() {
     const [currentPage, setCurrentPage] = useState(0);
     const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-    // Add error handling for data loading
-    const packages = Object.values(thailandPackages || {});
-    const totalPages = packages.length > 0 ? Math.ceil(packages.length / 3) : 1;
+    const packages = Object.values(thailandPackages);
+    const totalPages = Math.ceil(packages.length / 3);
 
     const handlePrevPage = () => {
         setCurrentPage(prev => prev > 0 ? prev - 1 : prev);
@@ -32,14 +24,12 @@ export default function ThailandPackages() {
     };
 
     const PackageCard = ({ package: thailandPackage }: { package: ThailandPackage }) => {
-        if (!thailandPackage) return null;
-
         return (
             <div className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0">
                 {/* Background Image */}
                 <Image
-                    src={thailandPackage.images?.[0] || '/UGCImages/web/thailand/1.webp'}
-                    alt={thailandPackage.packageName || 'Thailand Package'}
+                    src={thailandPackage.images[0]}
+                    alt={thailandPackage.packageName}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
@@ -64,22 +54,22 @@ export default function ThailandPackages() {
                 {/* Content */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                     <h2 className="text-2xl font-bold mb-2">
-                        {thailandPackage.packageName || 'Thailand Package'}
+                        {thailandPackage.packageName}
                     </h2>
 
                     {/* Details Grid */}
                     <div className="grid grid-cols-2 gap-y-2 text-sm mb-4">
                         <div className="flex items-center gap-2">
                             <FaClock className="text-yellow-400" />
-                            <span>{thailandPackage.days || 0}D/{thailandPackage.nights || 0}N</span>
+                            <span>{thailandPackage.days}D/{thailandPackage.nights}N</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <IoLocationSharp className="text-yellow-400" />
-                            <span>{thailandPackage.hotelDetails?.[0]?.city || 'Thailand'}</span>
+                            <span>{thailandPackage.hotelDetails[0].city}</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <FaCalendarAlt className="text-yellow-400" />
-                            <span>{thailandPackage.dateStart || 'Available'}</span>
+                            <span>{thailandPackage.dateStart}</span>
                         </div>
                     </div>
 
@@ -228,76 +218,64 @@ export default function ThailandPackages() {
                             Our Thailand Packages
                         </span>
                     </h2>
-                    <div className="relative">
+                    <div className="relative ">
                         <div className="relative">
                             {/* Navigation Controls */}
-                            {packages.length > 3 && (
-                                <>
-                                    <div className="absolute top-1/2 -translate-y-1/2 left-0 z-10 hidden md:block">
-                                        <Button
-                                            onClick={handlePrevPage}
-                                            disabled={currentPage === 0}
-                                            variant="outline"
-                                            className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -ml-5 shadow-lg"
-                                        >
-                                            <FaChevronLeft className="w-4 h-4" />
-                                        </Button>
-                                    </div>
+                            <div className="absolute top-1/2 -translate-y-1/2 left-0 z-10 hidden md:block">
+                                <Button
+                                    onClick={handlePrevPage}
+                                    disabled={currentPage === 0}
+                                    variant="outline"
+                                    className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -ml-5 shadow-lg"
+                                >
+                                    <FaChevronLeft className="w-4 h-4" />
+                                </Button>
+                            </div>
 
-                                    <div className="absolute top-1/2 -translate-y-1/2 right-0 z-10 hidden md:block">
-                                        <Button
-                                            onClick={handleNextPage}
-                                            disabled={currentPage === totalPages - 1}
-                                            variant="outline"
-                                            className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -mr-5 shadow-lg"
-                                        >
-                                            <FaChevronRight className="w-4 h-4" />
-                                        </Button>
-                                    </div>
-                                </>
-                            )}
+                            <div className="absolute top-1/2 -translate-y-1/2 right-0 z-10 hidden md:block">
+                                <Button
+                                    onClick={handleNextPage}
+                                    disabled={currentPage === totalPages - 1}
+                                    variant="outline"
+                                    className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -mr-5 shadow-lg"
+                                >
+                                    <FaChevronRight className="w-4 h-4" />
+                                </Button>
+                            </div>
 
                             {/* Packages Grid */}
                             <div className="overflow-x-auto -mx-4 px-4">
                                 <div className="flex md:grid md:grid-cols-3 gap-6 min-w-min md:min-w-0">
-                                    {packages && packages.length > 0 ? (
-                                        packages
-                                            .slice(currentPage * 3, (currentPage * 3) + 3)
-                                            .map((thailandPkg) => (
-                                                <PackageCard key={thailandPkg?.id || Math.random()} package={thailandPkg} />
-                                            ))
-                                    ) : (
-                                        <div className="col-span-3 text-center py-8">
-                                            <p className="text-gray-500">No packages available at the moment.</p>
-                                        </div>
-                                    )}
+                                    {packages
+                                        .slice(currentPage * 3, (currentPage * 3) + 3)
+                                        .map((thailandPkg) => (
+                                            <PackageCard key={thailandPkg.id} package={thailandPkg} />
+                                        ))}
                                 </div>
                             </div>
 
                             {/* Mobile Navigation */}
-                            {packages.length > 0 && (
-                                <div className="mt-3 flex justify-center items-center gap-2 md:hidden">
-                                    <Button
-                                        onClick={handlePrevPage}
-                                        disabled={currentPage === 0}
-                                        variant="outline"
-                                        className="rounded-full w-8 h-8 p-0"
-                                    >
-                                        <FaChevronLeft className="w-3 h-3" />
-                                    </Button>
-                                    <span className="text-sm text-gray-500">
-                                        {currentPage + 1} / {totalPages}
-                                    </span>
-                                    <Button
-                                        onClick={handleNextPage}
-                                        disabled={currentPage === totalPages - 1}
-                                        variant="outline"
-                                        className="rounded-full w-8 h-8 p-0"
-                                    >
-                                        <FaChevronRight className="w-3 h-3" />
-                                    </Button>
-                                </div>
-                            )}
+                            <div className="mt-3 flex justify-center items-center gap-2 md:hidden">
+                                <Button
+                                    onClick={handlePrevPage}
+                                    disabled={currentPage === 0}
+                                    variant="outline"
+                                    className="rounded-full w-8 h-8 p-0"
+                                >
+                                    <FaChevronLeft className="w-3 h-3" />
+                                </Button>
+                                <span className="text-sm text-gray-500">
+                                    {currentPage + 1} / {totalPages}
+                                </span>
+                                <Button
+                                    onClick={handleNextPage}
+                                    disabled={currentPage === totalPages - 1}
+                                    variant="outline"
+                                    className="rounded-full w-8 h-8 p-0"
+                                >
+                                    <FaChevronRight className="w-3 h-3" />
+                                </Button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -402,8 +380,6 @@ export default function ThailandPackages() {
                     </p>
                 </div>
             </div>
-
-            <TripPlanRequest />
         </div>
     );
 }
