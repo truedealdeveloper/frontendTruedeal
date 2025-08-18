@@ -43,7 +43,7 @@ function useInView<T extends HTMLElement>(rootMargin = "200px"): [React.RefObjec
     return [ref, inView];
 }
 
-export default function ThailandPackagePage({ params }: PageProps) {
+export default function NatureslandPackagePage({ params }: PageProps) {
     const { id } = use(params);
     const thailandPkg = useMemo(
         () => Object.values(thailandPackages).find(p => p.id === id),
@@ -51,7 +51,8 @@ export default function ThailandPackagePage({ params }: PageProps) {
     );
     const isMobile = useMobile();
 
-    const mobileHeroSrc = (thailandPkg?.mobileImages?.[0]) || '/UGCImages/web/thailand/1.webp';
+    // Use optimized images for mobile/desktop
+    const mobileHeroSrc = thailandPkg?.images?.[0] || '/UGCImages/web/thailand/1.webp';
     const desktopHeroSrc = thailandPkg?.images?.[0] || '/UGCImages/web/thailand/1.webp';
 
     if (!thailandPkg) {
@@ -63,6 +64,7 @@ export default function ThailandPackagePage({ params }: PageProps) {
     const [showFullDescription, setShowFullDescription] = useState(false);
     const [expandedDays, setExpandedDays] = useState<number[]>([1]);
     const dayRefs = useRef<Record<number, HTMLDivElement | null>>({});
+
     const scrollToDay = useCallback((dayNumber: number) => {
         setSelectedDay(dayNumber);
         setExpandedDays((prev) => (prev.includes(dayNumber) ? prev : [...prev, dayNumber]));
@@ -87,22 +89,22 @@ export default function ThailandPackagePage({ params }: PageProps) {
     const quickFacts = useMemo(() => ([
         { label: "Duration", value: `${thailandPkg?.days} Days / ${thailandPkg?.nights} Nights`, icon: Calendar },
         { label: "Location", value: "Thailand", icon: MapPin },
-        { label: "Group", value: "Max 15", icon: Users },
+        { label: "Group", value: "Max 20", icon: Users },
         { label: "Rating", value: "4.6 / 5", icon: Star },
     ]), [thailandPkg?.days, thailandPkg?.nights]);
 
     const faqs = useMemo(() => ([
         {
             question: "What is the best time to visit Thailand?",
-            answer: "November to February is the cool and dry season, making it the best time to visit Thailand with pleasant weather.",
+            answer: "November to February is ideal for Thailand, offering cool and dry weather perfect for sightseeing and outdoor activities.",
         },
         {
             question: "Do Indians need a visa for Thailand?",
-            answer: "Yes, Indians need a visa for Thailand. Tourist visa costs approximately ₹2500 and provides 60 days multiple entry.",
+            answer: "Yes, Indians need a visa for Thailand. Tourist visa is available and costs approximately ₹2500.",
         },
         {
             question: "What are the must-visit attractions in Thailand?",
-            answer: "Grand Palace, Wat Pho, Coral Island, floating markets, Nong Nooch Garden, and Safari World are popular attractions.",
+            answer: "Grand Palace, Wat Pho, Coral Island, floating markets, and Nong Nooch Garden are top attractions.",
         },
         {
             question: "Is vegetarian food available in Thailand?",
@@ -114,7 +116,7 @@ export default function ThailandPackagePage({ params }: PageProps) {
         <PageWrapper>
             <div className={`relative`}>
                 <header className={`relative w-full ${isMobile ? '' : 'md:max-w-[1898px] md:mx-auto'}`} style={{ minHeight: isMobile ? '348px' : '492px' }}>
-                    {/* Preload hero image variants to reduce LCP load delay on production with unoptimized images */}
+                    {/* Preload hero image variants to reduce LCP load delay */}
                     <link rel="preload" as="image" href={mobileHeroSrc} media="(max-width: 767px)" />
                     <link rel="preload" as="image" href={desktopHeroSrc} media="(min-width: 768px)" />
                     {isMobile ? (
@@ -125,7 +127,6 @@ export default function ThailandPackagePage({ params }: PageProps) {
                                 fill
                                 className="object-cover"
                                 priority
-                                // Hint browser to fetch hero quickly
                                 fetchPriority="high"
                                 quality={70}
                                 sizes="100vw"
@@ -139,7 +140,6 @@ export default function ThailandPackagePage({ params }: PageProps) {
                                 alt={thailandPkg?.packageName || 'Thailand package'}
                                 fill
                                 className="object-cover brightness-[0.85]"
-                                // Desktop header is above the fold on large screens
                                 priority={true}
                                 fetchPriority="high"
                                 quality={70}
@@ -178,7 +178,7 @@ export default function ThailandPackagePage({ params }: PageProps) {
                                 <div className="flex md:hidden w-full gap-2">
                                     <span className="px-3 py-1 rounded-full bg-white/15 text-white text-xs">{thailandPkg?.days} Days / {thailandPkg?.nights} Nights</span>
                                     <span className="px-3 py-1 rounded-full bg-white/15 text-white text-xs">Thailand</span>
-                                    <span className="px-3 py-1 rounded-full bg-white/15 text-white text-xs">Max 15</span>
+                                    <span className="px-3 py-1 rounded-full bg-white/15 text-white text-xs">Max 20</span>
                                 </div>
                             </div>
                         </div>
@@ -339,6 +339,8 @@ export default function ThailandPackagePage({ params }: PageProps) {
                         isOpen={isBookingModalOpen}
                         onClose={() => setIsBookingModalOpen(false)}
                         destinationName={thailandPkg?.packageName || 'Thailand'}
+                        price={thailandPkg?.amount}
+                        dates={`${thailandPkg?.dateStart} - ${thailandPkg?.dateEnd}`}
                     />
                 )}
 

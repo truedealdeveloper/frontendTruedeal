@@ -2,18 +2,24 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { thailandPackages, ThailandPackage } from './data';
-import { FaCalendarAlt, FaClock, FaChevronLeft, FaChevronRight, FaPlus, FaMinus } from 'react-icons/fa';
+import { thailandPackages, thailandPackage } from './data';
+import { FaCalendarAlt, FaClock, FaChevronLeft, FaChevronRight, FaPlus, FaMinus, FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 import { IoLocationSharp } from 'react-icons/io5';
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import TripPlanRequest from '../../components/TripPlanRequest';
+import { Dancing_Script, Playfair_Display } from 'next/font/google';
+
+const dancingScript = Dancing_Script({ subsets: ['latin'] });
+const playfair = Playfair_Display({ subsets: ['latin'] });
 
 export default function ThailandPackages() {
     const [currentPage, setCurrentPage] = useState(0);
     const [openFaq, setOpenFaq] = useState<number | null>(null);
     const packages = Object.values(thailandPackages);
     const totalPages = Math.ceil(packages.length / 3);
+    const [isMuted, setIsMuted] = useState(true);
 
     const handlePrevPage = () => {
         setCurrentPage(prev => prev > 0 ? prev - 1 : prev);
@@ -23,61 +29,86 @@ export default function ThailandPackages() {
         setCurrentPage(prev => prev < totalPages - 1 ? prev + 1 : prev);
     };
 
-    const PackageCard = ({ package: thailandPackage }: { package: ThailandPackage }) => {
+    const toggleMute = () => {
+        const audio = document.getElementById('thailandAudio') as HTMLAudioElement;
+        const video = document.getElementById('thailandVideo') as HTMLVideoElement;
+        if (audio && video) {
+            if (isMuted) {
+                audio.muted = false;
+                video.muted = true;
+                audio.play();
+                audio.volume = 0.5;
+            } else {
+                audio.muted = true;
+                audio.pause();
+            }
+            setIsMuted(!isMuted);
+        }
+    };
+
+    const PackageCard = ({ package: pkg }: { package: thailandPackage }) => {
+        const [showDates, setShowDates] = useState(false);
+
         return (
             <div className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0">
-                {/* Background Image */}
                 <Image
-                    src={thailandPackage.images[0]}
-                    alt={thailandPackage.packageName}
+                    src={pkg.images[0]}
+                    alt={pkg.packageName}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                 />
-
-                {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/50 to-black" />
-
-                {/* Price Tag */}
                 <div className="absolute top-3 left-0 z-10">
                     <div className="bg-yellow-400 px-4 py-1.5 rounded-full shadow-lg">
                         <span className="line-through text-sm mr-2">
-                            ₹{(thailandPackage.amount * 1.2).toLocaleString('en-IN')}/-
+                            ₹{(pkg.amount * 1.2).toLocaleString('en-IN')}/-
                         </span>
                         <span className="font-bold">
-                            ₹{thailandPackage.amount.toLocaleString('en-IN')}/-
+                            ₹{pkg.amount.toLocaleString('en-IN')}/-
                         </span>
                         <span className="text-sm ml-1">onwards</span>
                     </div>
                 </div>
-
-                {/* Content */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <h2 className="text-2xl font-bold mb-2">
-                        {thailandPackage.packageName}
-                    </h2>
-
-                    {/* Details Grid */}
+                    <h2 className="text-2xl font-bold mb-2">{pkg.packageName}</h2>
                     <div className="grid grid-cols-2 gap-y-2 text-sm mb-4">
                         <div className="flex items-center gap-2">
                             <FaClock className="text-yellow-400" />
-                            <span>{thailandPackage.days}D/{thailandPackage.nights}N</span>
+                            <span>{pkg.days}D/{pkg.nights}N</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <IoLocationSharp className="text-yellow-400" />
-                            <span>{thailandPackage.hotelDetails[0].city}</span>
+                            <span>{pkg.hotelDetails[0].city}</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <FaCalendarAlt className="text-yellow-400" />
-                            <span>{thailandPackage.dateStart}</span>
+                            <button
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    setShowDates(!showDates);
+                                }}
+                                className="hover:text-yellow-400 transition-colors"
+                            >
+                                View Dates
+                            </button>
                         </div>
                     </div>
-
-                    {/* View Details Button */}
-                    <Link href={`/thailand/${thailandPackage.id}`}>
-                        <Button
-                            className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all duration-500"
+                    {showDates && pkg.departureDates && (
+                        <div
+                            className="absolute bottom-full left-0 right-0 bg-black/90 p-4 rounded-t-lg max-h-[200px] overflow-y-auto"
+                            onClick={(e) => e.stopPropagation()}
                         >
+                            <h3 className="text-yellow-400 font-semibold mb-2">Departure Dates</h3>
+                            <div className="space-y-2">
+                                {pkg.departureDates.map((departure, index) => (
+                                    <div key={index} className="text-sm">{departure.date}</div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                    <Link href={`/naturesland-thailand/${pkg.id}`}>
+                        <Button className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all duration-500">
                             View Details
                         </Button>
                     </Link>
@@ -86,69 +117,44 @@ export default function ThailandPackages() {
         );
     };
 
+
+
     const faqs = [
         {
             question: "What is the best time to visit Thailand?",
-            answer: "The best time to visit Thailand is from November to February when the weather is cool and dry. December is peak season with higher prices, while March to May can be hot and humid."
+            answer: "The best time to visit Thailand is from November to March when the weather is cool and dry. April to June can be hot, while July to October is the rainy season."
         },
         {
             question: "What activities can I do in Thailand?",
-            answer: "Thailand offers numerous activities including island hopping, temple visits, floating markets, elephant encounters, Thai cooking classes, water sports, and vibrant nightlife."
+            answer: "Thailand offers numerous activities including temple visits, island hopping, snorkeling, diving, elephant sanctuaries, cooking classes, and traditional Thai massage."
         },
         {
             question: "Which temples should I visit in Thailand?",
-            answer: "Must-visit temples include Grand Palace and Wat Pho in Bangkok, Wat Arun (Temple of Dawn), and Wat Chalong in Phuket."
+            answer: "Must-visit temples include Wat Pho (Reclining Buddha), Grand Palace (Emerald Buddha), Wat Arun (Temple of Dawn), and Doi Suthep in Chiang Mai."
         },
         {
             question: "What adventure activities are available?",
-            answer: "You can enjoy zip-lining, rock climbing, scuba diving, snorkeling, kayaking, white water rafting, and various water sports at the islands."
+            answer: "You can enjoy zip-lining, rock climbing at Railay Beach, jungle trekking, white water rafting, and various water sports like jet skiing and parasailing."
         }
-    ];
-
-    const thailandHighlights = [
-        {
-            title: "Cultural Heritage",
-            image: "/UGCImages/web/thailand/7.webp",
-            description: "Explore ancient temples, royal palaces, and traditional Thai architecture"
-        },
-        {
-            title: "Thai Cuisine",
-            image: "/UGCImages/web/thailand/1.webp",
-            description: "Savor authentic Thai dishes, street food, and tropical fruits"
-        },
-        {
-            title: "Golden Temples",
-            image: "/UGCImages/web/thailand/11.webp",
-            description: "Visit magnificent temples like Grand Palace, Wat Pho, and Wat Arun"
-        },
-        {
-            title: "Natural Beauty",
-            image: "/UGCImages/web/thailand/3.webp",
-            description: "Discover pristine beaches, tropical islands, and lush landscapes"
-        },
-        {
-            title: "Island Paradise",
-            image: "/UGCImages/web/thailand/8.webp",
-            description: "Relax on stunning beaches and enjoy crystal-clear waters"
-        },
-        {
-            title: "Adventure & Fun",
-            image: "/UGCImages/web/thailand/5.webp",
-            description: "Experience exciting water sports, elephant shows, and theme parks"
-        }
-    ];
+    ] as const;
 
     return (
         <div className="min-h-screen">
-            {/* Hero Section with Image */}
             <div className="relative h-[60vh] md:h-[100vh] w-full overflow-hidden">
-                <Image
-                    src="/UGCImages/web/thailand/1.webp"
-                    alt="Thailand Paradise"
-                    fill
-                    className="object-cover brightness-[0.85]"
-                    priority
-                />
+                <audio id="thailandAudio" loop muted autoPlay className="hidden">
+                    <source src="/UGCImages/thailand/thailand.mp3" type="audio/mp3" />
+                </audio>
+                <button
+                    onClick={toggleMute}
+                    className="absolute bottom-4 right-4 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm p-3 rounded-full transition-all duration-300 text-white shadow-lg"
+                    aria-label={isMuted ? "Unmute audio" : "Mute audio"}
+                >
+                    {isMuted ? <FaVolumeMute className="w-6 h-6" /> : <FaVolumeUp className="w-6 h-6" />}
+                </button>
+                <video id="thailandVideo" autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
+                    <source src="/Videos/thai.mp4" type="video/mp4" />
+                    <Image src="/UGCImages/thailand/thailand.jpg" alt="Thailand Paradise" fill className="object-cover" priority />
+                </video>
                 <div className="absolute inset-0 bg-black/40" />
                 <div className="absolute inset-0 flex items-center justify-center text-center">
                     <div className="max-w-4xl px-4">
@@ -158,14 +164,13 @@ export default function ThailandPackages() {
                             transition={{ duration: 0.8 }}
                             className="text-4xl md:text-7xl font-bold mb-6"
                         >
-                            <span className="block bg-gradient-to-r from-yellow-300 via-orange-200 to-red-300 bg-clip-text text-transparent font-serif mt-10 sm:text-3xl md:text-4xl lg:text-5xl">
+                            <span className={`block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] mb-2 ${dancingScript.className}`}>
                                 Land of Smiles
                             </span>
-                            <span className="block bg-gradient-to-r from-blue-400 via-teal-300 to-green-400 bg-clip-text text-transparent mt-2">
+                            <span className={`block text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-orange-100 to-red-100 bg-clip-text text-transparent mt-2 ${playfair.className}`}>
                                 Thailand
                             </span>
                         </motion.h1>
-
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -187,7 +192,7 @@ export default function ThailandPackages() {
                                     transition={{ delay: 1.5, duration: 0.5 }}
                                     className="text-yellow-300"
                                 >
-                                    Culture
+                                    Ancient Temples
                                 </motion.span>
                                 <motion.span
                                     initial={{ opacity: 0, y: 20 }}
@@ -195,7 +200,7 @@ export default function ThailandPackages() {
                                     transition={{ delay: 1.8, duration: 0.5 }}
                                     className="text-blue-300"
                                 >
-                                    Adventure
+                                    Tropical Islands
                                 </motion.span>
                                 <motion.span
                                     initial={{ opacity: 0, x: 20 }}
@@ -203,7 +208,7 @@ export default function ThailandPackages() {
                                     transition={{ delay: 2.1, duration: 0.5 }}
                                     className="text-green-300"
                                 >
-                                    Beaches
+                                    Rich Culture
                                 </motion.span>
                             </div>
                         </motion.div>
@@ -218,9 +223,8 @@ export default function ThailandPackages() {
                             Our Thailand Packages
                         </span>
                     </h2>
-                    <div className="relative ">
+                    <div className="relative">
                         <div className="relative">
-                            {/* Navigation Controls */}
                             <div className="absolute top-1/2 -translate-y-1/2 left-0 z-10 hidden md:block">
                                 <Button
                                     onClick={handlePrevPage}
@@ -231,7 +235,6 @@ export default function ThailandPackages() {
                                     <FaChevronLeft className="w-4 h-4" />
                                 </Button>
                             </div>
-
                             <div className="absolute top-1/2 -translate-y-1/2 right-0 z-10 hidden md:block">
                                 <Button
                                     onClick={handleNextPage}
@@ -242,8 +245,6 @@ export default function ThailandPackages() {
                                     <FaChevronRight className="w-4 h-4" />
                                 </Button>
                             </div>
-
-                            {/* Packages Grid */}
                             <div className="overflow-x-auto -mx-4 px-4">
                                 <div className="flex md:grid md:grid-cols-3 gap-6 min-w-min md:min-w-0">
                                     {packages
@@ -253,8 +254,6 @@ export default function ThailandPackages() {
                                         ))}
                                 </div>
                             </div>
-
-                            {/* Mobile Navigation */}
                             <div className="mt-3 flex justify-center items-center gap-2 md:hidden">
                                 <Button
                                     onClick={handlePrevPage}
@@ -281,53 +280,8 @@ export default function ThailandPackages() {
                 </div>
             </div>
 
-            {/* Thailand Highlights Section */}
-            <div className="py-16 bg-white">
-                <div className="container mx-auto px-4">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                        className="max-w-7xl mx-auto"
-                    >
-                        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
-                                Experience the Magic of Thailand
-                            </span>
-                        </h2>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {thailandHighlights.map((highlight, index) => (
-                                <motion.div
-                                    key={highlight.title}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                                    viewport={{ once: true }}
-                                    className="group relative overflow-hidden rounded-xl shadow-lg h-[300px]"
-                                >
-                                    <Image
-                                        src={highlight.image}
-                                        alt={highlight.title}
-                                        fill
-                                        className="object-cover group-hover:scale-110 transition-transform duration-700"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                        <h3 className="text-xl font-semibold mb-2">{highlight.title}</h3>
-                                        <p className="text-sm text-white/90 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                                            {highlight.description}
-                                        </p>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </motion.div>
-                </div>
-            </div>
 
-            {/* FAQ Section */}
             <div className="max-w-3xl mx-auto mt-16">
                 <h2 className="text-3xl font-bold text-center mb-8">
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
@@ -335,11 +289,8 @@ export default function ThailandPackages() {
                     </span>
                 </h2>
                 <div className="space-y-4">
-                    {faqs.map((faq, index) => (
-                        <div
-                            key={index}
-                            className="border rounded-lg overflow-hidden"
-                        >
+                    {faqs.map((faq: { question: string; answer: string }, index: number) => (
+                        <div key={index} className="border rounded-lg overflow-hidden">
                             <button
                                 className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50"
                                 onClick={() => setOpenFaq(openFaq === index ? null : index)}
@@ -361,7 +312,6 @@ export default function ThailandPackages() {
                 </div>
             </div>
 
-            {/* Additional Information */}
             <div className="max-w-4xl mx-auto mt-16 prose prose-lg">
                 <h2 className="text-3xl font-bold text-center mb-8">
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
@@ -370,16 +320,18 @@ export default function ThailandPackages() {
                 </h2>
                 <div className="text-gray-600 space-y-4">
                     <p>
-                        Thailand offers pristine beaches, vibrant culture, and warm hospitality that makes it a perfect destination for travelers seeking both adventure and relaxation.
+                        The beaches in Thailand are something to look forward to, as the golden sandy beaches and crystal-clear waters are perfect for beach lovers and water sports enthusiasts. You are basically spoilt for choices in the activities available.
                     </p>
                     <p>
-                        From the bustling streets of Bangkok with its golden temples and floating markets to the tropical paradise of Phuket and Pattaya with crystal-clear waters and white sandy beaches.
+                        Moving on to the cultural side, the Thailand Tour Packages consist of visits to magnificent temples like Wat Pho and Grand Palace, exploring floating markets, experiencing traditional Thai massages, and immersing yourself in the vibrant street food culture.
                     </p>
                     <p>
-                        These packages include serene temple visits, exciting water sports, elephant encounters, and cultural shows where you can immerse yourself in Thai traditions and hospitality.
+                        These packages include some serene spots like the Grand Palace, Wat Arun temple, and Doi Suthep temple where you can take in all the spirituality and serenity, while also experiencing the bustling energy of Bangkok&apos;s markets and nightlife.
                     </p>
                 </div>
             </div>
+
+            <TripPlanRequest />
         </div>
     );
 }
