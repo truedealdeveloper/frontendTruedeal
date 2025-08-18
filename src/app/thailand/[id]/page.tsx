@@ -2,7 +2,7 @@
 
 import React, { use, useMemo, useRef, useState, useCallback, useEffect } from "react";
 import Image from "next/image";
-import { vietnamPackages } from "../data";
+import { thailandPackages } from "../data";
 import { notFound } from "next/navigation";
 import { Calendar, Check, MapPin, Star, Users, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -43,19 +43,18 @@ function useInView<T extends HTMLElement>(rootMargin = "200px"): [React.RefObjec
     return [ref, inView];
 }
 
-export default function VietnamPackagePage({ params }: PageProps) {
+export default function ThailandPackagePage({ params }: PageProps) {
     const { id } = use(params);
-    const vietnamPkg = useMemo(
-        () => Object.values(vietnamPackages).find(p => p.id === id),
+    const thailandPkg = useMemo(
+        () => Object.values(thailandPackages).find(p => p.id === id),
         [id]
     );
     const isMobile = useMobile();
 
-    // Use optimized images for mobile/desktop
-    const mobileHeroSrc = vietnamPkg?.images?.[0] || '/UGCImages/web/vietnam/1.webp';
-    const desktopHeroSrc = vietnamPkg?.images?.[0] || '/UGCImages/web/vietnam/1.webp';
+    const mobileHeroSrc = (thailandPkg?.mobileImages?.[0]) || '/UGCImages/web/thailand/1.webp';
+    const desktopHeroSrc = thailandPkg?.images?.[0] || '/UGCImages/web/thailand/1.webp';
 
-    if (!vietnamPkg) {
+    if (!thailandPkg) {
         notFound();
     }
 
@@ -64,7 +63,6 @@ export default function VietnamPackagePage({ params }: PageProps) {
     const [showFullDescription, setShowFullDescription] = useState(false);
     const [expandedDays, setExpandedDays] = useState<number[]>([1]);
     const dayRefs = useRef<Record<number, HTMLDivElement | null>>({});
-
     const scrollToDay = useCallback((dayNumber: number) => {
         setSelectedDay(dayNumber);
         setExpandedDays((prev) => (prev.includes(dayNumber) ? prev : [...prev, dayNumber]));
@@ -79,7 +77,7 @@ export default function VietnamPackagePage({ params }: PageProps) {
 
     const [overviewMountRef] = useInView<HTMLDivElement>("300px");
 
-    const description = vietnamPkg?.description || "";
+    const description = thailandPkg?.description || "";
     const truncatedDescription = description.length > 300 ? `${description.substring(0, 300)}...` : description;
 
     const toggleDayExpansion = useCallback((dayNumber: number) => {
@@ -87,28 +85,28 @@ export default function VietnamPackagePage({ params }: PageProps) {
     }, []);
 
     const quickFacts = useMemo(() => ([
-        { label: "Duration", value: `${vietnamPkg?.days} Days / ${vietnamPkg?.nights} Nights`, icon: Calendar },
-        { label: "Location", value: "Vietnam", icon: MapPin },
-        { label: "Group", value: "Max 20", icon: Users },
-        { label: "Rating", value: "4.7 / 5", icon: Star },
-    ]), [vietnamPkg?.days, vietnamPkg?.nights]);
+        { label: "Duration", value: `${thailandPkg?.days} Days / ${thailandPkg?.nights} Nights`, icon: Calendar },
+        { label: "Location", value: "Thailand", icon: MapPin },
+        { label: "Group", value: "Max 15", icon: Users },
+        { label: "Rating", value: "4.6 / 5", icon: Star },
+    ]), [thailandPkg?.days, thailandPkg?.nights]);
 
     const faqs = useMemo(() => ([
         {
-            question: "What is the best time to visit Vietnam?",
-            answer: "October to April is ideal for most of Vietnam, offering cool and dry weather perfect for sightseeing and outdoor activities.",
+            question: "What is the best time to visit Thailand?",
+            answer: "November to February is the cool and dry season, making it the best time to visit Thailand with pleasant weather.",
         },
         {
-            question: "Do Indians need a visa for Vietnam?",
-            answer: "Yes, Indians need a visa for Vietnam. E-visa is available online or visa on arrival for certain durations.",
+            question: "Do Indians need a visa for Thailand?",
+            answer: "Yes, Indians need a visa for Thailand. Tourist visa costs approximately ₹2500 and provides 60 days multiple entry.",
         },
         {
-            question: "What are the must-visit attractions in Vietnam?",
-            answer: "Ha Long Bay, Ho Chi Minh City, Hanoi Old Quarter, Cu Chi Tunnels, and Mekong Delta are top attractions.",
+            question: "What are the must-visit attractions in Thailand?",
+            answer: "Grand Palace, Wat Pho, Coral Island, floating markets, Nong Nooch Garden, and Safari World are popular attractions.",
         },
         {
-            question: "Is vegetarian food available in Vietnam?",
-            answer: "Yes, Vietnam has good vegetarian options, especially in tourist areas and Buddhist restaurants.",
+            question: "Is vegetarian food available in Thailand?",
+            answer: "Yes, Thailand has good vegetarian options, especially in Bangkok and tourist areas with many Buddhist-friendly restaurants.",
         },
     ]), []);
 
@@ -116,17 +114,18 @@ export default function VietnamPackagePage({ params }: PageProps) {
         <PageWrapper>
             <div className={`relative`}>
                 <header className={`relative w-full ${isMobile ? '' : 'md:max-w-[1898px] md:mx-auto'}`} style={{ minHeight: isMobile ? '348px' : '492px' }}>
-                    {/* Preload hero image variants to reduce LCP load delay */}
+                    {/* Preload hero image variants to reduce LCP load delay on production with unoptimized images */}
                     <link rel="preload" as="image" href={mobileHeroSrc} media="(max-width: 767px)" />
                     <link rel="preload" as="image" href={desktopHeroSrc} media="(min-width: 768px)" />
                     {isMobile ? (
                         <>
                             <Image
                                 src={mobileHeroSrc}
-                                alt={vietnamPkg?.packageName || 'Vietnam package'}
+                                alt={thailandPkg?.packageName || 'Thailand package'}
                                 fill
                                 className="object-cover"
                                 priority
+                                // Hint browser to fetch hero quickly
                                 fetchPriority="high"
                                 quality={70}
                                 sizes="100vw"
@@ -137,9 +136,10 @@ export default function VietnamPackagePage({ params }: PageProps) {
                         <>
                             <Image
                                 src={desktopHeroSrc}
-                                alt={vietnamPkg?.packageName || 'Vietnam package'}
+                                alt={thailandPkg?.packageName || 'Thailand package'}
                                 fill
                                 className="object-cover brightness-[0.85]"
+                                // Desktop header is above the fold on large screens
                                 priority={true}
                                 fetchPriority="high"
                                 quality={70}
@@ -153,32 +153,32 @@ export default function VietnamPackagePage({ params }: PageProps) {
                         <div className="max-w-7xl w-full pl-0 md:pl-12 relative top-4 md:top-12">
                             <div className="flex items-center mb-3 text-white drop-shadow">
                                 {[...Array(5)].map((_, i) => (
-                                    <Star key={i} className={`h-5 w-5 ${i < Math.floor(4.7) ? 'text-yellow-400 fill-yellow-400' : 'text-white/40'}`} />
+                                    <Star key={i} className={`h-5 w-5 ${i < Math.floor(4.6) ? 'text-yellow-400 fill-yellow-400' : 'text-white/40'}`} />
                                 ))}
-                                <span className="ml-2 font-medium">4.7/5 (45 reviews)</span>
+                                <span className="ml-2 font-medium">4.6/5 (126 reviews)</span>
                             </div>
 
-                            <h1 className="text-3xl leading-tight md:text-6xl font-bold text-white mb-2 md:mb-4">{vietnamPkg?.packageName}</h1>
+                            <h1 className="text-3xl leading-tight md:text-6xl font-bold text-white mb-2 md:mb-4">{thailandPkg?.packageName}</h1>
 
                             <p className="flex items-center text-white/95 mb-4 md:mb-6">
                                 <MapPin className="h-5 w-5 mr-2" />
-                                <span className="text-lg">Vietnam</span>
+                                <span className="text-lg">Thailand</span>
                             </p>
 
                             <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-6 md:mb-12">
                                 <Button
                                     size="sm"
                                     className="rounded-full px-5 md:px-8 bg-gradient-to-r from-[#17b1ff] to-[#00f6ff] hover:opacity-90 transition shadow-md"
-                                    aria-label="Book Vietnam tour"
+                                    aria-label="Book Thailand tour"
                                     onClick={() => setIsBookingModalOpen(true)}
                                 >
                                     Book Now
                                 </Button>
 
                                 <div className="flex md:hidden w-full gap-2">
-                                    <span className="px-3 py-1 rounded-full bg-white/15 text-white text-xs">{vietnamPkg?.days} Days / {vietnamPkg?.nights} Nights</span>
-                                    <span className="px-3 py-1 rounded-full bg-white/15 text-white text-xs">Vietnam</span>
-                                    <span className="px-3 py-1 rounded-full bg-white/15 text-white text-xs">Max 20</span>
+                                    <span className="px-3 py-1 rounded-full bg-white/15 text-white text-xs">{thailandPkg?.days} Days / {thailandPkg?.nights} Nights</span>
+                                    <span className="px-3 py-1 rounded-full bg-white/15 text-white text-xs">Thailand</span>
+                                    <span className="px-3 py-1 rounded-full bg-white/15 text-white text-xs">Max 15</span>
                                 </div>
                             </div>
                         </div>
@@ -189,7 +189,7 @@ export default function VietnamPackagePage({ params }: PageProps) {
                     <div className="mx-3 mb-3 rounded-full shadow-lg backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 border border-black/5">
                         <div className="flex items-center justify-between px-3 py-2">
                             <div className="flex items-center gap-2">
-                                <span className="text-sm font-bold bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-3 py-1 rounded-full">₹{vietnamPkg?.amount?.toLocaleString('en-IN')}</span>
+                                <span className="text-sm font-bold bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-3 py-1 rounded-full">₹{thailandPkg?.amount?.toLocaleString('en-IN')}</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <a href="tel:+919310271488"><Button size="sm" variant="outline" className="rounded-full">Call</Button></a>
@@ -239,7 +239,7 @@ export default function VietnamPackagePage({ params }: PageProps) {
                                             <span className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">Included</span>
                                         </h3>
                                         <ul className="space-y-2 text-sm">
-                                            {vietnamPkg?.inclusions?.map((item, i) => (<li key={i} className="flex items-start"><Check className="h-4 w-4 text-green-500 mr-2 mt-0.5" /> {item}</li>))}
+                                            {thailandPkg?.inclusions?.map((item, i) => (<li key={i} className="flex items-start"><Check className="h-4 w-4 text-green-500 mr-2 mt-0.5" /> {item}</li>))}
                                         </ul>
                                     </Card>
                                     <Card className="p-5">
@@ -248,7 +248,7 @@ export default function VietnamPackagePage({ params }: PageProps) {
                                             <span className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">Excluded</span>
                                         </h3>
                                         <ul className="space-y-2 text-sm">
-                                            {vietnamPkg?.exclusions?.map((item, i) => (<li key={i} className="flex items-start"><X className="h-4 w-4 text-red-500 mr-2 mt-0.5" /> {item}</li>))}
+                                            {thailandPkg?.exclusions?.map((item, i) => (<li key={i} className="flex items-start"><X className="h-4 w-4 text-red-500 mr-2 mt-0.5" /> {item}</li>))}
                                         </ul>
                                     </Card>
                                 </div>
@@ -257,14 +257,14 @@ export default function VietnamPackagePage({ params }: PageProps) {
                             <section className="mb-8" style={{ contentVisibility: 'auto', containIntrinsicSize: '1200px' }}>
                                 <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">Day-by-Day Itinerary</h2>
                                 <div className="md:static sticky top-16 z-30 -mx-4 px-4 bg-white/85 backdrop-blur supports-[backdrop-filter]:bg-white/75 py-2 rounded-xl shadow-sm flex overflow-x-auto space-x-2 mb-4 pb-2 no-scrollbar">
-                                    {vietnamPkg?.itinerary.map((day, i) => (
+                                    {thailandPkg?.itinerary.map((day, i) => (
                                         <button key={i} onClick={() => scrollToDay(day.day)} className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${selectedDay === day.day ? 'bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-800'}`}>
                                             Day {day.day}
                                         </button>
                                     ))}
                                 </div>
                                 <div className="space-y-3">
-                                    {vietnamPkg?.itinerary.map((day, i) => {
+                                    {thailandPkg?.itinerary.map((day, i) => {
                                         const isExpanded = expandedDays.includes(day.day);
                                         return (
                                             <Card key={i} ref={(el) => { dayRefs.current[day.day] = el; }} className={`p-4 scroll-mt-24 md:scroll-mt-28 ${selectedDay === day.day ? 'ring-2 ring-[#017ae3]/20' : ''}`} onClick={() => toggleDayExpansion(day.day)} role="button" aria-expanded={isExpanded}>
@@ -291,7 +291,7 @@ export default function VietnamPackagePage({ params }: PageProps) {
                             <section className="mb-8">
                                 <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">Your Accommodations</h2>
                                 <div className="space-y-3">
-                                    {vietnamPkg.hotelDetails.map((hotel, index) => (
+                                    {thailandPkg.hotelDetails.map((hotel, index) => (
                                         <Card key={index} className="p-4 flex items-center justify-between">
                                             <div>
                                                 <div className="font-semibold">{hotel.hotel}</div>
@@ -321,7 +321,7 @@ export default function VietnamPackagePage({ params }: PageProps) {
                         <aside className="lg:sticky lg:top-24 h-fit">
                             <div className="rounded-2xl border border-gray-200/70 bg-white/80 backdrop-blur p-5 shadow-sm">
                                 <div className="flex items-center gap-2 mb-3"><Star className="h-5 w-5 text-yellow-500" /><span className="text-sm text-gray-600">Trusted by 5k+ travelers</span></div>
-                                <div className="text-3xl font-bold mb-2">₹{vietnamPkg?.amount?.toLocaleString('en-IN')}</div>
+                                <div className="text-3xl font-bold mb-2">₹{thailandPkg?.amount?.toLocaleString('en-IN')}</div>
                                 <p className="text-sm text-gray-600 mb-4">per person incl. hotels & transfers</p>
                                 <div className="space-y-2 mb-4">
                                     <div className="flex items-center gap-2 text-sm"><Check className="h-4 w-4 text-green-500" /> Instant enquiry</div>
@@ -338,9 +338,7 @@ export default function VietnamPackagePage({ params }: PageProps) {
                     <BookingFormModal
                         isOpen={isBookingModalOpen}
                         onClose={() => setIsBookingModalOpen(false)}
-                        destinationName={vietnamPkg?.packageName || 'Vietnam'}
-                        price={vietnamPkg?.amount}
-                        dates={`${vietnamPkg?.dateStart} - ${vietnamPkg?.dateEnd}`}
+                        destinationName={thailandPkg?.packageName || 'Thailand'}
                     />
                 )}
 
