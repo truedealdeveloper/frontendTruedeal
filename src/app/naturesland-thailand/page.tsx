@@ -19,6 +19,10 @@ export default function ThailandPackages() {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
     const packages = Object.values(thailandPackages);
     const totalPages = Math.ceil(packages.length / 3);
+
+    // Debug logging
+    console.log('Total packages:', packages.length);
+    console.log('Package data:', packages.map(pkg => ({ id: pkg.id, name: pkg.packageName, firstImage: pkg.images[0] })));
     const [isMuted, setIsMuted] = useState(true);
 
     const handlePrevPage = () => {
@@ -52,11 +56,20 @@ export default function ThailandPackages() {
         return (
             <div className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0">
                 <Image
-                    src={pkg.images[0]}
+                    src={pkg.images[0] || '/UGCImages/web/thailand/1.webp'}
                     alt={pkg.packageName}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                    unoptimized={true}
+                    onError={(e) => {
+                        console.error('Image failed to load:', pkg.images[0]);
+                        console.error('Package ID:', pkg.id);
+                        console.error('Available images:', pkg.images);
+                    }}
+                    onLoad={() => {
+                        console.log('Image loaded successfully:', pkg.images[0]);
+                    }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/50 to-black" />
                 <div className="absolute top-3 left-0 z-10">
