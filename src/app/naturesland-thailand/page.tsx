@@ -22,7 +22,16 @@ export default function ThailandPackages() {
 
     // Debug logging
     console.log('Total packages:', packages.length);
-    console.log('Package data:', packages.map(pkg => ({ id: pkg.id, name: pkg.packageName, firstImage: pkg.images[0] })));
+    console.log('Package data:', packages.map(pkg => ({ id: pkg.id, name: pkg.packageName, firstImage: pkg.images?.[0] })));
+    console.log('Images exist check:', packages.map(pkg => ({
+        id: pkg.id,
+        hasImages: !!pkg.images,
+        imageCount: pkg.images?.length || 0,
+        firstImage: pkg.images?.[0] || 'NO IMAGE'
+    })));
+
+    // Test specific image path
+    console.log('Testing image path:', '/UGCImages/web/thailand/1.webp');
     const [isMuted, setIsMuted] = useState(true);
 
     const handlePrevPage = () => {
@@ -56,19 +65,20 @@ export default function ThailandPackages() {
         return (
             <div className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0">
                 <Image
-                    src={pkg.images[0] || '/UGCImages/web/thailand/1.webp'}
+                    src={pkg.images?.[0] || '/UGCImages/web/thailand/1.webp'}
                     alt={pkg.packageName}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                     unoptimized={true}
-                    onError={(e) => {
-                        console.error('Image failed to load:', pkg.images[0]);
+                    onError={(setError) => {
+                        console.error('Image failed to load:', pkg.images?.[0]);
                         console.error('Package ID:', pkg.id);
                         console.error('Available images:', pkg.images);
+                        console.error('Error event:', setError);
                     }}
                     onLoad={() => {
-                        console.log('Image loaded successfully:', pkg.images[0]);
+                        console.log('Image loaded successfully:', pkg.images?.[0]);
                     }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/50 to-black" />
@@ -258,6 +268,12 @@ export default function ThailandPackages() {
                                     <FaChevronRight className="w-4 h-4" />
                                 </Button>
                             </div>
+                            {/* Debug: Test basic image loading */}
+                            <div className="mb-4 p-4 bg-yellow-100 rounded">
+                                <p>Debug: Testing basic image:</p>
+                                <img src="/UGCImages/web/thailand/1.webp" alt="Test Thailand Image" style={{ width: '100px', height: '100px', objectFit: 'cover' }} />
+                            </div>
+
                             <div className="overflow-x-auto -mx-4 px-4">
                                 <div className="flex md:grid md:grid-cols-3 gap-6 min-w-min md:min-w-0">
                                     {packages

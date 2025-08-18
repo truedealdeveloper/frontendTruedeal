@@ -12,6 +12,7 @@ const nextConfig = {
         pathname: "/**",
       },
     ],
+    // Allow local images from /public directory
     formats: ["image/webp", "image/avif"],
     // Include smaller breakpoints to better match common mobile widths
     deviceSizes: [360, 414, 480, 640, 750, 828, 1080, 1200, 1920, 2048],
