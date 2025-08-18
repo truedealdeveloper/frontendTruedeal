@@ -54,12 +54,12 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         nights: 11,
         amount: 395000,
         dateStart: "7,14,21,28 August",
-        dateEnd: "18,25,30 August",
+        dateEnd: "",
         flightFrom: "Delhi",
         groupDetails: {
             pax: "Group Departure From Raipur",
             rooms: "12 Rooms on Double/Twin Sharing",
-            arrivalDate: "16th May 2025 Raipur Departure",
+            arrivalDate: "16th August 2025 Raipur Departure",
             duration: "11N12D Europe",
             costBasis: "Cost Based On Double Sharing"
         },
@@ -222,7 +222,7 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         nights: 7,
         amount: 101999,
         dateStart: "15,22,29 August",
-        dateEnd: "22,29,30 August",
+        dateEnd: "",
         flightFrom: "DEL/BOM/KOL",
         description: "Experience the best of Vietnam in 8 days covering Hanoi, Danang, and Ho Chi Minh. Explore natural beauty including Ha Long Bay, cultural treasures like ancient temples, and historic sites across Vietnam's most vibrant cities.",
         groupDetails: {
@@ -340,13 +340,13 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         nights: 14,
         amount: 336000,
         dateStart: "7,14,21,28 August",
-        dateEnd: "18,25,30 August",
+        dateEnd: "",
         flightFrom: "Mumbai",
         description: "Experience Europe Like Never Before with TrueDeal! Our exclusive 14 Nights / 15 Days group departure tour blends Europe's iconic landmarks with hidden gems—from the Eiffel Tower in Paris to the breathtaking Swiss Alps and the charm of the Italian Riviera. Features centrally located accommodations, pure Jain food with a dedicated kitchen caravan, unique & relaxed itinerary, and 24/7 assistance & support.",
         groupDetails: {
             pax: "Group Departure",
             rooms: "Double/Twin Sharing",
-            arrivalDate: "Departure 1: May 7, 2025 – May 21, 2025\nDeparture 2: May 21, 2025 – August 4, 2025",
+            arrivalDate: "Departure 1: August 7, 2025 – August 21, 2025\nDeparture 2: August 21, 2025 – August 4, 2025",
             duration: "14N15D Euro Quest",
             costBasis: "Cost Based On Double Sharing."
         },
@@ -520,7 +520,7 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         nights: 7,
         amount: 149000,
         dateStart: "7,14,21,28 August",
-        dateEnd: "18,25,30 August",
+        dateEnd: "",
         flightFrom: "Delhi",
         description: "Experience the magical blend of Russian culture and natural wonders with our AM Tour. From the historic streets of Saint Petersburg to the mesmerizing Aurora lights in Murmansk, and the vibrant energy of Moscow, this tour offers an unforgettable journey through Russia's most captivating destinations.",
         groupDetails: {
@@ -632,7 +632,7 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         nights: 9,
         amount: 470000,
         dateStart: "7,14,21,28 August",
-        dateEnd: "18,25,30 August",
+        dateEnd: "",
         flightFrom: "Multiple",
         description: "Experience the perfect blend of tradition and modernity with our Japan Fixed Departure Tour! From the towering skyscrapers of Tokyo to the serene temples of Kyoto, this trip is designed to give you an authentic Japanese experience.",
         groupDetails: {
@@ -756,13 +756,13 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         nights: 7,
         amount: 75895,
         dateStart: "7,14,21,28 August",
-        dateEnd: "18,25,30 August",
+        dateEnd: "",
         flightFrom: "Mumbai",
         description: "Experience the best of Thailand with our meticulously planned 8-day adventure tour. From the pristine beaches of Phuket and Krabi to the vibrant city life of Bangkok, this tour offers a perfect blend of relaxation, adventure, and cultural experiences.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double/Twin Sharing",
-            arrivalDate: "10 May 2025",
+            arrivalDate: "10 August 2025",
             duration: "7N8D Thailand Tour",
             costBasis: "Cost Based On Double Sharing"
         },
@@ -871,13 +871,13 @@ export const fixedDeparturesData: Record<string, FixedDeparture> = {
         nights: 10,
         amount: 86895,
         dateStart: "7,14,21,28 August",
-        dateEnd: "18,25,30 August",
+        dateEnd: "",
         flightFrom: "Mumbai",
         description: "Experience the ultimate Thailand adventure with our comprehensive 11-day tour covering Phuket, Krabi, Pattaya, and Bangkok. From pristine islands to cultural landmarks, this tour offers the perfect blend of relaxation, adventure, and urban exploration.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "6 May 2025",
+            arrivalDate: "6 August 2025",
             duration: "10N11D Thailand Deluxe Tour",
             costBasis: "Cost Based On Double Sharing"
         },
@@ -1026,13 +1026,13 @@ Pick-up: 07:30 - 07:45 AM | Drop-off: 05:30 - 06:00 PM
         nights: 7,
         amount: 77895,
         dateStart: "7,14,21,28 August",
-        dateEnd: "18,25,30 August",
+        dateEnd: "",
         flightFrom: "Mumbai",
         description: "Experience the ultimate Thailand adventure with our comprehensive 8-day speedboat  tour covering Phuket, Krabi, Pattaya, and Bangkok. From pristine islands to cultural landmarks, this tour offers the perfect blend of relaxation, adventure, and urban exploration.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "3 May 2025",
+            arrivalDate: "3 August 2025",
             duration: "7N8D Thailand Speedboat Tour",
             costBasis: "Cost Based On Double Sharing"
         },
@@ -1208,13 +1208,13 @@ Bid farewell to an unforgettable Thailand experience
         nights: 6,
         amount: 79999,
         dateStart: "7,14,21,28 August",
-        dateEnd: "18,25,30 August",
+        dateEnd: "",
         flightFrom: "Delhi",
         description: "Experience the stunning beauty of Kazakhstan with our luxury Almaty tour package. From scenic mountain resorts to historical sites and natural wonders, this comprehensive tour offers the perfect blend of adventure, culture, and relaxation.",
         groupDetails: {
             pax: "Group Tour (13 adults)",
             rooms: "Double Sharing",
-            arrivalDate: "31 May 2025",
+            arrivalDate: "31 August 2025",
             duration: "6N7D Almaty",
             costBasis: "Cost Based On Double Sharing"
         },
@@ -1309,12 +1309,12 @@ Bid farewell to an unforgettable Thailand experience
         amount: 105000,
         flightFrom: "Delhi",
         dateStart: "7,14,21,28 August",
-        dateEnd: "18,25,30 August",
+        dateEnd: "",
         description: `Enjoy the best of Russia with our fixed departure tour. From the Red Square to the Kremlin, this tour offers a comprehensive and all-inclusive experience of the country's highlights.`,
         groupDetails: {
             pax: "Group Tour Saint Petersburg - Moscow",
             rooms: "Double/Single Sharing Available",
-            arrivalDate: "17 May 2025",
+            arrivalDate: "17 August 2025",
             duration: "5N6D Russia",
             costBasis: "Double sharing basis"
         },
@@ -1330,12 +1330,12 @@ Bid farewell to an unforgettable Thailand experience
             {
                 city: "Saint Petersburg",
                 hotel: "Cosmos Saint-Petersburg Pribaltiyskaya Hotel, a member of Radisson Individuals 4*",
-                roomType: "Standard Room (Check In: 17 May / 22 May / 29 May / 26 August)"
+                roomType: "Standard Room (Check In: 17 August / 22 August / 29 August / 26 August)"
             },
             {
                 city: "Saint Petersburg",
                 hotel: "Theatre Square Hotel or Sadovaya (ex. Holiday Inn)",
-                roomType: "Standard Room (Check-in dates: 8 May / 29 May / 12 August)"
+                roomType: "Standard Room (Check-in dates: 8 August / 29 August / 12 August)"
             },
             {
                 city: "Moscow",
@@ -1436,12 +1436,12 @@ Entry Included: Metro
         amount: 439000,
         flightFrom: "Mumbai",
         dateStart: "18 August",
-        dateEnd: "18,25,30 August",
+        dateEnd: "",
         description: `Discover the breathtaking beauty of New Zealand with our comprehensive 13-day fixed departure tour. From the stunning landscapes of the South Island to the geothermal wonders of the North Island, experience the best of New Zealand's natural attractions and adventure activities.`,
         groupDetails: {
             pax: "Group Tour Fixed Departure",
             rooms: "Double/Single Sharing Available",
-            arrivalDate: "4th May 2025",
+            arrivalDate: "4th August 2025",
             duration: "13D12N New Zealand",
             costBasis: "Double sharing basis"
         },
@@ -1496,7 +1496,7 @@ Entry Included: Metro
             "Lunch at an Indian restaurant on all days (Except Day 7).",
             "Dinner at an Indian restaurant on all days (Except Day 11).",
             "Boxed lunch on Day 8.",
-            "The menu matrix may change to offer more variety. All meals will bе 100% pure vegetarian",
+            "The menu matrix August change to offer more variety. All meals will bе 100% pure vegetarian",
 
         ],
         exclusions: [
@@ -1624,23 +1624,23 @@ Queenstown Lakeside and enjoy dinner.
         amount: 166999,
         flightFrom: "Mumbai",
         dateStart: "7,14,21,28 August",
-        dateEnd: "18,25,30 August",
+        dateEnd: "",
         description: `Discover the rich history and culture of Azerbaijan with our fixed departure tour. From the historic Maiden Tower to the stunning Shahdag Mountain, this tour offers a comprehensive and all-inclusive experience of the country's highlights.`,
         groupDetails: {
             pax: "Group Tour Fixed Departure",
             rooms: "Double/Single Sharing Available",
-            arrivalDate: "10th May 2025",
+            arrivalDate: "10th August 2025",
             duration: "7D6N Azerbaijan",
             costBasis: "Double sharing basis"
         },
         tourSummary: [
-            "Day 1: (10th May): Arrival in Baku",
-            "Day 2: (11th May): Gabala City Tour",
-            "Day 3: (12th May): Baku City Tour",
-            "Day 4: (13th May): Maiden Tower, Shirvanshah Palace, Icherisheher",
-            "Day 5: (14th May): Shahdag",
-            "Day 6: (15th May): Zip Lining, Hiking, Spa",
-            "Day 7: (16th May): Transfer to Baku Airport",
+            "Day 1: (10th August): Arrival in Baku",
+            "Day 2: (11th August): Gabala City Tour",
+            "Day 3: (12th August): Baku City Tour",
+            "Day 4: (13th August): Maiden Tower, Shirvanshah Palace, Icherisheher",
+            "Day 5: (14th August): Shahdag",
+            "Day 6: (15th August): Zip Lining, Hiking, Spa",
+            "Day 7: (16th August): Transfer to Baku Airport",
 
         ],
         hotelDetails: [
@@ -1673,7 +1673,7 @@ Queenstown Lakeside and enjoy dinner.
             "7 Lunches at Indian Restaurants",
             "6 Dinners at Indian Restaurants",
             "2 bottles of water per person per day",
-            "The menu matrix may change to offer more variety. All meals will be 100% pure vegetarian only",
+            "The menu matrix August change to offer more variety. All meals will be 100% pure vegetarian only",
 
         ],
         exclusions: [
@@ -1788,7 +1788,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         nights: 6,
         amount: 99000,
         dateStart: "3,10,17,24 August",
-        dateEnd: "18,25,30 August",
+        dateEnd: "",
         description: "Experience the best of Europe with our specially curated 6-night itinerary, covering iconic destinations across Italy, Switzerland, and France. Perfectly planned for travelers who seek an effortless, all-inclusive journey with fixed departures.",
         groupDetails: {
             pax: "Group Tour (10-40 pax)",
@@ -1896,7 +1896,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         nights: 4,
         amount: 39999,
         dateStart: "3,10,17,24 August",
-        dateEnd: "18,25,30 August",
+        dateEnd: "",
         description: "Experience the wonders of Almaty with our meticulously designed 4-night itinerary. This fixed-departure package offers the perfect balance of cultural exploration, natural beauty, and leisure activities, making it an ideal choice for all travelers.",
         groupDetails: {
             pax: "Group Tour (10-40 pax)",
@@ -1977,7 +1977,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         nights: 4,
         amount: 35000,
         dateStart: "3,10,17,24 August",
-        dateEnd: "18,25,30 August",
+        dateEnd: "",
         description: "Experience the vibrant city of Dubai with our 4-night, 5-day all-inclusive tour package, carefully curated for an unforgettable adventure. Perfect for travelers seeking fixed departure convenience, this tour covers Dubai's iconic landmarks, desert adventures, and cultural experiences.",
         groupDetails: {
             pax: "Group Tour (20-30 pax)",
@@ -2069,7 +2069,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         nights: 4,
         amount: 85494,
         dateStart: "3,10,17,24 August",
-        dateEnd: "18,25,30 August",
+        dateEnd: "",
         description: "Experience the best of Hong Kong & Macau with our exclusive 5-day, 4-night itinerary. This meticulously planned journey offers a seamless blend of East meets West culture, stunning skylines, and unforgettable experiences, ideal for travelers seeking a comprehensive Asian adventure.",
         groupDetails: {
             pax: "Group Tour",
@@ -2165,7 +2165,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         nights: 3,
         amount: 20000,
         dateStart: "1,8,15,22 August",
-        dateEnd: "18,25,30 August",
+        dateEnd: "",
         description: "Embark on an unforgettable journey to Malaysia with our exclusive 4-day fixed departure package. Explore iconic landmarks, enjoy thrilling experiences, and immerse yourself in the vibrant culture of Kuala Lumpur and Genting Highlands.",
         groupDetails: {
             pax: "Group Tour",
@@ -2242,7 +2242,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         nights: 6,
         amount: 90000,
         dateStart: "7,14,21,28 August",
-        dateEnd: "18,25,30 August",
+        dateEnd: "",
         description: "Embark on a captivating journey through South Korea with this 7-day tour showcasing the perfect blend of history, culture, and modernity.",
         groupDetails: {
             pax: "2-6 Pax Groups",
@@ -2342,7 +2342,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
         nights: 6,
         amount: 51000,
         dateStart: "23,30 August",
-        dateEnd: "18,25,30 August",
+        dateEnd: "",
         description: "Join our expertly guided tour and explore Bhutan's finest destinations in one immersive trip. The itinerary includes a blend of cultural immersion, scenic drives, and visits to iconic landmarks, ensuring you experience the best Bhutan has to offer.",
         groupDetails: {
             pax: "Group Tour",
@@ -2426,7 +2426,7 @@ export const destinationsWithoutFlight: Record<string, DestinationWithoutFlight>
                 day: 5,
                 title: "Tiger's Nest Trek or Haa Valley",
                 description: `After breakfast excursion to Taktsang Monastery or Tiger&apos;s Nest (approx. 5 hours walk):
-It is one of the most famous of Bhutan&apos;s monasteries, perched on the side of a cliff 900m above the Paro valley floor. It is said that Guru Rinpoche arrived here on the back of a tigress and meditated at this monastery and hence it is called Tiger&apos;s Nest. This site has been recognised as a most sacred place and visited by Shabdrung Ngawang Namgyal in 1646 and now visited by all Bhutanese at least once in their lifetime. On 19 May, 1998, a fire severely damaged the main structure of building but now this Bhutanese jewel has been restored to its original splendour.
+It is one of the most famous of Bhutan&apos;s monasteries, perched on the side of a cliff 900m above the Paro valley floor. It is said that Guru Rinpoche arrived here on the back of a tigress and meditated at this monastery and hence it is called Tiger&apos;s Nest. This site has been recognised as a most sacred place and visited by Shabdrung Ngawang Namgyal in 1646 and now visited by all Bhutanese at least once in their lifetime. On 19 August, 1998, a fire severely damaged the main structure of building but now this Bhutanese jewel has been restored to its original splendour.
 Afternoon drive to Drukgyel Dzong, a ruined fortress where Bhutanese warriors fought Tibetan invaders centuries ago. The snowy dome of sacred Chomolhari, &quot;mountain of goddess&quot; can be seen in all her glory from the approach road to the Dzong.
 Evening, visit the 7th century Kyichu Lhakhang, one of the 108 temples built in the Himalayas by Tibetan King, Songtsen Gampo. The building of this temple marks the introduction of Buddhism in Bhutan.
 Overnight at the hotel in Paro.
@@ -2461,7 +2461,7 @@ Overnight at the hotel in Paro.
         nights: 5,
         amount: 28000,
         dateStart: "1,8,15,22 August",
-        dateEnd: "18,25,30 August",
+        dateEnd: "",
         description: "Experience the world's largest trade fair with our comprehensive Canton Fair package. Perfect for business travelers and trade professionals looking to explore global manufacturing and trade opportunities in Guangzhou, China.",
         groupDetails: {
             pax: "Business Group Tour",
@@ -2544,7 +2544,7 @@ Overnight at the hotel in Paro.
         nights: 5,
         amount: 19000,
         dateStart: "3,10,17,24 August",
-        dateEnd: "18,25,30 August",
+        dateEnd: "",
         description: "Experience the paradise on Earth with our comprehensive Kashmir tour package. From the stunning Dal Lake to the meadows of Gulmarg and Sonamarg, immerse yourself in Kashmir's breathtaking landscapes and rich culture.",
         groupDetails: {
             pax: "Group Tour",
@@ -2648,7 +2648,7 @@ Overnight at the hotel in Paro.
         nights: 5,
         amount: 19999,
         dateStart: "3,10,17,24 August",
-        dateEnd: "18,25,30 August",
+        dateEnd: "",
         description: "Experience the magical charm of Kashmir with a blend of adventure, history, and breathtaking landscapes. From serene lakes to snow-capped peaks, every moment of this journey promises unforgettable memories.",
         groupDetails: {
             pax: "Group Tour",
@@ -2749,7 +2749,7 @@ Overnight at the hotel in Paro.
         nights: 4,
         amount: 9999,
         dateStart: "3,10,17,24 August",
-        dateEnd: "18,25,30 August",
+        dateEnd: "",
         description: "Experience the serene beauty of Manali with our perfectly curated 5-day Volvo package. From ancient temples to adventure activities in Solang Valley, this tour offers the perfect blend of relaxation and excitement.",
         groupDetails: {
             pax: "Group Tour",
@@ -2840,7 +2840,7 @@ Overnight at the hotel in Paro.
         nights: 5,
         amount: 168000,
         dateStart: "3,10,17,24 August",
-        dateEnd: "18,25,30 August",
+        dateEnd: "",
         description: `Embark on a luxurious and professionally curated Truedeal itinerary through Basel, Interlaken, and Jura Mountain. Enjoy scenic landscapes, cultural highlights, and seamless travel arrangements tailored for an enriching experience.
 `,
         groupDetails: {
@@ -2967,8 +2967,8 @@ Overnight in Basel
         days: 9,
         nights: 8,
         amount: 122400,
-        dateStart: "27,30 May",
-        dateEnd: "18,25,30 August",
+        dateStart: "27,30 August",
+        dateEnd: "",
         description: "Embark on an unforgettable 8-night, 9-day adventure across Turkey, exploring the stunning cities of Istanbul, Cappadocia, and Antalya. From ancient landmarks to breathtaking landscapes, luxurious stays, and authentic local experiences—this fixed departure package is crafted for ultimate comfort and discovery!",
         groupDetails: {
             pax: "Group Departure",
@@ -3083,7 +3083,7 @@ Overnight in Basel
         nights: 9,
         amount: 215600,
         dateStart: "5,12,19,26 August",
-        dateEnd: "18,25,30 August",
+        dateEnd: "",
         description: "Experience the best of Kenya with our specially curated 10-night itinerary, covering iconic destinations across Kenya. Perfectly planned for travelers who seek an effortless, all-inclusive journey with fixed departures.",
         groupDetails: {
             pax: "Group Tour (10-40 pax)",
@@ -3207,8 +3207,8 @@ Overnight in Basel
         days: 5,
         nights: 4,
         amount: 40500,
-        dateStart: "27,30 May",
-        dateEnd: "18,25,30 August",
+        dateStart: "27,30 August",
+        dateEnd: "",
         description: "Experience the best of Baku with our specially curated 5-night itinerary, covering iconic destinations across Azerbaijan. Perfectly planned for travelers who seek an effortless, all-inclusive journey with fixed departures.",
         groupDetails: {
             pax: "Group Tour (10-40 pax)",
@@ -3343,8 +3343,8 @@ World Heritage site. Afterward, enjoy the rest of the day at leisure in Baku.`
         days: 7,
         nights: 6,
         amount: 28499,
-        dateStart: "10,17,24,31 May",
-        dateEnd: "19,26,30 August",
+        dateStart: "10,17,24,31 August",
+        dateEnd: "",
         description: "Experience the best of Leh Ladakh with our specially curated 6-night itinerary, covering iconic destinations across Ladakh. Perfectly planned for women who seek an adventure, all-inclusive journey with fixed departures.",
         groupDetails: {
             pax: "Group Tour (10-40 pax)",
@@ -3499,7 +3499,7 @@ be related once back home.`
         nights: 5,
         amount: 149999,
         dateStart: "15,22,29 August",
-        dateEnd: "18,25,30 August",
+        dateEnd: "",
         groupDetails: {
             pax: "2 Pax – Custom Package",
             rooms: "1 Room on Double Sharing",
@@ -3602,7 +3602,7 @@ be related once back home.`
         nights: 10,
         amount: 139999,
         dateStart: "14,21,28 August",
-        dateEnd: "18,25,30 August",
+        dateEnd: "",
         groupDetails: {
             pax: "2 Adults – Anniversary Trip",
             rooms: "1 Room on Double Sharing",
@@ -3748,7 +3748,7 @@ be related once back home.`
         nights: 5,
         amount: 38499,
         dateStart: "14,21,28 August",
-        dateEnd: "18,25,30 August",
+        dateEnd: "",
         groupDetails: {
             pax: "2 Adults – Anniversary Trip",
             rooms: "1 Room on Double Sharing",
