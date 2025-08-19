@@ -31,7 +31,7 @@ export default function ThailandPackages() {
     })));
 
     // Test specific image path
-    console.log('Testing image path:', '/UGCImages/web/thailand/1.webp');
+    console.log('Testing image path:', 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/thailand/2.webp');
     const [isMuted, setIsMuted] = useState(true);
 
     const handlePrevPage = () => {
@@ -65,12 +65,12 @@ export default function ThailandPackages() {
         return (
             <div className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0">
                 <Image
-                    src={pkg.images?.[0] || '/UGCImages/web/thailand/1.webp'}
+                    src={pkg.images?.[0] || 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/thailand/2.webp'}
                     alt={pkg.packageName}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                    unoptimized={true}
+
                     onError={(setError) => {
                         console.error('Image failed to load:', pkg.images?.[0]);
                         console.error('Package ID:', pkg.id);
@@ -271,7 +271,7 @@ export default function ThailandPackages() {
                             {/* Debug: Test basic image loading */}
                             {/* <div className="mb-4 p-4 bg-yellow-100 rounded">
                                 <p>Debug: Testing basic image:</p>
-                                <img src="/UGCImages/web/thailand/1.webp" alt="Test Thailand Image" style={{ width: '100px', height: '100px', objectFit: 'cover' }} />
+                                <img src="https://truedeal-assets.s3.eu-north-1.amazonaws.com/thailand/2.webp" alt="Test Thailand Image" style={{ width: '100px', height: '100px', objectFit: 'cover' }} />
                             </div> */}
 
                             <div className="overflow-x-auto -mx-4 px-4">

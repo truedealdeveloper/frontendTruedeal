@@ -51,9 +51,9 @@ export default function NatureslandPackagePage({ params }: PageProps) {
     );
     const isMobile = useMobile();
 
-    // Use optimized images for mobile/desktop
-    const mobileHeroSrc = thailandPkg?.images?.[0] || '/UGCImages/web/thailand/1.webp';
-    const desktopHeroSrc = thailandPkg?.images?.[0] || '/UGCImages/web/thailand/1.webp';
+    // Use optimized images for mobile/desktop with S3 fallbacks
+    const mobileHeroSrc = (thailandPkg?.mobileImages?.[0]) || 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/thailand/2.webp';
+    const desktopHeroSrc = thailandPkg?.images?.[0] || 'https://truedeal-assets.s3.eu-north-1.amazonaws.com/thailand/2.webp';
 
     if (!thailandPkg) {
         notFound();
