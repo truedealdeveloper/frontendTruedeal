@@ -28,7 +28,7 @@ function FirstTimeTravelMessageContent() {
                     </p>
                 </div>
             </motion.div>
-            {/* Banner directly below the message - aligned with Vietnam banner sizing */}
+            {/* Banner directly below the message - aligned with Vietnam banner sizing
             <div className="container mx-auto px-4 mt-8">
                 <div className="relative h-[200px] md:h-[180px] rounded-xl overflow-hidden">
                     <Image
@@ -48,7 +48,7 @@ function FirstTimeTravelMessageContent() {
                         priority
                     />
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 }
