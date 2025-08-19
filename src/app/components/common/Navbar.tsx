@@ -31,6 +31,7 @@ const dropdownMenus = {
     "international-packages": [
         // Southeast Asia
         { name: "Bali", href: "/bali" },
+        { name: "Thailand", href: "/naturesland-thailand" },
         { name: "Vietnam", href: "/vietnam" },
         { name: "Thailand Speedboat Tour", href: "/fixedDeparture/thailand-8-days-speedboat-tour" },
         { name: "Thailand 11 Days Tour", href: "/fixedDeparture/thailand-11-days-deluxe-tour" },
@@ -156,6 +157,8 @@ function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
             router.push(destination.route)
         } else if (destination.name.toLowerCase() === "bali") {
             router.push("/bali")
+        } else if (destination.name.toLowerCase() === "thailand") {
+            router.push("/naturesland-thailand")
         } else if (destination.name.toLowerCase() === "vietnam") {
             router.push("/vietnam")
         } else if (destination.name.toLowerCase() === "greece") {

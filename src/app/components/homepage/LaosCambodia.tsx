@@ -53,7 +53,7 @@ export default function LaosCambodiaBanner() {
         <div className="container mx-auto px-4">
             <div className="text-center mb-8">
                 <h1 className="text-xl md:text-2xl font-bold relative inline-flex items-center gap-2">
-                    <Image 
+                    <Image
                         src="/Assets/chatbot/building.png"
                         alt="Building icon"
                         width={40}
@@ -69,7 +69,7 @@ export default function LaosCambodiaBanner() {
                             Land of Culture
                         </p>
                     </div>
-                    <Image 
+                    <Image
                         src="/Assets/chatbot/bali.png"
                         alt="Indochina icon"
                         width={40}
@@ -80,18 +80,17 @@ export default function LaosCambodiaBanner() {
                 </h1>
             </div>
 
-            <div 
+            <div
                 className="relative h-[200px] md:h-[180px] rounded-xl overflow-hidden cursor-pointer group"
                 onClick={handleBannerClick}
             >
                 {bannerImages.map((image, index) => (
                     <div
                         key={index}
-                        className={`absolute inset-0 transition-opacity duration-500 ${
-                            currentImage === index ? 'opacity-100' : 'opacity-0'
-                        }`}
+                        className={`absolute inset-0 transition-opacity duration-500 ${currentImage === index ? 'opacity-100' : 'opacity-0'
+                            }`}
                     >
-                        <Image 
+                        <Image
                             src={image.desktop}
                             alt={`Bali Banner ${index + 1}`}
                             fill
@@ -99,7 +98,7 @@ export default function LaosCambodiaBanner() {
                             sizes="1280px"
                             priority={index === 0}
                         />
-                        <Image 
+                        <Image
                             src={image.mobile}
                             alt={`Bali Banner ${index + 1}`}
                             fill
@@ -131,18 +130,17 @@ export default function LaosCambodiaBanner() {
                             }}
                             aria-label={`Go to slide ${index + 1}`}
                         >
-                            <span 
-                                className={`block w-2 h-2 rounded-full transition-all ${
-                                    currentImage === index 
-                                        ? 'bg-white w-3' 
+                            <span
+                                className={`block w-2 h-2 rounded-full transition-all ${currentImage === index
+                                        ? 'bg-white w-3'
                                         : 'bg-white/50'
-                                }`}
+                                    }`}
                             />
                         </button>
                     ))}
                 </div>
             </div>
-            
+
         </div>
     );
 }

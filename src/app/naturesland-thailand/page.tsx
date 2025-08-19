@@ -70,7 +70,7 @@ export default function ThailandPackages() {
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-
+                    unoptimized={true}
                     onError={(setError) => {
                         console.error('Image failed to load:', pkg.images?.[0]);
                         console.error('Package ID:', pkg.id);

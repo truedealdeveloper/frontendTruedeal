@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    // Enable Next.js image optimization for responsive, compressed formats
-    unoptimized: false,
+    // Disable Next.js image optimization to avoid Vercel payment requirements
+    // AWS S3 images are already optimized
+    unoptimized: true,
     domains: ["truedeal-assets.s3.eu-north-1.amazonaws.com"],
     remotePatterns: [
       {
@@ -12,12 +13,6 @@ const nextConfig = {
         pathname: "/**",
       },
     ],
-    // Allow local images from /public directory
-    formats: ["image/webp", "image/avif"],
-    // Include smaller breakpoints to better match common mobile widths
-    deviceSizes: [360, 414, 480, 640, 750, 828, 1080, 1200, 1920, 2048],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },

@@ -130,6 +130,7 @@ export default function NatureslandPackagePage({ params }: PageProps) {
                                 fetchPriority="high"
                                 quality={70}
                                 sizes="100vw"
+                                unoptimized={true}
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                         </>
@@ -144,6 +145,7 @@ export default function NatureslandPackagePage({ params }: PageProps) {
                                 fetchPriority="high"
                                 quality={70}
                                 sizes="(max-width: 767px) 100vw, 1898px"
+                                unoptimized={true}
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                         </>
