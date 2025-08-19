@@ -269,10 +269,10 @@ export default function ThailandPackages() {
                                 </Button>
                             </div>
                             {/* Debug: Test basic image loading */}
-                            <div className="mb-4 p-4 bg-yellow-100 rounded">
+                            {/* <div className="mb-4 p-4 bg-yellow-100 rounded">
                                 <p>Debug: Testing basic image:</p>
                                 <img src="/UGCImages/web/thailand/1.webp" alt="Test Thailand Image" style={{ width: '100px', height: '100px', objectFit: 'cover' }} />
-                            </div>
+                            </div> */}
 
                             <div className="overflow-x-auto -mx-4 px-4">
                                 <div className="flex md:grid md:grid-cols-3 gap-6 min-w-min md:min-w-0">
