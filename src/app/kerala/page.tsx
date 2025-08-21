@@ -1,52 +1,121 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import { keralaPackages, keralaPackage } from './data';
 import { FaCalendarAlt, FaClock, FaChevronLeft, FaChevronRight, FaPlus, FaMinus, FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 import { IoLocationSharp } from 'react-icons/io5';
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
-import { motion } from 'framer-motion';
-import TripPlanRequest from '../../components/TripPlanRequest';
+import dynamic from 'next/dynamic';
 import { Dancing_Script, Playfair_Display } from 'next/font/google';
+import { useMobile } from '@/hooks/use-mobile';
+import { useImagePreloader, useScrollOptimization, useRenderTime } from '@/hooks/use-performance';
 
-const dancingScript = Dancing_Script({ subsets: ['latin'] });
-const playfair = Playfair_Display({ subsets: ['latin'] });
+// Lazy load heavy components
+const MotionDiv = dynamic(() => import('framer-motion').then(mod => mod.motion.div), {
+    ssr: false,
+    loading: () => <div className="animate-pulse" />
+});
+
+const MotionH1 = dynamic(() => import('framer-motion').then(mod => mod.motion.h1), {
+    ssr: false,
+    loading: () => <h1 className="animate-pulse" />
+});
+
+const MotionP = dynamic(() => import('framer-motion').then(mod => mod.motion.p), {
+    ssr: false,
+    loading: () => <p className="animate-pulse" />
+});
+
+const MotionSpan = dynamic(() => import('framer-motion').then(mod => mod.motion.span), {
+    ssr: false,
+    loading: () => <span className="animate-pulse" />
+});
+
+const TripPlanRequest = dynamic(() => import('../../components/TripPlanRequest'), {
+    ssr: false,
+    loading: () => <div className="h-32 animate-pulse bg-gray-200 rounded-lg" />
+});
+
+const dancingScript = Dancing_Script({
+    subsets: ['latin'],
+    display: 'swap',
+    preload: true
+});
+
+const playfair = Playfair_Display({
+    subsets: ['latin'],
+    display: 'swap',
+    preload: true
+});
 
 export default function KeralaPackages() {
     const [currentPage, setCurrentPage] = useState(0);
     const [openFaq, setOpenFaq] = useState<number | null>(null);
-    const packages = Object.values(keralaPackages);
-    const totalPages = Math.ceil(packages.length / 3);
     const [isMuted, setIsMuted] = useState(true);
+    const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+    const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+    const isMobile = useMobile();
 
-    const handlePrevPage = () => {
+    // Performance optimizations
+    useRenderTime('KeralaPackages');
+    useScrollOptimization();
+
+    // Preload critical images
+    const criticalImages = useMemo(() => [
+        '/webImage/kerala/mobile/kerala1.jpg',
+        '/UGCImages/kerala/keralaa/backwater.png',
+        '/UGCImages/kerala/keralaa/tea.png',
+        '/UGCImages/kerala/keralaa/ayurveda.png'
+    ], []);
+    useImagePreloader(criticalImages);
+
+    const packages = useMemo(() => Object.values(keralaPackages), []);
+    const totalPages = useMemo(() => Math.ceil(packages.length / 3), [packages.length]);
+
+    // Register service worker for caching
+    useEffect(() => {
+        if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
+            navigator.serviceWorker.register('/sw.js')
+                .catch(console.error);
+        }
+    }, []);
+
+    // Optimize video loading - only load on interaction or after initial render
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShouldLoadVideo(true);
+        }, isMobile ? 2000 : 1000); // Delay video loading on mobile
+
+        return () => clearTimeout(timer);
+    }, [isMobile]);
+
+    const handlePrevPage = useCallback(() => {
         setCurrentPage(prev => prev > 0 ? prev - 1 : prev);
-    };
+    }, []);
 
-    const handleNextPage = () => {
+    const handleNextPage = useCallback(() => {
         setCurrentPage(prev => prev < totalPages - 1 ? prev + 1 : prev);
-    };
+    }, [totalPages]);
 
-    const toggleMute = () => {
+    const toggleMute = useCallback(() => {
         const audio = document.getElementById('keralaAudio') as HTMLAudioElement;
         const video = document.getElementById('keralaVideo') as HTMLVideoElement;
+
         if (audio && video) {
             if (isMuted) {
-                // When unmuting
                 audio.muted = false;
-                video.muted = true; // Keep video muted
-                audio.play(); // Ensure audio plays
-                audio.volume = 0.5; // Set volume to 50%
+                video.muted = true;
+                audio.play();
+                audio.volume = 0.5;
             } else {
-                // When muting
                 audio.muted = true;
-                audio.pause(); // Pause the audio
+                audio.pause();
             }
             setIsMuted(!isMuted);
         }
-    };
+    }, [isMuted]);
 
     const PackageCard = ({
         package: pkg
@@ -55,17 +124,27 @@ export default function KeralaPackages() {
     }) => {
         const [showDates, setShowDates] = useState(false);
         const [showCities, setShowCities] = useState(false);
+        const [imageLoaded, setImageLoaded] = useState(false);
 
         return (
             <div className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0">
-                {/* Background Image */}
-                <Image
-                    src={pkg.images[0]}
-                    alt={pkg.packageName}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                />
+                {/* Background Image with loading optimization */}
+                <div className="relative w-full h-full">
+                    {!imageLoaded && (
+                        <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+                    )}
+                    <Image
+                        src={pkg.images[0]}
+                        alt={pkg.packageName}
+                        fill
+                        className={`object-cover group-hover:scale-105 transition-transform duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'
+                            }`}
+                        sizes="(max-width: 768px) 300px, (max-width: 1280px) 50vw, 33vw"
+                        loading="lazy"
+                        quality={isMobile ? 60 : 75}
+                        onLoad={() => setImageLoaded(true)}
+                    />
+                </div>
 
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/50 to-black" />
@@ -170,7 +249,7 @@ export default function KeralaPackages() {
                     )}
 
                     {/* View Details Button */}
-                    <Link href={`/kerala/${pkg.id}`}>
+                    <Link href={`/kerala/${pkg.id}`} prefetch={false}>
                         <Button
                             className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all duration-500"
                         >
@@ -182,7 +261,7 @@ export default function KeralaPackages() {
         );
     };
 
-    const keralaHighlights = [
+    const keralaHighlights = useMemo(() => [
         {
             title: "Backwater Cruises",
             image: "/UGCImages/kerala/keralaa/backwater.png",
@@ -213,9 +292,9 @@ export default function KeralaPackages() {
             image: "/UGCImages/kerala/keralaa/cultural2.png",
             description: "Experience rich cultural traditions including Kathakali dance and temple festivals"
         }
-    ];
+    ], []);
 
-    const faqs = [
+    const faqs = useMemo(() => [
         {
             question: "What is the best time to visit Kerala?",
             answer: "The best time to visit Kerala is from October to March when the weather is pleasant and cool. Monsoon season (August-September) is also beautiful but expect rainfall."
@@ -232,58 +311,108 @@ export default function KeralaPackages() {
             question: "What are the famous Kerala dishes to try?",
             answer: "Try Kerala fish curry, appam with stew, puttu and kadala curry, karimeen fry, and traditional Kerala sadya served on banana leaf."
         }
-    ] as const;
+    ], []);
 
     return (
         <div className="min-h-screen">
-            {/* Hero Section with Video */}
-            <div className="relative h-[60vh] md:h-[100vh] w-full overflow-hidden">
-                {/* Add audio element */}
-                <audio
-                    id="keralaAudio"
-                    loop
-                    muted
-                    autoPlay
-                    className="hidden"
-                >
-                    <source src="/UGCImages/kerala/audio.mpeg" type="audio/mp3" />
-                </audio>
+            {/* Critical resource hints and inline CSS */}
+            <style jsx>{`
+                /* Critical CSS inlined for faster FCP */
+                @keyframes pulse {
+                    0%, 100% { opacity: 1; }
+                    50% { opacity: 0.5; }
+                }
+                .animate-pulse {
+                    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+                }
+                
+                /* Critical hero styles */
+                .hero-container {
+                    position: relative;
+                    height: 60vh;
+                    width: 100%;
+                    overflow: hidden;
+                }
+                
+                @media (min-width: 768px) {
+                    .hero-container {
+                        height: 100vh;
+                    }
+                }
+                
+                /* Optimize layout shifts */
+                .packages-grid {
+                    min-height: 450px;
+                }
+                
+                /* GPU acceleration for smooth animations */
+                .gpu-accelerated {
+                    transform: translateZ(0);
+                    will-change: transform;
+                }
+            `}</style>
 
-                {/* Add audio control button */}
-                <button
-                    onClick={toggleMute}
-                    className="absolute bottom-4 right-4 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm p-3 rounded-full transition-all duration-300 text-white shadow-lg"
-                    aria-label={isMuted ? "Unmute audio" : "Mute audio"}
-                >
-                    {isMuted ? (
-                        <FaVolumeMute className="w-6 h-6" />
-                    ) : (
-                        <FaVolumeUp className="w-6 h-6" />
-                    )}
-                </button>
+            {/* Hero Section with optimized video */}
+            <div className="hero-container gpu-accelerated">
+                {/* Optimized audio - only load when needed */}
+                {shouldLoadVideo && !isMobile && (
+                    <audio
+                        id="keralaAudio"
+                        loop
+                        muted
+                        preload="none"
+                        className="hidden"
+                    >
+                        <source src="/UGCImages/kerala/audio.mpeg" type="audio/mp3" />
+                    </audio>
+                )}
 
-                <video
-                    id="keralaVideo"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="absolute inset-0 w-full h-full object-cover"
-                >
-                    <source src="/UGCImages/kerala/kerala.mp4" type="video/mp4" />
-                    {/* Fallback image in case video fails to load */}
+                {/* Audio control button - only show when audio is available */}
+                {shouldLoadVideo && !isMobile && (
+                    <button
+                        onClick={toggleMute}
+                        className="absolute bottom-4 right-4 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm p-3 rounded-full transition-all duration-300 text-white shadow-lg"
+                        aria-label={isMuted ? "Unmute audio" : "Mute audio"}
+                    >
+                        {isMuted ? (
+                            <FaVolumeMute className="w-6 h-6" />
+                        ) : (
+                            <FaVolumeUp className="w-6 h-6" />
+                        )}
+                    </button>
+                )}
+
+                {/* Optimized video loading */}
+                {shouldLoadVideo && !isMobile ? (
+                    <video
+                        id="keralaVideo"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="metadata"
+                        className="absolute inset-0 w-full h-full object-cover"
+                        onLoadedData={() => setIsVideoLoaded(true)}
+                    >
+                        <source src="/UGCImages/kerala/kerala.mp4" type="video/mp4" />
+                    </video>
+                ) : (
+                    /* Fallback high-quality image for mobile and initial load */
                     <Image
                         src="/webImage/kerala/mobile/kerala1.jpg"
                         alt="Kerala Paradise"
                         fill
                         className="object-cover"
                         priority
+                        quality={isMobile ? 75 : 90}
+                        sizes="100vw"
                     />
-                </video>
+                )}
+
                 <div className="absolute inset-0 bg-black/30" />
                 <div className="absolute inset-0 flex items-center justify-center text-center">
                     <div className="max-w-4xl px-4">
-                        <motion.h1
+                        <MotionH1
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
@@ -295,49 +424,49 @@ export default function KeralaPackages() {
                             <span className={`block text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-green-200 to-emerald-200 bg-clip-text text-transparent mt-2 ${playfair.className}`}>
                                 God&apos;s Own Country
                             </span>
-                        </motion.h1>
+                        </MotionH1>
 
-                        <motion.div
+                        <MotionDiv
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.5, duration: 0.8 }}
                             className="space-y-4"
                         >
-                            <motion.p
+                            <MotionP
                                 className="text-xl md:text-2xl text-white/90 font-light"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 1, duration: 0.8 }}
                             >
                                 Experience the perfect blend of
-                            </motion.p>
+                            </MotionP>
                             <div className="flex justify-center gap-4 text-lg md:text-xl">
-                                <motion.span
+                                <MotionSpan
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 1.5, duration: 0.5 }}
                                     className="text-[#00f6ff]"
                                 >
                                     Serene Backwaters
-                                </motion.span>
-                                <motion.span
+                                </MotionSpan>
+                                <MotionSpan
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 1.8, duration: 0.5 }}
                                     className="text-cyan-300"
                                 >
                                     Lush Hill Stations
-                                </motion.span>
-                                <motion.span
+                                </MotionSpan>
+                                <MotionSpan
                                     initial={{ opacity: 0, x: 20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 2.1, duration: 0.5 }}
                                     className="text-blue-300"
                                 >
                                     Ancient Traditions
-                                </motion.span>
+                                </MotionSpan>
                             </div>
-                        </motion.div>
+                        </MotionDiv>
                     </div>
                 </div>
             </div>
@@ -377,7 +506,7 @@ export default function KeralaPackages() {
 
                             {/* Packages Grid */}
                             <div className="overflow-x-auto -mx-4 px-4">
-                                <div className="flex md:grid md:grid-cols-3 gap-6 min-w-min md:min-w-0">
+                                <div className="packages-grid flex md:grid md:grid-cols-3 gap-6 min-w-min md:min-w-0 gpu-accelerated">
                                     {packages
                                         .slice(currentPage * 3, (currentPage * 3) + 3)
                                         .map((keralaPkg) => (
@@ -413,14 +542,14 @@ export default function KeralaPackages() {
                 </div>
             </div>
 
-            {/* Kerala Highlights Section */}
+            {/* Kerala Highlights Section - Lazy loaded */}
             <div className="py-16 bg-white">
                 <div className="container mx-auto px-4">
-                    <motion.div
+                    <MotionDiv
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "-100px" }}
                         className="max-w-7xl mx-auto"
                     >
                         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
@@ -431,12 +560,12 @@ export default function KeralaPackages() {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {keralaHighlights.map((highlight, index) => (
-                                <motion.div
+                                <MotionDiv
                                     key={highlight.title}
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                                    viewport={{ once: true }}
+                                    viewport={{ once: true, margin: "-50px" }}
                                     className="group relative overflow-hidden rounded-xl shadow-lg h-[300px]"
                                 >
                                     <Image
@@ -444,6 +573,9 @@ export default function KeralaPackages() {
                                         alt={highlight.title}
                                         fill
                                         className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                        loading="lazy"
+                                        quality={isMobile ? 60 : 75}
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                                     <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
@@ -452,10 +584,10 @@ export default function KeralaPackages() {
                                             {highlight.description}
                                         </p>
                                     </div>
-                                </motion.div>
+                                </MotionDiv>
                             ))}
                         </div>
-                    </motion.div>
+                    </MotionDiv>
                 </div>
             </div>
 
@@ -467,7 +599,7 @@ export default function KeralaPackages() {
                     </span>
                 </h2>
                 <div className="space-y-4">
-                    {faqs.map((faq: { question: string; answer: string }, index: number) => (
+                    {faqs.map((faq, index) => (
                         <div
                             key={index}
                             className="border rounded-lg overflow-hidden"
@@ -513,7 +645,37 @@ export default function KeralaPackages() {
                 </div>
             </div>
 
+            {/* Lazy loaded Trip Plan Request */}
             <TripPlanRequest />
+
+            {/* Performance optimization styles */}
+            <style jsx global>{`
+                /* Optimize font loading */
+                @font-face {
+                    font-family: 'Dancing Script';
+                    font-display: swap;
+                }
+                @font-face {
+                    font-family: 'Playfair Display';
+                    font-display: swap;
+                }
+                
+                /* Reduce layout shift */
+                .aspect-ratio-16-9 {
+                    aspect-ratio: 16 / 9;
+                }
+                
+                /* Optimize scroll performance */
+                .smooth-scroll {
+                    scroll-behavior: smooth;
+                }
+                
+                /* Optimize transforms */
+                .gpu-acceleration {
+                    transform: translateZ(0);
+                    will-change: transform;
+                }
+            `}</style>
         </div>
     );
-} 
+}
