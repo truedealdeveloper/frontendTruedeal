@@ -345,7 +345,6 @@ export const keralaPackages: Record<string, keralaPackage> = {
         ],
         departureDates: [
             { date: "1, 5, 8, 12, 15, 19, 22, 26, 29 August 2025", availability: "Available", price: 24000 },
-            { date: "1, 5, 8, 12, 15, 19, 22, 26, 29 August 2025", availability: "Available", price: 24000 },
         ],
         departureCities: [
 
