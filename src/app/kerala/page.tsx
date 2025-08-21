@@ -54,7 +54,7 @@ export default function KeralaPackages() {
     const [currentPage, setCurrentPage] = useState(0);
     const [openFaq, setOpenFaq] = useState<number | null>(null);
     const [isMuted, setIsMuted] = useState(true);
-    const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
     const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
     const isMobile = useMobile();
 
@@ -392,7 +392,7 @@ export default function KeralaPackages() {
                         playsInline
                         preload="metadata"
                         className="absolute inset-0 w-full h-full object-cover"
-                        onLoadedData={() => setIsVideoLoaded(true)}
+
                     >
                         <source src="/UGCImages/kerala/kerala.mp4" type="video/mp4" />
                     </video>

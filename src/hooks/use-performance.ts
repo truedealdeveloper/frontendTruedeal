@@ -36,18 +36,18 @@ export function usePerformance() {
                 }
 
                 // Cumulative Layout Shift
-                if (entry.entryType === 'layout-shift' && !(entry as any).hadRecentInput) {
+                if (entry.entryType === 'layout-shift' && !('hadRecentInput' in entry && entry.hadRecentInput)) {
                     setMetrics(prev => ({
                         ...prev,
-                        cls: (prev.cls || 0) + (entry as any).value
+                        cls: (prev.cls || 0) + ('value' in entry ? (entry.value as number) : 0)
                     }));
                 }
 
                 // First Input Delay
-                if (entry.entryType === 'first-input') {
+                if (entry.entryType === 'first-input' && 'processingStart' in entry) {
                     setMetrics(prev => ({
                         ...prev,
-                        fid: (entry as any).processingStart - entry.startTime
+                        fid: (entry.processingStart as number) - entry.startTime
                     }));
                 }
             });
