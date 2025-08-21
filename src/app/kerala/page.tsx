@@ -56,6 +56,7 @@ export default function KeralaPackages() {
     const [isMuted, setIsMuted] = useState(true);
 
     const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+    const [videoLoaded, setVideoLoaded] = useState(false);
     const isMobile = useMobile();
 
     // Performance optimizations
@@ -82,11 +83,11 @@ export default function KeralaPackages() {
         }
     }, []);
 
-    // Optimize video loading - only load on interaction or after initial render
+    // Optimize video loading - faster on mobile for better UX
     useEffect(() => {
         const timer = setTimeout(() => {
             setShouldLoadVideo(true);
-        }, isMobile ? 2000 : 1000); // Delay video loading on mobile
+        }, isMobile ? 800 : 1000); // Faster video loading on mobile
 
         return () => clearTimeout(timer);
     }, [isMobile]);
@@ -354,8 +355,8 @@ export default function KeralaPackages() {
 
             {/* Hero Section with optimized video */}
             <div className="hero-container gpu-accelerated">
-                {/* Optimized audio - only load when needed */}
-                {shouldLoadVideo && !isMobile && (
+                {/* Optimized audio - available on all devices */}
+                {shouldLoadVideo && (
                     <audio
                         id="keralaAudio"
                         loop
@@ -363,12 +364,12 @@ export default function KeralaPackages() {
                         preload="none"
                         className="hidden"
                     >
-                        <source src="/UGCImages/kerala/audio.mpeg" type="audio/mp3" />
+                        <source src="https://truedeal-assets.s3.eu-north-1.amazonaws.com/Kerala/audio.mpeg" type="audio/mp3" />
                     </audio>
                 )}
 
-                {/* Audio control button - only show when audio is available */}
-                {shouldLoadVideo && !isMobile && (
+                {/* Audio control button - show when audio is available */}
+                {shouldLoadVideo && (
                     <button
                         onClick={toggleMute}
                         className="absolute bottom-4 right-4 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm p-3 rounded-full transition-all duration-300 text-white shadow-lg"
@@ -382,31 +383,33 @@ export default function KeralaPackages() {
                     </button>
                 )}
 
-                {/* Optimized video loading */}
-                {shouldLoadVideo && !isMobile ? (
+                {/* Background image always loads first */}
+                <Image
+                    src="/UGCImages/kerala/kerala/1.png"
+                    alt="Kerala Paradise"
+                    fill
+                    className="object-cover"
+                    priority
+                    quality={isMobile ? 75 : 90}
+                    sizes="100vw"
+                />
+
+                {/* Video overlay - loads after image */}
+                {shouldLoadVideo && (
                     <video
                         id="keralaVideo"
                         autoPlay
                         loop
                         muted
                         playsInline
-                        preload="metadata"
-                        className="absolute inset-0 w-full h-full object-cover"
-
+                        preload={isMobile ? "none" : "metadata"}
+                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${videoLoaded ? 'opacity-100' : 'opacity-0'
+                            }`}
+                        onLoadedData={() => setVideoLoaded(true)}
+                        onCanPlayThrough={() => setVideoLoaded(true)}
                     >
-                        <source src="/UGCImages/kerala/kerala.mp4" type="video/mp4" />
+                        <source src="https://truedeal-assets.s3.eu-north-1.amazonaws.com/Kerala/kerala.mp4" type="video/mp4" />
                     </video>
-                ) : (
-                    /* Fallback high-quality image for mobile and initial load */
-                    <Image
-                        src="/webImage/kerala/mobile/kerala1.jpg"
-                        alt="Kerala Paradise"
-                        fill
-                        className="object-cover"
-                        priority
-                        quality={isMobile ? 75 : 90}
-                        sizes="100vw"
-                    />
                 )}
 
                 <div className="absolute inset-0 bg-black/30" />
