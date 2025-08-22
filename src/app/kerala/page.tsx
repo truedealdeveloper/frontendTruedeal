@@ -164,24 +164,24 @@ export default function KeralaPackages() {
                 </div>
 
                 {/* Content */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <h2 className="text-2xl font-bold mb-2">
+                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
+                    <h2 className="text-lg md:text-xl font-bold mb-2">
                         {pkg.packageName}
                     </h2>
 
                     {/* Details Grid */}
-                    <div className="grid grid-cols-2 gap-y-2 text-sm mb-4">
+                    <div className="grid grid-cols-2 gap-y-2 text-xs md:text-sm mb-4">
                         <div className="flex items-center gap-2">
-                            <FaClock className="text-[#00f6ff]" />
+                            <FaClock className="text-[#00f6ff] w-3 h-3" />
                             <span>{pkg.days}D/{pkg.nights}N</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <IoLocationSharp className="text-[#00f6ff]" />
+                            <IoLocationSharp className="text-[#00f6ff] w-3 h-3" />
                             <span>{pkg.hotelDetails[0].city}</span>
                         </div>
                         {pkg.departureDates && (
                             <div className="flex items-center gap-2">
-                                <FaCalendarAlt className="text-[#00f6ff]" />
+                                <FaCalendarAlt className="text-[#00f6ff] w-3 h-3" />
                                 <button
                                     onClick={(e) => {
                                         e.preventDefault();
@@ -196,7 +196,7 @@ export default function KeralaPackages() {
                         )}
                         {pkg.departureCities && (
                             <div className="flex items-center gap-2">
-                                <FaCalendarAlt className="text-[#00f6ff]" />
+                                <FaCalendarAlt className="text-[#00f6ff] w-3 h-3" />
                                 <button
                                     onClick={(e) => {
                                         e.preventDefault();
