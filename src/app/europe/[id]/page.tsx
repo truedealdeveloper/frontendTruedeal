@@ -231,7 +231,7 @@ export default function EuropePackagePage({ params }: PageProps) {
                             </section>
 
                             <section className="mb-8" style={{ contentVisibility: 'auto', containIntrinsicSize: '700px' }}>
-                                <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">What's Included</h2>
+                                <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">What&apos;s Included</h2>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <Card className="p-5">
                                         <h3 className="text-lg font-medium mb-3 flex items-center">

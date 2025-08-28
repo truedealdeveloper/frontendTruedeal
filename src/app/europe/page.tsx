@@ -274,7 +274,7 @@ export default function EuropePackages() {
                 <div className="text-gray-600 space-y-4">
                     <p>Europe offers an incredible diversity of experiences, from the romantic streets of Paris to the stunning Alpine landscapes of Switzerland. Each country has its own unique culture, cuisine, and historical treasures waiting to be explored.</p>
                     <p>Our Europe Tour Packages include visits to iconic landmarks like the Eiffel Tower, Colosseum, Swiss Alps, and charming canals of Amsterdam. Experience world-class museums, savor authentic local cuisine, and create unforgettable memories across multiple countries.</p>
-                    <p>Whether you're seeking romance in Venice, adventure in the Swiss mountains, or cultural immersion in historic cities, our carefully crafted itineraries ensure you experience the very best of Europe with comfort and convenience.</p>
+                    <p>Whether you&apos;re seeking romance in Venice, adventure in the Swiss mountains, or cultural immersion in historic cities, our carefully crafted itineraries ensure you experience the very best of Europe with comfort and convenience.</p>
                 </div>
             </div>
 
