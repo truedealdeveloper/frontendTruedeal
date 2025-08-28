@@ -11,6 +11,8 @@ export interface Destination {
 
 export const destinations: Destination[] = [
     { name: "Bali", tag: { label: "POPULAR", color: "rose" } },
+    { name: "Thailand", tag: { label: "POPULAR", color: "rose" }, route: "/naturesland-thailand" },
+    { name: "Europe", tag: { label: "POPULAR", color: "blue" }, route: "/europe" },
     { name: "Vietnam", tag: { label: "TRENDING", color: "green" } },
     { name: "Greece", tag: { label: "POPULAR", color: "blue" }, route: "/greece" },
     { name: "Indochina", tag: { label: "TRENDING", color: "green" } },
