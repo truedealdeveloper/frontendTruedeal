@@ -90,9 +90,9 @@ export interface EuropePackage {
 }
 
 export const europePackages: Record<string, EuropePackage> = {
-    europeAdventure: {
-        id: "europe-adventure",
-        packageName: "Switzerland Holiday Package",
+    switzerlandHolidayPackage6N7D: {
+        id: "switzerland-holiday-package-6N7D",
+        packageName: "Switzerland Holiday Package (06 Nights & 07 Days)",
         days: 7,
         nights: 6,
         amount: 91668,
@@ -195,5 +195,6 @@ export const europePackages: Record<string, EuropePackage> = {
         localFood: [],
         culture: [],
         additionalInfo: undefined
-    }
+    },
+
 };
