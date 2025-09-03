@@ -218,7 +218,7 @@ export default function RajasthanPackages() {
     const faqs = [
         {
             question: "What is the best time to visit Rajasthan?",
-            answer: "The best time to visit Rajasthan is from October to March when the weather is pleasant and cool. Avoid summer months (April-August) as temperatures can be extremely high."
+            answer: "The best time to visit Rajasthan is from October to March when the weather is pleasant and cool. Avoid summer months (April-September) as temperatures can be extremely high."
         },
         {
             question: "What activities can I do in Rajasthan?",

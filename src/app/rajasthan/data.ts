@@ -104,13 +104,13 @@ export const rajasthanPackages: Record<string, rajasthanPackage> = {
         days: 5,
         nights: 4,
         amount: 33000,
-        dateStart: "3, 7, 11, 15, 19, 23, 27, 31 August 2025",
+        dateStart: "3, 7, 11, 15, 19, 23, 27, 31 September 2025",
         dateEnd: "",
         description: "Experience the royal heritage of Rajasthan with this comprehensive 5-day tour covering majestic palaces, desert adventures, and vibrant culture. Perfect for families, couples, and culture enthusiasts seeking an authentic Rajasthani experience.",
         groupDetails: {
             pax: "1",
             rooms: "1",
-            arrivalDate: "3, 7, 11, 15, 19, 23, 27, 31 August 2025",
+            arrivalDate: "3, 7, 11, 15, 19, 23, 27, 31 September 2025",
             duration: "5 days / 4 nights",
             costBasis: "Per Person on double sharing basis"
         },
@@ -344,8 +344,8 @@ export const rajasthanPackages: Record<string, rajasthanPackage> = {
             }
         ],
         departureDates: [
-            { date: "3, 7, 11, 15, 19, 23, 27, 31 August 2025", availability: "Available", price: 32000 },
-            { date: "3, 7, 11, 15, 19, 23, 27, 31 August 2025", availability: "Available", price: 32000 },
+            { date: "3, 7, 11, 15, 19, 23, 27, 31 September 2025", availability: "Available", price: 32000 },
+            { date: "3, 7, 11, 15, 19, 23, 27, 31 September 2025", availability: "Available", price: 32000 },
         ],
         departureCities: [
             {

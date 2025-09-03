@@ -104,13 +104,13 @@ export const goaPackages: Record<string, goaPackage> = {
         days: 4,
         nights: 3,
         amount: 19000,
-        dateStart: "1, 5, 8, 12, 15, 19, 22, 26, 29 August 2025",
+        dateStart: "1, 5, 8, 12, 15, 19, 22, 26, 29 September 2025",
         dateEnd: "",
         description: "Experience the best of Goa with our comprehensive 5-day tour covering pristine beaches, vibrant nightlife, Portuguese heritage, and thrilling water sports. Perfect blend of relaxation and adventure.",
         groupDetails: {
             pax: "2",
             rooms: "1",
-            arrivalDate: "1, 5, 8, 12, 15, 19, 22, 26, 29 August 2025",
+            arrivalDate: "1, 5, 8, 12, 15, 19, 22, 26, 29 September 2025",
             duration: "4 days / 3 nights",
             costBasis: "Per person on double sharing basis"
         },
@@ -330,8 +330,8 @@ export const goaPackages: Record<string, goaPackage> = {
             }
         ],
         departureDates: [
-            { date: "1, 5, 8, 12, 15, 19, 22, 26, 29 August 2025", availability: "Available", price: 18000 },
-            { date: "2, 6, 9, 13, 16, 20, 23, 27, 30 August 2025", availability: "Available", price: 18000 },
+            { date: "1, 5, 8, 12, 15, 19, 22, 26, 29 September 2025", availability: "Available", price: 18000 },
+            { date: "2, 6, 9, 13, 16, 20, 23, 27, 30 September 2025", availability: "Available", price: 18000 },
         ],
         departureCities: [
             {

@@ -104,13 +104,13 @@ export const keralaPackages: Record<string, keralaPackage> = {
         days: 5,
         nights: 4,
         amount: 24000,
-        dateStart: "1, 5, 8, 12, 15, 19, 22, 26, 29 August 2025",
+        dateStart: "1, 5, 8, 12, 15, 19, 22, 26, 29 September 2025",
         dateEnd: "",
         description: "Perfect 6-day Kerala tour covering the misty hills of Munnar, wildlife sanctuary of Thekkady, and serene backwaters of Alleppey. Ideal for couples, families, or small groups.",
         groupDetails: {
             pax: "2",
             rooms: "1",
-            arrivalDate: "1, 5, 8, 12, 15, 19, 22, 26, 29 August 2025",
+            arrivalDate: "1, 5, 8, 12, 15, 19, 22, 26, 29 September 2025",
             duration: "5 days / 4 nights",
             costBasis: "Per Person on double sharing basis"
         },
@@ -344,7 +344,7 @@ export const keralaPackages: Record<string, keralaPackage> = {
             }
         ],
         departureDates: [
-            { date: "1, 5, 8, 12, 15, 19, 22, 26, 29 August 2025", availability: "Available", price: 24000 },
+            { date: "1, 5, 8, 12, 15, 19, 22, 26, 29 September 2025", availability: "Available", price: 24000 },
         ],
         departureCities: [
 

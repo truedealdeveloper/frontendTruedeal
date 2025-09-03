@@ -104,13 +104,13 @@ export const philippinesPackages: Record<string, philippinesPackage> = {
         days: 4,
         nights: 3,
         amount: 32625,
-        dateStart: "2, 6, 9, 13, 16, 20, 23, 27, 30 August 2025",
+        dateStart: "2, 6, 9, 13, 16, 20, 23, 27, 30 September 2025",
         dateEnd: "",
         description: `Enjoy the best of Coron with a private town tour, free and easy day, and a comfortable stay at a well-rated hotel.`,
         groupDetails: {
             pax: "2",
             rooms: "1",
-            arrivalDate: "2, 6, 9, 13, 16, 20, 23, 27, 30 August 2025",
+            arrivalDate: "2, 6, 9, 13, 16, 20, 23, 27, 30 September 2025",
             duration: "4 days / 3 nights",
             costBasis: "Per Person on double sharing basis"
         },
@@ -147,7 +147,7 @@ export const philippinesPackages: Record<string, philippinesPackage> = {
             {
                 day: 2,
                 title: "Private Coron Town Tour (Breakfast)",
-                description: `After breakfast, enjoy a guided town tour visiting key landmarks like Lualhati Park, Mt. Tapyas, St. Augustine Church, Cashew Store, and Maquinit Hot Spring. Return to the hotel by evening.`,
+                description: `After breakfast, enjoy a guided town tour visiting key landmarks like Lualhati Park, Mt. Tapyas, St. Septemberine Church, Cashew Store, and Maquinit Hot Spring. Return to the hotel by evening.`,
                 image: "/UGCImages/HD IMAGES/Philippines/vertical/2.png"
             },
             {
@@ -322,8 +322,8 @@ export const philippinesPackages: Record<string, philippinesPackage> = {
             }
         ],
         departureDates: [
-            { date: "2, 6, 9, 13, 16, 20, 23, 27, 30 August 2025", availability: "Available", price: 45000 },
-            { date: "2, 6, 9, 13, 16, 20, 23, 27, 30 August 2025", availability: "Available", price: 45000 },
+            { date: "2, 6, 9, 13, 16, 20, 23, 27, 30 September 2025", availability: "Available", price: 45000 },
+            { date: "2, 6, 9, 13, 16, 20, 23, 27, 30 September 2025", availability: "Available", price: 45000 },
         ],
         departureCities: [
             {
@@ -346,13 +346,13 @@ export const philippinesPackages: Record<string, philippinesPackage> = {
         days: 4,
         nights: 3,
         amount: 27405,
-        dateStart: "2, 6, 9, 13, 16, 20, 23, 27, 30 August 2025",
+        dateStart: "2, 6, 9, 13, 16, 20, 23, 27, 30 September 2025",
         dateEnd: "",
         description: `Enjoy the best of Coron with a private town tour, free and easy day, and a comfortable stay at a well-rated hotel.`,
         groupDetails: {
             pax: "2",
             rooms: "1",
-            arrivalDate: "2, 6, 9, 13, 16, 20, 23, 27, 30 August 2025",
+            arrivalDate: "2, 6, 9, 13, 16, 20, 23, 27, 30 September 2025",
             duration: "4 days / 3 nights",
             costBasis: "Per Person on double sharing basis"
         },
@@ -569,8 +569,8 @@ Return to Hotel`,
             }
         ],
         departureDates: [
-            { date: "2, 6, 9, 13, 16, 20, 23, 27, 30 August 2025", availability: "Available", price: 45000 },
-            { date: "2, 6, 9, 13, 16, 20, 23, 27, 30 August 2025", availability: "Available", price: 45000 },
+            { date: "2, 6, 9, 13, 16, 20, 23, 27, 30 September 2025", availability: "Available", price: 45000 },
+            { date: "2, 6, 9, 13, 16, 20, 23, 27, 30 September 2025", availability: "Available", price: 45000 },
         ],
         departureCities: [
             {
@@ -593,13 +593,13 @@ Return to Hotel`,
         days: 4,
         nights: 3,
         amount: 38976,
-        dateStart: "2, 6, 9, 13, 16, 20, 23, 27, 30 August 2025",
+        dateStart: "2, 6, 9, 13, 16, 20, 23, 27, 30 September 2025",
         dateEnd: "",
         description: `Enjoy the best of Coron with a private town tour, free and easy day, and a comfortable stay at a well-rated hotel.`,
         groupDetails: {
             pax: "2",
             rooms: "1",
-            arrivalDate: "2, 6, 9, 13, 16, 20, 23, 27, 30 August 2025",
+            arrivalDate: "2, 6, 9, 13, 16, 20, 23, 27, 30 September 2025",
             duration: "4 days / 3 nights",
             costBasis: "Per Person on double sharing basis"
         },
@@ -824,7 +824,7 @@ Transfer to Caticlan to take flight for departure`,
             }
         ],
         departureDates: [
-            { date: "2, 6, 9, 13, 16, 20, 23, 27, 30 August 2025", availability: "Available", price: 38976 },
+            { date: "2, 6, 9, 13, 16, 20, 23, 27, 30 September 2025", availability: "Available", price: 38976 },
         ],
         departureCities: [
             {
@@ -839,13 +839,13 @@ Transfer to Caticlan to take flight for departure`,
         days: 4,
         nights: 3,
         amount: 34191,
-        dateStart: "2, 6, 9, 13, 16, 20, 23, 27, 30 August 2025",
+        dateStart: "2, 6, 9, 13, 16, 20, 23, 27, 30 September 2025",
         dateEnd: "",
         description: `Enjoy the best of Coron with a private town tour, free and easy day, and a comfortable stay at a well-rated hotel.`,
         groupDetails: {
             pax: "2",
             rooms: "1",
-            arrivalDate: "2, 6, 9, 13, 16, 20, 23, 27, 30 August 2025",
+            arrivalDate: "2, 6, 9, 13, 16, 20, 23, 27, 30 September 2025",
             duration: "4 days / 3 nights",
             costBasis: "Per Person on double sharing basis"
         },
@@ -1071,7 +1071,7 @@ Transfer to Panglao Airport to take flight for departure`,
             }
         ],
         departureDates: [
-            { date: "2, 6, 9, 13, 16, 20, 23, 27, 30 August 2025", availability: "Available", price: 27405 },
+            { date: "2, 6, 9, 13, 16, 20, 23, 27, 30 September 2025", availability: "Available", price: 27405 },
         ],
         departureCities: [
             {
@@ -1086,13 +1086,13 @@ Transfer to Panglao Airport to take flight for departure`,
         days: 4,
         nights: 3,
         amount: 37671,
-        dateStart: "2, 6, 9, 13, 16, 20, 23, 27, 30 August 2025",
+        dateStart: "2, 6, 9, 13, 16, 20, 23, 27, 30 September 2025",
         dateEnd: "",
         description: `Enjoy the best of Coron with a private town tour, free and easy day, and a comfortable stay at a well-rated hotel.`,
         groupDetails: {
             pax: "2",
             rooms: "1",
-            arrivalDate: "2, 6, 9, 13, 16, 20, 23, 27, 30 August 2025",
+            arrivalDate: "2, 6, 9, 13, 16, 20, 23, 27, 30 September 2025",
             duration: "4 days / 3 nights",
             costBasis: "Per Person on double sharing basis"
         },
@@ -1317,7 +1317,7 @@ Transfer to Caticlan to take flight for departure`,
             }
         ],
         departureDates: [
-            { date: "2, 6, 9, 13, 16, 20, 23, 27, 30 August 2025", availability: "Available", price: 27405 },
+            { date: "2, 6, 9, 13, 16, 20, 23, 27, 30 September 2025", availability: "Available", price: 27405 },
         ],
         departureCities: [
             {

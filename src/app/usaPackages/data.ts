@@ -553,7 +553,7 @@ Evening dinner at the restaurant and overnight in Orlando (B, D)
                 "Boston's Freedom Trail",
                 "Harbor cruises"
             ],
-            bestTimeToVisit: "May to August or September to October",
+            bestTimeToVisit: "May to September or September to October",
             cuisine: [
                 "New York pizza",
                 "New England seafood",
@@ -894,7 +894,7 @@ Illumination. Walk back to hotel. Overnight in Niagara. (B, D)`
                 "Boston's Freedom Trail",
                 "Harbor cruises"
             ],
-            bestTimeToVisit: "May to August or September to October",
+            bestTimeToVisit: "May to September or September to October",
             cuisine: [
                 "New York pizza",
                 "New England seafood",
@@ -1137,7 +1137,7 @@ destination.
                 "Boston's Freedom Trail",
                 "Harbor cruises"
             ],
-            bestTimeToVisit: "May to August or September to October",
+            bestTimeToVisit: "May to September or September to October",
             cuisine: [
                 "New York pizza",
                 "New England seafood",
@@ -1465,7 +1465,7 @@ Illumination. Walk back to hotel. Overnight in Niagara. (B, D)`
                 "Boston's Freedom Trail",
                 "Harbor cruises"
             ],
-            bestTimeToVisit: "May to August or September to October",
+            bestTimeToVisit: "May to September or September to October",
             cuisine: [
                 "New York pizza",
                 "New England seafood",

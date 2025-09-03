@@ -105,7 +105,7 @@ export const lehladakhPackages: Record<string, LehladakhPackage> = {
         nights: 5,
         amount: 34078,
         dateStart: "May 2025",
-        dateEnd: "30 August 2025",
+        dateEnd: "30 September 2025",
         description: "Experience the magic of Ladakh with our 6-day tour covering Leh, Sham Valley, Pangong Lake, Nubra Valley.",
         groupDetails: {
             pax: "Group Tour",
@@ -220,7 +220,7 @@ Hotel/Camp`,
             "/UGCImages/LADAKH/10.webp"
         ],
         departureDates: [
-            { date: "May 2025 - August 2025" }
+            { date: "May 2025 - September 2025" }
         ],
         experiences: [
             {
@@ -277,7 +277,7 @@ Hotel/Camp`,
         nights: 6,
         amount: 36801,
         dateStart: "May 2025",
-        dateEnd: "30 August 2025",
+        dateEnd: "30 September 2025",
         description: "Experience the magic of Ladakh with our 7-day tour covering Leh, Sham Valley, Pangong Lake, Nubra Valley.",
         groupDetails: {
             pax: "Group Tour",
@@ -405,7 +405,7 @@ landscape we reach to Shey Palace, The ancient capital of Ladakh &amp; 3 Idiots 
             "/UGCImages/LADAKH/17.webp"
         ],
         departureDates: [
-            { date: "May 2025 - August 2025" }
+            { date: "May 2025 - September 2025" }
         ],
         experiences: [
             {
@@ -608,7 +608,7 @@ landscape we reach to Shey Palace, The ancient capital of Ladakh &amp; 3 Idiots 
         days: 8,
         nights: 7,
         amount: 30562,
-        dateStart: "August 2025",
+        dateStart: "September 2025",
         dateEnd: "October 2025",
         description: "A comprehensive land package exploring the best of Ladakh including premium accommodations and exclusive experiences.",
         groupDetails: {
@@ -783,7 +783,7 @@ Dinner &amp; overnight stay at hotel in Leh.`,
         nights: 6,
         amount: 29999,
         dateStart: "May 2025",
-        dateEnd: "30 August 2025",
+        dateEnd: "30 September 2025",
         description: "A comprehensive land package exploring the best of Ladakh including premium accommodations and exclusive experiences.",
         groupDetails: {
             pax: "Group Tour",

@@ -46,23 +46,23 @@ export default function AlmatyPackages() {
         }
     };
 
-    const PackageCard = ({ 
+    const PackageCard = ({
         package: pkg
-    }: { 
+    }: {
         package: AlmatyPackage;
     }) => {
         const [showDates, setShowDates] = useState(false);
 
         return (
             <div className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0">
-                <Image 
-                    src={pkg.images[0]} 
+                <Image
+                    src={pkg.images[0]}
                     alt={pkg.packageName}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                 />
-                
+
                 <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/50 to-black" />
 
                 <div className="absolute top-3 left-0 z-10">
@@ -93,7 +93,7 @@ export default function AlmatyPackages() {
                         </div>
                         <div className="flex items-center gap-2">
                             <FaCalendarAlt className="text-yellow-400" />
-                            <button 
+                            <button
                                 onClick={(e) => {
                                     e.preventDefault();
                                     setShowDates(!showDates);
@@ -106,7 +106,7 @@ export default function AlmatyPackages() {
                     </div>
 
                     {showDates && pkg.departureDates && (
-                        <div 
+                        <div
                             className="absolute bottom-full left-0 right-0 bg-black/90 p-4 rounded-t-lg max-h-[200px] overflow-y-auto"
                             onClick={(e) => e.stopPropagation()}
                         >
@@ -169,7 +169,7 @@ export default function AlmatyPackages() {
     const faqs = [
         {
             question: "What is the best time to visit Almaty?",
-            answer: "Summer (June-August) is perfect for outdoor activities and sightseeing. Winter (December-February) is ideal for skiing and winter sports."
+            answer: "Summer (June-September) is perfect for outdoor activities and sightseeing. Winter (December-February) is ideal for skiing and winter sports."
         },
         {
             question: "Do I need a visa to visit Kazakhstan?",
@@ -211,11 +211,11 @@ export default function AlmatyPackages() {
                     )}
                 </button>
 
-                <video 
+                <video
                     id="almatyVideo"
-                    autoPlay 
-                    loop 
-                    muted 
+                    autoPlay
+                    loop
+                    muted
                     playsInline
                     className="absolute inset-0 w-full h-full object-cover"
                 >
@@ -231,27 +231,27 @@ export default function AlmatyPackages() {
                 <div className="absolute inset-0 bg-black/40" />
                 <div className="absolute inset-0 flex items-center justify-center text-center">
                     <div className="max-w-4xl px-4">
-                        <motion.h1 
+                        <motion.h1
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                             className="text-4xl md:text-7xl font-bold mb-6"
                         >
                             <span className={`block font-dancing-script text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] mb-2 ${dancingScript.className}`}>
-                                Discover the Magic of 
+                                Discover the Magic of
                             </span>
                             <span className={`block text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-rose-100 to-teal-100 bg-clip-text text-transparent mt-2 ${playfair.className}`}>
                                 Almaty
                             </span>
                         </motion.h1>
-                        
+
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.5, duration: 0.8 }}
                             className="space-y-4"
                         >
-                            <motion.p 
+                            <motion.p
                                 className="text-xl md:text-2xl text-white/90 font-light"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
@@ -302,8 +302,8 @@ export default function AlmatyPackages() {
                         <div className="relative">
                             {/* Navigation Controls */}
                             <div className="absolute top-1/2 -translate-y-1/2 left-0 z-10 hidden md:block">
-                                <Button 
-                                    onClick={handlePrevPage} 
+                                <Button
+                                    onClick={handlePrevPage}
                                     disabled={currentPage === 0}
                                     variant="outline"
                                     className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -ml-5 shadow-lg"
@@ -313,8 +313,8 @@ export default function AlmatyPackages() {
                             </div>
 
                             <div className="absolute top-1/2 -translate-y-1/2 right-0 z-10 hidden md:block">
-                                <Button 
-                                    onClick={handleNextPage} 
+                                <Button
+                                    onClick={handleNextPage}
                                     disabled={currentPage === totalPages - 1}
                                     variant="outline"
                                     className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -mr-5 shadow-lg"
@@ -336,8 +336,8 @@ export default function AlmatyPackages() {
 
                             {/* Mobile Navigation */}
                             <div className="mt-3 flex justify-center items-center gap-2 md:hidden">
-                                <Button 
-                                    onClick={handlePrevPage} 
+                                <Button
+                                    onClick={handlePrevPage}
                                     disabled={currentPage === 0}
                                     variant="outline"
                                     className="rounded-full w-8 h-8 p-0"
@@ -347,8 +347,8 @@ export default function AlmatyPackages() {
                                 <span className="text-sm text-gray-500">
                                     {currentPage + 1} / {totalPages}
                                 </span>
-                                <Button 
-                                    onClick={handleNextPage} 
+                                <Button
+                                    onClick={handleNextPage}
                                     disabled={currentPage === totalPages - 1}
                                     variant="outline"
                                     className="rounded-full w-8 h-8 p-0"
@@ -376,7 +376,7 @@ export default function AlmatyPackages() {
                                 Experience the Beauty of Almaty
                             </span>
                         </h2>
-                        
+
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {almatyHighlights.map((highlight, index) => (
                                 <motion.div

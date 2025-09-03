@@ -178,7 +178,7 @@ export default function IndochinaPackages() {
     const faqs = [
         {
             question: "What is the best time to visit Vietnam?",
-            answer: "The best time to visit Vietnam is from May to August when the weather is dry and less humid. December is peak season with higher prices, while January sees more rainfall."
+            answer: "The best time to visit Vietnam is from May to September when the weather is dry and less humid. December is peak season with higher prices, while January sees more rainfall."
         },
         {
             question: "What activities can I do in Vietnam?",

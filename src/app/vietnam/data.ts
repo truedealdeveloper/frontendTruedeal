@@ -381,7 +381,7 @@ export const vietnamPackages: Record<string, vietnamPackage> = {
             }
         },
         departureDates: [
-            { date: "5, 12, 19, 26 August 2025", availability: "Available from DEL/BOM/KOL" },
+            { date: "5, 12, 19, 26 September 2025", availability: "Available from DEL/BOM/KOL" },
             { date: "2, 9, 16 Aug 2025", availability: "Available from DEL/BOM/KOL" },
             { date: "7, 14, 21, 28 Sept 2025", availability: "Available from DEL/BOM/KOL" },
             { date: "4, 11, 18, 25 Oct 2025", availability: "Available from DEL/BOM/KOL" },
@@ -393,13 +393,13 @@ export const vietnamPackages: Record<string, vietnamPackage> = {
         days: 4,
         nights: 3,
         amount: 30799,
-        dateStart: "5,12,19,26,30 August",
+        dateStart: "5,12,19,26,30 September",
         dateEnd: "",
         description: "Explore the highlights of Vietnam's south with our 4-day tour covering Ho Chi Minh City, Mekong Delta, and Cu Chi Tunnels. From bustling markets to historical sites, this tour offers a perfect blend of culture, adventure, and relaxation.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in August 2025",
+            arrivalDate: "Multiple dates in September 2025",
             duration: "4N3D vietnam Fixed Departure",
             costBasis: "Cost Based On per person"
         },
@@ -649,7 +649,7 @@ your departure flight.`,
             }
         },
         departureDates: [
-            { date: "1, 8, 15, 22 August 2025" },
+            { date: "1, 8, 15, 22 September 2025" },
             { date: "3, 10, 17, 24 Aug 2025" },
             { date: "7, 14, 21, 28 Sept 2025" },
             { date: "5, 12, 19, 26 Oct 2025" },
@@ -661,13 +661,13 @@ your departure flight.`,
         days: 4,
         nights: 3,
         amount: 39000,
-        dateStart: "1,8,15,22,29 August",
-        dateEnd: "5,12,19,26,30 August",
+        dateStart: "1,8,15,22,29 September",
+        dateEnd: "5,12,19,26,30 September",
         description: "Experience the Phu Quoc Island with our 4-day tour covering Phu Quoc Island. From pristine beaches to cultural landmarks, this tour offers a perfect blend of relaxation, adventure, and urban exploration.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in August 2025",
+            arrivalDate: "Multiple dates in September 2025",
             duration: "4D3N vietnam Fixed Departure",
             costBasis: "Cost Based On per person"
         },
@@ -871,7 +871,7 @@ your departure flight.`
             }
         },
         departureDates: [
-            { date: "3, 10, 17, 24, 31 August 2025" },
+            { date: "3, 10, 17, 24, 31 September 2025" },
             { date: "7, 14, 21 Aug 2025" },
             { date: "5, 12, 19, 26 Sept 2025" },
             { date: "2, 9, 16, 23, 30 Oct 2025" },
@@ -884,13 +884,13 @@ your departure flight.`
         days: 5,
         nights: 4,
         amount: 39000,
-        dateStart: "1,8,15,22,29 August",
-        dateEnd: "5,12,19,26,30 August",
+        dateStart: "1,8,15,22,29 September",
+        dateEnd: "5,12,19,26,30 September",
         description: "Discover the highlights of Vietnam's north with our 5-day tour covering Hanoi, Halong Bay. From ancient temples to stunning landscapes, this tour offers a perfect blend of culture, adventure, and relaxation.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in August 2025",
+            arrivalDate: "Multiple dates in September 2025",
             duration: "5D4N vietnam Fixed Departure",
             costBasis: "Cost Based On per person"
         },
@@ -1113,7 +1113,7 @@ your departure flight.`
             }
         },
         departureDates: [
-            { date: "7, 14, 21, 28 August 2025" },
+            { date: "7, 14, 21, 28 September 2025" },
             { date: "11, 18 Aug 2025" },
             { date: "2, 9, 16, 23, 30 Sept 2025" },
             { date: "6, 13, 20, 27 Oct 2025" },
@@ -1125,13 +1125,13 @@ your departure flight.`
         days: 5,
         nights: 4,
         amount: 32900,
-        dateStart: "1,8,15,22,29 August",
-        dateEnd: "5,12,19,26,30 August",
+        dateStart: "1,8,15,22,29 September",
+        dateEnd: "5,12,19,26,30 September",
         description: "Discover the highlights of Vietnam's central with our 5-day tour covering Hoi An, Danang, Hue, and Ho Chi Minh City. From ancient temples to stunning landscapes, this tour offers a perfect blend of culture, adventure, and relaxation.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in August 2025",
+            arrivalDate: "Multiple dates in September 2025",
             duration: "5D4N Vietnam Fixed Departure",
             costBasis: "Double sharing basis"
         },
@@ -1356,7 +1356,7 @@ your departure flight.`
             }
         },
         departureDates: [
-            { date: "3, 10, 17, 24, 31 August 2025" },
+            { date: "3, 10, 17, 24, 31 September 2025" },
             { date: "7, 14, 21 Aug 2025" },
             { date: "5, 12, 19, 26 Sept 2025" },
             { date: "2, 9, 16, 23, 30 Oct 2025" },
@@ -1369,13 +1369,13 @@ your departure flight.`
         days: 7,
         nights: 6,
         amount: 69000,
-        dateStart: "1,8,15,22,29 August",
-        dateEnd: "5,12,19,26,30 August",
+        dateStart: "1,8,15,22,29 September",
+        dateEnd: "5,12,19,26,30 September",
         description: "Discover the highlights of Vietnam's central region, from the ancient capital of Hue to the charming Hoi An, with visits to historical sites, natural wonders, and culinary delights.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in August 2025",
+            arrivalDate: "Multiple dates in September 2025",
             duration: "7D6N Vietnam Fixed Departure",
             costBasis: "Double sharing basis"
         },
@@ -1628,7 +1628,7 @@ your departure flight.`
             }
         },
         departureDates: [
-            { date: "1, 8, 15, 22, 29 August 2025" },
+            { date: "1, 8, 15, 22, 29 September 2025" },
             { date: "12, 19 Aug 2025" },
             { date: "3, 10, 17, 24, 31 Sept 2025" },
             { date: "7, 14, 21, 28 Oct 2025" },
@@ -1640,13 +1640,13 @@ your departure flight.`
         days: 7,
         nights: 6,
         amount: 69500,
-        dateStart: "1,8,15,22,29 August",
-        dateEnd: "5,12,19,26,30 August",
+        dateStart: "1,8,15,22,29 September",
+        dateEnd: "5,12,19,26,30 September",
         description: "Discover the highlights of Vietnam's central region, from the ancient capital of Hue to the charming Hoi An, with visits to historical sites, natural wonders, and culinary delights.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in August 2025",
+            arrivalDate: "Multiple dates in September 2025",
             duration: "7D6N Vietnam Fixed Departure",
             costBasis: "Double sharing basis"
         },
@@ -1891,7 +1891,7 @@ In the afternoon, transfer to Da Nang airport to go to Ho Chi Minh City. Upon ar
             }
         },
         departureDates: [
-            { date: "1, 8, 15, 22, 29 August 2025" },
+            { date: "1, 8, 15, 22, 29 September 2025" },
             { date: "12, 19 Aug 2025" },
             { date: "3, 10, 17, 24, 31 Sept 2025" },
             { date: "7, 14, 21, 28 Oct 2025" },
@@ -1903,7 +1903,7 @@ In the afternoon, transfer to Da Nang airport to go to Ho Chi Minh City. Upon ar
         days: 8,
         nights: 7,
         amount: 65500,
-        dateStart: "01 August 2025",
+        dateStart: "01 September 2025",
         dateEnd: "27 Oct 2025",
         description: "Discover the highlights of Vietnam's central region, from the ancient capital of Hue to the charming Hoi An, with visits to historical sites, natural wonders, and culinary delights.",
         groupDetails: {
@@ -2180,7 +2180,7 @@ In the afternoon, transfer to Da Nang airport to go to Ho Chi Minh City. Upon ar
         days: 10,
         nights: 9,
         amount: 105000,
-        dateStart: "01 August 2025",
+        dateStart: "01 September 2025",
         dateEnd: "27 Oct 2025",
         description: "Discover the highlights of Vietnam's central region, from the ancient capital of Hue to the charming Hoi An, with visits to historical sites, natural wonders, and culinary delights.",
         groupDetails: {
@@ -2475,7 +2475,7 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
             }
         },
         departureDates: [
-            { date: "1, 8, 15, 22, 29 August 2025" },
+            { date: "1, 8, 15, 22, 29 September 2025" },
             { date: "12, 19 Aug 2025" },
             { date: "3, 10, 17, 24, 31 Sept 2025" },
             { date: "7, 14, 21, 28 Oct 2025" },
@@ -2487,7 +2487,7 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
         days: 10,
         nights: 9,
         amount: 84000,
-        dateStart: "01 August 2025",
+        dateStart: "01 September 2025",
         dateEnd: "27 Oct 25",
         description: "Discover the highlights of Vietnam's central region, from the ancient capital of Hue to the charming Hoi An, with visits to historical sites, natural wonders, and culinary delights.",
         groupDetails: {
@@ -2777,7 +2777,7 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
             }
         },
         departureDates: [
-            { date: "1, 8, 15, 22, 29 August 2025" },
+            { date: "1, 8, 15, 22, 29 September 2025" },
             { date: "12, 19 Aug 2025" },
             { date: "3, 10, 17, 24, 31 Sept 2025" },
             { date: "7, 14, 21, 28 Oct 2025" },
@@ -2789,7 +2789,7 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
         days: 11,
         nights: 10,
         amount: 107000,
-        dateStart: "01 August 2025",
+        dateStart: "01 September 2025",
         dateEnd: "27 Oct 25",
         description: "Discover the highlights of Vietnam's central region, from the ancient capital of Hue to the charming Hoi An, with visits to historical sites, natural wonders, and culinary delights.",
         groupDetails: {
@@ -3094,7 +3094,7 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
             }
         },
         departureDates: [
-            { date: "7, 14, 21, 28 August 2025" },
+            { date: "7, 14, 21, 28 September 2025" },
             { date: "4, 11, 18, 25 Aug 2025" },
             { date: "2, 9, 16, 23, 30 Sept 2025" },
             { date: "6, 13, 20, 27 Oct 2025" },
@@ -3106,7 +3106,7 @@ In the afternoon, visit My Son Sanctuary - an experience that should not be miss
         days: 13,
         nights: 12,
         amount: 141000,
-        dateStart: "01 August 2025",
+        dateStart: "01 September 2025",
         dateEnd: "27 Oct 2025",
         description: "Enjoy the 13 days authentic Vietnam plus golden bridge tour with us. This tour covers the highlights of Vietnam, from the ancient capital of Hue to the charming Hoi An, with visits to historical sites, natural wonders, and culinary delights.",
         groupDetails: {
@@ -3404,7 +3404,7 @@ We will begin our evening with a dinner at a lovely local restaurant. After dinn
             }
         },
         departureDates: [
-            { date: "2, 9, 16, 23 August 2025" },
+            { date: "2, 9, 16, 23 September 2025" },
             { date: "6, 13, 20, 27 Aug 2025" },
             { date: "4, 11, 18, 25 Sept 2025" },
             { date: "1, 8, 15, 22, 29 Oct 2025" },
@@ -3416,7 +3416,7 @@ We will begin our evening with a dinner at a lovely local restaurant. After dinn
         days: 13,
         nights: 12,
         amount: 280000,
-        dateStart: "01 August 2025",
+        dateStart: "01 September 2025",
         dateEnd: "27 Oct 2025",
         description: "Enjoy the 13 days golf trails in Vietnam. This premium golf tour combines world-class golf courses with cultural exploration across Vietnam's most beautiful destinations, from Ho Chi Minh City to Hanoi.",
         groupDetails: {
@@ -3757,7 +3757,7 @@ The next stop is Dam Market - Nha Trang's oldest and largest market. The final l
             }
         },
         departureDates: [
-            { date: "5, 12, 19, 26 August 2025" },
+            { date: "5, 12, 19, 26 September 2025" },
             { date: "2, 9, 16 Aug 2025" },
             { date: "7, 14, 21, 28 Sept 2025" },
             { date: "4, 11, 18, 25 Oct 2025" },

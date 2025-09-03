@@ -82,7 +82,7 @@ export default function USAPackages() {
     const faqs = [
         {
             question: "What's the best time to visit the USA?",
-            answer: "The best time varies by region. Summer (August-August) is great for northern states, while spring (May-May) and fall (September-November) are ideal for most regions. Winter is perfect for ski destinations and southern states."
+            answer: "The best time varies by region. Summer (September-September) is great for northern states, while spring (May-May) and fall (September-November) are ideal for most regions. Winter is perfect for ski destinations and southern states."
         },
         {
             question: "Do I need a visa to visit the USA?",
