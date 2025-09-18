@@ -14,6 +14,13 @@ export default function TermsAndCond() {
                         100% of the total tour cost will be
                         charged as a cancellation fee</li>
                 </ul>
+                    <h2 className="text-xl font-semibold mt-8 mb-4 text-gray-800">Refund & Cancellation Rules</h2>
+                    <ul className="list-disc space-y-3 text-gray-700 ml-6">
+                        <li>Any Refunds will be processed in <span className="font-bold">15–20 working days</span>.</li>
+                        <li><span className="font-bold">Service charge applicable</span> on all cancellations.</li>
+                        <li>Forex refunds: <span className="font-bold">20 working days</span>.</li>
+                        <li>Refund depends on airline/hotel/vendor &rarr; <span className="font-bold">Truedeal facilitates only</span>.</li>
+                    </ul>
                 <h1 className="text-2xl font-bold mb-4 text-gray-800 mt-10">How to Book</h1>
                 <li>30% advance payment is
                     required at the time of
