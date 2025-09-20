@@ -14,8 +14,6 @@ import Script from 'next/script'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
-
 const poppins = Poppins({
   weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
