@@ -10,6 +10,7 @@ export interface Destination {
 }
 
 export const destinations: Destination[] = [
+    { name: "Japan", tag: { label: "POPULAR", color: "rose" }, route: "/japan" },
     { name: "Bali", tag: { label: "POPULAR", color: "rose" } },
     { name: "Thailand", tag: { label: "POPULAR", color: "rose" }, route: "/naturesland-thailand" },
     { name: "Europe", tag: { label: "POPULAR", color: "blue" }, route: "/europe" },

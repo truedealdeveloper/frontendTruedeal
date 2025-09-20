@@ -126,6 +126,8 @@ function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
     onClose()
     if (destination.name.toLowerCase() === "bali") {
       router.push("/bali")
+    } else if (destination.name.toLowerCase() === "japan") {
+      router.push("/japan")
     } else if (destination.name.toLowerCase() === "vietnam") {
       router.push("/vietnam")
     } else if (destination.name.toLowerCase() === "europe") {

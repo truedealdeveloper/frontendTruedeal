@@ -33,6 +33,8 @@ export default function HeroSection() {
             setIsSearchModalOpen(false)
             if (destination.name.toLowerCase() === "bali") {
                 router.push("/bali")
+            } else if (destination.name.toLowerCase() === "japan") {
+                router.push("/japan")
             } else if (destination.name.toLowerCase() === "europe") {
                 router.push("/europe")
             } else if (destination.name.toLowerCase() === "vietnam") {
