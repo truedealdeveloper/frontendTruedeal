@@ -19,7 +19,6 @@ export interface ItineraryDay {
     image: string;
 }
 
-
 export interface DepartureDate {
     date: string;
     availability?: string;
@@ -57,7 +56,7 @@ interface FlightDetails {
     airlines: FlightInfo[];
 }
 
-export interface SingaporePackage {
+export interface JapanPackage {
     id: string;
     packageName: string;
     days: number;
@@ -99,962 +98,1375 @@ export interface SingaporePackage {
     flightDetails?: FlightDetails;
 }
 
-export const singaporePackages: Record<string, SingaporePackage> = {
-    singaporeCity: {
-        id: "4-days-singapore-city",
-        packageName: "4 Days Singapore City",
-        days: 4,
-        nights: 3,
-        amount: 44500,
-        dateStart: "01 May 2025",
-        dateEnd: "26 September 2025",
-        description: "Experience the vibrant city life of Singapore with our 4-day tour covering iconic attractions, cultural sites, and modern marvels.",
+export const japanPackages: Record<string, JapanPackage> = {
+    japanDeluxe: {
+        id: "9-days-japan-deluxe",
+        packageName: "9 Days Japan Deluxe Experience",
+        days: 9,
+        nights: 8,
+        amount: 199000,
+        dateStart: "01 March 2025",
+        dateEnd: "30 November 2025",
+        description: "Experience the ultimate Japan adventure with this deluxe 8-night tour covering Tokyo, Osaka, Kyoto, and Mount Fuji. Enjoy premium accommodations, bullet train travel, and exclusive cultural experiences.",
         groupDetails: {
             pax: "Group Tour",
-            rooms: "Double Sharing",
+            rooms: "Twin Sharing",
             arrivalDate: "Contact Us",
-            duration: "4D3N Singapore Fixed Departure",
+            duration: "8N9D Japan Deluxe Experience",
             costBasis: "Cost Based On 2 pax travelling together"
         },
         hotelDetails: [
             {
-                city: "Singapore",
-                hotel: "3 Chancellor @ Orchard / Similar",
-                roomType: "Deluxe Room"
+                city: "Tokyo",
+                hotel: "5 Star Hotel",
+                roomType: "Deluxe/Twin Room"
             },
             {
-                city: "Singapore",
-                hotel: "4 Hotel Boss / Similar",
-                roomType: "Deluxe Room"
+                city: "Osaka",
+                hotel: "5 Star Hotel",
+                roomType: "Deluxe/Twin Room"
             },
             {
-                city: "Singapore",
-                hotel: "5 Star Grand Copthorne Waterfront Hotel / Similar",
-                roomType: "Superior Room"
+                city: "Kyoto",
+                hotel: "5 Star Hotel",
+                roomType: "Deluxe/Twin Room"
             }
         ],
         tourSummary: [
-            "Day 1: Arrive Singapore + Marina Bay Sands (Observation Deck) + Gardens by the Bay (Flower Dome + Cloud Forest) – SIC",
-            "Day 2: Universal Studios + Sea Aquarium – SIC (closed on Tuesday)",
-            "Day 3: Sentosa Island (One Way Cable Car, Madame Tussauds 4 in 1, Wings of Time) – SIC",
-            "Day 4: Singapore - Departure"
+            "Day 1: Arrival in Tokyo",
+            "Day 2: Tokyo City Tour & Skytree",
+            "Day 3: Mount Fuji Excursion",
+            "Day 4: Disneyland Tokyo",
+            "Day 5: Tokyo to Osaka via Shinkansen",
+            "Day 6: Universal Studios Osaka",
+            "Day 7: Kyoto Cultural Experience",
+            "Day 8: Nara & Traditional Villages",
+            "Day 9: Departure from Osaka"
         ],
         inclusions: [
-            "3 Night Accommodation in above mentioned hotel with Breakfast",
-            "Airport Arrival and Departure on PVT Transfers",
-            "All tour transfers on SIC Basis",
-            "Garden by the bay (Flower dome + Cloud Forest) – SIC",
-            "Marina Bay sand Sky park",
-            "Sentosa (One way cable car + Madame Tussauds 4 in 1 Combo + Wings of Time) – SIC",
-            "Universal Studio – SIC",
-            "Sea Aquarium"
+            "Deluxe accommodation in Tokyo, Osaka, and Kyoto",
+            "Private airport transfers with English-speaking guide",
+            "Shinkansen bullet train tickets (Tokyo to Osaka)",
+            "All sightseeing tours with professional guides",
+            "Universal Studios and Disneyland entry tickets",
+            "Mount Fuji excursion with lunch",
+            "Traditional tea ceremony experience",
+            "All intercity transfers",
+            "24-hour English-speaking assistance",
+            "Breakfast at all hotels"
         ],
         exclusions: [
-            "Airfare",
-            "Personal expenses",
-            "Optional tours",
-            "Travel insurance"
+            "International flights",
+            "Travel insurance",
+            "Japan visa fees",
+            "Lunch and dinner (except mentioned)",
+            "Personal expenses and shopping",
+            "Optional tours and activities",
+            "Tips and gratuities"
         ],
         itinerary: [
             {
                 day: 1,
-                title: "Arrive Singapore + Marina Bay Sands (Observation Deck) + Gardens by the Bay (Flower Dome + Cloud Forest) – SIC",
-                description: `Welcome to Singapore – also known as the Lion City
-Upon arrival our representative assist you, pick up and transfer to your hotel. Check in at hotel (standard time approx 1400/1500 hrs).
-Visit the Marina Bay Sands hotel (SIC)
-Enjoy panoramic view of the city from MBS Sky Park. Take a walk from MBS to Gardens by the Bay. Then visit Gardens by the Bay – Flower Dome and Cloud Forest Observation Deck. Enter the flower Dome, the largest glass greenhouse in the world. It replicates a mild, dry climate and features plants found in the Mediterranean and other semi-arid tropical regions. Admire a forest that boasts one of the world's largest indoor waterfalls at 35 meters tall. Step into a landscape of dramatic greenery, featuring vegetation that is typically native to habitats 2,000 meters above sea level.
-Overnight stay at Singapore
-`,
-                image: "/UGCImages/singapore/dayWise/1.png"
+                title: "Arrival in Tokyo",
+                description: `Welcome to Japan! Arrive at Tokyo Airport where you'll be greeted by our English-speaking guide. Private transfer to your deluxe hotel in Tokyo. Check-in and relax after your journey.
+
+Evening at leisure to explore nearby areas or rest.
+
+Overnight stay in Tokyo.`,
+                image: "/IMAGES/japan/1/1.webp"
             },
             {
                 day: 2,
-                title: "Universal Studios + Sea Aquarium – SIC (closed on Tuesday)",
-                description: `Enjoy Breakfast in Hotel.
-Visit the SEA Aquarium (SIC)
-Enter and explore the marine realm of S.E.A. Aquarium, home to more than 100,000 marine animals of over 1,000 species, across 45 different habitats, each one as fascinating as the next. It's a marine life experience you won't forget.
-Later, visit the Universal Studios
-Start your journey to Hollywood movie theme park - Universal Studios™ forms part of Resorts World™ Sentosa. Among the park's many rides and exciting attractions are Battle star Galactica, the world's tallest pair of dueling roller coasters and Far Away Castle™, the first castle from the world of Shrek where you can experience the amazing Shrek 4-D™ attraction. One of the biggest spectacles in live entertainment is based on the movie Water world™. The action comes gushing to life in a tidal wave of death-defying stunts, explosions and thrilling action. Enjoy Jurassic Park Rapids Adventure™, Madagascar: A Crate Adventure™ and Revenge of the Mummy™, TRANSFORMERS The Ride and many more.
-Overnight stay at Singapore	
-`,
-                image: "/UGCImages/singapore/dayWise/2.png"
+                title: "Tokyo City Tour & Skytree",
+                description: `Start your day with a comprehensive Tokyo city tour. Visit the iconic Tokyo Skytree for panoramic city views, explore the historic Sensoji Temple in Asakusa, and stroll through the vibrant Nakamise shopping street.
+
+Continue to the modern Akihabara electronics district and experience the bustling atmosphere of Shibuya Crossing.
+
+Overnight stay in Tokyo.`,
+                image: "/IMAGES/japan/1/2.webp"
             },
             {
                 day: 3,
-                title: "Sentosa Island (One Way Cable Car, Madame Tussauds 4 in 1, Wings of Time) – SIC",
-                description: `Enjoy Breakfast in Hotel. 	
-Today enjoy full day at the Sentosa Island (SIC). Sentosa is an island resort off Singapore&apos;s southern coast, connected to the city by road, cable car, pedestrian boardwalk and monorail.
-Enjoy the cable car ride and experience Madame Tussauds 4 in 1 along with. Finish your day on Sentosa Island on a spectacular note with the award-winning Wings of Time show.
-Overnight stay at Singapore
-`,
-                image: "/UGCImages/singapore/dayWise/3.png"
+                title: "Mount Fuji Excursion",
+                description: `Full-day excursion to Mount Fuji (weather permitting). Visit the Mt. Fuji 5th Station for spectacular views of Japan's most famous landmark. Explore Owakudani Valley with its volcanic hot springs and sulfur vents.
+
+Enjoy a scenic cruise on Lake Ashinoko and experience the beautiful Hakone region. Lunch included.
+
+Return to Tokyo for overnight stay.`,
+                image: "/IMAGES/japan/1/3.webp"
             },
             {
                 day: 4,
-                title: "Singapore - Departure",
-                description: `Morning after breakfast; you will be transferred to the airport for your flight back home to India 
-Meals: Breakfast at the hotel 
-`,
-                image: "/UGCImages/singapore/dayWise/4.png"
-            }
-        ],
-        images: [
-            "/UGCImages/singapore/singapore/4.webp",
-            "/UGCImages/singapore/singapore/3.webp",
-            "/UGCImages/singapore/singapore/1.webp",
-            "/UGCImages/singapore/singapore/2.webp",
-        ],
-        departureDates: [
-            { date: "Mar 2025 - September 2025" }
-        ],
-        additionalInfo: {
-            highlights: [
-                "Universal Studios Singapore",
-                "Gardens by the Bay",
-                "Marina Bay Sands",
-                "Sentosa Island",
-                "Shopping at Orchard Road"
-            ],
-            bestTimeToVisit: "February to May (Dry season)",
-            cuisine: [
-                "Chili Crab",
-                "Hainanese Chicken Rice",
-                "Laksa",
-                "Satay"
-            ],
-            accommodation: {
-                type: "4-star hotel",
-                amenities: [
-                    "Free Wi-Fi",
-                    "Swimming pool",
-                    "Restaurant",
-                    "Fitness center"
-                ]
-            },
-            transportation: {
-                type: "Air-conditioned coach",
-                features: [
-                    "Modern fleet",
-                    "Professional driver",
-                    "Tour guide"
-                ]
-            },
-            visaInfo: {
-                requirement: "Tourist visa required",
-                duration: "30 days",
-                cost: "₹2,500",
-                documents: [
-                    "Valid passport",
-                    "Photographs",
-                    "Bank statements",
-                    "Flight tickets"
-                ]
-            }
-        },
-        experiences: [
-            {
-                title: "Marina Bay Sands",
-                image: "/UGCImages/singapore/experience/1.png"
-            },
-            {
-                title: "Gardens By The Bay",
-                image: "/UGCImages/singapore/experience/2.png"
-            },
-            {
-                title: "Sentosa Island",
-                image: "/UGCImages/singapore/experience/3.png"
-            },
-            {
-                title: "Night Safari",
-                image: "/UGCImages/singapore/experience/4.png"
-            }
-        ]
-    },
-    singaporeDiscovery: {
-        id: "5-days-singapore-discovery",
-        packageName: "5 Days Singapore Discovery",
-        days: 5,
-        nights: 4,
-        amount: 59000,
-        dateStart: "01 May 2025",
-        dateEnd: "26 September 2025",
-        description: "Experience the vibrant city life of Singapore with our 5-day tour covering iconic attractions, cultural sites, and modern marvels.",
-        groupDetails: {
-            pax: "Group Tour",
-            rooms: "Double Sharing",
-            arrivalDate: "Contact Us",
-            duration: "5D4N Singapore Fixed Departure",
-            costBasis: "Cost Based On 2 pax travelling together"
-        },
-        hotelDetails: [
-            {
-                city: "Singapore",
-                hotel: "3 Chancellor @ Orchard / Similar",
-                roomType: "Deluxe Room"
-            },
-            {
-                city: "Singapore",
-                hotel: "4 Hotel Boss / Similar",
-                roomType: "Deluxe Room"
-            },
-            {
-                city: "Singapore",
-                hotel: "5 Star Grand Copthorne Waterfront Hotel / Similar",
-                roomType: "Superior Room"
-            }
-        ],
-        tourSummary: [
-            "Day 01: Arrival Singapore. Marina Bay Sands (Observation Deck) + Gardens by the Bay (Flower Dome + Cloud Forest) – SIC",
-            "Day 02: Universal Studios + Sea Aquarium – SIC",
-            "Day 03: Sentosa Island (One Way Cable Car, Madame Tussauds 4 in 1 & Wings of Time) – SIC",
-            "Day 04: Bird paradise + Night Safari (Admission + Tram Ride) – SIC",
-            "Day 05: Singapore - Departure"
-        ],
-        inclusions: [
-            "5Night Accommodation in above mentioned hotel with Breakfast",
-            "Breakfast at the hotel",
-            "Airport Arrival and Departure on PVT Transfers",
-            "All tour transfers on SIC Basis",
-            "Garden by the bay (Flower dome + Cloud Forest) – SIC",
-            "Marina Bay sand Sky park",
-            "Sentosa (One way cable car + Madame Tussauds 4 in 1 Combo + Wings of Time) – SIC",
-            "Universal Studio – SIC",
-            "Bird paradise + Night safari (Admission + Tram Ride)"
-        ],
-        exclusions: [
-            "Airfare",
-            "Personal expenses",
-            "Optional tours",
-            "Travel insurance"
-        ],
-        itinerary: [
-            {
-                day: 1,
-                title: "Arrive Singapore + Marina Bay Sands (Observation Deck) + Gardens by the Bay (Flower Dome + Cloud Forest) – SIC",
-                description: `Welcome to Singapore – also known as the Lion City
-Upon arrival our representative assist you, pick up and transfer to your hotel. Check in at hotel (standard time approx. 1400/1500 hrs.).
-Later we visit the Marina Bay Sands hotel (SIC) to enjoy panoramic view of the city from MBS Sky Park. Take a walk from MBS to Gardens by the Bay. We then visit Gardens by the Bay – Flower Dome and Super Tree Observation Deck. Enter the flower Dome, the largest glass greenhouse in the world. It replicates a mild, dry climate and features plants found in the Mediterranean and other semi-arid tropical regions. Admire a forest that boasts one of the world's largest indoor waterfalls at 35 meters tall. Step into a landscape of dramatic greenery, featuring vegetation that is typically native to habitats 2,000 meters above sea level.
-Overnight stay at Singapore
+                title: "Disneyland Tokyo",
+                description: `Spend a magical day at Tokyo Disneyland, one of the world's most popular theme parks. Enjoy thrilling rides, meet beloved Disney characters, and experience the unique Japanese Disney atmosphere.
 
-`,
-                image: "/UGCImages/singapore/itinerary/1.png"
-            },
-            {
-                day: 2,
-                title: "Universal Studios + Sea Aquarium - SIC",
-                description: `Enjoy Breakfast in Hotel.
-Visit the SEA Aquarium (SIC)
-Enter and explore the marine realm of S.E.A. Aquarium, home to more than 100,000 marine animals of over 1,000 species, across 45 different habitats, each one as fascinating as the next. It's a marine life experience you wont forget.
-Later, visit the Universal Studios (closed on Tuesday)
-Start your journey to Hollywood movie theme park - Universal Studios™ forms part of Resorts World™ Sentosa. Among the park's many rides and exciting attractions are Battlestar Galactica™, the world's tallest pair of duelling roller coasters and Far Away Castle™, the first castle from the world of Shrek where you can experience the amazing Shrek 4-D™ attraction. One of the biggest spectacles in live entertainment is based on the movie Waterworld™. The action comes gushing to life in a tidal wave of death-defying stunts, explosions and thrilling action. Enjoy Jurassic Park Rapids Adventure™, Madagascar: A Crate Adventure™ and Revenge of the Mummy™, TRANSFORMERS The Ride and many more.
-Overnight stay at Singapore
+Full day at the park with various attractions, parades, and shows.
 
-`,
-                image: "/UGCImages/singapore/itinerary/2.png"
-            },
-            {
-                day: 3,
-                title: "Sentosa Island (One Way Cable Car, Madame Tussauds 4 in 1 & Wings of Time) – SIC",
-                description: `Enjoy Breakfast in Hotel. 
-Today enjoy Half day at the Sentosa Island (SIC). Sentosa is an island resort off Singapores southern coast, connected to the city by road, cable car, pedestrian boardwalk and monorail.
-Enjoy the cable car ride and experience Madame Tussauds 4 in 1 along with. Finish your day on Sentosa Island on a spectacular note with the award-winning Wings of Time show.
-Overnight stay at Singapore
-
-`,
-                image: "/UGCImages/singapore/itinerary/3.png"
-            },
-            {
-                day: 4,
-                title: "Bird Paradise + Night Safari (Admission + Tram Ride) – SIC",
-                description: `Enjoy Breakfast in Hotel. 
-Discover the enchanting Bird Paradise (SIC) nestled in Singapore, where nature aficionados and bird enthusiasts are treated to an immersive journey
-Explore the Night Safari for an off-hour wildlife adventure to observe the Zoo's nocturnal fauna
-Overnight stay at Singapore
-
-`,
-                image: "/UGCImages/singapore/itinerary/4.png"
+Overnight stay in Tokyo.`,
+                image: "/IMAGES/japan/1/4.webp"
             },
             {
                 day: 5,
-                title: "Singapore - Departure",
-                description: `Morning after breakfast; you will be transferred to the airport for your flight back home to India 
-Meals: Breakfast at the hotel 
-`,
-                image: "/UGCImages/singapore/itinerary/5.png"
-            }
-        ],
-        images: [
-            "/UGCImages/singapore/package2/1.png",
-            "/UGCImages/singapore/package2/2.png",
-            "/UGCImages/singapore/package2/3.png",
-            "/UGCImages/singapore/package2/4.png",
-        ],
+                title: "Tokyo to Osaka via Shinkansen",
+                description: `Experience the famous Japanese bullet train (Shinkansen) as you travel from Tokyo to Osaka at speeds up to 320 km/h. Upon arrival in Osaka, visit Osaka Castle Park and explore the historic castle grounds.
 
-        departureDates: [
-            { date: "Mar 2025 - September 2025" }
-        ],
-        additionalInfo: {
-            highlights: [
-                "Universal Studios Singapore",
-                "Gardens by the Bay",
-                "Marina Bay Sands",
-                "Sentosa Island",
-                "Shopping at Orchard Road"
-            ],
-            bestTimeToVisit: "February to May (Dry season)",
-            cuisine: [
-                "Chili Crab",
-                "Hainanese Chicken Rice",
-                "Laksa",
-                "Satay"
-            ],
-            accommodation: {
-                type: "4-star hotel",
-                amenities: [
-                    "Free Wi-Fi",
-                    "Swimming pool",
-                    "Restaurant",
-                    "Fitness center"
-                ]
-            },
-            transportation: {
-                type: "Air-conditioned coach",
-                features: [
-                    "Modern fleet",
-                    "Professional driver",
-                    "Tour guide"
-                ]
-            },
-            visaInfo: {
-                requirement: "Tourist visa required",
-                duration: "30 days",
-                cost: "₹2,500",
-                documents: [
-                    "Valid passport",
-                    "Photographs",
-                    "Bank statements",
-                    "Flight tickets"
-                ]
-            }
-        },
-        experiences: [
-            {
-                title: "Marina Bay Sands",
-                image: "/UGCImages/singapore/experience/1.png"
-            },
-            {
-                title: "Gardens By The Bay",
-                image: "/UGCImages/singapore/experience/2.png"
-            },
-            {
-                title: "Sentosa Island",
-                image: "/UGCImages/singapore/experience/3.png"
-            },
-            {
-                title: "Night Safari",
-                image: "/UGCImages/singapore/experience/4.png"
-            }
-        ]
-    },
-    malaysiaTour: {
-        id: "4-days-malaysia-tour",
-        packageName: "4 Days Malaysia Tour",
-        days: 4,
-        nights: 3,
-        amount: 35000,
-        dateStart: "01 May 2025",
-        dateEnd: "26 September 2025",
-        description: "Experience the vibrant city life of Malaysia with our 4-day tour covering iconic attractions, cultural sites, and modern marvels.",
-        groupDetails: {
-            pax: "Group Tour",
-            rooms: "Double Sharing",
-            arrivalDate: "Contact Us",
-            duration: "4D3N Malaysia Fixed Departure",
-            costBasis: "Cost Based On 2 pax travelling together"
-        },
-        hotelDetails: [
-            {
-                city: "Malaysia",
-                hotel: "3 Ramada Encore / Similar",
-                roomType: "Deluxe Room"
-            },
-            {
-                city: "Malaysia",
-                hotel: "4 Vivatel KL or Similar ",
-                roomType: "Deluxe Room"
-            },
-        ],
-        tourSummary: [
-            "Day 01: Day 01: Arrive at Kuala Lumpur (En-Route Putrajaya 20Mins Photo-Stop) – PVT",
-            "Day 02: Day 02: Genting Day Trip (En-Route Batu Caves 20Mins Photo-Stop) + Two Way Cable Car – PVT",
-            "Day 03: KLCC Aquarium + KL Half day city Tour + KL Tower (Observation Deck) – PVT",
-            "Day 04: Kuala Lumpur - Departure"
-        ],
-        inclusions: [
-            "3Night Accommodation in above mentioned hotel with Breakfast",
-            "Breakfast at the hotel",
-            "Airport Arrival and Departure on PVT Transfers",
-            "All tour transfers on SIC Basis",
-            "Genting Highlands Day Trip",
-            "KLCC Aquarium",
-            "KL Tower (Observation Deck)",
-            "Kuala Lumpur City Tour"
-        ],
-        exclusions: [
-            "Airfare",
-            "Personal expenses",
-            "Optional tours",
-            "Travel insurance"
-        ],
-        itinerary: [
-            {
-                day: 1,
-                title: "Arrive at Kuala Lumpur (En-Route Putrajaya 20Mins Photo-Stop) – PVT",
-                description: `Welcome to Malaysia's capital city - Kuala Lumpur!
-Upon arrival at Kuala Lumpur, pick up from airport. Enroute stop by at Putrajaya for 20 min photo stop only.
-Check in hotel (Standard Check in time 1400hrs)
-Overnight Stay at Kuala Lumpur Hotel
+Continue to the vibrant Dotonbori district for shopping and local atmosphere. Visit Namba Yasaka Shrine and experience the bustling Kuromon Ichiba Market.
 
-
-`,
-                image: "/UGCImages/singapore/klcc/1.png"
-            },
-            {
-                day: 2,
-                title: "Genting Day Trip (En-Route Batu Caves 20Mins Photo-Stop) + Two Way Cable Car – PVT",
-                description: `Post breakfast, set out to explore Genting Highlands (PVT). It is an hours drive from Kuala Lumpur. With the landscape beautifully dotted with mountain peaks, Genting Highlands is also known as RWG (Resorts World Genting).
-It is fashioned on Las Vegas- Asian style. The highlands include luxury hotels, casinos, and exciting shopping malls. It has a theme park in Pahang which is at a staggering height of 1800 meters on the peak of Gunung Ulu Kali. There is a lot more than the highlands offer.
-BATU CAVES: Batu Caves, one of Kuala Lumpurs most frequented tourist attractions, is a limestone hill comprising three major caves and a number of smaller ones. Located approximately 11 kilometers to the north of Kuala Lumpur, this 100-year-old temple features idols and statues erected inside the main caves and around it. Incorporated with interior limestone formations said to be around 400 million years old, the temple is considered an important religious landmark by Hindus. Cathedral Cave – the largest and most popular cavern in Batu Caves – houses several Hindu shrines beneath its 
-
-
-100-metre-high arched ceiling. At the foot of Batu Hill are two other cave temples – the Art Gallery Cave and Museum Cave – which houses numerous Hindu statues and paintings. 
-Overnight Stay at Kuala Lumpur Hotel
-
-
-
-`,
-                image: "/UGCImages/singapore/klcc/2.png"
-            },
-            {
-                day: 3,
-                title: "KLCC Aquarium + KL Half day city Tour + KL Tower (Observation Deck) – PVT",
-                description: `Enjoy Breakfast in Hotel. 
-Proceed for KLCC Aquarium (PVT)
-Aquaria KLCC is a State of the art. Aquarium located in the heart of the city, beneath the Kuala Lumpur Convention center. From the evolution zone to the Living Ocean, take the longest underwater tunnel in Malaysia that showcases some iconic Malaysian species.
-Enjoy an exciting KL Half day City Tour (PVT). This in an interesting tour, which unveils the beauty & charm of old & new Kuala Lumpur. Visit includes Kings Place, National Monument, Independence Square, Beryls Chocolate Factory and a photo stop at magnificent PETRONAS Twin Towers.  
-Includes:
-KL Tower Entrance 
-Overnight stay at Kuala Lumpur hotel
-
-
-`,
-                image: "/UGCImages/singapore/klcc/3.png"
-            },
-            {
-                day: 4,
-                title: "Kuala Lumpur - Departure",
-                description: `Morning after breakfast; you will be transferred to the airport for your flight back home to India 
-Meals: Breakfast at the hotel 
-
-
-`,
-                image: "/UGCImages/singapore/klcc/4.png"
-            },
-        ],
-        images: [
-            "/UGCImages/singapore/Malaysia/1.png",
-            "/UGCImages/singapore/Malaysia/2.png",
-            "/UGCImages/singapore/Malaysia/3.png",
-            "/UGCImages/singapore/Malaysia/4.png"
-        ],
-
-        departureDates: [
-            { date: "Mar 2025 - September 2025" }
-        ],
-        additionalInfo: {
-            highlights: [
-                "Universal Studios Singapore",
-                "Gardens by the Bay",
-                "Marina Bay Sands",
-                "Sentosa Island",
-                "Shopping at Orchard Road"
-            ],
-            bestTimeToVisit: "February to May (Dry season)",
-            cuisine: [
-                "Chili Crab",
-                "Hainanese Chicken Rice",
-                "Laksa",
-                "Satay"
-            ],
-            accommodation: {
-                type: "4-star hotel",
-                amenities: [
-                    "Free Wi-Fi",
-                    "Swimming pool",
-                    "Restaurant",
-                    "Fitness center"
-                ]
-            },
-            transportation: {
-                type: "Air-conditioned coach",
-                features: [
-                    "Modern fleet",
-                    "Professional driver",
-                    "Tour guide"
-                ]
-            },
-            visaInfo: {
-                requirement: "Tourist visa required",
-                duration: "30 days",
-                cost: "₹2,500",
-                documents: [
-                    "Valid passport",
-                    "Photographs",
-                    "Bank statements",
-                    "Flight tickets"
-                ]
-            }
-        },
-        experiences: []
-    },
-    langkawiTour: {
-        id: "5-days-wonderful-langkawi",
-        packageName: "5 Days Wonderful Langkawi",
-        days: 5,
-        nights: 4,
-        amount: 25000,
-        dateStart: "01 May 2025",
-        dateEnd: "26 September 2025",
-        description: "Experience the vibrant city life of Langkawi with our 5-day tour covering iconic attractions, cultural sites, and modern marvels.",
-        groupDetails: {
-            pax: "Group Tour",
-            rooms: "Double Sharing",
-            arrivalDate: "Contact Us",
-            duration: "5D4N Langkawi Fixed Departure",
-            costBasis: "Cost Based On 2 pax travelling together"
-        },
-        hotelDetails: [
-            {
-                city: "Langkawi",
-                hotel: "3 Hotel Grand Continental / Similar",
-                roomType: "Deluxe Room"
-            },
-            {
-                city: "Langkawi",
-                hotel: "4 Century Langkasuka Resort Langkawi / Similar",
-                roomType: "Deluxe Room"
-            },
-        ],
-        tourSummary: [
-            "Day 01: Arrive at Langkawi – PVT",
-            "Day 02: Island hopping tour – SIC",
-            "Day 03: Sunset Dinner – SIC + Transfers – PVT",
-            "Day 04: Leisure Day",
-            "Day 05: Langkawi - Departure - PVT"
-        ],
-        inclusions: [
-            "4 Night Accommodation in above mentioned hotel with Breakfast",
-            "Breakfast at the hotel",
-            "Airport Arrival and Departure on PVT Transfers",
-            "All tour transfers on SIC Basis",
-            "Island hopping tour",
-            "Sunset Dinner",
-            "Leisure Day"
-        ],
-        exclusions: [
-            "Airfare",
-            "Personal expenses",
-            "Optional tours",
-            "Travel insurance"
-        ],
-        itinerary: [
-            {
-                day: 1,
-                title: "Arrive at Langkawi – PVT",
-                description: `Welcome to Langkawi!
-Upon arrival at Langkawi, pick up from airport.
-Check in hotel (Standard Check in time 1400hrs)
-Overnight Stay at Langkawi Hotel
-
-
-`,
-                image: "/UGCImages/singapore/lan/1.png"
-            },
-            {
-                day: 2,
-                title: "Island hopping tour – SIC",
-                description: `Enjoy Breakfast in Hotel. Proceed for island hopping tour.
-Enjoy Langkawi Island Hopping Tour (4 hrs.) (SIC)Taking the trip by long boat, you will visit several famous islands such as the legendary TasikDayang Bunting (Pregnant Maiden Lake), go eagle watching at a nearby island and make a visit to PulauBerasBasah (Wet Rice Island). The last stop will be at a white sandy beach for you to relax and soak up the sun or splash around in the turquoise-blue waters off PulauBerasBasah. This is a perfect location to enjoy a relaxing picnic in the shade of the casaurina trees lining the beach.  (Notes: Bring along swim wear and towel)
-Overnight accommodation @ Hotel, Langkawi
-
-
-
-
-
-`,
-                image: "/UGCImages/singapore/lan/2.png"
-            },
-            {
-                day: 3,
-                title: "Sunset Dinner – SIC + Transfers – PVT",
-                description: `Enjoy Breakfast in Hotel. 
-Sunset Dinner (4hrs) (SIC), the perfect gateway to finish the day and start the evening. Take a pleasant trip across the sea and you might witness the spectacular sight of the tropical sun cutting through the horizon into the sea. What better way to wind down by treating yourself to a dinner on a yacht and salt water Jacuzzi is quite an experience as well. The cruise includes an open bar and a BBQ dinner on board. Romantic sunset, Eagle watching, free flow bar, BBQ buffet Dinner / Cocktail.
-Overnight accommodation @ Hotel, Langkawi
-
-
-
-`,
-                image: "/UGCImages/singapore/lan/3.png"
-            },
-            {
-                day: 4,
-                title: "Leisure Day",
-                description: `Enjoy Breakfast in Hotel. 
-Have a Leisure day and stay at Hotel.
-`,
-                image: "/UGCImages/singapore/lan/4.png"
-            },
-            {
-                day: 5,
-                title: "Langkawi - Departure - PVT",
-                description: `Morning after breakfast; you will be transferred to the airport for your flight back home to India 
-Meals: Breakfast at the hotel 
-Standard Check out time1200hrs
-(Note: You can leave luggage at hotel concierge and return to hotel for the departure transfer)
-Check out and meet driver at hotel lobby for transfer to LGK Airport for departure
-
-`,
-                image: "/UGCImages/singapore/lan/5.png"
-            },
-        ],
-        images: [
-            "/UGCImages/singapore/lan/1.png",
-            "/UGCImages/singapore/lan/2.png",
-            "/UGCImages/singapore/lan/3.png",
-            "/UGCImages/singapore/lan/4.png",
-            "/UGCImages/singapore/lan/5.png"
-        ],
-
-        departureDates: [
-            { date: "Mar 2025 - September 2025" }
-        ],
-        additionalInfo: {
-            highlights: [
-                "Universal Studios Singapore",
-                "Gardens by the Bay",
-                "Marina Bay Sands",
-                "Sentosa Island",
-                "Shopping at Orchard Road"
-            ],
-            bestTimeToVisit: "February to May (Dry season)",
-            cuisine: [
-                "Chili Crab",
-                "Hainanese Chicken Rice",
-                "Laksa",
-                "Satay"
-            ],
-            accommodation: {
-                type: "4-star hotel",
-                amenities: [
-                    "Free Wi-Fi",
-                    "Swimming pool",
-                    "Restaurant",
-                    "Fitness center"
-                ]
-            },
-            transportation: {
-                type: "Air-conditioned coach",
-                features: [
-                    "Modern fleet",
-                    "Professional driver",
-                    "Tour guide"
-                ]
-            },
-            visaInfo: {
-                requirement: "Tourist visa required",
-                duration: "30 days",
-                cost: "₹2,500",
-                documents: [
-                    "Valid passport",
-                    "Photographs",
-                    "Bank statements",
-                    "Flight tickets"
-                ]
-            }
-        },
-        experiences: []
-    },
-    singaporeMalaysia: {
-        id: "7-days-singapore-malaysia",
-        packageName: "7 Days Singapore Malaysia",
-        days: 7,
-        nights: 6,
-        amount: 109100,
-        dateStart: "09 May 2025",
-        dateEnd: "12 October 2025",
-        description: "We're excited to announce that our Singapore and Malaysia group tour is filling up fast! This is truly the best time to explore the vibrant streets of Singapore and the diverse culture of Malaysia—plus, the weather and festivities make it extra special.",
-        groupDetails: {
-            pax: "Group Tour",
-            rooms: "Double Sharing",
-            arrivalDate: "Contact Us",
-            duration: "7D6N Singapore Malaysia Fixed Departure",
-            costBasis: "Cost Based On 2 pax travelling together"
-        },
-        hotelDetails: [
-            {
-                city: "Singapore",
-                hotel: "3 Chancellor @ Orchard / Similar",
-                roomType: "Deluxe Room"
-            },
-            {
-                city: "Singapore",
-                hotel: "4 Hotel Boss / Similar",
-                roomType: "Deluxe Room"
-            },
-            {
-                city: "Singapore",
-                hotel: "5 Star Grand Copthorne Waterfront Hotel / Similar",
-                roomType: "Superior Room"
-            }
-        ],
-        tourSummary: [
-            "Day 1: Arrive Singapore + Marina Bay Sands (Observation Deck) + Gardens by the Bay (Flower Dome + Cloud Forest) – SIC",
-            "Day 2: Universal Studios + Sea Aquarium – SIC (closed on Tuesday)",
-            "Day 3: Sentosa Island (One Way Cable Car, Madame Tussauds 4 in 1, Wings of Time) – SIC",
-            "Day 4: Singapore - Departure",
-            "Day 5: Arrive Kuala Lumpur + Genting Highlands + Batu Caves",
-            "Day 6: Kuala Lumpur City Tour",
-            "Day 7: Kuala Lumpur - Departure"
-        ],
-        inclusions: [
-            "SINGAPORE INCLUSIONS",
-            "Daily breakfast at hotel",
-            "Universal Studio",
-            "Marina Bay Sand Observation Deck + Garden by the Bay (Flower Dome + Cloud Forest) (2 Way Transfer)",
-            "(5 Hrs Local Guide)",
-            "Singapore City Tour",
-            "Half Day Sentosa | 2 Way Cable Car",
-            "Beach Visit by Term Ride",
-            "Image of Singapore",
-            "Boat Ride | Ultimate Film Star",
-            "Madame Tussaud | Wing of Time",
-
-            "MALAYSIA INCLUSIONS",
-            "Daily breakfast at hotel",
-            "Genting Trip",
-            "01 Way Cable Car",
-            "Enroute Batu Caves",
-            "KUL City Tour 3 Hrs",
-            "KL Tower Observation Deck",
-            "Petronas Tower Photo Shoot"
-        ],
-        exclusions: [
-            "Personal expenses",
-            "Optional tours",
-            "Travel insurance"
-        ],
-        itinerary: [
-            {
-                day: 1,
-                title: "Arrival in Singapore",
-                description: `Welcome to Singapore! Upon arrival at Changi Airport, our representative will assist you with the transfer to your hotel. After check-in (standard check-in time 1400/1500 hrs), enjoy the rest of the day at leisure to explore the surrounding area.
-
-Evening visit to Marina Bay Sands Observation Deck for panoramic city views, followed by the spectacular Gardens by the Bay. Experience the Flower Dome and Cloud Forest, featuring one of the world's largest indoor waterfalls.
-
-Overnight stay in Singapore.`,
-                image: "/UGCImages/singapore/dayWise/1.png"
-            },
-            {
-                day: 2,
-                title: "Universal Studios Singapore",
-                description: `After breakfast, spend an exciting day at Universal Studios Singapore. Experience thrilling rides and attractions including Battlestar Galactica, Far Far Away Castle, and Transformers The Ride. Enjoy live shows and entertainment throughout the day.
-
-Later, visit the S.E.A. Aquarium, home to more than 100,000 marine animals across 45 different habitats.
-
-Overnight stay in Singapore.`,
-                image: "/UGCImages/singapore/singaMal/universal.png"
-            },
-            {
-                day: 3,
-                title: "Sentosa Island Experience",
-                description: `Post breakfast, enjoy a full day at Sentosa Island. Take the scenic cable car ride to the island. Visit Madame Tussauds and experience the 4-in-1 combo. End your day with the mesmerizing Wings of Time show.
-
-Overnight stay in Singapore.`,
-                image: "/UGCImages/singapore/singaMal/1.png"
-            },
-            {
-                day: 4,
-                title: "Singapore to Kuala Lumpur",
-                description: `After breakfast, check out and transfer to Kuala Lumpur. En route, visit Putrajaya, Malaysia's administrative capital, for a photo stop.
-
-Evening arrival in Kuala Lumpur, check-in to your hotel and enjoy the rest of the day at leisure.
-
-Overnight stay in Kuala Lumpur.`,
-                image: "/UGCImages/singapore/singaMal/2.png"
-            },
-            {
-                day: 5,
-                title: "Genting Highlands & Batu Caves",
-                description: `After breakfast, proceed to Genting Highlands. En route, visit the famous Batu Caves, a limestone hill comprising three major caves and several smaller ones.
-
-Enjoy the scenic cable car ride to Genting Highlands and spend time at leisure exploring the entertainment options and shopping.
-
-Return to Kuala Lumpur for overnight stay.`,
-                image: "/UGCImages/singapore/singaMal/3.png"
+Overnight stay in Osaka.`,
+                image: "/IMAGES/japan/2/1.webp"
             },
             {
                 day: 6,
-                title: "Kuala Lumpur City Tour",
-                description: `Post breakfast, enjoy a comprehensive city tour of Kuala Lumpur. Visit key attractions including:
-- KLCC Aquarium
-- Kings Palace (photo stop)
-- National Monument
-- Independence Square
-- Petronas Twin Towers (photo stop)
-- KL Tower Observation Deck
+                title: "Universal Studios Osaka",
+                description: `Full day at Universal Studios Japan, featuring world-class attractions including The Wizarding World of Harry Potter, Jurassic Park, and other exciting themed areas.
 
-Evening at leisure for shopping and personal activities.
-Overnight stay in Kuala Lumpur.`,
-                image: "/UGCImages/singapore/singaMal/4.png"
+Experience thrilling rides, shows, and attractions in this world-renowned theme park.
+
+Overnight stay in Osaka.`,
+                image: "/IMAGES/japan/2/2.webp"
             },
             {
                 day: 7,
-                title: "Departure",
-                description: `After breakfast, check out from the hotel (standard check-out time: 1200 hrs) and transfer to the airport for your return flight.
+                title: "Kyoto Cultural Experience",
+                description: `Travel to Kyoto, the ancient capital of Japan. Visit the famous Fushimi Inari Taisha with its thousands of vermillion torii gates. Explore Kiyomizu-dera Temple and the historic Higashiyama district.
 
-End of tour with memories to cherish forever!`,
-                image: "/UGCImages/singapore/singaMal/5.png"
+Participate in a traditional tea ceremony and learn about Japanese culture. Walk through the picturesque Gion district where you might spot geishas.
+
+Overnight stay in Kyoto.`,
+                image: "/IMAGES/japan/3/1.webp"
+            },
+            {
+                day: 8,
+                title: "Nara & Traditional Villages",
+                description: `Day trip to Nara, Japan's first permanent capital. Visit Nara Park and meet the famous sacred deer. Explore Todaiji Temple, home to one of Japan's largest bronze Buddha statuses.
+
+Visit Kasuga Taisha Shrine with its thousands of stone and bronze lanterns. Experience traditional Japanese village life and local crafts.
+
+Return to Osaka for overnight stay.`,
+                image: "/IMAGES/japan/3/2.webp"
+            },
+            {
+                day: 9,
+                title: "Departure from Osaka",
+                description: `Check out from your hotel and enjoy some last-minute shopping or sightseeing. Private transfer to Osaka Airport for your departure flight.
+
+End of your memorable Japan journey.`,
+                image: "/IMAGES/japan/4/2.webp"
             }
         ],
         images: [
-            "/UGCImages/singapore/singapore/4.webp",
-            "/UGCImages/singapore/singapore/3.webp",
-            "/UGCImages/singapore/singapore/1.webp",
-            "/UGCImages/singapore/singapore/2.webp",
-        ],
-
-        departureDates: [
-            { date: "Mar 2025 - September 2025" }
+            "/UGCImages/japan/cards/1.png",
+            "/IMAGES/japan/1/2.webp",
+            "/IMAGES/japan/1/3.webp",
+            "/IMAGES/japan/1/4.webp",
+            "/IMAGES/japan/2/1.webp",
+            "/IMAGES/japan/2/2.webp"
         ],
         additionalInfo: {
             highlights: [
-                "Universal Studios Singapore",
-                "Gardens by the Bay",
-                "Marina Bay Sands",
-                "Sentosa Island",
-                "Shopping at Orchard Road"
+                "Tokyo Skytree with panoramic views",
+                "Mount Fuji 5th Station excursion",
+                "Disneyland Tokyo full day",
+                "Shinkansen bullet train experience",
+                "Universal Studios Osaka",
+                "Fushimi Inari Taisha shrine",
+                "Traditional tea ceremony",
+                "Nara Park and sacred deer"
             ],
-            bestTimeToVisit: "February to May (Dry season)",
+            bestTimeToVisit: "March to May (Spring) for cherry blossoms and September to November (Autumn) for fall colors offer the most pleasant weather.",
             cuisine: [
-                "Chili Crab",
-                "Hainanese Chicken Rice",
-                "Laksa",
-                "Satay"
+                "Authentic Sushi and Sashimi",
+                "Traditional Ramen varieties",
+                "Tempura and Tonkatsu",
+                "Osaka specialty Takoyaki",
+                "Kyoto Kaiseki dining",
+                "Japanese BBQ (Yakiniku)"
             ],
             accommodation: {
-                type: "4-star hotel",
+                type: "5-Star Deluxe Hotels",
                 amenities: [
-                    "Free Wi-Fi",
-                    "Swimming pool",
-                    "Restaurant",
-                    "Fitness center"
+                    "Premium WiFi",
+                    "Luxury amenities",
+                    "Concierge services",
+                    "Spa facilities",
+                    "Fine dining restaurants",
+                    "City view rooms"
                 ]
             },
             transportation: {
-                type: "Air-conditioned coach",
+                type: "Shinkansen + Private Deluxe Transfers",
                 features: [
-                    "Modern fleet",
-                    "Professional driver",
-                    "Tour guide"
+                    "First-class bullet train seats",
+                    "English-speaking guides",
+                    "Luxury vehicle transfers",
+                    "Priority boarding assistance"
                 ]
             },
             visaInfo: {
-                requirement: "Tourist visa required",
-                duration: "30 days",
-                cost: "₹2,500",
+                requirement: "Required for Indian citizens",
+                duration: "Up to 90 days",
+                cost: "Varies by processing time",
                 documents: [
-                    "Valid passport",
-                    "Photographs",
-                    "Bank statements",
-                    "Flight tickets"
+                    "Valid passport (6+ months)",
+                    "Completed visa application",
+                    "Recent passport photos",
+                    "Detailed travel itinerary",
+                    "Bank statements (3 months)",
+                    "Employment certificate"
                 ]
             }
         },
         experiences: [
             {
-                title: "Marina Bay Sands",
-                image: "/UGCImages/singapore/experience/1.png"
+                title: "Tokyo Skytree",
+                image: "/IMAGES/japan/experience/1.webp"
             },
             {
-                title: "Gardens By The Bay",
-                image: "/UGCImages/singapore/experience/2.png"
+                title: "Mount Fuji",
+                image: "/IMAGES/japan/experience/2.webp"
             },
             {
-                title: "Sentosa Island",
-                image: "/UGCImages/singapore/experience/3.png"
+                title: "Disneyland Tokyo",
+                image: "/IMAGES/japan/experience/3.webp"
             },
             {
-                title: "Night Safari",
-                image: "/UGCImages/singapore/experience/4.png"
+                title: "Universal Studios Osaka",
+                image: "/IMAGES/japan/experience/4.webp"
             }
         ],
-        batchDetails: {
-            currentBatch: "May",
-            remainingSlots: 11,
-            monthlyBatches: [
-                {
-                    month: "May",
-                    dates: ["9th", "10th", "11th"],
-                    availableSeats: 11
-                },
-                {
-                    month: "September",
-                    dates: ["13th", "14th", "15th"],
-                    availableSeats: 20
-                },
-                {
-                    month: "September",
-                    dates: ["11th", "12th", "13th"],
-                    availableSeats: 20
-                },
-                {
-                    month: "September",
-                    dates: ["8th", "9th", "10th"],
-                    availableSeats: 20
-                },
-                {
-                    month: "September",
-                    dates: ["12th", "13th", "14th"],
-                    availableSeats: 20
-                },
-                {
-                    month: "October",
-                    dates: ["10th", "11th", "12th"],
-                    availableSeats: 20
-                }
-            ]
-        },
         flightDetails: {
             airlines: [
                 {
-                    name: "Singapore Airlines",
-                    departureCity: "Delhi",
-                    arrivalCity: "Singapore",
-                    flightNumber: "SQ403",
-                    departureTime: "09:55",
-                    arrivalTime: "18:30",
-                    duration: "8h 35m"
+                    name: "Japan Airlines",
+                    departureCity: "Mumbai",
+                    arrivalCity: "Tokyo",
+                    flightNumber: "JL 60",
+                    departureTime: "02:30",
+                    arrivalTime: "12:30",
+                    duration: "10h 00m"
                 },
                 {
-                    name: "Malaysia Airlines",
-                    departureCity: "Singapore",
-                    arrivalCity: "Kuala Lumpur",
-                    flightNumber: "MH606",
-                    departureTime: "10:25",
-                    arrivalTime: "11:35",
-                    duration: "1h 10m"
+                    name: "All Nippon Airways",
+                    departureCity: "Delhi",
+                    arrivalCity: "Tokyo",
+                    flightNumber: "NH 844",
+                    departureTime: "01:45",
+                    arrivalTime: "11:45",
+                    duration: "10h 00m"
                 }
             ]
         }
     },
-}; 
+    japanEssentials: {
+        id: "6-days-japan-essentials",
+        packageName: "6 Days Japan Essentials",
+        days: 6,
+        nights: 5,
+        amount: 125000,
+        dateStart: "01 March 2025",
+        dateEnd: "30 November 2025",
+        description: "Perfect introduction to Japan covering Tokyo and Osaka highlights. Experience modern cities, traditional culture, and iconic attractions in this compact 5-night adventure.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Twin Sharing",
+            arrivalDate: "Contact Us",
+            duration: "5N6D Japan Essentials",
+            costBasis: "Cost Based On 2 pax travelling together"
+        },
+        hotelDetails: [
+            {
+                city: "Tokyo",
+                hotel: "4 Star Hotel",
+                roomType: "Standard/Twin Room"
+            },
+            {
+                city: "Osaka",
+                hotel: "4 Star Hotel",
+                roomType: "Standard/Twin Room"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Arrival in Tokyo",
+            "Day 2: Tokyo Sightseeing & Skytree",
+            "Day 3: Disneyland Tokyo",
+            "Day 4: Tokyo to Osaka via Shinkansen",
+            "Day 5: Universal Studios Osaka",
+            "Day 6: Departure from Osaka"
+        ],
+        inclusions: [
+            "Accommodation in Tokyo and Osaka",
+            "Private airport transfers",
+            "Tokyo Skytree entry ticket",
+            "Disneyland Tokyo entry ticket",
+            "Universal Studios Osaka entry ticket",
+            "Shinkansen bullet train tickets",
+            "All intercity transfers",
+            "English-speaking assistance"
+        ],
+        exclusions: [
+            "International flights",
+            "Travel insurance",
+            "Japan visa fees",
+            "Meals",
+            "Personal expenses",
+            "Optional tours"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Tokyo",
+                description: `Arrive at Tokyo Airport and transfer to your hotel. Check-in and relax. Evening at leisure to explore nearby areas.
+
+Overnight stay in Tokyo.`,
+                image: "/IMAGES/japan/1/1.webp"
+            },
+            {
+                day: 2,
+                title: "Tokyo Sightseeing & Skytree",
+                description: `Visit Tokyo Skytree for panoramic city views, explore Sensoji Temple in Asakusa, and walk through Nakamise shopping street. Experience the vibrant Shibuya Crossing.
+
+Overnight stay in Tokyo.`,
+                image: "/IMAGES/japan/1/2.webp"
+            },
+            {
+                day: 3,
+                title: "Disneyland Tokyo",
+                description: `Full day at Tokyo Disneyland enjoying rides, shows, and Disney magic. Experience the unique Japanese Disney atmosphere.
+
+Overnight stay in Tokyo.`,
+                image: "/IMAGES/japan/1/4.webp"
+            },
+            {
+                day: 4,
+                title: "Tokyo to Osaka via Shinkansen",
+                description: `Travel by bullet train to Osaka. Visit Osaka Castle Park and explore Dotonbori district for shopping and local culture.
+
+Overnight stay in Osaka.`,
+                image: "/IMAGES/japan/2/1.webp"
+            },
+            {
+                day: 5,
+                title: "Universal Studios Osaka",
+                description: `Full day at Universal Studios Japan with world-class attractions and entertainment including Harry Potter themed areas.
+
+Overnight stay in Osaka.`,
+                image: "/IMAGES/japan/2/2.webp"
+            },
+            {
+                day: 6,
+                title: "Departure from Osaka",
+                description: `Check out and transfer to Osaka Airport for departure.`,
+                image: "/IMAGES/japan/4/2.webp"
+            }
+        ],
+        images: [
+            "/UGCImages/japan/cards/2.png",
+            "/IMAGES/japan/1/2.webp",
+            "/IMAGES/japan/1/4.webp",
+            "/IMAGES/japan/2/1.webp",
+            "/IMAGES/japan/2/2.webp"
+        ],
+        additionalInfo: {
+            highlights: [
+                "Tokyo Skytree",
+                "Sensoji Temple",
+                "Disneyland Tokyo",
+                "Shinkansen experience",
+                "Universal Studios Osaka",
+                "Dotonbori district"
+            ],
+            bestTimeToVisit: "Year-round destination with spring and autumn being most pleasant.",
+            cuisine: [
+                "Sushi and Sashimi",
+                "Ramen",
+                "Takoyaki",
+                "Street food"
+            ],
+            accommodation: {
+                type: "4-Star Hotels",
+                amenities: [
+                    "Free WiFi",
+                    "Air Conditioning",
+                    "Private Bathroom",
+                    "Daily Housekeeping"
+                ]
+            },
+            transportation: {
+                type: "Shinkansen + Private Transfers",
+                features: [
+                    "High-speed rail",
+                    "Airport transfers",
+                    "Comfortable seating"
+                ]
+            },
+            visaInfo: {
+                requirement: "Required for Indian citizens",
+                duration: "Up to 90 days",
+                cost: "Varies by processing time",
+                documents: [
+                    "Valid passport",
+                    "Visa application form",
+                    "Recent photographs",
+                    "Travel itinerary"
+                ]
+            }
+        },
+        experiences: [
+            {
+                title: "Tokyo Skytree",
+                image: "/IMAGES/japan/experience/1.webp"
+            },
+            {
+                title: "Disneyland Tokyo",
+                image: "/IMAGES/japan/experience/3.webp"
+            },
+            {
+                title: "Universal Studios Osaka",
+                image: "/IMAGES/japan/experience/4.webp"
+            }
+        ],
+        flightDetails: {
+            airlines: [
+                {
+                    name: "Japan Airlines",
+                    departureCity: "Mumbai",
+                    arrivalCity: "Tokyo",
+                    flightNumber: "JL 60",
+                    departureTime: "02:30",
+                    arrivalTime: "12:30",
+                    duration: "10h 00m"
+                }
+            ]
+        }
+    },
+    japanDiscovery: {
+        id: "7-days-japan-discovery",
+        packageName: "7 Days Japan Discovery",
+        days: 7,
+        nights: 6,
+        amount: 155000,
+        dateStart: "01 March 2025",
+        dateEnd: "30 November 2025",
+        description: "Discover the best of Japan with Tokyo, Osaka, and Kyoto exploration. Experience modern cities, ancient temples, and cultural heritage in this comprehensive 6-night journey.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Twin Sharing",
+            arrivalDate: "Contact Us",
+            duration: "6N7D Japan Discovery",
+            costBasis: "Cost Based On 2 pax travelling together"
+        },
+        hotelDetails: [
+            {
+                city: "Tokyo",
+                hotel: "4 Star Hotel",
+                roomType: "Standard/Twin Room"
+            },
+            {
+                city: "Osaka",
+                hotel: "4 Star Hotel",
+                roomType: "Standard/Twin Room"
+            },
+            {
+                city: "Kyoto",
+                hotel: "4 Star Hotel",
+                roomType: "Standard/Twin Room"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Arrival in Tokyo",
+            "Day 2: Tokyo Sightseeing & Mount Fuji",
+            "Day 3: Disneyland Tokyo",
+            "Day 4: Tokyo to Osaka via Shinkansen",
+            "Day 5: Universal Studios Osaka",
+            "Day 6: Kyoto Cultural Tour",
+            "Day 7: Departure from Osaka"
+        ],
+        inclusions: [
+            "Accommodation in Tokyo, Osaka, and Kyoto",
+            "Private airport transfers",
+            "Mount Fuji excursion",
+            "Tokyo Skytree entry ticket",
+            "Disneyland Tokyo entry ticket",
+            "Universal Studios Osaka entry ticket",
+            "Kyoto temple visits",
+            "Shinkansen bullet train tickets",
+            "All intercity transfers",
+            "English-speaking assistance"
+        ],
+        exclusions: [
+            "International flights",
+            "Travel insurance",
+            "Japan visa fees",
+            "Meals (except mentioned)",
+            "Personal expenses",
+            "Optional tours"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Tokyo",
+                description: `Arrive at Tokyo Airport and transfer to your hotel. Check-in and relax. Evening free to explore nearby areas.
+
+Overnight stay in Tokyo.`,
+                image: "/IMAGES/japan/1/1.webp"
+            },
+            {
+                day: 2,
+                title: "Tokyo Sightseeing & Mount Fuji",
+                description: `Visit Tokyo Skytree and Sensoji Temple. Weather permitting, excursion to Mount Fuji 5th Station for stunning views of Japan's iconic mountain.
+
+Overnight stay in Tokyo.`,
+                image: "/IMAGES/japan/1/3.webp"
+            },
+            {
+                day: 3,
+                title: "Disneyland Tokyo",
+                description: `Full day at Tokyo Disneyland experiencing magical rides, shows, and Disney characters in the unique Japanese Disney environment.
+
+Overnight stay in Tokyo.`,
+                image: "/IMAGES/japan/1/4.webp"
+            },
+            {
+                day: 4,
+                title: "Tokyo to Osaka via Shinkansen",
+                description: `Experience the famous bullet train journey to Osaka. Visit Osaka Castle Park and explore the vibrant Dotonbori district.
+
+Overnight stay in Osaka.`,
+                image: "/IMAGES/japan/2/1.webp"
+            },
+            {
+                day: 5,
+                title: "Universal Studios Osaka",
+                description: `Full day at Universal Studios Japan featuring The Wizarding World of Harry Potter and other world-class attractions.
+
+Overnight stay in Osaka.`,
+                image: "/IMAGES/japan/2/2.webp"
+            },
+            {
+                day: 6,
+                title: "Kyoto Cultural Tour",
+                description: `Travel to Kyoto and visit Fushimi Inari Taisha with its famous torii gates, Kiyomizu-dera Temple, and traditional districts.
+
+Overnight stay in Kyoto.`,
+                image: "/IMAGES/japan/3/1.webp"
+            },
+            {
+                day: 7,
+                title: "Departure from Osaka",
+                description: `Return to Osaka and transfer to airport for departure.`,
+                image: "/IMAGES/japan/4/2.webp"
+            }
+        ],
+        images: [
+            "/UGCImages/japan/cards/3.png",
+            "/IMAGES/japan/1/3.webp",
+            "/IMAGES/japan/1/4.webp",
+            "/IMAGES/japan/2/1.webp",
+            "/IMAGES/japan/2/2.webp",
+            "/IMAGES/japan/3/1.webp"
+        ],
+        additionalInfo: {
+            highlights: [
+                "Tokyo Skytree",
+                "Mount Fuji excursion",
+                "Disneyland Tokyo",
+                "Shinkansen experience",
+                "Universal Studios Osaka",
+                "Fushimi Inari Taisha",
+                "Kyoto temples"
+            ],
+            bestTimeToVisit: "Spring (March-May) and Autumn (September-November) for best weather.",
+            cuisine: [
+                "Sushi and Sashimi",
+                "Ramen varieties",
+                "Tempura",
+                "Takoyaki",
+                "Kyoto cuisine"
+            ],
+            accommodation: {
+                type: "4-Star Hotels",
+                amenities: [
+                    "Free WiFi",
+                    "Air Conditioning",
+                    "Private Bathroom",
+                    "Daily Housekeeping",
+                    "Room service"
+                ]
+            },
+            transportation: {
+                type: "Shinkansen + Private Transfers",
+                features: [
+                    "High-speed rail travel",
+                    "Airport transfers",
+                    "Comfortable seating",
+                    "Intercity transfers"
+                ]
+            },
+            visaInfo: {
+                requirement: "Required for Indian citizens",
+                duration: "Up to 90 days",
+                cost: "Varies by processing time",
+                documents: [
+                    "Valid passport",
+                    "Visa application form",
+                    "Recent photographs",
+                    "Travel itinerary",
+                    "Bank statements"
+                ]
+            }
+        },
+        experiences: [
+            {
+                title: "Tokyo Skytree",
+                image: "/IMAGES/japan/experience/1.webp"
+            },
+            {
+                title: "Mount Fuji",
+                image: "/IMAGES/japan/experience/2.webp"
+            },
+            {
+                title: "Disneyland Tokyo",
+                image: "/IMAGES/japan/experience/3.webp"
+            },
+            {
+                title: "Universal Studios Osaka",
+                image: "/IMAGES/japan/experience/4.webp"
+            }
+        ],
+        flightDetails: {
+            airlines: [
+                {
+                    name: "Japan Airlines",
+                    departureCity: "Mumbai",
+                    arrivalCity: "Tokyo",
+                    flightNumber: "JL 60",
+                    departureTime: "02:30",
+                    arrivalTime: "12:30",
+                    duration: "10h 00m"
+                },
+                {
+                    name: "All Nippon Airways",
+                    departureCity: "Delhi",
+                    arrivalCity: "Tokyo",
+                    flightNumber: "NH 844",
+                    departureTime: "01:45",
+                    arrivalTime: "11:45",
+                    duration: "10h 00m"
+                }
+            ]
+        }
+    },
+    japanComplete: {
+        id: "8-days-japan-complete",
+        packageName: "8 Days Japan Complete Experience",
+        days: 8,
+        nights: 7,
+        amount: 175000,
+        dateStart: "01 March 2025",
+        dateEnd: "30 November 2025",
+        description: "Complete Japan experience covering Tokyo, Osaka, Kyoto, and Nara. Includes Mount Fuji, theme parks, cultural sites, and traditional experiences in this comprehensive 7-night tour.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Twin Sharing",
+            arrivalDate: "Contact Us",
+            duration: "7N8D Japan Complete Experience",
+            costBasis: "Cost Based On 2 pax travelling together"
+        },
+        hotelDetails: [
+            {
+                city: "Tokyo",
+                hotel: "4 Star Hotel",
+                roomType: "Standard/Twin Room"
+            },
+            {
+                city: "Osaka",
+                hotel: "4 Star Hotel",
+                roomType: "Standard/Twin Room"
+            },
+            {
+                city: "Kyoto",
+                hotel: "4 Star Hotel",
+                roomType: "Standard/Twin Room"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Arrival in Tokyo",
+            "Day 2: Tokyo Sightseeing & Skytree",
+            "Day 3: Mount Fuji Excursion",
+            "Day 4: Disneyland Tokyo",
+            "Day 5: Tokyo to Osaka via Shinkansen",
+            "Day 6: Universal Studios Osaka",
+            "Day 7: Kyoto & Nara Cultural Tour",
+            "Day 8: Departure from Osaka"
+        ],
+        inclusions: [
+            "Accommodation in Tokyo, Osaka, and Kyoto",
+            "Private airport transfers",
+            "Tokyo Skytree entry ticket",
+            "Mount Fuji excursion with lunch",
+            "Disneyland Tokyo entry ticket",
+            "Universal Studios Osaka entry ticket",
+            "Kyoto and Nara temple visits",
+            "Shinkansen bullet train tickets",
+            "All intercity transfers",
+            "English-speaking assistance"
+        ],
+        exclusions: [
+            "International flights",
+            "Travel insurance",
+            "Japan visa fees",
+            "Meals (except mentioned)",
+            "Personal expenses",
+            "Optional tours",
+            "Tips and gratuities"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Tokyo",
+                description: `Arrive at Tokyo Airport and transfer to your hotel. Check-in and relax. Evening free to explore nearby areas or rest.
+
+Overnight stay in Tokyo.`,
+                image: "/IMAGES/japan/1/1.webp"
+            },
+            {
+                day: 2,
+                title: "Tokyo Sightseeing & Skytree",
+                description: `Comprehensive Tokyo city tour including Tokyo Skytree for panoramic views, historic Sensoji Temple, traditional Nakamise shopping street, and modern Akihabara district.
+
+Overnight stay in Tokyo.`,
+                image: "/IMAGES/japan/1/2.webp"
+            },
+            {
+                day: 3,
+                title: "Mount Fuji Excursion",
+                description: `Full-day excursion to Mount Fuji (weather permitting). Visit Mt. Fuji 5th Station, Owakudani Valley, and enjoy Lake Ashinoko cruise. Lunch included.
+
+Return to Tokyo for overnight stay.`,
+                image: "/IMAGES/japan/1/3.webp"
+            },
+            {
+                day: 4,
+                title: "Disneyland Tokyo",
+                description: `Full day at Tokyo Disneyland experiencing magical rides, shows, parades, and Disney characters in the unique Japanese Disney atmosphere.
+
+Overnight stay in Tokyo.`,
+                image: "/IMAGES/japan/1/4.webp"
+            },
+            {
+                day: 5,
+                title: "Tokyo to Osaka via Shinkansen",
+                description: `Experience the famous bullet train to Osaka. Visit Osaka Castle Park, explore Dotonbori district, and experience local culture at Kuromon Market.
+
+Overnight stay in Osaka.`,
+                image: "/IMAGES/japan/2/1.webp"
+            },
+            {
+                day: 6,
+                title: "Universal Studios Osaka",
+                description: `Full day at Universal Studios Japan featuring The Wizarding World of Harry Potter, Jurassic Park, and other world-class attractions.
+
+Overnight stay in Osaka.`,
+                image: "/IMAGES/japan/2/2.webp"
+            },
+            {
+                day: 7,
+                title: "Kyoto & Nara Cultural Tour",
+                description: `Visit Kyoto's Fushimi Inari Taisha and Kiyomizu-dera Temple. Continue to Nara Park to meet the sacred deer and visit Todaiji Temple.
+
+Overnight stay in Kyoto.`,
+                image: "/IMAGES/japan/3/1.webp"
+            },
+            {
+                day: 8,
+                title: "Departure from Osaka",
+                description: `Return to Osaka and transfer to airport for departure. Some time for last-minute shopping.`,
+                image: "/IMAGES/japan/4/2.webp"
+            }
+        ],
+        images: [
+            "/UGCImages/japan/cards/4.png",
+            "/IMAGES/japan/1/2.webp",
+            "/IMAGES/japan/1/3.webp",
+            "/IMAGES/japan/1/4.webp",
+            "/IMAGES/japan/2/1.webp",
+            "/IMAGES/japan/2/2.webp"
+        ],
+        additionalInfo: {
+            highlights: [
+                "Tokyo Skytree panoramic views",
+                "Mount Fuji 5th Station",
+                "Disneyland Tokyo",
+                "Shinkansen bullet train",
+                "Universal Studios Osaka",
+                "Fushimi Inari Taisha",
+                "Nara Park deer",
+                "Kyoto temples"
+            ],
+            bestTimeToVisit: "Spring (March-May) for cherry blossoms and Autumn (September-November) for fall colors.",
+            cuisine: [
+                "Sushi and Sashimi",
+                "Traditional Ramen",
+                "Tempura",
+                "Takoyaki",
+                "Kyoto Kaiseki",
+                "Japanese sweets"
+            ],
+            accommodation: {
+                type: "4-Star Hotels",
+                amenities: [
+                    "Free WiFi",
+                    "Air Conditioning",
+                    "Private Bathroom",
+                    "Daily Housekeeping",
+                    "Room service",
+                    "Concierge"
+                ]
+            },
+            transportation: {
+                type: "Shinkansen + Private Transfers",
+                features: [
+                    "High-speed rail travel",
+                    "Airport transfers",
+                    "Comfortable seating",
+                    "All intercity transfers"
+                ]
+            },
+            visaInfo: {
+                requirement: "Required for Indian citizens",
+                duration: "Up to 90 days",
+                cost: "Varies by processing time",
+                documents: [
+                    "Valid passport",
+                    "Visa application form",
+                    "Recent photographs",
+                    "Detailed travel itinerary",
+                    "Bank statements"
+                ]
+            }
+        },
+        experiences: [
+            {
+                title: "Tokyo Skytree",
+                image: "/IMAGES/japan/experience/1.webp"
+            },
+            {
+                title: "Mount Fuji",
+                image: "/IMAGES/japan/experience/2.webp"
+            },
+            {
+                title: "Disneyland Tokyo",
+                image: "/IMAGES/japan/experience/3.webp"
+            },
+            {
+                title: "Universal Studios Osaka",
+                image: "/IMAGES/japan/experience/4.webp"
+            }
+        ],
+        flightDetails: {
+            airlines: [
+                {
+                    name: "Japan Airlines",
+                    departureCity: "Mumbai",
+                    arrivalCity: "Tokyo",
+                    flightNumber: "JL 60",
+                    departureTime: "02:30",
+                    arrivalTime: "12:30",
+                    duration: "10h 00m"
+                },
+                {
+                    name: "All Nippon Airways",
+                    departureCity: "Delhi",
+                    arrivalCity: "Tokyo",
+                    flightNumber: "NH 844",
+                    departureTime: "01:45",
+                    arrivalTime: "11:45",
+                    duration: "10h 00m"
+                }
+            ]
+        }
+    },
+    japanPremium: {
+        id: "8-days-japan-premium",
+        packageName: "8 Days Japan Premium Adventure",
+        days: 8,
+        nights: 7,
+        amount: 185000,
+        dateStart: "01 March 2025",
+        dateEnd: "30 November 2025",
+        description: "Premium Japan adventure with enhanced experiences including traditional tea ceremony, hot springs, and exclusive cultural activities. Perfect blend of modern attractions and authentic Japanese culture.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Twin Sharing",
+            arrivalDate: "Contact Us",
+            duration: "7N8D Japan Premium Adventure",
+            costBasis: "Cost Based On 2 pax travelling together"
+        },
+        hotelDetails: [
+            {
+                city: "Tokyo",
+                hotel: "5 Star Hotel",
+                roomType: "Superior/Twin Room"
+            },
+            {
+                city: "Hakone",
+                hotel: "Traditional Ryokan",
+                roomType: "Japanese Style Room"
+            },
+            {
+                city: "Osaka",
+                hotel: "5 Star Hotel",
+                roomType: "Superior/Twin Room"
+            },
+            {
+                city: "Kyoto",
+                hotel: "Boutique Hotel",
+                roomType: "Premium/Twin Room"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Arrival in Tokyo",
+            "Day 2: Tokyo Highlights & Traditional Experience",
+            "Day 3: Mount Fuji & Hakone Hot Springs",
+            "Day 4: Hakone to Tokyo - Disneyland",
+            "Day 5: Tokyo to Osaka via Shinkansen",
+            "Day 6: Universal Studios Osaka",
+            "Day 7: Kyoto Cultural Immersion",
+            "Day 8: Departure from Osaka"
+        ],
+        inclusions: [
+            "Luxury accommodation including Ryokan stay",
+            "Private airport transfers",
+            "Tokyo Skytree entry ticket",
+            "Traditional tea ceremony experience",
+            "Mount Fuji excursion with lunch",
+            "Hakone hot springs (onsen) experience",
+            "Disneyland Tokyo entry ticket",
+            "Universal Studios Osaka entry ticket",
+            "Kyoto temple visits with guide",
+            "Traditional Japanese dinner at Ryokan",
+            "Shinkansen bullet train tickets",
+            "All intercity transfers",
+            "English-speaking professional guides"
+        ],
+        exclusions: [
+            "International flights",
+            "Travel insurance",
+            "Japan visa fees",
+            "Lunch and dinner (except mentioned)",
+            "Personal expenses and shopping",
+            "Optional tours and activities",
+            "Tips and gratuities"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Tokyo",
+                description: `Welcome to Japan! Arrive at Tokyo Airport and transfer to your luxury hotel. Check-in and rest. Evening at leisure to explore the sophisticated neighborhood.
+
+Overnight stay in Tokyo.`,
+                image: "/IMAGES/japan/1/1.webp"
+            },
+            {
+                day: 2,
+                title: "Tokyo Highlights & Traditional Experience",
+                description: `Visit Tokyo Skytree for breathtaking views, explore historic Sensoji Temple and Nakamise street. Experience a traditional tea ceremony to understand Japanese culture.
+
+Overnight stay in Tokyo.`,
+                image: "/IMAGES/japan/1/2.webp"
+            },
+            {
+                day: 3,
+                title: "Mount Fuji & Hakone Hot Springs",
+                description: `Journey to Mount Fuji 5th Station (weather permitting) for spectacular views. Continue to Hakone for a traditional Ryokan experience with hot springs (onsen). Traditional Japanese dinner included.
+
+Overnight stay in traditional Ryokan.`,
+                image: "/IMAGES/japan/1/3.webp"
+            },
+            {
+                day: 4,
+                title: "Hakone to Tokyo - Disneyland",
+                description: `Return to Tokyo and spend the day at Tokyo Disneyland experiencing magical attractions, shows, and the unique Japanese Disney atmosphere.
+
+Overnight stay in Tokyo.`,
+                image: "/IMAGES/japan/1/4.webp"
+            },
+            {
+                day: 5,
+                title: "Tokyo to Osaka via Shinkansen",
+                description: `Experience the world-famous bullet train to Osaka. Upon arrival, visit Osaka Castle Park and explore the vibrant Dotonbori entertainment district.
+
+Overnight stay in Osaka.`,
+                image: "/IMAGES/japan/2/1.webp"
+            },
+            {
+                day: 6,
+                title: "Universal Studios Osaka",
+                description: `Full day at Universal Studios Japan featuring The Wizarding World of Harry Potter, Jurassic Park, and cutting-edge attractions.
+
+Overnight stay in Osaka.`,
+                image: "/IMAGES/japan/2/2.webp"
+            },
+            {
+                day: 7,
+                title: "Kyoto Cultural Immersion",
+                description: `Deep cultural experience in Kyoto visiting Fushimi Inari Taisha with thousands of torii gates, Kiyomizu-dera Temple, and traditional Gion district. Walk through historic streets and learn about geisha culture.
+
+Overnight stay in Kyoto.`,
+                image: "/IMAGES/japan/3/1.webp"
+            },
+            {
+                day: 8,
+                title: "Departure from Osaka",
+                description: `Return to Osaka for departure. Time for last-minute shopping and souvenir hunting before airport transfer.`,
+                image: "/IMAGES/japan/4/2.webp"
+            }
+        ],
+        images: [
+            "/UGCImages/japan/cards/5.png",
+            "/IMAGES/japan/1/2.webp",
+            "/IMAGES/japan/1/3.webp",
+            "/IMAGES/japan/1/4.webp",
+            "/IMAGES/japan/2/1.webp",
+            "/IMAGES/japan/2/2.webp"
+        ],
+        additionalInfo: {
+            highlights: [
+                "Tokyo Skytree with premium access",
+                "Traditional tea ceremony",
+                "Mount Fuji 5th Station",
+                "Authentic Ryokan & hot springs",
+                "Disneyland Tokyo",
+                "Shinkansen bullet train",
+                "Universal Studios Osaka",
+                "Kyoto cultural immersion",
+                "Gion district exploration"
+            ],
+            bestTimeToVisit: "Spring (March-May) for cherry blossoms and Autumn (September-November) for fall colors offer the most beautiful scenery.",
+            cuisine: [
+                "Kaiseki dinner at Ryokan",
+                "Premium Sushi and Sashimi",
+                "Traditional Ramen",
+                "Tempura",
+                "Takoyaki",
+                "Kyoto vegetarian cuisine",
+                "Japanese tea and sweets"
+            ],
+            accommodation: {
+                type: "5-Star Hotels + Traditional Ryokan",
+                amenities: [
+                    "Luxury amenities",
+                    "Premium WiFi",
+                    "Concierge services",
+                    "Hot springs (onsen)",
+                    "Traditional Japanese experience",
+                    "Fine dining options"
+                ]
+            },
+            transportation: {
+                type: "Shinkansen + Premium Private Transfers",
+                features: [
+                    "First-class bullet train",
+                    "Luxury vehicle transfers",
+                    "Professional English guides",
+                    "Priority boarding assistance"
+                ]
+            },
+            visaInfo: {
+                requirement: "Required for Indian citizens",
+                duration: "Up to 90 days",
+                cost: "Varies by processing time",
+                documents: [
+                    "Valid passport (6+ months)",
+                    "Completed visa application",
+                    "Recent passport photos",
+                    "Detailed travel itinerary",
+                    "Bank statements (3 months)",
+                    "Employment verification"
+                ]
+            }
+        },
+        experiences: [
+            {
+                title: "Tokyo Skytree",
+                image: "/IMAGES/japan/experience/1.webp"
+            },
+            {
+                title: "Mount Fuji",
+                image: "/IMAGES/japan/experience/2.webp"
+            },
+            {
+                title: "Disneyland Tokyo",
+                image: "/IMAGES/japan/experience/3.webp"
+            },
+            {
+                title: "Universal Studios Osaka",
+                image: "/IMAGES/japan/experience/4.webp"
+            }
+        ],
+        flightDetails: {
+            airlines: [
+                {
+                    name: "Japan Airlines",
+                    departureCity: "Mumbai",
+                    arrivalCity: "Tokyo",
+                    flightNumber: "JL 60",
+                    departureTime: "02:30",
+                    arrivalTime: "12:30",
+                    duration: "10h 00m"
+                },
+                {
+                    name: "All Nippon Airways",
+                    departureCity: "Delhi",
+                    arrivalCity: "Tokyo",
+                    flightNumber: "NH 844",
+                    departureTime: "01:45",
+                    arrivalTime: "11:45",
+                    duration: "10h 00m"
+                }
+            ]
+        }
+    },
+    japanCultural: {
+        id: "10-days-japan-cultural",
+        packageName: "10 Days Japan Cultural Tour",
+        days: 10,
+        nights: 9,
+        amount: 170500,
+        dateStart: "01 March 2025",
+        dateEnd: "30 November 2025",
+        description: "Explore the enchanting cities of Japan, from the vibrant culture of Tokyo to the scenic beauty of Kyoto, Osaka, and Mount Fuji. This 9-night journey offers a blend of modern attractions, historic sites, and serene landscapes.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Twin Sharing",
+            arrivalDate: "Contact Us",
+            duration: "9N10D Japan Cultural Tour",
+            costBasis: "Cost Based On 2 pax travelling together"
+        },
+        hotelDetails: [
+            {
+                city: "Tokyo",
+                hotel: "4 Star Hotel",
+                roomType: "Standard/Twin Room"
+            },
+            {
+                city: "Osaka",
+                hotel: "4 Star Hotel",
+                roomType: "Standard/Twin Room"
+            },
+            {
+                city: "Kyoto",
+                hotel: "4 Star Hotel",
+                roomType: "Standard/Twin Room"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Arrival in Tokyo",
+            "Day 2: Tokyo Sightseeing",
+            "Day 3: Tokyo - Mount Fuji - Tokyo",
+            "Day 4: Disneyland Tokyo",
+            "Day 5: Tokyo to Osaka by Shinkansen",
+            "Day 6: Universal Studios Osaka",
+            "Day 7: Osaka to Kyoto",
+            "Day 8: Kyoto to Nara Park",
+            "Day 9: Free Day in Osaka",
+            "Day 10: Transfer to Osaka Airport"
+        ],
+        inclusions: [
+            "Accommodation in Tokyo, Osaka, and Kyoto",
+            "Private transfers on arrival and departure (driver only)",
+            "Sightseeing tours in Tokyo, Osaka, Kyoto, and Nara",
+            "Shinkansen train travel from Tokyo to Osaka",
+            "Universal Studios and Disneyland entry tickets",
+            "All transfers between cities and attractions",
+            "24-hour English-speaking assistance"
+        ],
+        exclusions: [
+            "International flights",
+            "Travel insurance",
+            "Visa fees",
+            "Personal expenses",
+            "Meals not mentioned in inclusions",
+            "Optional tours and experiences"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Tokyo",
+                description: `Arrive at Tokyo Airport and transfer to your hotel by private vehicle (driver only). Check-in and relax.
+
+Overnight stay in Tokyo.`,
+                image: "/IMAGES/japan/1/1.webp"
+            },
+            {
+                day: 2,
+                title: "Tokyo Sightseeing",
+                description: `Visit Tokyo Skytree, Sensoji Temple, Nakamiyo Commercial Street, and Akihabara for a day full of exploration.
+
+Overnight stay in Tokyo.`,
+                image: "/IMAGES/japan/1/2.webp"
+            },
+            {
+                day: 3,
+                title: "Tokyo - Mount Fuji - Tokyo",
+                description: `Weather permitting, visit Mt. Fuji 5th Station, Owakudani Valley, and enjoy a cruise on Lake Ashinochi.
+
+Overnight stay in Tokyo.`,
+                image: "/IMAGES/japan/1/3.webp"
+            },
+            {
+                day: 4,
+                title: "Disneyland Tokyo",
+                description: `Spend a magical day at Disneyland Tokyo, enjoying all the exciting rides and attractions.
+
+Overnight stay in Tokyo.`,
+                image: "/IMAGES/japan/1/4.webp"
+            },
+            {
+                day: 5,
+                title: "Tokyo to Osaka by Shinkansen",
+                description: `Travel by Shinkansen to Osaka. Visit Osaka Castle Park, Namba Yasaka Shrine, Shinsaibashi, Dotonbori, and Kuroemon Market.
+
+Overnight stay in Osaka.`,
+                image: "/IMAGES/japan/2/1.webp"
+            },
+            {
+                day: 6,
+                title: "Universal Studios Osaka",
+                description: `Enjoy a thrilling day at Universal Studios Osaka, experiencing world-class attractions and entertainment.
+
+Overnight stay in Osaka.`,
+                image: "/IMAGES/japan/2/2.webp"
+            },
+            {
+                day: 7,
+                title: "Osaka to Kyoto",
+                description: `Travel by van to Kyoto (2 hours) and explore Fushimi Inari Taisha, Kiyomizu-dera, Kiyomizaka, Yazaka Shrine, and Hanami Lane.
+
+Overnight stay in Kyoto.`,
+                image: "/IMAGES/japan/3/1.webp"
+            },
+            {
+                day: 8,
+                title: "Kyoto to Nara Park",
+                description: `Visit Nara Park and the Todaiji Temple, followed by a visit to Haruhi Daisha. Return to Osaka by van.
+
+Overnight stay in Osaka.`,
+                image: "/IMAGES/japan/3/2.webp"
+            },
+            {
+                day: 9,
+                title: "Free Day in Osaka",
+                description: `Enjoy a free day on your own to explore Osaka or relax.
+
+Overnight stay in Osaka.`,
+                image: "/IMAGES/japan/4/1.webp"
+            },
+            {
+                day: 10,
+                title: "Transfer to Osaka Airport",
+                description: `Transfer to Osaka Airport for your return flight.`,
+                image: "/IMAGES/japan/4/2.webp"
+            }
+        ],
+        images: [
+            "/UGCImages/japan/cards/1.png",
+            "/IMAGES/japan/1/2.webp",
+            "/IMAGES/japan/1/3.webp",
+            "/IMAGES/japan/1/4.webp",
+            "/IMAGES/japan/2/1.webp",
+            "/IMAGES/japan/2/2.webp"
+        ],
+        additionalInfo: {
+            highlights: [
+                "Tokyo Skytree",
+                "Sensoji Temple",
+                "Mount Fuji",
+                "Disneyland Tokyo",
+                "Universal Studios Osaka",
+                "Fushimi Inari Taisha",
+                "Nara Park"
+            ],
+            bestTimeToVisit: "March to May (Spring) and September to November (Autumn) offer the best weather and cherry blossoms or autumn colors.",
+            cuisine: [
+                "Sushi and Sashimi",
+                "Ramen",
+                "Tempura",
+                "Takoyaki",
+                "Okonomiyaki",
+                "Traditional Kaiseki"
+            ],
+            accommodation: {
+                type: "4-Star Hotels",
+                amenities: [
+                    "Free WiFi",
+                    "Air Conditioning",
+                    "Private Bathroom",
+                    "Daily Housekeeping",
+                    "Concierge Service"
+                ]
+            },
+            transportation: {
+                type: "Shinkansen (Bullet Train) + Private Transfers",
+                features: [
+                    "High-speed rail travel",
+                    "Private airport transfers",
+                    "Comfortable seating",
+                    "On-time reliability"
+                ]
+            },
+            visaInfo: {
+                requirement: "Required for Indian citizens",
+                duration: "Up to 90 days",
+                cost: "Varies by processing time",
+                documents: [
+                    "Valid passport",
+                    "Visa application form",
+                    "Recent photographs",
+                    "Travel itinerary",
+                    "Bank statements"
+                ]
+            }
+        },
+        experiences: [
+            {
+                title: "Tokyo Skytree",
+                image: "/IMAGES/japan/experience/1.webp"
+            },
+            {
+                title: "Mount Fuji",
+                image: "/IMAGES/japan/experience/2.webp"
+            },
+            {
+                title: "Disneyland Tokyo",
+                image: "/IMAGES/japan/experience/3.webp"
+            },
+            {
+                title: "Universal Studios Osaka",
+                image: "/IMAGES/japan/experience/4.webp"
+            }
+        ],
+        flightDetails: {
+            airlines: [
+                {
+                    name: "Japan Airlines",
+                    departureCity: "Mumbai",
+                    arrivalCity: "Tokyo",
+                    flightNumber: "JL 60",
+                    departureTime: "02:30",
+                    arrivalTime: "12:30",
+                    duration: "10h 00m"
+                },
+                {
+                    name: "All Nippon Airways",
+                    departureCity: "Delhi",
+                    arrivalCity: "Tokyo",
+                    flightNumber: "NH 844",
+                    departureTime: "01:45",
+                    arrivalTime: "11:45",
+                    duration: "10h 00m"
+                }
+            ]
+        }
+    }
+};

@@ -1,36 +1,36 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Singapore Tour Packages | TrueDeal4U',
-  description: 'Experience the best of Singapore with our comprehensive tour packages. Visit Gardens by the Bay, Universal Studios, Marina Bay Sands, and enjoy world-class shopping. Perfect blend of modernity and tradition.',
-  keywords: 'singapore tours, singapore packages, marina bay sands, universal studios singapore, gardens by the bay',
+  title: 'Japan Tour Packages | TrueDeal4U',
+  description: 'Experience the best of Japan with our comprehensive tour packages. Visit Tokyo Skytree, Mount Fuji, Disneyland Tokyo, Universal Studios Osaka, and explore ancient temples. Perfect blend of tradition and modernity.',
+  keywords: 'japan tours, japan packages, tokyo skytree, mount fuji, disneyland tokyo, universal studios osaka, fushimi inari taisha',
   formatDetection: {
     email: false,
     address: false,
     telephone: false
   },
   openGraph: {
-    title: 'Singapore and Malaysia Tour Packages',
-    description: 'Experience the best of Singapore and Malaysia with our comprehensive tour packages. Visit Gardens by the Bay, Universal Studios, Marina Bay Sands, and enjoy world-class shopping.',
+    title: 'Japan Cultural Tour Packages',
+    description: 'Experience the best of Japan with our comprehensive tour packages. Visit Tokyo Skytree, Mount Fuji, Disneyland Tokyo, Universal Studios Osaka, and explore ancient temples.',
     images: [
       {
-        url: '/UGCImages/singapore/dayWise/1.png',
+        url: '/IMAGES/japan/1/1.webp',
         width: 1200,
         height: 630,
-        alt: 'Singapore Tour Package'
+        alt: 'Japan Tour Package'
       }
     ],
     type: 'website'
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Singapore Tour Packages | TrueDeal4U',
-    description: 'Experience the best of Singapore with our comprehensive tour packages. Visit Gardens by the Bay, Universal Studios, Marina Bay Sands, and enjoy world-class shopping.',
-    images: ['/UGCImages/singapore/dayWise/1.png']
+    title: 'Japan Tour Packages | TrueDeal4U',
+    description: 'Experience the best of Japan with our comprehensive tour packages. Visit Tokyo Skytree, Mount Fuji, Disneyland Tokyo, Universal Studios Osaka, and explore ancient temples.',
+    images: ['/IMAGES/japan/1/1.webp']
   }
 }
 
-export default function SingaporeLayout({
+export default function JapanLayout({
   children,
 }: {
   children: React.ReactNode

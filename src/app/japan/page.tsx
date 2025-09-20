@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { singaporePackages, SingaporePackage } from './data';
+import { japanPackages, JapanPackage } from './data';
 import { FaCalendarAlt, FaClock, FaChevronLeft, FaChevronRight, FaPlus, FaMinus, FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 import { IoLocationSharp } from 'react-icons/io5';
 import { Button } from "@/components/ui/button";
@@ -14,12 +14,11 @@ import { Dancing_Script, Playfair_Display } from 'next/font/google';
 const dancingScript = Dancing_Script({ subsets: ['latin'] });
 const playfair = Playfair_Display({ subsets: ['latin'] });
 
-const BLOB_URL = process.env.NEXT_PUBLIC_BLOB_URL;
 
-export default function SingaporePackages() {
+export default function JapanPackages() {
     const [currentPage, setCurrentPage] = useState(0);
     const [openFaq, setOpenFaq] = useState<number | null>(null);
-    const packages = Object.values(singaporePackages);
+    const packages = Object.values(japanPackages);
     const totalPages = Math.ceil(packages.length / 3);
     const [isMuted, setIsMuted] = useState(true);
 
@@ -32,8 +31,8 @@ export default function SingaporePackages() {
     };
 
     const toggleMute = () => {
-        const audio = document.getElementById('singaporeAudio') as HTMLAudioElement;
-        const video = document.getElementById('singaporeVideo') as HTMLVideoElement;
+        const audio = document.getElementById('japanAudio') as HTMLAudioElement;
+        const video = document.getElementById('japanVideo') as HTMLVideoElement;
         if (audio && video) {
             if (isMuted) {
                 audio.muted = false;
@@ -51,7 +50,7 @@ export default function SingaporePackages() {
     const PackageCard = ({
         package: pkg
     }: {
-        package: SingaporePackage;
+        package: JapanPackage;
     }) => {
         const [showDates, setShowDates] = useState(false);
 
@@ -123,7 +122,7 @@ export default function SingaporePackages() {
                         </div>
                     )}
 
-                    <Link href={`/singapore/${pkg.id}`}>
+                    <Link href={`/japan/${pkg.id}`}>
                         <Button
                             className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all duration-500"
                         >
@@ -135,55 +134,55 @@ export default function SingaporePackages() {
         );
     };
 
-    const singaporeHighlights = [
+    const japanHighlights = [
         {
-            title: "Modern City",
-            image: "/UGCImages/singapore/banner/1.png",
-            description: "Experience the ultra-modern cityscape and architecture"
+            title: "Tokyo Skytree",
+            image: "/UGCImages/japan/sight/1.png",
+            description: "Experience the tallest tower in Japan with stunning city views"
         },
         {
-            title: "Theme Parks",
-            image: "/UGCImages/singapore/banner/2.png",
-            description: "Enjoy Universal Studios and other attractions"
+            title: "Mount Fuji",
+            image: "/UGCImages/japan/sight/2.png",
+            description: "Visit the iconic symbol of Japan and its natural beauty"
         },
         {
-            title: "Cultural Heritage",
-            image: "/UGCImages/singapore/banner/3.png",
-            description: "Explore diverse cultural neighborhoods"
+            title: "Disneyland Tokyo",
+            image: "/UGCImages/japan/sight/3.png",
+            description: "Enjoy magical moments at the happiest place on earth"
         },
         {
-            title: "Shopping Paradise",
-            image: "/UGCImages/singapore/banner/4.png",
-            description: "World-class shopping on Orchard Road"
+            title: "Universal Studios Osaka",
+            image: "/UGCImages/japan/sight/4.png",
+            description: "Experience thrilling rides and world-class entertainment"
         },
         {
-            title: "Gardens & Nature",
-            image: "/UGCImages/singapore/banner/5.png",
-            description: "Visit Gardens by the Bay and nature parks"
+            title: "Fushimi Inari Taisha",
+            image: "/UGCImages/japan/sight/5.png",
+            description: "Walk through thousands of vermillion torii gates"
         },
         {
-            title: "Culinary Delights",
-            image: "/UGCImages/singapore/banner/6.png",
-            description: "Savor local cuisine at hawker centers"
+            title: "Traditional Culture",
+            image: "/UGCImages/japan/sight/6.png",
+            description: "Immerse yourself in ancient temples and traditional architecture"
         }
     ];
 
     const faqs = [
         {
-            question: "What is the best time to visit Singapore?",
-            answer: "Singapore is a year-round destination. However, September to September typically has the best weather with less rainfall."
+            question: "What is the best time to visit Japan?",
+            answer: "The best times to visit Japan are during spring (March-May) for cherry blossoms and autumn (September-November) for fall colors. Weather is pleasant and crowds are manageable."
         },
         {
-            question: "Do Indians need a visa for Singapore?",
-            answer: "Yes, Indian citizens need a visa to enter Singapore. The process is relatively straightforward and can be done online."
+            question: "Do Indians need a visa for Japan?",
+            answer: "Yes, Indian citizens need a visa to enter Japan. The process requires submitting documents to the Japanese embassy or consulate."
         },
         {
             question: "What are the must-visit attractions?",
-            answer: "Popular attractions include Gardens by the Bay, Universal Studios, Marina Bay Sands, Sentosa Island, and Singapore Zoo."
+            answer: "Popular attractions include Tokyo Skytree, Mount Fuji, Disneyland Tokyo, Universal Studios Osaka, Fushimi Inari Taisha, and traditional temples in Kyoto."
         },
         {
-            question: "Is Singapore expensive to visit?",
-            answer: "Singapore can be relatively expensive, but there are options for all budgets, especially for food at hawker centers."
+            question: "Is Japan expensive to visit?",
+            answer: "Japan can be moderately expensive, but there are budget-friendly options available. Our packages include accommodation and major attractions to help manage costs."
         }
     ] as const;
 
@@ -192,13 +191,13 @@ export default function SingaporePackages() {
             {/* Hero Section with Video */}
             <div className="relative h-[60vh] md:h-[100vh] w-full overflow-hidden">
                 <audio
-                    id="singaporeAudio"
+                    id="japanAudio"
                     loop
                     muted
                     autoPlay
                     className="hidden"
                 >
-                    <source src="/UGCImages/singapore/audio/singapore.mp3" type="audio/mp3" />
+                    <source src="/UGCImages/japan/audio/japan.mp3" type="audio/mp3" />
                 </audio>
 
                 <button
@@ -214,36 +213,23 @@ export default function SingaporePackages() {
                 </button>
 
                 <video
-                    id="singaporeVideo"
+                    id="japanVideo"
                     autoPlay
                     loop
-                    muted={isMuted}
+                    muted
                     playsInline
                     className="absolute inset-0 w-full h-full object-cover"
-                    poster="/UGCImages/singapore/singapore/6.webp"
-                    preload="metadata"
-                    onError={(e) => {
-                        const fallbackImage = e.currentTarget.parentElement?.querySelector('img');
-                        if (fallbackImage) {
-                            fallbackImage.style.display = 'block';
-                        }
-                    }}
                 >
-                    <source
-                        src={`${BLOB_URL}/singaporeBG-y961zYwC9Ky6O3X7VxBc9WcCiJRUeb.mp4`}
-                        type="video/mp4"
+                    <source src="/UGCImages/japan/japan1.mp4" type="video/mp4" />
+                    {/* Fallback image in case video fails to load */}
+                    <Image
+                        src="/UGCImages/japan/japan.png"
+                        alt="Japan Paradise"
+                        fill
+                        className="object-cover"
+                        priority
                     />
-                    Your browser does not support the video tag.
                 </video>
-
-                {/* Fallback image */}
-                <Image
-                    src="/UGCImages/singapore/singapore/6.webp"
-                    alt="Singapore Background"
-                    fill
-                    className="object-cover hidden"
-                    priority
-                />
                 <div className="absolute inset-0 bg-black/40" />
                 <div className="absolute inset-0 flex items-center justify-center text-center">
                     <div className="max-w-4xl px-4">
@@ -256,8 +242,8 @@ export default function SingaporePackages() {
                             <span className={`block font-dancing-script text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] mb-2 ${dancingScript.className}`}>
                                 Welcome to
                             </span>
-                            <span className={`block text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-rose-100 to-teal-100 bg-clip-text text-transparent mt-2 ${playfair.className}`}>
-                                Singapore
+                            <span className={`block text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mt-2 ${playfair.className}`} style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(255,255,255,0.3)' }}>
+                                Japan
                             </span>
                         </motion.h1>
 
@@ -273,7 +259,7 @@ export default function SingaporePackages() {
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 1, duration: 0.8 }}
                             >
-                                Where tradition meets tomorrow
+                                The Land of the Rising Sun
                             </motion.p>
                             <div className="flex justify-center gap-4 text-lg md:text-xl">
                                 <motion.span
@@ -282,7 +268,7 @@ export default function SingaporePackages() {
                                     transition={{ delay: 1.5, duration: 0.5 }}
                                     className="text-yellow-300"
                                 >
-                                    Modern City
+                                    Cherry Blossoms
                                 </motion.span>
                                 <motion.span
                                     initial={{ opacity: 0, y: 20 }}
@@ -290,7 +276,7 @@ export default function SingaporePackages() {
                                     transition={{ delay: 1.8, duration: 0.5 }}
                                     className="text-blue-300"
                                 >
-                                    Rich Culture
+                                    Ancient Temples
                                 </motion.span>
                                 <motion.span
                                     initial={{ opacity: 0, x: 20 }}
@@ -298,7 +284,7 @@ export default function SingaporePackages() {
                                     transition={{ delay: 2.1, duration: 0.5 }}
                                     className="text-green-300"
                                 >
-                                    Amazing Food
+                                    Sushi & Ramen
                                 </motion.span>
                             </div>
                         </motion.div>
@@ -306,12 +292,12 @@ export default function SingaporePackages() {
                 </div>
             </div>
 
-            {/* Singapore Packages Section */}
+            {/* Japan Packages Section */}
             <div className="bg-gray-50 py-16">
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl font-bold text-center mb-12">
                         <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
-                            Our Singapore Packages
+                            Our Japan Packages
                         </span>
                     </h2>
                     <div className="relative">
@@ -344,8 +330,8 @@ export default function SingaporePackages() {
                                 <div className="flex md:grid md:grid-cols-3 gap-6 min-w-min md:min-w-0">
                                     {packages
                                         .slice(currentPage * 3, (currentPage * 3) + 3)
-                                        .map((singaporePkg) => (
-                                            <PackageCard key={singaporePkg.id} package={singaporePkg} />
+                                        .map((japanPkg) => (
+                                            <PackageCard key={japanPkg.id} package={japanPkg} />
                                         ))}
                                 </div>
                             </div>
@@ -377,7 +363,7 @@ export default function SingaporePackages() {
                 </div>
             </div>
 
-            {/* Singapore Highlights Section */}
+            {/* Japan Highlights Section */}
             <div className="py-16 bg-white">
                 <div className="container mx-auto px-4">
                     <motion.div
@@ -389,12 +375,12 @@ export default function SingaporePackages() {
                     >
                         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
                             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
-                                Experience the Magic of Singapore
+                                Experience the Magic of Japan
                             </span>
                         </h2>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {singaporeHighlights.map((highlight, index) => (
+                            {japanHighlights.map((highlight, index) => (
                                 <motion.div
                                     key={highlight.title}
                                     initial={{ opacity: 0, y: 20 }}
@@ -461,18 +447,18 @@ export default function SingaporePackages() {
             <div className="max-w-4xl mx-auto mt-16 prose prose-lg">
                 <h2 className="text-3xl font-bold text-center mb-8">
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
-                        Discover Singapore
+                        Discover Japan
                     </span>
                 </h2>
                 <div className="text-gray-600 space-y-4">
                     <p>
-                        Singapore, a dynamic city-state where tradition meets modernity, offers visitors an unforgettable blend of cultural experiences, world-class attractions, and culinary delights.
+                        Japan, the Land of the Rising Sun, offers a perfect blend of ancient traditions and cutting-edge modernity. From the bustling streets of Tokyo to the serene temples of Kyoto, experience a country where every corner tells a story.
                     </p>
                     <p>
-                        Our Singapore tour packages include visits to iconic locations like Gardens by the Bay, Universal Studios Singapore, and Marina Bay Sands, combining entertainment with cultural experiences.
+                        Our Japan tour packages include visits to iconic locations like Tokyo Skytree, Mount Fuji, Disneyland Tokyo, and Universal Studios Osaka, combining entertainment with cultural experiences.
                     </p>
                     <p>
-                        Experience the rich multicultural heritage through visits to Little India, Chinatown, and Arab Street, while enjoying the citys famous hawker centers and modern shopping districts.
+                        Experience the rich cultural heritage through visits to ancient temples, traditional gardens, and historic districts, while enjoying world-class cuisine and modern attractions.
                     </p>
                 </div>
             </div>
