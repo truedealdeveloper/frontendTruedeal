@@ -205,9 +205,6 @@ export default function BaliPackages() {
             );
         }, [baliPackage.flights]);
 
-        const handleEnquireClick = useCallback(() => {
-            onEnquireNow(baliPackage.packageName);
-        }, [onEnquireNow, baliPackage.packageName]);
         return (
             <div className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0">
                 {/* Background Image */}
@@ -310,6 +307,9 @@ export default function BaliPackages() {
             </div>
         );
     });
+
+    // Set display name for the memoized component
+    PackageCard.displayName = 'PackageCard';
 
     return (
         <div className="min-h-screen">
