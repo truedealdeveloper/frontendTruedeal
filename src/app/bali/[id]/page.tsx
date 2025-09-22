@@ -2,15 +2,41 @@
 
 import React, { use, useMemo, useRef, useState, useCallback, useEffect } from "react";
 import Image from "next/image";
-import { baliPackages } from "../data";
+import { baliPackages, type BaliPackage } from "../data";
 import { notFound } from "next/navigation";
-import { Calendar, Check, MapPin, Star, Users, X, Plane } from "lucide-react";
+import { Calendar, Check, MapPin, Star, X, Plane } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import dynamic from 'next/dynamic';
 import { PageWrapper } from "@/components/page-wrapper";
 import { useMobile } from "@/hooks/use-mobile";
 import { BaliReviews } from "../BaliReviews";
+import Link from "next/link";
+import { motion } from 'framer-motion';
+
+// Type for flight sector information
+interface FlightSector {
+    from: string;
+    to: string;
+    flight: string;
+    depart: string;
+    arrive: string;
+}
+
+// Type for flights information
+interface FlightsInfo {
+    marketingAirline: string;
+    fromCity: string;
+    baggage: string;
+    notes?: string;
+    sectors: FlightSector[];
+    fixedDepartureDates: string;
+}
+
+// Extended package type with flights
+interface BaliPackageWithFlights extends BaliPackage {
+    flights?: FlightsInfo;
+}
 
 // Lazy load the booking modal only when needed to reduce initial JS
 const BookingFormModal = dynamic(() =>
@@ -47,7 +73,7 @@ function useInView<T extends HTMLElement>(rootMargin = "200px"): [React.RefObjec
 export default function BaliPackagePage({ params }: PageProps) {
     const { id } = use(params);
     const baliPkg = useMemo(
-        () => Object.values(baliPackages).find(p => p.id === id),
+        () => Object.values(baliPackages).find(p => p.id === id) as BaliPackageWithFlights | undefined,
         [id]
     );
     const isMobile = useMobile();
@@ -219,34 +245,34 @@ export default function BaliPackagePage({ params }: PageProps) {
                 <main className="max-w-7xl mx-auto px-4 py-8 md:py-12">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         <div className="lg:col-span-2 min-w-0">
-                            {(baliPkg as any).flights && (
+                            {baliPkg.flights && (
                                 <section className="mb-8">
                                     <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">Flights & Fixed Departures</h2>
                                     <Card className="p-5 space-y-3">
                                         <div className="flex flex-wrap items-center gap-3 text-sm">
-                                            <span className="px-3 py-1 rounded-full bg-blue-50 text-[#017ae3] flex items-center gap-2"><Plane className="h-4 w-4" /> {(baliPkg as any).flights.marketingAirline}</span>
-                                            <span className="px-3 py-1 rounded-full bg-gray-50 text-gray-700">From: {(baliPkg as any).flights.fromCity}</span>
-                                            <span className="px-3 py-1 rounded-full bg-green-50 text-green-700">Baggage: {(baliPkg as any).flights.baggage}</span>
+                                            <span className="px-3 py-1 rounded-full bg-blue-50 text-[#017ae3] flex items-center gap-2"><Plane className="h-4 w-4" /> {baliPkg.flights.marketingAirline}</span>
+                                            <span className="px-3 py-1 rounded-full bg-gray-50 text-gray-700">From: {baliPkg.flights.fromCity}</span>
+                                            <span className="px-3 py-1 rounded-full bg-green-50 text-green-700">Baggage: {baliPkg.flights.baggage}</span>
                                         </div>
                                         <div className="text-sm text-gray-700">
                                             <strong>Fixed Dates:</strong>
                                             <div className="mt-1 space-y-0.5">
-                                                {((baliPkg as any).flights.fixedDepartureDates as string).split('|').map((line: string, i: number) => (
+                                                {baliPkg.flights.fixedDepartureDates.split('|').map((line: string, i: number) => (
                                                     <div key={i}>{line.trim()}</div>
                                                 ))}
                                             </div>
                                         </div>
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                            {(baliPkg as any).flights.sectors.map((s: any, i: number) => (
+                                            {baliPkg.flights.sectors.map((sector: FlightSector, i: number) => (
                                                 <div key={i} className="rounded-lg border p-3">
-                                                    <div className="font-semibold text-gray-800">{s.from} → {s.to}</div>
-                                                    <div className="text-sm text-gray-600">{s.flight}</div>
-                                                    <div className="text-xs text-gray-500">Dep: {s.depart} · Arr: {s.arrive}</div>
+                                                    <div className="font-semibold text-gray-800">{sector.from} → {sector.to}</div>
+                                                    <div className="text-sm text-gray-600">{sector.flight}</div>
+                                                    <div className="text-xs text-gray-500">Dep: {sector.depart} · Arr: {sector.arrive}</div>
                                                 </div>
                                             ))}
                                         </div>
-                                        {(baliPkg as any).flights.notes && (
-                                            <div className="text-xs text-gray-500">{(baliPkg as any).flights.notes}</div>
+                                        {baliPkg.flights.notes && (
+                                            <div className="text-xs text-gray-500">{baliPkg.flights.notes}</div>
                                         )}
                                     </Card>
                                 </section>
@@ -367,6 +393,231 @@ export default function BaliPackagePage({ params }: PageProps) {
                         </aside>
                     </div>
                 </main>
+
+                {/* Suggested Packages Section */}
+                <section className="bg-gradient-to-br from-gray-50 to-blue-50 py-16">
+                    <div className="max-w-7xl mx-auto px-4">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            viewport={{ once: true }}
+                            className="text-center mb-12"
+                        >
+                            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
+                                    Explore More Bali Adventures
+                                </span>
+                            </h2>
+                            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                                Discover other incredible Bali experiences handpicked for you
+                            </p>
+                        </motion.div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {Object.values(baliPackages)
+                                .filter(pkg => pkg.id !== id)
+                                .slice(0, 3)
+                                .map((pkg, index) => (
+                                    <motion.div
+                                        key={pkg.id}
+                                        initial={{ opacity: 0, y: 30 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                                        viewport={{ once: true }}
+                                        className="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300"
+                                    >
+                                        <div className="relative h-64">
+                                            <Image
+                                                src={pkg.images[0]}
+                                                alt={pkg.packageName}
+                                                fill
+                                                className="object-cover group-hover:scale-110 transition-transform duration-500"
+                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+
+                                            {/* Price Badge */}
+                                            <div className="absolute top-4 left-4">
+                                                <div className="bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg">
+                                                    <span className="text-sm font-bold text-gray-900">
+                                                        ₹{pkg.amount.toLocaleString('en-IN')}
+                                                    </span>
+                                                    <span className="text-xs text-gray-600 ml-1">onwards</span>
+                                                </div>
+                                            </div>
+
+                                            {/* Flight Badge */}
+                                            {(pkg as BaliPackageWithFlights).flights && (
+                                                <div className="absolute top-4 right-4">
+                                                    <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium flex items-center gap-1">
+                                                        <Plane className="h-3 w-3" />
+                                                        Flights
+                                                    </div>
+                                                </div>
+                                            )}
+                                        </div>
+
+                                        <div className="p-6">
+                                            <h3 className="font-bold text-xl text-gray-900 mb-2 line-clamp-2">
+                                                {pkg.packageName}
+                                            </h3>
+
+                                            <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                                                <div className="flex items-center gap-1">
+                                                    <Calendar className="h-4 w-4" />
+                                                    <span>{pkg.days}D/{pkg.nights}N</span>
+                                                </div>
+                                                <div className="flex items-center gap-1">
+                                                    <MapPin className="h-4 w-4" />
+                                                    <span>{pkg.hotelDetails[0]?.city}</span>
+                                                </div>
+                                            </div>
+
+                                            <p className="text-gray-600 text-sm line-clamp-3 mb-4">
+                                                {pkg.description.substring(0, 120)}...
+                                            </p>
+
+                                            <div className="flex items-center justify-between">
+                                                <div className="flex items-center gap-1">
+                                                    {[...Array(5)].map((_, i) => (
+                                                        <Star key={i} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
+                                                    ))}
+                                                    <span className="text-sm text-gray-600 ml-1">4.8</span>
+                                                </div>
+
+                                                <Link href={`/bali/${pkg.id}`}>
+                                                    <Button
+                                                        size="sm"
+                                                        className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition-opacity"
+                                                    >
+                                                        View Details
+                                                    </Button>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                        </div>
+
+                        {Object.values(baliPackages).filter(pkg => pkg.id !== id).length > 3 && (
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: 0.4 }}
+                                viewport={{ once: true }}
+                                className="text-center mt-8"
+                            >
+                                <Link href="/bali">
+                                    <Button
+                                        variant="outline"
+                                        size="lg"
+                                        className="border-2 border-[#017ae3] text-[#017ae3] hover:bg-[#017ae3] hover:text-white transition-colors"
+                                    >
+                                        View All Bali Packages
+                                    </Button>
+                                </Link>
+                            </motion.div>
+                        )}
+                    </div>
+                </section>
+
+                {/* Booking Form Section */}
+                <section className="bg-white py-16">
+                    <div className="max-w-4xl mx-auto px-4">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            viewport={{ once: true }}
+                            className="text-center mb-8"
+                        >
+                            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
+                                    Ready to Book Your Dream Trip?
+                                </span>
+                            </h2>
+                            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+                                Get in touch with our travel experts to customize your perfect Bali experience
+                            </p>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            viewport={{ once: true }}
+                            className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 md:p-12 border border-blue-100"
+                        >
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                                <div>
+                                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                                        {baliPkg?.packageName}
+                                    </h3>
+                                    <div className="space-y-3 mb-6">
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                                                <Calendar className="h-4 w-4 text-white" />
+                                            </div>
+                                            <span className="text-gray-700">{baliPkg?.days} Days / {baliPkg?.nights} Nights</span>
+                                        </div>
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                                                <MapPin className="h-4 w-4 text-white" />
+                                            </div>
+                                            <span className="text-gray-700">Bali, Indonesia</span>
+                                        </div>
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
+                                                <Star className="h-4 w-4 text-white" />
+                                            </div>
+                                            <span className="text-gray-700">4.8/5 Rating from 89+ Reviews</span>
+                                        </div>
+                                    </div>
+                                    <div className="text-3xl font-bold text-gray-900 mb-2">
+                                        ₹{baliPkg?.amount?.toLocaleString('en-IN')}
+                                        <span className="text-lg font-normal text-gray-600 ml-2">per person</span>
+                                    </div>
+                                </div>
+
+                                <div className="text-center">
+                                    <Button
+                                        size="lg"
+                                        className="w-full md:w-auto bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition-opacity px-8 py-4 text-lg font-semibold"
+                                        onClick={() => setIsBookingModalOpen(true)}
+                                    >
+                                        Book This Package
+                                    </Button>
+                                    <p className="text-sm text-gray-600 mt-3">
+                                        ✓ Instant confirmation &nbsp;•&nbsp; ✓ Best price guarantee
+                                    </p>
+                                    <div className="flex items-center justify-center gap-4 mt-4">
+                                        <a
+                                            href="tel:+919310271488"
+                                            className="flex items-center gap-2 text-[#017ae3] hover:text-[#00f6ff] transition-colors"
+                                        >
+                                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                                            </svg>
+                                            Call Now
+                                        </a>
+                                        <a
+                                            href="https://wa.me/919310271488"
+                                            className="flex items-center gap-2 text-green-600 hover:text-green-700 transition-colors"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.108" />
+                                            </svg>
+                                            WhatsApp
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                </section>
 
                 <BaliReviews />
 

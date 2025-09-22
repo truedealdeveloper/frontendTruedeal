@@ -84,24 +84,6 @@ We highly recommend the company Truedeal to anyone visiting this beautiful islan
 `, media: [], booked: 'Bali'
     },
     {
-        id: '22', author: 'Prem Kumar Puri', rating: 5.0, date: 'December 2024', content: `
-        Our recent trip to Bali was an absolute delight, all thanks to the seamless arrangements made by Mr. Vineet and Mr. Gaurav. From the very beginning, their professionalism, attention to detail, and personalized service ensured that our journey was hassle-free and enjoyable. They were always available to answer our questions and made sure every aspect of the trip was well-planned.
-
-A special mention goes to our guide and driver Mr. Detria in Bali, who truly made the trip unforgettable. The guide was incredibly knowledgeable, sharing fascinating insights about Balis culture, history, and hidden gems, which enriched our experience. They were not just informative but also warm and friendly, making us feel at home throughout the journey.
-
-Our driver was equally impressive — always punctual, polite, and exceptionally skilled at navigating Balis roads. They ensured our safety and comfort at every step, and their local tips helped us explore Bali in the best possible way.
-
-Together, the guide and driver went above and beyond to make our trip special, catering to our needs with a smile and ensuring we created memories that will last a lifetime.
-
-Thank you, Mr. Vineet and Mr. Gaurav, for such impeccable service and for providing us with such an amazing team in Bali. We highly recommend your agency to anyone planning a trip and will certainly be booking with you again for our future travels!
-`, media: [], booked: 'Bali'
-    },
-    {
-        id: '24', author: 'Pranav Ramesh', rating: 5.0, date: 'December 2024', content: `
-        We had a mixture of good and bad experiences. Finding the driver and  reaching the hotel were smooth and comfortable. Day 1 comprised of visit to to Tanah lot temple and view of the sunset, which is amazing. Day 2 was supposed to be water activities, however the same was removed by the team at the 11th hour (payment included water activities) due to some festival in Bali. We were informed that there won't be any water activities in Bali in this festival duration. But we have seen people doing water activities at Nusa Penida. When enquired, I realised that the cost of every water sports activities are very high. Coming back to Day 2; so the team planned a visit to Garuda Vishnu temple instead, which would have benefited the travel team as the ticket cost are less compared to water activities. My recommendation to include 1 day Ubud day tour was not considered. After walking kilometers under the hot sun in GWT (buggy was included in our package), we went for lunch followed by visit to Uluwatu temple. Kechak dance and view at Uluwatu is really amazing. Day 3 we visited Nusa Penida. The team planned 2 days stay in Nusa Penida. However, our visits to 3 beaches were completed by 0330 pm (for those who didn't understand I will tell you, we just visited every place for taking photo and returned back). Our driver asked us to return within 15-30 min from every site. Our boat to Bali was on next day 4:30 pm. If we had 1 full day of free time, why did the driver rushed everything and completed trip by 03:30. In the hotel we stayed at Nusa Penida, we saw snake falling from the roof top to bed. After wasting 1 day in Nusa Penida (Day 4) we boarded the ferry to Bali port which is close to airport (next day early morning we have our return flight from Bali). From there we travelled 2-3 hrs north and reached Ubud at 09:30 pm. I was amazed with the ambience in Ubud. Beautiful crowd and party vibe everywhere. But our excitement didn't last long we were tired and the street slowly winded up the parties in another 1 -2 hrs. Next day we got up at 5am and left to airport at 6am. Travelled all the way down to south for the airport. As I said earlier, our trip to Bali was a mixture of good and bad experience.
-`, media: [], booked: 'Bali'
-    },
-    {
         id: '31', author: 'Deepika Aggarwal', rating: 5.0, date: 'February 2025', content: `
         I had a great experience with TrueDeal. Our honeymoon trip to Bali was planned and executed flawlessly. The team was very helpful and responsive. They made sure to provide me with the best possible service. I would definitely recommend them to my friends and family.
 `, media: [
@@ -330,7 +312,7 @@ export const BaliReviews: FC = () => {
                                 {/* Review Content */}
                                 <div className="mb-6">
                                     <blockquote className="text-gray-800 text-base leading-relaxed italic relative">
-                                        <span className="text-4xl text-blue-200 absolute -top-2 -left-2">"</span>
+                                        <span className="text-4xl text-blue-200 absolute -top-2 -left-2">&quot;</span>
                                         <p className="relative z-10 pl-6">{review.content}</p>
                                     </blockquote>
                                 </div>

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { baliPackages, BaliPackage } from './data';
+import { baliPackages, type BaliPackage } from './data';
 import { FaCalendarAlt, FaClock, FaChevronLeft, FaChevronRight, FaPlus, FaMinus, FaVolumeUp, FaVolumeMute, FaPlane } from 'react-icons/fa';
 import { IoLocationSharp } from 'react-icons/io5';
 import { Button } from "@/components/ui/button";
@@ -11,10 +11,34 @@ import { motion } from 'framer-motion';
 import TripPlanRequest from '../../components/TripPlanRequest';
 import { BaliReviews } from './BaliReviews';
 
+// Type for flight sector information
+interface FlightSector {
+    from: string;
+    to: string;
+    flight: string;
+    depart: string;
+    arrive: string;
+}
+
+// Type for flights information
+interface FlightsInfo {
+    marketingAirline: string;
+    fromCity: string;
+    baggage: string;
+    notes?: string;
+    sectors: FlightSector[];
+    fixedDepartureDates: string;
+}
+
+// Extended package type with flights
+interface BaliPackageWithFlights extends BaliPackage {
+    flights?: FlightsInfo;
+}
+
 export default function BaliPackages() {
     const [currentPage, setCurrentPage] = useState(0);
     const [openFaq, setOpenFaq] = useState<number | null>(null);
-    const packages = Object.values(baliPackages);
+    const packages = Object.values(baliPackages) as BaliPackageWithFlights[];
     const withFlightsIds = [
         'bali-fixed-departure-with-flights',
         'bali-fixed-departure',
@@ -22,7 +46,7 @@ export default function BaliPackages() {
     ];
     const packagesWithFlights = withFlightsIds
         .map((id) => packages.find((p) => p.id === id))
-        .filter(Boolean) as BaliPackage[];
+        .filter(Boolean) as BaliPackageWithFlights[];
     const packagesWithoutFlights = packages.filter((p) => !withFlightsIds.includes(p.id));
     const totalPages = Math.ceil(packagesWithoutFlights.length / 3);
     const [isMuted, setIsMuted] = useState(true);
@@ -54,7 +78,7 @@ export default function BaliPackages() {
         }
     };
 
-    const PackageCard = ({ package: baliPackage, showFlightsBadge = false }: { package: BaliPackage, showFlightsBadge?: boolean }) => {
+    const PackageCard = ({ package: baliPackage, showFlightsBadge = false }: { package: BaliPackageWithFlights, showFlightsBadge?: boolean }) => {
         const renderFixedDates = (raw?: string) => {
             if (!raw) return null;
             const parts = raw.split('|').map((p) => p.trim()).filter(Boolean);
@@ -67,11 +91,10 @@ export default function BaliPackages() {
             );
         };
         const renderRoute = () => {
-            const flights = (baliPackage as any).flights;
+            const flights = baliPackage.flights;
             if (!flights) return null;
-            // Extract first sector as origin and last as destination for a simple route label
+            // Extract first sector as origin for a simple route label
             const first = flights.sectors?.[0];
-            const last = flights.sectors?.[flights.sectors.length - 1];
             const from = flights.fromCity || first?.from || 'India';
             const to = 'Bali';
             return (
@@ -108,7 +131,7 @@ export default function BaliPackages() {
                 </div>
 
                 {/* Flights Badge */}
-                {(showFlightsBadge || (baliPackage as any).flights) && (
+                {(showFlightsBadge || baliPackage.flights) && (
                     <>
                         {/* Desktop/Tablet: top-right */}
                         <div className="hidden md:block absolute top-3 right-3 z-10">
@@ -143,7 +166,7 @@ export default function BaliPackages() {
                             <IoLocationSharp className="text-yellow-400" />
                             <span>{baliPackage.hotelDetails[0].city}</span>
                         </div>
-                        {!(baliPackage as any).flights ? (
+                        {!baliPackage.flights ? (
                             <div className="flex items-center gap-2">
                                 <FaCalendarAlt className="text-yellow-400" />
                                 <span>{baliPackage.dateStart}</span>
@@ -154,7 +177,7 @@ export default function BaliPackages() {
                                     <FaCalendarAlt className="mt-0.5 text-yellow-400" />
                                     <div className="w-full">
                                         {renderRoute()}
-                                        {renderFixedDates((baliPackage as any).flights?.fixedDepartureDates || baliPackage.dateStart)}
+                                        {renderFixedDates(baliPackage.flights?.fixedDepartureDates || baliPackage.dateStart)}
                                     </div>
                                 </div>
                             </div>
@@ -358,7 +381,7 @@ export default function BaliPackages() {
                             <div className="overflow-x-auto -mx-4 px-4">
                                 <div className="flex md:grid md:grid-cols-3 gap-6 min-w-min md:min-w-0">
                                     {packagesWithFlights.map((baliPkg) => (
-                                        <PackageCard key={baliPkg.id} package={baliPkg as BaliPackage} showFlightsBadge />
+                                        <PackageCard key={baliPkg.id} package={baliPkg} showFlightsBadge />
                                     ))}
                                 </div>
                             </div>
@@ -577,7 +600,7 @@ export default function BaliPackages() {
                             </div>
                             <h3 className="text-xl font-bold text-gray-900 mb-4">Beach Paradise</h3>
                             <p className="text-gray-600 leading-relaxed">
-                                The golden beaches in Bali are a surfer's paradise. With pristine waters and endless coastline, you'll be spoilt for choice in beach activities and water sports.
+                                The golden beaches in Bali are a surfer&apos;s paradise. With pristine waters and endless coastline, you&apos;ll be spoilt for choice in beach activities and water sports.
                             </p>
                         </motion.div>
 
