@@ -425,82 +425,105 @@ export default function BaliPackagePage({ params }: PageProps) {
                                         whileInView={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.5, delay: index * 0.1 }}
                                         viewport={{ once: true }}
-                                        className="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300"
+                                        className="relative group h-[450px] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
                                     >
-                                        <div className="relative h-64">
-                                            <Image
-                                                src={pkg.images[0]}
-                                                alt={pkg.packageName}
-                                                fill
-                                                className="object-cover group-hover:scale-110 transition-transform duration-500"
-                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                            />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                                        {/* Background Image */}
+                                        <Image
+                                            src={pkg.images[0]}
+                                            alt={pkg.packageName}
+                                            fill
+                                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                        />
 
-                                            {/* Price Badge */}
-                                            <div className="absolute top-4 left-4">
-                                                <div className="bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg">
-                                                    <span className="text-sm font-bold text-gray-900">
-                                                        ₹{pkg.amount.toLocaleString('en-IN')}
-                                                    </span>
-                                                    <span className="text-xs text-gray-600 ml-1">onwards</span>
-                                                </div>
+                                        {/* Gradient Overlay */}
+                                        <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/50 to-black" />
+
+                                        {/* Price Badge */}
+                                        <div className="absolute top-3 left-0 z-10">
+                                            <div className="bg-yellow-400 px-4 py-1.5 rounded-full shadow-lg">
+                                                <span className="line-through text-sm mr-2">
+                                                    ₹{(pkg.amount * 1.2).toLocaleString('en-IN')}/-
+                                                </span>
+                                                <span className="font-bold">
+                                                    ₹{pkg.amount.toLocaleString('en-IN')}/-
+                                                </span>
+                                                <span className="text-sm ml-1">onwards</span>
                                             </div>
-
-                                            {/* Flight Badge */}
-                                            {(pkg as BaliPackageWithFlights).flights && (
-                                                <div className="absolute top-4 right-4">
-                                                    <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium flex items-center gap-1">
-                                                        <Plane className="h-3 w-3" />
-                                                        Flights
-                                                    </div>
-                                                </div>
-                                            )}
                                         </div>
 
-                                        <div className="p-6">
-                                            <h3 className="font-bold text-xl text-gray-900 mb-2 line-clamp-2">
+                                        {/* Flight Badge */}
+                                        {(pkg as BaliPackageWithFlights).flights && (
+                                            <>
+                                                {/* Desktop/Tablet: top-right */}
+                                                <div className="hidden md:block absolute top-3 right-3 z-10">
+                                                    <div className="bg-white/95 text-gray-900 px-2.5 py-1 rounded-full shadow flex items-center gap-2">
+                                                        <Plane className="text-[#017ae3] w-4 h-4" />
+                                                        <span className="text-xs font-semibold whitespace-nowrap">With Flights</span>
+                                                    </div>
+                                                </div>
+                                                {/* Mobile: placed a bit lower to avoid price chip overlap */}
+                                                <div className="md:hidden absolute top-14 left-3 z-10">
+                                                    <div className="bg-white/95 text-gray-900 px-2 py-0.5 rounded-full shadow flex items-center gap-1.5">
+                                                        <Plane className="text-[#017ae3] w-3.5 h-3.5" />
+                                                        <span className="text-[10px] font-semibold whitespace-nowrap">With Flights</span>
+                                                    </div>
+                                                </div>
+                                            </>
+                                        )}
+
+                                        {/* Content */}
+                                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                            <h3 className="text-2xl font-bold mb-2">
                                                 {pkg.packageName}
                                             </h3>
 
-                                            <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
-                                                <div className="flex items-center gap-1">
-                                                    <Calendar className="h-4 w-4" />
+                                            {/* Details Grid */}
+                                            <div className="grid grid-cols-2 gap-y-2 text-sm mb-4">
+                                                <div className="flex items-center gap-2">
+                                                    <Calendar className="text-yellow-400 h-4 w-4" />
                                                     <span>{pkg.days}D/{pkg.nights}N</span>
                                                 </div>
-                                                <div className="flex items-center gap-1">
-                                                    <MapPin className="h-4 w-4" />
+                                                <div className="flex items-center gap-2">
+                                                    <MapPin className="text-yellow-400 h-4 w-4" />
                                                     <span>{pkg.hotelDetails[0]?.city}</span>
                                                 </div>
+                                                {!(pkg as BaliPackageWithFlights).flights ? (
+                                                    <div className="flex items-center gap-2">
+                                                        <Calendar className="text-yellow-400 h-4 w-4" />
+                                                        <span>{pkg.dateStart}</span>
+                                                    </div>
+                                                ) : (
+                                                    <div className="col-span-2">
+                                                        <div className="flex items-start gap-2">
+                                                            <Calendar className="mt-0.5 text-yellow-400 h-4 w-4" />
+                                                            <div className="w-full">
+                                                                <div className="text-xs text-white/95 font-medium">
+                                                                    {(pkg as BaliPackageWithFlights).flights?.fromCity || 'India'} → Bali
+                                                                </div>
+                                                                <div className="mt-1 text-xs leading-relaxed text-white/90">
+                                                                    {(pkg as BaliPackageWithFlights).flights?.fixedDepartureDates?.split('|').slice(0, 2).map((line, idx) => (
+                                                                        <div key={idx}>{line.trim()}</div>
+                                                                    ))}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                )}
                                             </div>
 
-                                            <p className="text-gray-600 text-sm line-clamp-3 mb-4">
-                                                {pkg.description.substring(0, 120)}...
-                                            </p>
-
-                                            <div className="flex items-center justify-between">
-                                                <div className="flex items-center gap-1">
-                                                    {[...Array(5)].map((_, i) => (
-                                                        <Star key={i} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
-                                                    ))}
-                                                    <span className="text-sm text-gray-600 ml-1">4.8</span>
-                                                </div>
-
-                                                <Link href={`/bali/${pkg.id}`}>
-                                                    <Button
-                                                        size="sm"
-                                                        className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition-opacity"
-                                                    >
-                                                        View Details
-                                                    </Button>
-                                                </Link>
-                                            </div>
+                                            {/* View Details Button */}
+                                            <Link href={`/bali/${pkg.id}`}>
+                                                <Button
+                                                    className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all duration-500"
+                                                >
+                                                    View Details
+                                                </Button>
+                                            </Link>
                                         </div>
                                     </motion.div>
                                 ))}
-                        </div>
-
-                        {Object.values(baliPackages).filter(pkg => pkg.id !== id).length > 3 && (
+                        </div>                        {Object.values(baliPackages).filter(pkg => pkg.id !== id).length > 3 && (
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState, useMemo, useCallback, memo } from 'react';
 import Link from 'next/link';
 import { baliPackages, type BaliPackage } from './data';
 import { FaCalendarAlt, FaClock, FaChevronLeft, FaChevronRight, FaPlus, FaMinus, FaVolumeUp, FaVolumeMute, FaPlane } from 'react-icons/fa';
@@ -8,8 +8,25 @@ import { IoLocationSharp } from 'react-icons/io5';
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import TripPlanRequest from '../../components/TripPlanRequest';
-import { BaliReviews } from './BaliReviews';
+import dynamic from 'next/dynamic';
+
+// Lazy load heavy components only when needed
+const TripPlanRequest = dynamic(() => import('../../components/TripPlanRequest'), {
+    ssr: false,
+    loading: () => <div className="h-96 animate-pulse bg-gray-200 rounded-lg" />
+});
+
+const BaliReviews = dynamic(() =>
+    import('./BaliReviews').then(mod => ({ default: mod.BaliReviews })), {
+    ssr: false,
+    loading: () => <div className="h-96 animate-pulse bg-gray-200 rounded-lg" />
+});
+
+// Lazy load the booking modal only when needed
+const BookingFormModal = dynamic(() =>
+    import('@/app/components/BookingFormModal').then(m => m.BookingFormModal),
+    { ssr: false }
+);
 
 // Type for flight sector information
 interface FlightSector {
@@ -38,28 +55,98 @@ interface BaliPackageWithFlights extends BaliPackage {
 export default function BaliPackages() {
     const [currentPage, setCurrentPage] = useState(0);
     const [openFaq, setOpenFaq] = useState<number | null>(null);
-    const packages = Object.values(baliPackages) as BaliPackageWithFlights[];
-    const withFlightsIds = [
-        'bali-fixed-departure-with-flights',
-        'bali-fixed-departure',
-        'bali-diwali-ex-bom'
-    ];
-    const packagesWithFlights = withFlightsIds
-        .map((id) => packages.find((p) => p.id === id))
-        .filter(Boolean) as BaliPackageWithFlights[];
-    const packagesWithoutFlights = packages.filter((p) => !withFlightsIds.includes(p.id));
-    const totalPages = Math.ceil(packagesWithoutFlights.length / 3);
+    const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+    const [selectedPackageName, setSelectedPackageName] = useState<string>('');
     const [isMuted, setIsMuted] = useState(true);
 
-    const handlePrevPage = () => {
+    // Memoize expensive calculations
+    const { packagesWithFlights, packagesWithoutFlights, totalPages } = useMemo(() => {
+        const packages = Object.values(baliPackages) as BaliPackageWithFlights[];
+        const withFlightsIds = [
+            'bali-fixed-departure-with-flights',
+            'bali-fixed-departure',
+            'bali-diwali-ex-bom'
+        ];
+        const withFlights = withFlightsIds
+            .map((id) => packages.find((p) => p.id === id))
+            .filter(Boolean) as BaliPackageWithFlights[];
+        const withoutFlights = packages.filter((p) => !withFlightsIds.includes(p.id));
+
+        return {
+            packagesWithFlights: withFlights,
+            packagesWithoutFlights: withoutFlights,
+            totalPages: Math.ceil(withoutFlights.length / 3)
+        };
+    }, []);
+
+    // Memoize current page packages to avoid recalculation
+    const currentPagePackages = useMemo(() => {
+        return packagesWithoutFlights.slice(currentPage * 3, (currentPage * 3) + 3);
+    }, [packagesWithoutFlights, currentPage]);
+
+    // Memoize static data
+    const baliHighlights = useMemo(() => [
+        {
+            title: "Culture & Traditions",
+            image: "/UGCImages/bali/Bali Banner/baliHome/1.png",
+            description: "Experience traditional Balinese ceremonies, dance performances, and local customs"
+        },
+        {
+            title: "Cuisine & Dining",
+            image: "/UGCImages/bali/Bali Banner/baliHome/2.png",
+            description: "Savor authentic Indonesian dishes, fresh seafood, and local delicacies"
+        },
+        {
+            title: "Sacred Temples",
+            image: "/UGCImages/bali/Bali Banner/baliHome/3.png",
+            description: "Visit ancient temples like Tanah Lot, Uluwatu, and Ulun Danu Beratan"
+        },
+        {
+            title: "Nature & Landscapes",
+            image: "/UGCImages/bali/Bali Banner/baliHome/4.png",
+            description: "Explore stunning rice terraces, volcanoes, and tropical forests"
+        },
+        {
+            title: "Beach Paradise",
+            image: "/UGCImages/bali/Bali Banner/baliHome/5.png",
+            description: "Relax on pristine beaches and enjoy world-class water sports"
+        },
+        {
+            title: "Wellness & Spa",
+            image: "/UGCImages/bali/Bali Banner/baliHome/6.png",
+            description: "Indulge in traditional Balinese spa treatments and yoga retreats"
+        }
+    ], []);
+
+    const faqs = useMemo(() => [
+        {
+            question: "What is the best time to visit Bali?",
+            answer: "The best time to visit Bali is from May to September when the weather is dry and less humid. December is peak season with higher prices, while January sees more rainfall."
+        },
+        {
+            question: "What activities can I do in Bali?",
+            answer: "Bali offers numerous activities including scuba diving, snorkeling, surfing, temple visits, mountain trekking, rice terrace tours, and traditional dance performances."
+        },
+        {
+            question: "Which temples should I visit in Bali?",
+            answer: "Must-visit temples include Uluwatu Temple (famous for sunset views and Kecak dance), Tanah Lot Temple, and Ulun Danu Temple."
+        },
+        {
+            question: "What adventure activities are available?",
+            answer: "You can enjoy mountain biking, trekking Mount Batur, white water rafting, parasailing, canyon tubing, and various water sports."
+        }
+    ], []);
+
+    // Memoize event handlers to prevent unnecessary re-renders
+    const handlePrevPage = useCallback(() => {
         setCurrentPage(prev => prev > 0 ? prev - 1 : prev);
-    };
+    }, []);
 
-    const handleNextPage = () => {
+    const handleNextPage = useCallback(() => {
         setCurrentPage(prev => prev < totalPages - 1 ? prev + 1 : prev);
-    };
+    }, [totalPages]);
 
-    const toggleMute = () => {
+    const toggleMute = useCallback(() => {
         const audio = document.getElementById('baliAudio') as HTMLAudioElement;
         const video = document.getElementById('baliVideo') as HTMLVideoElement;
         if (audio && video) {
@@ -76,10 +163,23 @@ export default function BaliPackages() {
             }
             setIsMuted(!isMuted);
         }
-    };
+    }, [isMuted]);
 
-    const PackageCard = ({ package: baliPackage, showFlightsBadge = false }: { package: BaliPackageWithFlights, showFlightsBadge?: boolean }) => {
-        const renderFixedDates = (raw?: string) => {
+    const handleEnquireNow = useCallback((packageName: string) => {
+        setSelectedPackageName(packageName);
+        setIsBookingModalOpen(true);
+    }, []);
+
+    const PackageCard = memo(({
+        package: baliPackage,
+        showFlightsBadge = false,
+        onEnquireNow
+    }: {
+        package: BaliPackageWithFlights,
+        showFlightsBadge?: boolean,
+        onEnquireNow: (packageName: string) => void
+    }) => {
+        const renderFixedDates = useCallback((raw?: string) => {
             if (!raw) return null;
             const parts = raw.split('|').map((p) => p.trim()).filter(Boolean);
             return (
@@ -89,8 +189,9 @@ export default function BaliPackages() {
                     ))}
                 </div>
             );
-        };
-        const renderRoute = () => {
+        }, []);
+
+        const renderRoute = useCallback(() => {
             const flights = baliPackage.flights;
             if (!flights) return null;
             // Extract first sector as origin for a simple route label
@@ -102,7 +203,11 @@ export default function BaliPackages() {
                     {from} → {to}
                 </div>
             );
-        };
+        }, [baliPackage.flights]);
+
+        const handleEnquireClick = useCallback(() => {
+            onEnquireNow(baliPackage.packageName);
+        }, [onEnquireNow, baliPackage.packageName]);
         return (
             <div className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0">
                 {/* Background Image */}
@@ -184,81 +289,41 @@ export default function BaliPackages() {
                         )}
                     </div>
 
-                    {/* View Details Button */}
-                    <Link href={`/bali/${baliPackage.id}`}>
+                    {/* Action Buttons */}
+                    <div className="flex gap-2">
+                        <Link href={`/bali/${baliPackage.id}`} className="flex-1">
+                            <Button
+                                variant="outline"
+                                className="w-full bg-white/10"
+                            >
+                                View Details
+                            </Button>
+                        </Link>
                         <Button
-                            className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all duration-500"
+                            onClick={() => onEnquireNow(baliPackage.packageName)}
+                            className="flex-1 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all duration-500 shadow-lg hover:shadow-xl"
                         >
-                            View Details
+                            Enquire Now
                         </Button>
-                    </Link>
+                    </div>
                 </div>
             </div>
         );
-    };
-
-    const faqs = [
-        {
-            question: "What is the best time to visit Bali?",
-            answer: "The best time to visit Bali is from May to September when the weather is dry and less humid. December is peak season with higher prices, while January sees more rainfall."
-        },
-        {
-            question: "What activities can I do in Bali?",
-            answer: "Bali offers numerous activities including scuba diving, snorkeling, surfing, temple visits, mountain trekking, rice terrace tours, and traditional dance performances."
-        },
-        {
-            question: "Which temples should I visit in Bali?",
-            answer: "Must-visit temples include Uluwatu Temple (famous for sunset views and Kecak dance), Tanah Lot Temple, and Ulun Danu Temple."
-        },
-        {
-            question: "What adventure activities are available?",
-            answer: "You can enjoy mountain biking, trekking Mount Batur, white water rafting, parasailing, canyon tubing, and various water sports."
-        }
-    ];
-
-    const baliHighlights = [
-        {
-            title: "Culture & Traditions",
-            image: "/UGCImages/bali/Bali Banner/baliHome/1.png",
-            description: "Experience traditional Balinese ceremonies, dance performances, and local customs"
-        },
-        {
-            title: "Cuisine & Dining",
-            image: "/UGCImages/bali/Bali Banner/baliHome/2.png",
-            description: "Savor authentic Indonesian dishes, fresh seafood, and local delicacies"
-        },
-        {
-            title: "Sacred Temples",
-            image: "/UGCImages/bali/Bali Banner/baliHome/3.png",
-            description: "Visit ancient temples like Tanah Lot, Uluwatu, and Ulun Danu Beratan"
-        },
-        {
-            title: "Nature & Landscapes",
-            image: "/UGCImages/bali/Bali Banner/baliHome/4.png",
-            description: "Explore stunning rice terraces, volcanoes, and tropical forests"
-        },
-        {
-            title: "Beach Paradise",
-            image: "/UGCImages/bali/Bali Banner/baliHome/5.png",
-            description: "Relax on pristine beaches and enjoy world-class water sports"
-        },
-        {
-            title: "Wellness & Spa",
-            image: "/UGCImages/bali/Bali Banner/baliHome/6.png",
-            description: "Indulge in traditional Balinese spa treatments and yoga retreats"
-        }
-    ];
+    });
 
     return (
         <div className="min-h-screen">
             {/* Hero Section with Video */}
             <div className="relative h-[60vh] md:h-[100vh] w-full overflow-hidden">
+                {/* Preload critical hero video */}
+                <link rel="preload" as="video" href="/UGCImages/bali/balii.mp4" type="video/mp4" />
+
                 {/* Add audio element */}
                 <audio
                     id="baliAudio"
                     loop
                     muted
-                    autoPlay
+                    preload="none"
                     className="hidden"
                 >
                     <source src="/UGCImages/bali/Bali Banner/baliMobile/bali.mp3" type="audio/mp3" />
@@ -283,6 +348,7 @@ export default function BaliPackages() {
                     loop
                     muted
                     playsInline
+                    preload="metadata"
                     className="absolute inset-0 w-full h-full object-cover"
                 >
                     <source src="/UGCImages/bali/balii.mp4" type="video/mp4" />
@@ -293,9 +359,12 @@ export default function BaliPackages() {
                         fill
                         className="object-cover"
                         priority
+                        quality={85}
+                        placeholder="blur"
+                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkrHB0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                     />
                 </video>
-                <div className="absolute inset-0 bg-black/40" /> {/* Slightly reduced opacity for better video visibility */}
+                <div className="absolute inset-0 bg-black/40" />
                 <div className="absolute inset-0 flex items-center justify-center text-center">
                     <div className="max-w-4xl px-4">
                         <motion.h1
@@ -381,7 +450,12 @@ export default function BaliPackages() {
                             <div className="overflow-x-auto -mx-4 px-4">
                                 <div className="flex md:grid md:grid-cols-3 gap-6 min-w-min md:min-w-0">
                                     {packagesWithFlights.map((baliPkg) => (
-                                        <PackageCard key={baliPkg.id} package={baliPkg} showFlightsBadge />
+                                        <PackageCard
+                                            key={baliPkg.id}
+                                            package={baliPkg}
+                                            showFlightsBadge
+                                            onEnquireNow={handleEnquireNow}
+                                        />
                                     ))}
                                 </div>
                             </div>
@@ -423,15 +497,15 @@ export default function BaliPackages() {
                             {/* Packages Grid */}
                             <div className="overflow-x-auto -mx-4 px-4">
                                 <div className="flex md:grid md:grid-cols-3 gap-6 min-w-min md:min-w-0">
-                                    {packagesWithoutFlights
-                                        .slice(currentPage * 3, (currentPage * 3) + 3)
-                                        .map((baliPkg) => (
-                                            <PackageCard key={baliPkg.id} package={baliPkg} />
-                                        ))}
+                                    {currentPagePackages.map((baliPkg) => (
+                                        <PackageCard
+                                            key={baliPkg.id}
+                                            package={baliPkg}
+                                            onEnquireNow={handleEnquireNow}
+                                        />
+                                    ))}
                                 </div>
-                            </div>
-
-                            {/* Mobile Navigation */}
+                            </div>                            {/* Mobile Navigation */}
                             <div className="mt-3 flex justify-center items-center gap-2 md:hidden">
                                 <Button
                                     onClick={handlePrevPage}
@@ -489,6 +563,9 @@ export default function BaliPackages() {
                                         alt={highlight.title}
                                         fill
                                         className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                        loading="lazy"
+                                        quality={75}
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                                     <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
@@ -642,6 +719,15 @@ export default function BaliPackages() {
                     </div>
                 </div>
             </div>
+
+            {/* Booking Form Modal */}
+            {isBookingModalOpen && (
+                <BookingFormModal
+                    isOpen={isBookingModalOpen}
+                    onClose={() => setIsBookingModalOpen(false)}
+                    destinationName={selectedPackageName || 'Bali'}
+                />
+            )}
         </div>
     );
 } 
