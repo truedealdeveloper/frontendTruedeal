@@ -36,9 +36,9 @@ export default function FixedDepartures() {
     };
 
     const DetailItem = ({ icon, text }: { icon: React.ReactNode; text?: string }) => (
-        <div className="flex items-center gap-2">
-            <span className="text-yellow-400">{icon}</span>
-            <span>{text}</span>
+        <div className="flex items-center gap-1 sm:gap-2">
+            <span className="text-yellow-400 flex-shrink-0">{icon}</span>
+            <span className="truncate text-xs sm:text-sm">{text}</span>
         </div>
     );
     DetailItem.displayName = 'DetailItem';
@@ -52,7 +52,7 @@ export default function FixedDepartures() {
         const citiesList = destination?.hotelDetails?.map(hotel => hotel.city).join(' • ');
 
         return (
-            <div className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0">
+            <div className="relative group h-[400px] sm:h-[450px] w-[280px] sm:w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0">
                 <Image 
                     src={destination?.images?.[0] || '/default-destination-image.jpg'} 
                     alt={destination?.country || 'Destination'}
@@ -63,30 +63,37 @@ export default function FixedDepartures() {
                 
                 <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/50 to-black" />
 
+                {/* Flight Icon Badge */}
+                <div className="absolute top-3 right-3 z-10">
+                    <div className="bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-lg">
+                        <FaPlane className="w-4 h-4 md:w-5 md:h-5 text-[#017ae3]" />
+                    </div>
+                </div>
+
                 {destination?.amount && (
                     <div className="absolute top-3 left-0 z-10">
-                        <div className="bg-yellow-400 px-4 py-1.5 rounded-full shadow-lg">
-                            <span className="line-through text-sm mr-2">
+                        <div className="bg-yellow-400 px-3 md:px-4 py-1.5 rounded-full shadow-lg">
+                            <span className="line-through text-xs md:text-sm mr-1 md:mr-2">
                                 ₹{(destination.amount * 1.2).toLocaleString('en-IN')}/-
                             </span>
-                            <span className="font-bold">
+                            <span className="font-bold text-xs md:text-sm">
                                 ₹{destination.amount.toLocaleString('en-IN')}/-
                             </span>
-                            <span className="text-sm ml-1">onwards</span>
+                            <span className="text-xs md:text-sm ml-1">onwards</span>
                         </div>
                     </div>
                 )}
 
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <h2 className="text-2xl font-bold mb-2">
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
+                    <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 leading-tight">
                         {destination?.days} Days {destination?.country} Tour Package
                     </h2>
 
                     {citiesList && (
-                        <p className="text-sm mb-4 text-gray-200">{citiesList}</p>
+                        <p className="text-xs sm:text-sm mb-3 sm:mb-4 text-gray-200 line-clamp-2">{citiesList}</p>
                     )}
 
-                    <div className="grid grid-cols-2 gap-y-2 text-sm mb-4">
+                    <div className="grid grid-cols-2 gap-y-1 sm:gap-y-2 text-xs sm:text-sm mb-3 sm:mb-4">
                         <DetailItem icon={<FaClock />} text={`${destination?.days}D/${destination?.nights}N`} />
                         <DetailItem icon={<IoLocationSharp />} text={destination?.hotelDetails?.[0]?.city} />
                         {type === 'withFlight' && 'flightFrom' in destination && (

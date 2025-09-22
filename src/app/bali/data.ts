@@ -51,6 +51,21 @@ export interface BaliPackage {
     amount: number;
     dateStart: string;
     dateEnd: string;
+    // If present, this package is a fixed departure WITH flights
+    flights?: {
+        marketingAirline: string;
+        fromCity: string;
+        baggage: string;
+        notes?: string;
+        sectors: {
+            from: string;
+            to: string;
+            flight: string;
+            depart: string; // local time strings as provided by supplier artwork
+            arrive: string; // local time strings as provided by supplier artwork
+        }[];
+        fixedDepartureDates: string; // human-readable grouped dates copied from artwork
+    };
     description: string;
     groupDetails: GroupDetails;
     hotelDetails: HotelDetail[];
@@ -90,14 +105,102 @@ export interface BaliPackage {
 }
 
 export const baliPackages: Record<string, BaliPackage> = {
+    baliFixedDepartureWithFlights: {
+        id: "bali-fixed-departure-with-flights",
+        packageName: "Magical Bali Holiday",
+        days: 7,
+        nights: 6,
+        amount: 57000,
+        dateStart: "October: 1,4,8,13,14; November: 3,8,11,15,18,22,26,28; December: 1,4,5,6,9,11",
+        dateEnd: "",
+        flights: {
+            marketingAirline: "VietJet (Ex AMD)",
+            fromCity: "Ahmedabad",
+            baggage: "20kg + 7kg",
+            notes: "Fixed departure seats subject to availability.",
+            fixedDepartureDates: "Oct: 1,4,8,13,14 | Nov: 3,8,11,15,18,22,26,28 | Dec: 1,4,5,6,9,11",
+            sectors: [
+                { from: "AMD", to: "DPS", flight: "", depart: "Varies by date", arrive: "Varies by date" },
+            ]
+        },
+        description: "Today’s Exclusive Deal: Bali 6N with VietJet Ex AMD fixed departures package including flights, hotels, transfers and sightseeing as per itinerary.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Twin/Double Sharing",
+            arrivalDate: "As per fixed departure dates",
+            duration: "6N7D",
+            costBasis: "Price based on 02-03 pax (avanza vehicle)"
+        },
+        hotelDetails: [
+            { city: "Kuta", hotel: "Bliss Surfer / Eden Kuta / Similar", roomType: "Deluxe/Standard" },
+            { city: "Ubud", hotel: "Ashoka Tree Ubud / Champ Lung Sari / Evitel Ubud or Similar", roomType: "Deluxe Room" }
+        ],
+        tourSummary: [
+            "Day 1: Arrival at Bali, check-in",
+            "Day 2: Watersports activity (Banana Boat, Jet Ski)",
+            "Day 3: Trans Studio Fly Over Indonesia",
+            "Day 4: Full day at leisure or hotel",
+            "Day 5: Hotel transfer to Ubud with Bali Swing, Ubud Market",
+            "Day 6: Tegenungan Waterfall, Tegalalang Rice Fields",
+            "Day 7: Floating Breakfast, day at leisure & departure"
+        ],
+        inclusions: [
+            "Return economy airfare with VietJet as per group blocks",
+            "20kg check-in + 7kg hand baggage",
+            "6 nights accommodation (Kuta + Ubud)",
+            "Daily breakfast",
+            "Return airport transfers",
+            "Watersports: Banana Boat + Jet Ski (1 round each)",
+            "Bali Swing experience",
+            "Transfers and tours on private vehicle as per itinerary"
+        ],
+        exclusions: [
+            "Visa on arrival fees",
+            "Meals not mentioned",
+            "Personal expenses, tips",
+            "Travel insurance",
+            "GST & TCS",
+            "Any items not mentioned in inclusions"
+        ],
+        itinerary: [
+            { day: 1, title: "Arrival at Bali, hotel check-in", description: "Arrive and transfer to hotel. Overnight at hotel." },
+            { day: 2, title: "Watersports Activity", description: "Enjoy Banana Boat and Jet Ski (1 round each)." },
+            { day: 3, title: "Trans Studio Fly Over Indonesia", description: "Experience the immersive Fly Over Indonesia show." },
+            { day: 4, title: "Day at Leisure", description: "Free day for optional activities or relax at hotel." },
+            { day: 5, title: "Transfer to Ubud with Swing & Market", description: "Hotel transfer to Ubud with Bali Swing and Ubud Market visit." },
+            { day: 6, title: "Tegenungan Waterfall & Tegalalang Rice Fields", description: "Sightseeing with photo stops." },
+            { day: 7, title: "Floating Breakfast & Departure", description: "Floating breakfast experience. Check out and transfer to airport." }
+        ],
+        images: [
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-desktop/8.png"
+        ],
+        mobileImages: [
+            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-mobile/1.png"
+        ],
+        experiences: [],
+        sightseeingSpots: [],
+        localFood: [],
+        culture: [],
+        additionalInfo: undefined
+    },
     baliFixedDeparture: {
         id: "bali-fixed-departure",
-        packageName: "Bali Fixed Departure Package",
+        packageName: "Bali Festive Escape",
         days: 7,
         nights: 6,
         amount: 75999,
         dateStart: "1,8,15,22,29 September",
         dateEnd: "",
+        flights: {
+            marketingAirline: "",
+            fromCity: "New Delhi & Mumbai",
+            baggage: "20kg + 7kg",
+            notes: "Indicative timings; final will be shared at ticketing.",
+            fixedDepartureDates: "Sep: 1,8,15,22,29",
+            sectors: [
+                { from: "DEL/BOM", to: "Bali(DPS)", flight: "", depart: "Varies by date", arrive: "Varies by date" },
+            ]
+        },
         description: "Experience the ultimate Bali adventure with our comprehensive 7-day tour covering Ubud, Kintamani, and Ubud. From pristine beaches to cultural landmarks, this tour offers the perfect blend of relaxation, adventure, and urban exploration.",
         groupDetails: {
             pax: "Group Tour",
@@ -859,6 +962,16 @@ And Local Lunch and drinks Balinese coffee, tea and water.`,
         amount: 69999,
         dateStart: "23 and 25 October 2025",
         dateEnd: "",
+        flights: {
+            marketingAirline: "Malaysia Airlines",
+            fromCity: "Mumbai",
+            baggage: "20kg + 7kg",
+            notes: "Group fares; timings subject to airline ops.",
+            fixedDepartureDates: "Oct: 23,25",
+            sectors: [
+                { from: "BOM", to: "Bali(DPS)", flight: "", depart: "Varies by date", arrive: "Varies by date" },
+            ]
+        },
         description: "Special Diwali fixed departure from Mumbai with Malaysia Airlines. Enjoy Kuta and Ubud with water sports, temples, Trans Studio Bali, Kintamani, Ubud market and more.",
         groupDetails: {
             pax: "Group Tour",

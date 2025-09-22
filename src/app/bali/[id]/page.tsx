@@ -4,12 +4,13 @@ import React, { use, useMemo, useRef, useState, useCallback, useEffect } from "r
 import Image from "next/image";
 import { baliPackages } from "../data";
 import { notFound } from "next/navigation";
-import { Calendar, Check, MapPin, Star, Users, X } from "lucide-react";
+import { Calendar, Check, MapPin, Star, Users, X, Plane } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import dynamic from 'next/dynamic';
 import { PageWrapper } from "@/components/page-wrapper";
 import { useMobile } from "@/hooks/use-mobile";
+import { BaliReviews } from "../BaliReviews";
 
 // Lazy load the booking modal only when needed to reduce initial JS
 const BookingFormModal = dynamic(() =>
@@ -87,7 +88,7 @@ export default function BaliPackagePage({ params }: PageProps) {
     const quickFacts = useMemo(() => ([
         { label: "Duration", value: `${baliPkg?.days} Days / ${baliPkg?.nights} Nights`, icon: Calendar },
         { label: "Location", value: "Bali, Indonesia", icon: MapPin },
-        { label: "Group", value: "Max 15", icon: Users },
+        // { label: "Group Size", value: "Max 15", icon: Users },
         { label: "Rating", value: "4.8 / 5", icon: Star },
     ]), [baliPkg?.days, baliPkg?.nights]);
 
@@ -218,6 +219,38 @@ export default function BaliPackagePage({ params }: PageProps) {
                 <main className="max-w-7xl mx-auto px-4 py-8 md:py-12">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         <div className="lg:col-span-2 min-w-0">
+                            {(baliPkg as any).flights && (
+                                <section className="mb-8">
+                                    <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">Flights & Fixed Departures</h2>
+                                    <Card className="p-5 space-y-3">
+                                        <div className="flex flex-wrap items-center gap-3 text-sm">
+                                            <span className="px-3 py-1 rounded-full bg-blue-50 text-[#017ae3] flex items-center gap-2"><Plane className="h-4 w-4" /> {(baliPkg as any).flights.marketingAirline}</span>
+                                            <span className="px-3 py-1 rounded-full bg-gray-50 text-gray-700">From: {(baliPkg as any).flights.fromCity}</span>
+                                            <span className="px-3 py-1 rounded-full bg-green-50 text-green-700">Baggage: {(baliPkg as any).flights.baggage}</span>
+                                        </div>
+                                        <div className="text-sm text-gray-700">
+                                            <strong>Fixed Dates:</strong>
+                                            <div className="mt-1 space-y-0.5">
+                                                {((baliPkg as any).flights.fixedDepartureDates as string).split('|').map((line: string, i: number) => (
+                                                    <div key={i}>{line.trim()}</div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                            {(baliPkg as any).flights.sectors.map((s: any, i: number) => (
+                                                <div key={i} className="rounded-lg border p-3">
+                                                    <div className="font-semibold text-gray-800">{s.from} → {s.to}</div>
+                                                    <div className="text-sm text-gray-600">{s.flight}</div>
+                                                    <div className="text-xs text-gray-500">Dep: {s.depart} · Arr: {s.arrive}</div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                        {(baliPkg as any).flights.notes && (
+                                            <div className="text-xs text-gray-500">{(baliPkg as any).flights.notes}</div>
+                                        )}
+                                    </Card>
+                                </section>
+                            )}
                             <section ref={overviewMountRef} className="mb-8" style={{ contentVisibility: 'auto', containIntrinsicSize: '600px' }}>
                                 <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent">About This Package</h2>
                                 <Card className="p-5">
@@ -325,14 +358,17 @@ export default function BaliPackagePage({ params }: PageProps) {
                                 <p className="text-sm text-gray-600 mb-4">per person incl. hotels & transfers</p>
                                 <div className="space-y-2 mb-4">
                                     <div className="flex items-center gap-2 text-sm"><Check className="h-4 w-4 text-green-500" /> Instant enquiry</div>
-                                    <div className="flex items-center gap-2 text-sm"><Check className="h-4 w-4 text-green-500" /> Customizable</div>
+                                    {/* <div className="flex items-center gap-2 text-sm"><Check className="h-4 w-4 text-green-500" /> Customizable</div> */}
                                     <div className="flex items-center gap-2 text-sm"><Check className="h-4 w-4 text-green-500" /> Best-price guarantee</div>
+                                    <div className="flex items-center gap-2 text-sm"><Check className="h-4 w-4 text-green-500" />24/7 Support</div>
                                 </div>
                                 <Button className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff]" onClick={() => setIsBookingModalOpen(true)}>Book This Trip</Button>
                             </div>
                         </aside>
                     </div>
                 </main>
+
+                <BaliReviews />
 
                 {isBookingModalOpen && (
                     <BookingFormModal

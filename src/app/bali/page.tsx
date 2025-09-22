@@ -3,18 +3,28 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { baliPackages, BaliPackage } from './data';
-import { FaCalendarAlt, FaClock, FaChevronLeft, FaChevronRight, FaPlus, FaMinus, FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
+import { FaCalendarAlt, FaClock, FaChevronLeft, FaChevronRight, FaPlus, FaMinus, FaVolumeUp, FaVolumeMute, FaPlane } from 'react-icons/fa';
 import { IoLocationSharp } from 'react-icons/io5';
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import TripPlanRequest from '../../components/TripPlanRequest';
+import { BaliReviews } from './BaliReviews';
 
 export default function BaliPackages() {
     const [currentPage, setCurrentPage] = useState(0);
     const [openFaq, setOpenFaq] = useState<number | null>(null);
     const packages = Object.values(baliPackages);
-    const totalPages = Math.ceil(packages.length / 3);
+    const withFlightsIds = [
+        'bali-fixed-departure-with-flights',
+        'bali-fixed-departure',
+        'bali-diwali-ex-bom'
+    ];
+    const packagesWithFlights = withFlightsIds
+        .map((id) => packages.find((p) => p.id === id))
+        .filter(Boolean) as BaliPackage[];
+    const packagesWithoutFlights = packages.filter((p) => !withFlightsIds.includes(p.id));
+    const totalPages = Math.ceil(packagesWithoutFlights.length / 3);
     const [isMuted, setIsMuted] = useState(true);
 
     const handlePrevPage = () => {
@@ -44,7 +54,32 @@ export default function BaliPackages() {
         }
     };
 
-    const PackageCard = ({ package: baliPackage }: { package: BaliPackage }) => {
+    const PackageCard = ({ package: baliPackage, showFlightsBadge = false }: { package: BaliPackage, showFlightsBadge?: boolean }) => {
+        const renderFixedDates = (raw?: string) => {
+            if (!raw) return null;
+            const parts = raw.split('|').map((p) => p.trim()).filter(Boolean);
+            return (
+                <div className="mt-1 text-xs leading-relaxed text-white/90">
+                    {parts.map((line, idx) => (
+                        <div key={idx}>{line}</div>
+                    ))}
+                </div>
+            );
+        };
+        const renderRoute = () => {
+            const flights = (baliPackage as any).flights;
+            if (!flights) return null;
+            // Extract first sector as origin and last as destination for a simple route label
+            const first = flights.sectors?.[0];
+            const last = flights.sectors?.[flights.sectors.length - 1];
+            const from = flights.fromCity || first?.from || 'India';
+            const to = 'Bali';
+            return (
+                <div className="text-xs text-white/95 font-medium">
+                    {from} → {to}
+                </div>
+            );
+        };
         return (
             <div className="relative group h-[450px] w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0">
                 {/* Background Image */}
@@ -72,6 +107,26 @@ export default function BaliPackages() {
                     </div>
                 </div>
 
+                {/* Flights Badge */}
+                {(showFlightsBadge || (baliPackage as any).flights) && (
+                    <>
+                        {/* Desktop/Tablet: top-right */}
+                        <div className="hidden md:block absolute top-3 right-3 z-10">
+                            <div className="bg-white/95 text-gray-900 px-2.5 py-1 rounded-full shadow flex items-center gap-2">
+                                <FaPlane className="text-[#017ae3] w-4 h-4" />
+                                <span className="text-xs font-semibold whitespace-nowrap">With Flights</span>
+                            </div>
+                        </div>
+                        {/* Mobile: placed a bit lower to avoid price chip overlap */}
+                        <div className="md:hidden absolute top-14 left-3 z-10">
+                            <div className="bg-white/95 text-gray-900 px-2 py-0.5 rounded-full shadow flex items-center gap-1.5">
+                                <FaPlane className="text-[#017ae3] w-3.5 h-3.5" />
+                                <span className="text-[10px] font-semibold whitespace-nowrap">With Flights</span>
+                            </div>
+                        </div>
+                    </>
+                )}
+
                 {/* Content */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                     <h2 className="text-2xl font-bold mb-2">
@@ -88,10 +143,22 @@ export default function BaliPackages() {
                             <IoLocationSharp className="text-yellow-400" />
                             <span>{baliPackage.hotelDetails[0].city}</span>
                         </div>
-                        <div className="flex items-center gap-2">
-                            <FaCalendarAlt className="text-yellow-400" />
-                            <span>{baliPackage.dateStart}</span>
-                        </div>
+                        {!(baliPackage as any).flights ? (
+                            <div className="flex items-center gap-2">
+                                <FaCalendarAlt className="text-yellow-400" />
+                                <span>{baliPackage.dateStart}</span>
+                            </div>
+                        ) : (
+                            <div className="col-span-2">
+                                <div className="flex items-start gap-2">
+                                    <FaCalendarAlt className="mt-0.5 text-yellow-400" />
+                                    <div className="w-full">
+                                        {renderRoute()}
+                                        {renderFixedDates((baliPackage as any).flights?.fixedDepartureDates || baliPackage.dateStart)}
+                                    </div>
+                                </div>
+                            </div>
+                        )}
                     </div>
 
                     {/* View Details Button */}
@@ -269,12 +336,43 @@ export default function BaliPackages() {
 
             <div className="bg-gray-50 py-16">
                 <div className="container mx-auto px-4">
-                    <h2 className="text-3xl font-bold text-center mb-12">
+                    {/* <h2 className="text-3xl font-bold text-center mb-12">
                         <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
                             Our Bali Packages
                         </span>
-                    </h2>
+                    </h2> */}
+                    {/* With Flights */}
+                    {packagesWithFlights.length > 0 && (
+                        <div className="mb-10">
+                            <div className="flex flex-col items-center mb-4">
+                                <div className="flex items-center gap-2">
+                                    <FaPlane className="text-[#017ae3] w-5 h-5" />
+                                    <h3 className="text-2xl md:text-3xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
+                                        Fixed Departures With Flights
+                                    </h3>
+                                </div>
+                                {/* <div className="mt-2">
+                                    <span className="inline-block rounded-full bg-blue-50 text-[#017ae3] px-3 py-1 text-xs md:text-sm font-semibold tracking-wide">With Flights</span>
+                                </div> */}
+                            </div>
+                            <div className="overflow-x-auto -mx-4 px-4">
+                                <div className="flex md:grid md:grid-cols-3 gap-6 min-w-min md:min-w-0">
+                                    {packagesWithFlights.map((baliPkg) => (
+                                        <PackageCard key={baliPkg.id} package={baliPkg as BaliPackage} showFlightsBadge />
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Without Flights (Land Only) */}
                     <div className="relative ">
+                        <div className="flex flex-col items-center mb-4">
+                            <h3 className="text-2xl md:text-3xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">Fixed Departures (Without Flights)</h3>
+                            <div className="mt-2">
+                                <span className="inline-block rounded-full bg-gray-100 text-gray-700 px-3 py-1 text-xs md:text-sm font-semibold tracking-wide">Land Only • No Flights</span>
+                            </div>
+                        </div>
                         <div className="relative">
                             {/* Navigation Controls */}
                             <div className="absolute top-1/2 -translate-y-1/2 left-0 z-10 hidden md:block">
@@ -302,7 +400,7 @@ export default function BaliPackages() {
                             {/* Packages Grid */}
                             <div className="overflow-x-auto -mx-4 px-4">
                                 <div className="flex md:grid md:grid-cols-3 gap-6 min-w-min md:min-w-0">
-                                    {packages
+                                    {packagesWithoutFlights
                                         .slice(currentPage * 3, (currentPage * 3) + 3)
                                         .map((baliPkg) => (
                                             <PackageCard key={baliPkg.id} package={baliPkg} />
@@ -321,11 +419,11 @@ export default function BaliPackages() {
                                     <FaChevronLeft className="w-3 h-3" />
                                 </Button>
                                 <span className="text-sm text-gray-500">
-                                    {currentPage + 1} / {totalPages}
+                                    {currentPage + 1} / {Math.max(1, Math.ceil(packagesWithoutFlights.length / 3))}
                                 </span>
                                 <Button
                                     onClick={handleNextPage}
-                                    disabled={currentPage === totalPages - 1}
+                                    disabled={currentPage === Math.ceil(packagesWithoutFlights.length / 3) - 1}
                                     variant="outline"
                                     className="rounded-full w-8 h-8 p-0"
                                 >
@@ -386,61 +484,141 @@ export default function BaliPackages() {
             {/* Packages Section */}
 
 
-            {/* FAQ Section */}
-            <div className="max-w-3xl mx-auto mt-16">
-                <h2 className="text-3xl font-bold text-center mb-8">
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
-                        Frequently Asked Questions
-                    </span>
-                </h2>
-                <div className="space-y-4">
-                    {faqs.map((faq, index) => (
-                        <div
-                            key={index}
-                            className="border rounded-lg overflow-hidden"
-                        >
-                            <button
-                                className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50"
-                                onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                            >
-                                <span className="font-medium">{faq.question}</span>
-                                {openFaq === index ? (
-                                    <FaMinus className="flex-shrink-0 text-gray-400" />
-                                ) : (
-                                    <FaPlus className="flex-shrink-0 text-gray-400" />
-                                )}
-                            </button>
-                            {openFaq === index && (
-                                <div className="px-6 py-4 bg-gray-50">
-                                    <p className="text-gray-600">{faq.answer}</p>
-                                </div>
-                            )}
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            {/* Additional Information */}
-            <div className="max-w-4xl mx-auto mt-16 prose prose-lg">
-                <h2 className="text-3xl font-bold text-center mb-8">
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
-                        Discover Bali
-                    </span>
-                </h2>
-                <div className="text-gray-600 space-y-4">
-                    <p>
-                        The beaches in Bali are something to look forward to, as the golden shaded beaches and water are fairly land for the surfers. You are basically spoilt for choices in the activities available.
-                    </p>
-                    <p>
-                        Moving on to the land, the Bali Tour Package consist of a trek in Mount Batur, visit the Tegallalang Rice Terraces and being amidst the animals in the Bali safari and marine parks, mountain biking in the landscapes and the paddy fields.
-                    </p>
-                    <p>
-                        These packages include some serene spots like the Uluwatu temple, Ulun Danu temple and Tanah lot temple where you can take in all the spirituality and serenity as well.
-                    </p>
-                </div>
-            </div>
-
             <TripPlanRequest />
+            <BaliReviews />
+
+            {/* FAQ Section */}
+            <div className="bg-gray-50 py-16">
+                <div className="max-w-3xl mx-auto px-4">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                    >
+                        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
+                                Frequently Asked Questions
+                            </span>
+                        </h2>
+                        <div className="space-y-4">
+                            {faqs.map((faq, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                                    viewport={{ once: true }}
+                                    className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
+                                >
+                                    <button
+                                        className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200"
+                                        onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                                    >
+                                        <span className="font-semibold text-gray-900 text-lg">{faq.question}</span>
+                                        <div className="ml-4 flex-shrink-0">
+                                            {openFaq === index ? (
+                                                <FaMinus className="text-blue-500 w-5 h-5" />
+                                            ) : (
+                                                <FaPlus className="text-gray-400 w-5 h-5" />
+                                            )}
+                                        </div>
+                                    </button>
+                                    {openFaq === index && (
+                                        <motion.div
+                                            initial={{ opacity: 0, height: 0 }}
+                                            animate={{ opacity: 1, height: 'auto' }}
+                                            exit={{ opacity: 0, height: 0 }}
+                                            transition={{ duration: 0.3 }}
+                                            className="px-6 py-5 bg-blue-50 border-t border-blue-100"
+                                        >
+                                            <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                                        </motion.div>
+                                    )}
+                                </motion.div>
+                            ))}
+                        </div>
+                    </motion.div>
+                </div>
+            </div>
+
+            {/* Discover Bali Section */}
+            <div className="bg-white py-16">
+                <div className="max-w-6xl mx-auto px-4">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-12"
+                    >
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
+                                Discover Bali
+                            </span>
+                        </h2>
+                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                            Immerse yourself in the enchanting beauty and rich culture of Bali, where every moment becomes a treasured memory
+                        </p>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.1 }}
+                            viewport={{ once: true }}
+                            className="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl border border-blue-100"
+                        >
+                            <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-6">
+                                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fillRule="evenodd" d="M3 4a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 13a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 01-1 1H4a1 1 0 01-1-1v-3zM12 4a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1V4zM12 13a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-3z" clipRule="evenodd" />
+                                </svg>
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-900 mb-4">Beach Paradise</h3>
+                            <p className="text-gray-600 leading-relaxed">
+                                The golden beaches in Bali are a surfer's paradise. With pristine waters and endless coastline, you'll be spoilt for choice in beach activities and water sports.
+                            </p>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                            viewport={{ once: true }}
+                            className="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border border-green-100"
+                        >
+                            <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mb-6">
+                                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fillRule="evenodd" d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zM3 15a1 1 0 011-1h1a1 1 0 011 1v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-1zm7.707-3.707a1 1 0 00-1.414-1.414L8 11.172 6.707 9.879a1 1 0 10-1.414 1.414l2 2a1 1 0 001.414 0l3-3z" clipRule="evenodd" />
+                                </svg>
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-900 mb-4">Adventure & Nature</h3>
+                            <p className="text-gray-600 leading-relaxed">
+                                Trek Mount Batur, explore Tegallalang Rice Terraces, visit Bali Safari and Marine Park, or go mountain biking through stunning landscapes and paddy fields.
+                            </p>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.3 }}
+                            viewport={{ once: true }}
+                            className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl border border-purple-100"
+                        >
+                            <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mb-6">
+                                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
+                                </svg>
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-900 mb-4">Spiritual Serenity</h3>
+                            <p className="text-gray-600 leading-relaxed">
+                                Find peace at sacred temples like Uluwatu, Ulun Danu, and Tanah Lot. These serene spots offer spiritual tranquility and breathtaking architectural beauty.
+                            </p>
+                        </motion.div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 } 
