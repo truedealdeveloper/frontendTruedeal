@@ -61,10 +61,10 @@ export interface BaliPackage {
             from: string;
             to: string;
             flight: string;
-            depart: string; // local time strings as provided by supplier artwork
-            arrive: string; // local time strings as provided by supplier artwork
+            depart: string;
+            arrive: string;
         }[];
-        fixedDepartureDates: string; // human-readable grouped dates copied from artwork
+        fixedDepartureDates: string;
     };
     description: string;
     groupDetails: GroupDetails;
@@ -172,10 +172,10 @@ export const baliPackages: Record<string, BaliPackage> = {
             { day: 7, title: "Floating Breakfast & Departure", description: "Floating breakfast experience. Check out and transfer to airport." }
         ],
         images: [
-            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-desktop/8.png"
+            "/UGCImages/bali/1.png"
         ],
         mobileImages: [
-            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-mobile/1.png"
+            "/UGCImages/bali/1.png"
         ],
         experiences: [],
         sightseeingSpots: [],
@@ -350,10 +350,10 @@ from prominent Balinese artists. (Breakfast)`,
             }
         ],
         images: [
-            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-desktop/8.png",
+            "/UGCImages/bali/2.png",
         ],
         mobileImages: [
-            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-mobile/1.png",
+            "/UGCImages/bali/2.png",
         ],
         experiences: [],
         sightseeingSpots: [],
@@ -1075,10 +1075,10 @@ And Local Lunch and drinks Balinese coffee, tea and water.`,
             }
         ],
         images: [
-            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-desktop/5.png",
+            "/UGCImages/bali/3.png",
         ],
         mobileImages: [
-            "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Bali/bali-mobile/5.png",
+            "/UGCImages/bali/3.png",
         ],
         experiences: [],
         sightseeingSpots: [],
