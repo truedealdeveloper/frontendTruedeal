@@ -12,7 +12,7 @@ import React from 'react';
 export default function FixedDepartures() {
     const [currentWithoutFlightPage, setCurrentWithoutFlightPage] = useState(0);
     const [currentWithFlightPage, setCurrentWithFlightPage] = useState(0);
-    
+
     const totalWithoutFlightPages = getTotalPages();
     const withFlightDestinations = Object.values(fixedDeparturesData);
     const totalWithFlightPages = Math.ceil(withFlightDestinations.length / 3);
@@ -29,7 +29,7 @@ export default function FixedDepartures() {
         if (section === 'withFlight') {
             setCurrentWithFlightPage(prev => prev < totalWithFlightPages - 1 ? prev + 1 : prev);
         } else {
-            setCurrentWithoutFlightPage(prev => 
+            setCurrentWithoutFlightPage(prev =>
                 prev < Math.min(totalWithoutFlightPages - 1, destinationGroups.length - 1) ? prev + 1 : prev
             );
         }
@@ -43,9 +43,9 @@ export default function FixedDepartures() {
     );
     DetailItem.displayName = 'DetailItem';
 
-    const DestinationCard = React.memo(function DestinationCard({ destination, type }: { 
-        destination: FixedDeparture | DestinationWithoutFlight, 
-        type: 'withFlight' | 'withoutFlight' 
+    const DestinationCard = React.memo(function DestinationCard({ destination, type }: {
+        destination: FixedDeparture | DestinationWithoutFlight,
+        type: 'withFlight' | 'withoutFlight'
     }) {
         if (!destination) return null;
 
@@ -53,22 +53,24 @@ export default function FixedDepartures() {
 
         return (
             <div className="relative group h-[400px] sm:h-[450px] w-[280px] sm:w-[300px] md:w-auto rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0">
-                <Image 
-                    src={destination?.images?.[0] || '/default-destination-image.jpg'} 
+                <Image
+                    src={destination?.images?.[0] || '/default-destination-image.jpg'}
                     alt={destination?.country || 'Destination'}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                 />
-                
+
                 <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/50 to-black" />
 
-                {/* Flight Icon Badge */}
-                <div className="absolute top-3 right-3 z-10">
-                    <div className="bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-lg">
-                        <FaPlane className="w-4 h-4 md:w-5 md:h-5 text-[#017ae3]" />
+                {/* Flight Icon Badge - Only show for 'withFlight' packages */}
+                {type === 'withFlight' && (
+                    <div className="absolute top-3 right-3 z-10">
+                        <div className="bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-lg">
+                            <FaPlane className="w-4 h-4 md:w-5 md:h-5 text-[#017ae3]" />
+                        </div>
                     </div>
-                </div>
+                )}
 
                 {destination?.amount && (
                     <div className="absolute top-3 left-0 z-10">
@@ -112,22 +114,22 @@ export default function FixedDepartures() {
         );
     });
 
-    const NavigationControls = ({ 
-        currentPage, 
-        totalPages, 
-        onPrev, 
+    const NavigationControls = ({
+        currentPage,
+        totalPages,
+        onPrev,
         onNext
-    }: { 
-        currentPage: number, 
-        totalPages: number, 
-        onPrev: () => void, 
+    }: {
+        currentPage: number,
+        totalPages: number,
+        onPrev: () => void,
         onNext: () => void
     }) => (
         <>
             {/* Desktop Navigation */}
             <div className="absolute top-1/2 -translate-y-1/2 left-0 z-10 hidden md:block">
-                <Button 
-                    onClick={onPrev} 
+                <Button
+                    onClick={onPrev}
                     disabled={currentPage === 0}
                     variant="outline"
                     className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -ml-5 shadow-lg"
@@ -138,8 +140,8 @@ export default function FixedDepartures() {
             </div>
 
             <div className="absolute top-1/2 -translate-y-1/2 right-0 z-10 hidden md:block">
-                <Button 
-                    onClick={onNext} 
+                <Button
+                    onClick={onNext}
                     disabled={currentPage === totalPages - 1}
                     variant="outline"
                     className="rounded-full w-10 h-10 p-0 bg-white/80 hover:bg-white -mr-5 shadow-lg"
@@ -151,8 +153,8 @@ export default function FixedDepartures() {
 
             {/* Mobile Navigation */}
             <div className="mt-3 flex justify-center items-center gap-2 md:hidden">
-                <Button 
-                    onClick={onPrev} 
+                <Button
+                    onClick={onPrev}
                     disabled={currentPage === 0}
                     variant="outline"
                     className="rounded-full w-8 h-8 p-0"
@@ -163,8 +165,8 @@ export default function FixedDepartures() {
                 <span className="text-sm text-gray-500" aria-live="polite">
                     Page {currentPage + 1} of {totalPages}
                 </span>
-                <Button 
-                    onClick={onNext} 
+                <Button
+                    onClick={onNext}
                     disabled={currentPage === totalPages - 1}
                     variant="outline"
                     className="rounded-full w-8 h-8 p-0"
@@ -190,23 +192,23 @@ export default function FixedDepartures() {
                         </div>
                     </h1>
                 </div>
-                
+
                 <div className="relative">
-                    <NavigationControls 
+                    <NavigationControls
                         currentPage={currentWithFlightPage}
                         totalPages={totalWithFlightPages}
                         onPrev={() => handlePrevPage('withFlight')}
                         onNext={() => handleNextPage('withFlight')}
                     />
-                    
+
                     <div className="overflow-x-auto -mx-4 px-4">
                         <div className="flex md:grid md:grid-cols-3 gap-6 min-w-min md:min-w-0">
                             {withFlightDestinations
                                 .slice(currentWithFlightPage * 3, (currentWithFlightPage * 3) + 3)
                                 .map((destination) => (
-                                    <DestinationCard 
-                                        key={destination.id} 
-                                        destination={destination} 
+                                    <DestinationCard
+                                        key={destination.id}
+                                        destination={destination}
                                         type="withFlight"
                                     />
                                 ))}
@@ -227,24 +229,24 @@ export default function FixedDepartures() {
                         </div>
                     </h2>
                 </div>
-                
+
                 <div className="relative">
-                    <NavigationControls 
+                    <NavigationControls
                         currentPage={currentWithoutFlightPage}
                         totalPages={totalWithoutFlightPages}
                         onPrev={() => handlePrevPage('withoutFlight')}
                         onNext={() => handleNextPage('withoutFlight')}
                     />
-                    
+
                     <div className="overflow-x-auto -mx-4 px-4">
                         <div className="flex md:grid md:grid-cols-3 gap-6 min-w-min md:min-w-0">
-                            {destinationGroups[currentWithoutFlightPage] && 
+                            {destinationGroups[currentWithoutFlightPage] &&
                                 Object.entries(destinationGroups[currentWithoutFlightPage])
                                     .filter(([]) => true)
                                     .map(([key, destination]) => (
-                                        <DestinationCard 
-                                            key={key} 
-                                            destination={destination} 
+                                        <DestinationCard
+                                            key={key}
+                                            destination={destination}
                                             type="withoutFlight"
                                         />
                                     ))
