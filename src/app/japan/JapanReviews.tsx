@@ -25,119 +25,53 @@ type Review = {
     booked: string
 }
 
-// NOTE: This mirrors the structure used in app/reviews/page.tsx and filters to Bali-only items
 const allReviews: Review[] = [
     {
-        id: '5', author: 'Akshay Bhisikar', rating: 4.0, date: 'September 2024', content: `Great Team. Well-Planned Itinerary. Good Service.
+        id: '39',
+        author: 'Saumitra saraf',
+        rating: 5.0,
+        date: 'April 2025',
+        content: `
+        Our Japan trip with Truedeal was a perfect blend of tradition and modernity. From exploring ancient temples to experiencing vibrant city life, every moment was beautifully planned and unforgettable.
+`,
+        media: [
+            { type: 'image', url: '/GoogleReviews/26/1 (3).jpeg' },
+            { type: 'image', url: '/GoogleReviews/26/1 (2).jpeg' },
+            { type: 'image', url: '/GoogleReviews/26/1 (1).jpeg' },
+            { type: 'video', url: '/GoogleReviews/26/1 (4).mp4' },
 
-We are grateful to the True Deal team for organizing an amazing trip to Bali. They assisted us every step of the way, from booking flights and exchanging money to arranging all aspects of our trip. The itinerary was well-planned and hassle-free, with options for customization. Our accommodations were all above 3-star quality, and we thoroughly enjoyed our stay. The tour drivers and guides were highly professional, and the vehicles were impeccably clean.
 
-Highly Recommended.
-Cheers to the Team!`, media: [
-            { type: 'image', url: '/GoogleReviews/5/akb (1).png' },
-            { type: 'image', url: '/GoogleReviews/5/akb (2).png' },
-            { type: 'image', url: '/GoogleReviews/5/akb (3).png' },
-            { type: 'image', url: '/GoogleReviews/5/akb (4).png' },
-            { type: 'image', url: '/GoogleReviews/5/akb (5).png' },
-            { type: 'image', url: '/GoogleReviews/5/akb (6).png' },
-            { type: 'image', url: '/GoogleReviews/5/akb (7).png' },
-            { type: 'image', url: '/GoogleReviews/5/akb (8).png' },
-        ], booked: 'Bali'
+        ],
+        booked: 'Japan'
     },
     {
-        id: '10', author: 'Chintan Gandhi', rating: 5.0, date: 'September 2024', content: `It was a great experience to book a Bali trip through True Deal. True Deal's employees are supportive, and assigned drivers are polite. Our package contains adventure activities and nice places to visit in Bali. Thank you, True Deal, for making a trip awesome.
-`, media: [
-            { type: 'image', url: '/GoogleReviews/10/chintan (1).png' },
-            { type: 'image', url: '/GoogleReviews/10/chintan (2).png' },
-            { type: 'image', url: '/GoogleReviews/10/chintan (3).png' },
-            { type: 'image', url: '/GoogleReviews/10/chintan (4).png' },
-            { type: 'image', url: '/GoogleReviews/10/chintan (5).png' },
-        ], booked: 'Bali'
-    },
-    {
-        id: '12', author: 'Shraddha Jadeja', rating: 5.0, date: 'September 2024', content: `My parents had the best time in Bali with the help of True deal. It was an amazing experience throughout with all the activities and stay planned.
-`, media: [
-            { type: 'image', url: '/GoogleReviews/12/bp (1).png' },
-            { type: 'image', url: '/GoogleReviews/12/bp (2).png' },
-            { type: 'image', url: '/GoogleReviews/12/bp (3).png' },
-            { type: 'image', url: '/GoogleReviews/12/bp (4).png' },
-            { type: 'image', url: '/GoogleReviews/12/bp (5).png' },
-            { type: 'image', url: '/GoogleReviews/12/bp (6).png' },
-        ], booked: 'Bali'
-    },
-    {
-        id: '13', author: 'Aayushi Shah', rating: 5.0, date: 'September 2024', content: `Our Bali trip was awesome. Aman gupta & Rasid Ali's efforts are incredible. They managed trip very well & we enjoyed a lott.
-`, media: [
-            { type: 'image', url: '/GoogleReviews/13/Screenshot 2025-01-08 143830.png' },
-        ], booked: 'Bali'
-    },
-    {
-        id: '14', author: 'Deepa Gurubasavaiah', rating: 5.0, date: 'September 2024', content: `Thank you for arranging the trip to Bali. It was a smooth transition in each place without any overlap. The team did a great job in co ordinating. It was truly an amazing experience! thank you Rashid and team for doing a grt job!
-`, media: [
-            { type: 'image', url: '/GoogleReviews/14/Screenshot 2025-01-08 150530.png' },
-        ], booked: 'Bali'
-    },
-    {
-        id: '19', author: 'Krishna', rating: 5.0, date: 'December 2024', content: `Thank you to the company Truedeal, especially Mr. Rashid.
-
-Mr. Rashid's expertise in planning our itinerary for a 9-day stay in Bali was phenomenal. Thanks to him, we were able to make the most of every moment and create memories that will last a lifetime.
-
-We highly recommend the company Truedeal to anyone visiting this beautiful island!
-`, media: [], booked: 'Bali'
-    },
-    {
-        id: '31', author: 'Deepika Aggarwal', rating: 5.0, date: 'February 2025', content: `
-        I had a great experience with TrueDeal. Our honeymoon trip to Bali was planned and executed flawlessly. The team was very helpful and responsive. They made sure to provide me with the best possible service. I would definitely recommend them to my friends and family.
-`, media: [
-            { type: 'image', url: '/GoogleReviews/18/1 (8).jpeg' },
-            { type: 'image', url: '/GoogleReviews/18/1 (1).jpeg' },
-            { type: 'image', url: '/GoogleReviews/18/1 (2).jpeg' },
-            { type: 'image', url: '/GoogleReviews/18/1 (3).jpeg' },
-            { type: 'image', url: '/GoogleReviews/18/1 (4).jpeg' },
-            { type: 'image', url: '/GoogleReviews/18/1 (5).jpeg' },
-            { type: 'image', url: '/GoogleReviews/18/1 (6).jpeg' },
-            { type: 'image', url: '/GoogleReviews/18/1 (7).jpeg' },
-            { type: 'image', url: '/GoogleReviews/18/1 (9).jpeg' },
-            { type: 'image', url: '/GoogleReviews/18/1 (10).jpeg' },
-            { type: 'image', url: '/GoogleReviews/18/1 (11).jpeg' },
-            { type: 'image', url: '/GoogleReviews/18/1 (12).jpeg' },
-            { type: 'image', url: '/GoogleReviews/18/1 (13).jpeg' },
-            { type: 'image', url: '/GoogleReviews/18/1 (14).jpeg' },
-            { type: 'image', url: '/GoogleReviews/18/1 (16).jpeg' },
-            { type: 'image', url: '/GoogleReviews/18/1 (17).jpeg' },
-            { type: 'image', url: '/GoogleReviews/18/1 (18).jpeg' },
-            { type: 'image', url: '/GoogleReviews/18/1 (19).jpeg' },
-            { type: 'image', url: '/GoogleReviews/18/1 (20).jpeg' },
-            { type: 'image', url: '/GoogleReviews/18/1 (21).jpeg' },
-        ], booked: 'Bali'
-    },
-    {
-        id: '38', author: 'Kartik Gowda', rating: 5.0, date: 'March 2025', content: `
-        Our Bali trip with Truedeal was absolutely magical! From scenic temples to relaxing beach resorts, everything was flawlessly organized for a truly stress-free and memorable vacation.
-`, media: [
-            { type: 'image', url: '/GoogleReviews/25/1 (1).jpeg' },
-            { type: 'image', url: '/GoogleReviews/25/1 (2).jpeg' },
-            { type: 'image', url: '/GoogleReviews/25/1 (3).jpeg' },
-            { type: 'image', url: '/GoogleReviews/25/1 (4).jpeg' },
-            { type: 'image', url: '/GoogleReviews/25/1 (5).jpeg' },
-            { type: 'image', url: '/GoogleReviews/25/1 (6).jpeg' },
-            { type: 'image', url: '/GoogleReviews/25/1 (7).jpeg' },
-            { type: 'image', url: '/GoogleReviews/25/1 (8).jpeg' },
-            { type: 'image', url: '/GoogleReviews/25/1 (9).jpeg' },
-            { type: 'image', url: '/GoogleReviews/25/1 (10).jpeg' },
-            { type: 'image', url: '/GoogleReviews/25/1 (11).jpeg' },
-            { type: 'image', url: '/GoogleReviews/25/1 (12).jpeg' },
-            { type: 'image', url: '/GoogleReviews/25/1 (13).jpeg' },
-            { type: 'image', url: '/GoogleReviews/25/1 (14).jpeg' },
-            { type: 'image', url: '/GoogleReviews/25/1 (15).jpeg' },
-            { type: 'image', url: '/GoogleReviews/25/1 (16).jpeg' },
-        ], booked: 'Bali'
+        id: '40',
+        author: ' Mr and Mrs Sourabh Jain Bhatt',
+        rating: 5.0,
+        date: 'April 2025',
+        content: `
+       Our Japan trip with Truedeal was a seamless and culturally enriching experience. From cherry blossoms to bullet trains, every detail was expertly managed, making the journey truly unforgettable.
+`,
+        media: [
+            { type: 'image', url: '/GoogleReviews/27/1 (1).jpeg' },
+            { type: 'image', url: '/GoogleReviews/27/1 (2).jpeg' },
+            { type: 'image', url: '/GoogleReviews/27/1 (3).jpeg' },
+            { type: 'image', url: '/GoogleReviews/27/1 (4).jpeg' },
+            { type: 'image', url: '/GoogleReviews/27/1 (5).jpeg' },
+            { type: 'image', url: '/GoogleReviews/27/1 (6).jpeg' },
+            { type: 'image', url: '/GoogleReviews/27/1 (7).jpeg' },
+            { type: 'image', url: '/GoogleReviews/27/1 (8).jpeg' },
+            { type: 'image', url: '/GoogleReviews/27/1 (9).jpeg' },
+            { type: 'image', url: '/GoogleReviews/27/1 (10).jpeg' },
+            { type: 'image', url: '/GoogleReviews/27/1 (11).jpeg' },
+        ],
+        booked: 'Japan'
     },
 ]
 
-const baliReviews = allReviews.filter(r => r.booked.toLowerCase().includes('bali'))
+const japanReviews = allReviews.filter(r => r.booked.toLowerCase().includes('japan'))
 
-export const BaliReviews: FC = () => {
+export const JapanReviews: FC = () => {
     const [selectedMediaIndex, setSelectedMediaIndex] = useState<number>(-1)
     const [currentReviewIndex, setCurrentReviewIndex] = useState<number>(0)
 
@@ -149,12 +83,12 @@ export const BaliReviews: FC = () => {
     const closeModal = () => setSelectedMediaIndex(-1)
 
     const nextMedia = () => {
-        const total = baliReviews[currentReviewIndex].media.length
+        const total = japanReviews[currentReviewIndex].media.length
         setSelectedMediaIndex((p) => (p + 1) % total)
     }
 
     const prevMedia = () => {
-        const total = baliReviews[currentReviewIndex].media.length
+        const total = japanReviews[currentReviewIndex].media.length
         setSelectedMediaIndex((p) => (p - 1 + total) % total)
     }
 
@@ -186,7 +120,7 @@ export const BaliReviews: FC = () => {
 
     const MediaModal = () => {
         if (selectedMediaIndex === -1) return null
-        const currentMedia = baliReviews[currentReviewIndex].media[selectedMediaIndex]
+        const currentMedia = japanReviews[currentReviewIndex].media[selectedMediaIndex]
         const handleVideoClick = (e: React.MouseEvent<HTMLVideoElement>) => {
             const v = e.target as HTMLVideoElement
             v.muted = !v.muted
@@ -210,13 +144,13 @@ export const BaliReviews: FC = () => {
                     <ChevronRightIcon className="h-12 w-12" />
                 </button>
                 <div className="absolute bottom-4 text-white text-center w-full">
-                    {selectedMediaIndex + 1} / {baliReviews[currentReviewIndex].media.length}
+                    {selectedMediaIndex + 1} / {japanReviews[currentReviewIndex].media.length}
                 </div>
             </div>
         )
     }
 
-    if (baliReviews.length === 0) return null
+    if (japanReviews.length === 0) return null
 
     return (
         <div className="bg-gradient-to-br from-blue-50 via-white to-cyan-50 py-16">
@@ -234,7 +168,7 @@ export const BaliReviews: FC = () => {
                         </span>
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Real experiences from real travelers who discovered Bali with us
+                        Real experiences from real travelers who discovered Japan with us
                     </p>
                     <div className="mt-6 flex items-center justify-center gap-2">
                         <div className="flex text-yellow-400">
@@ -243,12 +177,12 @@ export const BaliReviews: FC = () => {
                             ))}
                         </div>
                         <span className="text-lg font-semibold text-gray-700 ml-2">
-                            4.9/5 from {baliReviews.length} reviews
+                            4.9/5 from {japanReviews.length} reviews
                         </span>
                     </div>
                 </motion.div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    {baliReviews.map((review, reviewIndex) => (
+                    {japanReviews.map((review, reviewIndex) => (
                         <motion.div
                             key={review.id}
                             initial={{ opacity: 0, y: 30 }}
@@ -381,5 +315,4 @@ export const BaliReviews: FC = () => {
         </div>
     )
 }
-
 

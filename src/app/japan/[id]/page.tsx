@@ -10,6 +10,10 @@ import { Card } from "@/components/ui/card";
 import dynamic from 'next/dynamic';
 import { PageWrapper } from "@/components/page-wrapper";
 import { useMobile } from "@/hooks/use-mobile";
+import { JapanReviews } from "../JapanReviews";
+import Link from "next/link";
+import { motion } from 'framer-motion';
+
 
 // Lazy load the booking modal only when needed to reduce initial JS
 const BookingFormModal = dynamic(() =>
@@ -87,7 +91,7 @@ export default function JapanPackagePage({ params }: PageProps) {
     const quickFacts = useMemo(() => ([
         { label: "Duration", value: `${japanPkg?.days} Days / ${japanPkg?.nights} Nights`, icon: Calendar },
         { label: "Location", value: "Japan", icon: MapPin },
-        { label: "Group", value: "Max 15", icon: Users },
+        // { label: "Group Size", value: "Max 15", icon: Users },
         { label: "Rating", value: "4.9 / 5", icon: Star },
     ]), [japanPkg?.days, japanPkg?.nights]);
 
@@ -327,12 +331,227 @@ export default function JapanPackagePage({ params }: PageProps) {
                                     <div className="flex items-center gap-2 text-sm"><Check className="h-4 w-4 text-green-500" /> Instant enquiry</div>
                                     <div className="flex items-center gap-2 text-sm"><Check className="h-4 w-4 text-green-500" /> Customizable</div>
                                     <div className="flex items-center gap-2 text-sm"><Check className="h-4 w-4 text-green-500" /> Best-price guarantee</div>
+                                    <div className="flex items-center gap-2 text-sm"><Check className="h-4 w-4 text-green-500" />24/7 Support</div>
                                 </div>
                                 <Button className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff]" onClick={() => setIsBookingModalOpen(true)}>Book This Trip</Button>
                             </div>
                         </aside>
                     </div>
                 </main>
+
+                {/* Suggested Packages Section */}
+                <section className="bg-gradient-to-br from-gray-50 to-blue-50 py-16">
+                    <div className="max-w-7xl mx-auto px-4">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            viewport={{ once: true }}
+                            className="text-center mb-12"
+                        >
+                            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
+                                    Explore More Japan Adventures
+                                </span>
+                            </h2>
+                            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                                Discover other incredible Japan experiences handpicked for you
+                            </p>
+                        </motion.div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {Object.values(japanPackages)
+                                .filter(pkg => pkg.id !== id)
+                                .slice(0, 3)
+                                .map((pkg, index) => (
+                                    <motion.div
+                                        key={pkg.id}
+                                        initial={{ opacity: 0, y: 30 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                                        viewport={{ once: true }}
+                                        className="relative group h-[450px] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+                                    >
+                                        {/* Background Image */}
+                                        <Image
+                                            src={pkg.images[0]}
+                                            alt={pkg.packageName}
+                                            fill
+                                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                        />
+
+                                        {/* Gradient Overlay */}
+                                        <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/50 to-black" />
+
+                                        {/* Price Badge */}
+                                        <div className="absolute top-3 left-0 z-10">
+                                            <div className="bg-yellow-400 px-4 py-1.5 rounded-full shadow-lg">
+                                                <span className="line-through text-sm mr-2">
+                                                    ₹{(pkg.amount * 1.2).toLocaleString('en-IN')}/-
+                                                </span>
+                                                <span className="font-bold">
+                                                    ₹{pkg.amount.toLocaleString('en-IN')}/-
+                                                </span>
+                                                <span className="text-sm ml-1">onwards</span>
+                                            </div>
+                                        </div>
+
+                                        {/* Content */}
+                                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                            <h3 className="text-2xl font-bold mb-2">
+                                                {pkg.packageName}
+                                            </h3>
+
+                                            {/* Details Grid */}
+                                            <div className="grid grid-cols-2 gap-y-2 text-sm mb-4">
+                                                <div className="flex items-center gap-2">
+                                                    <Calendar className="text-yellow-400 h-4 w-4" />
+                                                    <span>{pkg.days}D/{pkg.nights}N</span>
+                                                </div>
+                                                <div className="flex items-center gap-2">
+                                                    <MapPin className="text-yellow-400 h-4 w-4" />
+                                                    <span>{pkg.hotelDetails[0]?.city}</span>
+                                                </div>
+                                                <div className="flex items-center gap-2">
+                                                    <Calendar className="text-yellow-400 h-4 w-4" />
+                                                    <span>{pkg.dateStart}</span>
+                                                </div>
+                                            </div>
+
+                                            {/* View Details Button */}
+                                            <Link href={`/japan/${pkg.id}`}>
+                                                <Button
+                                                    className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all duration-500"
+                                                >
+                                                    View Details
+                                                </Button>
+                                            </Link>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                        </div>
+
+                        {Object.values(japanPackages).filter(pkg => pkg.id !== id).length > 3 && (
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: 0.4 }}
+                                viewport={{ once: true }}
+                                className="text-center mt-8"
+                            >
+                                <Link href="/japan">
+                                    <Button
+                                        variant="outline"
+                                        size="lg"
+                                        className="border-2 border-[#017ae3] text-[#017ae3] hover:bg-[#017ae3] hover:text-white transition-colors"
+                                    >
+                                        View All Japan Packages
+                                    </Button>
+                                </Link>
+                            </motion.div>
+                        )}
+                    </div>
+                </section>
+
+                {/* Booking Form Section */}
+                <section className="bg-white py-16">
+                    <div className="max-w-4xl mx-auto px-4">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            viewport={{ once: true }}
+                            className="text-center mb-8"
+                        >
+                            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
+                                    Ready to Book Your Dream Trip?
+                                </span>
+                            </h2>
+                            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+                                Get in touch with our travel experts to customize your perfect Japan experience
+                            </p>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            viewport={{ once: true }}
+                            className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 md:p-12 border border-blue-100"
+                        >
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                                <div>
+                                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                                        {japanPkg?.packageName}
+                                    </h3>
+                                    <div className="space-y-3 mb-6">
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                                                <Calendar className="h-4 w-4 text-white" />
+                                            </div>
+                                            <span className="text-gray-700">{japanPkg?.days} Days / {japanPkg?.nights} Nights</span>
+                                        </div>
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                                                <MapPin className="h-4 w-4 text-white" />
+                                            </div>
+                                            <span className="text-gray-700">Japan</span>
+                                        </div>
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
+                                                <Star className="h-4 w-4 text-white" />
+                                            </div>
+                                            <span className="text-gray-700">4.9/5 Rating from 156+ Reviews</span>
+                                        </div>
+                                    </div>
+                                    <div className="text-3xl font-bold text-gray-900 mb-2">
+                                        ₹{japanPkg?.amount?.toLocaleString('en-IN')}
+                                        <span className="text-lg font-normal text-gray-600 ml-2">per person</span>
+                                    </div>
+                                </div>
+
+                                <div className="text-center">
+                                    <Button
+                                        size="lg"
+                                        className="w-full md:w-auto bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:opacity-90 transition-opacity px-8 py-4 text-lg font-semibold"
+                                        onClick={() => setIsBookingModalOpen(true)}
+                                    >
+                                        Book This Package
+                                    </Button>
+                                    <p className="text-sm text-gray-600 mt-3">
+                                        ✓ Instant confirmation &nbsp;•&nbsp; ✓ Best price guarantee
+                                    </p>
+                                    <div className="flex items-center justify-center gap-4 mt-4">
+                                        <a
+                                            href="tel:+919310271488"
+                                            className="flex items-center gap-2 text-[#017ae3] hover:text-[#00f6ff] transition-colors"
+                                        >
+                                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                                            </svg>
+                                            Call Now
+                                        </a>
+                                        <a
+                                            href="https://wa.me/919310271488"
+                                            className="flex items-center gap-2 text-green-600 hover:text-green-700 transition-colors"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.108" />
+                                            </svg>
+                                            WhatsApp
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                </section>
+
+                <JapanReviews />
 
                 {isBookingModalOpen && (
                     <BookingFormModal
