@@ -4,7 +4,7 @@ import React, { use, useMemo, useRef, useState, useCallback, useEffect } from "r
 import Image from "next/image";
 import { japanPackages } from "../data";
 import { notFound } from "next/navigation";
-import { Calendar, Check, MapPin, Star, Users, X } from "lucide-react";
+import { Calendar, Check, MapPin, Star, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import dynamic from 'next/dynamic';

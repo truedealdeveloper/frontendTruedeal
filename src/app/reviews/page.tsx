@@ -595,28 +595,6 @@ Great service keep it up 👍
         booked: 'Bali'
     },
     {
-        id: '32',
-        author: 'Kapil',
-        rating: 5.0,
-        date: 'February 2025',
-        content: `
-        Bali
-`,
-        media: [
-            { type: 'image', url: '/GoogleReviews/19/1 (1).jpeg' },
-            { type: 'image', url: '/GoogleReviews/19/1 (2).jpeg' },
-            { type: 'image', url: '/GoogleReviews/19/1 (3).jpeg' },
-            { type: 'image', url: '/GoogleReviews/19/1 (4).jpeg' },
-            { type: 'image', url: '/GoogleReviews/19/1 (5).jpeg' },
-            { type: 'image', url: '/GoogleReviews/19/1 (6).jpeg' },
-            { type: 'image', url: '/GoogleReviews/19/1 (7).jpeg' },
-            { type: 'image', url: '/GoogleReviews/19/1 (8).jpeg' },
-            { type: 'image', url: '/GoogleReviews/19/1 (9).jpeg' },
-            { type: 'image', url: '/GoogleReviews/19/1 (10).jpeg' },
-        ],
-        booked: 'Bali'
-    },
-    {
         id: '33',
         author: 'Rajkuvar Deshmukh',
         rating: 5.0,

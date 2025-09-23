@@ -575,7 +575,7 @@ export default function JapanPackages() {
                             </div>
                             <h3 className="text-xl font-bold text-gray-900 mb-4">Modern Wonders</h3>
                             <p className="text-gray-600 leading-relaxed">
-                                Experience the cutting-edge technology and modern attractions like Tokyo Skytree, bullet trains, and innovative entertainment complexes that define Japan's futuristic landscape.
+                                Experience the cutting-edge technology and modern attractions like Tokyo Skytree, bullet trains, and innovative entertainment complexes that define Japan&apos;s futuristic landscape.
                             </p>
                         </motion.div>
 
@@ -611,7 +611,7 @@ export default function JapanPackages() {
                             </div>
                             <h3 className="text-xl font-bold text-gray-900 mb-4">Culinary Delights</h3>
                             <p className="text-gray-600 leading-relaxed">
-                                Savor authentic Japanese cuisine from street food to Michelin-starred restaurants. Enjoy fresh sushi, ramen, tempura, and seasonal specialties that showcase Japan's culinary mastery.
+                                Savor authentic Japanese cuisine from street food to Michelin-starred restaurants. Enjoy fresh sushi, ramen, tempura, and seasonal specialties that showcase Japan&apos;s culinary mastery.
                             </p>
                         </motion.div>
                     </div>
