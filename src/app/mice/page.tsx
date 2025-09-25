@@ -272,121 +272,6 @@ export default function MICEPage() {
         </div>
       </section>
 
-      {/* Services Section - Improve grid layout */}
-      <section id="services" className="py-16 sm:py-20 bg-white w-full">
-        <div className="container mx-auto px-4 max-w-[100vw]">
-          <motion.div
-            initial={{ opacity: 1, y: 0 }}
-            className="text-center mb-12 sm:mb-16"
-          >
-            <div className="inline-flex items-center px-4 py-2 bg-[#017ae3]/10 rounded-full text-[#017ae3] text-sm font-medium mb-4">
-              <Star className="h-4 w-4 mr-2" />
-              <span>Our MICE Services</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Comprehensive Solutions for Corporate Events
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From intimate meetings to large-scale conferences, we provide end-to-end solutions tailored to your
-              specific needs.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {services.map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 1, y: 0 }}
-                className="group relative overflow-hidden rounded-2xl shadow-lg"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-[#017ae3] to-[#00f6ff]"></div>
-                <div className="relative p-4 sm:p-6 h-full flex flex-col">
-                  <div className="mb-4 sm:mb-6 w-12 sm:w-16 h-12 sm:h-16 rounded-full bg-white/20 flex items-center justify-center">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">{service.title}</h3>
-                  <p className="text-sm sm:text-base text-white/90 mb-4 sm:mb-6 flex-grow">{service.description}</p>
-                  <Link href={service.link} className="inline-flex items-center text-white font-medium group text-sm sm:text-base">
-                    Learn More
-                    <ChevronRight className="ml-1 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-300" />
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Recent Events Section */}
-      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white w-full">
-        <div className="container mx-auto px-4 max-w-[100vw]">
-          <motion.div
-            initial={{ opacity: 1, y: 0 }}
-            className="text-center mb-12 sm:mb-16"
-          >
-            <div className="inline-flex items-center px-4 py-2 bg-[#017ae3]/10 rounded-full text-[#017ae3] text-sm font-medium mb-4">
-              <Globe className="h-4 w-4 mr-2" />
-              <span>Recent Success Stories</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Events We&apos;ve Organized
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Some of our best corporate trips organized across different destinations, showcasing our expertise in creating memorable experiences.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {[
-              { location: "Phuket Corporate Trip" },
-              { location: "GOA Corporate Retreat" },
-              { location: "Malaysia Business Tour" },
-              { location: "Pattaya Incentive Trip" },
-              { location: "Singapore Corporate Event" }
-            ].map((event, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 1, y: 0 }}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group border border-gray-100"
-              >
-                <div className="relative overflow-hidden h-64 bg-gradient-to-br from-[#017ae3] to-[#00f6ff]">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <Globe className="h-12 w-12 mb-4 mx-auto" />
-                      <h3 className="text-xl font-bold">{event.location}</h3>
-                    </div>
-                  </div>
-                  <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-green-100 flex items-center justify-center shadow-lg">
-                    <CheckCircle2 className="h-4 w-4 text-green-600" />
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] flex items-center justify-center mr-3">
-                      <Briefcase className="h-5 w-5 text-white" />
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900">Corporate Event</h3>
-                  </div>
-                  <div className="border-t border-gray-100 pt-3">
-                    <span className="text-xs text-gray-500 uppercase tracking-wide">Successfully Executed</span>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link
-              href="/contact"
-              className="inline-flex items-center bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white font-medium px-6 py-3 rounded-full transition-all duration-300 shadow-lg shadow-[#017ae3]/20 hover:shadow-xl hover:shadow-[#017ae3]/30 group"
-            >
-              Plan Your Next Event
-              <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Singapore Trip Gallery */}
       <section className="py-16 sm:py-20 bg-white w-full">
         <div className="container mx-auto px-4 max-w-[100vw]">
@@ -584,6 +469,121 @@ export default function MICEPage() {
                 <span className="text-blue-800 font-medium">Corporate Team Building Event</span>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section - Improve grid layout */}
+      <section id="services" className="py-16 sm:py-20 bg-white w-full">
+        <div className="container mx-auto px-4 max-w-[100vw]">
+          <motion.div
+            initial={{ opacity: 1, y: 0 }}
+            className="text-center mb-12 sm:mb-16"
+          >
+            <div className="inline-flex items-center px-4 py-2 bg-[#017ae3]/10 rounded-full text-[#017ae3] text-sm font-medium mb-4">
+              <Star className="h-4 w-4 mr-2" />
+              <span>Our MICE Services</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Comprehensive Solutions for Corporate Events
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              From intimate meetings to large-scale conferences, we provide end-to-end solutions tailored to your
+              specific needs.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {services.map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 1, y: 0 }}
+                className="group relative overflow-hidden rounded-2xl shadow-lg"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-[#017ae3] to-[#00f6ff]"></div>
+                <div className="relative p-4 sm:p-6 h-full flex flex-col">
+                  <div className="mb-4 sm:mb-6 w-12 sm:w-16 h-12 sm:h-16 rounded-full bg-white/20 flex items-center justify-center">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">{service.title}</h3>
+                  <p className="text-sm sm:text-base text-white/90 mb-4 sm:mb-6 flex-grow">{service.description}</p>
+                  <Link href={service.link} className="inline-flex items-center text-white font-medium group text-sm sm:text-base">
+                    Learn More
+                    <ChevronRight className="ml-1 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-300" />
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Recent Events Section */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white w-full">
+        <div className="container mx-auto px-4 max-w-[100vw]">
+          <motion.div
+            initial={{ opacity: 1, y: 0 }}
+            className="text-center mb-12 sm:mb-16"
+          >
+            <div className="inline-flex items-center px-4 py-2 bg-[#017ae3]/10 rounded-full text-[#017ae3] text-sm font-medium mb-4">
+              <Globe className="h-4 w-4 mr-2" />
+              <span>Recent Success Stories</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Events We&apos;ve Organized
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Some of our best corporate trips organized across different destinations, showcasing our expertise in creating memorable experiences.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {[
+              { location: "Phuket Corporate Trip" },
+              { location: "GOA Corporate Retreat" },
+              { location: "Malaysia Business Tour" },
+              { location: "Pattaya Incentive Trip" },
+              { location: "Singapore Corporate Event" }
+            ].map((event, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 1, y: 0 }}
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group border border-gray-100"
+              >
+                <div className="relative overflow-hidden h-64 bg-gradient-to-br from-[#017ae3] to-[#00f6ff]">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center text-white">
+                      <Globe className="h-12 w-12 mb-4 mx-auto" />
+                      <h3 className="text-xl font-bold">{event.location}</h3>
+                    </div>
+                  </div>
+                  <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-green-100 flex items-center justify-center shadow-lg">
+                    <CheckCircle2 className="h-4 w-4 text-green-600" />
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] flex items-center justify-center mr-3">
+                      <Briefcase className="h-5 w-5 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900">Corporate Event</h3>
+                  </div>
+                  <div className="border-t border-gray-100 pt-3">
+                    <span className="text-xs text-gray-500 uppercase tracking-wide">Successfully Executed</span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              href="/contact"
+              className="inline-flex items-center bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white font-medium px-6 py-3 rounded-full transition-all duration-300 shadow-lg shadow-[#017ae3]/20 hover:shadow-xl hover:shadow-[#017ae3]/30 group"
+            >
+              Plan Your Next Event
+              <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
           </div>
         </div>
       </section>
