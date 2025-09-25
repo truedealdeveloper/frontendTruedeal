@@ -98,7 +98,7 @@ export default function MICEPage() {
         if (!selectedImage) return
 
         let newIndex = selectedImage.index
-        let maxImages = selectedImage.total
+        const maxImages = selectedImage.total
 
         if (direction === 'prev') {
             newIndex = newIndex > 0 ? newIndex - 1 : maxImages - 1
