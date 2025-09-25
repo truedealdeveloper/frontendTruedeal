@@ -13,9 +13,10 @@ import { Destination, destinations } from "@/app/config/destinations"
 // Top navigation items
 const topNavItems = [
     { href: "/#fixedDeparture", label: "Upcoming Trips" },
-    { href: "/blogs", label: "Blogs" },
-    { href: "/about-us", label: "About Us" },
-    { href: "/payment", label: "Payments" },
+    { href: "/#christmasNewYear", label: "Christmas & New Year Offers" },
+    // { href: "/blogs", label: "Blogs" },
+    // { href: "/about-us", label: "About Us" },
+    // { href: "/payment", label: "Payments" },
 ]
 
 // Bottom menu items
@@ -492,7 +493,7 @@ export default function Navbar() {
 
             {/* Bottom Menu Bar - reduced padding and gap */}
             {isHomePage && (
-                <div className="bg-[#00DEF7]" ref={bottomBarRef}>
+                <div className="bg-white shadow-sm border-t border-gray-100" ref={bottomBarRef}>
                     <div className="max-w-7xl mx-auto">
                         <div className="hidden md:flex items-center justify-center gap-12 px-4 flex-nowrap h-11">
                             {menuItems.map((item) => {
@@ -505,9 +506,9 @@ export default function Navbar() {
                                         onMouseLeave={handleMouseLeave}
                                     >
                                         <div className="relative group py-2 px-2 block whitespace-nowrap cursor-default select-none">
-                                            <span className="relative z-10 text-white text-[14px] font-normal group-hover:text-white/90 transition-colors flex items-center gap-1">
+                                            <span className="relative z-10 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] bg-clip-text text-transparent text-[14px] font-medium group-hover:from-[#00f6ff] group-hover:to-[#017ae3] transition-all duration-300 flex items-center gap-1">
                                                 {item.label}
-                                                <ChevronDown className="h-3 w-3 opacity-80" />
+                                                <ChevronDown className="h-3 w-3 opacity-80 text-[#017ae3]" />
                                             </span>
                                         </div>
                                         {dropdownMenus[menuId as keyof typeof dropdownMenus] && (
@@ -539,21 +540,21 @@ export default function Navbar() {
                     {/* Side Drawer */}
                     <div className="md:hidden fixed top-0 right-0 h-full w-[80%] max-w-md bg-white z-50 shadow-xl animate-slideInRight">
                         {/* Header */}
-                        <div className="flex items-center justify-between px-4 py-3 bg-[#00DEF7]">
+                        <div className="flex items-center justify-between px-4 py-3 bg-white border-b border-gray-200">
                             <div className="flex items-center gap-2">
-                                <Phone className="h-5 w-5 text-white" />
-                                <span className="text-white text-sm">+91-9310271488</span>
+                                <Phone className="h-5 w-5 text-gray-700" />
+                                <span className="text-gray-900 text-sm font-medium">+91-9310271488</span>
                             </div>
                             <div className="flex items-center gap-4">
                                 <Search
-                                    className="h-5 w-5 text-white cursor-pointer"
+                                    className="h-5 w-5 text-gray-700 cursor-pointer hover:text-gray-900 transition-colors"
                                     onClick={() => {
                                         setIsMenuOpen(false);
                                         setIsSearchModalOpen(true);
                                     }}
                                 />
                                 <X
-                                    className="h-6 w-6 text-white cursor-pointer"
+                                    className="h-6 w-6 text-gray-700 cursor-pointer hover:text-gray-900 transition-colors"
                                     onClick={() => setIsMenuOpen(false)}
                                 />
                             </div>
@@ -598,7 +599,7 @@ export default function Navbar() {
                                                     : 'max-h-0 opacity-0 overflow-hidden'
                                                     }`}
                                             >
-                                                <div className="bg-gray-50 ml-4 mr-2 rounded-lg">
+                                                <div className="bg-gray-50 ml-4 mr-2 rounded-lg ">
                                                     {menuId === 'international-packages' ? (
                                                         // Special handling for international packages
                                                         <div className="py-2 max-h-[50vh] overflow-y-auto">

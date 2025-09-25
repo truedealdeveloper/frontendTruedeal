@@ -29,22 +29,24 @@ import AustraliaBanner from "./components/homepage/AustraliaBanner";
 import USA from "./components/homepage/USA";
 import SouthKorea from "./components/homepage/SouthKorea";
 import Turkey from "./components/homepage/Turkey";
+// import ChristmasNewYear from "./components/homepage/ChristmasNewYear";
 // import TenYearSale from "./components/homepage/10YearSale";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-scree  n">
       <HeroSection />
       {/* <TenYearSale /> */}
       {/* <BannerCarousel />   */}
       <section id="fixedDeparture" className="mt-6">
         <FixedDepartures />
       </section>
+      {/* <ChristmasNewYear /> */}
       <div className="">
-        {/* <ChardhamYatra /> */} 
+        {/* <ChardhamYatra /> */}
         <AustraliaBanner />
         <SingaporeBanner />
-        <SriLanka />  
+        <SriLanka />
         <BaliBanner />
         <VietnamBanner />
         <LaosCambodiaBanner />
@@ -52,7 +54,7 @@ export default function Home() {
         <USA />
         <SouthKorea />
         <Turkey />
-      <NoCostEMIPage />
+        <NoCostEMIPage />
         {/* <AustraliaBanner /> */}
       </div>
       {/* <Destination /> */}
@@ -68,7 +70,7 @@ export default function Home() {
       {/* <CurrencyExchange /> */}
 
       <Gallery />
-      
+
       {/* <WallOfLove /> */}
       <Sponsors />
       <ReviewsGlimpse />
