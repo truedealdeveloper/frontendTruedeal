@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
@@ -21,11 +21,107 @@ import {
   Utensils,
   Camera,
   ChevronRight,
+  X,
+  ChevronLeft,
+  ChevronRight as ChevronRightIcon,
 } from "lucide-react"
 
 export default function MICEPage() {
   // Refs for scroll animations
   const heroRef = useRef(null)
+
+  // Modal state for image viewer
+  const [selectedImage, setSelectedImage] = useState<{ src: string, alt: string, index: number, total: number } | null>(null)
+  const [loadedImages, setLoadedImages] = useState<{ [key: string]: boolean }>({})
+
+  // Keyboard navigation effect
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!selectedImage) return
+
+      if (e.key === 'Escape') {
+        closeImageModal()
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault()
+        if (selectedImage.src.includes('gallantt_Singapore')) {
+          navigateImage('prev', 'singapore')
+        } else if (selectedImage.src.includes('rotary_phuket')) {
+          navigateImage('prev', 'phuket')
+        } else if (selectedImage.src.includes('gallant_goa')) {
+          navigateImage('prev', 'goa')
+        }
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault()
+        if (selectedImage.src.includes('gallantt_Singapore')) {
+          navigateImage('next', 'singapore')
+        } else if (selectedImage.src.includes('rotary_phuket')) {
+          navigateImage('next', 'phuket')
+        } else if (selectedImage.src.includes('gallant_goa')) {
+          navigateImage('next', 'goa')
+        }
+      }
+    }
+
+    if (selectedImage) {
+      document.addEventListener('keydown', handleKeyDown)
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [selectedImage])
+
+  // Function to handle image load success
+  const handleImageLoad = (imagePath: string) => {
+    setLoadedImages(prev => ({ ...prev, [imagePath]: true }))
+  }
+
+  // Function to handle image load error
+  const handleImageError = (imagePath: string) => {
+    setLoadedImages(prev => ({ ...prev, [imagePath]: false }))
+  }
+
+  // Function to open image modal
+  const openImageModal = (src: string, alt: string, index: number, total: number) => {
+    setSelectedImage({ src, alt, index, total })
+    document.body.style.overflow = 'hidden'
+  }
+
+  // Function to close image modal
+  const closeImageModal = () => {
+    setSelectedImage(null)
+    document.body.style.overflow = 'unset'
+  }
+
+  // Function to navigate images in modal
+  const navigateImage = (direction: 'prev' | 'next', imageSet: 'singapore' | 'phuket' | 'goa') => {
+    if (!selectedImage) return
+
+    let newIndex = selectedImage.index
+    let maxImages = selectedImage.total
+
+    if (direction === 'prev') {
+      newIndex = newIndex > 0 ? newIndex - 1 : maxImages - 1
+    } else {
+      newIndex = newIndex < maxImages - 1 ? newIndex + 1 : 0
+    }
+
+    let newSrc = ''
+    let newAlt = ''
+
+    if (imageSet === 'singapore') {
+      newSrc = `/UGCImages/gallantt_Singapore/1 (${newIndex + 1}).jpg`
+      newAlt = `Singapore corporate trip - Image ${newIndex + 1}`
+    } else if (imageSet === 'phuket') {
+      newSrc = `/UGCImages/gallantt/rotary_phuket/1 (${newIndex + 1}).jpeg`
+      newAlt = `Phuket corporate trip - Image ${newIndex + 1}`
+    } else if (imageSet === 'goa') {
+      newSrc = `/UGCImages/gallantt/gallant_goa/1 (${newIndex + 1}).jpeg`
+      newAlt = `GOA corporate trip - Image ${newIndex + 1}`
+    }
+
+    setSelectedImage({ src: newSrc, alt: newAlt, index: newIndex, total: maxImages })
+  }
 
   const services = [
     {
@@ -236,39 +332,32 @@ export default function MICEPage() {
               Events We&apos;ve Organized
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Trusted by leading organizations for their corporate events across India and international destinations.
+              Some of our best corporate trips organized across different destinations, showcasing our expertise in creating memorable experiences.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {[
-              { organization: "Rotary", location: "Phuket", image: "/UGCImages/gallantt/1.jpeg" },
-              { organization: "Gallantt Cement", location: "GOA", image: "/UGCImages/gallantt/5.jpeg" },
-              { organization: "A.T.C", location: "Malaysia", image: "/UGCImages/gallantt/3.jpeg" },
-              { organization: "Gallantt Cement", location: "Pattaya", image: "/UGCImages/gallantt/4.jpeg" },
-              { organization: "Gallantt Ispat LTD", location: "Singapore", image: "/UGCImages/gallantt/2.jpeg" }
+              { location: "Phuket Corporate Trip" },
+              { location: "GOA Corporate Retreat" },
+              { location: "Malaysia Business Tour" },
+              { location: "Pattaya Incentive Trip" },
+              { location: "Singapore Corporate Event" }
             ].map((event, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 1, y: 0 }}
                 className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group border border-gray-100"
               >
-                <div className="relative overflow-hidden">
-                  <Image
-                    src={event.image}
-                    alt={`${event.organization} event in ${event.location}`}
-                    width={1080}
-                    height={1080}
-                    className="object-cover group-hover:scale-105 transition-transform duration-300 w-full h-auto"
-                  />
+                <div className="relative overflow-hidden h-64 bg-gradient-to-br from-[#017ae3] to-[#00f6ff]">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center text-white">
+                      <Globe className="h-12 w-12 mb-4 mx-auto" />
+                      <h3 className="text-xl font-bold">{event.location}</h3>
+                    </div>
+                  </div>
                   <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-green-100 flex items-center justify-center shadow-lg">
                     <CheckCircle2 className="h-4 w-4 text-green-600" />
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
-                    <div className="flex items-center text-white">
-                      <Globe className="h-4 w-4 mr-2" />
-                      <span className="text-sm font-medium">{event.location}</span>
-                    </div>
                   </div>
                 </div>
                 <div className="p-6">
@@ -276,7 +365,7 @@ export default function MICEPage() {
                     <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] flex items-center justify-center mr-3">
                       <Briefcase className="h-5 w-5 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900">{event.organization}</h3>
+                    <h3 className="text-xl font-bold text-gray-900">Corporate Event</h3>
                   </div>
                   <div className="border-t border-gray-100 pt-3">
                     <span className="text-xs text-gray-500 uppercase tracking-wide">Successfully Executed</span>
@@ -298,7 +387,7 @@ export default function MICEPage() {
         </div>
       </section>
 
-      {/* Rotary Phuket Trip Gallery */}
+      {/* Singapore Trip Gallery */}
       <section className="py-16 sm:py-20 bg-white w-full">
         <div className="container mx-auto px-4 max-w-[100vw]">
           <motion.div
@@ -310,7 +399,7 @@ export default function MICEPage() {
               <span>Event Gallery</span>
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Rotary International New Delhi Chapter - Phuket Trip
+              Singapore Corporate Trip
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               A successful corporate incentive trip showcasing our expertise in organizing memorable experiences for prestigious organizations.
@@ -318,33 +407,40 @@ export default function MICEPage() {
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-            {Array.from({ length: 13 }, (_, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 1, y: 0 }}
-                className="group relative overflow-hidden rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300"
-              >
-                <div className="aspect-square overflow-hidden">
-                  <Image
-                    src={`/UGCImages/gallantt/rotary_phuket/1 (${index + 1}).jpeg`}
-                    alt={`Rotary International New Delhi Chapter Phuket trip - Image ${index + 1}`}
-                    width={400}
-                    height={400}
-                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-white text-sm font-medium">
-                      Rotary Phuket Experience
-                    </p>
-                    <p className="text-white/80 text-xs">
-                      Image {index + 1} of 13
-                    </p>
+            {Array.from({ length: 116 }, (_, index) => {
+              const imagePath = `/UGCImages/gallantt_Singapore/1 (${index + 1}).jpg`
+              const shouldShow = loadedImages[imagePath] !== false
+
+              if (!shouldShow && loadedImages[imagePath] === false) return null
+
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 1, y: 0 }}
+                  className="group relative overflow-hidden rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300 cursor-pointer"
+                  onClick={() => openImageModal(imagePath, `Singapore corporate trip - Image ${index + 1}`, index, 116)}
+                >
+                  <div className="aspect-square overflow-hidden">
+                    <Image
+                      src={imagePath}
+                      alt={`Singapore corporate trip - Image ${index + 1}`}
+                      width={400}
+                      height={400}
+                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                      onLoad={() => handleImageLoad(imagePath)}
+                      onError={() => handleImageError(imagePath)}
+                    />
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <p className="text-white text-sm font-medium">
+                        Click to view
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              )
+            }).filter(Boolean)}
           </div>
 
           <div className="text-center mt-12">
@@ -356,7 +452,72 @@ export default function MICEPage() {
         </div>
       </section>
 
-      {/* Gallant Cement Goa Trip Gallery */}
+      {/* Phuket Trip Gallery */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white w-full">
+        <div className="container mx-auto px-4 max-w-[100vw]">
+          <motion.div
+            initial={{ opacity: 1, y: 0 }}
+            className="text-center mb-12 sm:mb-16"
+          >
+            <div className="inline-flex items-center px-4 py-2 bg-[#017ae3]/10 rounded-full text-[#017ae3] text-sm font-medium mb-4">
+              <Camera className="h-4 w-4 mr-2" />
+              <span>Event Gallery</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Phuket Corporate Trip
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              A successful corporate incentive trip showcasing our expertise in organizing memorable experiences for prestigious organizations.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+            {Array.from({ length: 13 }, (_, index) => {
+              const imagePath = `/UGCImages/gallantt/rotary_phuket/1 (${index + 1}).jpeg`
+              const shouldShow = loadedImages[imagePath] !== false
+
+              if (!shouldShow && loadedImages[imagePath] === false) return null
+
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 1, y: 0 }}
+                  className="group relative overflow-hidden rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300 cursor-pointer"
+                  onClick={() => openImageModal(imagePath, `Phuket corporate trip - Image ${index + 1}`, index, 13)}
+                >
+                  <div className="aspect-square overflow-hidden">
+                    <Image
+                      src={imagePath}
+                      alt={`Phuket corporate trip - Image ${index + 1}`}
+                      width={400}
+                      height={400}
+                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                      onLoad={() => handleImageLoad(imagePath)}
+                      onError={() => handleImageError(imagePath)}
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <p className="text-white text-sm font-medium">
+                        Click to view
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              )
+            }).filter(Boolean)}
+          </div>
+
+          <div className="text-center mt-12">
+            <div className="inline-flex items-center px-6 py-3 bg-green-50 rounded-full border border-green-200">
+              <CheckCircle2 className="h-5 w-5 text-green-600 mr-2" />
+              <span className="text-green-800 font-medium">Successfully Executed Corporate Incentive Trip</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* GOA Corporate Trip Gallery */}
       <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white w-full">
         <div className="container mx-auto px-4 max-w-[100vw]">
           <motion.div
@@ -368,7 +529,7 @@ export default function MICEPage() {
               <span>Corporate Event Gallery</span>
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Gallantt Cement - Goa Corporate Trip
+              GOA Corporate Trip
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               A successful corporate outing for 40 participants, featuring team building activities and memorable experiences in the beautiful beaches of Goa.
@@ -376,33 +537,40 @@ export default function MICEPage() {
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-            {Array.from({ length: 35 }, (_, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 1, y: 0 }}
-                className="group relative overflow-hidden rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300"
-              >
-                <div className="aspect-square overflow-hidden">
-                  <Image
-                    src={`/UGCImages/gallantt/gallant_goa/1 (${index + 1}).jpeg`}
-                    alt={`Gallantt Cement Goa corporate trip - Image ${index + 1}`}
-                    width={400}
-                    height={400}
-                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-white text-sm font-medium">
-                      Gallantt Cement Goa Experience
-                    </p>
-                    <p className="text-white/80 text-xs">
-                      Image {index + 1} of 46
-                    </p>
+            {Array.from({ length: 35 }, (_, index) => {
+              const imagePath = `/UGCImages/gallantt/gallant_goa/1 (${index + 1}).jpeg`
+              const shouldShow = loadedImages[imagePath] !== false
+
+              if (!shouldShow && loadedImages[imagePath] === false) return null
+
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 1, y: 0 }}
+                  className="group relative overflow-hidden rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300 cursor-pointer"
+                  onClick={() => openImageModal(imagePath, `GOA corporate trip - Image ${index + 1}`, index, 35)}
+                >
+                  <div className="aspect-square overflow-hidden">
+                    <Image
+                      src={imagePath}
+                      alt={`GOA corporate trip - Image ${index + 1}`}
+                      width={400}
+                      height={400}
+                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                      onLoad={() => handleImageLoad(imagePath)}
+                      onError={() => handleImageError(imagePath)}
+                    />
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <p className="text-white text-sm font-medium">
+                        Click to view
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              )
+            }).filter(Boolean)}
           </div>
 
           <div className="text-center mt-12">
@@ -580,7 +748,77 @@ export default function MICEPage() {
           </div>
         </div>
       </section>
+
+      {/* Image Modal */}
+      {selectedImage && (
+        <div className="fixed inset-0 bg-black/90 z-[9999] flex items-center justify-center p-4">
+          {/* Click outside to close */}
+          <div
+            className="absolute inset-0"
+            onClick={closeImageModal}
+          />
+
+          <div className="relative max-w-7xl max-h-full w-full h-full flex items-center justify-center z-10">
+            {/* Close button */}
+            <button
+              onClick={closeImageModal}
+              className="absolute top-4 right-4 z-20 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30 transition-all duration-200 sm:w-10 sm:h-10"
+            >
+              <X className="h-6 w-6 sm:h-5 sm:w-5" />
+            </button>
+
+            {/* Navigation buttons */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                if (selectedImage.src.includes('gallantt_Singapore')) {
+                  navigateImage('prev', 'singapore')
+                } else if (selectedImage.src.includes('rotary_phuket')) {
+                  navigateImage('prev', 'phuket')
+                } else if (selectedImage.src.includes('gallant_goa')) {
+                  navigateImage('prev', 'goa')
+                }
+              }}
+              className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30 transition-all duration-200"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                if (selectedImage.src.includes('gallantt_Singapore')) {
+                  navigateImage('next', 'singapore')
+                } else if (selectedImage.src.includes('rotary_phuket')) {
+                  navigateImage('next', 'phuket')
+                } else if (selectedImage.src.includes('gallant_goa')) {
+                  navigateImage('next', 'goa')
+                }
+              }}
+              className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30 transition-all duration-200"
+            >
+              <ChevronRightIcon className="h-6 w-6" />
+            </button>
+
+            {/* Image container */}
+            <div className="relative w-full h-full flex items-center justify-center p-16 sm:p-20">
+              <Image
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                width={1200}
+                height={800}
+                className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+                priority
+              />
+            </div>
+
+            {/* Image info */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-white text-sm z-20">
+              {selectedImage.index + 1} / {selectedImage.total}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
-

@@ -1,0 +1,824 @@
+"use client"
+
+import { useRef, useState, useEffect } from "react"
+import Link from "next/link"
+import Image from "next/image"
+import { motion } from "framer-motion"
+import { NumberTicker } from "@/components/magicui/number-ticker"
+
+import {
+    Calendar,
+    Users,
+    Award,
+    Briefcase,
+    ArrowRight,
+    CheckCircle2,
+    Star,
+    Globe,
+    Clock,
+    Plane,
+    Hotel,
+    Utensils,
+    Camera,
+    ChevronRight,
+    X,
+    ChevronLeft,
+    ChevronRight as ChevronRightIcon,
+} from "lucide-react"
+
+export default function MICEPage() {
+    // Refs for scroll animations
+    const heroRef = useRef(null)
+
+    // Modal state for image viewer
+    const [selectedImage, setSelectedImage] = useState<{ src: string, alt: string, index: number, total: number } | null>(null)
+    const [loadedImages, setLoadedImages] = useState<{ [key: string]: boolean }>({})
+
+    // Keyboard navigation effect
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (!selectedImage) return
+
+            if (e.key === 'Escape') {
+                closeImageModal()
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault()
+                if (selectedImage.src.includes('gallantt_Singapore')) {
+                    navigateImage('prev', 'singapore')
+                } else if (selectedImage.src.includes('rotary_phuket')) {
+                    navigateImage('prev', 'phuket')
+                } else if (selectedImage.src.includes('gallant_goa')) {
+                    navigateImage('prev', 'goa')
+                }
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault()
+                if (selectedImage.src.includes('gallantt_Singapore')) {
+                    navigateImage('next', 'singapore')
+                } else if (selectedImage.src.includes('rotary_phuket')) {
+                    navigateImage('next', 'phuket')
+                } else if (selectedImage.src.includes('gallant_goa')) {
+                    navigateImage('next', 'goa')
+                }
+            }
+        }
+
+        if (selectedImage) {
+            document.addEventListener('keydown', handleKeyDown)
+        }
+
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown)
+        }
+    }, [selectedImage])
+
+    // Function to handle image load success
+    const handleImageLoad = (imagePath: string) => {
+        setLoadedImages(prev => ({ ...prev, [imagePath]: true }))
+    }
+
+    // Function to handle image load error
+    const handleImageError = (imagePath: string) => {
+        setLoadedImages(prev => ({ ...prev, [imagePath]: false }))
+    }
+
+    // Function to open image modal
+    const openImageModal = (src: string, alt: string, index: number, total: number) => {
+        setSelectedImage({ src, alt, index, total })
+        document.body.style.overflow = 'hidden'
+    }
+
+    // Function to close image modal
+    const closeImageModal = () => {
+        setSelectedImage(null)
+        document.body.style.overflow = 'unset'
+    }
+
+    // Function to navigate images in modal
+    const navigateImage = (direction: 'prev' | 'next', imageSet: 'singapore' | 'phuket' | 'goa') => {
+        if (!selectedImage) return
+
+        let newIndex = selectedImage.index
+        let maxImages = selectedImage.total
+
+        if (direction === 'prev') {
+            newIndex = newIndex > 0 ? newIndex - 1 : maxImages - 1
+        } else {
+            newIndex = newIndex < maxImages - 1 ? newIndex + 1 : 0
+        }
+
+        let newSrc = ''
+        let newAlt = ''
+
+        if (imageSet === 'singapore') {
+            newSrc = `/UGCImages/gallantt_Singapore/1 (${newIndex + 1}).jpg`
+            newAlt = `Singapore corporate trip - Image ${newIndex + 1}`
+        } else if (imageSet === 'phuket') {
+            newSrc = `/UGCImages/gallantt/rotary_phuket/1 (${newIndex + 1}).jpeg`
+            newAlt = `Phuket corporate trip - Image ${newIndex + 1}`
+        } else if (imageSet === 'goa') {
+            newSrc = `/UGCImages/gallantt/gallant_goa/1 (${newIndex + 1}).jpeg`
+            newAlt = `GOA corporate trip - Image ${newIndex + 1}`
+        }
+
+        setSelectedImage({ src: newSrc, alt: newAlt, index: newIndex, total: maxImages })
+    }
+
+    const services = [
+        {
+            icon: <Calendar className="h-10 w-10 text-white" />,
+            title: "Meetings",
+            description:
+                "Professional meeting arrangements with state-of-the-art facilities in scenic locations across India.",
+            link: "/",
+        },
+        {
+            icon: <Award className="h-10 w-10 text-white" />,
+            title: "Incentives",
+            description: "Reward your top performers with unforgettable experiences and team-building activities.",
+            link: "/",
+        },
+        {
+            icon: <Users className="h-10 w-10 text-white" />,
+            title: "Conferences",
+            description: "Large-scale conference planning and execution with attention to every detail.",
+            link: "/",
+        },
+        {
+            icon: <Briefcase className="h-10 w-10 text-white" />,
+            title: "Events",
+            description: "Corporate events, product launches, and dealer meets designed to leave a lasting impression.",
+            link: "/",
+        },
+    ]
+
+    const features = [
+        {
+            icon: <Globe className="h-6 w-6 text-white" />,
+            title: "Nationwide Network",
+            description: "Access to premium venues and services across India",
+        },
+        {
+            icon: <Clock className="h-6 w-6 text-white" />,
+            title: "End-to-End Management",
+            description: "Comprehensive planning from concept to execution",
+        },
+        {
+            icon: <Plane className="h-6 w-6 text-white" />,
+            title: "Travel Arrangements",
+            description: "Seamless transportation and logistics coordination",
+        },
+        {
+            icon: <Hotel className="h-6 w-6 text-white" />,
+            title: "Accommodation",
+            description: "Curated selection of hotels and resorts for all budgets",
+        },
+        {
+            icon: <Utensils className="h-6 w-6 text-white" />,
+            title: "Catering Excellence",
+            description: "Customized menus and dining experiences",
+        },
+        {
+            icon: <Camera className="h-6 w-6 text-white" />,
+            title: "Event Documentation",
+            description: "Professional photography and video services",
+        },
+    ]
+
+    return (
+        <div className="min-h-screen pt-16 overflow-x-hidden w-full">
+            {/* Hero Section with gradient background instead of image */}
+            <section ref={heroRef} className="relative overflow-hidden w-full">
+                <div className="absolute inset-0 z-0">
+                    {/* Replace image with a more complex gradient background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#017ae3] via-[#0162b7] to-[#00f6ff]">
+                        <div className="absolute inset-0 opacity-20">
+                            <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+                            <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#00f6ff]/20 rounded-full filter blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="container mx-auto px-4 relative z-10 py-16 md:py-24 lg:py-32 max-w-[100vw]">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="max-w-3xl"
+                    >
+                        <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white text-sm font-medium mb-6">
+                            <Star className="h-4 w-4 mr-2" />
+                            <span>Premier MICE Services Provider</span>
+                        </div>
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4 sm:mb-6">
+                            Elevate Your Corporate{" "}
+                            <span className="text-white underline decoration-[#00f6ff] decoration-4 underline-offset-4">
+                                Experiences
+                            </span>
+                        </h1>
+                        <p className="text-lg sm:text-xl text-white/90 mb-6 sm:mb-8">
+                            Specialized MICE services for corporate meetings, incentives, conferences, and events across India. We
+                            create memorable experiences that drive results.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4">
+                            <Link
+                                href="/"
+                                className="group bg-white hover:bg-white/90 text-[#017ae3] font-medium px-8 py-3.5 rounded-full transition-all duration-300 text-center flex items-center justify-center shadow-lg shadow-[#017ae3]/20"
+                            >
+                                Plan Your Event
+                                <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" />
+                            </Link>
+                        </div>
+                    </motion.div>
+
+                    {/* Floating cards - Improve mobile visibility */}
+                    <div className="lg:hidden mt-8 space-y-4">
+                        <div className="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl">
+                            <div className="flex items-center">
+                                <div className="w-10 h-10 rounded-full bg-[#00f6ff]/20 flex items-center justify-center mr-3">
+                                    <Users className="h-5 w-5 text-white" />
+                                </div>
+                                <div>
+                                    <p className="text-white font-semibold">
+                                        <NumberTicker value={500} className="text-white font-semibold" />+
+                                    </p>
+                                    <p className="text-white/70 text-sm">Events Organized</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl">
+                            <div className="flex items-center">
+                                <div className="w-10 h-10 rounded-full bg-[#00f6ff]/20 flex items-center justify-center mr-3">
+                                    <Star className="h-5 w-5 text-white" />
+                                </div>
+                                <div>
+                                    <p className="text-white font-semibold">
+                                        <NumberTicker value={98} className="text-white font-semibold" />
+                                    </p>
+                                    <p className="text-white/70 text-sm">Client Satisfaction</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="absolute bottom-0 left-0 right-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full h-auto">
+                        <path
+                            fill="#ffffff"
+                            fillOpacity="1"
+                            d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+                        ></path>
+                    </svg>
+                </div>
+            </section>
+
+            {/* Services Section - Improve grid layout */}
+            <section id="services" className="py-16 sm:py-20 bg-white w-full">
+                <div className="container mx-auto px-4 max-w-[100vw]">
+                    <motion.div
+                        initial={{ opacity: 1, y: 0 }}
+                        className="text-center mb-12 sm:mb-16"
+                    >
+                        <div className="inline-flex items-center px-4 py-2 bg-[#017ae3]/10 rounded-full text-[#017ae3] text-sm font-medium mb-4">
+                            <Star className="h-4 w-4 mr-2" />
+                            <span>Our MICE Services</span>
+                        </div>
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                            Comprehensive Solutions for Corporate Events
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                            From intimate meetings to large-scale conferences, we provide end-to-end solutions tailored to your
+                            specific needs.
+                        </p>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                        {services.map((service, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 1, y: 0 }}
+                                className="group relative overflow-hidden rounded-2xl shadow-lg"
+                            >
+                                <div className="absolute inset-0 bg-gradient-to-r from-[#017ae3] to-[#00f6ff]"></div>
+                                <div className="relative p-4 sm:p-6 h-full flex flex-col">
+                                    <div className="mb-4 sm:mb-6 w-12 sm:w-16 h-12 sm:h-16 rounded-full bg-white/20 flex items-center justify-center">
+                                        {service.icon}
+                                    </div>
+                                    <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">{service.title}</h3>
+                                    <p className="text-sm sm:text-base text-white/90 mb-4 sm:mb-6 flex-grow">{service.description}</p>
+                                    <Link href={service.link} className="inline-flex items-center text-white font-medium group text-sm sm:text-base">
+                                        Learn More
+                                        <ChevronRight className="ml-1 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-300" />
+                                    </Link>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Recent Events Section */}
+            <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white w-full">
+                <div className="container mx-auto px-4 max-w-[100vw]">
+                    <motion.div
+                        initial={{ opacity: 1, y: 0 }}
+                        className="text-center mb-12 sm:mb-16"
+                    >
+                        <div className="inline-flex items-center px-4 py-2 bg-[#017ae3]/10 rounded-full text-[#017ae3] text-sm font-medium mb-4">
+                            <Globe className="h-4 w-4 mr-2" />
+                            <span>Recent Success Stories</span>
+                        </div>
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                            Events We&apos;ve Organized
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                            Some of our best corporate trips organized across different destinations, showcasing our expertise in creating memorable experiences.
+                        </p>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                        {[
+                            { location: "Phuket Corporate Trip" },
+                            { location: "GOA Corporate Retreat" },
+                            { location: "Malaysia Business Tour" },
+                            { location: "Pattaya Incentive Trip" },
+                            { location: "Singapore Corporate Event" }
+                        ].map((event, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 1, y: 0 }}
+                                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group border border-gray-100"
+                            >
+                                <div className="relative overflow-hidden h-64 bg-gradient-to-br from-[#017ae3] to-[#00f6ff]">
+                                    <div className="absolute inset-0 flex items-center justify-center">
+                                        <div className="text-center text-white">
+                                            <Globe className="h-12 w-12 mb-4 mx-auto" />
+                                            <h3 className="text-xl font-bold">{event.location}</h3>
+                                        </div>
+                                    </div>
+                                    <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-green-100 flex items-center justify-center shadow-lg">
+                                        <CheckCircle2 className="h-4 w-4 text-green-600" />
+                                    </div>
+                                </div>
+                                <div className="p-6">
+                                    <div className="flex items-center mb-4">
+                                        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] flex items-center justify-center mr-3">
+                                            <Briefcase className="h-5 w-5 text-white" />
+                                        </div>
+                                        <h3 className="text-xl font-bold text-gray-900">Corporate Event</h3>
+                                    </div>
+                                    <div className="border-t border-gray-100 pt-3">
+                                        <span className="text-xs text-gray-500 uppercase tracking-wide">Successfully Executed</span>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+
+                    <div className="text-center mt-12">
+                        <Link
+                            href="/contact"
+                            className="inline-flex items-center bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white font-medium px-6 py-3 rounded-full transition-all duration-300 shadow-lg shadow-[#017ae3]/20 hover:shadow-xl hover:shadow-[#017ae3]/30 group"
+                        >
+                            Plan Your Next Event
+                            <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" />
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
+            {/* Singapore Trip Gallery */}
+            <section className="py-16 sm:py-20 bg-white w-full">
+                <div className="container mx-auto px-4 max-w-[100vw]">
+                    <motion.div
+                        initial={{ opacity: 1, y: 0 }}
+                        className="text-center mb-12 sm:mb-16"
+                    >
+                        <div className="inline-flex items-center px-4 py-2 bg-[#017ae3]/10 rounded-full text-[#017ae3] text-sm font-medium mb-4">
+                            <Camera className="h-4 w-4 mr-2" />
+                            <span>Event Gallery</span>
+                        </div>
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                            Singapore Corporate Trip
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                            A successful corporate incentive trip showcasing our expertise in organizing memorable experiences for prestigious organizations.
+                        </p>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                        {Array.from({ length: 116 }, (_, index) => {
+                            const imagePath = `/UGCImages/gallantt_Singapore/1 (${index + 1}).jpg`
+                            const shouldShow = loadedImages[imagePath] !== false
+
+                            if (!shouldShow && loadedImages[imagePath] === false) return null
+
+                            return (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 1, y: 0 }}
+                                    className="group relative overflow-hidden rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300 cursor-pointer"
+                                    onClick={() => openImageModal(imagePath, `Singapore corporate trip - Image ${index + 1}`, index, 116)}
+                                >
+                                    <div className="aspect-square overflow-hidden">
+                                        <Image
+                                            src={imagePath}
+                                            alt={`Singapore corporate trip - Image ${index + 1}`}
+                                            width={400}
+                                            height={400}
+                                            className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                                            onLoad={() => handleImageLoad(imagePath)}
+                                            onError={() => handleImageError(imagePath)}
+                                        />
+                                    </div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <div className="absolute bottom-4 left-4 right-4">
+                                            <p className="text-white text-sm font-medium">
+                                                Click to view
+                                            </p>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            )
+                        }).filter(Boolean)}
+                    </div>
+
+                    <div className="text-center mt-12">
+                        <div className="inline-flex items-center px-6 py-3 bg-green-50 rounded-full border border-green-200">
+                            <CheckCircle2 className="h-5 w-5 text-green-600 mr-2" />
+                            <span className="text-green-800 font-medium">Successfully Executed Corporate Incentive Trip</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Phuket Trip Gallery */}
+            <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white w-full">
+                <div className="container mx-auto px-4 max-w-[100vw]">
+                    <motion.div
+                        initial={{ opacity: 1, y: 0 }}
+                        className="text-center mb-12 sm:mb-16"
+                    >
+                        <div className="inline-flex items-center px-4 py-2 bg-[#017ae3]/10 rounded-full text-[#017ae3] text-sm font-medium mb-4">
+                            <Camera className="h-4 w-4 mr-2" />
+                            <span>Event Gallery</span>
+                        </div>
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                            Phuket Corporate Trip
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                            A successful corporate incentive trip showcasing our expertise in organizing memorable experiences for prestigious organizations.
+                        </p>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                        {Array.from({ length: 13 }, (_, index) => {
+                            const imagePath = `/UGCImages/gallantt/rotary_phuket/1 (${index + 1}).jpeg`
+                            const shouldShow = loadedImages[imagePath] !== false
+
+                            if (!shouldShow && loadedImages[imagePath] === false) return null
+
+                            return (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 1, y: 0 }}
+                                    className="group relative overflow-hidden rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300 cursor-pointer"
+                                    onClick={() => openImageModal(imagePath, `Phuket corporate trip - Image ${index + 1}`, index, 13)}
+                                >
+                                    <div className="aspect-square overflow-hidden">
+                                        <Image
+                                            src={imagePath}
+                                            alt={`Phuket corporate trip - Image ${index + 1}`}
+                                            width={400}
+                                            height={400}
+                                            className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                                            onLoad={() => handleImageLoad(imagePath)}
+                                            onError={() => handleImageError(imagePath)}
+                                        />
+                                    </div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <div className="absolute bottom-4 left-4 right-4">
+                                            <p className="text-white text-sm font-medium">
+                                                Click to view
+                                            </p>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            )
+                        }).filter(Boolean)}
+                    </div>
+
+                    <div className="text-center mt-12">
+                        <div className="inline-flex items-center px-6 py-3 bg-green-50 rounded-full border border-green-200">
+                            <CheckCircle2 className="h-5 w-5 text-green-600 mr-2" />
+                            <span className="text-green-800 font-medium">Successfully Executed Corporate Incentive Trip</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* GOA Corporate Trip Gallery */}
+            <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white w-full">
+                <div className="container mx-auto px-4 max-w-[100vw]">
+                    <motion.div
+                        initial={{ opacity: 1, y: 0 }}
+                        className="text-center mb-12 sm:mb-16"
+                    >
+                        <div className="inline-flex items-center px-4 py-2 bg-[#017ae3]/10 rounded-full text-[#017ae3] text-sm font-medium mb-4">
+                            <Camera className="h-4 w-4 mr-2" />
+                            <span>Corporate Event Gallery</span>
+                        </div>
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                            GOA Corporate Trip
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                            A successful corporate outing for 40 participants, featuring team building activities and memorable experiences in the beautiful beaches of Goa.
+                        </p>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                        {Array.from({ length: 35 }, (_, index) => {
+                            const imagePath = `/UGCImages/gallantt/gallant_goa/1 (${index + 1}).jpeg`
+                            const shouldShow = loadedImages[imagePath] !== false
+
+                            if (!shouldShow && loadedImages[imagePath] === false) return null
+
+                            return (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 1, y: 0 }}
+                                    className="group relative overflow-hidden rounded-xl shadow-lg bg-white hover:shadow-xl transition-all duration-300 cursor-pointer"
+                                    onClick={() => openImageModal(imagePath, `GOA corporate trip - Image ${index + 1}`, index, 35)}
+                                >
+                                    <div className="aspect-square overflow-hidden">
+                                        <Image
+                                            src={imagePath}
+                                            alt={`GOA corporate trip - Image ${index + 1}`}
+                                            width={400}
+                                            height={400}
+                                            className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                                            onLoad={() => handleImageLoad(imagePath)}
+                                            onError={() => handleImageError(imagePath)}
+                                        />
+                                    </div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <div className="absolute bottom-4 left-4 right-4">
+                                            <p className="text-white text-sm font-medium">
+                                                Click to view
+                                            </p>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            )
+                        }).filter(Boolean)}
+                    </div>
+
+                    <div className="text-center mt-12">
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <div className="inline-flex items-center px-6 py-3 bg-green-50 rounded-full border border-green-200">
+                                <CheckCircle2 className="h-5 w-5 text-green-600 mr-2" />
+                                <span className="text-green-800 font-medium">40 Participants - Successfully Executed</span>
+                            </div>
+                            <div className="inline-flex items-center px-6 py-3 bg-blue-50 rounded-full border border-blue-200">
+                                <Users className="h-5 w-5 text-blue-600 mr-2" />
+                                <span className="text-blue-800 font-medium">Corporate Team Building Event</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Features Section - Improve initial load */}
+            <section className="py-16 sm:py-20 bg-gray-50 w-full">
+                <div className="container mx-auto px-4 max-w-[100vw]">
+                    <motion.div
+                        initial={{ opacity: 1, y: 0 }}
+                        className="text-center mb-12 sm:mb-16"
+                    >
+                        <div className="inline-flex items-center px-4 py-2 bg-[#017ae3]/10 rounded-full text-[#017ae3] text-sm font-medium mb-4">
+                            <Star className="h-4 w-4 mr-2" />
+                            <span>Why Choose Us</span>
+                        </div>
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                            Comprehensive Event Management
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                            We handle every aspect of your corporate event, allowing you to focus on your objectives and participants.
+                        </p>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                        {features.map((feature, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 1, y: 0 }}
+                                className="bg-white rounded-2xl shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300 group"
+                            >
+                                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                                    {feature.icon}
+                                </div>
+                                <h3 className="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
+                                <p className="text-gray-600">{feature.description}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* About Section - Replace image with decorative elements */}
+            <section id="about" className="py-16 sm:py-20 bg-white w-full">
+                <div className="container mx-auto px-4 max-w-[100vw]">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        <motion.div
+                            initial={{ opacity: 1, x: 0 }}
+                            className="relative order-2 lg:order-1 w-full h-[400px]"
+                        >
+                            {/* Replace image with decorative design */}
+                            <div className="relative h-full rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-[#017ae3] to-[#00f6ff]">
+                                <div className="absolute inset-0 opacity-20">
+                                    <div className="absolute top-10 left-10 w-40 h-40 bg-white/20 rounded-full"></div>
+                                    <div className="absolute bottom-10 right-10 w-60 h-60 bg-white/10 rounded-full"></div>
+                                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-white/5 rounded-full"></div>
+                                </div>
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                    <div className="text-white text-center">
+                                        <Users className="h-16 w-16 mb-4 mx-auto" />
+                                        <h3 className="text-2xl font-bold">Creating Memorable Events</h3>
+                                        <p className="text-white/80 mt-2">Bringing people together</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 1, x: 0 }}
+                            className="order-1 lg:order-2"
+                        >
+                            <div className="inline-flex items-center px-4 py-2 bg-[#017ae3]/10 rounded-full text-[#017ae3] text-sm font-medium mb-4">
+                                <Star className="h-4 w-4 mr-2" />
+                                <span>Our Approach</span>
+                            </div>
+                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                                Why Choose Truedeal Travels for MICE?
+                            </h2>
+
+                            <div className="space-y-4 sm:space-y-6">
+                                <div className="flex items-start">
+                                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] flex items-center justify-center mt-1 flex-shrink-0">
+                                        <CheckCircle2 className="h-4 w-4 text-white" />
+                                    </div>
+                                    <div className="ml-4">
+                                        <h3 className="text-xl font-semibold text-gray-900 mb-2">Specialized Expertise</h3>
+                                        <p className="text-gray-600">
+                                            With years of experience in corporate events, we understand the unique requirements of businesses
+                                            across industries.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-start">
+                                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] flex items-center justify-center mt-1 flex-shrink-0">
+                                        <CheckCircle2 className="h-4 w-4 text-white" />
+                                    </div>
+                                    <div className="ml-4">
+                                        <h3 className="text-xl font-semibold text-gray-900 mb-2">End-to-End Management</h3>
+                                        <p className="text-gray-600">
+                                            From venue selection to logistics, accommodations, and activities - we handle every aspect of your
+                                            event.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-start">
+                                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] flex items-center justify-center mt-1 flex-shrink-0">
+                                        <CheckCircle2 className="h-4 w-4 text-white" />
+                                    </div>
+                                    <div className="ml-4">
+                                        <h3 className="text-xl font-semibold text-gray-900 mb-2">Tailored Solutions</h3>
+                                        <p className="text-gray-600">
+                                            We create customized experiences that align with your corporate objectives and brand identity.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-start">
+                                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] flex items-center justify-center mt-1 flex-shrink-0">
+                                        <CheckCircle2 className="h-4 w-4 text-white" />
+                                    </div>
+                                    <div className="ml-4">
+                                        <h3 className="text-xl font-semibold text-gray-900 mb-2">Nationwide Network</h3>
+                                        <p className="text-gray-600">
+                                            Our extensive network of partners across India ensures premium services at competitive rates.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="mt-8">
+                                <Link
+                                    href="/contact"
+                                    className="inline-flex items-center bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white font-medium px-6 py-3 rounded-full transition-all duration-300 shadow-lg shadow-[#017ae3]/20 hover:shadow-xl hover:shadow-[#017ae3]/30 group"
+                                >
+                                    Discuss Your Requirements
+                                    <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" />
+                                </Link>
+                            </div>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* CTA Section - Improve mobile spacing */}
+            <section className="py-16 sm:py-20 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white w-full">
+                <div className="container mx-auto px-4 max-w-[100vw]">
+                    <div className="max-w-4xl mx-auto text-center">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
+                            Ready to Elevate Your Corporate Events?
+                        </h2>
+                        <p className="text-lg sm:text-xl mb-6 sm:mb-8 text-white/90">
+                            Let us help you create memorable experiences for your team and clients.
+                        </p>
+                        <Link
+                            href="/contact"
+                            className="inline-flex items-center bg-white text-[#017ae3] hover:bg-white/90 font-bold px-4 sm:px-6 py-3 rounded-full text-sm sm:text-base transition-all duration-300 shadow-lg shadow-[#017ae3]/20 group"
+                        >
+                            Get in Touch Today
+                            <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 transform group-hover:translate-x-1 transition-transform duration-300" />
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
+            {/* Image Modal */}
+            {selectedImage && (
+                <div className="fixed inset-0 bg-black/90 z-[9999] flex items-center justify-center p-4">
+                    {/* Click outside to close */}
+                    <div
+                        className="absolute inset-0"
+                        onClick={closeImageModal}
+                    />
+
+                    <div className="relative max-w-7xl max-h-full w-full h-full flex items-center justify-center z-10">
+                        {/* Close button */}
+                        <button
+                            onClick={closeImageModal}
+                            className="absolute top-4 right-4 z-20 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30 transition-all duration-200 sm:w-10 sm:h-10"
+                        >
+                            <X className="h-6 w-6 sm:h-5 sm:w-5" />
+                        </button>
+
+                        {/* Navigation buttons */}
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation()
+                                if (selectedImage.src.includes('gallantt_Singapore')) {
+                                    navigateImage('prev', 'singapore')
+                                } else if (selectedImage.src.includes('rotary_phuket')) {
+                                    navigateImage('prev', 'phuket')
+                                } else if (selectedImage.src.includes('gallant_goa')) {
+                                    navigateImage('prev', 'goa')
+                                }
+                            }}
+                            className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30 transition-all duration-200"
+                        >
+                            <ChevronLeft className="h-6 w-6" />
+                        </button>
+
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation()
+                                if (selectedImage.src.includes('gallantt_Singapore')) {
+                                    navigateImage('next', 'singapore')
+                                } else if (selectedImage.src.includes('rotary_phuket')) {
+                                    navigateImage('next', 'phuket')
+                                } else if (selectedImage.src.includes('gallant_goa')) {
+                                    navigateImage('next', 'goa')
+                                }
+                            }}
+                            className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30 transition-all duration-200"
+                        >
+                            <ChevronRightIcon className="h-6 w-6" />
+                        </button>
+
+                        {/* Image container */}
+                        <div className="relative w-full h-full flex items-center justify-center p-16 sm:p-20">
+                            <Image
+                                src={selectedImage.src}
+                                alt={selectedImage.alt}
+                                width={1200}
+                                height={800}
+                                className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+                                priority
+                            />
+                        </div>
+
+                        {/* Image info */}
+                        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-white text-sm z-20">
+                            {selectedImage.index + 1} / {selectedImage.total}
+                        </div>
+                    </div>
+                </div>
+            )}
+        </div>
+    )
+}
