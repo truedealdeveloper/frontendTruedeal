@@ -361,6 +361,166 @@ from prominent Balinese artists. (Breakfast)`,
         culture: [],
         additionalInfo: undefined
     },
+    baliGroupFeb2026: {
+        id: "bali-group-feb-2026",
+        packageName: "Bali Group Package",
+        days: 7,
+        nights: 6,
+        amount: 44500,
+        dateStart: "16 to 22 February 2026",
+        dateEnd: "",
+        description: "Experience the ultimate Bali group tour with luxurious accommodations, cultural visits, adventure activities, and delectable Indian cuisine. Perfect blend of relaxation, sightseeing, and memorable experiences across Bali's most beautiful destinations.",
+        groupDetails: {
+            pax: "Group Tour",
+            rooms: "Double Sharing",
+            arrivalDate: "16 February 2026",
+            duration: "6N7D",
+            costBasis: "Cost Based On per person"
+        },
+        hotelDetails: [
+            {
+                city: "Bali",
+                hotel: "Ramayana Suites & Resort / Fairfield by Marriott Bali Legian",
+                roomType: "Standard Room"
+            },
+            {
+                city: "Ubud",
+                hotel: "Furama Xclusive Resorts & Villas Ubud",
+                roomType: "Premier Room"
+            },
+            {
+                city: "Bali",
+                hotel: "Dwaraka The Royal Villa",
+                roomType: "One Bedroom Pool Villa"
+            }
+        ],
+        tourSummary: [
+            "Day 1: Arrival - Lunch at Indian Restaurant - Uluwatu Temple with Kecak Dance - Dinner at Indian Restaurant",
+            "Day 2: Water Sport - Lunch at Indian Restaurant - DJ Night at Restaurant with Indian Dinner & Free Flow of Liquor",
+            "Day 3: Nusa Penida Island Tour incl. Local Lunch - Dinner at Indian Restaurant",
+            "Day 4: Inter Hotel Transfers - Tegenungan Waterfall - Lunch at Indian Restaurant - Bali Swing - Dinner at Indian Restaurant",
+            "Day 5: Mount Batur Sunrise Jeep Safari with Hot Spring - Lunch at Indian Restaurant - Ubud Village Tour - Dinner at Indian Restaurant",
+            "Day 6: 02 Hours Tandem ATV Ride - Lunch at Indian Restaurant - Shopping Time at Ubud Market - Dinner at Indian Restaurant",
+            "Day 7: Departure"
+        ],
+        inclusions: [
+            "03 Night's Accommodation at Ramayana Suites & Resort / Fairfield by Marriott Bali Legian",
+            "02 Night's Accommodation at Furama Xclusive Resorts & Villas Ubud (Premier Room)",
+            "01 Night Accommodation at Dwaraka The Royal Villa (One Bedroom Pool Villa)",
+            "All meals at Indian restaurants as per itinerary",
+            "Uluwatu Temple visit with Kecak Dance performance",
+            "Water sports activities (Banana Boat, Jetski, Parasailing)",
+            "DJ Night with Indian dinner and free flow liquor",
+            "Nusa Penida Island tour with local lunch",
+            "Tegenungan Waterfall visit",
+            "Bali Swing Pioneer Package (2 Single Swing, 1X Romantic Swing, 1X Bed Swing, 1 Sky Bed, 1X Bird Nest, 1X Sky Nest)",
+            "Mount Batur Sunrise Jeep Safari with Hot Spring",
+            "Ubud Village Tour (Celuk & Mas Silver and Gold Smith Village, Batik Factory, Ubud Art Market)",
+            "02 Hours Tandem ATV ride",
+            "Floating breakfast at villa",
+            "All transfers and transportation",
+            "Professional guide services"
+        ],
+        exclusions: [
+            "International flights",
+            "Visa fees",
+            "Travel insurance",
+            "Personal expenses and shopping",
+            "Tips and gratuities",
+            "Optional activities not mentioned in itinerary",
+            "Alcoholic beverages (except during DJ night)",
+            "Airport taxes and departure fees"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival - Lunch - Uluwatu Temple with Kecak Dance - Dinner",
+                description: "Upon arrival at Ngurah Rai Airport, meet and greet at the airport with our representative then transfer to the hotel for check in. Evening Pick up for Uluwatu Temple with Kecak Dance. Overnight stay at the Resort.",
+                image: "/UGCImages/bali/extra/Uluwatu.jpg"
+            },
+            {
+                day: 2,
+                title: "Water Sports - DJ Night with Indian Dinner & Free Flow Liquor",
+                description: "Breakfast at the hotel. Watersport with 1X Round Banana Boat, 1X Round Jetski, 1X Round Parasailing Adventure. Later will proceed for DJ Night followed by Indian Dinner. Overnight stay at the Resort.",
+                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/2.webp"
+            },
+            {
+                day: 3,
+                title: "Nusa Penida Island Tour with Local Lunch",
+                description: "Breakfast at the hotel. Pick up at the hotel at 7.am then proceed to Sanur Jetty for transfers to Nusa Penida Island by Speedboat. Nusa Penida Island Tour with visiting Kelingking Beach, Broken Beach, Angel Billabong, Crystal Bay, Local lunch at restaurant. Overnight stay at the Resort.",
+                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/3.webp"
+            },
+            {
+                day: 4,
+                title: "Inter Hotel Transfer - Tegenungan Waterfall - Bali Swing",
+                description: "Breakfast at the hotel. Check out & proceed to Tegenungan Waterfall & Bali Swing Pioneer Package which include 2 Single Swing, 1X Romantic Swing, 1X Bed Swing, 1 Sky Bed, 1X Bird Nest, 1X Sky Nest. Overnight stay at the Resort.",
+                image: "/UGCImages/bali/extra/Tegalalang Rice Terraces.jpg"
+            },
+            {
+                day: 5,
+                title: "Mount Batur Sunrise Jeep Safari - Hot Spring - Ubud Village Tour",
+                description: "Breakfast Box From Villa. Pick up at the hotel and transfer to Mount Batur Sunrise Jeep Safari with Hot Spring. After that Ubud Village Tour with visiting Celuk & Mas Silver and Gold Smith Village, Batik Factory, Ubud Art Market. Overnight stay at the Resort.",
+                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/5.webp"
+            },
+            {
+                day: 6,
+                title: "Tandem ATV Ride - Shopping at Ubud Market",
+                description: "Floating Breakfast at the hotel. Pick up For 02 ATV Hours Tandem ATV later will spend time at Shopping. Overnight stay at the Resort.",
+                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/5.webp"
+            },
+            {
+                day: 7,
+                title: "Departure",
+                description: "Breakfast at the hotel. Check out and transfer to airport for departure.",
+                image: "/UGCImages/bali/BALI DELIGHT PACKAGE 2/HORIZONTAL/6.webp"
+            }
+        ],
+        images: [
+            "/UGCImages/bali/1.png"
+        ],
+        mobileImages: [
+            "/UGCImages/bali/1.png"
+        ],
+        experiences: [],
+        sightseeingSpots: [],
+        localFood: [
+            {
+                name: "Nasi Goreng",
+                description: "Indonesian fried rice with vegetables, chicken or seafood, topped with a fried egg",
+                image: "/UGCImages/bali/cuisine/Nasi Goreng.jpg",
+                where: "Indian Restaurant"
+            },
+            {
+                name: "Indian Cuisine",
+                description: "Authentic Indian dishes served at selected Indian restaurants throughout the tour",
+                image: "/UGCImages/bali/cuisine/Nasi Goreng.jpg",
+                where: "Various Indian Restaurants"
+            }
+        ],
+        culture: [
+            {
+                title: "Kecak Dance",
+                description: "Traditional Balinese dance performance at Uluwatu Temple featuring fire dance and chanting",
+                image: "/UGCImages/bali/culture/dance.jpg"
+            },
+            {
+                title: "Uluwatu Temple",
+                description: "Ancient sea temple perched on a cliff offering stunning sunset views",
+                image: "/UGCImages/bali/culture/baliTemple.jpg"
+            },
+            {
+                title: "Traditional Crafts",
+                description: "Visit to Celuk & Mas villages famous for silver, gold smithing and wood carving",
+                image: "/UGCImages/bali/culture/craft.jpg"
+            },
+            {
+                title: "Ubud Art Market",
+                description: "Local market showcasing traditional Balinese handicrafts, textiles, and souvenirs",
+                image: "/UGCImages/bali/culture/market.png"
+            }
+        ],
+        additionalInfo: undefined
+    },
     baliHoneymoon: {
         id: "bali-honeymoon",
         packageName: "Bali Honeymoon Package",
