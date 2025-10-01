@@ -1,19 +1,21 @@
 export interface EnquiryData {
     name: string;
     destination: string;
-    email: string;
+    email?: string;
     phone: string;
-    departureCity: string;
+    departureCity?: string;
+    startDate?: string;
+    packageType?: string;
 }
 
-export function generateEmailHTML(enquiryData: EnquiryData) {
+export function generateBookingEmailHTML(enquiryData: EnquiryData) {
     return `
         <!DOCTYPE html>
         <html lang="en">
         <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>New Travel Enquiry</title>
+          <title>New Booking Request</title>
           <style>
             body {
               font-family: 'Arial', sans-serif;
@@ -85,46 +87,83 @@ export function generateEmailHTML(enquiryData: EnquiryData) {
               color: #666;
               border-top: 1px solid #eaeaea;
             }
-            .gradient-text {
-              background: linear-gradient(135deg, #017ae3, #00f6ff);
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;
-              font-weight: bold;
+            .priority-notice {
+              background-color: #fff3cd;
+              border: 1px solid #ffeaa7;
+              padding: 15px;
+              border-radius: 5px;
+              margin-bottom: 20px;
+              text-align: center;
+              color: #856404;
             }
           </style>
         </head>
         <body>
           <div class="container">
             <div class="header">
-              <h1>New Travel Enquiry</h1>
+              <h1>🌟 New Booking Request 🌟</h1>
             </div>
             <div class="content">
-              <p class="intro">A new travel enquiry has been received from ${enquiryData.name}.</p>
+              <div class="priority-notice">
+                <strong>🚨 Priority Lead Alert!</strong><br>
+                New booking request requires immediate attention
+              </div>
+              <p class="intro">A new booking request has been received from <strong>${enquiryData.name}</strong>.</p>
               <table class="info-table">
                 <tr class="info-row">
-                  <td class="info-label">Destination</td>
-                  <td class="info-value">${enquiryData.destination}</td>
+                  <td class="info-label">📍 Destination</td>
+                  <td class="info-value"><strong>${enquiryData.destination}</strong></td>
                 </tr>
                 <tr class="info-row">
-                  <td class="info-label">Name</td>
+                  <td class="info-label">👤 Customer Name</td>
                   <td class="info-value">${enquiryData.name}</td>
                 </tr>
                 <tr class="info-row">
-                  <td class="info-label">Phone</td>
-                  <td class="info-value">${enquiryData.phone}</td>
+                  <td class="info-label">📞 Phone Number</td>
+                  <td class="info-value"><a href="tel:${enquiryData.phone}" style="color: #017ae3; text-decoration: none;">${enquiryData.phone}</a></td>
                 </tr>
+                ${enquiryData.email ? `
                 <tr class="info-row">
-                  <td class="info-label">Email</td>
+                  <td class="info-label">📧 Email</td>
                   <td class="info-value"><a href="mailto:${enquiryData.email}" style="color: #017ae3; text-decoration: none;">${enquiryData.email}</a></td>
                 </tr>
+                ` : ''}
+                ${enquiryData.startDate ? `
                 <tr class="info-row">
-                <td class="info-label">Departure City</td>
+                  <td class="info-label">📅 Travel Start Date</td>
+                  <td class="info-value">${new Date(enquiryData.startDate).toLocaleDateString('en-US', { 
+                    weekday: 'long', 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                  })}</td>
+                </tr>
+                ` : ''}
+                ${enquiryData.departureCity ? `
+                <tr class="info-row">
+                  <td class="info-label">🛫 Departure City</td>
                   <td class="info-value">${enquiryData.departureCity}</td>
                 </tr>
+                ` : ''}
+                ${enquiryData.packageType ? `
+                <tr class="info-row">
+                  <td class="info-label">📦 Package Type</td>
+                  <td class="info-value">${enquiryData.packageType}</td>
+                </tr>
+                ` : ''}
               </table>
+              <div style="margin-top: 25px; padding: 15px; background-color: #e7f3ff; border-radius: 5px; border-left: 4px solid #017ae3;">
+                <h3 style="margin: 0 0 10px 0; color: #017ae3;">Next Steps:</h3>
+                <ul style="margin: 0; padding-left: 20px; color: #333;">
+                  <li>Contact the customer within 2 hours for best conversion</li>
+                  <li>Prepare customized package options for ${enquiryData.destination}</li>
+                  <li>Check availability for ${enquiryData.startDate ? new Date(enquiryData.startDate).toLocaleDateString() : 'the requested dates'}</li>
+                </ul>
+              </div>
             </div>
             <div class="footer">
-              <p>You can reply directly to this email to respond to the customer.</p>
+              <p><strong>This booking request has been automatically added to SEMBARK CRM</strong></p>
+              <p>Contact the customer immediately to convert this lead!</p>
               <p>&copy; 2024 Truedeal Travel. All rights reserved.</p>
             </div>
           </div>
@@ -133,3 +172,7 @@ export function generateEmailHTML(enquiryData: EnquiryData) {
       `;
 }
 
+// Keep the old function for backward compatibility
+export function generateEmailHTML(enquiryData: EnquiryData) {
+    return generateBookingEmailHTML(enquiryData);
+}
