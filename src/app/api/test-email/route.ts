@@ -5,7 +5,7 @@ import { generateBookingEmailHTML, EnquiryData } from '../send-booking-email/ema
 export async function POST() {
   try {
     const emailService = new EmailService();
-    
+
     // Test data
     const testData: EnquiryData = {
       name: 'Test Customer',
@@ -27,8 +27,8 @@ export async function POST() {
       html: emailHTML,
     });
 
-    return NextResponse.json({ 
-      success: true, 
+    return NextResponse.json({
+      success: true,
       message: `Test emails sent successfully to both info@truedeal4u.com and web@truedeal4u.com using ${emailService.getProvider()}`,
       provider: emailService.getProvider(),
       timestamp: new Date().toISOString()
@@ -36,14 +36,13 @@ export async function POST() {
 
   } catch (error: unknown) {
     const errorMessage = error instanceof Error ? error.message : 'Failed to send test emails';
-    const errorDetails = error instanceof Error && 'response' in error ? (error as any).response?.body : error;
-    
+
     console.error('Test email error:', error);
-    
-    return NextResponse.json({ 
-      success: false, 
+
+    return NextResponse.json({
+      success: false,
       error: errorMessage,
-      details: errorDetails
+      details: error instanceof Error ? error.stack : String(error)
     }, { status: 500 });
   }
 }
@@ -51,11 +50,11 @@ export async function POST() {
 export async function GET() {
   const hasGmail = !!(process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD);
   const hasSendGrid = !!process.env.SENDGRID_API_KEY;
-  
+
   let provider = 'none';
   if (hasGmail) provider = 'gmail';
   else if (hasSendGrid) provider = 'sendgrid';
-  
+
   return NextResponse.json({
     message: 'Email test endpoint is ready. Use POST method to send test emails.',
     provider: provider,
