@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import EmailService from '@/lib/email-service';
 import { generateBookingEmailHTML, EnquiryData } from '../send-booking-email/emailTemplate';
 
-export async function POST(request: Request) {
+export async function POST() {
   try {
     const emailService = new EmailService();
     
@@ -34,13 +34,16 @@ export async function POST(request: Request) {
       timestamp: new Date().toISOString()
     });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : 'Failed to send test emails';
+    const errorDetails = error instanceof Error && 'response' in error ? (error as any).response?.body : error;
+    
     console.error('Test email error:', error);
     
     return NextResponse.json({ 
       success: false, 
-      error: error.message || 'Failed to send test emails',
-      details: error.response?.body || error
+      error: errorMessage,
+      details: errorDetails
     }, { status: 500 });
   }
 }
