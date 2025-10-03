@@ -240,7 +240,7 @@ export default function HeroSection() {
                             <TypingAnimation>Search your holiday</TypingAnimation>
                         </h2>
 
-                        <div className="w-full max-w-xl mx-auto font-poppins px-4 mb-4 md:mb-8">
+                        <div className="w-full max-w-xl mx-auto font-poppins px-4 mb-2">
                             <button
                                 onClick={() => setIsSearchModalOpen(true)}
                                 className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white border-0 rounded-full h-12 px-6 shadow-lg hover:opacity-90 transition-all duration-300 flex items-center justify-between"
@@ -259,55 +259,46 @@ export default function HeroSection() {
                                 </DialogContent>
                             </Dialog>
                         </div>
-                    </div>
 
-                    {/* Stats Section - fixed at bottom */}
-                    <div className="w-full mt-auto hidden md:block">
-                        <div className="container mx-auto px-4">
-                            <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-3xl mx-auto rounded-xl p-4">
-                                {/* MICE Services */}
+                        {/* Mice Trips and Fixed Departures buttons */}
+                        <div className="w-full max-w-xl mx-auto font-poppins px-4 mt-4 mb-6">
+                            <div className="flex gap-3 justify-center">
                                 <button
                                     onClick={() => router.push('/mice')}
-                                    className="flex flex-col items-center text-white hover:bg-white/10 rounded-lg p-2 transition-all duration-300 hover:scale-105 cursor-pointer"
+                                    className="flex-1 bg-gradient-to-r from-[#ffffff] to-[#5dfaff] text-gray-800 border-0 rounded-full h-11 px-4 shadow-lg hover:opacity-90 transition-all duration-300 flex items-center justify-center text-sm font-medium"
                                 >
-                                    <div className="mb-1 md:mb-2">
-                                        <Briefcase className="w-6 h-6 md:w-8 md:h-8 text-blue-400" />
-                                    </div>
-                                    <div className="text-center">
-                                        <p className="font-bold text-xs md:text-sm">MICE</p>
-                                        <p className="text-[10px] md:text-xs">Specialists</p>
-                                    </div>
+                                    <span>Mice Trips</span>
                                 </button>
-
-                                {/* Experience */}
-                                <div className="flex flex-col items-center text-white">
-                                    <div className="mb-1 md:mb-2">
-                                        <Award className="w-6 h-6 md:w-8 md:h-8 text-yellow-400" />
-                                    </div>
-                                    <div className="text-center">
-                                        <p className="font-bold text-xs md:text-sm">10+ Years</p>
-                                        <p className="text-[10px] md:text-xs">Experience</p>
-                                    </div>
-                                </div>
-
-                                {/* EMI */}
                                 <button
-                                    onClick={() => window.open('https://app.sankash.in/customer/application?token=eyJhcHBsaWNhdGlvbl9udW1iZXIiOiJTSy1BUC0wNDUxMjg5IiwicGFnZSI6Im5ldyIsImRhdGEiOiJaVEExT1RRd1pHWmlPVEZqTTJSbU5qUTNNemxoWWpVeU5qSmpaV05sWkRjPSIsInN0b3BfYXRfYXBwcm92YWwiOmZhbHNlfQ==', '_blank')}
-                                    className="flex flex-col items-center text-white hover:bg-white/10 rounded-lg p-2 transition-all duration-300 hover:scale-105 cursor-pointer"
+                                    onClick={() => router.push('/fixedDeparture')}
+                                    className="flex-1 bg-gradient-to-r from-[#ffffff] to-[#5dfaff] text-gray-800 border-0 rounded-full h-11 px-4 shadow-lg hover:opacity-90 transition-all duration-300 flex items-center justify-center text-sm font-medium"
                                 >
-                                    <div className="mb-1 md:mb-2">
-                                        <CreditCard className="w-6 h-6 md:w-8 md:h-8 text-purple-400" />
-                                    </div>
-                                    <div className="text-center">
-                                        <p className="font-bold text-xs md:text-sm">No Cost</p>
-                                        <p className="text-[10px] md:text-xs">EMI Available</p>
-                                    </div>
+                                    <span>Fixed Departures</span>
                                 </button>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
+
+            {/* Info Banner */}
+            {/* <div className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] py-3">
+                <div className="container mx-auto px-4">
+                    <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 text-white font-poppins text-sm md:text-base">
+                        <div className="flex items-center gap-2">
+                            <Award className="w-5 h-5" />
+                            <span className="font-semibold">10+ Years of Experience</span>
+                        </div>
+                        <div className="hidden md:block w-px h-6 bg-white/30"></div>
+                        <div className="flex items-center gap-2">
+                            <CreditCard className="w-5 h-5" />
+                            <span className="font-semibold">No Cost EMI</span>
+                        </div>
+                    </div>
+                </div>
+            </div> */}
+
             <FirstTimeTravelMessage />
         </>
     )
