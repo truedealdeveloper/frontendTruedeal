@@ -10,7 +10,6 @@ import TypingAnimation from "../../../components/ui/typing-animation"
 import FirstTimeTravelMessage from "./FirstTimeTravelMessage"
 import { Destination, destinations } from "@/app/config/destinations"
 import { Dancing_Script } from 'next/font/google'
-import Image from "next/image"
 
 const dancingScript = Dancing_Script({ subsets: ['latin'] })
 
@@ -256,12 +255,12 @@ export default function HeroSection() {
                         <div className="w-full max-w-xl mx-auto font-poppins px-4 mb-2">
                             <button
                                 onClick={() => setIsSearchModalOpen(true)}
-                                className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white border-0 rounded-full h-12 px-6 shadow-lg hover:opacity-90 transition-all duration-300 flex items-center justify-between"
+                                className="w-full bg-gradient-to-r from-[#ffffff] to-[#5dfaff] text-gray-800 border-0 rounded-full h-12 px-6 shadow-lg hover:opacity-90 transition-all duration-300 flex items-center justify-between"
                             >
-                                <span className="text-white/75 truncate">
+                                <span className="text-gray-800/75 truncate">
                                     {placeholderText ? `Search ${placeholderText}...` : "Search countries, cities..."}
                                 </span>
-                                <Search className="h-5 w-5 text-white flex-shrink-0 ml-2" />
+                                <Search className="h-5 w-5 text-gray-800 flex-shrink-0 ml-2" />
                             </button>
 
                             {/* Search Modal */}
