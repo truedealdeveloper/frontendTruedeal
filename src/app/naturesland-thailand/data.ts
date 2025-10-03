@@ -99,13 +99,13 @@ export const thailandPackages: Record<string, thailandPackage> = {
         days: 8,
         nights: 7,
         amount: 75895,
-        dateStart: "7,14,21,28 September",
+        dateStart: "7,14,21,28 October",
         dateEnd: "",
         description: "Experience the best of Thailand with our meticulously planned 8-day adventure tour. From the pristine beaches of Phuket and Krabi to the vibrant city life of Bangkok, this tour offers a perfect blend of relaxation, adventure, and cultural experiences.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double/Twin Sharing",
-            arrivalDate: "10 September 2025",
+            arrivalDate: "10 October 2025",
             duration: "7N8D Thailand Tour",
             costBasis: "Cost Based On Double Sharing"
         },
@@ -279,13 +279,13 @@ export const thailandPackages: Record<string, thailandPackage> = {
         days: 11,
         nights: 10,
         amount: 86895,
-        dateStart: "7,14,21,28 September",
+        dateStart: "7,14,21,28 October",
         dateEnd: "",
         description: "Experience the ultimate Thailand adventure with our comprehensive 11-day tour covering Phuket, Krabi, Pattaya, and Bangkok. From pristine islands to cultural landmarks, this tour offers the perfect blend of relaxation, adventure, and urban exploration.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "6 September 2025",
+            arrivalDate: "6 October 2025",
             duration: "10N11D Thailand Deluxe Tour",
             costBasis: "Cost Based On Double Sharing"
         },
@@ -478,13 +478,13 @@ export const thailandPackages: Record<string, thailandPackage> = {
         days: 8,
         nights: 7,
         amount: 77895,
-        dateStart: "7,14,21,28 September",
+        dateStart: "7,14,21,28 October",
         dateEnd: "",
         description: "Experience the ultimate Thailand adventure with our comprehensive 8-day speedboat tour covering Phuket, Krabi, Pattaya, and Bangkok. From pristine islands to cultural landmarks, this tour offers the perfect blend of relaxation, adventure, and urban exploration.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "3 September 2025",
+            arrivalDate: "3 October 2025",
             duration: "7N8D Thailand Speedboat Tour",
             costBasis: "Cost Based On Double Sharing"
         },

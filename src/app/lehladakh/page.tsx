@@ -188,7 +188,7 @@ export default function LehladakhPackages() {
     const faqs = [
         {
             question: "What is the best time to visit Leh Ladakh?",
-            answer: "The best time to visit Leh Ladakh is from September to September when the weather is most favorable and all passes are open."
+            answer: "The best time to visit Leh Ladakh is from October to October when the weather is most favorable and all passes are open."
         },
         {
             question: "Do I need special permits to visit Leh Ladakh?",

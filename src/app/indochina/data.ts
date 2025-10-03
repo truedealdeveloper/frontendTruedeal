@@ -91,13 +91,13 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
         days: 6,
         nights: 5,
         amount: 59500,
-        dateStart: "1,8,15,22,29 September",
-        dateEnd: "5,12,19,26,30 September",
+        dateStart: "1,8,15,22,29 October",
+        dateEnd: "5,12,19,26,30 October",
         description: "Explore the highlights of Cambodia with our 6-day tour.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in September & September 2025",
+            arrivalDate: "Multiple dates in October & October 2025",
             duration: "6N5D Combodia Highlights",
             costBasis: "Cost Based On per person"
         },
@@ -336,13 +336,13 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
         days: 14,
         nights: 13,
         amount: 140000,
-        dateStart: "1,8,15,22,29 September",
-        dateEnd: "5,12,19,26,30 September",
+        dateStart: "1,8,15,22,29 October",
+        dateEnd: "5,12,19,26,30 October",
         description: "Explore the highlights of Vietnam and Cambodia with our comprehensive 14-day tour.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in September & September 2025",
+            arrivalDate: "Multiple dates in October & October 2025",
             duration: "14D13N Vietnam & Cambodia Highlights",
             costBasis: "Cost Based On per person"
         },
@@ -691,13 +691,13 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
         days: 6,
         nights: 5,
         amount: 56000,
-        dateStart: "1,8,15,22,29 September",
-        dateEnd: "5,12,19,26,30 September",
+        dateStart: "1,8,15,22,29 October",
+        dateEnd: "5,12,19,26,30 October",
         description: "Discover the charm and beauty of Laos with our 6-day tour through Luang Prabang and Vientiane.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in September & September 2025",
+            arrivalDate: "Multiple dates in October & October 2025",
             duration: "6D5N Lively Laos Highlights",
             costBasis: "Cost Based On per person"
         },
@@ -925,7 +925,7 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
             }
         },
         departureDates: [
-            { date: "3, 10, 17, 24 September 2025" },
+            { date: "3, 10, 17, 24 October 2025" },
         ]
     },
     laosVietnam: {
@@ -934,8 +934,8 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
         days: 12,
         nights: 11,
         amount: 135300,
-        dateStart: "1,8,15,22,29 September",
-        dateEnd: "5,12,19,26,30 September",
+        dateStart: "1,8,15,22,29 October",
+        dateEnd: "5,12,19,26,30 October",
         description: "Experience the best of Laos and Vietnam with our comprehensive 12-day tour through Luang Prabang, Ha Noi, Ha Long Bay, and Hoi An.",
         groupDetails: {
             pax: "Group Tour",
@@ -1238,7 +1238,7 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
             }
         },
         departureDates: [
-            { date: "3, 10, 17, 24 September 2025" },
+            { date: "3, 10, 17, 24 October 2025" },
         ]
     },
     beautyOfIndochina: {
@@ -1247,13 +1247,13 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
         days: 10,
         nights: 9,
         amount: 118000,
-        dateStart: "1,8,15,22,29 September",
-        dateEnd: "5,12,19,26,30 September",
+        dateStart: "1,8,15,22,29 October",
+        dateEnd: "5,12,19,26,30 October",
         description: "Experience the diverse beauty of Indochina with our 10-day journey through Vietnam, Cambodia, and Laos.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in September & September   2025",
+            arrivalDate: "Multiple dates in October & October   2025",
             duration: "10D9N Beauty of Indochina Highlights",
             costBasis: "Cost Based On per person"
         },
@@ -1533,13 +1533,13 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
         days: 11,
         nights: 10,
         amount: 123000,
-        dateStart: "1,8,15,22,29 September",
-        dateEnd: "5,12,19,26,30 September",
+        dateStart: "1,8,15,22,29 October",
+        dateEnd: "5,12,19,26,30 October",
         description: "Experience the diverse beauty of Indochina with our 11-day journey through Vietnam and Thailand.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in September & September 2025",
+            arrivalDate: "Multiple dates in October & October 2025",
             duration: "11D10N Fascinating Vietnam and Thailand Highlights",
             costBasis: "Cost Based On per person"
         },
@@ -1854,13 +1854,13 @@ export const indochinaPackages: Record<string, indochinaPackage> = {
         days: 21,
         nights: 20,
         amount: 268700,
-        dateStart: "1,8,15,22,29 September",
-        dateEnd: "5,12,19,26,30 September",
+        dateStart: "1,8,15,22,29 October",
+        dateEnd: "5,12,19,26,30 October",
         description: "Experience the ultimate Indochina journey with our comprehensive 21-day tour through Thailand, Laos, Vietnam, and Cambodia.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in September & September   2025",
+            arrivalDate: "Multiple dates in October & October   2025",
             duration: "21D20N Indochina Grand Tour",
             costBasis: "Cost Based On per person"
         },

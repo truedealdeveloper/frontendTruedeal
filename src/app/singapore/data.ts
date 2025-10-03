@@ -107,7 +107,7 @@ export const singaporePackages: Record<string, SingaporePackage> = {
         nights: 3,
         amount: 44500,
         dateStart: "01 May 2025",
-        dateEnd: "26 September 2025",
+        dateEnd: "26 October 2025",
         description: "Experience the vibrant city life of Singapore with our 4-day tour covering iconic attractions, cultural sites, and modern marvels.",
         groupDetails: {
             pax: "Group Tour",
@@ -205,7 +205,7 @@ Meals: Breakfast at the hotel
             "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singapore/2.webp",
         ],
         departureDates: [
-            { date: "Mar 2025 - September 2025" }
+            { date: "Mar 2025 - October 2025" }
         ],
         additionalInfo: {
             highlights: [
@@ -277,7 +277,7 @@ Meals: Breakfast at the hotel
         nights: 4,
         amount: 59000,
         dateStart: "01 May 2025",
-        dateEnd: "26 September 2025",
+        dateEnd: "26 October 2025",
         description: "Experience the vibrant city life of Singapore with our 5-day tour covering iconic attractions, cultural sites, and modern marvels.",
         groupDetails: {
             pax: "Group Tour",
@@ -391,7 +391,7 @@ Meals: Breakfast at the hotel
         ],
 
         departureDates: [
-            { date: "Mar 2025 - September 2025" }
+            { date: "Mar 2025 - October 2025" }
         ],
         additionalInfo: {
             highlights: [
@@ -463,7 +463,7 @@ Meals: Breakfast at the hotel
         nights: 3,
         amount: 35000,
         dateStart: "01 May 2025",
-        dateEnd: "26 September 2025",
+        dateEnd: "26 October 2025",
         description: "Experience the vibrant city life of Malaysia with our 4-day tour covering iconic attractions, cultural sites, and modern marvels.",
         groupDetails: {
             pax: "Group Tour",
@@ -569,7 +569,7 @@ Meals: Breakfast at the hotel
         ],
 
         departureDates: [
-            { date: "Mar 2025 - September 2025" }
+            { date: "Mar 2025 - October 2025" }
         ],
         additionalInfo: {
             highlights: [
@@ -624,7 +624,7 @@ Meals: Breakfast at the hotel
         nights: 4,
         amount: 25000,
         dateStart: "01 May 2025",
-        dateEnd: "26 September 2025",
+        dateEnd: "26 October 2025",
         description: "Experience the vibrant city life of Langkawi with our 5-day tour covering iconic attractions, cultural sites, and modern marvels.",
         groupDetails: {
             pax: "Group Tour",
@@ -736,7 +736,7 @@ Check out and meet driver at hotel lobby for transfer to LGK Airport for departu
         ],
 
         departureDates: [
-            { date: "Mar 2025 - September 2025" }
+            { date: "Mar 2025 - October 2025" }
         ],
         additionalInfo: {
             highlights: [
@@ -933,7 +933,7 @@ End of tour with memories to cherish forever!`,
             "https://truedeal-assets.s3.eu-north-1.amazonaws.com/Singapore/singapore/2.webp",
         ],
         departureDates: [
-            { date: "Mar 2025 - September 2025" }
+            { date: "Mar 2025 - October 2025" }
         ],
         additionalInfo: {
             highlights: [
@@ -1002,22 +1002,22 @@ End of tour with memories to cherish forever!`,
             remainingSlots: 11,
             monthlyBatches: [
                 {
-                    month: "September",
+                    month: "October",
                     dates: ["13th", "14th", "15th"],
                     availableSeats: 20
                 },
                 {
-                    month: "September",
+                    month: "October",
                     dates: ["11th", "12th", "13th"],
                     availableSeats: 20
                 },
                 {
-                    month: "September",
+                    month: "October",
                     dates: ["8th", "9th", "10th"],
                     availableSeats: 20
                 },
                 {
-                    month: "September",
+                    month: "October",
                     dates: ["12th", "13th", "14th"],
                     availableSeats: 20
                 },

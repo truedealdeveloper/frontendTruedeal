@@ -94,7 +94,7 @@ export default function EuropePackagePage({ params }: PageProps) {
     const faqs = useMemo(() => ([
         {
             question: "What is the best time to visit Europe?",
-            answer: "May to September is typically the best time with pleasant weather and longer days, though Europe is beautiful year-round.",
+            answer: "May to October is typically the best time with pleasant weather and longer days, though Europe is beautiful year-round.",
         },
         {
             question: "Do Indians need a visa for Europe?",

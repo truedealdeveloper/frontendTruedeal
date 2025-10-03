@@ -189,7 +189,7 @@ export const baliPackages: Record<string, BaliPackage> = {
         days: 7,
         nights: 6,
         amount: 75999,
-        dateStart: "1,8,15,22,29 September",
+        dateStart: "1,8,15,22,29 October",
         dateEnd: "",
         flights: {
             marketingAirline: "",
@@ -205,7 +205,7 @@ export const baliPackages: Record<string, BaliPackage> = {
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in September 2025",
+            arrivalDate: "Multiple dates in October 2025",
             duration: "6N7D Bali Fixed Departure",
             costBasis: "Cost Based On Double Sharing"
         },
@@ -527,13 +527,13 @@ from prominent Balinese artists. (Breakfast)`,
         days: 6,
         nights: 5,
         amount: 26000,
-        dateStart: "5,12,19,26,30 September",
+        dateStart: "5,12,19,26,30 October",
         dateEnd: "",
         description: "Experience the ultimate Bali adventure with our comprehensive 6-day tour covering Ubud, Kintamani, and Ubud. From pristine beaches to cultural landmarks, this tour offers the perfect blend of relaxation, adventure, and urban exploration.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in September 2025",
+            arrivalDate: "Multiple dates in October 2025",
             duration: "5N6D Bali Honeymoon",
             costBasis: "Cost Based On per person"
         },
@@ -714,13 +714,13 @@ Depending on your flight timings, You will be transferred from Hotel to Bali Int
         days: 7,
         nights: 6,
         amount: 36000,
-        dateStart: "5,12,19,26,30 September",
+        dateStart: "5,12,19,26,30 October",
         dateEnd: "",
         description: "Experience the ultimate Bali luxury with our comprehensive 7-day tour combining premium hotels, water sports, cultural visits, and adventure activities. Perfect blend of relaxation and excitement with stays at Swiss Belhotel Tuban and Fullmoon Villa Ubud.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in September 2025",
+            arrivalDate: "Multiple dates in October 2025",
             duration: "6N7D Bali Deluxe",
             costBasis: "Cost Based On per person"
         },
@@ -879,13 +879,13 @@ Depending on your flight timings, You will be transferred from Hotel to Bali Int
         days: 9,
         nights: 8,
         amount: 48000,
-        dateStart: "5,12,19,26,30 September",
+        dateStart: "5,12,19,26,30 October",
         dateEnd: "",
         description: "Experience the ultimate Bali luxury with our comprehensive 9-day tour combining premium hotels, water sports, cultural visits, and adventure activities. Perfect blend of relaxation and excitement with stays at Swiss Belhotel Tuban and Fullmoon Villa Ubud.",
         groupDetails: {
             pax: "Group Tour",
             rooms: "Double Sharing",
-            arrivalDate: "Multiple dates in September 2025",
+            arrivalDate: "Multiple dates in October 2025",
             duration: "8N9D Bali Gili T Package",
             costBasis: "Cost Based On per person"
         },

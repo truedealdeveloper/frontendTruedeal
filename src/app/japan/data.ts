@@ -273,7 +273,7 @@ End of your memorable Japan journey.`,
                 "Traditional tea ceremony",
                 "Nara Park and sacred deer"
             ],
-            bestTimeToVisit: "March to May (Spring) for cherry blossoms and September to November (Autumn) for fall colors offer the most pleasant weather.",
+            bestTimeToVisit: "March to May (Spring) for cherry blossoms and October to November (Autumn) for fall colors offer the most pleasant weather.",
             cuisine: [
                 "Authentic Sushi and Sashimi",
                 "Traditional Ramen varieties",
@@ -675,7 +675,7 @@ Overnight stay in Kyoto.`,
                 "Fushimi Inari Taisha",
                 "Kyoto temples"
             ],
-            bestTimeToVisit: "Spring (March-May) and Autumn (September-November) for best weather.",
+            bestTimeToVisit: "Spring (March-May) and Autumn (October-November) for best weather.",
             cuisine: [
                 "Sushi and Sashimi",
                 "Ramen varieties",
@@ -903,7 +903,7 @@ Overnight stay in Kyoto.`,
                 "Nara Park deer",
                 "Kyoto temples"
             ],
-            bestTimeToVisit: "Spring (March-May) for cherry blossoms and Autumn (September-November) for fall colors.",
+            bestTimeToVisit: "Spring (March-May) for cherry blossoms and Autumn (October-November) for fall colors.",
             cuisine: [
                 "Sushi and Sashimi",
                 "Traditional Ramen",
@@ -1142,7 +1142,7 @@ Overnight stay in Kyoto.`,
                 "Kyoto cultural immersion",
                 "Gion district exploration"
             ],
-            bestTimeToVisit: "Spring (March-May) for cherry blossoms and Autumn (September-November) for fall colors offer the most beautiful scenery.",
+            bestTimeToVisit: "Spring (March-May) for cherry blossoms and Autumn (October-November) for fall colors offer the most beautiful scenery.",
             cuisine: [
                 "Kaiseki dinner at Ryokan",
                 "Premium Sushi and Sashimi",
@@ -1387,7 +1387,7 @@ Overnight stay in Osaka.`,
                 "Fushimi Inari Taisha",
                 "Nara Park"
             ],
-            bestTimeToVisit: "March to May (Spring) and September to November (Autumn) offer the best weather and cherry blossoms or autumn colors.",
+            bestTimeToVisit: "March to May (Spring) and October to November (Autumn) offer the best weather and cherry blossoms or autumn colors.",
             cuisine: [
                 "Sushi and Sashimi",
                 "Ramen",

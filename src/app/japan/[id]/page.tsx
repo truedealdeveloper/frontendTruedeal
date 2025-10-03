@@ -98,7 +98,7 @@ export default function JapanPackagePage({ params }: PageProps) {
     const faqs = useMemo(() => ([
         {
             question: "What is the best time to visit Japan?",
-            answer: "March to May (Spring) and September to November (Autumn) offer the best weather with cherry blossoms or autumn colors.",
+            answer: "March to May (Spring) and October to November (Autumn) offer the best weather with cherry blossoms or autumn colors.",
         },
         {
             question: "Do Indians need a visa for Japan?",

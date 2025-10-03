@@ -95,7 +95,7 @@ export default function EuropePackages() {
     const faqs = [
         {
             question: "What is the best time to visit Europe?",
-            answer: "The best time to visit Europe is from May to September when the weather is pleasant and most tourist attractions are open. Spring (April-June) and early autumn (September-October) offer mild weather and fewer crowds."
+            answer: "The best time to visit Europe is from May to October when the weather is pleasant and most tourist attractions are open. Spring (April-June) and early autumn (October-October) offer mild weather and fewer crowds."
         },
         {
             question: "Do Indians need a visa for Europe?",

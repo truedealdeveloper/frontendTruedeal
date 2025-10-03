@@ -173,7 +173,7 @@ export default function GreecePackages() {
     const faqs = [
         {
             question: "What is the best time to visit Greece?",
-            answer: "The best time to visit Greece is from April to October, with peak season being September to September. The weather is warm and perfect for beach activities and island hopping."
+            answer: "The best time to visit Greece is from April to October, with peak season being October to October. The weather is warm and perfect for beach activities and island hopping."
         },
         {
             question: "Do I need a visa to visit Greece?",

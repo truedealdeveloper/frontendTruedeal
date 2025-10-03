@@ -106,7 +106,7 @@ export default function SingaporePackagePage({ params }: PageProps) {
     const faqs = useMemo(() => ([
         {
             question: "What is the best time to visit Singapore?",
-            answer: "Singapore is a year-round destination. However, September to September typically has the best weather with less rainfall.",
+            answer: "Singapore is a year-round destination. However, October to October typically has the best weather with less rainfall.",
         },
         {
             question: "Do Indians need a visa for Singapore?",

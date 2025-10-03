@@ -144,7 +144,7 @@ Rating Breakdown:
         id: '5',
         author: 'Akshay Bhisikar',
         rating: 4.0,
-        date: 'September 2024',
+        date: 'October 2024',
         content: `Great Team. Well-Planned Itinerary. Good Service.
 
 We are grateful to the True Deal team for organizing an amazing trip to Bali. They assisted us every step of the way, from booking flights and exchanging money to arranging all aspects of our trip. The itinerary was well-planned and hassle-free, with options for customization. Our accommodations were all above 3-star quality, and we thoroughly enjoyed our stay. The tour drivers and guides were highly professional, and the vehicles were impeccably clean.
@@ -200,7 +200,7 @@ Savi
         id: '7',
         author: 'Surya Sharma',
         rating: 4.0,
-        date: 'September 2024',
+        date: 'October 2024',
         content: `Reason for 4 stars -
 1) During our trip we got stuck in SaPa due to typhoon yagi and our indian trip organiser Mr. Rashid has really helped us in getting out of the region.
 2) However , the Vietnam organizers were very reluctant and I felt they were not interested in getting is out and due this our trip was completely ruined and we have to cancel our flights and divert the iternity.
@@ -269,7 +269,7 @@ Cheers to Aman 💐
         id: '10',
         author: 'Chintan Gandhi',
         rating: 5.0,
-        date: 'September 2024',
+        date: 'October 2024',
         content: `It was a great experience to book a Bali trip through True Deal. True Deal's employees are supportive, and assigned drivers are polite. Our package contains adventure activities and nice places to visit in Bali. Thank you, True Deal, for making a trip awesome.
 `,
         media: [
@@ -286,7 +286,7 @@ Cheers to Aman 💐
         id: '11',
         author: 'Swetabh Srivastava',
         rating: 5.0,
-        date: 'September 2024',
+        date: 'October 2024',
         content: `It was a great experience to book a Bali trip through True Deal. True Deal's employees are supportive, and assigned drivers are polite. Our package contains adventure activities and nice places to visit in Bali. Thank you, True Deal, for making a trip awesome.
 `,
         media: [
@@ -302,7 +302,7 @@ Cheers to Aman 💐
         id: '12',
         author: 'Shraddha Jadeja',
         rating: 5.0,
-        date: 'September 2024',
+        date: 'October 2024',
         content: `My parents had the best time in Bali with the help of True deal. It was an amazing experience throughout with all the activities and stay planned.
 `,
         media: [
@@ -319,7 +319,7 @@ Cheers to Aman 💐
         id: '13',
         author: 'Aayushi Shah',
         rating: 5.0,
-        date: 'September 2024',
+        date: 'October 2024',
         content: `Our Bali trip was awesome. Aman gupta & Rasid Ali's efforts are incredible. They managed trip very well & we enjoyed a lott.
 `,
         media: [
@@ -331,7 +331,7 @@ Cheers to Aman 💐
         id: '14',
         author: 'Deepa Gurubasavaiah',
         rating: 5.0,
-        date: 'September 2024',
+        date: 'October 2024',
         content: `Thank you for arranging the trip to Bali. It was a smooth transition in each place without any overlap. The team did a great job in co ordinating. It was truly an amazing experience! thank you Rashid and team for doing a grt job!
 `,
         media: [
@@ -520,7 +520,7 @@ Thank you, Mr. Vineet and Mr. Gaurav, for such impeccable service and for provid
         id: '27',
         author: 'Snehil shrivastava',
         rating: 5.0,
-        date: 'September 2024',
+        date: 'October 2024',
         content: `
         Exceptional service from Truedeal from CEO Aman Arora and Mr Vineet singh from the start to finish! The travel company was knowledgeable, friendly, and went above and beyond to ensure our trip was perfect."
 `,

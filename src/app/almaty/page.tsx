@@ -169,7 +169,7 @@ export default function AlmatyPackages() {
     const faqs = [
         {
             question: "What is the best time to visit Almaty?",
-            answer: "Summer (June-September) is perfect for outdoor activities and sightseeing. Winter (December-February) is ideal for skiing and winter sports."
+            answer: "Summer (June-October) is perfect for outdoor activities and sightseeing. Winter (December-February) is ideal for skiing and winter sports."
         },
         {
             question: "Do I need a visa to visit Kazakhstan?",

@@ -170,7 +170,7 @@ export default function MansarovarYatraPackages() {
     const faqs = [
         {
             question: "What is the best time for Kailash Mansarovar Yatra?",
-            answer: "The best time is from May to September when the weather is most favorable and all passes are accessible. The peak season is June to September."
+            answer: "The best time is from May to October when the weather is most favorable and all passes are accessible. The peak season is June to October."
         },
         {
             question: "What permits are required for the Yatra?",

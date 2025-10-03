@@ -6,7 +6,7 @@ export const testimonials = [
         avatar: "/reviews/kiddo.jpg",
         fullReview: "I've been using this service for all my business trips, and I'm thoroughly impressed. The in-house operations ensure a seamless experience from start to finish. No third parties mean no unexpected surprises or hidden fees. Highly recommended for any business traveler!",
         destination: "Almaty & Baku",
-        travelDate: "September 2024",
+        travelDate: "October 2024",
         images: [
             "/reviews/kiddo.jpg",
             "/reviews/kiddofam.jpg",
@@ -82,7 +82,7 @@ export const testimonials = [
         avatar: "/IMAGES/china/1/1.webp",
         fullReview: "My work as a freelance photographer means I often have to book trips on short notice. This service has been a lifesaver with their flexible options and great rates for frequent travelers. They understand the needs of professionals with unpredictable schedules, and I couldn't be happier with their service.",
         destination: "China",
-        travelDate: "September 2024",
+        travelDate: "October 2024",
         images: [
             "/IMAGES/china/1/1.webp",
             "/IMAGES/china/1/2.webp",
@@ -97,7 +97,7 @@ export const testimonials = [
         avatar: "/Assets/UserImages/user6.webp",
         fullReview: "In sales, first impressions are everything. This travel service ensures I'm always at my best for important client meetings. From comfortable accommodations to punctual transportation, they take care of all the details so I can focus on my work. I highly recommend them to any sales professional.",
         destination: "New York",
-        travelDate: "September 2024",
+        travelDate: "October 2024",
         images: [
             "/Assets/ReviewImages/david1.jpg",
             "/Assets/ReviewImages/david2.jpg",
@@ -112,7 +112,7 @@ export const testimonials = [
         avatar: "/Assets/UserImages/user7.webp",
         fullReview: "As an event planner, I often need to coordinate travel for large groups. This service has been an invaluable partner in my work. Their attention to detail is exceptional, and they have a remarkable ability to handle complex group bookings. They've made the logistics of event planning so much smoother.",
         destination: "Dubai",
-        travelDate: "September 2024",
+        travelDate: "October 2024",
         images: [
             "/Assets/ReviewImages/olivia1.jpg",
             "/Assets/ReviewImages/olivia2.jpg",

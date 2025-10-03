@@ -126,8 +126,8 @@ export const mansarovarYatraPackages: Record<string, MansarovarYatraPackage> = {
         days: 9,
         nights: 8,
         amount: 270000,
-        dateStart: "September 2025",
-        dateEnd: "18th September 2025",
+        dateStart: "October 2025",
+        dateEnd: "18th October 2025",
         description: "Embark on a sacred journey to Mount Kailash and Lake Mansarovar, the most revered pilgrimage site in Hinduism and Buddhism. This overland expedition takes you through breathtaking landscapes of Tibet.",
         groupDetails: {
             pax: "Group Tour",
@@ -271,7 +271,7 @@ Depending on weather conditions, fly back to Simikot.`,
             "/UGCImages/mansarovar/Kailash/10.webp",
         ],
         departureDates: [
-            { date: "September 2025 - September 2025" }
+            { date: "October 2025 - October 2025" }
         ],
         experiences: [
             {
@@ -375,7 +375,7 @@ Depending on weather conditions, fly back to Simikot.`,
                 "Tibetan Buddhist culture",
                 "Spiritual transformation"
             ],
-            bestTimeToVisit: "May to September",
+            bestTimeToVisit: "May to October",
             cuisine: [
                 "Tibetan Thukpa",
                 "Momos",
@@ -401,16 +401,16 @@ Depending on weather conditions, fly back to Simikot.`,
             }
         },
         batchDetails: {
-            currentBatch: "September 2025",
+            currentBatch: "October 2025",
             remainingSlots: 8,
             monthlyBatches: [
                 {
-                    month: "September",
+                    month: "October",
                     dates: ["14-21-28"],
                     availableSeats: 10
                 },
                 {
-                    month: "September",
+                    month: "October",
                     dates: ["4-11", "18"],
                     availableSeats: 15
                 }
@@ -427,7 +427,7 @@ export const withoutFlightPackages: Record<string, MansarovarYatraPackage> = {
         nights: 11,
         amount: 65000,
         dateStart: "May 2025",
-        dateEnd: "September 2025",
+        dateEnd: "October 2025",
         description: "Budget-friendly overland journey to Mount Kailash and Lake Mansarovar. A complete spiritual experience without compromising on the sacred aspects of the pilgrimage.",
         groupDetails: {
             pax: "Group Tour",

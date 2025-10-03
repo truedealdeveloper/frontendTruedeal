@@ -28,7 +28,7 @@ type Review = {
 // NOTE: This mirrors the structure used in app/reviews/page.tsx and filters to Bali-only items
 const allReviews: Review[] = [
     {
-        id: '5', author: 'Akshay Bhisikar', rating: 4.0, date: 'September 2024', content: `Great Team. Well-Planned Itinerary. Good Service.
+        id: '5', author: 'Akshay Bhisikar', rating: 4.0, date: 'October 2024', content: `Great Team. Well-Planned Itinerary. Good Service.
 
 We are grateful to the True Deal team for organizing an amazing trip to Bali. They assisted us every step of the way, from booking flights and exchanging money to arranging all aspects of our trip. The itinerary was well-planned and hassle-free, with options for customization. Our accommodations were all above 3-star quality, and we thoroughly enjoyed our stay. The tour drivers and guides were highly professional, and the vehicles were impeccably clean.
 
@@ -45,7 +45,7 @@ Cheers to the Team!`, media: [
         ], booked: 'Bali'
     },
     {
-        id: '10', author: 'Chintan Gandhi', rating: 5.0, date: 'September 2024', content: `It was a great experience to book a Bali trip through True Deal. True Deal's employees are supportive, and assigned drivers are polite. Our package contains adventure activities and nice places to visit in Bali. Thank you, True Deal, for making a trip awesome.
+        id: '10', author: 'Chintan Gandhi', rating: 5.0, date: 'October 2024', content: `It was a great experience to book a Bali trip through True Deal. True Deal's employees are supportive, and assigned drivers are polite. Our package contains adventure activities and nice places to visit in Bali. Thank you, True Deal, for making a trip awesome.
 `, media: [
             { type: 'image', url: '/GoogleReviews/10/chintan (1).png' },
             { type: 'image', url: '/GoogleReviews/10/chintan (2).png' },
@@ -55,7 +55,7 @@ Cheers to the Team!`, media: [
         ], booked: 'Bali'
     },
     {
-        id: '12', author: 'Shraddha Jadeja', rating: 5.0, date: 'September 2024', content: `My parents had the best time in Bali with the help of True deal. It was an amazing experience throughout with all the activities and stay planned.
+        id: '12', author: 'Shraddha Jadeja', rating: 5.0, date: 'October 2024', content: `My parents had the best time in Bali with the help of True deal. It was an amazing experience throughout with all the activities and stay planned.
 `, media: [
             { type: 'image', url: '/GoogleReviews/12/bp (1).png' },
             { type: 'image', url: '/GoogleReviews/12/bp (2).png' },
@@ -66,13 +66,13 @@ Cheers to the Team!`, media: [
         ], booked: 'Bali'
     },
     {
-        id: '13', author: 'Aayushi Shah', rating: 5.0, date: 'September 2024', content: `Our Bali trip was awesome. Aman gupta & Rasid Ali's efforts are incredible. They managed trip very well & we enjoyed a lott.
+        id: '13', author: 'Aayushi Shah', rating: 5.0, date: 'October 2024', content: `Our Bali trip was awesome. Aman gupta & Rasid Ali's efforts are incredible. They managed trip very well & we enjoyed a lott.
 `, media: [
             { type: 'image', url: '/GoogleReviews/13/Screenshot 2025-01-08 143830.png' },
         ], booked: 'Bali'
     },
     {
-        id: '14', author: 'Deepa Gurubasavaiah', rating: 5.0, date: 'September 2024', content: `Thank you for arranging the trip to Bali. It was a smooth transition in each place without any overlap. The team did a great job in co ordinating. It was truly an amazing experience! thank you Rashid and team for doing a grt job!
+        id: '14', author: 'Deepa Gurubasavaiah', rating: 5.0, date: 'October 2024', content: `Thank you for arranging the trip to Bali. It was a smooth transition in each place without any overlap. The team did a great job in co ordinating. It was truly an amazing experience! thank you Rashid and team for doing a grt job!
 `, media: [
             { type: 'image', url: '/GoogleReviews/14/Screenshot 2025-01-08 150530.png' },
         ], booked: 'Bali'

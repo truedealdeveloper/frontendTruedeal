@@ -183,7 +183,7 @@ export const destinations: Destination[] = [
     {
         name: "Switzerland Trip",
         tag: { label: "FIXED DEPARTURE", color: "green" },
-        fixedDepartureId: "swiss-6-days-September2025"
+        fixedDepartureId: "swiss-6-days-October2025"
     },
     {
         name: "Thailand Trip",
