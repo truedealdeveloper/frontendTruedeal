@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useMemo, useCallback, useRef } from "react"
-import { Search, MapPin, Globe, Award, Briefcase, CreditCard } from "lucide-react"
+import { Search, MapPin, Globe } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { motion } from "framer-motion"
 import { Input } from "@/components/ui/input"
