@@ -9,6 +9,10 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import TypingAnimation from "../../../components/ui/typing-animation"
 import FirstTimeTravelMessage from "./FirstTimeTravelMessage"
 import { Destination, destinations } from "@/app/config/destinations"
+import { Dancing_Script } from 'next/font/google'
+import Image from "next/image"
+
+const dancingScript = Dancing_Script({ subsets: ['latin'] })
 
 // Keep only the placeholderDestinations array here
 const placeholderDestinations = ["Almaty", "Bali", "Thailand", "Phillipines", "Kashmir"]
@@ -233,9 +237,18 @@ export default function HeroSection() {
                             <span className="font-semibold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Discover Your Dream Vacation with</span>{" "}
                             <span className="font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Truedeal</span>
                         </h1>
-                        <p className="text-xs sm:text-sm md:text-sm mb-2 md:mb-4 text-center font-poppins font-semibold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                            GET READY FOR TAKE OFF
-                        </p>
+                        <div className="flex items-center justify-center gap-1 mb-2 md:mb-4">
+                            <p className={`text-lg sm:text-xl md:text-2xl text-center text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] ${dancingScript.className}`}>
+                                Get Ready for Take Off
+                            </p>
+                            {/* <Image
+                                src="/UGCImages/icons/Take Off.png"
+                                alt="Take Off"
+                                width={50}
+                                height={50}
+                                className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 object-contain"
+                            /> */}
+                        </div>
                         <h2 className="text-1xl sm:text-2xl md:text-3xl lg:text-4xl mb-6 md:mb-8 text-center font-poppins font-bold text-yellow-500 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                             <TypingAnimation>Search your holiday</TypingAnimation>
                         </h2>
