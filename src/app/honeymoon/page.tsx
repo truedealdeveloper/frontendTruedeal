@@ -3,7 +3,7 @@
 import React, { useState, useMemo, useCallback, memo } from 'react';
 import Link from 'next/link';
 import { honeymoonPackages, type HoneymoonPackage } from './data';
-import { FaCalendarAlt, FaClock, FaChevronLeft, FaChevronRight, FaPlus, FaMinus, FaHeart } from 'react-icons/fa';
+import { FaCalendarAlt, FaClock, FaPlus, FaMinus, FaHeart } from 'react-icons/fa';
 import { IoLocationSharp } from 'react-icons/io5';
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
@@ -27,7 +27,6 @@ const BookingFormModal = dynamic(() =>
 );
 
 export default function HoneymoonPackages() {
-    const [currentPage, setCurrentPage] = useState(0);
     const [openFaq, setOpenFaq] = useState<number | null>(null);
     const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
     const [selectedPackageName, setSelectedPackageName] = useState<string>('');
