@@ -1,0 +1,551 @@
+"use client";
+
+import React, { use, useMemo, useRef, useState, useCallback, useEffect } from "react";
+import Image from "next/image";
+import { honeymoonPackages } from "../data";
+import { notFound } from "next/navigation";
+import { Calendar, Check, MapPin, Star, X, Heart } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import dynamic from 'next/dynamic';
+import { PageWrapper } from "@/components/page-wrapper";
+import { useMobile } from "@/hooks/use-mobile";
+import Link from "next/link";
+import { motion } from 'framer-motion';
+import { Dancing_Script } from 'next/font/google';
+
+const dancingScript = Dancing_Script({ subsets: ['latin'] });
+
+// Lazy load the booking modal only when needed to reduce initial JS
+const BookingFormModal = dynamic(() =>
+    import('@/app/components/BookingFormModal').then(m => m.BookingFormModal),
+    { ssr: false }
+);
+
+interface PageProps {
+    params: Promise<{ id: string }>
+}
+
+function useInView<T extends HTMLElement>(rootMargin = "200px"): [React.RefObject<T>, boolean] {
+    const ref = useRef<T>(null);
+    const [inView, setInView] = useState(false);
+
+    useEffect(() => {
+        if (!ref.current || inView) return;
+        const el = ref.current;
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach((e) => {
+                if (e.isIntersecting) {
+                    setInView(true);
+                    obs.disconnect();
+                }
+            });
+        }, { root: null, rootMargin, threshold: 0.01 });
+        obs.observe(el as Element);
+        return () => obs.disconnect();
+    }, [inView, rootMargin]);
+
+    return [ref, inView];
+}
+
+export default function HoneymoonPackagePage({ params }: PageProps) {
+    const { id } = use(params);
+    const honeymoonPkg = useMemo(
+        () => Object.values(honeymoonPackages).find(p => p.id === id),
+        [id]
+    );
+    const isMobile = useMobile();
+
+    const mobileHeroSrc = honeymoonPkg?.images?.[0] || '/webImage/maldives/1.webp';
+    const desktopHeroSrc = honeymoonPkg?.images?.[0] || '/webImage/maldives/1.webp';
+
+    if (!honeymoonPkg) {
+        notFound();
+    }
+
+    const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+    const [selectedDay, setSelectedDay] = useState(1);
+    const [showFullDescription, setShowFullDescription] = useState(false);
+    const [expandedDays, setExpandedDays] = useState<number[]>([1]);
+    const dayRefs = useRef<Record<number, HTMLDivElement | null>>({});
+    const scrollToDay = useCallback((dayNumber: number) => {
+        setSelectedDay(dayNumber);
+        setExpandedDays((prev) => (prev.includes(dayNumber) ? prev : [...prev, dayNumber]));
+        requestAnimationFrame(() => {
+            const el = dayRefs.current[dayNumber];
+            if (!el) return;
+            const navbarOffsetPx = isMobile ? 120 : 90;
+            const y = el.getBoundingClientRect().top + window.scrollY - navbarOffsetPx;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        });
+    }, [isMobile]);
+
+    const [overviewMountRef] = useInView<HTMLDivElement>("300px");
+
+    const description = honeymoonPkg?.description || "";
+    const truncatedDescription = description.length > 300 ? `${description.substring(0, 300)}...` : description;
+
+    const toggleDayExpansion = useCallback((dayNumber: number) => {
+        setExpandedDays((prev) => prev.includes(dayNumber) ? prev.filter((d) => d !== dayNumber) : [...prev, dayNumber]);
+    }, []);
+
+    const quickFacts = useMemo(() => ([
+        { label: "Duration", value: `${honeymoonPkg?.days} Days / ${honeymoonPkg?.nights} Nights`, icon: Calendar },
+        { label: "Location", value: honeymoonPkg?.hotelDetails[0]?.city || "Paradise", icon: MapPin },
+        { label: "Type", value: "Honeymoon Package", icon: Heart },
+        { label: "Rating", value: "4.9 / 5", icon: Star },
+    ]), [honeymoonPkg?.days, honeymoonPkg?.nights, honeymoonPkg?.hotelDetails]);
+
+    const faqs = useMemo(() => ([
+        {
+            question: "Is this package suitable for honeymooners?",
+            answer: "Absolutely! This package is specifically designed for honeymooners with romantic experiences, private dinners, couple spa sessions, and intimate activities.",
+        },
+        {
+            question: "Can we customize the itinerary?",
+            answer: "Yes, we can customize any aspect of the package to match your preferences. Contact us to discuss your requirements.",
+        },
+        {
+            question: "What is the best time to book?",
+            answer: honeymoonPkg?.additionalInfo?.bestTimeToVisit || "Year-round destination with each season offering unique experiences.",
+        },
+        {
+            question: "Are meals included?",
+            answer: "Package includes daily breakfast and select romantic dinners. Additional meals can be arranged based on your preferences.",
+        },
+    ]), [honeymoonPkg?.additionalInfo?.bestTimeToVisit]);
+
+    return (
+        <PageWrapper>
+            <div className={`relative`}>
+                <header className={`relative w-full ${isMobile ? '' : 'md:max-w-[1898px] md:mx-auto'}`} style={{ minHeight: isMobile ? '348px' : '492px' }}>
+                    <link rel="preload" as="image" href={mobileHeroSrc} media="(max-width: 767px)" />
+                    <link rel="preload" as="image" href={desktopHeroSrc} media="(min-width: 768px)" />
+                    {isMobile ? (
+                        <>
+                            <Image
+                                src={mobileHeroSrc}
+                                alt={honeymoonPkg?.packageName || 'Honeymoon package'}
+                                fill
+                                className="object-cover"
+                                priority
+                                fetchPriority="high"
+                                quality={70}
+                                sizes="100vw"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                        </>
+                    ) : (
+                        <>
+                            <Image
+                                src={desktopHeroSrc}
+                                alt={honeymoonPkg?.packageName || 'Honeymoon package'}
+                                fill
+                                className="object-cover brightness-[0.85]"
+                                priority={true}
+                                fetchPriority="high"
+                                quality={70}
+                                sizes="(max-width: 767px) 100vw, 1898px"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                        </>
+                    )}
+
+                    <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-12">
+                        <div className="max-w-7xl w-full pl-0 md:pl-12 relative top-4 md:top-12">
+                            <div className="flex items-center mb-3 text-white drop-shadow">
+                                {[...Array(5)].map((_, i) => (
+                                    <Star key={i} className={`h-5 w-5 ${i < Math.floor(4.9) ? 'text-pink-400 fill-pink-400' : 'text-white/40'}`} />
+                                ))}
+                                <span className="ml-2 font-medium">4.9/5 (156 reviews)</span>
+                            </div>
+
+                            <h1 className="text-3xl leading-tight md:text-6xl font-bold text-white mb-2 md:mb-4">{honeymoonPkg?.packageName}</h1>
+
+                            <p className="flex items-center text-white/95 mb-4 md:mb-6">
+                                <Heart className="h-5 w-5 mr-2 text-pink-400 fill-pink-400" />
+                                <span className="text-lg">Romantic {honeymoonPkg?.hotelDetails[0]?.city} Escape</span>
+                            </p>
+
+                            <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-6 md:mb-12">
+                                <Button
+                                    size="sm"
+                                    className="rounded-full px-5 md:px-8 bg-gradient-to-r from-pink-500 to-rose-500 hover:opacity-90 transition shadow-md"
+                                    aria-label="Book honeymoon package"
+                                    onClick={() => setIsBookingModalOpen(true)}
+                                >
+                                    Book Now
+                                </Button>
+
+                                <div className="flex md:hidden w-full gap-2">
+                                    <span className="px-3 py-1 rounded-full bg-white/15 text-white text-xs">{honeymoonPkg?.days} Days / {honeymoonPkg?.nights} Nights</span>
+                                    <span className="px-3 py-1 rounded-full bg-white/15 text-white text-xs">{honeymoonPkg?.hotelDetails[0]?.city}</span>
+                                    <span className="px-3 py-1 rounded-full bg-white/15 text-white text-xs flex items-center gap-1"><Heart className="h-3 w-3" /> Romance</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden">
+                    <div className="mx-3 mb-3 rounded-full shadow-lg backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 border border-black/5">
+                        <div className="flex items-center justify-between px-3 py-2">
+                            <div className="flex items-center gap-2">
+                                <span className="text-sm font-bold bg-gradient-to-r from-pink-500 to-rose-500 text-white px-3 py-1 rounded-full">₹{honeymoonPkg?.amount?.toLocaleString('en-IN')}</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <a href="tel:+919310271488"><Button size="sm" variant="outline" className="rounded-full">Call</Button></a>
+                                <Button size="sm" className="rounded-full bg-gradient-to-r from-pink-500 to-rose-500" onClick={() => setIsBookingModalOpen(true)}>Enquire</Button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <section className="bg-gradient-to-r from-pink-500 to-rose-500 text-white hidden md:block">
+                    <div className="max-w-7xl mx-auto px-4 py-5">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                            {quickFacts.map(({ label, value, icon: Icon }) => (
+                                <div key={label} className="flex items-center">
+                                    <Icon className="h-6 w-6 mr-3" />
+                                    <div>
+                                        <div className="text-sm opacity-80">{label}</div>
+                                        <div className="font-medium text-sm md:text-base">{value}</div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                <main className="max-w-7xl mx-auto px-4 py-8 md:py-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <div className="lg:col-span-2 min-w-0">
+                            <section ref={overviewMountRef} className="mb-8" style={{ contentVisibility: 'auto', containIntrinsicSize: '600px' }}>
+                                <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent">About This Honeymoon Package</h2>
+                                <Card className="p-5">
+                                    <p className="text-gray-700">{showFullDescription ? description : truncatedDescription}</p>
+                                    {description.length > 300 && (
+                                        <Button variant="link" className="p-0 h-auto text-pink-500 mt-1" onClick={() => setShowFullDescription(v => !v)}>
+                                            {showFullDescription ? "Show Less" : "Read More ↓"}
+                                        </Button>
+                                    )}
+                                </Card>
+                            </section>
+
+                            <section className="mb-8" style={{ contentVisibility: 'auto', containIntrinsicSize: '700px' }}>
+                                <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent">What&apos;s Included</h2>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <Card className="p-5">
+                                        <h3 className="text-lg font-medium mb-3 flex items-center">
+                                            <Check className="h-5 w-5 mr-2 text-green-500" />
+                                            <span className="bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent">Included</span>
+                                        </h3>
+                                        <ul className="space-y-2 text-sm">
+                                            {honeymoonPkg?.inclusions?.map((item, i) => (<li key={i} className="flex items-start"><Check className="h-4 w-4 text-green-500 mr-2 mt-0.5" /> {item}</li>))}
+                                        </ul>
+                                    </Card>
+                                    <Card className="p-5">
+                                        <h3 className="text-lg font-medium mb-3 flex items-center">
+                                            <X className="h-5 w-5 mr-2 text-red-500" />
+                                            <span className="bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent">Excluded</span>
+                                        </h3>
+                                        <ul className="space-y-2 text-sm">
+                                            {honeymoonPkg?.exclusions?.map((item, i) => (<li key={i} className="flex items-start"><X className="h-4 w-4 text-red-500 mr-2 mt-0.5" /> {item}</li>))}
+                                        </ul>
+                                    </Card>
+                                </div>
+                            </section>
+
+                            <section className="mb-8" style={{ contentVisibility: 'auto', containIntrinsicSize: '1200px' }}>
+                                <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent">Day-by-Day Itinerary</h2>
+                                <div className="md:static sticky top-16 z-30 -mx-4 px-4 bg-white/85 backdrop-blur supports-[backdrop-filter]:bg-white/75 py-2 rounded-xl shadow-sm flex overflow-x-auto space-x-2 mb-4 pb-2 no-scrollbar">
+                                    {honeymoonPkg?.itinerary.map((day, i) => (
+                                        <button key={i} onClick={() => scrollToDay(day.day)} className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${selectedDay === day.day ? 'bg-gradient-to-r from-pink-500 to-rose-500 text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-800'}`}>
+                                            Day {day.day}
+                                        </button>
+                                    ))}
+                                </div>
+                                <div className="space-y-3">
+                                    {honeymoonPkg?.itinerary.map((day, i) => {
+                                        const isExpanded = expandedDays.includes(day.day);
+                                        return (
+                                            <Card key={i} ref={(el) => { dayRefs.current[day.day] = el; }} className={`p-4 scroll-mt-24 md:scroll-mt-28 ${selectedDay === day.day ? 'ring-2 ring-pink-500/20' : ''}`} onClick={() => toggleDayExpansion(day.day)} role="button" aria-expanded={isExpanded}>
+                                                <div className="flex items-center justify-between">
+                                                    <h3 className="text-base md:text-lg font-semibold flex items-center gap-2">
+                                                        <Heart className="h-4 w-4 text-pink-500 fill-pink-500" />
+                                                        Day {day.day}: {day.title}
+                                                    </h3>
+                                                    <span className="text-gray-400">{isExpanded ? '▲' : '▼'}</span>
+                                                </div>
+                                                {isExpanded && (
+                                                    <div className="mt-2 text-sm text-gray-700">
+                                                        <p className="mb-2 whitespace-pre-line">{day.description}</p>
+                                                    </div>
+                                                )}
+                                            </Card>
+                                        );
+                                    })}
+                                </div>
+                            </section>
+
+                            <section className="mb-8">
+                                <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent">Your Accommodations</h2>
+                                <div className="space-y-3">
+                                    {honeymoonPkg.hotelDetails.map((hotel, index) => (
+                                        <Card key={index} className="p-4 flex items-center justify-between">
+                                            <div>
+                                                <div className="font-semibold flex items-center gap-2">
+                                                    <Heart className="h-4 w-4 text-pink-500 fill-pink-500" />
+                                                    {hotel.hotel}
+                                                </div>
+                                                <div className="text-sm text-gray-500 flex items-center"><MapPin className="h-3 w-3 mr-1" />{hotel.city}</div>
+                                            </div>
+                                            <div className="text-sm font-medium">{hotel.roomType}</div>
+                                        </Card>
+                                    ))}
+                                </div>
+                            </section>
+
+                            <section className="mb-8">
+                                <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent">FAQs</h2>
+                                <div className="space-y-3">
+                                    {faqs.map((faq, index) => (
+                                        <Card key={index} className="p-4">
+                                            <details>
+                                                <summary className="cursor-pointer font-semibold list-none">{faq.question}</summary>
+                                                <p className="mt-2 text-sm text-gray-700">{faq.answer}</p>
+                                            </details>
+                                        </Card>
+                                    ))}
+                                </div>
+                            </section>
+                        </div>
+
+                        <aside className="lg:sticky lg:top-24 h-fit">
+                            <div className="rounded-2xl border border-pink-200/70 bg-gradient-to-br from-pink-50/80 to-rose-50/80 backdrop-blur p-5 shadow-sm">
+                                <div className="flex items-center gap-2 mb-3"><Heart className="h-5 w-5 text-pink-500 fill-pink-500" /><span className="text-sm text-gray-600">Perfect for honeymooners</span></div>
+                                <div className="text-3xl font-bold mb-2">₹{honeymoonPkg?.amount?.toLocaleString('en-IN')}</div>
+                                <p className="text-sm text-gray-600 mb-4">per person incl. hotels & romantic experiences</p>
+                                <div className="space-y-2 mb-4">
+                                    <div className="flex items-center gap-2 text-sm"><Check className="h-4 w-4 text-green-500" /> Instant enquiry</div>
+                                    <div className="flex items-center gap-2 text-sm"><Check className="h-4 w-4 text-green-500" /> Customizable</div>
+                                    <div className="flex items-center gap-2 text-sm"><Check className="h-4 w-4 text-green-500" /> Best-price guarantee</div>
+                                    <div className="flex items-center gap-2 text-sm"><Check className="h-4 w-4 text-green-500" />24/7 Support</div>
+                                </div>
+                                <Button className="w-full bg-gradient-to-r from-pink-500 to-rose-500" onClick={() => setIsBookingModalOpen(true)}>Book This Trip</Button>
+                            </div>
+                        </aside>
+                    </div>
+                </main>
+
+                {/* Suggested Packages Section */}
+                <section className="bg-gradient-to-br from-rose-50 to-pink-50 py-16">
+                    <div className="max-w-7xl mx-auto px-4">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            viewport={{ once: true }}
+                            className="text-center mb-12"
+                        >
+                            <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${dancingScript.className}`}>
+                                <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-rose-500">
+                                    Explore More Romantic Escapes
+                                </span>
+                            </h2>
+                            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                                Discover other incredible honeymoon experiences handpicked for you
+                            </p>
+                        </motion.div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {Object.values(honeymoonPackages)
+                                .filter(pkg => pkg.id !== id)
+                                .slice(0, 3)
+                                .map((pkg, index) => (
+                                    <motion.div
+                                        key={pkg.id}
+                                        initial={{ opacity: 0, y: 30 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                                        viewport={{ once: true }}
+                                        className="relative group h-[450px] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+                                    >
+                                        <Image
+                                            src={pkg.images[0]}
+                                            alt={pkg.packageName}
+                                            fill
+                                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                        />
+
+                                        <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/50 to-black" />
+
+                                        <div className="absolute top-3 left-0 z-10">
+                                            <div className="bg-gradient-to-r from-pink-500 to-rose-500 px-4 py-1.5 rounded-full shadow-lg flex items-center gap-2">
+                                                <Heart className="text-white text-sm" />
+                                                <span className="font-bold text-white">
+                                                    ₹{pkg.amount.toLocaleString('en-IN')}/-
+                                                </span>
+                                                <span className="text-sm">pp</span>
+                                            </div>
+                                        </div>
+
+                                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                            <h3 className="text-2xl font-bold mb-2">
+                                                {pkg.packageName}
+                                            </h3>
+
+                                            <div className="grid grid-cols-2 gap-y-2 text-sm mb-4">
+                                                <div className="flex items-center gap-2">
+                                                    <Calendar className="text-pink-400 h-4 w-4" />
+                                                    <span>{pkg.days}D/{pkg.nights}N</span>
+                                                </div>
+                                                <div className="flex items-center gap-2">
+                                                    <MapPin className="text-pink-400 h-4 w-4" />
+                                                    <span>{pkg.hotelDetails[0]?.city}</span>
+                                                </div>
+                                            </div>
+
+                                            <Link href={`/honeymoon/${pkg.id}`}>
+                                                <Button
+                                                    className="w-full bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white transition-all duration-500"
+                                                >
+                                                    View Details
+                                                </Button>
+                                            </Link>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                        </div>
+
+                        {Object.values(honeymoonPackages).filter(pkg => pkg.id !== id).length > 3 && (
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: 0.4 }}
+                                viewport={{ once: true }}
+                                className="text-center mt-8"
+                            >
+                                <Link href="/honeymoon">
+                                    <Button
+                                        variant="outline"
+                                        size="lg"
+                                        className="border-2 border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white transition-colors"
+                                    >
+                                        View All Honeymoon Packages
+                                    </Button>
+                                </Link>
+                            </motion.div>
+                        )}
+                    </div>
+                </section>
+
+                {/* Booking Form Section */}
+                <section className="bg-white py-16">
+                    <div className="max-w-4xl mx-auto px-4">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            viewport={{ once: true }}
+                            className="text-center mb-8"
+                        >
+                            <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${dancingScript.className}`}>
+                                <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-rose-500">
+                                    Ready to Book Your Dream Honeymoon?
+                                </span>
+                            </h2>
+                            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+                                Get in touch with our travel experts to customize your perfect romantic escape
+                            </p>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            viewport={{ once: true }}
+                            className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-3xl p-8 md:p-12 border border-pink-100"
+                        >
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                                <div>
+                                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                                        {honeymoonPkg?.packageName}
+                                    </h3>
+                                    <div className="space-y-3 mb-6">
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center">
+                                                <Calendar className="h-4 w-4 text-white" />
+                                            </div>
+                                            <span className="text-gray-700">{honeymoonPkg?.days} Days / {honeymoonPkg?.nights} Nights</span>
+                                        </div>
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-8 h-8 bg-rose-500 rounded-full flex items-center justify-center">
+                                                <MapPin className="h-4 w-4 text-white" />
+                                            </div>
+                                            <span className="text-gray-700">{honeymoonPkg?.hotelDetails[0]?.city}</span>
+                                        </div>
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+                                                <Heart className="h-4 w-4 text-white fill-white" />
+                                            </div>
+                                            <span className="text-gray-700">4.9/5 Rating from 156+ Reviews</span>
+                                        </div>
+                                    </div>
+                                    <div className="text-3xl font-bold text-gray-900 mb-2">
+                                        ₹{honeymoonPkg?.amount?.toLocaleString('en-IN')}
+                                        <span className="text-lg font-normal text-gray-600 ml-2">per person</span>
+                                    </div>
+                                </div>
+
+                                <div className="text-center">
+                                    <Button
+                                        size="lg"
+                                        className="w-full md:w-auto bg-gradient-to-r from-pink-500 to-rose-500 hover:opacity-90 transition-opacity px-8 py-4 text-lg font-semibold"
+                                        onClick={() => setIsBookingModalOpen(true)}
+                                    >
+                                        Book This Package
+                                    </Button>
+                                    <p className="text-sm text-gray-600 mt-3">
+                                        ✓ Instant confirmation &nbsp;•&nbsp; ✓ Best price guarantee
+                                    </p>
+                                    <div className="flex items-center justify-center gap-4 mt-4">
+                                        <a
+                                            href="tel:+919310271488"
+                                            className="flex items-center gap-2 text-pink-500 hover:text-pink-600 transition-colors"
+                                        >
+                                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                                            </svg>
+                                            Call Now
+                                        </a>
+                                        <a
+                                            href="https://wa.me/919310271488"
+                                            className="flex items-center gap-2 text-green-600 hover:text-green-700 transition-colors"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.108" />
+                                            </svg>
+                                            WhatsApp
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                </section>
+
+                {isBookingModalOpen && (
+                    <BookingFormModal
+                        isOpen={isBookingModalOpen}
+                        onClose={() => setIsBookingModalOpen(false)}
+                        destinationName={honeymoonPkg?.packageName || 'Honeymoon'}
+                    />
+                )}
+            </div>
+        </PageWrapper>
+    );
+}
