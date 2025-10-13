@@ -170,7 +170,7 @@ export default function CantonFairPackagePage({ params }: PageProps) {
                     <div className="container mx-auto px-4 py-4">
                         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                             <div className="flex items-baseline gap-3">
-                                <span className="text-3xl font-bold text-red-600">
+                                <span className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
                                     ₹{pkg.amount.toLocaleString('en-IN')}
                                 </span>
                                 <span className="text-gray-600">per person</span>
@@ -183,7 +183,7 @@ export default function CantonFairPackagePage({ params }: PageProps) {
                             <Button
                                 onClick={() => setIsBookingModalOpen(true)}
                                 size="lg"
-                                className="w-full md:w-auto bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white font-semibold px-8"
+                                className="w-full md:w-auto bg-gradient-to-r from-[#ffffff] to-[#5dfaff] hover:opacity-90 text-gray-800 font-semibold px-8"
                             >
                                 Book Now
                             </Button>
@@ -206,7 +206,7 @@ export default function CantonFairPackagePage({ params }: PageProps) {
                                     {description.length > 300 && (
                                         <button
                                             onClick={() => setShowFullDescription(!showFullDescription)}
-                                            className="text-red-600 hover:text-red-700 font-medium mt-2"
+                                            className="text-cyan-600 hover:text-cyan-700 font-medium mt-2"
                                         >
                                             {showFullDescription ? 'Read Less' : 'Read More'}
                                         </button>
@@ -222,7 +222,7 @@ export default function CantonFairPackagePage({ params }: PageProps) {
                                         const Icon = fact.icon;
                                         return (
                                             <div key={index} className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
-                                                <Icon className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                                                <Icon className="w-5 h-5 text-cyan-600 mt-0.5 flex-shrink-0" />
                                                 <div>
                                                     <p className="font-semibold text-gray-900">{fact.label}</p>
                                                     <p className="text-gray-600 text-sm">{fact.value}</p>
@@ -235,25 +235,25 @@ export default function CantonFairPackagePage({ params }: PageProps) {
 
                             {/* Canton Fair Details */}
                             {pkg.additionalInfo?.fairDetails && (
-                                <Card className="p-6 md:p-8 bg-gradient-to-br from-red-50 to-orange-50">
+                                <Card className="p-6 md:p-8 bg-gradient-to-br from-cyan-50 to-blue-50">
                                     <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">Exhibition Details</h2>
                                     <div className="space-y-4">
                                         <div className="flex items-start gap-3">
-                                            <Calendar className="w-5 h-5 text-red-600 mt-1" />
+                                            <Calendar className="w-5 h-5 text-cyan-600 mt-1" />
                                             <div>
                                                 <p className="font-semibold text-gray-900">Exhibition Dates</p>
                                                 <p className="text-gray-700">{pkg.additionalInfo.fairDetails.exhibitionDates}</p>
                                             </div>
                                         </div>
                                         <div className="flex items-start gap-3">
-                                            <Clock className="w-5 h-5 text-red-600 mt-1" />
+                                            <Clock className="w-5 h-5 text-cyan-600 mt-1" />
                                             <div>
                                                 <p className="font-semibold text-gray-900">Timings</p>
                                                 <p className="text-gray-700">{pkg.additionalInfo.fairDetails.timings}</p>
                                             </div>
                                         </div>
                                         <div className="flex items-start gap-3">
-                                            <MapPin className="w-5 h-5 text-red-600 mt-1" />
+                                            <MapPin className="w-5 h-5 text-cyan-600 mt-1" />
                                             <div>
                                                 <p className="font-semibold text-gray-900">Venue</p>
                                                 <p className="text-gray-700">{pkg.additionalInfo.fairDetails.venue}</p>
@@ -261,12 +261,12 @@ export default function CantonFairPackagePage({ params }: PageProps) {
                                             </div>
                                         </div>
                                         <div className="flex items-start gap-3">
-                                            <Building className="w-5 h-5 text-red-600 mt-1" />
+                                            <Building className="w-5 h-5 text-cyan-600 mt-1" />
                                             <div>
                                                 <p className="font-semibold text-gray-900">Product Focus</p>
                                                 <div className="flex flex-wrap gap-2 mt-2">
                                                     {pkg.additionalInfo.fairDetails.focus.map((item, index) => (
-                                                        <span key={index} className="px-3 py-1 bg-white rounded-full text-sm text-gray-700 border border-red-200">
+                                                        <span key={index} className="px-3 py-1 bg-white rounded-full text-sm text-gray-700 border border-cyan-200">
                                                             {item}
                                                         </span>
                                                     ))}
@@ -288,7 +288,7 @@ export default function CantonFairPackagePage({ params }: PageProps) {
                                             key={day.day}
                                             onClick={() => scrollToDay(day.day)}
                                             className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${selectedDay === day.day
-                                                ? 'bg-red-600 text-white'
+                                                ? 'bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white'
                                                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                                 }`}
                                         >
@@ -313,7 +313,7 @@ export default function CantonFairPackagePage({ params }: PageProps) {
                                                 >
                                                     <div className="flex-1">
                                                         <div className="flex items-center gap-3 mb-2">
-                                                            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-red-600 text-white font-bold text-sm">
+                                                            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white font-bold text-sm">
                                                                 {day.day}
                                                             </span>
                                                             <h3 className="text-lg md:text-xl font-bold text-gray-900">
@@ -324,7 +324,7 @@ export default function CantonFairPackagePage({ params }: PageProps) {
                                                     </div>
                                                     <div className="flex-shrink-0">
                                                         {isExpanded ? (
-                                                            <FaMinus className="w-5 h-5 text-red-600" />
+                                                            <FaMinus className="w-5 h-5 text-cyan-600" />
                                                         ) : (
                                                             <FaPlus className="w-5 h-5 text-gray-400" />
                                                         )}
@@ -394,14 +394,14 @@ export default function CantonFairPackagePage({ params }: PageProps) {
                                         </ul>
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-bold mb-4 text-red-700 flex items-center gap-2">
+                                        <h3 className="text-xl font-bold mb-4 text-cyan-700 flex items-center gap-2">
                                             <X className="w-6 h-6" />
                                             Exclusions
                                         </h3>
                                         <ul className="space-y-3">
                                             {pkg.exclusions.map((item, index) => (
                                                 <li key={index} className="flex items-start gap-2">
-                                                    <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                                                    <X className="w-5 h-5 text-cyan-600 flex-shrink-0 mt-0.5" />
                                                     <span className="text-gray-700 text-sm">{item}</span>
                                                 </li>
                                             ))}
@@ -475,7 +475,7 @@ export default function CantonFairPackagePage({ params }: PageProps) {
                                     {pkg.hotelDetails.map((hotel, index) => (
                                         <div key={index} className="p-4 bg-gray-50 rounded-lg">
                                             <div className="flex items-start gap-3 mb-3">
-                                                <MapPin className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" />
+                                                <MapPin className="w-5 h-5 text-cyan-600 mt-1 flex-shrink-0" />
                                                 <div>
                                                     <h3 className="font-bold text-gray-900 text-lg">{hotel.hotel}</h3>
                                                     <p className="text-gray-600">{hotel.city}</p>
@@ -485,7 +485,7 @@ export default function CantonFairPackagePage({ params }: PageProps) {
                                                 <p className="text-gray-700 text-sm mb-2">{hotel.description}</p>
                                             )}
                                             {hotel.distance && (
-                                                <p className="text-sm text-red-600 font-medium">📍 {hotel.distance}</p>
+                                                <p className="text-sm text-cyan-600 font-medium">📍 {hotel.distance}</p>
                                             )}
                                         </div>
                                     ))}
@@ -511,7 +511,7 @@ export default function CantonFairPackagePage({ params }: PageProps) {
                                             >
                                                 <span className="font-semibold text-gray-900 pr-4">{faq.question}</span>
                                                 {openFaq === index ? (
-                                                    <FaMinus className="text-red-600 w-4 h-4 flex-shrink-0" />
+                                                    <FaMinus className="text-cyan-600 w-4 h-4 flex-shrink-0" />
                                                 ) : (
                                                     <FaPlus className="text-gray-400 w-4 h-4 flex-shrink-0" />
                                                 )}
@@ -573,7 +573,7 @@ export default function CantonFairPackagePage({ params }: PageProps) {
                                 )}
 
                                 {/* Contact Card */}
-                                <Card className="p-6 bg-gradient-to-br from-red-50 to-orange-50">
+                                <Card className="p-6 bg-gradient-to-br from-cyan-50 to-blue-50">
                                     <h3 className="font-bold text-lg mb-4 text-gray-900">Need Help?</h3>
                                     <p className="text-sm text-gray-700 mb-4">
                                         Our travel experts are here to help you plan your perfect Canton Fair trip.

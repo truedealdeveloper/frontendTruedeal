@@ -16,6 +16,7 @@ import Gallery from "./components/homepage/Gallery";
 import ReviewsGlimpse from './components/homepage/ReviewsGlimpse'
 import NoCostEMIPage from "./no-cost-emi/page";
 import FixedDepartures from "./fixedDeparture/page";
+import CantonFairHomepage from "./components/homepage/CantonFair";
 // import BannerCarousel from "./components/valentine/page";
 // import ChardhamYatra from './chardhamYatra/page';
 import SriLanka from './sriLanka/page';
@@ -38,6 +39,9 @@ export default function Home() {
       <HeroSection />
       {/* <TenYearSale /> */}
       {/* <BannerCarousel />   */}
+      <section className="mt-6">
+        <CantonFairHomepage />
+      </section>
       <section id="fixedDeparture" className="mt-6">
         <FixedDepartures />
       </section>

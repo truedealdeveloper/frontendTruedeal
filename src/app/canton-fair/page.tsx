@@ -156,7 +156,7 @@ export default function CantonFairPackages() {
 
                 {/* Price Tag */}
                 <div className="absolute top-3 left-0 z-10">
-                    <div className="bg-red-500 px-4 py-1.5 rounded-r-full shadow-lg">
+                    <div className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] px-4 py-1.5 rounded-r-full shadow-lg">
                         <span className="text-white font-bold text-lg">
                             ₹{pkg.amount.toLocaleString('en-IN')}/-
                         </span>
@@ -173,27 +173,27 @@ export default function CantonFairPackages() {
                     {/* Details Grid */}
                     <div className="grid grid-cols-2 gap-y-2 text-sm mb-4">
                         <div className="flex items-center gap-2">
-                            <FaClock className="text-red-400" />
+                            <FaClock className="text-cyan-400" />
                             <span>{pkg.days}D/{pkg.nights}N</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <IoLocationSharp className="text-red-400" />
+                            <IoLocationSharp className="text-cyan-400" />
                             <span>{pkg.hotelDetails[0].city}</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <FaCalendarAlt className="text-red-400" />
+                            <FaCalendarAlt className="text-cyan-400" />
                             <button
                                 onClick={(e) => {
                                     e.preventDefault();
                                     setShowDates(!showDates);
                                 }}
-                                className="hover:text-red-400 transition-colors"
+                                className="hover:text-cyan-400 transition-colors"
                             >
                                 View Dates
                             </button>
                         </div>
                         <div className="flex items-center gap-2">
-                            <MdBusinessCenter className="text-red-400" />
+                            <MdBusinessCenter className="text-cyan-400" />
                             <span>Trade Fair</span>
                         </div>
                     </div>
@@ -203,7 +203,7 @@ export default function CantonFairPackages() {
                             className="absolute bottom-full left-0 right-0 bg-black/90 p-4 rounded-t-lg"
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <h3 className="text-red-400 font-semibold mb-2">Departure Dates</h3>
+                            <h3 className="text-cyan-400 font-semibold mb-2">Departure Dates</h3>
                             <div className="space-y-2">
                                 {pkg.departureDates.map((departure, index) => (
                                     <div key={index} className="text-sm">
@@ -226,7 +226,7 @@ export default function CantonFairPackages() {
                         </Link>
                         <Button
                             onClick={() => onEnquireNow(pkg.packageName)}
-                            className="flex-1 bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white transition-all duration-500 shadow-lg hover:shadow-xl"
+                            className="flex-1 bg-gradient-to-r from-[#ffffff] to-[#5dfaff] hover:opacity-90 text-gray-800 transition-all duration-500 shadow-lg hover:shadow-xl"
                         >
                             Enquire Now
                         </Button>
@@ -286,7 +286,7 @@ export default function CantonFairPackages() {
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 1.5, duration: 0.5 }}
-                                    className="text-red-300 flex items-center gap-2"
+                                    className="text-cyan-300 flex items-center gap-2"
                                 >
                                     <MdBusinessCenter /> Electronics & Tech
                                 </motion.span>
@@ -294,7 +294,7 @@ export default function CantonFairPackages() {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 1.8, duration: 0.5 }}
-                                    className="text-orange-300 flex items-center gap-2"
+                                    className="text-blue-300 flex items-center gap-2"
                                 >
                                     <FaPlane /> Direct from Delhi
                                 </motion.span>
@@ -313,7 +313,7 @@ export default function CantonFairPackages() {
             </div>
 
             {/* Fair Information Banner */}
-            <div className="bg-gradient-to-r from-red-600 to-orange-500 py-8">
+            <div className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] py-8">
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-white text-center">
                         <motion.div
@@ -355,7 +355,7 @@ export default function CantonFairPackages() {
                 <div className="container mx-auto px-4">
                     <div className="relative">
                         <div className="flex flex-col items-center mb-8">
-                            <h3 className="text-2xl md:text-3xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-orange-500 mb-3">
+                            <h3 className="text-2xl md:text-3xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff] mb-3">
                                 Our Canton Fair Packages
                             </h3>
                             <p className="text-gray-600 text-center max-w-2xl">
@@ -444,7 +444,7 @@ export default function CantonFairPackages() {
                         className="max-w-7xl mx-auto"
                     >
                         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-orange-500">
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
                                 What Makes Canton Fair Special
                             </span>
                         </h2>
@@ -497,7 +497,7 @@ export default function CantonFairPackages() {
                         className="text-center mb-12"
                     >
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-orange-500">
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
                                 Why Visit Canton Fair Phase?
                             </span>
                         </h2>
@@ -513,9 +513,9 @@ export default function CantonFairPackages() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-white p-8 rounded-2xl border border-red-100 shadow-sm hover:shadow-md transition-shadow"
+                            className="bg-white p-8 rounded-2xl border border-cyan-100 shadow-sm hover:shadow-md transition-shadow"
                         >
-                            <div className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center mb-6">
+                            <div className="w-12 h-12 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] rounded-xl flex items-center justify-center mb-6">
                                 <MdBusinessCenter className="w-6 h-6 text-white" />
                             </div>
                             <h3 className="text-xl font-bold text-gray-900 mb-4">Industrial Products</h3>
@@ -530,9 +530,9 @@ export default function CantonFairPackages() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.2 }}
                             viewport={{ once: true }}
-                            className="bg-white p-8 rounded-2xl border border-orange-100 shadow-sm hover:shadow-md transition-shadow"
+                            className="bg-white p-8 rounded-2xl border border-cyan-100 shadow-sm hover:shadow-md transition-shadow"
                         >
-                            <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-6">
+                            <div className="w-12 h-12 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] rounded-xl flex items-center justify-center mb-6">
                                 <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                                     <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
                                 </svg>
@@ -549,9 +549,9 @@ export default function CantonFairPackages() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.3 }}
                             viewport={{ once: true }}
-                            className="bg-white p-8 rounded-2xl border border-yellow-100 shadow-sm hover:shadow-md transition-shadow"
+                            className="bg-white p-8 rounded-2xl border border-cyan-100 shadow-sm hover:shadow-md transition-shadow"
                         >
-                            <div className="w-12 h-12 bg-yellow-500 rounded-xl flex items-center justify-center mb-6">
+                            <div className="w-12 h-12 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] rounded-xl flex items-center justify-center mb-6">
                                 <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
                                     <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -579,7 +579,7 @@ export default function CantonFairPackages() {
                         viewport={{ once: true }}
                     >
                         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-orange-500">
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
                                 Frequently Asked Questions
                             </span>
                         </h2>
@@ -600,7 +600,7 @@ export default function CantonFairPackages() {
                                         <span className="font-semibold text-gray-900 text-lg pr-4">{faq.question}</span>
                                         <div className="ml-4 flex-shrink-0">
                                             {openFaq === index ? (
-                                                <FaMinus className="text-red-500 w-5 h-5" />
+                                                <FaMinus className="text-cyan-500 w-5 h-5" />
                                             ) : (
                                                 <FaPlus className="text-gray-400 w-5 h-5" />
                                             )}

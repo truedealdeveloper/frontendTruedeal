@@ -45,7 +45,7 @@ const PackageCard = memo(({
                 <div className="absolute top-3 right-3 z-10">
                     <div className="bg-gradient-to-r from-green-500 to-emerald-600 px-3 py-1.5 rounded-full shadow-lg animate-pulse">
                         <span className="text-white font-bold text-xs">
-                            Book Online & Get ₹5,000 OFF
+                            Get ₹5,000 OFF
                         </span>
                     </div>
                 </div>
@@ -53,7 +53,7 @@ const PackageCard = memo(({
 
             {/* Price Tag */}
             <div className="absolute top-3 left-0 z-10">
-                <div className="bg-red-500 px-4 py-1.5 rounded-r-full shadow-lg">
+                <div className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] px-4 py-1.5 rounded-r-full shadow-lg">
                     <span className="text-white font-bold text-lg">
                         ₹{pkg.amount.toLocaleString('en-IN')}/-
                     </span>
@@ -70,27 +70,27 @@ const PackageCard = memo(({
                 {/* Details Grid */}
                 <div className="grid grid-cols-2 gap-y-2 text-sm mb-4">
                     <div className="flex items-center gap-2">
-                        <FaClock className="text-red-400" />
+                        <FaClock className="text-cyan-400" />
                         <span>{pkg.days}D/{pkg.nights}N</span>
                     </div>
                     <div className="flex items-center gap-2">
-                        <IoLocationSharp className="text-red-400" />
+                        <IoLocationSharp className="text-cyan-400" />
                         <span>{pkg.hotelDetails[0].city}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                        <FaCalendarAlt className="text-red-400" />
+                        <FaCalendarAlt className="text-cyan-400" />
                         <button
                             onClick={(e) => {
                                 e.preventDefault();
                                 setShowDates(!showDates);
                             }}
-                            className="hover:text-red-400 transition-colors"
+                            className="hover:text-cyan-400 transition-colors"
                         >
                             View Dates
                         </button>
                     </div>
                     <div className="flex items-center gap-2">
-                        <MdBusinessCenter className="text-red-400" />
+                        <MdBusinessCenter className="text-cyan-400" />
                         <span>Trade Fair</span>
                     </div>
                 </div>
@@ -100,7 +100,7 @@ const PackageCard = memo(({
                         className="absolute bottom-full left-0 right-0 bg-black/90 p-4 rounded-t-lg"
                         onClick={(e) => e.stopPropagation()}
                     >
-                        <h3 className="text-red-400 font-semibold mb-2">Departure Dates</h3>
+                        <h3 className="text-cyan-400 font-semibold mb-2">Departure Dates</h3>
                         <div className="space-y-2">
                             {pkg.departureDates.map((departure, index) => (
                                 <div key={index} className="text-sm">
@@ -123,7 +123,7 @@ const PackageCard = memo(({
                     </Link>
                     <Button
                         onClick={() => onEnquireNow(pkg.packageName)}
-                        className="flex-1 bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white transition-all duration-500 shadow-lg hover:shadow-xl"
+                        className="flex-1 bg-gradient-to-r from-[#ffffff] to-[#5dfaff] hover:opacity-90 text-gray-800 transition-all duration-500 shadow-lg hover:shadow-xl"
                     >
                         Enquire Now
                     </Button>
@@ -159,18 +159,18 @@ export default function CantonFairHomepage() {
                 >
                     <div className="text-center mb-4">
                         <h2 className="text-3xl md:text-4xl font-extrabold mb-3">
-                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-orange-500">
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
                                 Canton Fair 2025 - China&apos;s Largest Trade Fair
                             </span>
                         </h2>
                         <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-4">
-                            Connect with thousands of manufacturers across three specialized phases. 
+                            Connect with thousands of manufacturers across three specialized phases.
                             Book Phase 2 or 3 online and save ₹5,000!
                         </p>
                     </div>
 
                     {/* Fair Information Banner */}
-                    <div className="bg-gradient-to-r from-red-600 to-orange-500 rounded-2xl p-6 mb-8">
+                    <div className="bg-gradient-to-r from-[#017ae3] to-[#00f6ff] rounded-2xl p-6 mb-8">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-white text-center">
                             <div>
                                 <FaCalendarAlt className="text-2xl mx-auto mb-2" />
@@ -209,7 +209,7 @@ export default function CantonFairHomepage() {
                         <Link href="/canton-fair">
                             <Button
                                 size="lg"
-                                className="bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white font-semibold px-8 py-6 text-lg"
+                                className="bg-gradient-to-r from-[#ffffff] to-[#5dfaff] hover:opacity-90 text-gray-800 font-semibold px-8 py-6 text-lg"
                             >
                                 View All Canton Fair Packages
                             </Button>
