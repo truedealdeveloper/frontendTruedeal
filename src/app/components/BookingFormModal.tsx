@@ -43,9 +43,35 @@ export function BookingFormModal({
     const [isSubmissionSuccessful, setIsSubmissionSuccessful] = useState(false);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+
+        // Special handling for phone number
+        if (name === 'phone_number') {
+            // Only allow digits and limit to 10 characters
+            const digitsOnly = value.replace(/\D/g, '');
+
+            // If user is typing the first digit, only allow 6, 7, 8, 9
+            if (digitsOnly.length === 1 && !['6', '7', '8', '9'].includes(digitsOnly[0])) {
+                return; // Don't update state if first digit is invalid
+            }
+
+            // If the current number already starts with invalid digit, don't allow it
+            if (digitsOnly.length > 0 && !['6', '7', '8', '9'].includes(digitsOnly[0])) {
+                return; // Don't update state if first digit is invalid
+            }
+
+            if (digitsOnly.length <= 10) {
+                setFormData({
+                    ...formData,
+                    [name]: digitsOnly
+                });
+            }
+            return;
+        }
+
         setFormData({
             ...formData,
-            [e.target.name]: e.target.value
+            [name]: value
         });
     };
 
@@ -53,6 +79,14 @@ export function BookingFormModal({
         e.preventDefault();
         setIsSubmitting(true);
         setSubmitError(null);
+
+        // Validate phone number - must be exactly 10 digits starting with 6, 7, 8, or 9
+        const phonePattern = /^[6-9]\d{9}$/;
+        if (!formData.phone_number || formData.phone_number.length !== 10 || !phonePattern.test(formData.phone_number)) {
+            setSubmitError('Phone number must be exactly 10 digits starting with 6, 7, 8, or 9');
+            setIsSubmitting(false);
+            return;
+        }
 
         try {
             const response = await fetch('/api/trip-plan', {
@@ -167,16 +201,52 @@ export function BookingFormModal({
                                 <PhoneIcon className="h-4 w-4 mr-2 text-[#017ae3]" />
                                 PHONE <span className="text-red-500 ml-1">*</span>
                             </Label>
-                            <Input
-                                id="phone_number"
-                                name="phone_number"
-                                type="tel"
-                                required
-                                value={formData.phone_number}
-                                onChange={handleChange}
-                                placeholder="Your 10 digit number"
-                                className="border-gray-200 focus:border-[#017ae3] focus:ring-[#017ae3]"
-                            />
+                            <div className="relative">
+                                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <span className="text-gray-500 text-sm font-medium">+91</span>
+                                </div>
+                                <Input
+                                    id="phone_number"
+                                    name="phone_number"
+                                    type="tel"
+                                    required
+                                    value={formData.phone_number}
+                                    onChange={handleChange}
+                                    placeholder="9876543012"
+                                    pattern="[6-9][0-9]{9}"
+                                    title="Phone number must be 10 digits starting with 6, 7, 8, or 9"
+                                    maxLength={10}
+                                    className={`pl-12 border-2 transition-all duration-200 focus:border-[#017ae3] focus:ring-2 focus:ring-[#017ae3]/20 ${formData.phone_number && formData.phone_number.length === 10 && /^[6-9]\d{9}$/.test(formData.phone_number)
+                                        ? 'border-green-400 bg-green-50 shadow-sm'
+                                        : formData.phone_number && formData.phone_number.length > 0
+                                            ? 'border-red-400 bg-red-50 shadow-sm'
+                                            : 'border-gray-300 hover:border-gray-400'
+                                        }`}
+                                />
+                                {formData.phone_number && formData.phone_number.length === 10 && /^[6-9]\d{9}$/.test(formData.phone_number) && (
+                                    <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
+                                        <svg className="h-5 w-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                    </div>
+                                )}
+                            </div>
+                            {formData.phone_number && formData.phone_number.length > 0 && formData.phone_number.length < 10 && (
+                                <p className="text-xs text-amber-600 flex items-center mt-1">
+                                    <svg className="h-3 w-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                                    </svg>
+                                    Please enter a valid 10 digit mobile number
+                                </p>
+                            )}
+                            {formData.phone_number && formData.phone_number.length === 10 && /^[6-9]\d{9}$/.test(formData.phone_number) && (
+                                <p className="text-xs text-green-600 flex items-center mt-1">
+                                    <svg className="h-3 w-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                    </svg>
+                                    Perfect! Valid mobile number
+                                </p>
+                            )}
                         </div>
                     </div>
 

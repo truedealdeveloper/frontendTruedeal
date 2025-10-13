@@ -8,10 +8,19 @@ import { IoLocationSharp } from 'react-icons/io5';
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
 import React from 'react';
+import dynamic from 'next/dynamic';
+
+// Lazy load the booking modal only when needed
+const BookingFormModal = dynamic(() =>
+    import('@/app/components/BookingFormModal').then(m => m.BookingFormModal),
+    { ssr: false }
+);
 
 export default function FixedDepartures() {
     const [currentWithoutFlightPage, setCurrentWithoutFlightPage] = useState(0);
     const [currentWithFlightPage, setCurrentWithFlightPage] = useState(0);
+    const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+    const [selectedPackageName, setSelectedPackageName] = useState<string>('');
 
     const totalWithoutFlightPages = getTotalPages();
     const withFlightDestinations = Object.values(fixedDeparturesData);
@@ -33,6 +42,11 @@ export default function FixedDepartures() {
                 prev < Math.min(totalWithoutFlightPages - 1, destinationGroups.length - 1) ? prev + 1 : prev
             );
         }
+    };
+
+    const handleEnquireNow = (packageName: string) => {
+        setSelectedPackageName(packageName);
+        setIsBookingModalOpen(true);
     };
 
     const DetailItem = ({ icon, text }: { icon: React.ReactNode; text?: string }) => (
@@ -104,11 +118,23 @@ export default function FixedDepartures() {
                         <DetailItem icon={<FaCalendarAlt />} text={destination?.dateStart} />
                     </div>
 
-                    <Link href={`/fixedDeparture/${destination.id}`}>
-                        <Button className="w-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all duration-500">
-                            View Details
+                    {/* Action Buttons */}
+                    <div className="flex gap-2">
+                        <Link href={`/fixedDeparture/${destination.id}`} className="flex-1">
+                            <Button
+                                variant="outline"
+                                className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20"
+                            >
+                                View Details
+                            </Button>
+                        </Link>
+                        <Button
+                            onClick={() => handleEnquireNow(`${destination?.days} Days ${destination?.country} Tour Package`)}
+                            className="flex-1 bg-gradient-to-r from-[#017ae3] to-[#00f6ff] hover:from-[#00f6ff] hover:to-[#017ae3] text-white transition-all duration-500 shadow-lg hover:shadow-xl"
+                        >
+                            Enquire Now
                         </Button>
-                    </Link>
+                    </div>
                 </div>
             </div>
         );
@@ -255,6 +281,15 @@ export default function FixedDepartures() {
                     </div>
                 </div>
             </section>
+
+            {/* Booking Form Modal */}
+            {isBookingModalOpen && (
+                <BookingFormModal
+                    isOpen={isBookingModalOpen}
+                    onClose={() => setIsBookingModalOpen(false)}
+                    destinationName={selectedPackageName || 'Fixed Departure'}
+                />
+            )}
         </div>
     );
 }
