@@ -466,10 +466,10 @@ export const honeymoonPackages: Record<string, HoneymoonPackage> = {
             }
         ],
         images: [
-            "/webImage/maldives/1.webp",
-            "/webImage/maldives/2.webp",
-            "/webImage/maldives/3.webp",
-            "/webImage/maldives/4.webp"
+            "https://images.unsplash.com/photo-1583037189850-1921ae7c6c22?w=1200&q=85",
+            "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&q=85",
+            "https://images.unsplash.com/photo-1502784444187-359ac186c5bb?w=1200&q=85",
+            "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1200&q=85"
         ],
         additionalInfo: {
             highlights: [
@@ -1077,10 +1077,10 @@ export const honeymoonPackages: Record<string, HoneymoonPackage> = {
             }
         ],
         images: [
-            "/webImage/maldives/1.webp",
-            "/webImage/maldives/2.webp",
-            "/webImage/maldives/3.webp",
-            "/webImage/maldives/4.webp"
+            "https://images.unsplash.com/photo-1536300007881-7e482242baa5?w=1200&q=85",
+            "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=85",
+            "https://images.unsplash.com/photo-1535498730771-e735b998cd64?w=1200&q=85",
+            "https://images.unsplash.com/photo-1476673160081-cf065607f449?w=1200&q=85"
         ],
         additionalInfo: {
             highlights: [
@@ -1431,10 +1431,10 @@ export const honeymoonPackages: Record<string, HoneymoonPackage> = {
             }
         ],
         images: [
-            "/webImage/maldives/1.webp",
-            "/webImage/maldives/2.webp",
-            "/webImage/maldives/3.webp",
-            "/webImage/maldives/4.webp"
+            "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&q=85",
+            "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=85",
+            "https://images.unsplash.com/photo-1499363536502-87642509e31b?w=1200&q=85",
+            "https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=1200&q=85"
         ],
         additionalInfo: {
             highlights: [
