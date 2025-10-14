@@ -159,7 +159,7 @@ export default function CantonFairHomepage() {
                 >
                     <div className="text-center mb-4">
                         <h2 className="text-3xl md:text-4xl font-extrabold mb-3">
-                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#017ae3] to-[#00f6ff]">
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#2260e6] to-[#1df4f4]">
                                 Canton Fair 2025 - China&apos;s Largest Trade Fair
                             </span>
                         </h2>
