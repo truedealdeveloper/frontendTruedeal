@@ -269,7 +269,7 @@ export default function GreecePackagePage({ params }: PageProps) {
                             </div>
                             <div>
                                 <div className="text-sm opacity-80">Contact</div>
-                                <div className="font-medium text-sm md:text-base">+91 9310271488</div>
+                                <div className="font-medium text-sm md:text-base">+91 9918461846</div>
                             </div>
                         </div>
                     </div>
@@ -770,7 +770,7 @@ export default function GreecePackagePage({ params }: PageProps) {
                                         </Button>
 
                                         <a
-                                            href="tel:+919310271488"
+                                            href="tel:+919918461846"
                                             className="mt-4 bg-blue-50 hover:bg-blue-100 transition-colors p-4 rounded-md flex items-center cursor-pointer no-underline"
                                         >
                                             <Phone className="h-5 w-5 text-blue-600 mr-3 flex-shrink-0" />

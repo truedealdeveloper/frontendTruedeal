@@ -137,7 +137,7 @@ export function Chatbot() {
             setQuery('');
             setIsOpen(false);
         }, 100);
-        window.open(`https://wa.me/919310271488?text=${whatsappMessage}`, '_blank');
+        window.open(`https://wa.me/919918461846?text=${whatsappMessage}`, '_blank');
     };
 
     return (

@@ -51,10 +51,10 @@ Sending Amount: ₹${formData.sendingAmount}
 Rate: ${currencyRates.find(c => c.code === formData.receivingCurrency)?.sellRate}
     `;
 
-    // const whatsappUrl = `https://wa.me/919310271488?text=${encodeURIComponent(message)}`;
+    // const whatsappUrl = `https://wa.me/919918461846?text=${encodeURIComponent(message)}`;
     // window.open(whatsappUrl, '_blank');
 
-    const whatsappUrl = `https://wa.me/919310271488?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/919918461846?text=${encodeURIComponent(message)}`;
     safeWindowOpen(whatsappUrl, '_blank');
   };
 

@@ -232,7 +232,7 @@ export default function DestinationDetails() {
                                             </div>
                                             <div className="flex items-center justify-center gap-2 text-[#017ae3] font-medium text-sm">
                                                 <Phone className="w-4 h-4" />
-                                                +91 9310271488
+                                                +91 9918461846
                                             </div>
                                         </div>
                                     </div>
@@ -574,7 +574,7 @@ export default function DestinationDetails() {
                                             </div>
                                             <div className="flex items-center justify-center gap-2 text-[#017ae3] font-medium text-sm">
                                                 <Phone className="w-4 h-4" />
-                                                +91 9310271488
+                                                +91 9918461846
                                             </div>
                                         </div>
                                     </div>
@@ -830,7 +830,7 @@ export default function DestinationDetails() {
                             </div>
                             <div className="flex items-center justify-center gap-2 text-[#017ae3] font-medium">
                                 <Phone className="w-4 h-4" />
-                                +91 9310271488
+                                +91 9918461846
                             </div>
                         </div>
                     </div>

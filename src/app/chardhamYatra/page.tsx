@@ -815,14 +815,14 @@ export default function ChardhamYatraPackages() {
                                 {
                                     icon: <FaWhatsapp className="w-6 h-6" />,
                                     title: "WhatsApp",
-                                    action: () => window.open('https://wa.me/+919310271488'),
+                                    action: () => window.open('https://wa.me/+919918461846'),
                                     buttonText: "Message Us",
                                     delay: "delay-[200ms]"
                                 },
                                 {
                                     icon: <FaPhone className="w-6 h-6" />,
                                     title: "Phone",
-                                    action: () => window.open('tel:+919310271488'),
+                                    action: () => window.open('tel:+919918461846'),
                                     buttonText: "Call Now",
                                     delay: "delay-[400ms]"
                                 },

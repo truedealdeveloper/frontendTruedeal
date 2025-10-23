@@ -194,7 +194,7 @@ export default function NatureslandPackagePage({ params }: PageProps) {
                                 <span className="text-sm font-bold bg-gradient-to-r from-[#017ae3] to-[#00f6ff] text-white px-3 py-1 rounded-full">₹{thailandPkg?.amount?.toLocaleString('en-IN')}</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <a href="tel:+919310271488"><Button size="sm" variant="outline" className="rounded-full">Call</Button></a>
+                                <a href="tel:+919918461846"><Button size="sm" variant="outline" className="rounded-full">Call</Button></a>
                                 <Button size="sm" className="rounded-full bg-gradient-to-r from-[#017ae3] to-[#00f6ff]" onClick={() => setIsBookingModalOpen(true)}>Enquire</Button>
                             </div>
                         </div>

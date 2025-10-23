@@ -60,7 +60,7 @@ function ThankYouContent() {
                     ❤️
                 </p>
                 <p className="text-gray-600 mb-6">
-                    You can contact us at <a href="tel:+919310271488" className="text-[#017ae3] font-semibold">+91 9310271488</a>
+                    You can contact us at <a href="tel:+919918461846" className="text-[#017ae3] font-semibold">+91 9918461846</a>
                 </p>
 
                 <div className="space-y-4">

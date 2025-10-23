@@ -194,7 +194,7 @@ export default function HoneymoonPackagePage({ params }: PageProps) {
                                 <span className="text-sm font-bold bg-gradient-to-r from-pink-500 to-rose-500 text-white px-3 py-1 rounded-full">₹{honeymoonPkg?.amount?.toLocaleString('en-IN')}</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <a href="tel:+919310271488"><Button size="sm" variant="outline" className="rounded-full">Call</Button></a>
+                                <a href="tel:+919918461846"><Button size="sm" variant="outline" className="rounded-full">Call</Button></a>
                                 <Button size="sm" className="rounded-full bg-gradient-to-r from-pink-500 to-rose-500" onClick={() => setIsBookingModalOpen(true)}>Enquire</Button>
                             </div>
                         </div>
@@ -512,7 +512,7 @@ export default function HoneymoonPackagePage({ params }: PageProps) {
                                     </p>
                                     <div className="flex items-center justify-center gap-4 mt-4">
                                         <a
-                                            href="tel:+919310271488"
+                                            href="tel:+919918461846"
                                             className="flex items-center gap-2 text-pink-500 hover:text-pink-600 transition-colors"
                                         >
                                             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -521,7 +521,7 @@ export default function HoneymoonPackagePage({ params }: PageProps) {
                                             Call Now
                                         </a>
                                         <a
-                                            href="https://wa.me/919310271488"
+                                            href="https://wa.me/919918461846"
                                             className="flex items-center gap-2 text-green-600 hover:text-green-700 transition-colors"
                                             target="_blank"
                                             rel="noopener noreferrer"

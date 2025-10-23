@@ -639,7 +639,7 @@ export default function GoaPackagePage({ params }: PageProps) {
                                         </Button>
 
                                         <a
-                                            href="tel:+919310271488"
+                                            href="tel:+919918461846"
                                             className="mt-4 bg-blue-50 hover:bg-blue-100 transition-colors p-4 rounded-md flex items-center cursor-pointer no-underline"
                                         >
                                             <Phone className="h-5 w-5 text-[#017ae3] mr-3 flex-shrink-0" />

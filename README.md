@@ -310,7 +310,7 @@ This project is proprietary software. All rights reserved.
 For support and inquiries:
 
 - **Email**: web@truedeal4u.com
-- **Phone**: +91-9310271488
+- **Phone**: +91-9918461846
 - **Website**: [https://www.truedeal4u.com](https://www.truedeal4u.com)
 
 ## 🙏 Acknowledgments

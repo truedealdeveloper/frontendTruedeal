@@ -140,7 +140,7 @@ export default function PaymentPage() {
                         <div className="space-y-2">
                             <p>To ensure your payment is securely processed, please make payments only to the official bank details provided on our website.</p>
                             <p>Do not make payments to any other account. We will not be responsible for any losses incurred if payments are made to unauthorized bank accounts.</p>
-                            <p>If you have any questions or concerns, please contact us on - 9310271488</p>
+                            <p>If you have any questions or concerns, please contact us on - 9918461846</p>
                             <p>A payment gateway charge 3% will be levied on using above given payment link.</p>
                         </div>
                     </AlertDescription>

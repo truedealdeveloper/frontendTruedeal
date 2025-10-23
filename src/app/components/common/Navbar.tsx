@@ -447,12 +447,12 @@ export default function Navbar() {
                             <div className="relative group">
                                 <div className="absolute inset-0 bg-[#00f6ff]/20 blur group-hover:blur-md transition-all duration-300 rounded-xl" />
                                 <a
-                                    href="tel:+919310271488"
+                                    href="tel:+919918461846"
                                     className="relative flex items-center gap-2 px-4 py-2 rounded-xl bg-white/50 backdrop-blur-sm border border-[#00f6ff]/20 hover:border-[#00f6ff]/40 transition-all duration-300"
-                                    aria-label="Call us at +91-9310271488"
+                                    aria-label="Call us at +91-9918461846"
                                 >
                                     <Phone className="h-4 w-4 text-[#00f6ff]" />
-                                    <span className="text-sm font-medium text-gray-700">+91-9310271488</span>
+                                    <span className="text-sm font-medium text-gray-700">+91-9918461846</span>
                                 </a>
                             </div>
                         </div>
@@ -467,12 +467,12 @@ export default function Navbar() {
                                 <Search className="h-5 w-5 text-gray-600" />
                             </button>
                             <a
-                                href="tel:+919310271488"
+                                href="tel:+919918461846"
                                 className="p-2 rounded-lg bg-[#00f6ff]/10 hover:bg-[#00f6ff]/20 transition-colors"
-                                aria-label="Call us at +91-9310271488"
+                                aria-label="Call us at +91-9918461846"
                             >
                                 <Phone className="h-5 w-5 text-[#00f6ff]" />
-                                <span className="sr-only">Call +91-9310271488</span>
+                                <span className="sr-only">Call +91-9918461846</span>
                             </a>
                             <button
                                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -543,7 +543,7 @@ export default function Navbar() {
                         <div className="flex items-center justify-between px-4 py-3 bg-white border-b border-gray-200">
                             <div className="flex items-center gap-2">
                                 <Phone className="h-5 w-5 text-gray-700" />
-                                <span className="text-gray-900 text-sm font-medium">+91-9310271488</span>
+                                <span className="text-gray-900 text-sm font-medium">+91-9918461846</span>
                             </div>
                             <div className="flex items-center gap-4">
                                 <Search
@@ -738,7 +738,7 @@ export default function Navbar() {
                                     <div className="space-y-2">
                                         {/* Call Button */}
                                         <a
-                                            href="tel:+919310271488"
+                                            href="tel:+919918461846"
                                             className="flex items-center justify-center gap-2 w-full py-3 bg-[#00DEF7] text-white font-medium rounded-lg hover:bg-[#00DEF7]/90 transition-colors"
                                             onClick={() => {
                                                 setIsMenuOpen(false);
