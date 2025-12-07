@@ -3,10 +3,11 @@ import Link from "next/link"
 import { blogPosts } from "./blogData"
 
 // Helper function to generate metadata based on current path
-export async function generateMetadata({ params }: { params: { slug?: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug?: string }> }): Promise<Metadata> {
+  const resolvedParams = await params
   // If we're on a specific blog post
-  if (params.slug) {
-    const post = blogPosts.find(p => p.slug === params.slug)
+  if (resolvedParams.slug) {
+    const post = blogPosts.find(p => p.slug === resolvedParams.slug)
     if (post) {
       return {
         title: `${post.title} | Truedeal Travel Blog`,
@@ -121,15 +122,16 @@ function generateStructuredData(post?: typeof blogPosts[0]) {
   }
 }
 
-export default function BlogLayout({
+export default async function BlogLayout({
   children,
   params,
 }: {
   children: React.ReactNode
-  params: { slug?: string }
+  params: Promise<{ slug?: string }>
 }) {
+  const resolvedParams = await params
   // Get current post if we're on a blog post page
-  const currentPost = params.slug ? blogPosts.find(p => p.slug === params.slug) : undefined
+  const currentPost = resolvedParams.slug ? blogPosts.find(p => p.slug === resolvedParams.slug) : undefined
 
   return (
     <section className="bg-white">
